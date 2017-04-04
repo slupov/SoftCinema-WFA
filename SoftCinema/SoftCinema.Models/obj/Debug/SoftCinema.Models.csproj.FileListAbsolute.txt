@@ -3,3 +3,8 @@ D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Model
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.csprojResolveAssemblyReference.cache
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.csprojResolveAssemblyReference.cache
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.pdb

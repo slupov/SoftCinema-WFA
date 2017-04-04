@@ -12,7 +12,7 @@ namespace SoftCinema.Models
     {
         public Actor()
         {
-            Movies = new HashSet<Movie>();
+            this.Movies = new HashSet<Movie>();
         }
 
         [Key]
@@ -23,6 +23,11 @@ namespace SoftCinema.Models
 
         public ICollection<Movie> Movies { get; set; }
 
-        public float Rating { get; set; }
+        [Range(0,10)]
+        public float? Rating { get; set; }
+
+        public int? BornTownId { get; set; }
+
+        public virtual Town BornTown { get; set; }
     }
 }

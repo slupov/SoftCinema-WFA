@@ -12,3 +12,6 @@ D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.pdb
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.Initial.resources
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csprojResolveAssemblyReference.cache
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.pdb

@@ -9,11 +9,14 @@ namespace SoftCinema.Models
 {
     public class Auditorium
     {
+        public Auditorium()
+        {
+            this.Shows = new HashSet<Show>();
+        }
         [Key]
         public int Id { get; set; }
 
         [Required]
-
         //Which auditorium at the cinema
         public byte Number { get; set; }
 
@@ -25,5 +28,7 @@ namespace SoftCinema.Models
         public int CinemaId { get; set; }
 
         public virtual Cinema Cinema { get; set; }
+
+        public virtual ICollection<Show> Shows { get; set; }
     }
 }

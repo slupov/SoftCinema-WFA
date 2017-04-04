@@ -22,6 +22,7 @@ namespace SoftCinema.Models
         [Required]
         public byte[] PasswordHash { get; set; }
 
+        [RegularExpression("0([0-9]{9})", ErrorMessage = "Invalid phone number.")]
         public string Phone { get; set; }
 
         [EmailAddress]

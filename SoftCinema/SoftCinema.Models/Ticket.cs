@@ -13,7 +13,7 @@ namespace SoftCinema.Models
         public int Id { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public int HolderId { get; set; }
 
         public virtual User Holder { get; set; }
 

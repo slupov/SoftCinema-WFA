@@ -11,7 +11,8 @@ namespace SoftCinema.Models
     {
         public Movie()
         {
-            Actors = new HashSet<Actor>();
+            this.Actors = new HashSet<Actor>();
+            this.Categories = new HashSet<Category>();
         }
         [Key]
         public int Id { get; set; }
@@ -19,7 +20,8 @@ namespace SoftCinema.Models
         [Required]
         public int Length { get; set; }
 
-        public float Rating { get; set; }
+        [Range(0,10)]
+        public float? Rating { get; set; }
 
         public string Synopsis { get; set; }
 
@@ -37,6 +39,6 @@ namespace SoftCinema.Models
         [Required]
         public string AgeRestriction { get; set; }
 
-        //TODO:categories table
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

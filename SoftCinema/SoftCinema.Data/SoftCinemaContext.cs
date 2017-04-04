@@ -22,23 +22,48 @@ namespace SoftCinema.Data
         public virtual DbSet<Auditorium> Auditoriums { get; set; }
         public virtual DbSet<Show> Shows { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Town> Towns { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Tickets)
-                .WithRequired(t => t.Holder);
+                .WithRequired(t => t.Holder)
+                .HasForeignKey(t => t.HolderId);
+                
 
             modelBuilder.Entity<Cinema>()
                 .HasMany(c => c.Auditoriums)
-                .WithRequired(a => a.Cinema);
+                .WithRequired(a => a.Cinema)
+                .HasForeignKey(a => a.CinemaId);
 
             modelBuilder.Entity<Movie>()
                 .HasMany(m => m.Actors)
-                .WithMany(a => a.Movies);
+                .WithMany(a => a.Movies)
+                .Map(ma =>
+                {
+                    ma.MapLeftKey("ActorId");
+                    ma.MapRightKey("MovieId");
+                    ma.ToTable("ActorMovies");
+                });
+
+            modelBuilder.Entity<Movie>()
+                .HasMany(m => m.Categories)
+                .WithMany(c => c.Movies)
+                .Map(mc =>
+                {
+                    mc.MapLeftKey("MovieId");
+                    mc.MapRightKey("CategoryId");
+                    mc.ToTable("MoviesCategories");
+                });
+
+            
 
             modelBuilder.Entity<Show>()
-                .HasRequired(a => a.Auditorium);
+                .HasRequired(s => s.Auditorium)
+                .WithMany(a => a.Shows);
         }
     }
 }

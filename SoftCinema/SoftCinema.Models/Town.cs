@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,24 +7,21 @@ using System.Threading.Tasks;
 
 namespace SoftCinema.Models
 {
-    public class Cinema
+    public class Town
     {
-        public Cinema()
+        public Town()
         {
-            this.Auditoriums = new HashSet<Auditorium>();;
+            this.Cinemas = new HashSet<Cinema>();
+            this.ActorsBorn = new HashSet<Actor>();
         }
         [Key]
         public int Id { get; set; }
 
-        [Required]
-
+        [Key]
         public string Name { get; set; }
 
-        public int TownId { get; set; }
+        public virtual ICollection<Cinema> Cinemas { get; set; }
 
-        public virtual Town Town { get; set; }
-
-        public virtual ICollection<Auditorium> Auditoriums { get; set; }
-
+        public virtual ICollection<Actor> ActorsBorn { get; set; }
     }
 }
