@@ -17,7 +17,7 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Key]
+        [Required]
         public string Name { get; set; }
 
         public virtual ICollection<Cinema> Cinemas { get; set; }
