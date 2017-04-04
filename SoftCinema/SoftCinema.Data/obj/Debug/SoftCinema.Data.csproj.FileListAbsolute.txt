@@ -10,7 +10,6 @@ D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.xm
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.Initial.resources
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csprojResolveAssemblyReference.cache
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.dll
@@ -26,3 +25,4 @@ C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\b
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
