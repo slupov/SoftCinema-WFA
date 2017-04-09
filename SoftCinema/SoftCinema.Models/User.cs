@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
+        [Required,MaxLength(25),Index(IsUnique = true)]
+        public string Username { get; set; }
+        
         //TODO: Stoyo include password hasher class
         [Required]
         public byte[] PasswordHash { get; set; }
@@ -25,8 +29,7 @@ namespace SoftCinema.Models
         [RegularExpression("0([0-9]{9})", ErrorMessage = "Invalid phone number.")]
         public string PhoneNumber { get; set; }
 
-        [EmailAddress]
-        [Required]
+        [Required, EmailAddress,MaxLength(30),Index(IsUnique = true)]
         public string Email { get; set; }
 
         public Role Role { get; set; }

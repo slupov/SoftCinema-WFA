@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,10 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required, Index("IX_CinemaNumber", 1, IsUnique = true)]
         public byte Number { get; set; }
 
-        [Required]
+        [Required, Index("IX_CinemaNumber", 2, IsUnique = true)]
         public int CinemaId { get; set; }
 
         public virtual Cinema Cinema { get; set; }

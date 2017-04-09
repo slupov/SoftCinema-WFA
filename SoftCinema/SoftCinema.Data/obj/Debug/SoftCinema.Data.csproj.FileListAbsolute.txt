@@ -27,3 +27,4 @@ C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\o
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.AddedSeatsAndUniqueIndeces.resources
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.AddedAditionalUniqueIndices.resources

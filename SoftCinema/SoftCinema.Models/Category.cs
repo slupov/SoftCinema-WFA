@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required, MaxLength(50),Index(IsUnique = true)]
         public string Name { get; set; }
 
         public virtual ICollection<Movie> Movies { get; set; }
