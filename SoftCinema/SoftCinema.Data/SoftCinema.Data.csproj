@@ -49,10 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\MovieConfiguration.cs" />
+    <Compile Include="Configurations\SeatsConfiguration.cs" />
     <Compile Include="Migrations\201704041847149_Initial.cs" />
     <Compile Include="Migrations\201704042118099_InitialCreate.cs" />
     <Compile Include="Migrations\201704042118099_InitialCreate.Designer.cs">
       <DependentUpon>201704042118099_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.cs" />
+    <Compile Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.Designer.cs">
+      <DependentUpon>201704092001051_AddedSeatsAndUniqueIndeces.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +78,10 @@
     <EmbeddedResource Include="Migrations\201704042118099_InitialCreate.resx">
       <DependentUpon>201704042118099_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.resx">
+      <DependentUpon>201704092001051_AddedSeatsAndUniqueIndeces.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

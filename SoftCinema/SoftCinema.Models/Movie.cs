@@ -11,7 +11,7 @@ namespace SoftCinema.Models
     {
         public Movie()
         {
-            this.Actors = new HashSet<Actor>();
+            this.Cast = new HashSet<Actor>();
             this.Categories = new HashSet<Category>();
         }
         [Key]
@@ -25,7 +25,7 @@ namespace SoftCinema.Models
 
         public string Synopsis { get; set; }
 
-        public ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<Actor> Cast { get; set; }
 
         [Required]
         public string DirectorName { get; set; }
@@ -35,9 +35,8 @@ namespace SoftCinema.Models
 
         public string ReleaseCountry { get; set; }
 
-        //TODO:make enum type
         [Required]
-        public string AgeRestriction { get; set; }
+        public AgeRestriction AgeRestriction { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
     }

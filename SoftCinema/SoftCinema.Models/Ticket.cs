@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,22 +18,20 @@ namespace SoftCinema.Models
 
         public virtual User Holder { get; set; }
 
-        [Required]
-        public int ShowId { get; set; }
+        [Required,Index("IX_ScreeningSeat", 1, IsUnique = true)]
+        public int ScreeningId { get; set; }
 
-        public virtual Show Show { get; set; }
+        public virtual Screening Screening { get; set; }
 
-        [Required]
-        public byte Row { get; set; }
+        [Required,Index("IX_ScreeningSeat", 2, IsUnique = true)]
+        public int SeatId { get; set; }
 
-        [Required]
-        public byte Col { get; set; }
+        public virtual Seat Seat { get; set; }
 
         [Required]
         public decimal Price { get; set; }
 
         [Required]
-        //make enum in the future
-        public string Type { get; set; }
+        public TicketType Type { get; set; }
     }
 }

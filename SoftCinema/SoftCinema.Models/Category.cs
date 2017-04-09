@@ -13,6 +13,7 @@ namespace SoftCinema.Models
         {
             this.Movies = new HashSet<Movie>();
         }
+
         [Key]
         public int Id { get; set; }
 

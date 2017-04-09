@@ -14,14 +14,14 @@ namespace SoftCinema.Models
         {
             this.Auditoriums = new HashSet<Auditorium>();;
         }
+
         [Key]
         public int Id { get; set; }
 
         [Required]
-
         public string Name { get; set; }
 
-        public int TownId { get; set; }
+        public int? TownId { get; set; }
 
         public virtual Town Town { get; set; }
 

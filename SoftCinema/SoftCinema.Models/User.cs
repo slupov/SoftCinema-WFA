@@ -12,7 +12,7 @@ namespace SoftCinema.Models
     {
         public User()
         {
-            Tickets = new HashSet<Ticket>();
+            this.Tickets = new HashSet<Ticket>();
         }
 
         [Key]
@@ -23,15 +23,14 @@ namespace SoftCinema.Models
         public byte[] PasswordHash { get; set; }
 
         [RegularExpression("0([0-9]{9})", ErrorMessage = "Invalid phone number.")]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
 
         [EmailAddress]
         [Required]
         public string Email { get; set; }
 
-        //make Enum in the future
-        public string Role { get; set; }
+        public Role Role { get; set; }
 
-        public ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

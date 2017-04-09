@@ -21,7 +21,7 @@ namespace SoftCinema.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
 
         [Range(0,10)]
         public float? Rating { get; set; }
