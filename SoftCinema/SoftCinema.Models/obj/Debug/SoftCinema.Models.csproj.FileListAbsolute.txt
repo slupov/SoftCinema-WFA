@@ -13,3 +13,13 @@ C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.xml
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.dll.config
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.pdb
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.csprojResolveAssemblyReference.cache
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.pdb

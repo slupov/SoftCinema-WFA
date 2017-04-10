@@ -1,15 +1,39 @@
 ﻿namespace SoftCinema.Import
 {
-    using System;
+    using Newtonsoft.Json;
+    using Models;
+    using System.IO;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Data;
     class JSONImport
     {
         //TODO: ImportActors
         //TODO: ImportAuditoriums
         //TODO: ImportSeats
+
+        public static void ImportTowns(SoftCinemaContext context)
+        {
+            var json = File.ReadAllText(@"..\..\Resources\towns.json");
+            var towns = JsonConvert.DeserializeObject<IEnumerable<Town>>(json);
+
+            foreach (var town in towns)
+            {
+                context.Towns.Add(town);
+            }
+            context.SaveChanges();
+        }
+
+        public static void ImportActors(SoftCinemaContext context)
+        {
+            var json = File.ReadAllText(@"..\..\Resources\actors.json");
+            var actors = JsonConvert.DeserializeObject<IEnumerable<Actor>>(json);
+
+            foreach (var actor in actors)
+            {
+                context.Actors.Add(actor);
+            }
+            context.SaveChanges();
+        }
 
     }
 }

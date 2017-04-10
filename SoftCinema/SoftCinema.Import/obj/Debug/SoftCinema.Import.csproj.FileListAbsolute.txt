@@ -1,0 +1,16 @@
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Import.exe.config
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Import.exe
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Import.pdb
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Data.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Models.dll
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Data.pdb
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Models.pdb
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\obj\Debug\SoftCinema.Import.csprojResolveAssemblyReference.cache
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\obj\Debug\SoftCinema.Import.exe
+C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Import\obj\Debug\SoftCinema.Import.pdb

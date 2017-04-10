@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SoftCinema.Data;
 
 namespace SoftCinema.Import
 {
@@ -10,7 +6,10 @@ namespace SoftCinema.Import
     {
         static void Main(string[] args)
         {
+            var context = new SoftCinemaContext();
             //JSONImport.ImportUsers();
+            //JSONImport.ImportTowns(context);
+            //JSONImport.ImportActors(context);
         }
     }
 }
