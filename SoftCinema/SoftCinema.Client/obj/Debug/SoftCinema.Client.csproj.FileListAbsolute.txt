@@ -16,3 +16,12 @@ C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Client
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.SoftCinemaForm.resources
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Properties.Resources.resources
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Client.exe.config
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.exe
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.pdb
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Client.exe
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Client.pdb
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.SoftCinemaForm.resources
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.csproj.GenerateResource.Cache

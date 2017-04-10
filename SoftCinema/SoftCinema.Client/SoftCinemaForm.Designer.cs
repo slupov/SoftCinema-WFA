@@ -31,17 +31,17 @@
         private void InitializeComponent()
         {
             this.SidePanel = new System.Windows.Forms.Panel();
+            this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.teamButton3 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.teamButton2 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.teamButton1 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.NamePanel = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.UpperPanel = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.ContentHolder = new System.Windows.Forms.Panel();
             this.BtnDashboard = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton1 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton2 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton3 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.SidePanel.SuspendLayout();
             this.NamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -61,6 +61,92 @@
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(195, 491);
             this.SidePanel.TabIndex = 0;
+            // 
+            // teamButton5
+            // 
+            this.teamButton5.BackColor = System.Drawing.Color.Black;
+            this.teamButton5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.teamButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamButton5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamButton5.ForeColor = System.Drawing.Color.White;
+            this.teamButton5.Location = new System.Drawing.Point(0, 301);
+            this.teamButton5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.teamButton5.MinimumSize = new System.Drawing.Size(100, 30);
+            this.teamButton5.Name = "teamButton5";
+            this.teamButton5.Padding = new System.Windows.Forms.Padding(3);
+            this.teamButton5.Size = new System.Drawing.Size(195, 57);
+            this.teamButton5.TabIndex = 5;
+            this.teamButton5.Text = "teamButton5";
+            this.teamButton5.UseVisualStyleBackColor = false;
+            // 
+            // teamButton4
+            // 
+            this.teamButton4.BackColor = System.Drawing.Color.Black;
+            this.teamButton4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.teamButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamButton4.ForeColor = System.Drawing.Color.White;
+            this.teamButton4.Location = new System.Drawing.Point(0, 244);
+            this.teamButton4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.teamButton4.MinimumSize = new System.Drawing.Size(100, 30);
+            this.teamButton4.Name = "teamButton4";
+            this.teamButton4.Padding = new System.Windows.Forms.Padding(3);
+            this.teamButton4.Size = new System.Drawing.Size(195, 57);
+            this.teamButton4.TabIndex = 4;
+            this.teamButton4.Text = "teamButton4";
+            this.teamButton4.UseVisualStyleBackColor = false;
+            // 
+            // teamButton3
+            // 
+            this.teamButton3.BackColor = System.Drawing.Color.Black;
+            this.teamButton3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.teamButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamButton3.ForeColor = System.Drawing.Color.White;
+            this.teamButton3.Location = new System.Drawing.Point(0, 187);
+            this.teamButton3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.teamButton3.MinimumSize = new System.Drawing.Size(100, 30);
+            this.teamButton3.Name = "teamButton3";
+            this.teamButton3.Padding = new System.Windows.Forms.Padding(3);
+            this.teamButton3.Size = new System.Drawing.Size(195, 57);
+            this.teamButton3.TabIndex = 3;
+            this.teamButton3.Text = "teamButton3";
+            this.teamButton3.UseVisualStyleBackColor = false;
+            // 
+            // teamButton2
+            // 
+            this.teamButton2.BackColor = System.Drawing.Color.Black;
+            this.teamButton2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.teamButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamButton2.ForeColor = System.Drawing.Color.White;
+            this.teamButton2.Location = new System.Drawing.Point(0, 130);
+            this.teamButton2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.teamButton2.MinimumSize = new System.Drawing.Size(100, 30);
+            this.teamButton2.Name = "teamButton2";
+            this.teamButton2.Padding = new System.Windows.Forms.Padding(3);
+            this.teamButton2.Size = new System.Drawing.Size(195, 57);
+            this.teamButton2.TabIndex = 2;
+            this.teamButton2.Text = "teamButton2";
+            this.teamButton2.UseVisualStyleBackColor = false;
+            // 
+            // teamButton1
+            // 
+            this.teamButton1.BackColor = System.Drawing.Color.Black;
+            this.teamButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.teamButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamButton1.ForeColor = System.Drawing.Color.White;
+            this.teamButton1.Location = new System.Drawing.Point(0, 73);
+            this.teamButton1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.teamButton1.MinimumSize = new System.Drawing.Size(100, 30);
+            this.teamButton1.Name = "teamButton1";
+            this.teamButton1.Padding = new System.Windows.Forms.Padding(3);
+            this.teamButton1.Size = new System.Drawing.Size(195, 57);
+            this.teamButton1.TabIndex = 1;
+            this.teamButton1.Text = "teamButton1";
+            this.teamButton1.UseVisualStyleBackColor = false;
+            this.teamButton1.Click += new System.EventHandler(this.teamButton1_Click);
             // 
             // NamePanel
             // 
@@ -123,91 +209,6 @@
             this.BtnDashboard.Size = new System.Drawing.Size(100, 30);
             this.BtnDashboard.TabIndex = 0;
             this.BtnDashboard.UseVisualStyleBackColor = false;
-            // 
-            // teamButton1
-            // 
-            this.teamButton1.BackColor = System.Drawing.Color.Black;
-            this.teamButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton1.ForeColor = System.Drawing.Color.White;
-            this.teamButton1.Location = new System.Drawing.Point(0, 73);
-            this.teamButton1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton1.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton1.Name = "teamButton1";
-            this.teamButton1.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton1.Size = new System.Drawing.Size(195, 57);
-            this.teamButton1.TabIndex = 1;
-            this.teamButton1.Text = "teamButton1";
-            this.teamButton1.UseVisualStyleBackColor = false;
-            // 
-            // teamButton2
-            // 
-            this.teamButton2.BackColor = System.Drawing.Color.Black;
-            this.teamButton2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton2.ForeColor = System.Drawing.Color.White;
-            this.teamButton2.Location = new System.Drawing.Point(0, 130);
-            this.teamButton2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton2.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton2.Name = "teamButton2";
-            this.teamButton2.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton2.Size = new System.Drawing.Size(195, 57);
-            this.teamButton2.TabIndex = 2;
-            this.teamButton2.Text = "teamButton2";
-            this.teamButton2.UseVisualStyleBackColor = false;
-            // 
-            // teamButton3
-            // 
-            this.teamButton3.BackColor = System.Drawing.Color.Black;
-            this.teamButton3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton3.ForeColor = System.Drawing.Color.White;
-            this.teamButton3.Location = new System.Drawing.Point(0, 187);
-            this.teamButton3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton3.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton3.Name = "teamButton3";
-            this.teamButton3.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton3.Size = new System.Drawing.Size(195, 57);
-            this.teamButton3.TabIndex = 3;
-            this.teamButton3.Text = "teamButton3";
-            this.teamButton3.UseVisualStyleBackColor = false;
-            // 
-            // teamButton4
-            // 
-            this.teamButton4.BackColor = System.Drawing.Color.Black;
-            this.teamButton4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton4.ForeColor = System.Drawing.Color.White;
-            this.teamButton4.Location = new System.Drawing.Point(0, 244);
-            this.teamButton4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton4.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton4.Name = "teamButton4";
-            this.teamButton4.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton4.Size = new System.Drawing.Size(195, 57);
-            this.teamButton4.TabIndex = 4;
-            this.teamButton4.Text = "teamButton4";
-            this.teamButton4.UseVisualStyleBackColor = false;
-            // 
-            // teamButton5
-            // 
-            this.teamButton5.BackColor = System.Drawing.Color.Black;
-            this.teamButton5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton5.ForeColor = System.Drawing.Color.White;
-            this.teamButton5.Location = new System.Drawing.Point(0, 301);
-            this.teamButton5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton5.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton5.Name = "teamButton5";
-            this.teamButton5.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton5.Size = new System.Drawing.Size(195, 57);
-            this.teamButton5.TabIndex = 5;
-            this.teamButton5.Text = "teamButton5";
-            this.teamButton5.UseVisualStyleBackColor = false;
             // 
             // SoftCinemaForm
             // 
