@@ -5,12 +5,10 @@
     using System.IO;
     using System.Collections.Generic;
     using Data;
+    using System.Data.Entity.Migrations;
+
     class JSONImport
     {
-        //TODO: ImportActors
-        //TODO: ImportAuditoriums
-        //TODO: ImportSeats
-
         public static void ImportTowns(SoftCinemaContext context)
         {
             var json = File.ReadAllText(@"..\..\Resources\towns.json");
@@ -18,7 +16,7 @@
 
             foreach (var town in towns)
             {
-                context.Towns.Add(town);
+                context.Towns.AddOrUpdate(t => t.Name,town);
             }
             context.SaveChanges();
         }
@@ -30,7 +28,7 @@
 
             foreach (var actor in actors)
             {
-                context.Actors.Add(actor);
+                context.Actors.AddOrUpdate(a => a.Name,actor);
             }
             context.SaveChanges();
         }

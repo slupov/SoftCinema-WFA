@@ -67,7 +67,11 @@
     <None Include="Resources\actors.json" />
     <None Include="Resources\towns.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\auditoriums.xml" />
+    <Content Include="Resources\cinemas.xml" />
+    <Content Include="Resources\movies.xml" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoftCinema.Data\SoftCinema.Data.csproj">
       <Project>{A8A93D54-1B07-459E-8AB5-612778983210}</Project>

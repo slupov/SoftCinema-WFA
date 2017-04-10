@@ -6,10 +6,16 @@ namespace SoftCinema.Import
     {
         static void Main(string[] args)
         {
-            var context = new SoftCinemaContext();
-            //JSONImport.ImportUsers();
-            //JSONImport.ImportTowns(context);
-            //JSONImport.ImportActors(context);
+            using (var context = new SoftCinemaContext())
+            {
+                //JSONImport.ImportTowns(context);
+                //JSONImport.ImportActors(context);
+                //XMLImport.ImportCinemas(context);
+                //XMLImport.ImportMovies(context);
+                //XMLImport.ImportAuditoriums(context);
+
+                //TODO: Add categories,screenings, etc.
+            }
         }
     }
 }
