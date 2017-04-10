@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Data;
-using SoftCinema.Models;
-
-namespace SoftCinema.Service
+﻿namespace SoftCinema.Service
 {
+    using System;
+    using Data;
+    using Models;
+
     public class TicketService
     {
         //TODO: Additional checks and applying discount to ticket price
