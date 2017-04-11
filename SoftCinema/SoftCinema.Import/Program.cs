@@ -10,6 +10,7 @@ namespace SoftCinema.Import
             {
                 //JSONImport.ImportTowns(context);
                 //JSONImport.ImportActors(context);
+                //JSONImport.ImportCategories(context);
                 //XMLImport.ImportCinemas(context);
                 //XMLImport.ImportMovies(context);
                 //XMLImport.ImportAuditoriums(context);

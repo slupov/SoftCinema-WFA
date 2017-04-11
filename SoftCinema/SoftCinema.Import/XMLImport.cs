@@ -26,6 +26,7 @@
                     new Cinema()
                     {
                         Name = name,
+                        TownId = context.Towns.Single(t => t.Name == townName).Id,
                         Town = context.Towns.Single(t => t.Name == townName)               
                     });
             }

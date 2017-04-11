@@ -1,0 +1,21 @@
+[
+  { "Name": "Comedy" },
+  { "Name": "Action" },
+  { "Name": "Thriller" },
+  { "Name": "Horror" },
+  { "Name": "Sitcom" },
+  { "Name": "News" },
+  { "Name": "Family" },
+  { "Name": "Fantasy" },
+  { "Name": "Adventure" },
+  { "Name": "Animation" },
+  { "Name": "Documentary" },
+  { "Name": "Musical" },
+  { "Name": "Romance" },
+  { "Name": "Talk-Show" },
+  { "Name": "Biography" },
+  { "Name": "Drama" },
+  { "Name": "History" },
+  { "Name": "Sci-Fi" },
+  { "Name": "War"}
+]

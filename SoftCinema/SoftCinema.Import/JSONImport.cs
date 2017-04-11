@@ -40,6 +40,19 @@
             }
             context.SaveChanges();
         }
+        public static void ImportCategories(SoftCinemaContext context)
+        {
+            var json = File.ReadAllText(@"..\..\Resources\categories.json");
+            var categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(json);
 
+            foreach (var category in categories)
+            {
+                context.Categories.AddOrUpdate(a => a.Name, new Category()
+                {
+                    Name = category.Name       
+                });
+            }
+            context.SaveChanges();
+        }
     }
 }
