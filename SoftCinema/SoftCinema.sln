@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Services", "Soft
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCinema.Import\SoftCinema.Import.csproj", "{BE896985-369C-4D76-8D3A-717C159BEAC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Dtos", "SoftCinema.Dtos\SoftCinema.Dtos.csproj", "{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,16 @@
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Service.dll.config
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Service.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Service.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\EntityFramework.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Data.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Dtos.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Models.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Data.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Dtos.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\SoftCinema.Models.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\EntityFramework.xml
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\obj\Debug\SoftCinema.Services.csprojResolveAssemblyReference.cache
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\obj\Debug\SoftCinema.Service.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Service\obj\Debug\SoftCinema.Service.pdb

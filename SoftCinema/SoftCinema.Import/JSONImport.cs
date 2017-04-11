@@ -1,4 +1,7 @@
-﻿namespace SoftCinema.Import
+﻿using SoftCinema.Dtos;
+using SoftCinema.Service;
+
+namespace SoftCinema.Import
 {
     using Newtonsoft.Json;
     using Models;
@@ -14,45 +17,23 @@
         public static void ImportTowns(SoftCinemaContext context)
         {
             var json = File.ReadAllText(@"..\..\Resources\towns.json");
-            var towns = JsonConvert.DeserializeObject<IEnumerable<Town>>(json);
-
-            foreach (var town in towns)
-            {
-                context.Towns.AddOrUpdate(t => t.Name,town);
-            }
-            context.SaveChanges();
+            var towns = JsonConvert.DeserializeObject<IEnumerable<TownDto>>(json);
+            TownService.ImportTowns(towns, context);
         }
 
         public static void ImportActors(SoftCinemaContext context)
         {
             var json = File.ReadAllText(@"..\..\Resources\actors.json");
-            var actors = JsonConvert.DeserializeObject<IEnumerable<ActorDTO>>(json);
-
-            foreach (var actor in actors)
-            {
-                context.Actors.AddOrUpdate(a => a.Name, new Actor()
-                {
-
-                    Name = actor.Name,
-                    Rating = actor.Rating,
-                    BornTown = context.Towns.Single(t => t.Name == actor.BornTownName)
-                });
-            }
-            context.SaveChanges();
+            var actors = JsonConvert.DeserializeObject<IEnumerable<ActorDto>>(json);
+            ActorService.ImportActors(actors, context);
         }
+
         public static void ImportCategories(SoftCinemaContext context)
         {
             var json = File.ReadAllText(@"..\..\Resources\categories.json");
-            var categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(json);
+            var categories = JsonConvert.DeserializeObject<IEnumerable<CategoryDto>>(json);
+            CategoryService.ImportCategories(categories, context);
 
-            foreach (var category in categories)
-            {
-                context.Categories.AddOrUpdate(a => a.Name, new Category()
-                {
-                    Name = category.Name       
-                });
-            }
-            context.SaveChanges();
         }
     }
 }

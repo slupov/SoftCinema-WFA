@@ -56,3 +56,4 @@ C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Deb
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.dll
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.AddedUniqueTownNameIndex.resources

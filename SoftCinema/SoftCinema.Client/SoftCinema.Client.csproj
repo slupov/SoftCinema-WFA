@@ -50,7 +50,7 @@
     <Compile Include="SoftCinemaForm.Designer.cs">
       <DependentUpon>SoftCinemaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
       <SubType>Component</SubType>

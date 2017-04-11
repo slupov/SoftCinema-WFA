@@ -1,0 +1,5 @@
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Dtos\bin\Debug\SoftCinema.Dtos.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Dtos\bin\Debug\SoftCinema.Dtos.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Dtos\obj\Debug\SoftCinema.Dtos.csprojResolveAssemblyReference.cache
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Dtos\obj\Debug\SoftCinema.Dtos.dll
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Dtos\obj\Debug\SoftCinema.Dtos.pdb
