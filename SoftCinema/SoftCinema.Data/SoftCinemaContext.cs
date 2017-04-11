@@ -1,5 +1,4 @@
 using SoftCinema.Data.Configurations;
-using SoftCinema.Data.Migrations;
 using SoftCinema.Models;
 
 namespace SoftCinema.Data
@@ -13,7 +12,7 @@ namespace SoftCinema.Data
         public SoftCinemaContext()
             : base("name=SoftCinemaContext")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SoftCinemaContext, Configuration>());
+            
         }
 
         public virtual DbSet<User> Users { get; set; }

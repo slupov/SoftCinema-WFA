@@ -23,11 +23,7 @@ C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\b
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.pdb
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.xml
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
-C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
-C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.AddedSeatsAndUniqueIndeces.resources
-C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.AddedAditionalUniqueIndices.resources
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.dll.config
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.dll
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.pdb
@@ -44,3 +40,5 @@ C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\D
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.dll
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.pdb
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
+C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache

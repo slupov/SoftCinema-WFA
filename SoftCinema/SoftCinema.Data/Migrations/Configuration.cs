@@ -27,6 +27,5 @@ namespace SoftCinema.Data.Migrations
             //    );
             //
         }
-
     }
 }

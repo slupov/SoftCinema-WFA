@@ -7,13 +7,13 @@ namespace SoftCinema.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedAditionalUniqueIndices : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedAditionalUniqueIndices));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704092056011_AddedAditionalUniqueIndices"; }
+            get { return "201704111306236_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

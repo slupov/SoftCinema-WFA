@@ -51,18 +51,9 @@
   <ItemGroup>
     <Compile Include="Configurations\MovieConfiguration.cs" />
     <Compile Include="Configurations\SeatsConfiguration.cs" />
-    <Compile Include="Migrations\201704041847149_Initial.cs" />
-    <Compile Include="Migrations\201704042118099_InitialCreate.cs" />
-    <Compile Include="Migrations\201704042118099_InitialCreate.Designer.cs">
-      <DependentUpon>201704042118099_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.cs" />
-    <Compile Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.Designer.cs">
-      <DependentUpon>201704092001051_AddedSeatsAndUniqueIndeces.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704092056011_AddedAditionalUniqueIndices.cs" />
-    <Compile Include="Migrations\201704092056011_AddedAditionalUniqueIndices.Designer.cs">
-      <DependentUpon>201704092056011_AddedAditionalUniqueIndices.cs</DependentUpon>
+    <Compile Include="Migrations\201704111306236_InitialCreate.cs" />
+    <Compile Include="Migrations\201704111306236_InitialCreate.Designer.cs">
+      <DependentUpon>201704111306236_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,16 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704042118099_InitialCreate.resx">
-      <DependentUpon>201704042118099_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704092001051_AddedSeatsAndUniqueIndeces.resx">
-      <DependentUpon>201704092001051_AddedSeatsAndUniqueIndeces.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704092056011_AddedAditionalUniqueIndices.resx">
-      <DependentUpon>201704092056011_AddedAditionalUniqueIndices.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704111306236_InitialCreate.resx">
+      <DependentUpon>201704111306236_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
