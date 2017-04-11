@@ -1,51 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <cinemas>
   <cinema>
-    <Name>Vimbo</Name>
-    <TownId>4</TownId>
-  </cinema>
-  <cinema>
-    <Name>Yoveo</Name>
-    <TownId>3</TownId>
-  </cinema>
-  <cinema>
-    <Name>Experience</Name>
-    <TownId>3</TownId>
-  </cinema>
-  <cinema>
-    <Name>CinemaCity</Name>
-    <TownId>4</TownId>
-  </cinema>
-  <cinema>
-    <Name>RealMovies</Name>
-    <TownId>3</TownId>
-  </cinema>
-  <cinema>
-    <Name>Meedoo</Name>
-    <TownId>5</TownId>
-  </cinema>
-  <cinema>
-    <Name>Rhynyx</Name>
-    <TownId>3</TownId>
-  </cinema>
-  <cinema>
     <Name>Wikibox</Name>
-    <TownId>3</TownId>
+    <TownName>Sofia</TownName>
   </cinema>
   <cinema>
     <Name>ChatterLife</Name>
-    <TownId>2</TownId>
+    <TownName>Haskovo</TownName>
   </cinema>
   <cinema>
-    <Name>3DLife</Name>
-    <TownId>1</TownId>
+    <Name>Yoveo</Name>
+    <TownName>Plovdiv</TownName>
   </cinema>
   <cinema>
-    <Name>Arena</Name>
-    <TownId>6</TownId>
+    <Name>Experience</Name>
+    <TownName>Plovdiv</TownName>
+  </cinema>
+  <cinema>
+    <Name>CinemaWorld</Name>
+    <TownName>Burgas</TownName>
+  </cinema>
+  <cinema>
+    <Name>VideoBox</Name>
+    <TownName>Blagoevgrad</TownName>
   </cinema>
   <cinema>
     <Name>Underground</Name>
-    <TownId>7</TownId>
+    <TownName>Haskovo</TownName>
+  </cinema>
+  <cinema>
+    <Name>Meedoo</Name>
+    <TownName>Vidin</TownName>
+  </cinema>
+  <cinema>
+    <Name>CinemaCity</Name>
+    <TownName>Plovdiv</TownName>
+  </cinema>
+  <cinema>
+    <Name>Vimbo</Name>
+    <TownName>Varna</TownName>
+  </cinema>
+  <cinema>
+    <Name>Arena</Name>
+    <TownName>Sofia</TownName>
+  </cinema>
+  <cinema>
+    <Name>RealMovies</Name>
+    <TownName>Sofia</TownName>
+  </cinema>
+  <cinema>
+    <Name>3DLife</Name>
+    <TownName>Varna</TownName>
   </cinema>
 </cinemas>

@@ -1,153 +1,78 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <auditoriums>
   <auditorium>
-    <CinemaId>1</CinemaId>
+    <CinemaName>ChatterLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>6</CinemaId>
+    <CinemaName>Underground</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>6</CinemaId>
+    <CinemaName>Yoveo</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>3</CinemaId>
+    <CinemaName>RealMovies</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>7</CinemaId>
+    <CinemaName>Yoveo</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>10</CinemaId>
+    <CinemaName>Wikibox</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>9</CinemaId>
+    <CinemaName>Arena</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>1</CinemaId>
+    <CinemaName>Experience</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>8</CinemaId>
+    <CinemaName>CinemaWorld</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>12</CinemaId>
+    <CinemaName>CinemaCity</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>10</CinemaId>
+    <CinemaName>CinemaCity</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>7</CinemaId>
+    <CinemaName>Vimbo</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>11</CinemaId>
+    <CinemaName>3DLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>11</CinemaId>
+    <CinemaName>Meedoo</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>9</CinemaId>
+    <CinemaName>Experience</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>4</CinemaId>
+    <CinemaName>ChatterLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>4</CinemaId>
+    <CinemaName>Meedoo</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>11</CinemaId>
+    <CinemaName>ChatterLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>3</CinemaId>
+    <CinemaName>3DLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>1</CinemaId>
+    <CinemaName>Wikibox</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>9</CinemaId>
+    <CinemaName>RealMovies</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>12</CinemaId>
+    <CinemaName>ChatterLife</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>5</CinemaId>
+    <CinemaName>RealMovies</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>9</CinemaId>
+    <CinemaName>Experience</CinemaName>
   </auditorium>
   <auditorium>
-    <CinemaId>1</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>11</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>1</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>7</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>3</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>10</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>4</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>12</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>4</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>6</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>12</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>2</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>4</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>2</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>6</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>6</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>7</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>11</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>5</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>3</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>10</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>2</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>12</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>2</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>3</CinemaId>
-  </auditorium>
-  <auditorium>
-    <CinemaId>10</CinemaId>
-  </auditorium>
+    <CinemaName>VideoBox</CinemaName>
+  </auditorium>>
 </auditoriums>

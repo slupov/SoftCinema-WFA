@@ -42,3 +42,17 @@ C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\D
 C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.pdb
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
 C:\Users\asd__\Desktop\SoftUniCinema\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.dll.config
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.dll
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Data.pdb
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.dll
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.dll
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\SoftCinema.Models.pdb
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.xml
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.Migrations.InitialCreate.resources
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.dll
+C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Data\obj\Debug\SoftCinema.Data.pdb

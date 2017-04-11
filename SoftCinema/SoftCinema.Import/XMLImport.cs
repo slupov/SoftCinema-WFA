@@ -11,11 +11,7 @@
     using System.Xml.Linq;
 
     class XMLImport
-    {
-        //TODO: ImportMovies
-        //TODO: ImportCinemas
-        //TODO: ImportAuditoriums
-        
+    {        
         public static void ImportCinemas(SoftCinemaContext context)
         {
             var cinemasXML = XDocument.Load("../../Resources/cinemas.xml");
@@ -24,13 +20,13 @@
             foreach (var cinema in cinemas)
             {
                 string name = cinema.Element("Name").Value;
-                int townId = int.Parse(cinema.Element("TownId").Value);
+                string townName = cinema.Element("TownName").Value;
 
                 context.Cinemas.AddOrUpdate(c => c.Name,
                     new Cinema()
                     {
                         Name = name,
-                        TownId = townId
+                        Town = context.Towns.Single(t => t.Name == townName)               
                     });
             }
             context.SaveChanges();
@@ -73,14 +69,13 @@
 
             foreach (var auditorium in auditoriums)
             {
-                int cinemaId = int.Parse(auditorium.Element("CinemaId").Value);
+                string cinemaName = auditorium.Element("CinemaName").Value;
 
                 context.Auditoriums.Add(
                     new Auditorium()
                     {
-                        CinemaId = cinemaId,
-                        Number = (byte) (context.Cinemas.Find(cinemaId).Auditoriums.Count() + 1),
-                        
+                        Cinema = context.Cinemas.Single(c => c.Name == cinemaName),
+                        Number = (byte) (context.Cinemas.Single(c => c.Name == cinemaName).Auditoriums.Count() + 1),           
                     });
             }
             context.SaveChanges();

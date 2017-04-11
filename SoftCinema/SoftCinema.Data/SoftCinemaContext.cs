@@ -26,6 +26,10 @@ namespace SoftCinema.Data
         public virtual DbSet<Town> Towns { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
 
+        public Town Single()
+        {
+            throw new NotImplementedException();
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
