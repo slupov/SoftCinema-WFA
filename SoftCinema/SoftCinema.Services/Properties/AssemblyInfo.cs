@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SoftCinema.Import")]
+[assembly: AssemblyTitle("SoftCinema.Services")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SoftCinema.Import")]
+[assembly: AssemblyProduct("SoftCinema.Services")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e00bb824-06e0-4d1d-8dcc-9c67e03ed8f0")]
+[assembly: Guid("36f479f7-d99a-41f3-9143-7b3ec6af1487")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Data", "SoftCine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Client", "SoftCinema.Client\SoftCinema.Client.csproj", "{DAFAD576-299E-48CC-874F-1D1FF913FE03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Services", "SoftCinema.Service\SoftCinema.Services.csproj", "{3957B2EA-2BCC-4296-8666-D1D143F725D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Services", "SoftCinema.Services\SoftCinema.Services.csproj", "{36F479F7-D99A-41F3-9143-7B3EC6AF1487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCinema.Import\SoftCinema.Import.csproj", "{BE896985-369C-4D76-8D3A-717C159BEAC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.DTOs", "SoftCinema.DTOs\SoftCinema.DTOs.csproj", "{115F8089-9BD3-4A64-AF7F-846A3331CAF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.DТОs", "SoftCinema.Dtos\SoftCinema.DТОs.csproj", "{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCinema.Import\SoftCinema.Import.csproj", "{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,18 @@ Global
 		{DAFAD576-299E-48CC-874F-1D1FF913FE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAFAD576-299E-48CC-874F-1D1FF913FE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAFAD576-299E-48CC-874F-1D1FF913FE03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3957B2EA-2BCC-4296-8666-D1D143F725D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3957B2EA-2BCC-4296-8666-D1D143F725D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3957B2EA-2BCC-4296-8666-D1D143F725D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3957B2EA-2BCC-4296-8666-D1D143F725D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE896985-369C-4D76-8D3A-717C159BEAC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8446C3A6-AAFA-4474-8097-9F35C0EE2A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F479F7-D99A-41F3-9143-7B3EC6AF1487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F479F7-D99A-41F3-9143-7B3EC6AF1487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F479F7-D99A-41F3-9143-7B3EC6AF1487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F479F7-D99A-41F3-9143-7B3EC6AF1487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115F8089-9BD3-4A64-AF7F-846A3331CAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115F8089-9BD3-4A64-AF7F-846A3331CAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115F8089-9BD3-4A64-AF7F-846A3331CAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115F8089-9BD3-4A64-AF7F-846A3331CAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

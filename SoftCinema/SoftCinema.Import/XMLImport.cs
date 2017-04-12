@@ -1,7 +1,8 @@
-﻿namespace SoftCinema.Import
+﻿using SoftCinema.Models;
+
+namespace SoftCinema.Import
 {
     using Data;
-    using Models;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
