@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportServices", "SoftCinema.ImportServices\SoftCinema.ImportServices.csproj", "{584B4019-5AFF-4869-A1A6-89957657F74E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Test", "SoftCinema.Test\SoftCinema.Test.csproj", "{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{584B4019-5AFF-4869-A1A6-89957657F74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{584B4019-5AFF-4869-A1A6-89957657F74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{584B4019-5AFF-4869-A1A6-89957657F74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

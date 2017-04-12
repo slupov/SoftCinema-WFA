@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImportServices.Utilities;
 using SoftCinema.Data;
 using SoftCinema.DTOs;
 using SoftCinema.Service;
@@ -38,6 +39,7 @@ namespace SoftCinema.Import.ImportServices
             DataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
             DataValidator.ValidateCategoryExisting(categoryName);
             CategoryService.AddCategory(categoryName);
+            Console.WriteLine(string.Format(SuccessMessages.CategoryAddedSuccess, categoryName));
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Service;
 using SoftCinema.Service.Utilities;
@@ -35,6 +36,7 @@ namespace SoftCinema.Import.ImportServices
             DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
             DataValidator.ValidateTownExisting(townName);
             TownService.AddTown(townName);
+            Console.WriteLine(string.Format(SuccessMessages.TownAddedSuccess, townName));
         }
 
     }

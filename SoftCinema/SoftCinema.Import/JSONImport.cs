@@ -10,7 +10,7 @@ namespace SoftCinema.Import
     using SoftCinema.DTOs;
     using SoftCinema.Service;
 
-    class JSONImport
+    public static class JSONImport
     {
         public static void ImportTowns()
         {

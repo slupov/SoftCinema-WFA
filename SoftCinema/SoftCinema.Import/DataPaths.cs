@@ -9,10 +9,10 @@ namespace SoftCinema.Import
 {
     public static class DataPaths
     {
-        public const string ActorsJson = @"..\..\Resources\actors.json";
+        public const string ActorsJson = @"..\..\..\SoftCinema.Import\Resources\actors.json";
 
-        public const string TownsJson = @"..\..\Resources\towns.json";
+        public const string TownsJson = @"..\..\..\SoftCinema.Import\Resources\towns.json";
 
-        public const string CategoriesJson = @"..\..\Resources\categories.json";
+        public const string CategoriesJson = @"..\..\..\SoftCinema.Import\Resources\categories.json";
     }
 }

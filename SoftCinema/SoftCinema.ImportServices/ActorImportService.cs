@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
 using SoftCinema.Service;
@@ -46,6 +47,7 @@ namespace ImportServices
             }
             int bornTownId = town.Id;
             ActorService.AddActor(actorName, actorRating, bornTownId);
+            Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess,actorName));
         }
     }
 }
