@@ -4,7 +4,7 @@
     using Data;
     using Models;
 
-    public class TicketService
+    public static class TicketService
     {
         //TODO: Additional checks and applying discount to ticket price
         public static void AddTicket(Screening screening, decimal price, TicketType type, Seat seat)

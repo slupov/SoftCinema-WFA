@@ -41,9 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorDTO.cs" />
+    <Compile Include="AuditoriumDto.cs" />
+    <Compile Include="AuditoriumDTOCollection.cs" />
     <Compile Include="CategoryDTO.cs" />
     <Compile Include="CinemaDTO.cs" />
     <Compile Include="CinemaDTOCollection.cs" />
+    <Compile Include="MovieDTO.cs" />
+    <Compile Include="MovieDTOCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TownDTO.cs" />
   </ItemGroup>

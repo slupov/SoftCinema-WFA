@@ -17,6 +17,12 @@ namespace SoftCinema.Services.Utilities
         public const string FloatNotInRange = "Input not in allowed range : [{0},{1}] !";
 
         public const string CinemaAlreadyExists = "Cinema {0} already exists in the database!";
+
+        public const string AuditoriumAlreadyExists = "Auditorium number {0} already exists in cinema {1}!";
+
+        public const string CinemaDoesntExist =  "Cinema {0} doesn't exist in the database!";
+
+        public const string TownDoesntExist = "Town {0} doesn't exist in the database!";
     }
     
 }

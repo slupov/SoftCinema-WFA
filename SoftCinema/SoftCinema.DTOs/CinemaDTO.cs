@@ -16,5 +16,7 @@ namespace SoftCinema.DTOs
 
         [XmlElement("TownName")]
         public string TownName { get; set; }
+
+
     }
 }

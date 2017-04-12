@@ -17,6 +17,8 @@ namespace SoftCinema.Test
             //JSONImport.ImportActors();
 
             //XMLImport.ImportCinemas();
+            //XMLImport.ImportMovies();
+            XMLImport.ImportAuditoriums();
         }
     }
 }

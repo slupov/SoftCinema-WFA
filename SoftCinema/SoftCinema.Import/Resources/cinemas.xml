@@ -45,10 +45,10 @@
     <Name>Arena</Name>
     <TownName>Sofia</TownName>
   </Cinema>
-  <cinCinemaema>
+  <Cinema>
     <Name>RealMovies</Name>
     <TownName>Sofia</TownName>
-  </cinCinemaema>
+  </Cinema>
   <Cinema>
     <Name>3DLife</Name>
     <TownName>Varna</TownName>

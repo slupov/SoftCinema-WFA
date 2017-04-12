@@ -7,7 +7,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
-    public class ActorService
+    public static class ActorService
     {
         
         public static void AddActor(string name, float? rating, int bornTownId)

@@ -16,5 +16,9 @@ namespace SoftCinema.Import
         public const string CategoriesJson = @"..\..\..\SoftCinema.Import\Resources\categories.json";
 
         public const string CinemasXml = @"../../../SoftCinema.Import/Resources/cinemas.xml";
+
+        public const string MoviesXml = @"../../../SoftCinema.Import/Resources/movies.xml";
+
+        public const string AuditoriumsXml = @"../../../SoftCinema.Import/Resources/auditoriums.xml";
     }
 }

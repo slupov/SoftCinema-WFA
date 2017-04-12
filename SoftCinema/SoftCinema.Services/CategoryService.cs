@@ -11,7 +11,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
-    public class CategoryService
+    public static class CategoryService
     {
       
         public static void AddCategory(string categoryName)

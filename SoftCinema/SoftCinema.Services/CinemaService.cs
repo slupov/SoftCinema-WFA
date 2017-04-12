@@ -10,14 +10,6 @@ namespace SoftCinema.Services
 {
     public static class CinemaService
     {
-        public static bool IsCinemaExisting(string cinemaName, int townId)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Cinemas.Any(c => c.Name == cinemaName && c.TownId == townId);
-            }
-        }
-
         public static void AddCinema(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -29,6 +21,22 @@ namespace SoftCinema.Services
                 };
                 context.Cinemas.Add(cinema);
                 context.SaveChanges();
+            }
+        }
+
+        public static bool IsCinemaExisting(string cinemaName, int townId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Any(c => c.Name == cinemaName && c.TownId == townId);
+            }
+        }
+
+        public static int GetCinemaId(string cinemaName, int townId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.First(c => c.Name == cinemaName && c.TownId == townId).Id;
             }
         }
     }

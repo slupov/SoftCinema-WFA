@@ -15,5 +15,9 @@ namespace ImportServices.Utilities
         public const string CategoryAddedSuccess = "Category {0} successfully added to the database!";
 
         public const string CinemaAddedSuccess = "Cinema {0} successfully added to the database!";
+
+        public const string MoviesAddedSuccess = "Movie {0} successfully added to the database!";
+
+        public const string AuditoriumAddedSuccess = "Auditorium {0} successfully added to cinema {1}!";
     }
 }

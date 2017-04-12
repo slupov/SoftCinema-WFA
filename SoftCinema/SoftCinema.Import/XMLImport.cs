@@ -23,54 +23,18 @@ namespace SoftCinema.Import
 
         }
 
-        public static void ImportMovies(SoftCinemaContext context)
+        public static void ImportMovies()
         {
-            var moviesXML = XDocument.Load("../../Resources/movies.xml");
-            var movies = moviesXML.Root.Elements();
+            MovieDTOCollection movieDtos = MovieImportService.DeserializeMovies(DataPaths.MoviesXml);
+            MovieImportService.ImportMoviesCollection(movieDtos);
 
-            foreach (var movie in movies)
-            {
-                string name = movie.Element("Name").Value;
-                int length = int.Parse(movie.Element("Length")?.Value);
-                float? rating = float.Parse(movie.Element("Rating")?.Value);
-                string synopsis = movie.Element("Synopsis")?.Value;
-                string directorName = movie.Element("DirectorName").Value;
-                int releaseYear = int.Parse(movie.Element("ReleaseYear").Value);
-                string releaseCountry = movie.Element("ReleaseCountry")?.Value;
-                string ageRestriction = movie.Element("AgeRestriction").Value;
-
-                context.Movies.AddOrUpdate(c => c.Name,
-                    new Movie()
-                    {
-                        Name = name,
-                        Length = length,
-                        Rating = rating,
-                        Synopsis = synopsis,
-                        DirectorName = directorName,
-                        ReleaseYear = releaseYear,
-                        ReleaseCountry = releaseCountry,
-                        AgeRestriction = (AgeRestriction)Enum.Parse(typeof(AgeRestriction), ageRestriction)                  
-                    });
-            }
-            context.SaveChanges();
         }
-        public static void ImportAuditoriums(SoftCinemaContext context)
+
+        public static void ImportAuditoriums()
         {
-            var auditoriumsXML = XDocument.Load("../../Resources/auditoriums.xml");
-            var auditoriums = auditoriumsXML.Root.Elements();
-
-            foreach (var auditorium in auditoriums)
-            {
-                string cinemaName = auditorium.Element("CinemaName").Value;
-
-                context.Auditoriums.Add(
-                    new Auditorium()
-                    {
-                        Cinema = context.Cinemas.Single(c => c.Name == cinemaName),
-                        Number = (byte) (context.Cinemas.Single(c => c.Name == cinemaName).Auditoriums.Count() + 1),           
-                    });
-            }
-            context.SaveChanges();
+            AuditoriumDTOCollection auditoriumDtos =
+                AuditoriumImportService.DeserializeAuditoriums(DataPaths.AuditoriumsXml);
+            AuditoriumImportService.ImportAuditoriumCollection(auditoriumDtos);
         }
     }
 }

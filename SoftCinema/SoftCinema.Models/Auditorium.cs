@@ -28,6 +28,6 @@
         public virtual ICollection<Seat> Seats { get; set; }
 
         [Required]
-        public int SeatsCount { get { return this.Seats.Count; } set { this.SeatsCount = value; } }
+        public int SeatsCount { get; set; }
     }
 }

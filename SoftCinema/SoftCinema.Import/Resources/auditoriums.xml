@@ -1,78 +1,143 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<AuditoriumCollection>
 <auditoriums>
   <auditorium>
     <CinemaName>ChatterLife</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Haskovo</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>ChatterLife</CinemaName>
+    <Number>2</Number>
+    <SeatsCount>30</SeatsCount>
+    <TownName>Haskovo</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>ChatterLife</CinemaName>
+    <Number>3</Number>
+    <SeatsCount>25</SeatsCount>
+    <TownName>Haskovo</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Underground</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>50</SeatsCount>
+    <TownName>Haskovo</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Underground</CinemaName>
+    <Number>2</Number>
+    <SeatsCount>60</SeatsCount>
+    <TownName>Haskovo</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Yoveo</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Plovdiv</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Yoveo</CinemaName>
+    <Number>2</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Plovdiv</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Yoveo</CinemaName>
+    <Number>3</Number>
+    <SeatsCount>50</SeatsCount>
+    <TownName>Plovdiv</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Yoveo</CinemaName>
+    <Number>4</Number>
+    <SeatsCount>30</SeatsCount>
+    <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>RealMovies</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>Yoveo</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Wikibox</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Arena</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>100</SeatsCount>
+    <TownName>Sofia</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Arena</CinemaName>
+    <Number>2</Number>
+    <SeatsCount>80</SeatsCount>
+    <TownName>Sofia</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Arena</CinemaName>
+    <Number>3</Number>
+    <SeatsCount>70</SeatsCount>
+    <TownName>Sofia</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Arena</CinemaName>
+    <Number>4</Number>
+    <SeatsCount>50</SeatsCount>
+    <TownName>Sofia</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>Arena</CinemaName>
+    <Number>5</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Experience</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>90</SeatsCount>
+    <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>CinemaWorld</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>95</SeatsCount>
+    <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>CinemaCity</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>80</SeatsCount>
+    <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>CinemaCity</CinemaName>
+    <Number>2</Number>
+    <SeatsCount>70</SeatsCount>
+    <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Vimbo</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>60</SeatsCount>
+    <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>3DLife</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>Meedoo</CinemaName>
+    <Number>1</Number>
+    <SeatsCount>40</SeatsCount>
+    <TownName>Vidin</TownName>
   </auditorium>
-  <auditorium>
-    <CinemaName>Experience</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>ChatterLife</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>Meedoo</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>ChatterLife</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>3DLife</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>Wikibox</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>RealMovies</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>ChatterLife</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>RealMovies</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>Experience</CinemaName>
-  </auditorium>
-  <auditorium>
-    <CinemaName>VideoBox</CinemaName>
-  </auditorium>>
 </auditoriums>
+</AuditoriumCollection>

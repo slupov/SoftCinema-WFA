@@ -12,16 +12,8 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
-    public class TownService
+    public static class TownService
     {
-        public static Town GetTown(string townName)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Towns.FirstOrDefault(t => t.Name == townName);
-            }
-        }
-
         public static void AddTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -32,6 +24,14 @@ namespace SoftCinema.Service
                 };
                 context.Towns.Add(town);
                 context.SaveChanges();
+            }
+        }
+
+        public static Town GetTown(string townName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
 
