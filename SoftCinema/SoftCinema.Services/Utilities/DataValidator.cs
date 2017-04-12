@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using SoftCinema.Data;
+using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service.Utilities
@@ -37,6 +38,14 @@ namespace SoftCinema.Service.Utilities
             if (input!= null && (input < minValue || input > maxValue))
             {
                 throw new ArgumentException(string.Format(ErrorMessages.FloatNotInRange,minValue,maxValue));
+            }
+        }
+
+        public static void ValidateCinemaExisting(string cinemaName, int townId)
+        {
+            if (CinemaService.IsCinemaExisting(cinemaName, townId))
+            {
+                throw new InvalidOperationException(string.Format(ErrorMessages.CinemaAlreadyExists,cinemaName));
             }
         }
     }

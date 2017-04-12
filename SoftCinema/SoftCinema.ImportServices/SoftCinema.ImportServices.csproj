@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ActorImportService.cs" />
     <Compile Include="CategoryImportService.cs" />
+    <Compile Include="CinemaImportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TownImportService.cs" />
     <Compile Include="Utilities\SuccessMessages.cs" />

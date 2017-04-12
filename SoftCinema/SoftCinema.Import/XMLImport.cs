@@ -1,4 +1,7 @@
-﻿using SoftCinema.Models;
+﻿using System.Xml.Serialization;
+using ImportServices;
+using SoftCinema.DTOs;
+using SoftCinema.Models;
 
 namespace SoftCinema.Import
 {
@@ -11,28 +14,15 @@ namespace SoftCinema.Import
     using System.Threading.Tasks;
     using System.Xml.Linq;
 
-    public class XMLImport
+    public static class XMLImport
     {        
-        public static void ImportCinemas(SoftCinemaContext context)
+        public static void ImportCinemas()
         {
-            var cinemasXML = XDocument.Load("../../Resources/cinemas.xml");
-            var cinemas = cinemasXML.Root.Elements();
+            CinemaDTOCollection cinemaDtos = CinemaImportService.DeserializeCinemas(DataPaths.CinemasXml);
+            CinemaImportService.ImportCinemasCollection(cinemaDtos);
 
-            foreach (var cinema in cinemas)
-            {
-                string name = cinema.Element("Name").Value;
-                string townName = cinema.Element("TownName").Value;
-
-                context.Cinemas.AddOrUpdate(c => c.Name,
-                    new Cinema()
-                    {
-                        Name = name,
-                        TownId = context.Towns.Single(t => t.Name == townName).Id,
-                        Town = context.Towns.Single(t => t.Name == townName)               
-                    });
-            }
-            context.SaveChanges();
         }
+
         public static void ImportMovies(SoftCinemaContext context)
         {
             var moviesXML = XDocument.Load("../../Resources/movies.xml");

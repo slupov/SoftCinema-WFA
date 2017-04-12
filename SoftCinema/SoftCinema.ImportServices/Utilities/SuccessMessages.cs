@@ -8,10 +8,12 @@ namespace ImportServices.Utilities
 {
     public static class SuccessMessages
     {
-        public const string ActorAddedSuccess = "Actor {0} successfully added to database!";
+        public const string ActorAddedSuccess = "Actor {0} successfully added to the database!";
 
-        public const string TownAddedSuccess = "Town {0} successfully added to database!";
+        public const string TownAddedSuccess = "Town {0} successfully added to the database!";
 
-        public const string CategoryAddedSuccess = "Category {0} successfully added to database!";
+        public const string CategoryAddedSuccess = "Category {0} successfully added to the database!";
+
+        public const string CinemaAddedSuccess = "Cinema {0} successfully added to the database!";
     }
 }

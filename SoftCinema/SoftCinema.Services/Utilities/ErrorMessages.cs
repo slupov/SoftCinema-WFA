@@ -15,6 +15,8 @@ namespace SoftCinema.Services.Utilities
         public const string StringExceedsLength = "Input exceeds maximum allowed length : {0} !";
 
         public const string FloatNotInRange = "Input not in allowed range : [{0},{1}] !";
+
+        public const string CinemaAlreadyExists = "Cinema {0} already exists in the database!";
     }
     
 }

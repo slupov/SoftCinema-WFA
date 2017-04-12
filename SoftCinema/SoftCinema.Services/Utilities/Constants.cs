@@ -12,5 +12,6 @@ namespace SoftCinema.Services.Utilities
         public const int MaxTownNameLength = 50;
         public const int MinRatingValue = 0;
         public const int MaxRatingValue = 10;
+        public const int MaxCinemaNameLength = 50;
     }
 }

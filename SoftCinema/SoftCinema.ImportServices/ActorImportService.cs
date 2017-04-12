@@ -38,14 +38,9 @@ namespace ImportServices
             float? actorRating = actorDto.Rating;
             string townName = actorDto.BornTownName;
             DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
-            DataValidator.ValidateFloatInRange(actorRating.Value, Constants.MinRatingValue, Constants.MaxRatingValue);
-            Town town = TownService.GetTown(townName);
-            if (town == null)
-            {
-                TownService.AddTown(townName);
-                town = TownService.GetTown(townName);
-            }
-            int bornTownId = town.Id;
+            DataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);
+            TownService.AddTownIfNotExisting(townName);
+            int bornTownId = TownService.GetTownId(townName);
             ActorService.AddActor(actorName, actorRating, bornTownId);
             Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess,actorName));
         }

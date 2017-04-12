@@ -14,5 +14,7 @@ namespace SoftCinema.Import
         public const string TownsJson = @"..\..\..\SoftCinema.Import\Resources\towns.json";
 
         public const string CategoriesJson = @"..\..\..\SoftCinema.Import\Resources\categories.json";
+
+        public const string CinemasXml = @"../../../SoftCinema.Import/Resources/cinemas.xml";
     }
 }

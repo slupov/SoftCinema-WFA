@@ -42,5 +42,24 @@ namespace SoftCinema.Service
                 return context.Towns.Any(t => t.Name == townName);
             }
         }
+
+
+        public static void AddTownIfNotExisting(string townName)
+        {
+            
+            if (!IsTownExisting(townName))
+            {
+                AddTown(townName);
+            }
+            
+        }
+
+        public static int GetTownId(string townName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Towns.First(t => t.Name == townName).Id;
+            }
+        }
     }
 }

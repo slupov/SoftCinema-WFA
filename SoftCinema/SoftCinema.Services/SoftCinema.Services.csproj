@@ -50,6 +50,7 @@
     <Compile Include="ActorService.cs" />
     <Compile Include="AuthenticationManager.cs" />
     <Compile Include="CategoryService.cs" />
+    <Compile Include="CinemaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketService.cs" />
     <Compile Include="TownService.cs" />
