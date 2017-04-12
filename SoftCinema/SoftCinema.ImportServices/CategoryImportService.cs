@@ -12,7 +12,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Import.ImportServices
 {
-    public static class CategoryImportServices
+    public static class CategoryImportService
     {
         public static void ImportCategories(IEnumerable<CategoryDTО> categories)
         {

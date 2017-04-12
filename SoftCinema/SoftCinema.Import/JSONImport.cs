@@ -30,7 +30,7 @@ namespace SoftCinema.Import
         {
             var categoriesJson = File.ReadAllText(DataPaths.CategoriesJson);
             var categorysDtos = JsonConvert.DeserializeObject<IEnumerable<CategoryDTО>>(categoriesJson);
-            CategoryImportServices.ImportCategories(categorysDtos);
+            CategoryImportService.ImportCategories(categorysDtos);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace SoftCinema.Service.Utilities
             }
         }
 
-        public static void ValidateFloatInRange(float input, int minValue, int maxValue)
+        public static void ValidateFloatInRange(float? input, int minValue, int maxValue)
         {
             if (input!= null && (input < minValue || input > maxValue))
             {

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{584B4019-5AFF-4869-A1A6-89957657F74E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImportServices</RootNamespace>
-    <AssemblyName>ImportServices</AssemblyName>
+    <RootNamespace>SoftCinema.Test</RootNamespace>
+    <AssemblyName>SoftCinema.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,32 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActorImportService.cs" />
-    <Compile Include="CategoryImportService.cs" />
+    <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TownImportService.cs" />
-    <Compile Include="Utilities\SuccessMessages.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SoftCinema.Data\SoftCinema.Data.csproj">
-      <Project>{a8a93d54-1b07-459e-8ab5-612778983210}</Project>
-      <Name>SoftCinema.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoftCinema.DTOs\SoftCinema.DTOs.csproj">
-      <Project>{115f8089-9bd3-4a64-af7f-846a3331caf6}</Project>
-      <Name>SoftCinema.DTOs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
-      <Project>{5DB49B1A-E9F7-46B5-B7A8-08B01A567286}</Project>
-      <Name>SoftCinema.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoftCinema.Services\SoftCinema.Services.csproj">
-      <Project>{36F479F7-D99A-41F3-9143-7B3EC6AF1487}</Project>
-      <Name>SoftCinema.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoftCinema.Import\SoftCinema.Import.csproj">
+      <Project>{e00bb824-06e0-4d1d-8dcc-9c67e03ed8f0}</Project>
+      <Name>SoftCinema.Import</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

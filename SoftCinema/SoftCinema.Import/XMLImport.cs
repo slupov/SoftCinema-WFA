@@ -11,7 +11,7 @@ namespace SoftCinema.Import
     using System.Threading.Tasks;
     using System.Xml.Linq;
 
-    class XMLImport
+    public class XMLImport
     {        
         public static void ImportCinemas(SoftCinemaContext context)
         {
