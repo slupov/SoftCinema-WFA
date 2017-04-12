@@ -1,5 +1,0 @@
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.DTOs\bin\Debug\SoftCinema.DTOs.dll
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.DTOs\bin\Debug\SoftCinema.DTOs.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.DTOs\obj\Debug\SoftCinema.DTOs.csprojResolveAssemblyReference.cache
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.DTOs\obj\Debug\SoftCinema.DTOs.dll
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.DTOs\obj\Debug\SoftCinema.DTOs.pdb
