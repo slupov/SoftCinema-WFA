@@ -35,38 +35,20 @@ namespace SoftCinema.Client.Forms
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usernameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void RegisterForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void wrongFormat_Click(object sender, EventArgs e)
+
+        private void registerButton_Click(object sender, EventArgs e)
         {
+            var username = this.usernameTextBox.Text;
+            var password = this.passwordTextBox.Text;
+            var repeatPassword = this.repeatPasswordTextBox.Text;
+            var email = this.emailTextBox.Text;
+            var phone = this.phoneNumberTextBox.Text;
+
 
         }
     }
