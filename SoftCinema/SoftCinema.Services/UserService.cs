@@ -105,5 +105,35 @@ namespace SoftCinema.Service
                 return hashvalue == NewHash;
             }
         }
+
+        public static bool isUserValid(string username,string password, string repeatpassword, string email, string phone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isUsernameValid(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isPasswordValid(string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isRepeatPasswordValid(string repeatpassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isEmailValid(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isPhoneValid(string phone)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

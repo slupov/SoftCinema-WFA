@@ -33,12 +33,12 @@
             this.repeatPasswordLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
-            this.repeatPassword = new System.Windows.Forms.TextBox();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
-            this.register = new System.Windows.Forms.Button();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.repeatPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.registerButton = new System.Windows.Forms.Button();
             this.userExists = new System.Windows.Forms.Label();
             this.wrongFormat = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -51,7 +51,6 @@
             this.usernameLabel.Size = new System.Drawing.Size(55, 13);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Username";
-            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // passwordLabel
             // 
@@ -70,7 +69,6 @@
             this.repeatPasswordLabel.Size = new System.Drawing.Size(90, 13);
             this.repeatPasswordLabel.TabIndex = 2;
             this.repeatPasswordLabel.Text = "Repeat password";
-            this.repeatPasswordLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // emailLabel
             // 
@@ -80,7 +78,6 @@
             this.emailLabel.Size = new System.Drawing.Size(32, 13);
             this.emailLabel.TabIndex = 3;
             this.emailLabel.Text = "Email";
-            this.emailLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // phoneNumberLabel
             // 
@@ -92,50 +89,50 @@
             this.phoneNumberLabel.TabIndex = 4;
             this.phoneNumberLabel.Text = "Phone number";
             // 
-            // username
+            // usernameTextBox
             // 
-            this.username.Location = new System.Drawing.Point(303, 77);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(173, 20);
-            this.username.TabIndex = 5;
+            this.usernameTextBox.Location = new System.Drawing.Point(303, 77);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(173, 20);
+            this.usernameTextBox.TabIndex = 5;
             // 
-            // password
+            // passwordTextBox
             // 
-            this.password.Location = new System.Drawing.Point(303, 127);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(173, 20);
-            this.password.TabIndex = 6;
+            this.passwordTextBox.Location = new System.Drawing.Point(303, 127);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(173, 20);
+            this.passwordTextBox.TabIndex = 6;
             // 
-            // email
+            // emailTextBox
             // 
-            this.email.Location = new System.Drawing.Point(303, 227);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(173, 20);
-            this.email.TabIndex = 7;
-            this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
+            this.emailTextBox.Location = new System.Drawing.Point(303, 227);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(173, 20);
+            this.emailTextBox.TabIndex = 7;
             // 
-            // repeatPassword
+            // repeatPasswordTextBox
             // 
-            this.repeatPassword.Location = new System.Drawing.Point(303, 177);
-            this.repeatPassword.Name = "repeatPassword";
-            this.repeatPassword.Size = new System.Drawing.Size(173, 20);
-            this.repeatPassword.TabIndex = 8;
+            this.repeatPasswordTextBox.Location = new System.Drawing.Point(303, 177);
+            this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
+            this.repeatPasswordTextBox.Size = new System.Drawing.Size(173, 20);
+            this.repeatPasswordTextBox.TabIndex = 8;
             // 
-            // phoneNumber
+            // phoneNumberTextBox
             // 
-            this.phoneNumber.Location = new System.Drawing.Point(303, 277);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(173, 20);
-            this.phoneNumber.TabIndex = 9;
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(303, 277);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(173, 20);
+            this.phoneNumberTextBox.TabIndex = 9;
             // 
-            // register
+            // registerButton
             // 
-            this.register.Location = new System.Drawing.Point(335, 327);
-            this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(108, 40);
-            this.register.TabIndex = 10;
-            this.register.Text = "Register";
-            this.register.UseVisualStyleBackColor = true;
+            this.registerButton.Location = new System.Drawing.Point(335, 327);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(108, 40);
+            this.registerButton.TabIndex = 10;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // userExists
             // 
@@ -156,7 +153,6 @@
             this.wrongFormat.TabIndex = 12;
             this.wrongFormat.Text = "Username is not in the correct format.";
             this.wrongFormat.Visible = false;
-            this.wrongFormat.Click += new System.EventHandler(this.wrongFormat_Click);
             // 
             // RegisterForm
             // 
@@ -165,12 +161,12 @@
             this.ClientSize = new System.Drawing.Size(769, 418);
             this.Controls.Add(this.wrongFormat);
             this.Controls.Add(this.userExists);
-            this.Controls.Add(this.register);
-            this.Controls.Add(this.phoneNumber);
-            this.Controls.Add(this.repeatPassword);
-            this.Controls.Add(this.email);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.username);
+            this.Controls.Add(this.registerButton);
+            this.Controls.Add(this.phoneNumberTextBox);
+            this.Controls.Add(this.repeatPasswordTextBox);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.repeatPasswordLabel);
@@ -191,12 +187,12 @@
         private System.Windows.Forms.Label repeatPasswordLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label phoneNumberLabel;
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox repeatPassword;
-        private System.Windows.Forms.TextBox phoneNumber;
-        private System.Windows.Forms.Button register;
+        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox repeatPasswordTextBox;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label userExists;
         private System.Windows.Forms.Label wrongFormat;
     }

@@ -40,3 +40,4 @@ D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Model
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\EntityFramework.xml
 D:\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Forms.LoginForm.resources
 D:\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Forms.RegisterForm.resources
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Models.dll.config
