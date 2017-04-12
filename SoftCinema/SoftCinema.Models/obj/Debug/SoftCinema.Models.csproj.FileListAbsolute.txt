@@ -33,3 +33,8 @@ C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\D
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.csprojResolveAssemblyReference.cache
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.dll
 C:\Users\USER\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Models\obj\Debug\SoftCinema.Models.pdb
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\SoftCinema.Models.dll.config
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.dll
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.xml
+D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Models\bin\Debug\EntityFramework.SqlServer.xml

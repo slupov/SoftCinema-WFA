@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoftCinema.Data;
-using SoftCinema.Dtos;
+using SoftCinema.DTOs;
 using SoftCinema.Models;
 
 namespace SoftCinema.Service
 {
     public class TownService
     {
-        public static void ImportTowns(IEnumerable<TownDto> towns, SoftCinemaContext context)
+        public static void ImportTowns(IEnumerable<TownDТО> towns, SoftCinemaContext context)
         {
             foreach (var townDto in towns)
             {

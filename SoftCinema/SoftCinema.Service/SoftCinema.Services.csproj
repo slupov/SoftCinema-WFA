@@ -50,21 +50,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorService.cs" />
-    <Compile Include="AuthenticationManager.cs" />
     <Compile Include="CategoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketService.cs" />
     <Compile Include="TownService.cs" />
-    <Compile Include="Utility\DataValidator.cs" />
+    <Compile Include="Utilities\DataValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SoftCinema.Client\SoftCinema.Client.csproj">
+      <Project>{dafad576-299e-48cc-874f-1d1ff913fe03}</Project>
+      <Name>SoftCinema.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoftCinema.Data\SoftCinema.Data.csproj">
       <Project>{a8a93d54-1b07-459e-8ab5-612778983210}</Project>
       <Name>SoftCinema.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SoftCinema.Dtos\SoftCinema.Dtos.csproj">
+    <ProjectReference Include="..\SoftCinema.Dtos\SoftCinema.DТОs.csproj">
       <Project>{8446c3a6-aafa-4474-8097-9f35c0ee2a55}</Project>
-      <Name>SoftCinema.Dtos</Name>
+      <Name>SoftCinema.DТОs</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
       <Project>{5db49b1a-e9f7-46b5-b7a8-08b01a567286}</Project>

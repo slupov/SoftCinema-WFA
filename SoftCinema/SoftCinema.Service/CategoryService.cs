@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoftCinema.Data;
-using SoftCinema.Dtos;
+using SoftCinema.DTOs;
 using SoftCinema.Models;
 
 namespace SoftCinema.Service
 {
     public class CategoryService
     {
-        public static void ImportCategories(IEnumerable<CategoryDto> categories, SoftCinemaContext context)
+        public static void ImportCategories(IEnumerable<CategoryDТО> categories, SoftCinemaContext context)
         {
             foreach (var categoryDto in categories)
             {

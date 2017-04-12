@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\AuthenticationManager.cs" />
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
+      <Project>{5db49b1a-e9f7-46b5-b7a8-08b01a567286}</Project>
+      <Name>SoftCinema.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

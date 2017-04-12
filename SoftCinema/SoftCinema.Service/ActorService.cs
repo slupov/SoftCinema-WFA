@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SoftCinema.Data;
-using SoftCinema.Import.DTO;
+using SoftCinema.DTOs;
 using SoftCinema.Models;
 
 namespace SoftCinema.Service
 {
     public class ActorService
     {
-        public static void ImportActors(IEnumerable<ActorDto> actors, SoftCinemaContext context)
+        public static void ImportActors(IEnumerable<ActorDТО> actors, SoftCinemaContext context)
         {
             foreach (var actorDto in actors)
             {

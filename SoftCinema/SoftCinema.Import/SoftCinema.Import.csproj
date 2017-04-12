@@ -78,9 +78,9 @@
       <Project>{A8A93D54-1B07-459E-8AB5-612778983210}</Project>
       <Name>SoftCinema.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SoftCinema.Dtos\SoftCinema.Dtos.csproj">
+    <ProjectReference Include="..\SoftCinema.Dtos\SoftCinema.DТОs.csproj">
       <Project>{8446c3a6-aafa-4474-8097-9f35c0ee2a55}</Project>
-      <Name>SoftCinema.Dtos</Name>
+      <Name>SoftCinema.DТОs</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
       <Project>{5DB49B1A-E9F7-46B5-B7A8-08B01A567286}</Project>
