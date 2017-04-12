@@ -10,12 +10,9 @@ D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.DTOs.
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Models.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Services.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Data.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Data.dll.config
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.DTOs.pdb
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Models.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Models.dll.config
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Services.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\SoftCinema.Services.dll.config
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.xml
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\EntityFramework.SqlServer.xml
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Import\bin\Debug\Newtonsoft.Json.xml

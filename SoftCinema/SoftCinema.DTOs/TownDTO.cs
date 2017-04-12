@@ -1,6 +1,6 @@
 ﻿namespace SoftCinema.DTOs
 {
-    public class CategoryDТО
+    public class TownDTO
     {
         public string Name { get; set; }
     }

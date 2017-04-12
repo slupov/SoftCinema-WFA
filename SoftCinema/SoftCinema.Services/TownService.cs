@@ -12,7 +12,7 @@ namespace SoftCinema.Service
 {
     public class TownService
     {
-        public static void ImportTowns(IEnumerable<TownDТО> towns, SoftCinemaContext context)
+        public static void ImportTowns(IEnumerable<TownDTO> towns, SoftCinemaContext context)
         {
             foreach (var townDto in towns)
             {

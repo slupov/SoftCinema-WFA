@@ -11,7 +11,7 @@ namespace SoftCinema.Service
 {
     public class CategoryService
     {
-        public static void ImportCategories(IEnumerable<CategoryDТО> categories, SoftCinemaContext context)
+        public static void ImportCategories(IEnumerable<CategoryDTО> categories, SoftCinemaContext context)
         {
             foreach (var categoryDto in categories)
             {

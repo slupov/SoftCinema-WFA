@@ -7,7 +7,7 @@ namespace SoftCinema.Service
 {
     public class ActorService
     {
-        public static void ImportActors(IEnumerable<ActorDТО> actors, SoftCinemaContext context)
+        public static void ImportActors(IEnumerable<ActorDTO> actors, SoftCinemaContext context)
         {
             foreach (var actorDto in actors)
             {
