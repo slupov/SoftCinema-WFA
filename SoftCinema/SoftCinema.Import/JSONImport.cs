@@ -1,4 +1,7 @@
-﻿namespace SoftCinema.Import
+﻿using ImportServices;
+using SoftCinema.Import.ImportServices;
+
+namespace SoftCinema.Import
 {
     using Newtonsoft.Json;
     using System.IO;
@@ -9,25 +12,25 @@
 
     class JSONImport
     {
-        public static void ImportTowns(SoftCinemaContext context)
+        public static void ImportTowns()
         {
-            var json = File.ReadAllText(@"..\..\Resources\towns.json");
-            var towns = JsonConvert.DeserializeObject<IEnumerable<TownDTO>>(json);
-            TownService.ImportTowns(towns, context);
+            var townsJson = File.ReadAllText(DataPaths.TownsJson);
+            var townDtos = JsonConvert.DeserializeObject<IEnumerable<TownDTO>>(townsJson);
+            TownImportService.ImportTowns(townDtos);
         }
 
-        public static void ImportActors(SoftCinemaContext context)
+        public static void ImportActors()
         {
-            var json = File.ReadAllText(@"..\..\Resources\actors.json");
-            var actors = JsonConvert.DeserializeObject<IEnumerable<ActorDTO>>(json);
-            ActorService.ImportActors(actors, context);
+            var actorsJson = File.ReadAllText(DataPaths.ActorsJson);
+            var actorsDtos = JsonConvert.DeserializeObject<IEnumerable<ActorDTO>>(actorsJson);
+            ActorImportService.ImportActors(actorsDtos);
         }
 
-        public static void ImportCategories(SoftCinemaContext context)
+        public static void ImportCategories()
         {
-            var json = File.ReadAllText(@"..\..\Resources\categories.json");
-            var categories = JsonConvert.DeserializeObject<IEnumerable<CategoryDTО>>(json);
-            CategoryService.ImportCategories(categories, context);
+            var categoriesJson = File.ReadAllText(DataPaths.CategoriesJson);
+            var categorysDtos = JsonConvert.DeserializeObject<IEnumerable<CategoryDTО>>(categoriesJson);
+            CategoryImportServices.ImportCategories(categorysDtos);
         }
     }
 }

@@ -7,42 +7,40 @@ using System.Threading.Tasks;
 using SoftCinema.Data;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
+using SoftCinema.Service.Utilities;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
     public class TownService
     {
-        public static void ImportTowns(IEnumerable<TownDTO> towns, SoftCinemaContext context)
+        public static Town GetTown(string townName)
         {
-            foreach (var townDto in towns)
+            using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                if (context.Towns.Any(t => t.Name == townDto.Name))
-                {
-                    Console.WriteLine($"Town {townDto.Name} has already been imported!");
-                    continue;
-                }
-                if (townDto.Name.Length > 50)
-                {
-                    Console.WriteLine($"Town name is too long!");
-                    continue;
-                }
-                AddTown(townDto.Name,context);
+                return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
 
-        public static Town GetTown(string townName,SoftCinemaContext context)
+        public static void AddTown(string townName)
         {
-            return context.Towns.FirstOrDefault(t => t.Name == townName);
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Town town = new Town()
+                {
+                    Name = townName
+                };
+                context.Towns.Add(town);
+                context.SaveChanges();
+            }
         }
 
-        public static void AddTown(string townName, SoftCinemaContext context)
+        public static bool IsTownExisting(string townName)
         {
-            Town town = new Town()
+            using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                Name = townName
-            };
-            context.Towns.Add(town);
-            context.SaveChanges();
+                return context.Towns.Any(t => t.Name == townName);
+            }
         }
     }
 }

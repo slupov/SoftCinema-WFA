@@ -6,32 +6,35 @@ using System.Threading.Tasks;
 using SoftCinema.Data;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
+using SoftCinema.Service.Utilities;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
     public class CategoryService
     {
-        public static void ImportCategories(IEnumerable<CategoryDTО> categories, SoftCinemaContext context)
+      
+        public static void AddCategory(string categoryName)
         {
-            foreach (var categoryDto in categories)
+            using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                if (context.Categories.Any(c => c.Name == categoryDto.Name))
-                {
-                    Console.WriteLine($"Category {categoryDto.Name} has already been imported!");
-                    continue;
-                }
-                if (categoryDto.Name.Length > 50)
-                {
-                    Console.WriteLine("Category name is too long!");
-                    continue;
-                }
                 Category category = new Category()
                 {
-                    Name = categoryDto.Name
+                    Name = categoryName
                 };
                 context.Categories.Add(category);
+                context.SaveChanges();
             }
-            context.SaveChanges();
+        }
+        
+        public static bool IsCategoryExisting(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                {
+                    return (context.Categories.Any(c => c.Name == categoryName));
+                }
+            }
         }
     }
 }

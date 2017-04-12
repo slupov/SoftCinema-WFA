@@ -50,9 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataPaths.cs" />
     <Compile Include="JSONImport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartUp.cs" />
     <Compile Include="XMLImport.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +75,10 @@
     <ProjectReference Include="..\SoftCinema.DTOs\SoftCinema.DTOs.csproj">
       <Project>{115f8089-9bd3-4a64-af7f-846a3331caf6}</Project>
       <Name>SoftCinema.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftCinema.ImportServices\SoftCinema.ImportServices.csproj">
+      <Project>{584b4019-5aff-4869-a1a6-89957657f74e}</Project>
+      <Name>SoftCinema.ImportServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
       <Project>{5db49b1a-e9f7-46b5-b7a8-08b01a567286}</Project>

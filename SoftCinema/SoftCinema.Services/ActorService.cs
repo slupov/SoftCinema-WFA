@@ -2,32 +2,29 @@
 using SoftCinema.Data;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
+using SoftCinema.Service.Utilities;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Service
 {
     public class ActorService
     {
-        public static void ImportActors(IEnumerable<ActorDTO> actors, SoftCinemaContext context)
+        
+        public static void AddActor(string name, float? rating, int bornTownId)
         {
-            foreach (var actorDto in actors)
+            using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                Town town = TownService.GetTown(actorDto.BornTownName,context);
-                if (town == null)
-                {
-                    TownService.AddTown(actorDto.BornTownName, context);
-                    town = TownService.GetTown(actorDto.BornTownName, context);
-                }
                 Actor actor = new Actor()
                 {
-                    Name = actorDto.Name,
-                    Rating = actorDto.Rating,
-                    BornTownId = town.Id
+                    Name = name,
+                    Rating = rating,
+                    BornTownId = bornTownId
                 };
                 context.Actors.Add(actor);
+                context.SaveChanges();
             }
-            context.SaveChanges();
         }
 
-        
+
     }
 }

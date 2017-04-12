@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Models", "SoftCinema.Models\SoftCinema.Models.csproj", "{5DB49B1A-E9F7-46B5-B7A8-08B01A567286}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.DTOs", "SoftCinema.DTOs\SoftCinema.DTOs.csproj", "{115F8089-9BD3-4A64-AF7F-846A3331CAF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCinema.Import\SoftCinema.Import.csproj", "{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportServices", "SoftCinema.ImportServices\SoftCinema.ImportServices.csproj", "{584B4019-5AFF-4869-A1A6-89957657F74E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E00BB824-06E0-4D1D-8DCC-9C67E03ED8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584B4019-5AFF-4869-A1A6-89957657F74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584B4019-5AFF-4869-A1A6-89957657F74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584B4019-5AFF-4869-A1A6-89957657F74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584B4019-5AFF-4869-A1A6-89957657F74E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
