@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftCinema.Client.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace SoftCinema.Client
@@ -21,10 +22,27 @@ namespace SoftCinema.Client
         private void UpperPanel_Paint(object sender, PaintEventArgs e)
         {
         }
+        private void registerTeamButton_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.TopLevel = false;
+            registerForm.AutoScroll = true;
+            this.ContentHolder.Controls.Clear();
+            this.ContentHolder.Controls.Add(registerForm);
+            registerForm.Show();
+        }
 
-        private void teamButton1_Click(object sender, EventArgs e)
+        private void loginTeamButton_Click(object sender, EventArgs e)
         {
 
+            LoginForm loginForm = new LoginForm();
+            loginForm.TopLevel = false;
+            loginForm.AutoScroll = true;
+            this.ContentHolder.Controls.Clear();
+            this.ContentHolder.Controls.Add(loginForm);
+            loginForm.Show();
         }
+
+      
     }
 }

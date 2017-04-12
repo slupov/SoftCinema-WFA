@@ -37,5 +37,6 @@ C:\Users\PC-211\Documents\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Models.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\EntityFramework.dll
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Models.pdb
-D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\SoftCinema.Models.dll.config
 D:\Github\SoftCinema-WFA\SoftCinema\SoftCinema.Client\bin\Debug\EntityFramework.xml
+D:\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Forms.LoginForm.resources
+D:\GitHub\SoftCinema-WFA\SoftCinema\SoftCinema.Client\obj\Debug\SoftCinema.Client.Forms.RegisterForm.resources
