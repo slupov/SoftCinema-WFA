@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -107,14 +107,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Seat:";
             // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(255, 246);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 7;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(205, 344);
@@ -151,16 +143,25 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "BGN";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(252, 251);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(276, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "// TODO: Visualize the audithorium schema with its seats";
+            // 
             // Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 398);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label3);
@@ -184,10 +185,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
