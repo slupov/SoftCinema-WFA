@@ -4,139 +4,116 @@
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>1</Number>
-    <SeatsCount>100</SeatsCount>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>2</Number>
-    <SeatsCount>90</SeatsCount>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>3</Number>
-    <SeatsCount>80</SeatsCount>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>4</Number>
-    <SeatsCount>70</SeatsCount>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>1</Number>
-    <SeatsCount>90</SeatsCount>
     <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>2</Number>
-    <SeatsCount>90</SeatsCount>
     <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>3</Number>
-    <SeatsCount>85</SeatsCount>
     <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>4</Number>
-    <SeatsCount>70</SeatsCount>
     <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>5</Number>
-    <SeatsCount>60</SeatsCount>
     <TownName>Plovdiv</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>1</Number>
-    <SeatsCount>100</SeatsCount>
     <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>2</Number>
-    <SeatsCount>60</SeatsCount>
     <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>3</Number>
-    <SeatsCount>60</SeatsCount>
     <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>4</Number>
-    <SeatsCount>60</SeatsCount>
     <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>5</Number>
-    <SeatsCount>70</SeatsCount>
     <TownName>Varna</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>1</Number>
-    <SeatsCount>50</SeatsCount>
     <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>2</Number>
-    <SeatsCount>40</SeatsCount>
     <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>3</Number>
-    <SeatsCount>90</SeatsCount>
     <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>4</Number>
-    <SeatsCount>95</SeatsCount>
     <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>1</Number>
-    <SeatsCount>80</SeatsCount>
     <TownName>Ruse</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>2</Number>
-    <SeatsCount>70</SeatsCount>
     <TownName>Ruse</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>3</Number>
-    <SeatsCount>60</SeatsCount>
     <TownName>Ruse</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>4</Number>
-    <SeatsCount>40</SeatsCount>
     <TownName>Ruse</TownName>
   </auditorium>
   <auditorium>
     <CinemaName>SoftCinema</CinemaName>
     <Number>5</Number>
-    <SeatsCount>40</SeatsCount>
     <TownName>Ruse</TownName>
   </auditorium>
 </auditoriums>

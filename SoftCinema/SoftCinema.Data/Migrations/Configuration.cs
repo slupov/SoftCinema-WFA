@@ -10,6 +10,7 @@ namespace SoftCinema.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(SoftCinema.Data.SoftCinemaContext context)

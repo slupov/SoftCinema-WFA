@@ -56,9 +56,9 @@ namespace ImportServices
             byte number = auditoriumDto.Number;
             DataValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
 
-            int seatsCount = auditoriumDto.SeatsCount;
+   
 
-            AuditoriumService.AddAuditorium(number, seatsCount, cinemaId);
+            AuditoriumService.AddAuditorium(number,cinemaId);
 
             Console.WriteLine(string.Format(SuccessMessages.AuditoriumAddedSuccess, number, cinemaName));
 

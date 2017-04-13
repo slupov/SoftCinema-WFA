@@ -27,7 +27,5 @@
 
         public virtual ICollection<Seat> Seats { get; set; }
 
-        [Required]
-        public int SeatsCount { get; set; }
     }
 }

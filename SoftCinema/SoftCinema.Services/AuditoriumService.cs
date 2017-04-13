@@ -10,7 +10,7 @@ namespace SoftCinema.Services
 {
     public static class AuditoriumService
     {
-        public static void AddAuditorium(byte number, int seatsCount, int cinemaId)
+        public static void AddAuditorium(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -18,7 +18,6 @@ namespace SoftCinema.Services
                 {
                     CinemaId = cinemaId,
                     Number = number,
-                    SeatsCount = seatsCount
                 };
                 context.Auditoriums.Add(auditorium);
                 context.SaveChanges();

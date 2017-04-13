@@ -17,9 +17,6 @@ namespace SoftCinema.DTOs
         [XmlElement("Number")]
         public byte Number { get; set; }
 
-        [XmlElement("SeatsCount")]
-        public int SeatsCount { get; set; }
-
         [XmlElement("TownName")]
         public string CinemaTownName { get; set; }
     }
