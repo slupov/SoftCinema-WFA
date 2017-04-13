@@ -23,6 +23,12 @@ namespace SoftCinema.Services.Utilities
         public const string CinemaDoesntExist =  "Cinema {0} doesn't exist in the database!";
 
         public const string TownDoesntExist = "Town {0} doesn't exist in the database!";
+
+        public const string MovieAlreadyExists = "Movie {0} already exists in the database!";
+
+        public const string CategoryDoesntExist = "Category {0} doesn't exist in the database!";
+
+        public const string MovieDoesntExist = "Movie {0} doesn't exists in the database!";
     }
     
 }

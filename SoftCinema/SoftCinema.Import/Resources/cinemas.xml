@@ -2,56 +2,24 @@
 <CinemasCollection>
 <Cinemas>
   <Cinema>
-    <Name>Wikibox</Name>
+    <Name>SoftCinema</Name>
     <TownName>Sofia</TownName>
   </Cinema>
   <Cinema>
-    <Name>ChatterLife</Name>
-    <TownName>Haskovo</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>Yoveo</Name>
+    <Name>SoftCinema</Name>
     <TownName>Plovdiv</TownName>
   </Cinema>
   <Cinema>
-    <Name>Experience</Name>
-    <TownName>Plovdiv</TownName>
+    <Name>SoftCinema</Name>
+    <TownName>Varna</TownName>
   </Cinema>
   <Cinema>
-    <Name>CinemaWorld</Name>
+    <Name>SoftCinema</Name>
     <TownName>Burgas</TownName>
   </Cinema>
   <Cinema>
-    <Name>VideoBox</Name>
-    <TownName>Blagoevgrad</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>Underground</Name>
-    <TownName>Haskovo</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>Meedoo</Name>
-    <TownName>Vidin</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>CinemaCity</Name>
-    <TownName>Plovdiv</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>Vimbo</Name>
-    <TownName>Varna</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>Arena</Name>
-    <TownName>Sofia</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>RealMovies</Name>
-    <TownName>Sofia</TownName>
-  </Cinema>
-  <Cinema>
-    <Name>3DLife</Name>
-    <TownName>Varna</TownName>
+    <Name>SoftCinema</Name>
+    <TownName>Ruse</TownName>
   </Cinema>
 </Cinemas>
 </CinemasCollection>

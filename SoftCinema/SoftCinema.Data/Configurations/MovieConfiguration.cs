@@ -17,8 +17,8 @@ namespace SoftCinema.Data.Configurations
                 .WithMany(a => a.Movies)
                 .Map(ma =>
                 {
-                    ma.MapLeftKey("ActorId");
-                    ma.MapRightKey("MovieId");
+                    ma.MapLeftKey("MovieId");
+                    ma.MapRightKey("ActorId");
                     ma.ToTable("ActorMovies");
                 });
 

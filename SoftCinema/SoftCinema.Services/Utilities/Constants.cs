@@ -13,5 +13,7 @@ namespace SoftCinema.Services.Utilities
         public const int MinRatingValue = 0;
         public const int MaxRatingValue = 10;
         public const int MaxCinemaNameLength = 50;
+        public const int MaxActorNameLength = 50;
+        public const int MaxMovieNameLength = 50;
     }
 }

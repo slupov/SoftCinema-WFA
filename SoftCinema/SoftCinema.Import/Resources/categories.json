@@ -17,5 +17,7 @@
   { "Name": "Drama" },
   { "Name": "History" },
   { "Name": "Sci-Fi" },
-  { "Name": "War"}
+  { "Name": "War" },
+  { "Name": "Crime" },
+  { "Name": "Mystery" }
 ]

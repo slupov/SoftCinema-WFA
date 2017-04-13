@@ -42,14 +42,19 @@ namespace ImportServices
 
         private static void ImportCinema(CinemaDTO cinemaDto)
         {
-            string cinemaName = cinemaDto.Name;
+   
             string townName = cinemaDto.TownName;
-            DataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
             DataValidator.ValidateStringMaxLength(townName,Constants.MaxTownNameLength);
+            
+            string cinemaName = cinemaDto.Name;
+            DataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
+
             TownService.AddTownIfNotExisting(townName);
             int townId = TownService.GetTownId(townName);
-            DataValidator.ValidateCinemaExisting(cinemaName, townId);
+            DataValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
+
             CinemaService.AddCinema(cinemaName, townId);
+
             Console.WriteLine(string.Format(SuccessMessages.CinemaAddedSuccess,cinemaName));
         }
     }

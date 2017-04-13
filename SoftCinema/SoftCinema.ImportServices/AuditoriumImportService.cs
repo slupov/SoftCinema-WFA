@@ -10,6 +10,7 @@ using SoftCinema.DTOs;
 using SoftCinema.Service;
 using SoftCinema.Service.Utilities;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace ImportServices
 {
@@ -43,16 +44,26 @@ namespace ImportServices
         private static void ImportAuditorium(AuditoriumDTO auditoriumDto)
         {
             string cinemaName = auditoriumDto.CinemaName;
-            byte number = auditoriumDto.Number;
-            int seatsCount = auditoriumDto.SeatsCount;
+            DataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
+
             string townName = auditoriumDto.CinemaTownName;
             DataValidator.CheckTownExisting(townName);
+
             int townId = TownService.GetTownId(townName);
-            DataValidator.CheckCinemaExisting(cinemaName,townId);
             int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
-            DataValidator.ValidateAuditoriumExisting(number, cinemaId, cinemaName);
+            DataValidator.CheckCinemaExisting(cinemaName, townId);
+
+            byte number = auditoriumDto.Number;
+            DataValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
+
+            int seatsCount = auditoriumDto.SeatsCount;
+
             AuditoriumService.AddAuditorium(number, seatsCount, cinemaId);
-            Console.WriteLine(string.Format(SuccessMessages.AuditoriumAddedSuccess,number,cinemaName));
+
+            Console.WriteLine(string.Format(SuccessMessages.AuditoriumAddedSuccess, number, cinemaName));
+
+
+
 
 
         }

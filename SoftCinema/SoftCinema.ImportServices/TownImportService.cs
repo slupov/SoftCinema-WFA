@@ -34,8 +34,10 @@ namespace SoftCinema.Import.ImportServices
         {
             string townName = townDto.Name;
             DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
-            DataValidator.ValidateTownExisting(townName);
+            DataValidator.ValidateTownDoesNotExist(townName);
+
             TownService.AddTown(townName);
+
             Console.WriteLine(string.Format(SuccessMessages.TownAddedSuccess, townName));
         }
 

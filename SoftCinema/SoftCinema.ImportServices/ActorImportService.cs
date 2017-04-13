@@ -35,13 +35,23 @@ namespace ImportServices
         public static void ImportActor(ActorDTO actorDto)
         {
             string actorName = actorDto.Name;
+            DataValidator.ValidateStringMaxLength(actorName, Constants.MaxActorNameLength);
+
             float? actorRating = actorDto.Rating;
+            DataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);
+
             string townName = actorDto.BornTownName;
             DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
-            DataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);
+
+            List<ActorMovieDto> movies = actorDto.Movies;
+            DataValidator.CheckMoviesExist(movies);
+
             TownService.AddTownIfNotExisting(townName);
             int bornTownId = TownService.GetTownId(townName);
+
             ActorService.AddActor(actorName, actorRating, bornTownId);
+            ActorService.AddMoviesToActor(actorName,movies);
+
             Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess,actorName));
         }
     }

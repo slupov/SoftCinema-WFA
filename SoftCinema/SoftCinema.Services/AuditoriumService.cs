@@ -10,14 +10,6 @@ namespace SoftCinema.Services
 {
     public static class AuditoriumService
     {
-        public static bool IsAuditoriumExisting(byte number, int cinemaId)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Auditoriums.Any(a => a.CinemaId == cinemaId && a.Number == number);
-            }
-        }
-
         public static void AddAuditorium(byte number, int seatsCount, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -32,5 +24,15 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
+
+        public static bool IsAuditoriumExisting(byte number, int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Auditoriums.Any(a => a.CinemaId == cinemaId && a.Number == number);
+            }
+        }
+
+        
     }
 }

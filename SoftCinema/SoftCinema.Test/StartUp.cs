@@ -11,14 +11,16 @@ namespace SoftCinema.Test
     {
         static void Main(string[] args)
         {
-            
-            //JSONImport.ImportCategories();
-            //JSONImport.ImportTowns();
-            //JSONImport.ImportActors();
-
-            //XMLImport.ImportCinemas();
-            //XMLImport.ImportMovies();
+           
+            JSONImport.ImportTowns();
+            XMLImport.ImportCinemas();
             XMLImport.ImportAuditoriums();
+            JSONImport.ImportCategories();
+            XMLImport.ImportMovies();
+            JSONImport.ImportActors();
+
+    
+            
         }
     }
 }

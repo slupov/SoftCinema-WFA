@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SoftCinema.Models
 {
     using System;
@@ -15,15 +17,15 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required, Index("IX_MovieAuditoriumDate", 3, IsUnique = true)]
         public DateTime Start { get; set; }
 
-        [Required]
+        [Required, Index("IX_MovieAuditoriumDate", 2, IsUnique = true)]
         public int AuditoriumId { get; set; }
 
         public virtual Auditorium Auditorium { get; set; }
 
-        [Required]
+        [Required, Index("IX_MovieAuditoriumDate", 1, IsUnique = true)]
         public int MovieId { get; set; }
 
         public virtual Movie Movie { get; set; }

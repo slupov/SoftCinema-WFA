@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SoftCinema.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -13,7 +15,7 @@
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required, Index("IX_NameYear", 1, IsUnique = true),MaxLength(50)]
         public string Name { get; set; }
 
         [Required]
@@ -29,7 +31,7 @@
         [Required]
         public string DirectorName { get; set; }
 
-        [Required]
+        [Required, Index("IX_NameYear", 2, IsUnique = true)]
         public int ReleaseYear { get; set; }
 
         public string ReleaseCountry { get; set; }

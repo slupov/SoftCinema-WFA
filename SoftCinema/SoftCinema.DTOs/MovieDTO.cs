@@ -10,6 +10,11 @@ namespace SoftCinema.DTOs
     [Serializable()]
     public class MovieDTO
     {
+        public MovieDTO()
+        {
+            this.Categories = new List<CategoryDTО>();
+        }
+
         [XmlElement("Name")]
         public string Name { get; set; }
 
@@ -33,5 +38,9 @@ namespace SoftCinema.DTOs
 
         [XmlElement("AgeRestriction")]
         public string AgeRestriction { get; set; }
+
+        [XmlArray("Categories")]
+        [XmlArrayItem("Category")]
+        public List<CategoryDTО> Categories { get; set; }
     }
 }

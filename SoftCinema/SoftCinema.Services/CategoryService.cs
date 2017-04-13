@@ -26,7 +26,15 @@ namespace SoftCinema.Service
                 context.SaveChanges();
             }
         }
-        
+
+        public static Category GetCategory(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Categories.FirstOrDefault(c => c.Name == categoryName);
+            }
+        }
+
         public static bool IsCategoryExisting(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -36,5 +44,7 @@ namespace SoftCinema.Service
                 }
             }
         }
+
+        
     }
 }

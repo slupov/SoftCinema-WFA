@@ -37,8 +37,10 @@ namespace SoftCinema.Import.ImportServices
         {
             string categoryName = categoryDtо.Name;
             DataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
-            DataValidator.ValidateCategoryExisting(categoryName);
+            DataValidator.ValidateCategoryDoesNotExist(categoryName);
+
             CategoryService.AddCategory(categoryName);
+
             Console.WriteLine(string.Format(SuccessMessages.CategoryAddedSuccess, categoryName));
         }
     }

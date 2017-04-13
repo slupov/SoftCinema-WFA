@@ -27,7 +27,7 @@ namespace ImportServices
 
         public static void ImportMoviesCollection(MovieDTOCollection movieDtos)
         {
-            foreach (var movieDto in movieDtos.MovieDTtos)
+            foreach (var movieDto in movieDtos.MovieDTOs)
             {
                 try
                 {
@@ -41,20 +41,32 @@ namespace ImportServices
             }
         }
 
-        //TODO: Add additional validations
+        
         private static void ImportMovie(MovieDTO movieDto)
         {
             string movieName = movieDto.Name;
-            string directorName = movieDto.DirectorName;
+            DataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
+
             float? rating = movieDto.Rating;
-            int length = movieDto.Length;
+            DataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
+
             int releaseYear = movieDto.ReleaseYear;
+            DataValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
+
+            List<string> categories = movieDto.Categories.Select(c => c.Name).ToList();
+            DataValidator.CheckCategoriesExist(categories);
+
+            string directorName = movieDto.DirectorName;
+            int length = movieDto.Length;
             AgeRestriction ageRestriction =(AgeRestriction)Enum.Parse(typeof(AgeRestriction),movieDto.AgeRestriction);
             string synopsis = movieDto.Synopsis;
             string releaseCountry = movieDto.ReleaseCountry;
-            DataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
+            
+            
             MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
                 releaseCountry);
+            MovieService.AddCategoriesToMovie(movieName,releaseYear,categories);
+
             Console.WriteLine(string.Format(SuccessMessages.MoviesAddedSuccess,movieName));
 
 

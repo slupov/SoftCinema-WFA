@@ -1,20 +1,147 @@
-[{"Name":"Jacqueline Hamilton","Rating":1.8,"BornTownName":"Vidin"},
-{"Name":"George West","Rating":4.7,"BornTownName":"Plovdiv"},
-{"Name":"Nicole Peterson","Rating":8.7,"BornTownName":"Blagoevgrad"},
-{"Name":"Clarence Wood","Rating":2.7,"BornTownName":"Sofia"},
-{"Name":"Fred Simmons","Rating":8.2,"BornTownName":"Varna"},
-{"Name":"Earl Reynolds","Rating":1.2,"BornTownName":"Burgas"},
-{"Name":"Jonathan Hart","Rating":3.5,"BornTownName":"Haskovo"},
-{"Name":"Karen Garcia","Rating":2.9,"BornTownName":"Burgas"},
-{"Name":"Keith Pierce","Rating":9.7,"BornTownName":"Burgas"},
-{"Name":"Todd Garcia","Rating":6.1,"BornTownName":"Plovdiv"},
-{"Name":"Martha Spencer","Rating":2.0,"BornTownName":"Vidin"},
-{"Name":"Amanda Price","Rating":2.7,"BornTownName":"Haskovo"},
-{"Name":"Anna Rose","Rating":8.5,"BornTownName":"Varna"},
-{"Name":"Louis Hall","Rating":5.8,"BornTownName":"Plovdiv"},
-{"Name":"Lisa Ellis","Rating":8.7,"BornTownName":"Sofia"},
-{"Name":"George Hart","Rating":5.1,"BornTownName":"Sofia"},
-{"Name":"Aaron Long","Rating":8.3,"BornTownName":"Plovdiv"},
-{"Name":"Wanda Lewis","Rating":1.5,"BornTownName":"Varna"},
-{"Name":"Jeremy Ruiz","Rating":8.6,"BornTownName":"Plovdiv"},
-{"Name":"Randy Nguyen","Rating":3.4,"BornTownName":"Plovdiv"}]
+[
+  {
+    "Name": "Hugh Jackman",
+    "Rating": 9.0,
+    "BornTownName": "Sydney",
+    "Movies": [
+      {
+        "Name": "Logan",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Patrick Stewart",
+    "Rating": 8.3,
+    "BornTownName": "Mirfield",
+    "Movies": [
+      {
+        "Name": "Logan",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Boyd Holbrook",
+    "Rating": 8.7,
+    "BornTownName": "Prestonsburgh",
+    "Movies": [
+      {
+        "Name": "Logan",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Jason David Frank",
+    "Rating": 7.0,
+    "BornTownName": "Covina",
+    "Movies": [
+      {
+        "Name": "Power Rangers",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "David Yost",
+    "Rating": 7.0,
+    "BornTownName": "Council Bluffs",
+    "Movies": [
+      {
+        "Name": "Power Rangers",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Austin St. John",
+    "Rating": 7.5,
+    "BornTownName": "Roswell",
+    "Movies": [
+      {
+        "Name": "Power Rangers",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Vin Diesel",
+    "Rating": 9.0,
+    "BornTownName": "Alameda",
+    "Movies": [
+      {
+        "Name": "The Fate of the Furious",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Dwane Johnson",
+    "Rating": 9.0,
+    "BornTownName": "Hayward",
+    "Movies": [
+      {
+        "Name": "The Fate of the Furious",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Jason Statham",
+    "Rating": 0.1,
+    "BornTownName": "Shirebrook",
+    "Movies": [
+      {
+        "Name": "The Fate of the Furious",
+        "ReleaseYear": 2017
+      }
+    ]
+  },
+  {
+    "Name": "Ryan Gosling",
+    "Rating": 10.0,
+    "BornTownName": "Ontario",
+    "Movies": [
+      {
+        "Name": "The Nice Guys",
+        "ReleaseYear": 2016
+      }
+    ]
+  },
+  {
+    "Name": "Russell Crowe",
+    "Rating": 8.5,
+    "BornTownName": "Wellington",
+    "Movies": [
+      {
+        "Name": "The Nice Guys",
+        "ReleaseYear": 2016
+      }
+    ]
+  },
+  {
+    "Name": "Patrick Wilson",
+    "Rating": 7.0,
+    "BornTownName": "Norfolk",
+    "Movies": [
+      {
+        "Name": "The Conjuring 2",
+        "ReleaseYear": 2016
+      }
+    ]
+  },
+  {
+    "Name": "Vera Farmiga",
+    "Rating": 7.0,
+    "BornTownName": "Clifton",
+    "Movies": [
+      {
+        "Name": "The Conjuring 2",
+        "ReleaseYear": 2016
+      }
+    ]
+  }
+
+
+]
