@@ -36,6 +36,7 @@ namespace ImportServices
         {
             string actorName = actorDto.Name;
             DataValidator.ValidateStringMaxLength(actorName, Constants.MaxActorNameLength);
+            DataValidator.ValidateActorDoesntExist(actorName);
 
             float? actorRating = actorDto.Rating;
             DataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);

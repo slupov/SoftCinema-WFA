@@ -62,6 +62,7 @@
     <None Include="Resources\actors.json" />
     <None Include="Resources\categories.json" />
     <None Include="Resources\screenings.json" />
+    <None Include="Resources\seats.json" />
     <None Include="Resources\towns.json" />
   </ItemGroup>
   <ItemGroup>

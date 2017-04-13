@@ -11,7 +11,7 @@ namespace SoftCinema.Test
     {
         static void Main(string[] args)
         {
-           
+
             JSONImport.ImportTowns();
             XMLImport.ImportCinemas();
             XMLImport.ImportAuditoriums();
@@ -19,7 +19,9 @@ namespace SoftCinema.Test
             XMLImport.ImportMovies();
             JSONImport.ImportActors();
             JSONImport.ImportScreenings();
-            
+            JSONImport.ImportSeats();
+
+
 
 
         }

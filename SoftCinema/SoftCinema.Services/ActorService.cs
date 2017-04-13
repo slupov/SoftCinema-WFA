@@ -48,5 +48,13 @@ namespace SoftCinema.Service
                 context.SaveChanges();
             }
         }
+
+        public static bool IsActorExisting(string actorName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Actors.Any(a => a.Name == actorName);
+            }
+        }
     }
 }

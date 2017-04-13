@@ -1,4 +1,5 @@
-﻿using ImportServices;
+﻿using System.Collections;
+using ImportServices;
 using SoftCinema.Import.ImportServices;
 
 namespace SoftCinema.Import
@@ -39,6 +40,13 @@ namespace SoftCinema.Import
             var screeningDtos = JsonConvert.DeserializeObject<IEnumerable<ScreeeningDto>>(screeningsJson);
             ScreeningImportService.ImportScreenings(screeningDtos);
 
+        }
+
+        public static void ImportSeats()
+        {
+            var seatsJson = File.ReadAllText(DataPaths.SeatsJson);
+            var seatsDtos = JsonConvert.DeserializeObject<IEnumerable<SeatDto>>(seatsJson);
+            SeatImportService.ImportSeats(seatsDtos);
         }
     }
 }

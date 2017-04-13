@@ -33,6 +33,10 @@ namespace SoftCinema.Services.Utilities
         public const string AuditoriumDoesntExist = "Auditorium number {0} doesn't exist in the cinema {1}!";
 
         public const string ScreeningAlreadyExists = "There is already a screening for the given time!";
+
+        public const string SeatAlreadyExists = "Seat number {0} already exists in auditorium number {1}!";
+
+        public const string ActorAlreadyExists = "Actor {0} already exists in the database!";
     }
     
 }

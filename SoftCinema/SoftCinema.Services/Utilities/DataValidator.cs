@@ -131,5 +131,21 @@ namespace SoftCinema.Service.Utilities
                 throw new InvalidOperationException(ErrorMessages.ScreeningAlreadyExists);
             }
         }
+
+        public static void ValidateSeatDoesntExist(int seatNumber, int auditoriumId, int auditoriumNumber)
+        {
+            if (SeatService.IsSeatExisting(seatNumber, auditoriumId))
+            {
+                throw new InvalidOperationException(string.Format(ErrorMessages.SeatAlreadyExists,seatNumber,auditoriumNumber));
+            }
+        }
+
+        public static void ValidateActorDoesntExist(string actorName)
+        {
+            if (ActorService.IsActorExisting(actorName))
+            {
+                throw new InvalidOperationException(string.Format(ErrorMessages.ActorAlreadyExists,actorName));
+            }
+        }
     }
 }
