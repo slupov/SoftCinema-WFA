@@ -32,8 +32,8 @@ namespace SoftCinema.Service
                 else
                 {
                     Random r = new Random();
-                    int saltLength = r.Next(minSaltLength, maxSaltLength + 1);
-                    SaltBytes = new byte[saltLength];
+                    int SaltLength = r.Next(minSaltLength, maxSaltLength + 1);
+                    SaltBytes = new byte[SaltLength];
                     RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
                     rng.GetNonZeroBytes(SaltBytes);
                     rng.Dispose();
@@ -113,7 +113,7 @@ namespace SoftCinema.Service
         public class Validations
         {
             public static bool isUserValid(string username, string password, string repeatpassword, string email,
-            string phone)
+                string phone)
             {
                 return !isUsernameExisting(username) && isUsernameValid(username)
                        && isPasswordValid(password) && isRepeatPasswordValid(password, repeatpassword)
@@ -187,6 +187,20 @@ namespace SoftCinema.Service
 
                 return true;
             }
+
+            public static bool isUsernamePasswordMatching(string username, string password)
+            {
+                throw new NotImplementedException();
+                using (var db = new SoftCinemaContext())
+                {
+//                    User user = db.Users.FirstOrDefault(u => u.Username == username);
+//                    var hashedPassword = Convert.ToBase64String(user.PasswordHash);
+//                    var toConfirm = PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512,
+//                        Convert.ToBase64String(user.PasswordSalt));
+//
+//                    return hashedPassword == toConfirm;
+                }
+            }
         }
 
         public static void AddUser(string username, string password, string repeatPassword, string email, string phone)
@@ -196,7 +210,9 @@ namespace SoftCinema.Service
                 var user = new User()
                 {
                     Username = username,
-                    PasswordHash = Encoding.UTF8.GetBytes(PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512, null)),
+                    PasswordHash =
+                        Encoding.UTF8.GetBytes(PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512,
+                            null)),
                     Email = email,
                     PhoneNumber = phone,
                     Role = Role.User
