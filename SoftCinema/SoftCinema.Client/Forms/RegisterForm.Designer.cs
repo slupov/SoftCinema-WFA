@@ -39,8 +39,11 @@
             this.repeatPasswordTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.registerButton = new System.Windows.Forms.Button();
-            this.userExists = new System.Windows.Forms.Label();
-            this.wrongFormat = new System.Windows.Forms.Label();
+            this.usernameInfoLabel = new System.Windows.Forms.Label();
+            this.passwordInfoLabel = new System.Windows.Forms.Label();
+            this.rptpasswordInfoLabel = new System.Windows.Forms.Label();
+            this.emailInfoLabel = new System.Windows.Forms.Label();
+            this.phoneInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usernameLabel
@@ -95,6 +98,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(173, 20);
             this.usernameTextBox.TabIndex = 5;
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
@@ -102,6 +106,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(173, 20);
             this.passwordTextBox.TabIndex = 6;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -109,6 +114,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(173, 20);
             this.emailTextBox.TabIndex = 7;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // repeatPasswordTextBox
             // 
@@ -116,6 +122,7 @@
             this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
             this.repeatPasswordTextBox.Size = new System.Drawing.Size(173, 20);
             this.repeatPasswordTextBox.TabIndex = 8;
+            this.repeatPasswordTextBox.TextChanged += new System.EventHandler(this.repeatPasswordTextBox_TextChanged);
             // 
             // phoneNumberTextBox
             // 
@@ -123,6 +130,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(173, 20);
             this.phoneNumberTextBox.TabIndex = 9;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged);
             // 
             // registerButton
             // 
@@ -134,33 +142,75 @@
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // userExists
+            // usernameInfoLabel
             // 
-            this.userExists.AutoSize = true;
-            this.userExists.Location = new System.Drawing.Point(495, 77);
-            this.userExists.Name = "userExists";
-            this.userExists.Size = new System.Drawing.Size(145, 13);
-            this.userExists.TabIndex = 11;
-            this.userExists.Text = "This username already exists.";
-            this.userExists.Visible = false;
+            this.usernameInfoLabel.AutoSize = true;
+            this.usernameInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.usernameInfoLabel.Location = new System.Drawing.Point(509, 84);
+            this.usernameInfoLabel.Name = "usernameInfoLabel";
+            this.usernameInfoLabel.Size = new System.Drawing.Size(35, 13);
+            this.usernameInfoLabel.TabIndex = 11;
+            this.usernameInfoLabel.Text = "label1";
+            this.usernameInfoLabel.Visible = false;
             // 
-            // wrongFormat
+            // passwordInfoLabel
             // 
-            this.wrongFormat.AutoSize = true;
-            this.wrongFormat.Location = new System.Drawing.Point(495, 80);
-            this.wrongFormat.Name = "wrongFormat";
-            this.wrongFormat.Size = new System.Drawing.Size(183, 13);
-            this.wrongFormat.TabIndex = 12;
-            this.wrongFormat.Text = "Username is not in the correct format.";
-            this.wrongFormat.Visible = false;
+            this.passwordInfoLabel.AutoSize = true;
+            this.passwordInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.passwordInfoLabel.Location = new System.Drawing.Point(509, 134);
+            this.passwordInfoLabel.Name = "passwordInfoLabel";
+            this.passwordInfoLabel.Size = new System.Drawing.Size(35, 13);
+            this.passwordInfoLabel.TabIndex = 12;
+            this.passwordInfoLabel.Text = "label1";
+            this.passwordInfoLabel.Visible = false;
+            this.passwordInfoLabel.Click += new System.EventHandler(this.passwordInfoLabel_Click);
+            // 
+            // rptpasswordInfoLabel
+            // 
+            this.rptpasswordInfoLabel.AutoSize = true;
+            this.rptpasswordInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.rptpasswordInfoLabel.Location = new System.Drawing.Point(509, 184);
+            this.rptpasswordInfoLabel.Name = "rptpasswordInfoLabel";
+            this.rptpasswordInfoLabel.Size = new System.Drawing.Size(35, 13);
+            this.rptpasswordInfoLabel.TabIndex = 13;
+            this.rptpasswordInfoLabel.Text = "label1";
+            this.rptpasswordInfoLabel.Visible = false;
+            this.rptpasswordInfoLabel.Click += new System.EventHandler(this.rptpasswordInfoLabel_Click);
+            // 
+            // emailInfoLabel
+            // 
+            this.emailInfoLabel.AutoSize = true;
+            this.emailInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.emailInfoLabel.Location = new System.Drawing.Point(509, 234);
+            this.emailInfoLabel.Name = "emailInfoLabel";
+            this.emailInfoLabel.Size = new System.Drawing.Size(35, 13);
+            this.emailInfoLabel.TabIndex = 14;
+            this.emailInfoLabel.Text = "label1";
+            this.emailInfoLabel.Visible = false;
+            this.emailInfoLabel.Click += new System.EventHandler(this.emailInfoLabel_Click);
+            // 
+            // phoneInfoLabel
+            // 
+            this.phoneInfoLabel.AutoSize = true;
+            this.phoneInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.phoneInfoLabel.Location = new System.Drawing.Point(509, 284);
+            this.phoneInfoLabel.Name = "phoneInfoLabel";
+            this.phoneInfoLabel.Size = new System.Drawing.Size(35, 13);
+            this.phoneInfoLabel.TabIndex = 15;
+            this.phoneInfoLabel.Text = "label1";
+            this.phoneInfoLabel.Visible = false;
+            this.phoneInfoLabel.Click += new System.EventHandler(this.phoneInfoLabel_Click);
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.wrongFormat);
-            this.Controls.Add(this.userExists);
+            this.Controls.Add(this.phoneInfoLabel);
+            this.Controls.Add(this.emailInfoLabel);
+            this.Controls.Add(this.rptpasswordInfoLabel);
+            this.Controls.Add(this.passwordInfoLabel);
+            this.Controls.Add(this.usernameInfoLabel);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.repeatPasswordTextBox);
@@ -193,7 +243,10 @@
         private System.Windows.Forms.TextBox repeatPasswordTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.Label userExists;
-        private System.Windows.Forms.Label wrongFormat;
+        private System.Windows.Forms.Label usernameInfoLabel;
+        private System.Windows.Forms.Label passwordInfoLabel;
+        private System.Windows.Forms.Label rptpasswordInfoLabel;
+        private System.Windows.Forms.Label emailInfoLabel;
+        private System.Windows.Forms.Label phoneInfoLabel;
     }
 }

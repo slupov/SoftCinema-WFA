@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
+using SoftCinema.Data;
+using SoftCinema.Models;
 
 namespace SoftCinema.Service
 {
@@ -106,34 +110,92 @@ namespace SoftCinema.Service
             }
         }
 
-        public static bool isUserValid(string username,string password, string repeatpassword, string email, string phone)
+        public static bool isUserValid(string username, string password, string repeatpassword, string email,
+            string phone)
         {
-            throw new NotImplementedException();
+            return isUsernameExisting(username) && isUsernameValid(username)
+                   && isPasswordValid(password) && isRepeatPasswordValid(password, repeatpassword)
+                   && isEmailValid(email) && isPhoneValid(phone);
         }
 
         public static bool isUsernameValid(string username)
         {
-            throw new NotImplementedException();
+            //TODO: Check for SqlInjection 
+            if (username.Length > 25)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool isUsernameExisting(string username)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Users.Any(u => u.Username == username);
+            }
         }
 
         public static bool isPasswordValid(string password)
         {
-            throw new NotImplementedException();
+            if (password.Length < 3 && password.Length > 25)
+            {
+                return false;
+            }
+            return true;
         }
 
-        public static bool isRepeatPasswordValid(string repeatpassword)
+        public static bool isRepeatPasswordValid(string password, string repeatpassword)
         {
-            throw new NotImplementedException();
+            if (repeatpassword == password)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public static bool isEmailValid(string email)
         {
-            throw new NotImplementedException();
+            var emailRegex =
+                @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+
+            if (!Regex.IsMatch(email, emailRegex))
+            {
+                return false;
+            }
+            return true;
         }
 
         public static bool isPhoneValid(string phone)
         {
-            throw new NotImplementedException();
+            var phoneRegex = @"/08[789]\d{7}/";
+
+            if (!Regex.IsMatch(phone, phoneRegex))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static void AddUser(string username, string password, string repeatPassword, string email, string phone)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                var user = new User()
+                {
+                    Username = username,
+                    PasswordHash = Encoding.UTF8.GetBytes(PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512, null)),
+                    Email = email,
+                    PhoneNumber = phone,
+                    Role = Role.User
+                };
+
+                db.Users.Add(user);
+            }
         }
     }
 }
