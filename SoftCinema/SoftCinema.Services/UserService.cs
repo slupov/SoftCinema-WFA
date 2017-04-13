@@ -110,75 +110,83 @@ namespace SoftCinema.Service
             }
         }
 
-        public static bool isUserValid(string username, string password, string repeatpassword, string email,
+        public class Validations
+        {
+            public static bool isUserValid(string username, string password, string repeatpassword, string email,
             string phone)
-        {
-            return isUsernameExisting(username) && isUsernameValid(username)
-                   && isPasswordValid(password) && isRepeatPasswordValid(password, repeatpassword)
-                   && isEmailValid(email) && isPhoneValid(phone);
-        }
-
-        public static bool isUsernameValid(string username)
-        {
-            //TODO: Check for SqlInjection 
-            if (username.Length > 25)
             {
-                return false;
+                return !isUsernameExisting(username) && isUsernameValid(username)
+                       && isPasswordValid(password) && isRepeatPasswordValid(password, repeatpassword)
+                       && isEmailValid(email) && isPhoneValid(phone);
             }
 
-            return true;
-        }
-
-        public static bool isUsernameExisting(string username)
-        {
-            using (var db = new SoftCinemaContext())
+            public static bool isUsernameValid(string username)
             {
-                return db.Users.Any(u => u.Username == username);
-            }
-        }
+                //TODO: Check for SqlInjection 
+                if (username.Length > 25)
+                {
+                    return false;
+                }
 
-        public static bool isPasswordValid(string password)
-        {
-            if (password.Length < 3 && password.Length > 25)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public static bool isRepeatPasswordValid(string password, string repeatpassword)
-        {
-            if (repeatpassword == password)
-            {
                 return true;
             }
 
-            return false;
-        }
-
-        public static bool isEmailValid(string email)
-        {
-            var emailRegex =
-                @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
-
-            if (!Regex.IsMatch(email, emailRegex))
+            public static bool isUsernameExisting(string username)
             {
-                return false;
-            }
-            return true;
-        }
-
-        public static bool isPhoneValid(string phone)
-        {
-            var phoneRegex = @"/08[789]\d{7}/";
-
-            if (!Regex.IsMatch(phone, phoneRegex))
-            {
-                return false;
+                using (var db = new SoftCinemaContext())
+                {
+                    return db.Users.Any(u => u.Username == username);
+                }
             }
 
-            return true;
+            public static bool isPasswordValid(string password)
+            {
+                if (password.Length < 3 && password.Length > 25)
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            public static bool isRepeatPasswordValid(string password, string repeatpassword)
+            {
+                if (repeatpassword == password)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public static bool isEmailValid(string email)
+            {
+                var emailRegex =
+                    @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+
+                if (!Regex.IsMatch(email, emailRegex))
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            public static bool isPhoneValid(string phone)
+            {
+                if (phone == "" || phone == string.Empty)
+                {
+                    return true;
+                }
+
+                var phoneRegex = @"08[789]\d{7}";
+
+                if (!Regex.IsMatch(phone, phoneRegex))
+                {
+                    return false;
+                }
+
+                return true;
+            }
         }
 
         public static void AddUser(string username, string password, string repeatPassword, string email, string phone)
@@ -195,6 +203,7 @@ namespace SoftCinema.Service
                 };
 
                 db.Users.Add(user);
+                db.SaveChanges();
             }
         }
     }
