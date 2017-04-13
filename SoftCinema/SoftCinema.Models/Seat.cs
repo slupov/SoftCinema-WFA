@@ -18,5 +18,7 @@
         public int AuditoriumId { get; set; }
 
         public virtual Auditorium Auditorium { get; set; }
+
+        public bool IsReserved { get; set; }
     }
 }
