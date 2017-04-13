@@ -25,6 +25,14 @@ namespace SoftCinema.Services
             }
         }
 
+        public static int GetAuditoriumId(byte auditoriumNumber, int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Auditoriums.First(a => a.CinemaId == cinemaId && a.Number == auditoriumNumber).Id;
+            }
+        }
+
         public static bool IsAuditoriumExisting(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -33,6 +41,7 @@ namespace SoftCinema.Services
             }
         }
 
-        
+
+       
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="MovieDTO.cs" />
     <Compile Include="MovieDTOCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreeeningDto.cs" />
     <Compile Include="TownDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

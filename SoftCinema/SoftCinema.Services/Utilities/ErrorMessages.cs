@@ -29,6 +29,10 @@ namespace SoftCinema.Services.Utilities
         public const string CategoryDoesntExist = "Category {0} doesn't exist in the database!";
 
         public const string MovieDoesntExist = "Movie {0} doesn't exists in the database!";
+
+        public const string AuditoriumDoesntExist = "Auditorium number {0} doesn't exist in the cinema {1}!";
+
+        public const string ScreeningAlreadyExists = "There is already a screening for the given time!";
     }
     
 }

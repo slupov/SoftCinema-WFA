@@ -46,6 +46,7 @@
     <Compile Include="CinemaImportService.cs" />
     <Compile Include="MovieImportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreeningImportService.cs" />
     <Compile Include="TownImportService.cs" />
     <Compile Include="Utilities\SuccessMessages.cs" />
   </ItemGroup>

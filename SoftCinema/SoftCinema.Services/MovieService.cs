@@ -52,6 +52,14 @@ namespace SoftCinema.Services
             }
         }
 
+        public static int GetMovieId(string movieName, int releaseYear)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Movies.First(m => m.Name == movieName && m.ReleaseYear == releaseYear).Id;
+            }
+        }
+
         public static bool IsMovieExisting(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
