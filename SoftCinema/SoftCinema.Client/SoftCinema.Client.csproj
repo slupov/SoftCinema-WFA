@@ -75,6 +75,21 @@
     <Compile Include="Forms\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SoftCinemaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoftCinemaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SoftCinemaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoftCinemaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SoftCinemaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoftCinemaDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +137,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SoftCinemaDataSet.xsc">
+      <DependentUpon>SoftCinemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoftCinemaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoftCinemaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoftCinemaDataSet.xss">
+      <DependentUpon>SoftCinemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoftCinemaDataSet1.xsc">
+      <DependentUpon>SoftCinemaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SoftCinemaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoftCinemaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoftCinemaDataSet1.xss">
+      <DependentUpon>SoftCinemaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SoftCinemaDataSet2.xsc">
+      <DependentUpon>SoftCinemaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SoftCinemaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoftCinemaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoftCinemaDataSet2.xss">
+      <DependentUpon>SoftCinemaDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
