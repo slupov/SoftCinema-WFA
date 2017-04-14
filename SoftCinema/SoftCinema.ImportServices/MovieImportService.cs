@@ -39,7 +39,7 @@ namespace ImportServices
         }
 
         
-        private static void ImportMovie(MovieDTO movieDto)
+        public static void ImportMovie(MovieDTO movieDto)
         {
             string movieName = movieDto.Name;
             DataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
@@ -62,11 +62,19 @@ namespace ImportServices
             
             MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
                 releaseCountry);
-            MovieService.AddCategoriesToMovie(movieName,releaseYear,categories);
+            MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
 
             Console.WriteLine(string.Format(SuccessMessages.MoviesAddedSuccess,movieName));
 
 
+        }
+
+        public static void AddCategoriesToMovie(string movieName, int releaseYear, List<string> categories)
+        {
+            foreach (var categoryName in categories)
+            {
+                MovieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
+            }
         }
     }
 }

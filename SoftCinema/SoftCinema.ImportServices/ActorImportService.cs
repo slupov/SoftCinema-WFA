@@ -43,9 +43,19 @@
             int bornTownId = TownService.GetTownId(townName);
 
             ActorService.AddActor(actorName, actorRating, bornTownId);
-            ActorService.AddMoviesToActor(actorName, movies);
+            ActorImportService.AddMoviesToActor(actorName, movies);
 
             Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess, actorName));
+        }
+
+        public static void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)
+        {
+            foreach (var movieDto in movies)
+            {
+                string movieName = movieDto.Name;
+                int releaseYear = movieDto.ReleaseYear;
+                ActorService.AddMovieToActor(actorName, movieName, releaseYear);
+            }
         }
     }
 }
