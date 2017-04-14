@@ -35,7 +35,7 @@ namespace SoftCinema.Client
             this.SidePanel = new System.Windows.Forms.Panel();
             this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton3 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.buyTicketsTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.loginTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.NamePanel = new System.Windows.Forms.Panel();
@@ -57,7 +57,7 @@ namespace SoftCinema.Client
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(61)))), ((int)(((byte)(76)))));
             this.SidePanel.Controls.Add(this.teamButton5);
             this.SidePanel.Controls.Add(this.teamButton4);
-            this.SidePanel.Controls.Add(this.teamButton3);
+            this.SidePanel.Controls.Add(this.buyTicketsTeamButton);
             this.SidePanel.Controls.Add(this.loginTeamButton);
             this.SidePanel.Controls.Add(this.registerTeamButton);
             this.SidePanel.Controls.Add(this.NamePanel);
@@ -101,22 +101,23 @@ namespace SoftCinema.Client
             this.teamButton4.Text = "teamButton4";
             this.teamButton4.UseVisualStyleBackColor = false;
             // 
-            // teamButton3
+            // buyTicketsTeamButton
             // 
-            this.teamButton3.BackColor = System.Drawing.Color.Black;
-            this.teamButton3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton3.ForeColor = System.Drawing.Color.White;
-            this.teamButton3.Location = new System.Drawing.Point(0, 187);
-            this.teamButton3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton3.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton3.Name = "teamButton3";
-            this.teamButton3.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton3.Size = new System.Drawing.Size(195, 57);
-            this.teamButton3.TabIndex = 3;
-            this.teamButton3.Text = "teamButton3";
-            this.teamButton3.UseVisualStyleBackColor = false;
+            this.buyTicketsTeamButton.BackColor = System.Drawing.Color.Black;
+            this.buyTicketsTeamButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buyTicketsTeamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buyTicketsTeamButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buyTicketsTeamButton.ForeColor = System.Drawing.Color.White;
+            this.buyTicketsTeamButton.Location = new System.Drawing.Point(0, 187);
+            this.buyTicketsTeamButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.buyTicketsTeamButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.buyTicketsTeamButton.Name = "buyTicketsTeamButton";
+            this.buyTicketsTeamButton.Padding = new System.Windows.Forms.Padding(3);
+            this.buyTicketsTeamButton.Size = new System.Drawing.Size(195, 57);
+            this.buyTicketsTeamButton.TabIndex = 3;
+            this.buyTicketsTeamButton.Text = "Buy tickets";
+            this.buyTicketsTeamButton.UseVisualStyleBackColor = false;
+            this.buyTicketsTeamButton.Click += new System.EventHandler(this.buyTicketsTeamButton_Click);
             // 
             // loginTeamButton
             // 
@@ -201,10 +202,10 @@ namespace SoftCinema.Client
             // GreetingLabel
             // 
             GreetingLabel.AutoSize = true;
-            GreetingLabel.Font = new System.Drawing.Font("Charlemagne Std", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             GreetingLabel.Location = new System.Drawing.Point(642, 26);
             GreetingLabel.Name = "GreetingLabel";
-            GreetingLabel.Size = new System.Drawing.Size(55, 15);
+            GreetingLabel.Size = new System.Drawing.Size(51, 16);
             GreetingLabel.TabIndex = 3;
             GreetingLabel.Text = "label1";
             GreetingLabel.Visible = false;
@@ -272,7 +273,7 @@ namespace SoftCinema.Client
         private TeamButton BtnDashboard;
         private TeamButton teamButton5;
         private TeamButton teamButton4;
-        private TeamButton teamButton3;
+        private TeamButton buyTicketsTeamButton;
         private TeamButton loginTeamButton;
         private TeamButton registerTeamButton;
 

@@ -32,6 +32,14 @@ namespace SoftCinema.Client.Forms
 
         }
 
-       
+        private void selectSeats_Click(object sender, EventArgs e)
+        {
+            TicketTypeForm ticketTypeForm = new TicketTypeForm();
+            ticketTypeForm.TopLevel = false;
+            ticketTypeForm.AutoScroll = true;
+           
+            this.Owner.Controls.Add(ticketTypeForm);
+            ticketTypeForm.Show();
+        }
     }
 }

@@ -33,7 +33,7 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.timeComboBox = new System.Windows.Forms.ComboBox();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.selectSeats = new System.Windows.Forms.Button();
             this.townLabel = new System.Windows.Forms.Label();
             this.townComboBox = new System.Windows.Forms.ComboBox();
             this.dateComboBox = new System.Windows.Forms.ComboBox();
@@ -88,14 +88,15 @@
             this.dateLabel.TabIndex = 4;
             this.dateLabel.Text = "Date:";
             // 
-            // button1
+            // selectSeats
             // 
-            this.button1.Location = new System.Drawing.Point(218, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 42);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Purchase";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selectSeats.Location = new System.Drawing.Point(218, 298);
+            this.selectSeats.Name = "selectSeats";
+            this.selectSeats.Size = new System.Drawing.Size(125, 42);
+            this.selectSeats.TabIndex = 8;
+            this.selectSeats.Text = "Select seats";
+            this.selectSeats.UseVisualStyleBackColor = true;
+            this.selectSeats.Click += new System.EventHandler(this.selectSeats_Click);
             // 
             // townLabel
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.movieComboBox);
             this.Controls.Add(this.townComboBox);
             this.Controls.Add(this.townLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectSeats);
             this.Controls.Add(this.dateComboBox);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.timeComboBox);
@@ -174,7 +175,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.ComboBox timeComboBox;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button selectSeats;
         private System.Windows.Forms.Label townLabel;
         private System.Windows.Forms.ComboBox townComboBox;
         internal System.Windows.Forms.ComboBox dateComboBox;
