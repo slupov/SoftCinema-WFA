@@ -26,5 +26,12 @@ namespace SoftCinema.Client.Forms
         {
 
         }
+
+        private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
