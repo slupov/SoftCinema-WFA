@@ -79,7 +79,7 @@ namespace SoftCinema.Client
         {
         }
 
-        private void teamButton4_Click(object sender, EventArgs e)
+        private void registerMovie_Click(object sender, EventArgs e)
         {
             RegisterMovieForm registerMovieForm = new RegisterMovieForm();
             registerMovieForm.TopLevel = false;

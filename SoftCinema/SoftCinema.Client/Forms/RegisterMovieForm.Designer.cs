@@ -168,6 +168,7 @@
             this.Controls.Add(this.ratingUpDown);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterMovieForm";
             this.Text = "RegisterMovieForm";
             ((System.ComponentModel.ISupportInitialize)(this.ratingUpDown)).EndInit();

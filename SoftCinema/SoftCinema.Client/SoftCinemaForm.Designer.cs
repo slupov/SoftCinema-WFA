@@ -34,7 +34,7 @@ namespace SoftCinema.Client
         {
             this.SidePanel = new System.Windows.Forms.Panel();
             this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.registerMovie = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.buyTicketsTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.loginTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
@@ -56,7 +56,7 @@ namespace SoftCinema.Client
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(61)))), ((int)(((byte)(76)))));
             this.SidePanel.Controls.Add(this.teamButton5);
-            this.SidePanel.Controls.Add(this.teamButton4);
+            this.SidePanel.Controls.Add(this.registerMovie);
             this.SidePanel.Controls.Add(this.buyTicketsTeamButton);
             this.SidePanel.Controls.Add(this.loginTeamButton);
             this.SidePanel.Controls.Add(this.registerTeamButton);
@@ -84,22 +84,23 @@ namespace SoftCinema.Client
             this.teamButton5.Text = "teamButton5";
             this.teamButton5.UseVisualStyleBackColor = false;
             // 
-            // teamButton4
+            // registerMovie
             // 
-            this.teamButton4.BackColor = System.Drawing.Color.Black;
-            this.teamButton4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton4.ForeColor = System.Drawing.Color.White;
-            this.teamButton4.Location = new System.Drawing.Point(0, 244);
-            this.teamButton4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton4.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton4.Name = "teamButton4";
-            this.teamButton4.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton4.Size = new System.Drawing.Size(195, 57);
-            this.teamButton4.TabIndex = 4;
-            this.teamButton4.Text = "teamButton4";
-            this.teamButton4.UseVisualStyleBackColor = false;
+            this.registerMovie.BackColor = System.Drawing.Color.Black;
+            this.registerMovie.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.registerMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerMovie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerMovie.ForeColor = System.Drawing.Color.White;
+            this.registerMovie.Location = new System.Drawing.Point(0, 244);
+            this.registerMovie.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.registerMovie.MinimumSize = new System.Drawing.Size(100, 30);
+            this.registerMovie.Name = "registerMovie";
+            this.registerMovie.Padding = new System.Windows.Forms.Padding(3);
+            this.registerMovie.Size = new System.Drawing.Size(195, 57);
+            this.registerMovie.TabIndex = 4;
+            this.registerMovie.Text = "Register movie";
+            this.registerMovie.UseVisualStyleBackColor = false;
+            this.registerMovie.Click += new System.EventHandler(this.registerMovie_Click);
             // 
             // buyTicketsTeamButton
             // 
@@ -272,7 +273,7 @@ namespace SoftCinema.Client
         //buttons 
         private TeamButton BtnDashboard;
         private TeamButton teamButton5;
-        private TeamButton teamButton4;
+        private TeamButton registerMovie;
         private TeamButton buyTicketsTeamButton;
         private TeamButton loginTeamButton;
         private TeamButton registerTeamButton;
