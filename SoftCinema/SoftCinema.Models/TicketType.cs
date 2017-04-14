@@ -10,7 +10,7 @@ namespace SoftCinema.Models
     {
         Children,
         Students,
-        Adults,
+        Regular,
         Seniors
     }
 }

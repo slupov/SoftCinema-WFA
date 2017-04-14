@@ -12,7 +12,6 @@ namespace SoftCinema.Data
         public SoftCinemaContext()
             : base("name=SoftCinemaContext")
         {
-            
         }
 
         public virtual DbSet<User> Users { get; set; }
@@ -24,13 +23,13 @@ namespace SoftCinema.Data
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Town> Towns { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new MovieConfiguration());
             modelBuilder.Configurations.Add(new SeatsConfiguration());
-
         }
     }
 }

@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,11 +57,23 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegisterMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterMovieForm.Designer.cs">
+      <DependentUpon>RegisterMovieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TicketForm.Designer.cs">
       <DependentUpon>TicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TicketTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TicketTypeForm.Designer.cs">
+      <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +92,14 @@
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterMovieForm.resx">
+      <DependentUpon>RegisterMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TicketTypeForm.resx">
+      <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftCinemaForm.resx">
       <DependentUpon>SoftCinemaForm.cs</DependentUpon>
