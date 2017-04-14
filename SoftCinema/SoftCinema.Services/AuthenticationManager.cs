@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Win32;
-using SoftCinema.Models;
-
-namespace SoftCinema.Service
+﻿namespace SoftCinema.Services
 {
+    using System;
+    using SoftCinema.Models;
+
     public class AuthenticationManager
     {
         private static User currentUser;
@@ -17,11 +12,20 @@ namespace SoftCinema.Service
             return currentUser != null;
         }
 
+        public static void Authorize()
+        {
+            if (currentUser == null)
+            {
+                throw new InvalidOperationException("You should log in first!");
+            }
+        }
+
+
         public static void Logout()
         {
-            if (!IsAuthenticated())
+            if (currentUser == null)
             {
-                throw new InvalidOperationException("You should login first!");
+                throw new InvalidOperationException("You should login first");
             }
 
             currentUser = null;
@@ -29,21 +33,16 @@ namespace SoftCinema.Service
 
         public static void Login(User user)
         {
-            if (IsAuthenticated())
-            {
-                throw new InvalidOperationException("You should logout first!");
-            }
-
-            if (user == null)
-            {
-                throw new InvalidOperationException("User to log in is invalid!");
-            }
-
             currentUser = user;
         }
 
         public static User GetCurrentUser()
         {
+            if (currentUser == null)
+            {
+                throw new InvalidOperationException("You should log in first!");
+            }
+
             return currentUser;
         }
     }

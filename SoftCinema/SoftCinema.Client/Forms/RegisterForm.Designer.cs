@@ -113,7 +113,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(303, 227);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(173, 20);
-            this.emailTextBox.TabIndex = 7;
+            this.emailTextBox.TabIndex = 8;
             this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // repeatPasswordTextBox
@@ -121,7 +121,7 @@
             this.repeatPasswordTextBox.Location = new System.Drawing.Point(303, 177);
             this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
             this.repeatPasswordTextBox.Size = new System.Drawing.Size(173, 20);
-            this.repeatPasswordTextBox.TabIndex = 8;
+            this.repeatPasswordTextBox.TabIndex = 7;
             this.repeatPasswordTextBox.TextChanged += new System.EventHandler(this.repeatPasswordTextBox_TextChanged);
             // 
             // phoneNumberTextBox
@@ -163,7 +163,6 @@
             this.passwordInfoLabel.TabIndex = 12;
             this.passwordInfoLabel.Text = "label1";
             this.passwordInfoLabel.Visible = false;
-            this.passwordInfoLabel.Click += new System.EventHandler(this.passwordInfoLabel_Click);
             // 
             // rptpasswordInfoLabel
             // 
@@ -175,7 +174,6 @@
             this.rptpasswordInfoLabel.TabIndex = 13;
             this.rptpasswordInfoLabel.Text = "label1";
             this.rptpasswordInfoLabel.Visible = false;
-            this.rptpasswordInfoLabel.Click += new System.EventHandler(this.rptpasswordInfoLabel_Click);
             // 
             // emailInfoLabel
             // 
@@ -187,7 +185,6 @@
             this.emailInfoLabel.TabIndex = 14;
             this.emailInfoLabel.Text = "label1";
             this.emailInfoLabel.Visible = false;
-            this.emailInfoLabel.Click += new System.EventHandler(this.emailInfoLabel_Click);
             // 
             // phoneInfoLabel
             // 
@@ -199,7 +196,6 @@
             this.phoneInfoLabel.TabIndex = 15;
             this.phoneInfoLabel.Text = "label1";
             this.phoneInfoLabel.Visible = false;
-            this.phoneInfoLabel.Click += new System.EventHandler(this.phoneInfoLabel_Click);
             // 
             // RegisterForm
             // 

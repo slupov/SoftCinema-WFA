@@ -17,9 +17,8 @@
         [Required,MaxLength(25),Index(IsUnique = true)]
         public string Username { get; set; }
         
-        //TODO: Stoyo include password hasher class
         [Required]
-        public byte[] PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
 
         [RegularExpression("0([0-9]{9})", ErrorMessage = "Invalid phone number.")]
         public string PhoneNumber { get; set; }

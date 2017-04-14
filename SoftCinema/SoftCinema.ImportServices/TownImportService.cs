@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ImportServices.Utilities;
 using SoftCinema.DTOs;
-using SoftCinema.Service;
-using SoftCinema.Service.Utilities;
+using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
-namespace SoftCinema.Import.ImportServices
+namespace ImportServices
 {
     public static class TownImportService
     {
@@ -24,10 +20,8 @@ namespace SoftCinema.Import.ImportServices
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-
                 }
             }
-
         }
 
         public static void ImportTown(TownDTO townDto)
@@ -40,6 +34,5 @@ namespace SoftCinema.Import.ImportServices
 
             Console.WriteLine(string.Format(SuccessMessages.TownAddedSuccess, townName));
         }
-
     }
 }

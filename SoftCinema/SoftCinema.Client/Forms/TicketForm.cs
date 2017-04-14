@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class Ticket : Form
+    public partial class TicketForm : Form
     {
-        public Ticket()
+        public TicketForm()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ticket_Load(object sender, EventArgs e)
         {
 
         }

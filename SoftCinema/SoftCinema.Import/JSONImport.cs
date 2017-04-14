@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using ImportServices;
-using SoftCinema.Import.ImportServices;
-
-namespace SoftCinema.Import
+﻿namespace SoftCinema.Import
 {
     using Newtonsoft.Json;
     using System.IO;
     using System.Collections.Generic;
-    using SoftCinema.Data;
     using SoftCinema.DTOs;
-    using SoftCinema.Service;
+    using ImportServices;
+
 
     public static class JSONImport
     {
@@ -39,7 +35,6 @@ namespace SoftCinema.Import
             var screeningsJson = File.ReadAllText(DataPaths.ScreeningsJson);
             var screeningDtos = JsonConvert.DeserializeObject<IEnumerable<ScreeeningDto>>(screeningsJson);
             ScreeningImportService.ImportScreenings(screeningDtos);
-
         }
 
         public static void ImportSeats()

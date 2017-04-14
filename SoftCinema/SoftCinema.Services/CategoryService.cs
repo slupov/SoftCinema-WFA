@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using SoftCinema.Data;
-using SoftCinema.DTOs;
 using SoftCinema.Models;
-using SoftCinema.Service.Utilities;
-using SoftCinema.Services.Utilities;
 
-namespace SoftCinema.Service
+namespace SoftCinema.Services
 {
     public static class CategoryService
     {

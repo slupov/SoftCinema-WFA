@@ -56,11 +56,11 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ticket.cs">
+    <Compile Include="Forms\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ticket.Designer.cs">
-      <DependentUpon>Ticket.cs</DependentUpon>
+    <Compile Include="Forms\TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ticket.resx">
-      <DependentUpon>Ticket.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftCinemaForm.resx">
       <DependentUpon>SoftCinemaForm.cs</DependentUpon>

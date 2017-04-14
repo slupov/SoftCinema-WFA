@@ -1,9 +1,9 @@
-﻿namespace SoftCinema.Service
-{
-    using System;
-    using Data;
-    using Models;
+﻿using System;
+using SoftCinema.Data;
+using SoftCinema.Models;
 
+namespace SoftCinema.Services
+{
     public static class TicketService
     {
         //TODO: Additional checks and applying discount to ticket price

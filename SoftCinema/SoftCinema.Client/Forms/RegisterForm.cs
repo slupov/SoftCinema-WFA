@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Service;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
@@ -49,7 +41,7 @@ namespace SoftCinema.Client.Forms
             var email = this.emailTextBox.Text;
             var phone = this.phoneNumberTextBox.Text;
 
-            bool isDataValid = UserService.isUserValid(username, password, repeatPassword, email, phone);
+            bool isDataValid = UserService.Validations.isUserValid(username, password, repeatPassword, email, phone);
 
             if (isDataValid)
             {
@@ -59,14 +51,14 @@ namespace SoftCinema.Client.Forms
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (this.usernameTextBox.Text.Length > 25  || this.usernameTextBox.Text.Length < 3)
+            if (this.usernameTextBox.Text.Length > 25 || this.usernameTextBox.Text.Length < 3)
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = "Username must be in range 3-25 characters";
             }
             else
             {
-                if (UserService.isUsernameExisting(this.usernameTextBox.Text))
+                if (UserService.Validations.isUsernameExisting(this.usernameTextBox.Text))
                 {
                     this.usernameInfoLabel.Show();
                     this.usernameInfoLabel.Text = "Username already taken";
@@ -80,7 +72,7 @@ namespace SoftCinema.Client.Forms
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.isPasswordValid(this.passwordTextBox.Text))
+            if (!UserService.Validations.isPasswordValid(this.passwordTextBox.Text))
             {
                 this.passwordInfoLabel.Show();
                 this.passwordInfoLabel.Text = "Password length must be in range 3-25 characters!";
@@ -106,7 +98,7 @@ namespace SoftCinema.Client.Forms
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.isEmailValid(this.emailTextBox.Text))
+            if (!UserService.Validations.isEmailValid(this.emailTextBox.Text))
             {
                 this.emailInfoLabel.Show();
                 this.emailInfoLabel.Text = "Email is invalid";
@@ -119,7 +111,7 @@ namespace SoftCinema.Client.Forms
 
         private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.isPhoneValid(this.phoneNumberTextBox.Text))
+            if (!UserService.Validations.isPhoneValid(this.phoneNumberTextBox.Text))
             {
                 this.phoneInfoLabel.Show();
                 this.phoneInfoLabel.Text = "Phone must be in 08[789]... format!";
@@ -128,27 +120,6 @@ namespace SoftCinema.Client.Forms
             {
                 this.phoneInfoLabel.Hide();
             }
-        }
-
-
-        private void emailInfoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rptpasswordInfoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passwordInfoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void phoneInfoLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

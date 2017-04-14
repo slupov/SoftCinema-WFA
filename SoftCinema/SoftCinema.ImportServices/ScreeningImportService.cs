@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ImportServices.Utilities;
 using SoftCinema.DTOs;
-using SoftCinema.Service;
-using SoftCinema.Service.Utilities;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace ImportServices
 {
