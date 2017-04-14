@@ -10,14 +10,7 @@ namespace SoftCinema.Services
 {
     public static class ScreeningService
     {
-        public static bool IsScreeningExisting(int auditoriumId, DateTime date)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Screenings.Any(s => s.AuditoriumId == auditoriumId && s.Start == date);
-            }
-        }
-
+        
         public static void AddScreening(int auditoriumId, int movieId, DateTime date)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -30,6 +23,14 @@ namespace SoftCinema.Services
                 };
                 context.Screenings.Add(screening);
                 context.SaveChanges();
+            }
+        }
+
+        public static bool IsScreeningExisting(int auditoriumId, DateTime date)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Screenings.Any(s => s.AuditoriumId == auditoriumId && s.Start == date);
             }
         }
     }

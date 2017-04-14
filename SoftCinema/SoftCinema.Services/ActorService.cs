@@ -24,18 +24,7 @@ namespace SoftCinema.Services
             }
         }
 
-
-        public static void AddMoviesToActor(string actorName,List<ActorMovieDto> movies)
-        {
-            foreach (var movieDto in movies)
-            {
-                string movieName = movieDto.Name;
-                int releaseYear = movieDto.ReleaseYear;
-                AddMovieToActor(actorName,movieName,releaseYear);
-            }
-        }
-
-        private static void AddMovieToActor(string actorName, string movieName, int releaseYear)
+        public static void AddMovieToActor(string actorName, string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

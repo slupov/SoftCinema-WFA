@@ -29,14 +29,6 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddCategoriesToMovie(string movieName,int releaseYear,List<string> categories)
-        {
-            foreach (var categoryName in categories)
-            {
-                MovieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
-            }
-        }
-
         public static void AddCategoryToMovie(string categoryName, string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
