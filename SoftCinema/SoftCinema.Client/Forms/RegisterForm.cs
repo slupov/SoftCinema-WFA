@@ -45,7 +45,7 @@ namespace SoftCinema.Client.Forms
 
             if (isDataValid)
             {
-                UserService.AddUser(username, password, repeatPassword, email, phone);
+                UserService.AddUser(username, password, email, phone);
             }
         }
 

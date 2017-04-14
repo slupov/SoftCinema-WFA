@@ -198,7 +198,7 @@
             }
         }
 
-        public static void AddUser(string username, string password, string repeatPassword, string email, string phone)
+        public static void AddUser(string username, string password, string email, string phone)
         {
             using (var db = new SoftCinemaContext())
             {

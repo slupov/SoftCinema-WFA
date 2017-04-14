@@ -26,6 +26,7 @@
         [Required, EmailAddress,MaxLength(30),Index(IsUnique = true)]
         public string Email { get; set; }
 
+        [Required]
         public Role Role { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
