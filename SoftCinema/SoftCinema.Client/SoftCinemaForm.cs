@@ -1,6 +1,8 @@
 ﻿using SoftCinema.Client.Forms;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client
 {
@@ -13,15 +15,17 @@ namespace SoftCinema.Client
 
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
+            if (AuthenticationManager.IsAuthenticated())
+            {
+                ShowGreetings();
+            }
+            else
+            {
+                HideGreetings();
+            }
         }
 
-        private void ContentHolder_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void UpperPanel_Paint(object sender, PaintEventArgs e)
-        {
-        }
+        //Sidebar buttons
         private void registerTeamButton_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
@@ -34,7 +38,6 @@ namespace SoftCinema.Client
 
         private void loginTeamButton_Click(object sender, EventArgs e)
         {
-
             LoginForm loginForm = new LoginForm();
             loginForm.TopLevel = false;
             loginForm.AutoScroll = true;
@@ -43,6 +46,31 @@ namespace SoftCinema.Client
             loginForm.Show();
         }
 
-      
+        //Other buttons
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            AuthenticationManager.Logout();
+            HideGreetings();
+
+            MessageBox.Show("Successfully logged out");
+        }
+
+        //Utilities
+        public static void ShowGreetings()
+        {
+            GreetingLabel.Show();
+            GreetingLabel.ForeColor = Color.Black;
+            GreetingLabel.Text = $"Hello, {AuthenticationManager.GetCurrentUser().Username}";
+
+            LogoutButton.Show();
+        }
+
+        public static void HideGreetings()
+        {
+            GreetingLabel.Hide();
+            GreetingLabel.Text = string.Empty;
+
+            LogoutButton.Hide();
+        }
     }
 }

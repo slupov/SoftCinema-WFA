@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Client
+﻿using System.Reflection.Emit;
+
+namespace SoftCinema.Client
 {
     using SoftCinema.Client.Utilities.CustomTools;
 
@@ -31,19 +33,22 @@
         private void InitializeComponent()
         {
             this.SidePanel = new System.Windows.Forms.Panel();
-            this.NamePanel = new System.Windows.Forms.Panel();
-            this.Title = new System.Windows.Forms.Label();
-            this.UpperPanel = new System.Windows.Forms.Panel();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.ContentHolder = new System.Windows.Forms.Panel();
             this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.teamButton3 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.loginTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.NamePanel = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.Label();
+            this.UpperPanel = new System.Windows.Forms.Panel();
+            LogoutButton = new System.Windows.Forms.Button();
+            GreetingLabel = new System.Windows.Forms.Label();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.ContentHolder = new System.Windows.Forms.Panel();
             this.BtnDashboard = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.SidePanel.SuspendLayout();
             this.NamePanel.SuspendLayout();
+            this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,53 +66,6 @@
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(195, 491);
             this.SidePanel.TabIndex = 0;
-            // 
-            // NamePanel
-            // 
-            this.NamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(155)))), ((int)(((byte)(2)))));
-            this.NamePanel.Controls.Add(this.Title);
-            this.NamePanel.Location = new System.Drawing.Point(0, 0);
-            this.NamePanel.Name = "NamePanel";
-            this.NamePanel.Size = new System.Drawing.Size(195, 73);
-            this.NamePanel.TabIndex = 0;
-            // 
-            // Title
-            // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(20, 20);
-            this.Title.Name = "Title";
-            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Title.Size = new System.Drawing.Size(151, 33);
-            this.Title.TabIndex = 0;
-            this.Title.Text = "SoftCinema";
-            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // UpperPanel
-            // 
-            this.UpperPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.UpperPanel.BackColor = System.Drawing.Color.White;
-            this.UpperPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UpperPanel.Location = new System.Drawing.Point(195, 0);
-            this.UpperPanel.Name = "UpperPanel";
-            this.UpperPanel.Size = new System.Drawing.Size(769, 73);
-            this.UpperPanel.TabIndex = 1;
-            this.UpperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpperPanel_Paint);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // ContentHolder
-            // 
-            this.ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentHolder.Location = new System.Drawing.Point(195, 73);
-            this.ContentHolder.Name = "ContentHolder";
-            this.ContentHolder.Size = new System.Drawing.Size(769, 418);
-            this.ContentHolder.TabIndex = 2;
-            this.ContentHolder.Paint += new System.Windows.Forms.PaintEventHandler(this.ContentHolder_Paint);
             // 
             // teamButton5
             // 
@@ -196,6 +154,75 @@
             this.registerTeamButton.UseVisualStyleBackColor = false;
             this.registerTeamButton.Click += new System.EventHandler(this.registerTeamButton_Click);
             // 
+            // NamePanel
+            // 
+            this.NamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(155)))), ((int)(((byte)(2)))));
+            this.NamePanel.Controls.Add(this.Title);
+            this.NamePanel.Location = new System.Drawing.Point(0, 0);
+            this.NamePanel.Name = "NamePanel";
+            this.NamePanel.Size = new System.Drawing.Size(195, 73);
+            this.NamePanel.TabIndex = 0;
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(20, 20);
+            this.Title.Name = "Title";
+            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Title.Size = new System.Drawing.Size(151, 33);
+            this.Title.TabIndex = 0;
+            this.Title.Text = "SoftCinema";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UpperPanel
+            // 
+            this.UpperPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.UpperPanel.BackColor = System.Drawing.Color.White;
+            this.UpperPanel.Controls.Add(LogoutButton);
+            this.UpperPanel.Controls.Add(GreetingLabel);
+            this.UpperPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UpperPanel.Location = new System.Drawing.Point(195, 0);
+            this.UpperPanel.Name = "UpperPanel";
+            this.UpperPanel.Size = new System.Drawing.Size(769, 73);
+            this.UpperPanel.TabIndex = 1;
+            // 
+            // LogoutButton
+            // 
+            LogoutButton.Location = new System.Drawing.Point(631, 44);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new System.Drawing.Size(75, 23);
+            LogoutButton.TabIndex = 4;
+            LogoutButton.Text = "Logout";
+            LogoutButton.UseVisualStyleBackColor = true;
+            LogoutButton.Visible = false;
+            LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // GreetingLabel
+            // 
+            GreetingLabel.AutoSize = true;
+            GreetingLabel.Font = new System.Drawing.Font("Charlemagne Std", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            GreetingLabel.Location = new System.Drawing.Point(642, 26);
+            GreetingLabel.Name = "GreetingLabel";
+            GreetingLabel.Size = new System.Drawing.Size(55, 15);
+            GreetingLabel.TabIndex = 3;
+            GreetingLabel.Text = "label1";
+            GreetingLabel.Visible = false;
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // ContentHolder
+            // 
+            this.ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentHolder.Location = new System.Drawing.Point(195, 73);
+            this.ContentHolder.Name = "ContentHolder";
+            this.ContentHolder.Size = new System.Drawing.Size(769, 418);
+            this.ContentHolder.TabIndex = 2;
+            // 
             // BtnDashboard
             // 
             this.BtnDashboard.BackColor = System.Drawing.Color.Black;
@@ -225,6 +252,8 @@
             this.SidePanel.ResumeLayout(false);
             this.NamePanel.ResumeLayout(false);
             this.NamePanel.PerformLayout();
+            this.UpperPanel.ResumeLayout(false);
+            this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -240,12 +269,21 @@
         private System.Windows.Forms.Label Title;
 
         //buttons 
-        private SoftCinema.Client.Utilities.CustomTools.TeamButton BtnDashboard;
+        private TeamButton BtnDashboard;
         private TeamButton teamButton5;
         private TeamButton teamButton4;
         private TeamButton teamButton3;
         private TeamButton loginTeamButton;
         private TeamButton registerTeamButton;
+
+
+        public static System.Windows.Forms.Label GetGreetingLabel()
+        {
+            return GreetingLabel;
+        }
+
+        private static System.Windows.Forms.Button LogoutButton;
+        private static System.Windows.Forms.Label GreetingLabel;
     }
 }
 

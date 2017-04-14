@@ -32,14 +32,16 @@ namespace SoftCinema.Client.Forms
             var username = this.usernameTextBox.Text;
             var password = this.passwordTextBox.Text;
 
-            //TODO
             if (UserService.Validations.isUsernamePasswordMatching(username, password))
             {
-                MessageBox.Show("YES");
+                AuthenticationManager.Login(UserService.GetUser(username));
+                MessageBox.Show("User successfully logged in");
+
+                SoftCinemaForm.ShowGreetings();
             }
             else
             {
-                MessageBox.Show("NO");
+                MessageBox.Show("Login invalid");
             }
         }
 

@@ -215,5 +215,13 @@
                 db.SaveChanges();
             }
         }
+
+        public static User GetUser(string username)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Users.FirstOrDefault(u => u.Username == username);
+            }
+        }
     }
 }
