@@ -44,7 +44,7 @@ namespace ImportServices
             DataValidator.ValidateSeatDoesntExist(number,auditoriumId,auditoriumNumber);
 
             SeatService.AddSeat(number, row, auditoriumId);
-            Console.WriteLine(string.Format(SuccessMessages.SeatAddedSuccess,number,auditoriumNumber,cinemaName));
+            Console.WriteLine(string.Format(SuccessMessages.SeatAddedSuccess,number,auditoriumNumber,cinemaName,cinemaTown));
         }
     }
 }

@@ -18,11 +18,11 @@ namespace ImportServices.Utilities
 
         public const string MoviesAddedSuccess = "Movie {0} successfully added to the database!";
 
-        public const string AuditoriumAddedSuccess = "Auditorium {0} successfully added to cinema {1}!";
+        public const string AuditoriumAddedSuccess = "Auditorium {0} successfully added to cinema {1} - {2}!";
 
         public const string ScreeningAddedSuccess = "Screening successfully added to auditorium {0} in cinema {1}!";
 
         public const string SeatAddedSuccess =
-            "Seat number {1} successfuly added to auditorium number {1} in cinema {2}!";
+            "Seat number {0} successfuly added to auditorium number {1} in cinema {2} - {3}!";
     }
 }

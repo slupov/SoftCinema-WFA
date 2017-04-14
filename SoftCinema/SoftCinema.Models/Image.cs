@@ -9,8 +9,6 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        public int Size { get; set; }
-
         [Required]
         public byte[] Content { get; set; }
     }

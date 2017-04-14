@@ -1,4 +1,5 @@
-﻿using SoftCinema.Data;
+﻿using System.Linq;
+using SoftCinema.Data;
 using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
 

@@ -58,10 +58,11 @@ namespace ImportServices
             AgeRestriction ageRestriction =(AgeRestriction)Enum.Parse(typeof(AgeRestriction),movieDto.AgeRestriction);
             string synopsis = movieDto.Synopsis;
             string releaseCountry = movieDto.ReleaseCountry;
+            byte[] image = movieDto.Image;
             
             
             MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
-                releaseCountry);
+                releaseCountry,image);
             MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
 
             Console.WriteLine(string.Format(SuccessMessages.MoviesAddedSuccess,movieName));

@@ -39,6 +39,9 @@ namespace SoftCinema.DTOs
         [XmlElement("AgeRestriction")]
         public string AgeRestriction { get; set; }
 
+        [XmlElement("Image")]
+        public byte[] Image { get; set; }
+
         [XmlArray("Categories")]
         [XmlArrayItem("Category")]
         public List<CategoryDTО> Categories { get; set; }

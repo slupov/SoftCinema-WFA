@@ -17,12 +17,11 @@ namespace SoftCinema.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            DropColumn("dbo.Movies", "ImgSource");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Movies", "ImgSource", c => c.String());
+            
             DropTable("dbo.Images");
         }
     }
