@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms
 {
@@ -13,7 +14,6 @@ namespace SoftCinema.Client.Forms
         }
 
         private static LoginForm instance;
-
 
         public static LoginForm Instance
         {
@@ -35,13 +35,13 @@ namespace SoftCinema.Client.Forms
             if (UserService.Validations.isUsernamePasswordMatching(username, password))
             {
                 AuthenticationManager.Login(UserService.GetUser(username));
-                MessageBox.Show("User successfully logged in");
+                MessageBox.Show(Constants.SuccessfulLogin);
 
                 SoftCinemaForm.ShowGreetings();
             }
             else
             {
-                MessageBox.Show("Login invalid");
+                MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
         }
 
@@ -50,7 +50,7 @@ namespace SoftCinema.Client.Forms
             if (!UserService.Validations.isUsernameExisting(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
-                this.usernameInfoLabel.Text = "No such user!";
+                this.usernameInfoLabel.Text = Constants.ErrorMessages.NoSuchUserExisting;
             }
             else
             {

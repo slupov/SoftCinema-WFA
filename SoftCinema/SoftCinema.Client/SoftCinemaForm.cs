@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client
 {
@@ -52,7 +53,7 @@ namespace SoftCinema.Client
             AuthenticationManager.Logout();
             HideGreetings();
 
-            MessageBox.Show("Successfully logged out");
+            MessageBox.Show(Constants.SuccessfulLogout);
         }
 
         //Utilities
@@ -60,7 +61,7 @@ namespace SoftCinema.Client
         {
             GreetingLabel.Show();
             GreetingLabel.ForeColor = Color.Black;
-            GreetingLabel.Text = $"Hello, {AuthenticationManager.GetCurrentUser().Username}";
+            GreetingLabel.Text = string.Format(Constants.GreetingsMessage,AuthenticationManager.GetCurrentUser().Username);
 
             LogoutButton.Show();
         }
