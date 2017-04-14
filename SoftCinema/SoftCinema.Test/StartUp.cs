@@ -21,9 +21,6 @@ namespace SoftCinema.Test
             JSONImport.ImportScreenings();
             JSONImport.ImportSeats();
 
-
-
-
         }
     }
 }
