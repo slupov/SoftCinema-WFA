@@ -61,7 +61,8 @@ namespace SoftCinema.Client
         {
             GreetingLabel.Show();
             GreetingLabel.ForeColor = Color.Black;
-            GreetingLabel.Text = string.Format(Constants.GreetingsMessage,AuthenticationManager.GetCurrentUser().Username);
+            GreetingLabel.Text = string.Format(Constants.GreetingsMessage,
+                AuthenticationManager.GetCurrentUser().Username);
 
             LogoutButton.Show();
         }
@@ -72,6 +73,20 @@ namespace SoftCinema.Client
             GreetingLabel.Text = string.Empty;
 
             LogoutButton.Hide();
+        }
+
+        private void teamButton3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void teamButton4_Click(object sender, EventArgs e)
+        {
+            RegisterMovieForm registerMovieForm = new RegisterMovieForm();
+            registerMovieForm.TopLevel = false;
+            registerMovieForm.AutoScroll = true;
+            this.ContentHolder.Controls.Clear();
+            this.ContentHolder.Controls.Add(registerMovieForm);
+            registerMovieForm.Show();
         }
     }
 }

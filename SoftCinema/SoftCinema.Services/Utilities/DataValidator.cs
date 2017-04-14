@@ -10,7 +10,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (input.Length > length)
             {
-                throw new ArgumentException(string.Format(ErrorMessages.StringExceedsLength, length));
+                throw new ArgumentException(string.Format(Constants.ErrorMessages.StringExceedsLength, length));
             }
         }
 
@@ -18,14 +18,14 @@ namespace SoftCinema.Services.Utilities
         {
             if (input != null && (input < minValue || input > maxValue))
             {
-                throw new ArgumentException(string.Format(ErrorMessages.FloatNotInRange, minValue, maxValue));
+                throw new ArgumentException(string.Format(Constants.ErrorMessages.FloatNotInRange, minValue, maxValue));
             }
         }
         public static void ValidateCategoryDoesNotExist(string categoryName)
         {
             if (CategoryService.IsCategoryExisting(categoryName))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.CategoryAlreadyExists, categoryName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CategoryAlreadyExists, categoryName));
             }
         }
 
@@ -41,7 +41,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (!CategoryService.IsCategoryExisting(categoryName))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.CategoryDoesntExist, categoryName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CategoryDoesntExist, categoryName));
             }
         }
 
@@ -49,7 +49,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (TownService.IsTownExisting(townName))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.TownAlreadyExists,townName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownAlreadyExists,townName));
             }
         }
 
@@ -57,7 +57,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (!TownService.IsTownExisting(townName))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.TownDoesntExist, townName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownDoesntExist, townName));
             }
         }
 
@@ -65,7 +65,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (CinemaService.IsCinemaExisting(cinemaName, townId))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.CinemaAlreadyExists,cinemaName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaAlreadyExists,cinemaName));
             }
         }
 
@@ -73,7 +73,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (!CinemaService.IsCinemaExisting(cinemaName, townId))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.CinemaDoesntExist, cinemaName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaDoesntExist, cinemaName));
             }
         }
 
@@ -81,7 +81,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (AuditoriumService.IsAuditoriumExisting(number, cinemaId))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.AuditoriumAlreadyExists,number,cinemaName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.AuditoriumAlreadyExists,number,cinemaName));
             }
         }
 
@@ -89,7 +89,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (!AuditoriumService.IsAuditoriumExisting(number, cinemaId))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.AuditoriumDoesntExist, number, cinemaName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.AuditoriumDoesntExist, number, cinemaName));
             }
         }
 
@@ -97,7 +97,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (MovieService.IsMovieExisting(movieName, releaseYear))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.MovieAlreadyExists,movieName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieAlreadyExists,movieName));
             }
         }
 
@@ -115,7 +115,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (!MovieService.IsMovieExisting(movieName, releaseYear))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.MovieDoesntExist, movieName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieDoesntExist, movieName));
             }
         }
 
@@ -124,7 +124,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (ScreeningService.IsScreeningExisting(auditoriumId, date))
             {
-                throw new InvalidOperationException(ErrorMessages.ScreeningAlreadyExists);
+                throw new InvalidOperationException(Constants.ErrorMessages.ScreeningAlreadyExists);
             }
         }
 
@@ -132,7 +132,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (SeatService.IsSeatExisting(seatNumber, auditoriumId))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.SeatAlreadyExists,seatNumber,auditoriumNumber));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.SeatAlreadyExists,seatNumber,auditoriumNumber));
             }
         }
 
@@ -140,7 +140,7 @@ namespace SoftCinema.Services.Utilities
         {
             if (ActorService.IsActorExisting(actorName))
             {
-                throw new InvalidOperationException(string.Format(ErrorMessages.ActorAlreadyExists,actorName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.ActorAlreadyExists,actorName));
             }
         }
     }

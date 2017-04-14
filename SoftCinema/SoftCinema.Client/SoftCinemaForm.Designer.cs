@@ -34,7 +34,7 @@ namespace SoftCinema.Client
         {
             this.SidePanel = new System.Windows.Forms.Panel();
             this.teamButton5 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.teamButton4 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.registerMovieButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.teamButton3 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.loginTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
@@ -56,7 +56,7 @@ namespace SoftCinema.Client
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(61)))), ((int)(((byte)(76)))));
             this.SidePanel.Controls.Add(this.teamButton5);
-            this.SidePanel.Controls.Add(this.teamButton4);
+            this.SidePanel.Controls.Add(this.registerMovieButton);
             this.SidePanel.Controls.Add(this.teamButton3);
             this.SidePanel.Controls.Add(this.loginTeamButton);
             this.SidePanel.Controls.Add(this.registerTeamButton);
@@ -84,22 +84,23 @@ namespace SoftCinema.Client
             this.teamButton5.Text = "teamButton5";
             this.teamButton5.UseVisualStyleBackColor = false;
             // 
-            // teamButton4
+            // registerMovieButton
             // 
-            this.teamButton4.BackColor = System.Drawing.Color.Black;
-            this.teamButton4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton4.ForeColor = System.Drawing.Color.White;
-            this.teamButton4.Location = new System.Drawing.Point(0, 244);
-            this.teamButton4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton4.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton4.Name = "teamButton4";
-            this.teamButton4.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton4.Size = new System.Drawing.Size(195, 57);
-            this.teamButton4.TabIndex = 4;
-            this.teamButton4.Text = "teamButton4";
-            this.teamButton4.UseVisualStyleBackColor = false;
+            this.registerMovieButton.BackColor = System.Drawing.Color.Black;
+            this.registerMovieButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.registerMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerMovieButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerMovieButton.ForeColor = System.Drawing.Color.White;
+            this.registerMovieButton.Location = new System.Drawing.Point(0, 244);
+            this.registerMovieButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.registerMovieButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.registerMovieButton.Name = "registerMovieButton";
+            this.registerMovieButton.Padding = new System.Windows.Forms.Padding(3);
+            this.registerMovieButton.Size = new System.Drawing.Size(195, 57);
+            this.registerMovieButton.TabIndex = 4;
+            this.registerMovieButton.Text = "Register Movie";
+            this.registerMovieButton.UseVisualStyleBackColor = false;
+            this.registerMovieButton.Click += new System.EventHandler(this.teamButton4_Click);
             // 
             // teamButton3
             // 
@@ -117,6 +118,7 @@ namespace SoftCinema.Client
             this.teamButton3.TabIndex = 3;
             this.teamButton3.Text = "teamButton3";
             this.teamButton3.UseVisualStyleBackColor = false;
+            this.teamButton3.Click += new System.EventHandler(this.teamButton3_Click);
             // 
             // loginTeamButton
             // 
@@ -271,17 +273,10 @@ namespace SoftCinema.Client
         //buttons 
         private TeamButton BtnDashboard;
         private TeamButton teamButton5;
-        private TeamButton teamButton4;
+        private TeamButton registerMovieButton;
         private TeamButton teamButton3;
         private TeamButton loginTeamButton;
         private TeamButton registerTeamButton;
-
-
-        public static System.Windows.Forms.Label GetGreetingLabel()
-        {
-            return GreetingLabel;
-        }
-
         private static System.Windows.Forms.Button LogoutButton;
         private static System.Windows.Forms.Label GreetingLabel;
     }
