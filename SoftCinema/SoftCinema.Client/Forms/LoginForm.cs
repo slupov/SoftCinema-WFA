@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SoftCinema.Service;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
@@ -41,7 +41,6 @@ namespace SoftCinema.Client.Forms
             {
                 MessageBox.Show("NO");
             }
-            
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)

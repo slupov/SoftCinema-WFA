@@ -1,13 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using SoftCinema.Data;
-using SoftCinema.Models;
-
-namespace SoftCinema.Service
+﻿namespace SoftCinema.Services
 {
+    using System;
+    using System.Linq;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using SoftCinema.Data;
+    using SoftCinema.Models;
+
     public class UserService
     {
         public class PasswordHasher
@@ -18,7 +18,7 @@ namespace SoftCinema.Service
                 SHA512
             }
 
-            public static string ToHashed(string plainText, Supported_HA hash, byte[] salt)
+            public static string ComputeHash(string plainText, Supported_HA hash, byte[] salt)
             {
                 int minSaltLength = 4;
                 int maxSaltLength = 16;
@@ -39,7 +39,7 @@ namespace SoftCinema.Service
                     rng.Dispose();
                 }
 
-                byte[] plainData = Encoding.UTF8.GetBytes(plainText);
+                byte[] plainData = ASCIIEncoding.UTF8.GetBytes(plainText);
                 byte[] plainDataAndSalt = new byte[plainData.Length + SaltBytes.Length];
 
                 for (int i = 0; i < plainData.Length; i++)
@@ -104,7 +104,7 @@ namespace SoftCinema.Service
                     saltBytes[i] = hashBytes[hashSize + i];
                 }
 
-                string NewHash = ToHashed(plainText, hash, saltBytes);
+                string NewHash = ComputeHash(plainText, hash, saltBytes);
 
                 return hashvalue == NewHash;
             }
@@ -190,15 +190,10 @@ namespace SoftCinema.Service
 
             public static bool isUsernamePasswordMatching(string username, string password)
             {
-                throw new NotImplementedException();
                 using (var db = new SoftCinemaContext())
                 {
-//                    User user = db.Users.FirstOrDefault(u => u.Username == username);
-//                    var hashedPassword = Convert.ToBase64String(user.PasswordHash);
-//                    var toConfirm = PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512,
-//                        Convert.ToBase64String(user.PasswordSalt));
-//
-//                    return hashedPassword == toConfirm;
+                    User user = db.Users.FirstOrDefault(u => u.Username == username);
+                    return PasswordHasher.Confirm(password, user.PasswordHash, PasswordHasher.Supported_HA.SHA512);
                 }
             }
         }
@@ -210,9 +205,7 @@ namespace SoftCinema.Service
                 var user = new User()
                 {
                     Username = username,
-                    PasswordHash =
-                        Encoding.UTF8.GetBytes(PasswordHasher.ToHashed(password, PasswordHasher.Supported_HA.SHA512,
-                            null)),
+                    PasswordHash = PasswordHasher.ComputeHash(password, PasswordHasher.Supported_HA.SHA512, null),
                     Email = email,
                     PhoneNumber = phone,
                     Role = Role.User

@@ -1,8 +1,8 @@
-﻿using System;
-using SoftCinema.Models;
-
-namespace SoftCinema.Service
+﻿namespace SoftCinema.Services
 {
+    using System;
+    using SoftCinema.Models;
+
     public class AuthenticationManager
     {
         private static User currentUser;

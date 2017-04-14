@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImportServices.Utilities;
-using SoftCinema.DTOs;
-using SoftCinema.Models;
-using SoftCinema.Service;
-using SoftCinema.Service.Utilities;
-using SoftCinema.Services.Utilities;
-
-namespace ImportServices
+﻿namespace ImportServices
 {
+    using System;
+    using System.Collections.Generic;
+    using ImportServices.Utilities;
+    using SoftCinema.DTOs;
+    using SoftCinema.Services.Utilities;
+    using SoftCinema.Services;
+
     public static class ActorImportService
     {
         public static void ImportActors(IEnumerable<ActorDTO> actors)
         {
-
             foreach (var actorDto in actors)
             {
                 try
@@ -28,8 +22,6 @@ namespace ImportServices
                     Console.WriteLine(e.Message);
                 }
             }
-
-
         }
 
         public static void ImportActor(ActorDTO actorDto)
@@ -51,9 +43,9 @@ namespace ImportServices
             int bornTownId = TownService.GetTownId(townName);
 
             ActorService.AddActor(actorName, actorRating, bornTownId);
-            ActorService.AddMoviesToActor(actorName,movies);
+            ActorService.AddMoviesToActor(actorName, movies);
 
-            Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess,actorName));
+            Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess, actorName));
         }
     }
 }

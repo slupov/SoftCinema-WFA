@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
-using SoftCinema.Service.Utilities;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 

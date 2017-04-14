@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SoftCinema.Service;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {

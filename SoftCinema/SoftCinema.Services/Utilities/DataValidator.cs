@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using SoftCinema.Data;
 using SoftCinema.DTOs;
-using SoftCinema.Services;
-using SoftCinema.Services.Utilities;
 
-namespace SoftCinema.Service.Utilities
+namespace SoftCinema.Services.Utilities
 {
     public static class DataValidator
     {
