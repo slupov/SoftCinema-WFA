@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Models;
 using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms.AdminForms
@@ -32,11 +33,14 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void UserList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            UserDetailsForm userForm = new UserDetailsForm();
+            ListBox lb = (ListBox) sender;
+            string username = lb.SelectedItem.ToString();
+            User user = UserService.GetUser(username);
+            UserDetailsForm userForm = new UserDetailsForm(user);
             userForm.TopLevel = false;
             userForm.AutoScroll = true;
             this.Hide();
-            ((ListBox)sender).Parent.Parent.Parent.Controls.Add(userForm);
+            ((ListBox)sender).Parent.Parent.Controls.Add(userForm);
             userForm.Show();
         }
     }

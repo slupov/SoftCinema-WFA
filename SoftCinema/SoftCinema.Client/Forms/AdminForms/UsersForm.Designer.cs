@@ -45,6 +45,7 @@
             // 
             // UserListLabel
             // 
+            this.UserListLabel.BackColor = System.Drawing.SystemColors.Menu;
             this.UserListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserListLabel.Location = new System.Drawing.Point(125, 47);
             this.UserListLabel.Name = "UserListLabel";
@@ -56,6 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1030, 512);
             this.Controls.Add(this.UserListLabel);
             this.Controls.Add(this.UserList);

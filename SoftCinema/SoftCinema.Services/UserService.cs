@@ -161,5 +161,13 @@ namespace SoftCinema.Services
         {
             return GetUsers().Select(u => u.Username).ToArray();
         }
+
+        public static string GetPassword(string username)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Users.FirstOrDefault(u => u.Username == username).PasswordHash;
+            }
+        }
     }
 }
