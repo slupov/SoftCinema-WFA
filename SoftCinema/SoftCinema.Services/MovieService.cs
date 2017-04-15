@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
@@ -7,7 +8,8 @@ namespace SoftCinema.Services
 {
     public static class MovieService
     {
-        public static void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear, AgeRestriction ageRestriction, string synopsis, string releaseCountry, byte[] image)
+        public static void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear,
+            AgeRestriction ageRestriction, string synopsis, string releaseCountry, byte[] image)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -21,11 +23,10 @@ namespace SoftCinema.Services
                     ReleaseCountry = releaseCountry,
                     AgeRestriction = ageRestriction,
                     Synopsis = synopsis,
-                    Image = new Image() { Content = image }
+                    Image = new Image() {Content = image}
                 };
-                context.Movies.Add(movie);
+                context.Movies.AddOrUpdate(m => m.Name, movie);
                 context.SaveChanges();
-
             }
         }
 
@@ -64,6 +65,9 @@ namespace SoftCinema.Services
             }
         }
 
-        
+        public static AgeRestriction[] GetAgeRestrictions()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Web;
 using System.Windows.Forms;
+using SoftCinema.Models;
 using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
@@ -10,6 +11,7 @@ namespace SoftCinema.Client.Forms
     {
         private byte[] movieImageBytes { get; set; }
         private string imageName { get; set; }
+        private AgeRestriction ageRestriction { get; set; }
 
         public RegisterMovieForm()
         {
@@ -36,6 +38,25 @@ namespace SoftCinema.Client.Forms
                 this.imageName = ofd.SafeFileName;
                 this.movieImageBytes = System.IO.File.ReadAllBytes(path);
             }
+        }
+
+        private void registerMovieButton_Click(object sender, EventArgs e)
+        {
+            var name = this.nameTextBox.Text;
+            var directorName = this.directorNameTextBox.Text;
+            float? rating = (float?) this.ratingUpDown.Value;
+            var year = (int) this.yearUpDown.Value;
+            var image = this.movieImageBytes;
+
+            //TODO: CHECK IF IMAGE ALREADY EXISTS
+            //TODO: IF NOT -> UPLOAD IT FIRST (code)
+            MovieService.AddMovie(name, rating, 150, directorName, year, AgeRestriction.A, null, null, image);
+        }
+
+        private void ageRestrictionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+//            this.ageRestrictionComboBox.Items.AddRange(MovieService.GetAgeRestrictions());
         }
     }
 }

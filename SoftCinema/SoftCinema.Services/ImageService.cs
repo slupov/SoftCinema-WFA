@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
@@ -18,7 +19,7 @@ namespace SoftCinema.Services
 
             using (var db = new SoftCinemaContext())
             {
-                db.Images.Add(img);
+                db.Images.AddOrUpdate(i => i.Name, img);
                 db.SaveChanges();
             }
         }
