@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.cinemaComboBox = new System.Windows.Forms.ComboBox();
-            this.cinemasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.softCinemaDataSet1 = new SoftCinema.Client.SoftCinemaDataSet1();
             this.cinemaLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.timeComboBox = new System.Windows.Forms.ComboBox();
@@ -39,43 +36,20 @@
             this.selectSeats = new System.Windows.Forms.Button();
             this.townLabel = new System.Windows.Forms.Label();
             this.townComboBox = new System.Windows.Forms.ComboBox();
-            this.townsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.softCinemaDataSet = new SoftCinema.Client.SoftCinemaDataSet();
             this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.movieLabel = new System.Windows.Forms.Label();
             this.movieComboBox = new System.Windows.Forms.ComboBox();
-            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.softCinemaDataSet2 = new SoftCinema.Client.SoftCinemaDataSet2();
-            this.townsTableAdapter = new SoftCinema.Client.SoftCinemaDataSetTableAdapters.TownsTableAdapter();
-            this.cinemasTableAdapter = new SoftCinema.Client.SoftCinemaDataSet1TableAdapters.CinemasTableAdapter();
-            this.moviesTableAdapter = new SoftCinema.Client.SoftCinemaDataSet2TableAdapters.MoviesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.townsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // cinemaComboBox
             // 
-            this.cinemaComboBox.DataSource = this.cinemasBindingSource;
             this.cinemaComboBox.DisplayMember = "Name";
             this.cinemaComboBox.FormattingEnabled = true;
             this.cinemaComboBox.Location = new System.Drawing.Point(264, 124);
             this.cinemaComboBox.Name = "cinemaComboBox";
             this.cinemaComboBox.Size = new System.Drawing.Size(121, 21);
             this.cinemaComboBox.TabIndex = 0;
-            // 
-            // cinemasBindingSource
-            // 
-            this.cinemasBindingSource.DataMember = "Cinemas";
-            this.cinemasBindingSource.DataSource = this.softCinemaDataSet1;
-            // 
-            // softCinemaDataSet1
-            // 
-            this.softCinemaDataSet1.DataSetName = "SoftCinemaDataSet1";
-            this.softCinemaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // cinemaLabel
             // 
@@ -145,17 +119,7 @@
             this.townComboBox.TabIndex = 13;
             this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
             this.townComboBox.Text = "Select town";
-            this.townComboBox.Items.AddRange(Services.TownService.GetTownNames());
-            // 
-            // townsBindingSource
-//            // 
-//            this.townsBindingSource.DataMember = "Towns";
-//            this.townsBindingSource.DataSource = this.softCinemaDataSet;
-            // 
-            // softCinemaDataSet
-            // 
-//            this.softCinemaDataSet.DataSetName = "SoftCinemaDataSet";
-//            this.softCinemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
             // 
             // dateComboBox
             // 
@@ -164,6 +128,7 @@
             this.dateComboBox.Name = "dateComboBox";
             this.dateComboBox.Size = new System.Drawing.Size(121, 21);
             this.dateComboBox.TabIndex = 5;
+           
             // 
             // movieLabel
             // 
@@ -177,35 +142,12 @@
             // 
             // movieComboBox
             // 
-            this.movieComboBox.DataSource = this.moviesBindingSource;
             this.movieComboBox.DisplayMember = "Name";
             this.movieComboBox.FormattingEnabled = true;
             this.movieComboBox.Location = new System.Drawing.Point(264, 163);
             this.movieComboBox.Name = "movieComboBox";
             this.movieComboBox.Size = new System.Drawing.Size(121, 21);
             this.movieComboBox.TabIndex = 14;
-            // 
-            // moviesBindingSource
-            // 
-            this.moviesBindingSource.DataMember = "Movies";
-            this.moviesBindingSource.DataSource = this.softCinemaDataSet2;
-            // 
-            // softCinemaDataSet2
-            // 
-            this.softCinemaDataSet2.DataSetName = "SoftCinemaDataSet2";
-            this.softCinemaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // townsTableAdapter
-            // 
-            this.townsTableAdapter.ClearBeforeFill = true;
-            // 
-            // cinemasTableAdapter
-            // 
-            this.cinemasTableAdapter.ClearBeforeFill = true;
-            // 
-            // moviesTableAdapter
-            // 
-            this.moviesTableAdapter.ClearBeforeFill = true;
             // 
             // TicketForm
             // 
@@ -226,12 +168,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketForm";
             this.Text = "Ticket";
-            ((System.ComponentModel.ISupportInitialize)(this.cinemasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.townsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,14 +186,6 @@
         internal System.Windows.Forms.ComboBox dateComboBox;
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.ComboBox movieComboBox;
-        private SoftCinemaDataSet softCinemaDataSet;
-        private System.Windows.Forms.BindingSource townsBindingSource;
-        private SoftCinemaDataSetTableAdapters.TownsTableAdapter townsTableAdapter;
-        private SoftCinemaDataSet1 softCinemaDataSet1;
-        private System.Windows.Forms.BindingSource cinemasBindingSource;
-        private SoftCinemaDataSet1TableAdapters.CinemasTableAdapter cinemasTableAdapter;
-        private SoftCinemaDataSet2 softCinemaDataSet2;
-        private System.Windows.Forms.BindingSource moviesBindingSource;
-        private SoftCinemaDataSet2TableAdapters.MoviesTableAdapter moviesTableAdapter;
+       
     }
 }

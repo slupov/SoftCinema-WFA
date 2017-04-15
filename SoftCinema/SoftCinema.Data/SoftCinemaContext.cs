@@ -10,7 +10,7 @@ namespace SoftCinema.Data
     public class SoftCinemaContext : DbContext
     {
         public SoftCinemaContext()
-            : base("name=SoftCinemaContext")
+            : base("SoftCinemaContext")
         {
         }
 

@@ -36,7 +36,12 @@ namespace SoftCinema.Client.Forms
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.cinemaComboBox.Text = "Select cinema";
-            this.cinemaComboBox.Items.AddRange();
+            this.cinemaComboBox.Items.Clear();
+            this.cinemaComboBox.Items.AddRange(Services.CinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString()));
+            if (this.cinemaComboBox.Items.Count == 0)
+            {
+                this.cinemaComboBox.Text="(no cinemas)";
+            }
         }
 
         private void selectSeats_Click(object sender, EventArgs e)

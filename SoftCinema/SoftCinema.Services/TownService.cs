@@ -37,11 +37,12 @@ namespace SoftCinema.Services
                 return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
-        public static string[] GetTownNames()
+        public static string[] GetTownsNames()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                return context.Towns.Select(t=>t.Name.ToString()).ToArray();
+                var result= context.Towns.Select(t => t.Name).ToArray();
+                return result;
             }
         }
         public static int GetTownId(string townName)

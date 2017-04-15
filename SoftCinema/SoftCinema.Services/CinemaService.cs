@@ -38,6 +38,13 @@ namespace SoftCinema.Services
                 return context.Cinemas.ToList();
             }
         }
+        public static string[] GetCinemasNamesBySelectedTown(string townName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Where(c => c.Town.Name == townName).Select(c => c.Name).ToArray();
+            }
+        }
         public static bool IsCinemaExisting(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
