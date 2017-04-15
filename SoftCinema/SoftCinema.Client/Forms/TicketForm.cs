@@ -69,7 +69,15 @@ namespace SoftCinema.Client.Forms
                     this.movieComboBox.Text = "(no movies)";
                 }
             }
-         
-        
+
+        private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.dateComboBox.Text = "Select date";
+            this.dateComboBox.Items.Clear();
+            this.dateComboBox.Items.AddRange(
+                Services.ScreeningService.GetAllDates(this.townComboBox.SelectedItem.ToString(),this.cinemaComboBox.SelectedItem.ToString(),this.movieComboBox.SelectedItem.ToString()
+                    ));
+            
+        }
     }
 }

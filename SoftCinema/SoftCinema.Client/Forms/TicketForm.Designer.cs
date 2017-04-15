@@ -147,6 +147,7 @@
             this.movieComboBox.Name = "movieComboBox";
             this.movieComboBox.Size = new System.Drawing.Size(121, 21);
             this.movieComboBox.TabIndex = 14;
+            this.movieComboBox.SelectedIndexChanged += new System.EventHandler(this.movieComboBox_SelectedIndexChanged);
             // 
             // TicketForm
             // 
