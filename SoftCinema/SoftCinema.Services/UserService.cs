@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Security.Cryptography;
 using System.Text;
@@ -145,6 +146,20 @@ namespace SoftCinema.Services
             {
                 return db.Users.FirstOrDefault(u => u.Username == username);
             }
+        }
+
+        public static List<User> GetUsers()
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Users.ToList();
+            }
+        }
+
+
+        public static string[] GetUsernames()
+        {
+            return GetUsers().Select(u => u.Username).ToArray();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Client.Forms.AdminForms;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
@@ -17,6 +18,7 @@ namespace SoftCinema.Client
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
             loadTopPanelForm();
+            
         }
 
         private void loadTopPanelForm()
@@ -67,6 +69,16 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Add(ticketForm);
             ticketForm.Show();
         }
-        
+
+        private void AdminMenu_Click(object sender, EventArgs e)
+        {
+            AdminMenuForm adminMenuForm = new AdminMenuForm();
+            adminMenuForm.TopLevel = false;
+            adminMenuForm.AutoScroll = true;
+            this.ContentHolder.Controls.Clear();
+            this.ContentHolder.Controls.Add(adminMenuForm);
+            adminMenuForm.Show();
+            
+        }
     }
 }

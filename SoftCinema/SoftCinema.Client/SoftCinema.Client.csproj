@@ -54,6 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdminForms\AdminMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\AdminMenuForm.Designer.cs">
+      <DependentUpon>AdminMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,14 +96,18 @@
     <Compile Include="Forms\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Forms\TopPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TopPanelForm.Designer.cs">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
     </Compile>
- 
+    <Compile Include="Forms\AdminForms\UserDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\UserDetailsForm.Designer.cs">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +119,12 @@
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">
+      <DependentUpon>AdminMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopPanelForm.resx">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\UserDetailsForm.resx">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftCinemaForm.resx">
       <DependentUpon>SoftCinemaForm.cs</DependentUpon>

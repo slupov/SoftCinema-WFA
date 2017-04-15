@@ -12,6 +12,15 @@
             return currentUser != null;
         }
 
+        public static bool HasSuperRights()
+        {
+            if (currentUser != null)
+            {
+                return currentUser.Role == Role.Admin && currentUser.Role == Role.Employee;
+            }
+            return false;
+        }
+
         public static void Authorize()
         {
             if (currentUser == null)
