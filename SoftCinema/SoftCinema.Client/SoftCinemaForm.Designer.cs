@@ -40,15 +40,12 @@ namespace SoftCinema.Client
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.NamePanel = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
-            this.UpperPanel = new System.Windows.Forms.Panel();
-            LogoutButton = new System.Windows.Forms.Button();
-            GreetingLabel = new System.Windows.Forms.Label();
+            this.TopPanel = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.ContentHolder = new System.Windows.Forms.Panel();
             this.BtnDashboard = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.SidePanel.SuspendLayout();
             this.NamePanel.SuspendLayout();
-            this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,39 +174,15 @@ namespace SoftCinema.Client
             this.Title.Text = "SoftCinema";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // UpperPanel
+            // TopPanel
             // 
-            this.UpperPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.UpperPanel.BackColor = System.Drawing.Color.White;
-            this.UpperPanel.Controls.Add(LogoutButton);
-            this.UpperPanel.Controls.Add(GreetingLabel);
-            this.UpperPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UpperPanel.Location = new System.Drawing.Point(195, 0);
-            this.UpperPanel.Name = "UpperPanel";
-            this.UpperPanel.Size = new System.Drawing.Size(769, 73);
-            this.UpperPanel.TabIndex = 1;
-            // 
-            // LogoutButton
-            // 
-            LogoutButton.Location = new System.Drawing.Point(631, 44);
-            LogoutButton.Name = "LogoutButton";
-            LogoutButton.Size = new System.Drawing.Size(75, 23);
-            LogoutButton.TabIndex = 4;
-            LogoutButton.Text = "Logout";
-            LogoutButton.UseVisualStyleBackColor = true;
-            LogoutButton.Visible = false;
-            LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
-            // 
-            // GreetingLabel
-            // 
-            GreetingLabel.AutoSize = true;
-            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            GreetingLabel.Location = new System.Drawing.Point(642, 26);
-            GreetingLabel.Name = "GreetingLabel";
-            GreetingLabel.Size = new System.Drawing.Size(51, 16);
-            GreetingLabel.TabIndex = 3;
-            GreetingLabel.Text = "label1";
-            GreetingLabel.Visible = false;
+            this.TopPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.TopPanel.BackColor = System.Drawing.Color.White;
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Location = new System.Drawing.Point(195, 0);
+            this.TopPanel.Name = "TopPanel";
+            this.TopPanel.Size = new System.Drawing.Size(769, 73);
+            this.TopPanel.TabIndex = 1;
             // 
             // fileSystemWatcher1
             // 
@@ -246,7 +219,7 @@ namespace SoftCinema.Client
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 491);
             this.Controls.Add(this.ContentHolder);
-            this.Controls.Add(this.UpperPanel);
+            this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.SidePanel);
             this.Name = "SoftCinemaForm";
             this.Text = "SoftCinemaForm";
@@ -254,8 +227,6 @@ namespace SoftCinema.Client
             this.SidePanel.ResumeLayout(false);
             this.NamePanel.ResumeLayout(false);
             this.NamePanel.PerformLayout();
-            this.UpperPanel.ResumeLayout(false);
-            this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -264,7 +235,7 @@ namespace SoftCinema.Client
         #endregion
 
         private System.Windows.Forms.Panel SidePanel;
-        private System.Windows.Forms.Panel UpperPanel;
+        private System.Windows.Forms.Panel TopPanel;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel ContentHolder;
         private System.Windows.Forms.Panel NamePanel;
@@ -277,15 +248,7 @@ namespace SoftCinema.Client
         private TeamButton buyTicketsTeamButton;
         private TeamButton loginTeamButton;
         private TeamButton registerTeamButton;
-
-
-        public static System.Windows.Forms.Label GetGreetingLabel()
-        {
-            return GreetingLabel;
-        }
-
-        private static System.Windows.Forms.Button LogoutButton;
-        private static System.Windows.Forms.Label GreetingLabel;
+      
     }
 }
 

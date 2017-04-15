@@ -37,7 +37,7 @@ namespace SoftCinema.Client.Forms
                 AuthenticationManager.Login(UserService.GetUser(username));
                 MessageBox.Show(Constants.SuccessfulLogin);
 
-                SoftCinemaForm.ShowGreetings();
+                TopPanelForm.ShowGreetings();
             }
             else
             {
