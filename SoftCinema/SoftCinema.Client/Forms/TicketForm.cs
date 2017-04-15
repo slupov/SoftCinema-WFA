@@ -57,9 +57,11 @@ namespace SoftCinema.Client.Forms
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
-           
-            this.Owner.Controls.Add(ticketTypeForm);
+            this.Hide();
+             ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
             ticketTypeForm.Show();
+
+
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)

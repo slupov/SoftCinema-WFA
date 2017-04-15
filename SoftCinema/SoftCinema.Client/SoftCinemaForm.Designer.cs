@@ -237,7 +237,7 @@ namespace SoftCinema.Client
         private System.Windows.Forms.Panel SidePanel;
         private System.Windows.Forms.Panel TopPanel;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.Panel ContentHolder;
+        public System.Windows.Forms.Panel ContentHolder;
         private System.Windows.Forms.Panel NamePanel;
         private System.Windows.Forms.Label Title;
 
