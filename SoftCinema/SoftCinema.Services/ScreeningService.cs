@@ -59,12 +59,14 @@ namespace SoftCinema.Services
                 var day = d[0];
                 var month = DateTime.ParseExact(d[1], "MMM", CultureInfo.CurrentCulture).Month.ToString();
                 var list=new List<string>();
-                var dates = context.Screenings.Where(s => s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town && s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString()==day && s.Start.Month.ToString() == month).Select(s => s.Start).ToArray();
+                var dates = context.Screenings.Where(s => s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town && s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString()==day && s.Start.Month.ToString() == month).Select(s => s.Start).OrderBy(s=>s.Hour).ToArray();
+               
                 foreach (var dateTime in dates)
                 {
                     var hour = dateTime.ToString("hh");
-                    var minutes = dateTime.ToString("mm");                 
-                    list.Add($"{hour}:{minutes}");
+                    var minutes = dateTime.ToString("mm");  
+                    var part= dateTime.ToString("tt", CultureInfo.InvariantCulture);
+                    list.Add($"{hour}:{minutes} {part}");
                 }
                 return list.Distinct().ToArray();
             }
