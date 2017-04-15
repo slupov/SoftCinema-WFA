@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,10 +43,28 @@ namespace SoftCinema.Services
                 var dates= context.Screenings.Where(s => s.Movie.Name==movie && s.Auditorium.Cinema.Town.Name==town && s.Auditorium.Cinema.Name==cinema).Select(s=>s.Start).ToArray();
                 foreach (var dateTime in dates)
                 {
-                    var day = dateTime.ToString("dd");
+                    var day = dateTime.Day.ToString();
                     var month = dateTime.ToString("MMM");
                     var weekDay = dateTime.DayOfWeek.ToString();
                     list.Add($"{day} {month} {weekDay}");
+                }
+                return list.Distinct().ToArray();
+            }
+        }
+        public static string[] GetHoursForMoviesByDate(string town, string cinema, string movie,string date)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                var d = date.Split().ToArray();
+                var day = d[0];
+                var month = DateTime.ParseExact(d[1], "MMM", CultureInfo.CurrentCulture).Month.ToString();
+                var list=new List<string>();
+                var dates = context.Screenings.Where(s => s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town && s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString()==day && s.Start.Month.ToString() == month).Select(s => s.Start).ToArray();
+                foreach (var dateTime in dates)
+                {
+                    var hour = dateTime.ToString("hh");
+                    var minutes = dateTime.ToString("mm");                 
+                    list.Add($"{hour}:{minutes}");
                 }
                 return list.Distinct().ToArray();
             }

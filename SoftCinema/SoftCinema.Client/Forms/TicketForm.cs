@@ -15,6 +15,7 @@ namespace SoftCinema.Client.Forms
         public TicketForm()
         {
             InitializeComponent();
+            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,12 +38,17 @@ namespace SoftCinema.Client.Forms
         {
             this.cinemaComboBox.Text = "Select cinema";
             this.cinemaComboBox.Items.Clear();
+            this.movieComboBox.Text = "";
+            this.movieComboBox.Items.Clear();
+            this.dateComboBox.Text = "";
+            this.dateComboBox.Items.Clear();
+            this.timeComboBox.Text = "";
+            this.timeComboBox.Items.Clear();
             this.cinemaComboBox.Items.AddRange(Services.CinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString()));
             if (this.cinemaComboBox.Items.Count == 0)
             {
                 this.cinemaComboBox.Text="(no cinemas)";
-                this.movieComboBox.Text = "";
-                this.movieComboBox.Items.Clear();
+                
             }
         }
 
@@ -78,6 +84,20 @@ namespace SoftCinema.Client.Forms
                 Services.ScreeningService.GetAllDates(this.townComboBox.SelectedItem.ToString(),this.cinemaComboBox.SelectedItem.ToString(),this.movieComboBox.SelectedItem.ToString()
                     ));
             
+        }
+
+        private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.timeComboBox.Text = "Select time";
+            this.timeComboBox.Items.Clear();
+            this.timeComboBox.Items.AddRange(
+                Services.ScreeningService.GetHoursForMoviesByDate(this.townComboBox.SelectedItem.ToString(), this.cinemaComboBox.SelectedItem.ToString(), this.movieComboBox.SelectedItem.ToString(),this.dateComboBox.SelectedItem.ToString()
+                    ));
         }
     }
 }
