@@ -16,16 +16,18 @@ namespace SoftCinema.Client
 
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
-            if (AuthenticationManager.IsAuthenticated())
-            {
-                ShowGreetings();
-            }
-            else
-            {
-                HideGreetings();
-            }
+            loadTopPanelForm();
         }
 
+        private void loadTopPanelForm()
+        {
+            TopPanelForm topPanel = new TopPanelForm();
+            topPanel.TopLevel = false;
+            topPanel.AutoScroll = true;
+            this.TopPanel.Controls.Clear();
+            this.TopPanel.Controls.Add(topPanel);
+            topPanel.Show();
+        }
         //Sidebar buttons
         private void registerTeamButton_Click(object sender, EventArgs e)
         {
@@ -47,38 +49,6 @@ namespace SoftCinema.Client
             loginForm.Show();
         }
 
-        //Other buttons
-        private void LogoutButton_Click(object sender, EventArgs e)
-        {
-            AuthenticationManager.Logout();
-            HideGreetings();
-
-            MessageBox.Show(Constants.SuccessfulLogout);
-        }
-
-        //Utilities
-        public static void ShowGreetings()
-        {
-            GreetingLabel.Show();
-            GreetingLabel.ForeColor = Color.Black;
-            GreetingLabel.Text = string.Format(Constants.GreetingsMessage,
-                AuthenticationManager.GetCurrentUser().Username);
-
-            LogoutButton.Show();
-        }
-
-        public static void HideGreetings()
-        {
-            GreetingLabel.Hide();
-            GreetingLabel.Text = string.Empty;
-
-            LogoutButton.Hide();
-        }
-
-        private void teamButton3_Click(object sender, EventArgs e)
-        {
-        }
-
         private void registerMovie_Click(object sender, EventArgs e)
         {
             RegisterMovieForm registerMovieForm = new RegisterMovieForm();
@@ -97,5 +67,6 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Add(ticketForm);
             ticketForm.Show();
         }
+        
     }
 }

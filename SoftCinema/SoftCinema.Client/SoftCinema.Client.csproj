@@ -75,6 +75,12 @@
     <Compile Include="Forms\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TopPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TopPanelForm.Designer.cs">
+      <DependentUpon>TopPanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoftCinemaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TicketTypeForm.resx">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TopPanelForm.resx">
+      <DependentUpon>TopPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftCinemaForm.resx">
       <DependentUpon>SoftCinemaForm.cs</DependentUpon>
