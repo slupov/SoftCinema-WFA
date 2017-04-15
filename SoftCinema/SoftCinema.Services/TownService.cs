@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
 
@@ -36,7 +37,13 @@ namespace SoftCinema.Services
                 return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
-
+        public static string[] GetTownNames()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Towns.Select(t=>t.Name.ToString()).ToArray();
+            }
+        }
         public static int GetTownId(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())

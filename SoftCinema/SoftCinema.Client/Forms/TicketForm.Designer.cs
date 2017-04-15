@@ -138,24 +138,24 @@
             // 
             // townComboBox
             // 
-            this.townComboBox.DataSource = this.townsBindingSource;
-            this.townComboBox.DisplayMember = "Name";
             this.townComboBox.FormattingEnabled = true;
             this.townComboBox.Location = new System.Drawing.Point(264, 87);
             this.townComboBox.Name = "townComboBox";
             this.townComboBox.Size = new System.Drawing.Size(121, 21);
             this.townComboBox.TabIndex = 13;
             this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
+            this.townComboBox.Text = "Select town";
+            this.townComboBox.Items.AddRange(Services.TownService.GetTownNames());
             // 
             // townsBindingSource
-            // 
-            this.townsBindingSource.DataMember = "Towns";
-            this.townsBindingSource.DataSource = this.softCinemaDataSet;
+//            // 
+//            this.townsBindingSource.DataMember = "Towns";
+//            this.townsBindingSource.DataSource = this.softCinemaDataSet;
             // 
             // softCinemaDataSet
             // 
-            this.softCinemaDataSet.DataSetName = "SoftCinemaDataSet";
-            this.softCinemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+//            this.softCinemaDataSet.DataSetName = "SoftCinemaDataSet";
+//            this.softCinemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateComboBox
             // 
@@ -226,7 +226,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketForm";
             this.Text = "Ticket";
-            this.Load += new System.EventHandler(this.Ticket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cinemasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.softCinemaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.townsBindingSource)).EndInit();

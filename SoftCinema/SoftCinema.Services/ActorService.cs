@@ -34,7 +34,13 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
-
+        public static List<Actor> GetAllActors ()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Actors.ToList();
+            }
+        }
         public static bool IsActorExisting(string actorName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())

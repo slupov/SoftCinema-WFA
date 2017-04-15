@@ -22,20 +22,21 @@ namespace SoftCinema.Client.Forms
 
         }
 
-        private void Ticket_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'softCinemaDataSet2.Movies' table. You can move, or remove it, as needed.
-            this.moviesTableAdapter.Fill(this.softCinemaDataSet2.Movies);
-            // TODO: This line of code loads data into the 'softCinemaDataSet1.Cinemas' table. You can move, or remove it, as needed.
-            this.cinemasTableAdapter.Fill(this.softCinemaDataSet1.Cinemas);
-            // TODO: This line of code loads data into the 'softCinemaDataSet.Towns' table. You can move, or remove it, as needed.
-            this.townsTableAdapter.Fill(this.softCinemaDataSet.Towns);
-
-        }
+//        private void Ticket_Load(object sender, EventArgs e)
+//        {
+//            // TODO: This line of code loads data into the 'softCinemaDataSet2.Movies' table. You can move, or remove it, as needed.
+//            this.moviesTableAdapter.Fill(this.softCinemaDataSet2.Movies);
+//            // TODO: This line of code loads data into the 'softCinemaDataSet1.Cinemas' table. You can move, or remove it, as needed.
+//            this.cinemasTableAdapter.Fill(this.softCinemaDataSet1.Cinemas);
+//            // TODO: This line of code loads data into the 'softCinemaDataSet.Towns' table. You can move, or remove it, as needed.
+//            this.townsTableAdapter.Fill(this.softCinemaDataSet.Towns);
+//
+//        }
 
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.cinemaComboBox.Text = "Select cinema";
+            this.cinemaComboBox.Items.AddRange();
         }
 
         private void selectSeats_Click(object sender, EventArgs e)
