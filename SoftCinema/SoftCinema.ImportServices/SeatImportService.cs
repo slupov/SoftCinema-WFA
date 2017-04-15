@@ -4,6 +4,7 @@ using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -28,20 +29,20 @@ namespace ImportServices
         private static void ImportSeat(SeatDto seatDto)
         {
             string cinemaTown = seatDto.CinemaTown;
-            DataValidator.CheckTownExisting(cinemaTown);
+            TownValidator.CheckTownExisting(cinemaTown);
 
             int townId = TownService.GetTownId(cinemaTown);
             string cinemaName = seatDto.CinemaName;
-            DataValidator.CheckCinemaExisting(cinemaName,townId);
+            CinemaValidator.CheckCinemaExisting(cinemaName,townId);
 
             int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
             byte auditoriumNumber = seatDto.AuditoriumNumber;
-            DataValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
+            AuditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
 
             int auditoriumId = AuditoriumService.GetAuditoriumId(auditoriumNumber, cinemaId);
             int row = seatDto.Row;
             int number = seatDto.Number;
-            DataValidator.ValidateSeatDoesntExist(number,auditoriumId,auditoriumNumber);
+            SeatValidator.ValidateSeatDoesntExist(number,auditoriumId,auditoriumNumber);
 
             SeatService.AddSeat(number, row, auditoriumId);
             Console.WriteLine(string.Format(SuccessMessages.SeatAddedSuccess,number,auditoriumNumber,cinemaName,cinemaTown));

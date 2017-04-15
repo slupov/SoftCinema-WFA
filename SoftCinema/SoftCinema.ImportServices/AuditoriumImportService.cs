@@ -5,6 +5,7 @@ using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -41,14 +42,14 @@ namespace ImportServices
             DataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
 
             string townName = auditoriumDto.CinemaTownName;
-            DataValidator.CheckTownExisting(townName);
+            TownValidator.CheckTownExisting(townName);
 
             int townId = TownService.GetTownId(townName);
             int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
-            DataValidator.CheckCinemaExisting(cinemaName, townId);
+            CinemaValidator.CheckCinemaExisting(cinemaName, townId);
 
             byte number = auditoriumDto.Number;
-            DataValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
+            AuditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
 
    
 

@@ -4,6 +4,7 @@ using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -32,7 +33,7 @@ namespace ImportServices
         {
             string categoryName = categoryDtо.Name;
             DataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
-            DataValidator.ValidateCategoryDoesNotExist(categoryName);
+            CategoryValidator.ValidateCategoryDoesNotExist(categoryName);
 
             CategoryService.AddCategory(categoryName);
 

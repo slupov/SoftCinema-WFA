@@ -1,4 +1,6 @@
-﻿namespace ImportServices
+﻿using SoftCinema.Services.Utilities.Validators;
+
+namespace ImportServices
 {
     using System;
     using System.Collections.Generic;
@@ -28,13 +30,13 @@
         {
             string actorName = actorDto.Name;
             DataValidator.ValidateStringMaxLength(actorName, Constants.MaxActorNameLength);
-            DataValidator.ValidateActorDoesntExist(actorName);
+            ActorValidator.ValidateActorDoesntExist(actorName);
 
             float? actorRating = actorDto.Rating;
             DataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             List<ActorMovieDto> movies = actorDto.Movies;
-            DataValidator.CheckMoviesExist(movies);
+            MovieValidator.CheckMoviesExist(movies);
 
             ActorService.AddActor(actorName, actorRating);
             ActorImportService.AddMoviesToActor(actorName, movies);

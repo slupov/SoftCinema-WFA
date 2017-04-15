@@ -5,6 +5,7 @@ using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -45,7 +46,7 @@ namespace ImportServices
 
             TownService.AddTownIfNotExisting(townName);
             int townId = TownService.GetTownId(townName);
-            DataValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
+            CinemaValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
 
             CinemaService.AddCinema(cinemaName, townId);
 

@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Services
+﻿using System.Data.Entity.Migrations;
+
+namespace SoftCinema.Services
 {
     using System;
     using System.Linq;
@@ -212,6 +214,24 @@
                 };
 
                 db.Users.Add(user);
+                db.SaveChanges();
+            }
+        }
+
+        public static void AddOrUpdateUser(string username, string password, string email, string phone,Role role)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                var user = new User()
+                {
+                    Username = username,
+                    PasswordHash = PasswordHasher.ComputeHash(password, PasswordHasher.Supported_HA.SHA512, null),
+                    Email = email,
+                    PhoneNumber = phone,
+                    Role = role
+                };
+
+                db.Users.AddOrUpdate(u=>u.Username, user);
                 db.SaveChanges();
             }
         }

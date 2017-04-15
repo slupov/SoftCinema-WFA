@@ -8,6 +8,7 @@ using SoftCinema.DTOs;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -48,10 +49,10 @@ namespace ImportServices
             DataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             int releaseYear = movieDto.ReleaseYear;
-            DataValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
+            MovieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
 
             List<string> categories = movieDto.Categories.Select(c => c.Name).ToList();
-            DataValidator.CheckCategoriesExist(categories);
+            CategoryValidator.CheckCategoriesExist(categories);
 
             string directorName = movieDto.DirectorName;
             int length = movieDto.Length;

@@ -4,6 +4,7 @@ using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
@@ -28,7 +29,7 @@ namespace ImportServices
         {
             string townName = townDto.Name;
             DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
-            DataValidator.ValidateTownDoesNotExist(townName);
+            TownValidator.ValidateTownDoesNotExist(townName);
 
             TownService.AddTown(townName);
 

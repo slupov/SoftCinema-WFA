@@ -52,10 +52,6 @@
     <Compile Include="Utilities\SuccessMessages.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoftCinema.Data\SoftCinema.Data.csproj">
-      <Project>{a8a93d54-1b07-459e-8ab5-612778983210}</Project>
-      <Name>SoftCinema.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoftCinema.DTOs\SoftCinema.DTOs.csproj">
       <Project>{115f8089-9bd3-4a64-af7f-846a3331caf6}</Project>
       <Name>SoftCinema.DTOs</Name>
