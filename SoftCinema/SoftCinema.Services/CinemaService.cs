@@ -31,7 +31,13 @@ namespace SoftCinema.Services
                 return context.Cinemas.First(c => c.Name == cinemaName && c.TownId == townId).Id;
             }
         }
-
+        public static List<Cinema> GetAllCinemas()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.ToList();
+            }
+        }
         public static bool IsCinemaExisting(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())

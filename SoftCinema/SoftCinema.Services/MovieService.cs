@@ -7,7 +7,7 @@ namespace SoftCinema.Services
 {
     public static class MovieService
     {
-        public static void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear, AgeRestriction ageRestriction, string synopsis, string releaseCountry,byte[] image)
+        public static void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear, AgeRestriction ageRestriction, string synopsis, string releaseCountry, byte[] image)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -21,11 +21,11 @@ namespace SoftCinema.Services
                     ReleaseCountry = releaseCountry,
                     AgeRestriction = ageRestriction,
                     Synopsis = synopsis,
-                    Image = new Image() { Content = image}
+                    Image = new Image() { Content = image }
                 };
                 context.Movies.Add(movie);
                 context.SaveChanges();
-                
+
             }
         }
 
@@ -45,6 +45,14 @@ namespace SoftCinema.Services
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Movies.First(m => m.Name == movieName && m.ReleaseYear == releaseYear).Id;
+            }
+        }
+
+        private static List<Movie> GetAllMovies()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Movies.ToList();
             }
         }
 
