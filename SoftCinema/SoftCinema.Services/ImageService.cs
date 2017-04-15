@@ -9,17 +9,17 @@ namespace SoftCinema.Services
 {
     public class ImageService
     {
-        public static void AddImage(byte[] imageIn, string name)
+        public static void AddImage(byte[] imageIn)
         {
             var img = new Image()
             {
                 Content = imageIn,
-                Name = name
+               
             };
 
             using (var db = new SoftCinemaContext())
             {
-                db.Images.AddOrUpdate(i => i.Name, img);
+                db.Images.Add(img);
                 db.SaveChanges();
             }
         }

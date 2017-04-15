@@ -10,7 +10,7 @@ namespace SoftCinema.Models
         public Town()
         {
             this.Cinemas = new HashSet<Cinema>();
-            this.ActorsBorn = new HashSet<Actor>();
+           
         }
         [Key]
         public int Id { get; set; }
@@ -20,6 +20,5 @@ namespace SoftCinema.Models
 
         public virtual ICollection<Cinema> Cinemas { get; set; }
 
-        public virtual ICollection<Actor> ActorsBorn { get; set; }
     }
 }

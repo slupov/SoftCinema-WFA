@@ -23,8 +23,6 @@ namespace SoftCinema.Models
         [Range(0,10)]
         public float? Rating { get; set; }
 
-        public int? BornTownId { get; set; }
-
-        public virtual Town BornTown { get; set; }
+       
     }
 }

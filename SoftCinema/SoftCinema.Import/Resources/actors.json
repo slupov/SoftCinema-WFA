@@ -2,7 +2,6 @@
   {
     "Name": "Hugh Jackman",
     "Rating": 9.0,
-    "BornTownName": "Sydney",
     "Movies": [
       {
         "Name": "Logan",
@@ -13,7 +12,6 @@
   {
     "Name": "Patrick Stewart",
     "Rating": 8.3,
-    "BornTownName": "Mirfield",
     "Movies": [
       {
         "Name": "Logan",
@@ -24,7 +22,6 @@
   {
     "Name": "Boyd Holbrook",
     "Rating": 8.7,
-    "BornTownName": "Prestonsburgh",
     "Movies": [
       {
         "Name": "Logan",
@@ -35,7 +32,6 @@
   {
     "Name": "Jason David Frank",
     "Rating": 7.0,
-    "BornTownName": "Covina",
     "Movies": [
       {
         "Name": "Power Rangers",
@@ -46,7 +42,6 @@
   {
     "Name": "David Yost",
     "Rating": 7.0,
-    "BornTownName": "Council Bluffs",
     "Movies": [
       {
         "Name": "Power Rangers",
@@ -57,7 +52,6 @@
   {
     "Name": "Austin St. John",
     "Rating": 7.5,
-    "BornTownName": "Roswell",
     "Movies": [
       {
         "Name": "Power Rangers",
@@ -68,7 +62,6 @@
   {
     "Name": "Vin Diesel",
     "Rating": 9.0,
-    "BornTownName": "Alameda",
     "Movies": [
       {
         "Name": "The Fate of the Furious",
@@ -79,7 +72,6 @@
   {
     "Name": "Dwane Johnson",
     "Rating": 9.0,
-    "BornTownName": "Hayward",
     "Movies": [
       {
         "Name": "The Fate of the Furious",
@@ -90,7 +82,6 @@
   {
     "Name": "Jason Statham",
     "Rating": 0.1,
-    "BornTownName": "Shirebrook",
     "Movies": [
       {
         "Name": "The Fate of the Furious",
@@ -101,7 +92,6 @@
   {
     "Name": "Ryan Gosling",
     "Rating": 10.0,
-    "BornTownName": "Ontario",
     "Movies": [
       {
         "Name": "The Nice Guys",
@@ -112,7 +102,6 @@
   {
     "Name": "Russell Crowe",
     "Rating": 8.5,
-    "BornTownName": "Wellington",
     "Movies": [
       {
         "Name": "The Nice Guys",
@@ -123,7 +112,6 @@
   {
     "Name": "Patrick Wilson",
     "Rating": 7.0,
-    "BornTownName": "Norfolk",
     "Movies": [
       {
         "Name": "The Conjuring 2",
@@ -134,7 +122,6 @@
   {
     "Name": "Vera Farmiga",
     "Rating": 7.0,
-    "BornTownName": "Clifton",
     "Movies": [
       {
         "Name": "The Conjuring 2",

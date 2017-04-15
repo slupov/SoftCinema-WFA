@@ -10,7 +10,6 @@ namespace SoftCinema.Client.Forms
     public partial class RegisterMovieForm : Form
     {
         private byte[] movieImageBytes { get; set; }
-        private string imageName { get; set; }
         private AgeRestriction ageRestriction { get; set; }
 
         public RegisterMovieForm()
@@ -20,7 +19,7 @@ namespace SoftCinema.Client.Forms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ImageService.AddImage(movieImageBytes, imageName);
+            ImageService.AddImage(movieImageBytes);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace SoftCinema.Client.Forms
                 var path = ofd.FileName;
                 this.pictureBoxPhoto.ImageLocation = path;
 
-                this.imageName = ofd.SafeFileName;
+                
                 this.movieImageBytes = System.IO.File.ReadAllBytes(path);
             }
         }

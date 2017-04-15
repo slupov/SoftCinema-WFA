@@ -92,23 +92,28 @@
     <TownName>Burgas</TownName>
   </auditorium>
   <auditorium>
-    <CinemaName>SoftCinema-Lyulin</CinemaName>
+    <CinemaName>SoftCinema Lyulin</CinemaName>
     <Number>1</Number>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
-    <CinemaName>SoftCinema-Lyulin</CinemaName>
+    <CinemaName>SoftCinema Lyulin</CinemaName>
     <Number>2</Number>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
-    <CinemaName>SoftCinema-Lyulin</CinemaName>
+    <CinemaName>SoftCinema Lyulin</CinemaName>
     <Number>3</Number>
     <TownName>Sofia</TownName>
   </auditorium>
   <auditorium>
-    <CinemaName>SoftCinema-Lyulin</CinemaName>
+    <CinemaName>SoftCinema Lyulin</CinemaName>
     <Number>4</Number>
+    <TownName>Sofia</TownName>
+  </auditorium>
+  <auditorium>
+    <CinemaName>SoftCinema Lyulin</CinemaName>
+    <Number>5</Number>
     <TownName>Sofia</TownName>
   </auditorium>
 </auditoriums>

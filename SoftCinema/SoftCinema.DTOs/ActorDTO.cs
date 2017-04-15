@@ -11,7 +11,6 @@ namespace SoftCinema.DTOs
 
         public string Name { get; set; }
         public float? Rating { get; set; }
-        public string BornTownName { get; set; }
 
         public List<ActorMovieDto> Movies { get; set; }
     }

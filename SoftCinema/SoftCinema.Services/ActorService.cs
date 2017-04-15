@@ -9,7 +9,7 @@ namespace SoftCinema.Services
     public static class ActorService
     {
         
-        public static void AddActor(string name, float? rating, int bornTownId)
+        public static void AddActor(string name, float? rating)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -17,7 +17,6 @@ namespace SoftCinema.Services
                 {
                     Name = name,
                     Rating = rating,
-                    BornTownId = bornTownId
                 };
                 context.Actors.Add(actor);
                 context.SaveChanges();
