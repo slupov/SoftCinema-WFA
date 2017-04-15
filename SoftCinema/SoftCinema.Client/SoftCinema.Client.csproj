@@ -84,8 +84,7 @@
     <Compile Include="Forms\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
+
     <Compile Include="Forms\TopPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,7 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SoftCinemaDataSet2.xsd</DependentUpon>
     </Compile>
->>>>>>> origin/master
+
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
