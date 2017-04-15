@@ -79,6 +79,7 @@
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(121, 21);
             this.timeComboBox.TabIndex = 3;
+            this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
             // 
             // dateLabel
             // 
@@ -119,7 +120,6 @@
             this.townComboBox.TabIndex = 13;
             this.townComboBox.Text = "Select town";
             this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
-            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
             // 
             // dateComboBox
             // 
@@ -128,6 +128,7 @@
             this.dateComboBox.Name = "dateComboBox";
             this.dateComboBox.Size = new System.Drawing.Size(121, 21);
             this.dateComboBox.TabIndex = 5;
+            this.dateComboBox.SelectedIndexChanged += new System.EventHandler(this.dateComboBox_SelectedIndexChanged);
             // 
             // movieLabel
             // 
@@ -147,6 +148,7 @@
             this.movieComboBox.Name = "movieComboBox";
             this.movieComboBox.Size = new System.Drawing.Size(121, 21);
             this.movieComboBox.TabIndex = 14;
+            this.movieComboBox.SelectedIndexChanged += new System.EventHandler(this.movieComboBox_SelectedIndexChanged);
             // 
             // TicketForm
             // 
