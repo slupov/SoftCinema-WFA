@@ -49,7 +49,7 @@
             this.cinemaComboBox.Name = "cinemaComboBox";
             this.cinemaComboBox.Size = new System.Drawing.Size(121, 21);
             this.cinemaComboBox.TabIndex = 0;
-           
+            this.cinemaComboBox.SelectedIndexChanged += new System.EventHandler(this.cinemaComboBox_SelectedIndexChanged);
             // 
             // cinemaLabel
             // 
@@ -117,8 +117,8 @@
             this.townComboBox.Name = "townComboBox";
             this.townComboBox.Size = new System.Drawing.Size(121, 21);
             this.townComboBox.TabIndex = 13;
-            this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
             this.townComboBox.Text = "Select town";
+            this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
             this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
             // 
             // dateComboBox
@@ -128,7 +128,6 @@
             this.dateComboBox.Name = "dateComboBox";
             this.dateComboBox.Size = new System.Drawing.Size(121, 21);
             this.dateComboBox.TabIndex = 5;
-           
             // 
             // movieLabel
             // 

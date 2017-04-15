@@ -53,5 +53,15 @@ namespace SoftCinema.Client.Forms
             this.Owner.Controls.Add(ticketTypeForm);
             ticketTypeForm.Show();
         }
+
+        private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.movieComboBox.Items.Clear();
+            this.movieComboBox.Items.AddRange(Services.MovieService.GetMoviesNamesByCinema(this.cinemaComboBox.SelectedItem.ToString(),this.townComboBox.SelectedItem.ToString()));
+            if (this.movieComboBox.Items.Count == 0)
+            {
+                this.movieComboBox.Text = "(no movies)";
+            }
+        }
     }
 }

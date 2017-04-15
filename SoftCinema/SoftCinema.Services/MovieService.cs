@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.InteropServices;
 using SoftCinema.Data;
 using SoftCinema.Models;
 
@@ -54,6 +55,16 @@ namespace SoftCinema.Services
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Movies.ToList();
+            }
+        }
+        public static string[] GetMoviesNamesByCinema(string cinema,string town)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                var movies=   context.Screenings.Where(s => s.Auditorium.Cinema.Name == cinema && s.Auditorium.Cinema.Town.Name==town)
+                        .Select(s => s.Movie.Name).Distinct()
+                        .ToArray();
+                return movies;
             }
         }
 

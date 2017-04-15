@@ -21,5 +21,17 @@
     <Name>SoftCinema</Name>
     <TownName>Ruse</TownName>
   </Cinema>
+  <Cinema>
+    <Name>Arena</Name>
+    <TownName>Sofia</TownName>
+  </Cinema>
+  <Cinema>
+    <Name>Arena</Name>
+    <TownName>Varna</TownName>
+  </Cinema>
+  <Cinema>
+    <Name>SoftCinema-Lyulin</Name>
+    <TownName>Sofia</TownName>
+  </Cinema>
 </Cinemas>
 </CinemasCollection>
