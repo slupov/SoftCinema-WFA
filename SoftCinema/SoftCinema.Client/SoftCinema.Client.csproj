@@ -91,22 +91,7 @@
     <Compile Include="Forms\TopPanelForm.Designer.cs">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SoftCinemaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoftCinemaDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SoftCinemaDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoftCinemaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SoftCinemaDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoftCinemaDataSet2.xsd</DependentUpon>
-    </Compile>
-
+ 
     <Compile Include="SoftCinemaForm.cs">
       <SubType>Form</SubType>
     </Compile>

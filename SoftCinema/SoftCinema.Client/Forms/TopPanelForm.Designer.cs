@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LogoutButton = new System.Windows.Forms.Button();
-            this.GreetingLabel = new System.Windows.Forms.Label();
+            LogoutButton = new System.Windows.Forms.Button();
+            GreetingLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LogoutButton
             // 
-            this.LogoutButton.Location = new System.Drawing.Point(628, 40);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(75, 23);
-            this.LogoutButton.TabIndex = 6;
-            this.LogoutButton.Text = "Logout";
-            this.LogoutButton.UseVisualStyleBackColor = true;
-            this.LogoutButton.Visible = false;
-            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            LogoutButton.Location = new System.Drawing.Point(628, 40);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new System.Drawing.Size(75, 23);
+            LogoutButton.TabIndex = 6;
+            LogoutButton.Text = "Logout";
+            LogoutButton.UseVisualStyleBackColor = true;
+            LogoutButton.Visible = false;
+            LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // GreetingLabel
             // 
-            this.GreetingLabel.AutoSize = true;
-            this.GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GreetingLabel.Location = new System.Drawing.Point(639, 22);
-            this.GreetingLabel.Name = "GreetingLabel";
-            this.GreetingLabel.Size = new System.Drawing.Size(51, 16);
-            this.GreetingLabel.TabIndex = 5;
-            this.GreetingLabel.Text = "label1";
-            this.GreetingLabel.Visible = false;
+            GreetingLabel.AutoSize = true;
+            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            GreetingLabel.Location = new System.Drawing.Point(639, 22);
+            GreetingLabel.Name = "GreetingLabel";
+            GreetingLabel.Size = new System.Drawing.Size(51, 16);
+            GreetingLabel.TabIndex = 5;
+            GreetingLabel.Text = "label1";
+            GreetingLabel.Visible = false;
             // 
             // TopPanelForm
             // 
@@ -60,8 +60,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(769, 73);
-            this.Controls.Add(this.LogoutButton);
-            this.Controls.Add(this.GreetingLabel);
+            this.Controls.Add(LogoutButton);
+            this.Controls.Add(GreetingLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TopPanelForm";
             this.Text = "TopPanelForm";
@@ -73,7 +73,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button LogoutButton;
-        private System.Windows.Forms.Label GreetingLabel;
+        private static System.Windows.Forms.Button LogoutButton;
+        private static System.Windows.Forms.Label GreetingLabel;
     }
 }
