@@ -41,6 +41,8 @@ namespace SoftCinema.Client.Forms
             if (this.cinemaComboBox.Items.Count == 0)
             {
                 this.cinemaComboBox.Text="(no cinemas)";
+                this.movieComboBox.Text = "";
+                this.movieComboBox.Items.Clear();
             }
         }
 
@@ -56,13 +58,18 @@ namespace SoftCinema.Client.Forms
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.movieComboBox.Text = "Select movie";
-            this.movieComboBox.Items.Clear();
-            this.movieComboBox.Items.AddRange(Services.MovieService.GetMoviesNamesByCinema(this.cinemaComboBox.SelectedItem.ToString(),this.townComboBox.SelectedItem.ToString()));
-            if (this.movieComboBox.Items.Count == 0)
-            {
-                this.movieComboBox.Text = "(no movies)";
+           
+                this.movieComboBox.Text = "Select movie";
+                this.movieComboBox.Items.Clear();
+                this.movieComboBox.Items.AddRange(
+                    Services.MovieService.GetMoviesNamesByCinema(this.cinemaComboBox.SelectedItem.ToString(),
+                        this.townComboBox.SelectedItem.ToString()));
+                if (this.movieComboBox.Items.Count == 0)
+                {
+                    this.movieComboBox.Text = "(no movies)";
+                }
             }
-        }
+         
+        
     }
 }
