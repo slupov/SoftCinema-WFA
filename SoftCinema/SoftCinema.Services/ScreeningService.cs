@@ -42,12 +42,12 @@ namespace SoftCinema.Services
                 var dates= context.Screenings.Where(s => s.Movie.Name==movie && s.Auditorium.Cinema.Town.Name==town && s.Auditorium.Cinema.Name==cinema).Select(s=>s.Start).ToArray();
                 foreach (var dateTime in dates)
                 {
-                    var day = dateTime.Day.ToString();
-                    var month = dateTime.Month.ToString();
+                    var day = dateTime.ToString("dd");
+                    var month = dateTime.ToString("MMM");
                     var weekDay = dateTime.DayOfWeek.ToString();
-                    list.Add($"{day}.{month} {weekDay}");
+                    list.Add($"{day} {month} {weekDay}");
                 }
-                return list.ToArray();
+                return list.Distinct().ToArray();
             }
         }
     }
