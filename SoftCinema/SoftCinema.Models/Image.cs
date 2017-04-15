@@ -11,5 +11,10 @@ namespace SoftCinema.Models
 
         [Required]
         public byte[] Content { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        [Index(IsUnique = true)]
+        public string Name { get; set; }
     }
 }

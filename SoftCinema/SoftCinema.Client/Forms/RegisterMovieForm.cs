@@ -8,19 +8,17 @@ namespace SoftCinema.Client.Forms
 {
     public partial class RegisterMovieForm : Form
     {
-        private byte[] movieImage { get; set; }
+        private byte[] movieImageBytes { get; set; }
+        private string imageName { get; set; }
 
         public RegisterMovieForm()
         {
             InitializeComponent();
-
-            //5 mb limit
-            movieImage = new byte[5120];
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ImageService.AddImage(movieImage);
+            ImageService.AddImage(movieImageBytes, imageName);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -32,9 +30,11 @@ namespace SoftCinema.Client.Forms
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                this.pictureBoxPhoto.ImageLocation = ofd.FileName;
-                //TODO: FIX NULL REFERENCE ?
-                this.movieImage = System.IO.File.ReadAllBytes(HttpContext.Current.Server.MapPath(ofd.FileName));
+                var path = ofd.FileName;
+                this.pictureBoxPhoto.ImageLocation = path;
+
+                this.imageName = ofd.SafeFileName;
+                this.movieImageBytes = System.IO.File.ReadAllBytes(path);
             }
         }
     }
