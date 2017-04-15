@@ -56,6 +56,7 @@ namespace SoftCinema.Client.Forms
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.movieComboBox.Text = "Select movie";
             this.movieComboBox.Items.Clear();
             this.movieComboBox.Items.AddRange(Services.MovieService.GetMoviesNamesByCinema(this.cinemaComboBox.SelectedItem.ToString(),this.townComboBox.SelectedItem.ToString()));
             if (this.movieComboBox.Items.Count == 0)
