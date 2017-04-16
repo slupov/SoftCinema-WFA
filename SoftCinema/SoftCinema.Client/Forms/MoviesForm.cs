@@ -17,12 +17,12 @@ namespace SoftCinema.Client.Forms
     {
         private ICollection<Movie> Movies { get; set; }
         private ICollection<MoviePosterLink> MoviePosterLinks { get; set; }
-        private GroupBox MoviePostersSlider { get; set; }
+        private MoviePostersSlider _moviePostersSlider { get; set; }
 
         public MoviesForm()
         {
             InitializeComponent();
-            this.MoviePostersSlider = new GroupBox();
+            this._moviePostersSlider = new MoviePostersSlider();
 
             Movies = MovieService.GetAllMovies();
             this.MoviePosterLinks = new List<MoviePosterLink>();
@@ -47,8 +47,10 @@ namespace SoftCinema.Client.Forms
         {
             foreach (var item in MoviePosterLinks)
             {
-                MoviePostersSlider.Controls.Add(item);
+                _moviePostersSlider.Controls.Add(item);
             }
+
+            this.Controls.Add(_moviePostersSlider);
         }
     }
 }

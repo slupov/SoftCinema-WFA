@@ -26,7 +26,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
         private static Size _minSize = new System.Drawing.Size(100, 30);
         private PictureBox _pictureBox = new PictureBox();
-        private Button _showDetailsButton = new Button();
+        private Button _showDetailsButton = new Button() { Text = "Details"};
 
         private Movie _movie { get; set; }
 
@@ -35,7 +35,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         public MoviePosterLink(string movieName) : base()
         {
             base.Font = _normalFont;
-            base.BackColor = _border;
+            base.BackColor = _back;
             base.ForeColor = _fore;
             base.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             base.Margin = _margin;
@@ -44,12 +44,18 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
             var currentMovie = MovieService.GetMovie(movieName);
             this._movie = currentMovie;
+
             this._pictureBox.Image = ImageService.byteArrayToImage(currentMovie.Image.Content);
 
             this._pictureBox.Size = new Size(141, 190);
             //this._pictureBox.Location = new Point(50, 50);
-
+            this._showDetailsButton.Location = new Point(this._pictureBox.Location.X, this._pictureBox.Location.Y + 10);
             setDetailsButtonClickEvent();
+
+            this.Controls.Add(this._showDetailsButton);
+            this.Controls.Add(this._pictureBox);
+
+
         }
 
         protected override void OnControlAdded(ControlEventArgs e)
@@ -85,6 +91,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private void _showDetailsButton_Click(object sender, System.EventArgs e)
         {
             MovieForm movieForm = new MovieForm(this._movie);
+            movieForm.Show();
         }
     }
 }

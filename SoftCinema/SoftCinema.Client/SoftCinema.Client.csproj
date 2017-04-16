@@ -131,6 +131,9 @@
     <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
