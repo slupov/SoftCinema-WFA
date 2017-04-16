@@ -30,5 +30,15 @@ namespace SoftCinema.Client.Forms.AdminForms
             this.CategoryNotAddedMovies.Items.AddRange(notAddedMovies);
             this.CategoryNameTextBox.Text = category.Name;
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            CategoriesForm categoriesForm = new CategoriesForm();
+            categoriesForm.TopLevel = false;
+            categoriesForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
+            categoriesForm.Show();
+        }
     }
 }

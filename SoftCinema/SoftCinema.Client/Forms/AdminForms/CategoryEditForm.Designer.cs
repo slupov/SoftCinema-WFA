@@ -78,6 +78,7 @@
             this.CategoryAddedMovies.ItemHeight = 16;
             this.CategoryAddedMovies.Location = new System.Drawing.Point(257, 227);
             this.CategoryAddedMovies.Name = "CategoryAddedMovies";
+            this.CategoryAddedMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.CategoryAddedMovies.Size = new System.Drawing.Size(186, 196);
             this.CategoryAddedMovies.TabIndex = 10;
             // 
@@ -88,6 +89,7 @@
             this.CategoryNotAddedMovies.ItemHeight = 16;
             this.CategoryNotAddedMovies.Location = new System.Drawing.Point(575, 227);
             this.CategoryNotAddedMovies.Name = "CategoryNotAddedMovies";
+            this.CategoryNotAddedMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.CategoryNotAddedMovies.Size = new System.Drawing.Size(186, 196);
             this.CategoryNotAddedMovies.TabIndex = 11;
             // 
@@ -108,16 +110,17 @@
             this.BackButton.TabIndex = 23;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // RemoveMoviesLabel
             // 
             this.RemoveMoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RemoveMoviesLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RemoveMoviesLabel.Location = new System.Drawing.Point(32, 240);
+            this.RemoveMoviesLabel.Location = new System.Drawing.Point(49, 240);
             this.RemoveMoviesLabel.Name = "RemoveMoviesLabel";
             this.RemoveMoviesLabel.Size = new System.Drawing.Size(245, 278);
             this.RemoveMoviesLabel.TabIndex = 24;
-            this.RemoveMoviesLabel.Text = "Remove movies from category:";
+            this.RemoveMoviesLabel.Text = "Movies in category:";
             // 
             // AddMoviesLabel
             // 
@@ -125,9 +128,9 @@
             this.AddMoviesLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.AddMoviesLabel.Location = new System.Drawing.Point(767, 240);
             this.AddMoviesLabel.Name = "AddMoviesLabel";
-            this.AddMoviesLabel.Size = new System.Drawing.Size(196, 183);
+            this.AddMoviesLabel.Size = new System.Drawing.Size(256, 183);
             this.AddMoviesLabel.TabIndex = 25;
-            this.AddMoviesLabel.Text = "Add movies to category:";
+            this.AddMoviesLabel.Text = "Movies not in category:";
             // 
             // AddMoviesButton
             // 
