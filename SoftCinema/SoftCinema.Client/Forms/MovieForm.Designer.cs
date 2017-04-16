@@ -312,7 +312,7 @@
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.genreLabel);
             this.Controls.Add(this.titleLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MovieForm";
             this.Text = " ";
             this.Load += new System.EventHandler(this.MovieForm_Load);

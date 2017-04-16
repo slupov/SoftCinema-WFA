@@ -21,21 +21,24 @@ namespace SoftCinema.Client.Forms
 
         public MoviesForm()
         {
-            InitializeComponent();
-            this._moviePostersSlider = new MoviePostersSlider();
 
+            InitializeComponent();
+            Movies = new List<Movie>();
             Movies = MovieService.GetAllMovies();
+            this._moviePostersSlider = new MoviePostersSlider() { Size = new Size(this.Movies.Count*220 - 20, 350)};
             this.MoviePosterLinks = new List<MoviePosterLink>();
+            
         }
 
         private void MoviesForm_Load(object sender, EventArgs e)
         {
-
             //implement slider logic
             foreach (var movie in Movies)
             {
                 //populate MoviePosterLinks
                 var currentPosterLink = new MoviePosterLink(movie.Name);
+                currentPosterLink.Location = new Point(20, 20);
+                
                 this.MoviePosterLinks.Add(currentPosterLink);
             }
 
@@ -45,12 +48,18 @@ namespace SoftCinema.Client.Forms
         //populates Slider GroupBox
         private void VisualizePosters()
         {
+            int positionX = 0;
+            int positionY = 20;
             foreach (var item in MoviePosterLinks)
             {
+                item.Location = new Point(positionX, positionY);
+                
                 _moviePostersSlider.Controls.Add(item);
+                positionX += 220;
             }
 
             this.Controls.Add(_moviePostersSlider);
         }
+
     }
 }

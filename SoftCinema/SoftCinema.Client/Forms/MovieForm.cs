@@ -1,16 +1,8 @@
-﻿using SoftCinema.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SoftCinema.Client.Forms
+﻿namespace SoftCinema.Client.Forms
 {
+    using SoftCinema.Models;
+    using System;
+    using System.Windows.Forms;
     public partial class MovieForm : Form
     {
         public Movie _movie { get; set; }
