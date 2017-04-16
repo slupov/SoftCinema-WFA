@@ -24,7 +24,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static Padding _margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
         private static Padding _padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
 
-        private static Size _minSize = new System.Drawing.Size(100, 30);
+        private static Size _minSize = new System.Drawing.Size(200, 270);
         private PictureBox _pictureBox = new PictureBox();
         private Button _showDetailsButton = new Button() { Text = "Details"};
 
@@ -46,9 +46,9 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this._movie = currentMovie;
 
             this._pictureBox.Image = ImageService.byteArrayToImage(currentMovie.Image.Content);
+            this._pictureBox.Image = ImageService.ScaleImage(this._pictureBox.Image, 200,310);
 
-            this._pictureBox.Size = new Size(141, 190);
-            //this._pictureBox.Location = new Point(50, 50);
+            this._pictureBox.Size = new Size(200, 270);
             this._showDetailsButton.Location = new Point(this._pictureBox.Location.X, this._pictureBox.Location.Y + 10);
             setDetailsButtonClickEvent();
 

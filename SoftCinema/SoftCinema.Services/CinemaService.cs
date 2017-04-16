@@ -53,6 +53,17 @@ namespace SoftCinema.Services
             }
         }
 
-        
+        public static string[] GetCinemasByMovieAndTown(string movieName, string townName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context
+                    .Screenings
+                    .Where(s => s.Movie.Name == movieName)
+                    .Where(s => s.Auditorium.Cinema.Town.Name == townName)
+                    .Select(s => s.Auditorium.Cinema.Name)
+                    .ToArray();
+            }
+        }
     }
 }
