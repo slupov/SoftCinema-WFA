@@ -94,6 +94,8 @@ namespace SoftCinema.Services
             {
                 return db.Movies
                     .Include("Image")
+                    .Include("Categories")
+                    .Include("Cast")
                     .FirstOrDefault(m => m.Name == movieName);
             }
         }

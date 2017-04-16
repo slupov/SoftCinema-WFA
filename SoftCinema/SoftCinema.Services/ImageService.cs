@@ -4,6 +4,8 @@ using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
+using System;
+
 
 namespace SoftCinema.Services
 {
@@ -41,6 +43,22 @@ namespace SoftCinema.Services
             MemoryStream ms = new MemoryStream(byteArrayIn);
             System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
             return returnImage;
+        }
+        public static System.Drawing.Image ScaleImage(System.Drawing.Image image, int maxWidth, int maxHeight)
+        {
+            var ratioX = (double)maxWidth / image.Width;
+            var ratioY = (double)maxHeight / image.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+
+            var newWidth = (int)(image.Width * ratio);
+            var newHeight = (int)(image.Height * ratio);
+
+            var newImage = new System.Drawing.Bitmap(newWidth, newHeight);
+
+            using (var graphics = System.Drawing.Graphics.FromImage(newImage))
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+
+            return newImage;
         }
     }
 }

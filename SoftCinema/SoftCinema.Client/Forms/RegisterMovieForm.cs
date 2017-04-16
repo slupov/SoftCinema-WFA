@@ -57,5 +57,10 @@ namespace SoftCinema.Client.Forms
             throw new NotImplementedException();
 //            this.ageRestrictionComboBox.Items.AddRange(MovieService.GetAgeRestrictions());
         }
+
+        private void pictureBoxPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

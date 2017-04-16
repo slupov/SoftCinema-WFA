@@ -54,7 +54,7 @@ namespace ImportServices
 
             ScreeningService.AddScreening(auditoriumId, movieId, date);
 
-            Console.WriteLine(string.Format(SuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
 
         }
     }

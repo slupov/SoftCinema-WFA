@@ -37,7 +37,7 @@ namespace ImportServices
 
             CategoryService.AddCategory(categoryName);
 
-            Console.WriteLine(string.Format(SuccessMessages.CategoryAddedSuccess, categoryName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.CategoryAddedSuccess, categoryName));
         }
     }
 }
