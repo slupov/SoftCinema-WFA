@@ -35,7 +35,6 @@
             this.ratingLabel = new System.Windows.Forms.Label();
             this.directorLabel = new System.Windows.Forms.Label();
             this.castLabel = new System.Windows.Forms.Label();
-            this.categoriesLabel = new System.Windows.Forms.Label();
             this.synopsisLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.cinemaComboBox = new System.Windows.Forms.ComboBox();
@@ -51,9 +50,10 @@
             this.yearBox = new System.Windows.Forms.TextBox();
             this.ratingBox = new System.Windows.Forms.TextBox();
             this.directorBox = new System.Windows.Forms.TextBox();
-            this.categoriesBox = new System.Windows.Forms.TextBox();
+            this.ageRestrictionBox = new System.Windows.Forms.TextBox();
             this.castBox = new System.Windows.Forms.TextBox();
             this.synopsisBox = new System.Windows.Forms.TextBox();
+            this.ageRestrictionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,16 +121,6 @@
             this.castLabel.Text = "Cast:";
             this.castLabel.Click += new System.EventHandler(this.actorsLabel_Click);
             // 
-            // categoriesLabel
-            // 
-            this.categoriesLabel.AutoSize = true;
-            this.categoriesLabel.Location = new System.Drawing.Point(199, 205);
-            this.categoriesLabel.Name = "categoriesLabel";
-            this.categoriesLabel.Size = new System.Drawing.Size(60, 13);
-            this.categoriesLabel.TabIndex = 8;
-            this.categoriesLabel.Text = "Categories:";
-            this.categoriesLabel.Click += new System.EventHandler(this.categoriesLabel_Click);
-            // 
             // synopsisLabel
             // 
             this.synopsisLabel.AutoSize = true;
@@ -142,9 +132,9 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(24, 48);
+            this.pictureBox.Location = new System.Drawing.Point(23, 26);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(113, 139);
+            this.pictureBox.Size = new System.Drawing.Size(142, 224);
             this.pictureBox.TabIndex = 10;
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
@@ -257,13 +247,13 @@
             this.directorBox.Size = new System.Drawing.Size(100, 20);
             this.directorBox.TabIndex = 23;
             // 
-            // categoriesBox
+            // ageRestrictionBox
             // 
-            this.categoriesBox.Location = new System.Drawing.Point(283, 205);
-            this.categoriesBox.Name = "categoriesBox";
-            this.categoriesBox.ReadOnly = true;
-            this.categoriesBox.Size = new System.Drawing.Size(100, 20);
-            this.categoriesBox.TabIndex = 24;
+            this.ageRestrictionBox.Location = new System.Drawing.Point(283, 205);
+            this.ageRestrictionBox.Name = "ageRestrictionBox";
+            this.ageRestrictionBox.ReadOnly = true;
+            this.ageRestrictionBox.Size = new System.Drawing.Size(100, 20);
+            this.ageRestrictionBox.TabIndex = 24;
             // 
             // castBox
             // 
@@ -281,6 +271,16 @@
             this.synopsisBox.Size = new System.Drawing.Size(100, 20);
             this.synopsisBox.TabIndex = 26;
             // 
+            // ageRestrictionLabel
+            // 
+            this.ageRestrictionLabel.AutoSize = true;
+            this.ageRestrictionLabel.Location = new System.Drawing.Point(199, 205);
+            this.ageRestrictionLabel.Name = "ageRestrictionLabel";
+            this.ageRestrictionLabel.Size = new System.Drawing.Size(82, 13);
+            this.ageRestrictionLabel.TabIndex = 8;
+            this.ageRestrictionLabel.Text = "Age Restriction:";
+            this.ageRestrictionLabel.Click += new System.EventHandler(this.categoriesLabel_Click);
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +288,7 @@
             this.ClientSize = new System.Drawing.Size(769, 418);
             this.Controls.Add(this.synopsisBox);
             this.Controls.Add(this.castBox);
-            this.Controls.Add(this.categoriesBox);
+            this.Controls.Add(this.ageRestrictionBox);
             this.Controls.Add(this.directorBox);
             this.Controls.Add(this.ratingBox);
             this.Controls.Add(this.yearBox);
@@ -304,7 +304,7 @@
             this.Controls.Add(this.cinemaComboBox);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.synopsisLabel);
-            this.Controls.Add(this.categoriesLabel);
+            this.Controls.Add(this.ageRestrictionLabel);
             this.Controls.Add(this.castLabel);
             this.Controls.Add(this.directorLabel);
             this.Controls.Add(this.ratingLabel);
@@ -331,7 +331,6 @@
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.Label directorLabel;
         private System.Windows.Forms.Label castLabel;
-        private System.Windows.Forms.Label categoriesLabel;
         private System.Windows.Forms.Label synopsisLabel;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.ComboBox cinemaComboBox;
@@ -347,8 +346,9 @@
         private System.Windows.Forms.TextBox yearBox;
         private System.Windows.Forms.TextBox ratingBox;
         private System.Windows.Forms.TextBox directorBox;
-        private System.Windows.Forms.TextBox categoriesBox;
+        private System.Windows.Forms.TextBox ageRestrictionBox;
         private System.Windows.Forms.TextBox castBox;
         private System.Windows.Forms.TextBox synopsisBox;
+        private System.Windows.Forms.Label ageRestrictionLabel;
     }
 }
