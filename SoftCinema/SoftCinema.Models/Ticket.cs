@@ -5,6 +5,8 @@
 
     public class Ticket
     {
+        private decimal price;
+
         [Key]
         public int Id { get; set; }
 
@@ -24,8 +26,33 @@
         public virtual Seat Seat { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
-
+        public decimal Price
+        {
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                switch (this.Type)
+                {
+                    case TicketType.Children:
+                        this.price = 5.00M;
+                        break;
+                    case TicketType.Students:
+                        this.price = 6.00M;
+                        break;
+                    case TicketType.Regular:
+                        this.price = 9.00M;
+                        break;
+                    case TicketType.Seniors:
+                        this.price = 7.00M;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
         [Required]
         public TicketType Type { get; set; }
     }
