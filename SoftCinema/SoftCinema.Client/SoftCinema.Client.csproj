@@ -72,11 +72,17 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Movie.cs">
+    <Compile Include="Forms\MovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Movie.Designer.cs">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <Compile Include="Forms\MovieForm.Designer.cs">
+      <DependentUpon>MovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MoviesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MoviesForm.Designer.cs">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     </Compile>
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -134,8 +143,11 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Movie.resx">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MovieForm.resx">
+      <DependentUpon>MovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MoviesForm.resx">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>

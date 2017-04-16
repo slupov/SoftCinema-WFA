@@ -1,6 +1,6 @@
 ﻿namespace SoftCinema.Client.Forms
 {
-    partial class Movie
+    partial class MovieForm
     {
         /// <summary>
         /// Required designer variable.
@@ -147,6 +147,7 @@
             this.pictureBox.Size = new System.Drawing.Size(113, 139);
             this.pictureBox.TabIndex = 10;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // cinemaComboBox
             // 
@@ -280,7 +281,7 @@
             this.synopsisBox.Size = new System.Drawing.Size(100, 20);
             this.synopsisBox.TabIndex = 26;
             // 
-            // Movie
+            // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,8 +313,9 @@
             this.Controls.Add(this.genreLabel);
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Movie";
+            this.Name = "MovieForm";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.MovieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
