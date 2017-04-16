@@ -18,7 +18,7 @@ namespace SoftCinema.Client.Forms
             AuthenticationManager.Logout();
             HideGreetings();
 
-            MessageBox.Show(Constants.SuccessfulLogout);
+            MessageBox.Show(Constants.SuccessMessages.SuccessfulLogout);
         }
 
         //Utilities

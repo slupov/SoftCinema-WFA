@@ -17,9 +17,15 @@ namespace SoftCinema.Services.Utilities
         public const int MaxMovieNameLength = 50;
 
         public const string GreetingsMessage = "Hello, {0}!";
-        public const string SuccessfulLogout = "Successfully logged out!";
-        public const string SuccessfulLogin = "Successfully logged in!";
-        public const string UserUpdatedSuccessfullyMessage = "User updated successfully!";
+
+        public static class SuccessMessages
+        {
+            public const string SuccessfulLogout = "Successfully logged out!";
+            public const string SuccessfulLogin = "Successfully logged in!";
+            public const string UserUpdatedSuccessfully = "User updated successfully!";
+        }
+
+        
 
         public static class ErrorMessages
         {

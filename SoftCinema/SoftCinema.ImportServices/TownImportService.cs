@@ -33,7 +33,7 @@ namespace ImportServices
 
             TownService.AddTown(townName);
 
-            Console.WriteLine(string.Format(SuccessMessages.TownAddedSuccess, townName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.TownAddedSuccess, townName));
         }
     }
 }

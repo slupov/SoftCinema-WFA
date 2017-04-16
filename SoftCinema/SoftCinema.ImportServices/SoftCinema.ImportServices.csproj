@@ -49,7 +49,7 @@
     <Compile Include="ScreeningImportService.cs" />
     <Compile Include="SeatImportService.cs" />
     <Compile Include="TownImportService.cs" />
-    <Compile Include="Utilities\SuccessMessages.cs" />
+    <Compile Include="Utilities\ImportSuccessMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoftCinema.DTOs\SoftCinema.DTOs.csproj">

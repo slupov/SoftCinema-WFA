@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
 using SoftCinema.Data.Utilities;
@@ -195,6 +196,14 @@ namespace SoftCinema.Services
                 user.PhoneNumber = phoneNumber;
                 user.Role = role;
                 db.SaveChanges();
+            }
+        }
+
+        public static void DeleteUser(string userUsername)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                
             }
         }
     }

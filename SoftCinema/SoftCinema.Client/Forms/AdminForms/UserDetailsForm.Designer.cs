@@ -41,6 +41,7 @@
             this.PhoneNumberInfoLabel = new System.Windows.Forms.Label();
             this.RoleComboBox = new System.Windows.Forms.ComboBox();
             this.EditUserButton = new System.Windows.Forms.Button();
+            this.UserDeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -161,13 +162,23 @@
             // 
             // EditUserButton
             // 
-            this.EditUserButton.Location = new System.Drawing.Point(323, 335);
+            this.EditUserButton.Location = new System.Drawing.Point(323, 364);
             this.EditUserButton.Name = "EditUserButton";
             this.EditUserButton.Size = new System.Drawing.Size(118, 45);
             this.EditUserButton.TabIndex = 17;
-            this.EditUserButton.Text = "Edit User";
+            this.EditUserButton.Text = "Save Changes";
             this.EditUserButton.UseVisualStyleBackColor = true;
             this.EditUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
+            // 
+            // UserDeleteButton
+            // 
+            this.UserDeleteButton.Location = new System.Drawing.Point(460, 364);
+            this.UserDeleteButton.Name = "UserDeleteButton";
+            this.UserDeleteButton.Size = new System.Drawing.Size(122, 45);
+            this.UserDeleteButton.TabIndex = 18;
+            this.UserDeleteButton.Text = "Delete User";
+            this.UserDeleteButton.UseVisualStyleBackColor = true;
+            this.UserDeleteButton.Click += new System.EventHandler(this.UserDeleteButton_Click);
             // 
             // UserDetailsForm
             // 
@@ -175,6 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1085, 523);
+            this.Controls.Add(this.UserDeleteButton);
             this.Controls.Add(this.EditUserButton);
             this.Controls.Add(this.RoleComboBox);
             this.Controls.Add(this.PhoneNumberInfoLabel);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Label PhoneNumberInfoLabel;
         private System.Windows.Forms.ComboBox RoleComboBox;
         private System.Windows.Forms.Button EditUserButton;
+        private System.Windows.Forms.Button UserDeleteButton;
     }
 }

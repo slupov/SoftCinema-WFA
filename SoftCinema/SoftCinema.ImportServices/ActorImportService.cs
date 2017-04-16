@@ -41,7 +41,7 @@ namespace ImportServices
             ActorService.AddActor(actorName, actorRating);
             ActorImportService.AddMoviesToActor(actorName, movies);
 
-            Console.WriteLine(string.Format(SuccessMessages.ActorAddedSuccess, actorName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.ActorAddedSuccess, actorName));
         }
 
         public static void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Client.Forms.AdminForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -102,13 +103,25 @@ namespace SoftCinema.Client.Forms
             try
             {
                 UserService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role);
-                MessageBox.Show(Constants.UserUpdatedSuccessfullyMessage);
+                MessageBox.Show(Constants.SuccessMessages.UserUpdatedSuccessfully);
+                UsersForm usersForm = new UsersForm();
+                usersForm.TopLevel = false;
+                usersForm.AutoScroll = true;
+                this.Hide();
+                ((Button)sender).Parent.Parent.Controls.Add(usersForm);
+                usersForm.Show();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.UserUpdateErrorMesage);
             }
            
+        }
+
+        private void UserDeleteButton_Click(object sender, EventArgs e)
+        {
+            UserService.DeleteUser(user.Username);
+
         }
     }
 }

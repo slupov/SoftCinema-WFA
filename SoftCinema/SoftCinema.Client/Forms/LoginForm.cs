@@ -35,7 +35,7 @@ namespace SoftCinema.Client.Forms
             if (UserService.Validations.isUsernamePasswordMatching(username, password))
             {
                 AuthenticationManager.Login(UserService.GetUser(username));
-                MessageBox.Show(Constants.SuccessfulLogin);
+                MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
                 TopPanelForm.ShowGreetings();
             }
