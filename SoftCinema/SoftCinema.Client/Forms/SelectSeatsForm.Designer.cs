@@ -35,9 +35,7 @@
             this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.chosenSeatsLabel = new System.Windows.Forms.Label();
             this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.teamButton1 = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.purchaseButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.SuspendLayout();
             // 
             // freeSeatsLegendLabel
@@ -128,39 +126,30 @@
             this.chosenSeatsLegendButton.Text = "seatButton4";
             this.chosenSeatsLegendButton.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // purchaseButton
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(652, 276);
-            this.dataGridView1.TabIndex = 11;
-            // 
-            // teamButton1
-            // 
-            this.teamButton1.BackColor = System.Drawing.Color.DimGray;
-            this.teamButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.teamButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teamButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamButton1.ForeColor = System.Drawing.Color.Black;
-            this.teamButton1.Location = new System.Drawing.Point(539, 56);
-            this.teamButton1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.teamButton1.MinimumSize = new System.Drawing.Size(100, 30);
-            this.teamButton1.Name = "teamButton1";
-            this.teamButton1.Padding = new System.Windows.Forms.Padding(3);
-            this.teamButton1.Size = new System.Drawing.Size(154, 36);
-            this.teamButton1.TabIndex = 12;
-            this.teamButton1.Text = "Purchase";
-            this.teamButton1.UseVisualStyleBackColor = false;
-            this.teamButton1.Click += new System.EventHandler(this.teamButton1_Click);
+            this.purchaseButton.BackColor = System.Drawing.Color.DimGray;
+            this.purchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.purchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.purchaseButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseButton.ForeColor = System.Drawing.Color.Black;
+            this.purchaseButton.Location = new System.Drawing.Point(539, 56);
+            this.purchaseButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.purchaseButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Padding = new System.Windows.Forms.Padding(3);
+            this.purchaseButton.Size = new System.Drawing.Size(154, 36);
+            this.purchaseButton.TabIndex = 12;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = false;
+            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click);
             // 
             // SelectSeatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.teamButton1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.chosenSeatsLabel);
             this.Controls.Add(this.chosenSeatsLegendButton);
             this.Controls.Add(this.takenSeatsLabel);
@@ -168,11 +157,10 @@
             this.Controls.Add(this.freeSeatsLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.freeSeatsLegendLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SelectSeatsForm";
             this.Text = "SelectSeatsForm";
             this.Load += new System.EventHandler(this.SelectSeatsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,7 +175,6 @@
         private Utilities.CustomTools.SeatButton takenSeatsLegendButton;
         private System.Windows.Forms.Label chosenSeatsLabel;
         private Utilities.CustomTools.SeatButton chosenSeatsLegendButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private Utilities.CustomTools.TeamButton teamButton1;
+        private Utilities.CustomTools.TeamButton purchaseButton;
     }
 }

@@ -7,32 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Models;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
     public partial class TicketForm : Form
     {
+        private string _townName { get; set; }
+        private string _cinemaName { get; set; }
+        private string _movieName { get; set; }
+//        private ICollection<Screening> _screenings { get; set; }
+        private ICollection<Movie> _movies { get; set; }
+        public static Screening Screening;
+
         public TicketForm()
         {
+            this._movies = new List<Movie>();
+
             InitializeComponent();
-            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-//        private void Ticket_Load(object sender, EventArgs e)
-//        {
-//            // TODO: This line of code loads data into the 'softCinemaDataSet2.Movies' table. You can move, or remove it, as needed.
-//            this.moviesTableAdapter.Fill(this.softCinemaDataSet2.Movies);
-//            // TODO: This line of code loads data into the 'softCinemaDataSet1.Cinemas' table. You can move, or remove it, as needed.
-//            this.cinemasTableAdapter.Fill(this.softCinemaDataSet1.Cinemas);
-//            // TODO: This line of code loads data into the 'softCinemaDataSet.Towns' table. You can move, or remove it, as needed.
-//            this.townsTableAdapter.Fill(this.softCinemaDataSet.Towns);
-//
-//        }
 
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -44,62 +38,81 @@ namespace SoftCinema.Client.Forms
             this.dateComboBox.Items.Clear();
             this.timeComboBox.Text = "";
             this.timeComboBox.Items.Clear();
-            this.cinemaComboBox.Items.AddRange(Services.CinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString()));
+
+            this._townName = this.townComboBox.SelectedItem.ToString();
+            var cinemaNames = Services.CinemaService.GetCinemasNamesBySelectedTown(this._townName);
+
+            //adds options to the Cinema select box
+            this.cinemaComboBox.Items.AddRange(cinemaNames);
+
+            //default 
             if (this.cinemaComboBox.Items.Count == 0)
             {
-                this.cinemaComboBox.Text="(no cinemas)";
-                
+                this.cinemaComboBox.Text = "(no cinemas)";
             }
         }
 
-        private void selectSeats_Click(object sender, EventArgs e)
+        private void selectTicketTypeButton_Click(object sender, EventArgs e)
         {
+            var screeningDate = new DateTime(2017,4,21,16,0,0); //hardcode
+            Screening = ScreeningService.GetScreening(this._townName,this._cinemaName,this._movieName, screeningDate);
+
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
             this.Hide();
-             ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
+
+            ((Button) sender).Parent.Parent.Controls.Add(ticketTypeForm);
             ticketTypeForm.Show();
-
-
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-                this.movieComboBox.Text = "Select movie";
-                this.movieComboBox.Items.Clear();
-                this.movieComboBox.Items.AddRange(
-                    Services.MovieService.GetMoviesNamesByCinema(this.cinemaComboBox.SelectedItem.ToString(),
-                        this.townComboBox.SelectedItem.ToString()));
-                if (this.movieComboBox.Items.Count == 0)
-                {
-                    this.movieComboBox.Text = "(no movies)";
-                }
+            this.movieComboBox.Text = "Select movie";
+            this.movieComboBox.Items.Clear();
+
+            this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
+            this._movies = Services.MovieService.GetMovies(this._cinemaName, this._townName);
+
+            this.movieComboBox.Items.AddRange(this._movies.Select(m => m.Name).ToArray());
+
+            //default
+            if (this.movieComboBox.Items.Count == 0)
+            {
+                this.movieComboBox.Text = "(no movies)";
             }
+        }
 
         private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.dateComboBox.Text = "Select date";
             this.dateComboBox.Items.Clear();
-            this.dateComboBox.Items.AddRange(
-                Services.ScreeningService.GetAllDates(this.townComboBox.SelectedItem.ToString(),this.cinemaComboBox.SelectedItem.ToString(),this.movieComboBox.SelectedItem.ToString()
-                    ));
-            
+            this._movieName = this.movieComboBox.SelectedItem.ToString();
+
+            var dates = Services.ScreeningService.GetAllDates(this._townName,
+                this._cinemaName, this._movieName);
+            this.dateComboBox.Items.AddRange(dates);
         }
 
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.timeComboBox.Text = "Select time";
             this.timeComboBox.Items.Clear();
-            this.timeComboBox.Items.AddRange(
-                Services.ScreeningService.GetHoursForMoviesByDate(this.townComboBox.SelectedItem.ToString(), this.cinemaComboBox.SelectedItem.ToString(), this.movieComboBox.SelectedItem.ToString(),this.dateComboBox.SelectedItem.ToString()
-                    ));
+            var date = this.dateComboBox.SelectedItem.ToString();
+
+            var hours = Services.ScreeningService.GetHoursForMoviesByDate(this._townName,
+                this._cinemaName, this._movieName, date);
+            ;
+            this.timeComboBox.Items.AddRange(hours);
+        }
+
+        private void TicketForm_Load(object sender, EventArgs e)
+        {
+            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
         }
     }
 }

@@ -18,7 +18,6 @@ namespace SoftCinema.Client
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
             loadTopPanelForm();
-            
         }
 
         private void loadTopPanelForm()
@@ -30,6 +29,7 @@ namespace SoftCinema.Client
             this.TopPanel.Controls.Add(topPanel);
             topPanel.Show();
         }
+
         //Sidebar buttons
         private void registerTeamButton_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,7 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Add(registerMovieForm);
             registerMovieForm.Show();
         }
+
         private void buyTicketsTeamButton_Click(object sender, EventArgs e)
         {
             TicketForm ticketForm = new TicketForm();
@@ -78,7 +79,6 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Clear();
             this.ContentHolder.Controls.Add(adminMenuForm);
             adminMenuForm.Show();
-            
         }
 
         private void testMoviesButton_Click(object sender, EventArgs e)

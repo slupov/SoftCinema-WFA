@@ -32,6 +32,7 @@
             base.Padding = _padding;
             base.MinimumSize = _minSize;
             base.Text = number.ToString();
+            base.Size = new Size(20, 20);
         }
 
         protected override void OnControlAdded(ControlEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using SoftCinema.Data;
@@ -59,14 +60,18 @@ namespace SoftCinema.Services
                     .ToList();
             }
         }
-        public static string[] GetMoviesNamesByCinema(string cinema,string town)
+
+        public static ICollection<Movie> GetMovies(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                var movies=   context.Screenings.Where(s => s.Auditorium.Cinema.Name == cinema && s.Auditorium.Cinema.Town.Name==town)
-                        .Select(s => s.Movie.Name).Distinct()
-                        .ToArray();
-                return movies;
+                return context
+                    .Screenings
+                    .Where(s => s.Auditorium.Cinema.Name == cinemaName && s.Auditorium.Cinema.Town.Name == townName)
+//                    .Include("Movie")
+                    .Select(s => s.Movie)
+                    .Distinct()
+                    .ToList();
             }
         }
 

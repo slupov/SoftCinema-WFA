@@ -40,12 +40,13 @@ namespace SoftCinema.Client
             this.loginTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.registerTeamButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.NamePanel = new System.Windows.Forms.Panel();
+            this.testSeatsButton = new System.Windows.Forms.Button();
+            this.testMoviesButton = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.ContentHolder = new System.Windows.Forms.Panel();
             this.BtnDashboard = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
-            this.testMoviesButton = new System.Windows.Forms.Button();
             this.SidePanel.SuspendLayout();
             this.NamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -78,7 +79,7 @@ namespace SoftCinema.Client
             this.AdminMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminMenu.MinimumSize = new System.Drawing.Size(75, 24);
             this.AdminMenu.Name = "AdminMenu";
-            this.AdminMenu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdminMenu.Padding = new System.Windows.Forms.Padding(2);
             this.AdminMenu.Size = new System.Drawing.Size(195, 69);
             this.AdminMenu.TabIndex = 0;
             this.AdminMenu.Text = "AdminMenu";
@@ -96,7 +97,7 @@ namespace SoftCinema.Client
             this.teamButton5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.teamButton5.MinimumSize = new System.Drawing.Size(100, 30);
             this.teamButton5.Name = "teamButton5";
-            this.teamButton5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.teamButton5.Padding = new System.Windows.Forms.Padding(3);
             this.teamButton5.Size = new System.Drawing.Size(195, 57);
             this.teamButton5.TabIndex = 5;
             this.teamButton5.Text = "teamButton5";
@@ -113,7 +114,7 @@ namespace SoftCinema.Client
             this.registerMovie.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.registerMovie.MinimumSize = new System.Drawing.Size(100, 30);
             this.registerMovie.Name = "registerMovie";
-            this.registerMovie.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.registerMovie.Padding = new System.Windows.Forms.Padding(3);
             this.registerMovie.Size = new System.Drawing.Size(195, 57);
             this.registerMovie.TabIndex = 4;
             this.registerMovie.Text = "Register movie";
@@ -131,7 +132,7 @@ namespace SoftCinema.Client
             this.buyTicketsTeamButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.buyTicketsTeamButton.MinimumSize = new System.Drawing.Size(100, 30);
             this.buyTicketsTeamButton.Name = "buyTicketsTeamButton";
-            this.buyTicketsTeamButton.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.buyTicketsTeamButton.Padding = new System.Windows.Forms.Padding(3);
             this.buyTicketsTeamButton.Size = new System.Drawing.Size(195, 57);
             this.buyTicketsTeamButton.TabIndex = 3;
             this.buyTicketsTeamButton.Text = "Buy tickets";
@@ -149,7 +150,7 @@ namespace SoftCinema.Client
             this.loginTeamButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.loginTeamButton.MinimumSize = new System.Drawing.Size(100, 30);
             this.loginTeamButton.Name = "loginTeamButton";
-            this.loginTeamButton.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.loginTeamButton.Padding = new System.Windows.Forms.Padding(3);
             this.loginTeamButton.Size = new System.Drawing.Size(195, 57);
             this.loginTeamButton.TabIndex = 2;
             this.loginTeamButton.Text = "Login";
@@ -167,7 +168,7 @@ namespace SoftCinema.Client
             this.registerTeamButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.registerTeamButton.MinimumSize = new System.Drawing.Size(100, 30);
             this.registerTeamButton.Name = "registerTeamButton";
-            this.registerTeamButton.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.registerTeamButton.Padding = new System.Windows.Forms.Padding(3);
             this.registerTeamButton.Size = new System.Drawing.Size(195, 57);
             this.registerTeamButton.TabIndex = 1;
             this.registerTeamButton.Text = "Register";
@@ -177,12 +178,32 @@ namespace SoftCinema.Client
             // NamePanel
             // 
             this.NamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(155)))), ((int)(((byte)(2)))));
+            this.NamePanel.Controls.Add(this.testSeatsButton);
             this.NamePanel.Controls.Add(this.testMoviesButton);
             this.NamePanel.Controls.Add(this.Title);
             this.NamePanel.Location = new System.Drawing.Point(0, 0);
             this.NamePanel.Name = "NamePanel";
             this.NamePanel.Size = new System.Drawing.Size(195, 73);
             this.NamePanel.TabIndex = 0;
+            // 
+            // testSeatsButton
+            // 
+            this.testSeatsButton.Location = new System.Drawing.Point(114, 47);
+            this.testSeatsButton.Name = "testSeatsButton";
+            this.testSeatsButton.Size = new System.Drawing.Size(75, 23);
+            this.testSeatsButton.TabIndex = 1;
+            this.testSeatsButton.Text = "Test Seats";
+            this.testSeatsButton.UseVisualStyleBackColor = true;
+            // 
+            // testMoviesButton
+            // 
+            this.testMoviesButton.Location = new System.Drawing.Point(114, 3);
+            this.testMoviesButton.Name = "testMoviesButton";
+            this.testMoviesButton.Size = new System.Drawing.Size(75, 23);
+            this.testMoviesButton.TabIndex = 0;
+            this.testMoviesButton.Text = "TestMovies";
+            this.testMoviesButton.UseVisualStyleBackColor = true;
+            this.testMoviesButton.Click += new System.EventHandler(this.testMoviesButton_Click);
             // 
             // Title
             // 
@@ -235,16 +256,6 @@ namespace SoftCinema.Client
             this.BtnDashboard.TabIndex = 0;
             this.BtnDashboard.UseVisualStyleBackColor = false;
             // 
-            // testMoviesButton
-            // 
-            this.testMoviesButton.Location = new System.Drawing.Point(114, 3);
-            this.testMoviesButton.Name = "testMoviesButton";
-            this.testMoviesButton.Size = new System.Drawing.Size(75, 23);
-            this.testMoviesButton.TabIndex = 0;
-            this.testMoviesButton.Text = "TestMovies";
-            this.testMoviesButton.UseVisualStyleBackColor = true;
-            this.testMoviesButton.Click += new System.EventHandler(this.testMoviesButton_Click);
-            // 
             // SoftCinemaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +293,7 @@ namespace SoftCinema.Client
         private TeamButton registerTeamButton;
         private TeamButton AdminMenu;
         private System.Windows.Forms.Button testMoviesButton;
+        private System.Windows.Forms.Button testSeatsButton;
     }
 }
 

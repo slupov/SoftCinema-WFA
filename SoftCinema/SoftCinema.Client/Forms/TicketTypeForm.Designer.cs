@@ -43,7 +43,7 @@
             // regularLabel
             // 
             this.regularLabel.AutoSize = true;
-            this.regularLabel.Location = new System.Drawing.Point(183, 139);
+            this.regularLabel.Location = new System.Drawing.Point(298, 110);
             this.regularLabel.Name = "regularLabel";
             this.regularLabel.Size = new System.Drawing.Size(44, 13);
             this.regularLabel.TabIndex = 0;
@@ -52,17 +52,16 @@
             // childrenLabel
             // 
             this.childrenLabel.AutoSize = true;
-            this.childrenLabel.Location = new System.Drawing.Point(183, 186);
+            this.childrenLabel.Location = new System.Drawing.Point(298, 157);
             this.childrenLabel.Name = "childrenLabel";
             this.childrenLabel.Size = new System.Drawing.Size(45, 13);
             this.childrenLabel.TabIndex = 1;
             this.childrenLabel.Text = "Children";
-            this.childrenLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // seniorsLabel
             // 
             this.seniorsLabel.AutoSize = true;
-            this.seniorsLabel.Location = new System.Drawing.Point(183, 230);
+            this.seniorsLabel.Location = new System.Drawing.Point(298, 201);
             this.seniorsLabel.Name = "seniorsLabel";
             this.seniorsLabel.Size = new System.Drawing.Size(42, 13);
             this.seniorsLabel.TabIndex = 2;
@@ -83,7 +82,7 @@
             "8",
             "9",
             "10"});
-            this.regularQuantityComboBox.Location = new System.Drawing.Point(333, 136);
+            this.regularQuantityComboBox.Location = new System.Drawing.Point(408, 110);
             this.regularQuantityComboBox.Name = "regularQuantityComboBox";
             this.regularQuantityComboBox.Size = new System.Drawing.Size(42, 21);
             this.regularQuantityComboBox.TabIndex = 3;
@@ -91,7 +90,7 @@
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(329, 103);
+            this.quantityLabel.Location = new System.Drawing.Point(404, 77);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(46, 13);
             this.quantityLabel.TabIndex = 6;
@@ -100,7 +99,7 @@
             // studentsLabel
             // 
             this.studentsLabel.AutoSize = true;
-            this.studentsLabel.Location = new System.Drawing.Point(183, 276);
+            this.studentsLabel.Location = new System.Drawing.Point(298, 247);
             this.studentsLabel.Name = "studentsLabel";
             this.studentsLabel.Size = new System.Drawing.Size(49, 13);
             this.studentsLabel.TabIndex = 7;
@@ -121,7 +120,7 @@
             "8",
             "9",
             "10"});
-            this.studentsQuantityComboBox.Location = new System.Drawing.Point(332, 273);
+            this.studentsQuantityComboBox.Location = new System.Drawing.Point(407, 247);
             this.studentsQuantityComboBox.Name = "studentsQuantityComboBox";
             this.studentsQuantityComboBox.Size = new System.Drawing.Size(42, 21);
             this.studentsQuantityComboBox.TabIndex = 8;
@@ -141,7 +140,7 @@
             "8",
             "9",
             "10"});
-            this.seniorsQuantityComboBox.Location = new System.Drawing.Point(332, 227);
+            this.seniorsQuantityComboBox.Location = new System.Drawing.Point(407, 201);
             this.seniorsQuantityComboBox.Name = "seniorsQuantityComboBox";
             this.seniorsQuantityComboBox.Size = new System.Drawing.Size(42, 21);
             this.seniorsQuantityComboBox.TabIndex = 9;
@@ -161,19 +160,20 @@
             "8",
             "9",
             "10"});
-            this.childrenQuantityComboBox.Location = new System.Drawing.Point(333, 183);
+            this.childrenQuantityComboBox.Location = new System.Drawing.Point(408, 157);
             this.childrenQuantityComboBox.Name = "childrenQuantityComboBox";
             this.childrenQuantityComboBox.Size = new System.Drawing.Size(42, 21);
             this.childrenQuantityComboBox.TabIndex = 10;
             // 
             // purchase
             // 
-            this.purchase.Location = new System.Drawing.Point(226, 326);
+            this.purchase.Location = new System.Drawing.Point(301, 300);
             this.purchase.Name = "purchase";
             this.purchase.Size = new System.Drawing.Size(125, 42);
             this.purchase.TabIndex = 11;
             this.purchase.Text = "Purchase";
             this.purchase.UseVisualStyleBackColor = true;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
             // TicketTypeForm
             // 

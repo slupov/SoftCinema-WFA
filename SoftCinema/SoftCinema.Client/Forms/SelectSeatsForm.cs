@@ -14,31 +14,33 @@ namespace SoftCinema.Client.Forms
 {
     public partial class SelectSeatsForm : Form
     {
-        private SeatButton[,] _seatButtons { get; set; }
         private Screening _screening { get; set; }
-        
-        public SelectSeatsForm()
-        {
-            InitializeComponent();
-        }
+        private AuditoriumSeatsSchema _seatsSchema { get; set; }
 
         public SelectSeatsForm(Screening screening)
         {
-            InitializeComponent();
             this._screening = screening;
 
             var maxRowNumber = screening.Auditorium.Seats.Max(s => s.Row);
             var maxColNumber = screening.Auditorium.Seats.Max(s => s.Number);
-            this._seatButtons = new SeatButton[maxRowNumber,maxColNumber];
-        }
 
-        private void teamButton1_Click(object sender, EventArgs e)
-        {
+            InitializeComponent();
         }
 
         private void SelectSeatsForm_Load(object sender, EventArgs e)
         {
+            InitializeSeatsSchema();
+            this.Controls.Add(this._seatsSchema);
+        }
 
+        private void InitializeSeatsSchema()
+        {
+            var startingPoint = new Point(this.freeSeatsLabel.Location.X, this.freeSeatsLabel.Location.Y + 100);
+            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint);
+        }
+
+        private void purchaseButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }
