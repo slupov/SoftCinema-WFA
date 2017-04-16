@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Runtime.InteropServices;
 using SoftCinema.Data;
 using SoftCinema.Models;
 
@@ -50,11 +49,14 @@ namespace SoftCinema.Services
             }
         }
 
-        private static List<Movie> GetAllMovies()
+        public static List<Movie> GetAllMovies()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                return context.Movies.ToList();
+                return context
+                    .Movies
+                    .Include("Image")
+                    .ToList();
             }
         }
         public static string[] GetMoviesNamesByCinema(string cinema,string town)
@@ -79,6 +81,16 @@ namespace SoftCinema.Services
         public static AgeRestriction[] GetAgeRestrictions()
         {
             throw new System.NotImplementedException();
+        }
+
+        public static Movie GetMovie(string movieName)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Movies
+                    .Include("Image")
+                    .FirstOrDefault(m => m.Name == movieName);
+            }
         }
     }
 }

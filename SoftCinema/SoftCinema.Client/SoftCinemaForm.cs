@@ -80,5 +80,15 @@ namespace SoftCinema.Client
             adminMenuForm.Show();
             
         }
+
+        private void testMoviesButton_Click(object sender, EventArgs e)
+        {
+            MoviesForm moviesForm = new MoviesForm();
+            moviesForm.TopLevel = false;
+            moviesForm.AutoScroll = true;
+            this.ContentHolder.Controls.Clear();
+            this.ContentHolder.Controls.Add(moviesForm);
+            moviesForm.Show();
+        }
     }
 }
