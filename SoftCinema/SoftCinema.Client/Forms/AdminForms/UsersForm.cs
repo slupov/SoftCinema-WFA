@@ -22,12 +22,9 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void UserList_Load(object sender, System.EventArgs e)
         {
-            string[] usernames = UserService.GetUsernames();
-
-            foreach (var username in usernames)
-            {
-                UserList.Items.Add(username);
-            }
+            string[] usernames = UserService.GetUsernames();            
+            UserList.Items.AddRange(usernames);
+            
             
         }
 
