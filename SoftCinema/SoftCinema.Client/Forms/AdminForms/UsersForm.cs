@@ -76,5 +76,15 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((ListBox)sender).Parent.Parent.Controls.Add(userForm);
             userForm.Show();
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            AdminMenuForm adminMenuForm = new AdminMenuForm();
+            adminMenuForm.TopLevel = false;
+            adminMenuForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(adminMenuForm);
+            adminMenuForm.Show();
+        }
     }
 }

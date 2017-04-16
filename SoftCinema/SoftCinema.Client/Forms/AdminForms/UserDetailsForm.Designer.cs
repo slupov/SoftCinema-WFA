@@ -44,6 +44,7 @@
             this.YesRadioButton = new System.Windows.Forms.RadioButton();
             this.NoRadioButton = new System.Windows.Forms.RadioButton();
             this.IsDeletedLabel = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -99,10 +100,11 @@
             // UsernameTextBox
             // 
             this.UsernameTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameTextBox.Location = new System.Drawing.Point(323, 99);
+            this.UsernameTextBox.Location = new System.Drawing.Point(323, 97);
             this.UsernameTextBox.Multiline = true;
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(352, 41);
+            this.UsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.UsernameTextBox.Size = new System.Drawing.Size(352, 47);
             this.UsernameTextBox.TabIndex = 7;
             this.UsernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
@@ -112,6 +114,7 @@
             this.EmailTextBox.Location = new System.Drawing.Point(323, 154);
             this.EmailTextBox.Multiline = true;
             this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.EmailTextBox.Size = new System.Drawing.Size(352, 41);
             this.EmailTextBox.TabIndex = 9;
             this.EmailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
@@ -122,6 +125,7 @@
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(323, 206);
             this.PhoneNumberTextBox.Multiline = true;
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
+            this.PhoneNumberTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(352, 41);
             this.PhoneNumberTextBox.TabIndex = 10;
             this.PhoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged);
@@ -164,7 +168,7 @@
             // 
             // EditUserButton
             // 
-            this.EditUserButton.Location = new System.Drawing.Point(421, 377);
+            this.EditUserButton.Location = new System.Drawing.Point(461, 377);
             this.EditUserButton.Name = "EditUserButton";
             this.EditUserButton.Size = new System.Drawing.Size(118, 45);
             this.EditUserButton.TabIndex = 17;
@@ -208,12 +212,23 @@
             this.IsDeletedLabel.TabIndex = 21;
             this.IsDeletedLabel.Text = "Account Active:";
             // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(357, 377);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(98, 45);
+            this.BackButton.TabIndex = 22;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // UserDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1085, 523);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NoRadioButton);
             this.Controls.Add(this.YesRadioButton);
             this.Controls.Add(this.EditUserButton);
@@ -257,5 +272,6 @@
         private System.Windows.Forms.RadioButton YesRadioButton;
         private System.Windows.Forms.RadioButton NoRadioButton;
         private System.Windows.Forms.Label IsDeletedLabel;
+        private System.Windows.Forms.Button BackButton;
     }
 }

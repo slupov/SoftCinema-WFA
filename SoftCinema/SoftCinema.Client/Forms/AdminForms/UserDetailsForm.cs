@@ -128,6 +128,21 @@ namespace SoftCinema.Client.Forms
            
         }
 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("All your unsaved changes will be deleted.", "Go back?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                
+                UsersForm usersForm = new UsersForm();
+                usersForm.TopLevel = false;
+                usersForm.AutoScroll = true;
+                this.Hide();
+                ((Button) sender).Parent.Parent.Controls.Add(usersForm);
+                usersForm.Show();
+            }
+        }
+
         //private void UserDeleteButton_Click(object sender, EventArgs e)
         //{
         //    try
@@ -135,7 +150,7 @@ namespace SoftCinema.Client.Forms
         //        DialogResult dialogResult = MessageBox.Show("Are you sure you wand to delete this user?", "User deletion", MessageBoxButtons.YesNo);
         //        if (dialogResult == DialogResult.Yes)
         //        {
-        //            UserService.DeleteUser(user.Username);
+        //            UserService.DeleteUser(user.Username);x
         //            MessageBox.Show(Constants.SuccessMessages.DeleteUserSuccess);
         //            UsersForm usersForm = new UsersForm();
         //            usersForm.TopLevel = false;
@@ -144,17 +159,17 @@ namespace SoftCinema.Client.Forms
         //            ((Button)sender).Parent.Parent.Controls.Add(usersForm);
         //            usersForm.Show();
         //        }
-                
-                
+
+
         //    }
         //    catch (Exception exception)
         //    {
         //        MessageBox.Show(Constants.ErrorMessages.UserDeleteFail);
         //    }
-            
+
 
         //}
 
-        
+
     }
 }
