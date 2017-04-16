@@ -38,6 +38,15 @@ namespace SoftCinema.Services
             }
         }
 
-        
+
+        public static string[] GetCategoriesNames()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                {
+                    return (context.Categories.Select(c => c.Name).ToArray());
+                }
+            }
+        }
     }
 }

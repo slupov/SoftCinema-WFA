@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,14 @@ namespace SoftCinema.Services.Utilities
         public const int MaxMovieNameLength = 50;
 
         public const string GreetingsMessage = "Hello, {0}!";
+        public const string DeleteUserMessage = "Are you sure you wand to delete this user?";
 
         public static class SuccessMessages
         {
             public const string SuccessfulLogout = "Successfully logged out!";
             public const string SuccessfulLogin = "Successfully logged in!";
             public const string UserUpdatedSuccessfully = "User updated successfully!";
+            public const string DeleteUserSuccess = "User successfully deleted!";
         }
 
         
@@ -47,6 +50,8 @@ namespace SoftCinema.Services.Utilities
             public const string InvalidLogin = "Login invalid!";
             public const string NoSuchUserExisting = "No such user available!";
             public const string UserUpdateErrorMesage = "User update failed!";
+            public const string UserDeleteFail = "User deletion failed!";
+            public const string UserIsInactive = "Deleted or inactive user!";
         }
 
         

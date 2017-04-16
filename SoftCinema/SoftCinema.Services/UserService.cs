@@ -118,6 +118,15 @@ namespace SoftCinema.Services
             {
                 return RoleProcessor.GetRoles().Contains(role);
             }
+
+            public static bool IsUserDeleted(string username)
+            {
+                using (var db = new SoftCinemaContext())
+                {
+                   return db.Users.FirstOrDefault(u => u.Username == username).IsDeleted;
+                    
+                }
+            }
         }
 
         public static void AddUser(string username, string password, string email, string phone)
@@ -186,7 +195,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void UpdateUser(string oldUsername, string newUsername, string email, string phoneNumber, Role role)
+        public static void UpdateUser(string oldUsername, string newUsername, string email, string phoneNumber, Role role,bool isDeleted)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -195,6 +204,7 @@ namespace SoftCinema.Services
                 user.Email = email;
                 user.PhoneNumber = phoneNumber;
                 user.Role = role;
+                user.IsDeleted = isDeleted;
                 db.SaveChanges();
             }
         }
@@ -203,7 +213,9 @@ namespace SoftCinema.Services
         {
             using (var db = new SoftCinemaContext())
             {
-                
+                User user = db.Users.FirstOrDefault(u => u.Username == userUsername);
+                user.IsDeleted = true;
+                db.SaveChanges();
             }
         }
     }

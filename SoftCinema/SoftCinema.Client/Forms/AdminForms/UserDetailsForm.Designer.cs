@@ -41,7 +41,9 @@
             this.PhoneNumberInfoLabel = new System.Windows.Forms.Label();
             this.RoleComboBox = new System.Windows.Forms.ComboBox();
             this.EditUserButton = new System.Windows.Forms.Button();
-            this.UserDeleteButton = new System.Windows.Forms.Button();
+            this.YesRadioButton = new System.Windows.Forms.RadioButton();
+            this.NoRadioButton = new System.Windows.Forms.RadioButton();
+            this.IsDeletedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -162,7 +164,7 @@
             // 
             // EditUserButton
             // 
-            this.EditUserButton.Location = new System.Drawing.Point(323, 364);
+            this.EditUserButton.Location = new System.Drawing.Point(421, 377);
             this.EditUserButton.Name = "EditUserButton";
             this.EditUserButton.Size = new System.Drawing.Size(118, 45);
             this.EditUserButton.TabIndex = 17;
@@ -170,15 +172,41 @@
             this.EditUserButton.UseVisualStyleBackColor = true;
             this.EditUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
             // 
-            // UserDeleteButton
+            // YesRadioButton
             // 
-            this.UserDeleteButton.Location = new System.Drawing.Point(460, 364);
-            this.UserDeleteButton.Name = "UserDeleteButton";
-            this.UserDeleteButton.Size = new System.Drawing.Size(122, 45);
-            this.UserDeleteButton.TabIndex = 18;
-            this.UserDeleteButton.Text = "Delete User";
-            this.UserDeleteButton.UseVisualStyleBackColor = true;
-            this.UserDeleteButton.Click += new System.EventHandler(this.UserDeleteButton_Click);
+            this.YesRadioButton.AutoSize = true;
+            this.YesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.YesRadioButton.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.YesRadioButton.Location = new System.Drawing.Point(348, 319);
+            this.YesRadioButton.Name = "YesRadioButton";
+            this.YesRadioButton.Size = new System.Drawing.Size(67, 29);
+            this.YesRadioButton.TabIndex = 19;
+            this.YesRadioButton.TabStop = true;
+            this.YesRadioButton.Text = "Yes";
+            this.YesRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // NoRadioButton
+            // 
+            this.NoRadioButton.AutoSize = true;
+            this.NoRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NoRadioButton.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.NoRadioButton.Location = new System.Drawing.Point(421, 319);
+            this.NoRadioButton.Name = "NoRadioButton";
+            this.NoRadioButton.Size = new System.Drawing.Size(58, 29);
+            this.NoRadioButton.TabIndex = 20;
+            this.NoRadioButton.TabStop = true;
+            this.NoRadioButton.Text = "No";
+            this.NoRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // IsDeletedLabel
+            // 
+            this.IsDeletedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IsDeletedLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.IsDeletedLabel.Location = new System.Drawing.Point(35, 319);
+            this.IsDeletedLabel.Name = "IsDeletedLabel";
+            this.IsDeletedLabel.Size = new System.Drawing.Size(524, 55);
+            this.IsDeletedLabel.TabIndex = 21;
+            this.IsDeletedLabel.Text = "Account Active:";
             // 
             // UserDetailsForm
             // 
@@ -186,8 +214,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1085, 523);
-            this.Controls.Add(this.UserDeleteButton);
+            this.Controls.Add(this.NoRadioButton);
+            this.Controls.Add(this.YesRadioButton);
             this.Controls.Add(this.EditUserButton);
+            this.Controls.Add(this.IsDeletedLabel);
             this.Controls.Add(this.RoleComboBox);
             this.Controls.Add(this.PhoneNumberInfoLabel);
             this.Controls.Add(this.EmailInfoLabel);
@@ -224,6 +254,8 @@
         private System.Windows.Forms.Label PhoneNumberInfoLabel;
         private System.Windows.Forms.ComboBox RoleComboBox;
         private System.Windows.Forms.Button EditUserButton;
-        private System.Windows.Forms.Button UserDeleteButton;
+        private System.Windows.Forms.RadioButton YesRadioButton;
+        private System.Windows.Forms.RadioButton NoRadioButton;
+        private System.Windows.Forms.Label IsDeletedLabel;
     }
 }

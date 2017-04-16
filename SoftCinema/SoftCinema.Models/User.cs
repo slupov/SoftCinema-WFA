@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Models
+﻿using System.Diagnostics;
+
+namespace SoftCinema.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -9,6 +11,7 @@
         public User()
         {
             this.Tickets = new HashSet<Ticket>();
+            this.IsDeleted = false;
         }
 
         [Key]
@@ -30,5 +33,7 @@
         public Role Role { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

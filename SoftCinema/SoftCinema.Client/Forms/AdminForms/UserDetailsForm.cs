@@ -23,16 +23,25 @@ namespace SoftCinema.Client.Forms
 
             this.user = user;
             InitializeComponent();
+            
+        }
+
+        private void UserList_Load(object sender, System.EventArgs e)
+        {
             this.RoleComboBox.Items.AddRange(RoleProcessor.GetRoles().ToArray());
             if (this.RoleComboBox.Items.Count == 0)
             {
                 this.RoleComboBox.Text = "(no roles)";
 
             }
-        }
-
-        private void UserList_Load(object sender, System.EventArgs e)
-        {
+            if (user.IsDeleted)
+            {
+                NoRadioButton.Checked = true;
+            }
+            else
+            {
+                YesRadioButton.Checked = true;
+            }
             UsernameTextBox.Text = user.Username;
             EmailTextBox.Text = user.Email;
             PhoneNumberTextBox.Text = user.PhoneNumber;
@@ -100,9 +109,10 @@ namespace SoftCinema.Client.Forms
             string email = EmailTextBox.Text;
             string phoneNumber = PhoneNumberTextBox.Text;
             Role role =(Role)Enum.Parse(typeof(Role), RoleComboBox.Text);
+            bool isDeleted = NoRadioButton.Checked;
             try
             {
-                UserService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role);
+                UserService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role,isDeleted);
                 MessageBox.Show(Constants.SuccessMessages.UserUpdatedSuccessfully);
                 UsersForm usersForm = new UsersForm();
                 usersForm.TopLevel = false;
@@ -118,10 +128,33 @@ namespace SoftCinema.Client.Forms
            
         }
 
-        private void UserDeleteButton_Click(object sender, EventArgs e)
-        {
-            UserService.DeleteUser(user.Username);
+        //private void UserDeleteButton_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        DialogResult dialogResult = MessageBox.Show("Are you sure you wand to delete this user?", "User deletion", MessageBoxButtons.YesNo);
+        //        if (dialogResult == DialogResult.Yes)
+        //        {
+        //            UserService.DeleteUser(user.Username);
+        //            MessageBox.Show(Constants.SuccessMessages.DeleteUserSuccess);
+        //            UsersForm usersForm = new UsersForm();
+        //            usersForm.TopLevel = false;
+        //            usersForm.AutoScroll = true;
+        //            this.Hide();
+        //            ((Button)sender).Parent.Parent.Controls.Add(usersForm);
+        //            usersForm.Show();
+        //        }
+                
+                
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        MessageBox.Show(Constants.ErrorMessages.UserDeleteFail);
+        //    }
+            
 
-        }
+        //}
+
+        
     }
 }

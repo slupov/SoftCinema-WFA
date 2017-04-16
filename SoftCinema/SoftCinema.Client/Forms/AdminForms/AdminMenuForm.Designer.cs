@@ -31,6 +31,7 @@
             this.Menu = new System.Windows.Forms.ListBox();
             this.AdminMenuLabel = new System.Windows.Forms.Label();
             this.UserEditButton = new System.Windows.Forms.Button();
+            this.EditCategoriesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Menu
@@ -59,11 +60,23 @@
             this.UserEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserEditButton.Location = new System.Drawing.Point(348, 162);
             this.UserEditButton.Name = "UserEditButton";
-            this.UserEditButton.Size = new System.Drawing.Size(199, 58);
+            this.UserEditButton.Size = new System.Drawing.Size(214, 58);
             this.UserEditButton.TabIndex = 2;
             this.UserEditButton.Text = "Edit Users";
             this.UserEditButton.UseVisualStyleBackColor = false;
             this.UserEditButton.Click += new System.EventHandler(this.UserEditButton_Click);
+            // 
+            // EditCategoriesButton
+            // 
+            this.EditCategoriesButton.BackColor = System.Drawing.SystemColors.Menu;
+            this.EditCategoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditCategoriesButton.Location = new System.Drawing.Point(348, 226);
+            this.EditCategoriesButton.Name = "EditCategoriesButton";
+            this.EditCategoriesButton.Size = new System.Drawing.Size(214, 58);
+            this.EditCategoriesButton.TabIndex = 4;
+            this.EditCategoriesButton.Text = "Edit Categories";
+            this.EditCategoriesButton.UseVisualStyleBackColor = false;
+            this.EditCategoriesButton.Click += new System.EventHandler(this.EditCategoriesButton_Click);
             // 
             // AdminMenuForm
             // 
@@ -71,6 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1041, 512);
+            this.Controls.Add(this.EditCategoriesButton);
             this.Controls.Add(this.UserEditButton);
             this.Controls.Add(this.AdminMenuLabel);
             this.Controls.Add(this.Menu);
@@ -86,5 +100,6 @@
         private new System.Windows.Forms.ListBox Menu;
         private System.Windows.Forms.Label AdminMenuLabel;
         private System.Windows.Forms.Button UserEditButton;
+        private System.Windows.Forms.Button EditCategoriesButton;
     }
 }

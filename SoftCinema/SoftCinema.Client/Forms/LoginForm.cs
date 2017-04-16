@@ -32,7 +32,7 @@ namespace SoftCinema.Client.Forms
             var username = this.usernameTextBox.Text;
             var password = this.passwordTextBox.Text;
 
-            if (UserService.Validations.isUsernamePasswordMatching(username, password))
+            if (UserService.Validations.isUsernamePasswordMatching(username, password) && !UserService.Validations.IsUserDeleted(username))
             {
                 AuthenticationManager.Login(UserService.GetUser(username));
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
@@ -47,11 +47,19 @@ namespace SoftCinema.Client.Forms
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
+            
             if (!UserService.Validations.isUsernameExisting(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = Constants.ErrorMessages.NoSuchUserExisting;
             }
+
+            else if (UserService.Validations.isUsernameExisting(this.usernameTextBox.Text) && UserService.Validations.IsUserDeleted(this.usernameTextBox.Text))
+            {
+                this.usernameInfoLabel.Show();
+                this.usernameInfoLabel.Text = Constants.ErrorMessages.UserIsInactive;
+            }
+
             else
             {
                 this.usernameInfoLabel.Hide();
