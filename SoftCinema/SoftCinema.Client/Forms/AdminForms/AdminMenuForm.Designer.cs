@@ -83,7 +83,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox Menu;
+        private new System.Windows.Forms.ListBox Menu;
         private System.Windows.Forms.Label AdminMenuLabel;
         private System.Windows.Forms.Button UserEditButton;
     }
