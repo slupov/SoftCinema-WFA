@@ -62,6 +62,7 @@
     <Compile Include="TownService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\RoleProcessor.cs" />
     <Compile Include="Utilities\Validators\ActorValidator.cs" />
     <Compile Include="Utilities\Validators\AuditoriumValidator.cs" />
     <Compile Include="Utilities\Validators\CategoryValidator.cs" />

@@ -96,6 +96,12 @@
     <Compile Include="Forms\RegisterMovieForm.Designer.cs">
       <DependentUpon>RegisterMovieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectSeatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectSeatsForm.Designer.cs">
+      <DependentUpon>SelectSeatsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\SeatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -157,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterMovieForm.resx">
       <DependentUpon>RegisterMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectSeatsForm.resx">
+      <DependentUpon>SelectSeatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>

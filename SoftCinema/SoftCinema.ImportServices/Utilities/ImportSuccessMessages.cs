@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImportServices.Utilities
 {
-    public static class SuccessMessages
+    public static class ImportSuccessMessages
     {
         public const string ActorAddedSuccess = "Actor {0} successfully added to the database!";
 

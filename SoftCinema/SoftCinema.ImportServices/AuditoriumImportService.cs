@@ -55,7 +55,7 @@ namespace ImportServices
 
             AuditoriumService.AddAuditorium(number,cinemaId);
 
-            Console.WriteLine(string.Format(SuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
 
 
 

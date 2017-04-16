@@ -50,7 +50,7 @@ namespace ImportServices
 
             CinemaService.AddCinema(cinemaName, townId);
 
-            Console.WriteLine(string.Format(SuccessMessages.CinemaAddedSuccess,cinemaName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
         }
     }
 }

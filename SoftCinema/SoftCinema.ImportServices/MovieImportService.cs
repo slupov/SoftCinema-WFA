@@ -66,7 +66,7 @@ namespace ImportServices
                 releaseCountry,image);
             MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
 
-            Console.WriteLine(string.Format(SuccessMessages.MoviesAddedSuccess,movieName));
+            Console.WriteLine(string.Format(ImportSuccessMessages.MoviesAddedSuccess,movieName));
 
 
         }

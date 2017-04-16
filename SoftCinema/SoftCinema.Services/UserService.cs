@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
 using SoftCinema.Data.Utilities;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
@@ -102,6 +104,20 @@ namespace SoftCinema.Services
                     return PasswordHasher.Confirm(password, user.PasswordHash, PasswordHasher.Supported_HA.SHA512);
                 }
             }
+
+            public static bool IsEmailTaken(string email)
+            {
+                using (var db = new SoftCinemaContext())
+                {
+                    return db.Users.Any(u => u.Email == email);
+                }
+
+            }
+
+            public static bool IsRoleValid(string role)
+            {
+                return RoleProcessor.GetRoles().Contains(role);
+            }
         }
 
         public static void AddUser(string username, string password, string email, string phone)
@@ -167,6 +183,27 @@ namespace SoftCinema.Services
             using (var db = new SoftCinemaContext())
             {
                 return db.Users.FirstOrDefault(u => u.Username == username).PasswordHash;
+            }
+        }
+
+        public static void UpdateUser(string oldUsername, string newUsername, string email, string phoneNumber, Role role)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                User user = db.Users.FirstOrDefault(u => u.Username == oldUsername);
+                user.Username = newUsername;
+                user.Email = email;
+                user.PhoneNumber = phoneNumber;
+                user.Role = role;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteUser(string userUsername)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                
             }
         }
     }

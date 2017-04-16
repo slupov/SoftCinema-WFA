@@ -17,8 +17,15 @@ namespace SoftCinema.Services.Utilities
         public const int MaxMovieNameLength = 50;
 
         public const string GreetingsMessage = "Hello, {0}!";
-        public const string SuccessfulLogout = "Successfully logged out!";
-        public const string SuccessfulLogin = "Successfully logged in!";
+
+        public static class SuccessMessages
+        {
+            public const string SuccessfulLogout = "Successfully logged out!";
+            public const string SuccessfulLogin = "Successfully logged in!";
+            public const string UserUpdatedSuccessfully = "User updated successfully!";
+        }
+
+        
 
         public static class ErrorMessages
         {
@@ -39,6 +46,9 @@ namespace SoftCinema.Services.Utilities
             public const string ActorAlreadyExists = "Actor {0} already exists in the database!";
             public const string InvalidLogin = "Login invalid!";
             public const string NoSuchUserExisting = "No such user available!";
+            public const string UserUpdateErrorMesage = "User update failed!";
         }
+
+        
     }
 }
