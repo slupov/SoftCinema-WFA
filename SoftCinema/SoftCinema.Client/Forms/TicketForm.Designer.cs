@@ -106,6 +106,7 @@
             this.selectTicketTypeButton.Text = "Select tickets";
             this.selectTicketTypeButton.UseVisualStyleBackColor = true;
             this.selectTicketTypeButton.Click += new System.EventHandler(this.selectTicketTypeButton_Click);
+            this.selectTicketTypeButton.Enabled = false;
             // 
             // townLabel
             // 

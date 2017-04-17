@@ -76,5 +76,12 @@ namespace SoftCinema.Client.Forms
             var regularCount = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
            
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            var first= ((Button)sender).Parent.Parent.Controls[0];
+            first.Show();
+            this.Hide();
+        }
     }
 }
