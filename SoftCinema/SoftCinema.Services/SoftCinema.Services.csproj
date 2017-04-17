@@ -62,12 +62,13 @@
     <Compile Include="TownService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\InputDataChecker.cs" />
     <Compile Include="Utilities\RoleProcessor.cs" />
     <Compile Include="Utilities\Validators\ActorValidator.cs" />
     <Compile Include="Utilities\Validators\AuditoriumValidator.cs" />
     <Compile Include="Utilities\Validators\CategoryValidator.cs" />
     <Compile Include="Utilities\Validators\CinemaValidator.cs" />
-    <Compile Include="Utilities\Validators\DataValidator.cs" />
+    <Compile Include="Utilities\Validators\InputDataValidator.cs" />
     <Compile Include="Utilities\ImageProcessor.cs" />
     <Compile Include="Utilities\Validators\MovieValidator.cs" />
     <Compile Include="Utilities\Validators\ScreeningValidator.cs" />

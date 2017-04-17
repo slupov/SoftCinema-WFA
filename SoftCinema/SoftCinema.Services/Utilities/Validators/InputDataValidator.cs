@@ -4,19 +4,19 @@ using SoftCinema.DTOs;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class DataValidator
+    public static class InputDataValidator
     {
         public static void ValidateStringMaxLength(string input, int length)
         {
-            if (input.Length > length)
+            if (!InputDataChecker.CheckStringMaxLength(input,length))
             {
                 throw new ArgumentException(string.Format(Constants.ErrorMessages.StringExceedsLength, length));
             }
         }
 
-        public static void ValidateFloatInRange(float? input, int minValue, int maxValue)
+        public static void ValidateFloatInRange(float? input, float minValue, float maxValue)
         {
-            if (input != null && (input < minValue || input > maxValue))
+            if (input != null && !InputDataChecker.CheckFloatInRange(input.Value,minValue,maxValue))
             {
                 throw new ArgumentException(string.Format(Constants.ErrorMessages.FloatNotInRange, minValue, maxValue));
             }

@@ -75,11 +75,20 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsMovieExisting(string movieName, int releaseYear)
+        public static string[] GetMoviesNameAndYear()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                return context.Movies.Any(m => m.Name == movieName && m.ReleaseYear == releaseYear);
+
+                List<string> result = new List<string>();
+                foreach (var m in context.Movies)
+                {
+
+                    result.Add($"\"{m.Name},{m.ReleaseYear}\"");
+
+                }
+                return result.ToArray();
+
             }
         }
 
@@ -100,21 +109,14 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetMoviesNameAndYear()
+        public static bool IsMovieExisting(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-
-                List<string> result = new List<string>();
-                foreach (var m in context.Movies)
-                {
-                    
-                        result.Add($"\"{m.Name},{m.ReleaseYear}\"");
-                    
-                }
-                return result.ToArray();
-
+                return context.Movies.Any(m => m.Name == movieName && m.ReleaseYear == releaseYear);
             }
         }
+
+
     }
 }

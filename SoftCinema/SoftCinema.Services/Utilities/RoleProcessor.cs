@@ -17,8 +17,6 @@ namespace SoftCinema.Services.Utilities
                roles.Add(role.ToString());
             }
             return roles;
-
-
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -28,12 +27,12 @@ namespace ImportServices
         public static void ImportTown(TownDTO townDto)
         {
             string townName = townDto.Name;
-            DataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
+            InputDataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
             TownValidator.ValidateTownDoesNotExist(townName);
 
             TownService.AddTown(townName);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.TownAddedSuccess, townName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.TownAddedSuccess, townName));
         }
     }
 }

@@ -36,7 +36,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("All your unsaved changes will be deleted.", "Go back?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
 
@@ -162,7 +162,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             if (CategoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) && this.CategoryNameTextBox.Text != category.Name)
             {
                 this.CategoryExistsLabel.Show();
-                this.CategoryExistsLabel.Text = "Category already exists!";
+                this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;
             }
 
             
@@ -175,7 +175,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void DeleteCategoryButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this category?", "Category delete", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.DeleteCategoryMessage, Constants.CategoryDeletePrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try

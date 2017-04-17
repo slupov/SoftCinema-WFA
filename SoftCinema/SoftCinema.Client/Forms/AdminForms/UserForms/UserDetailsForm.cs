@@ -31,7 +31,7 @@ namespace SoftCinema.Client.Forms
             this.RoleComboBox.Items.AddRange(RoleProcessor.GetRoles().ToArray());
             if (this.RoleComboBox.Items.Count == 0)
             {
-                this.RoleComboBox.Text = "(no roles)";
+                this.RoleComboBox.Text = Constants.WarningMessages.NoRoles;
 
             }
             if (user.IsDeleted)
@@ -51,17 +51,17 @@ namespace SoftCinema.Client.Forms
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (this.UsernameTextBox.Text.Length > 25 || this.UsernameTextBox.Text.Length < 3)
+            if (!InputDataChecker.CheckStringMinMaxLength(this.UsernameTextBox.Text,Constants.MinUsernameLength,Constants.MaxUsernameLength))
             {
                 this.UsernameInfoLabel.Show();
-                this.UsernameInfoLabel.Text = "Username must be in range 3-25 characters";
+                this.UsernameInfoLabel.Text = Constants.WarningMessages.UsernameFormat;
             }
             else
             {
                 if (UserService.Validations.isUsernameExisting(this.UsernameTextBox.Text) && this.UsernameTextBox.Text != user.Username)
                 {
                     this.UsernameInfoLabel.Show();
-                    this.UsernameInfoLabel.Text = "Username already taken";
+                    this.UsernameInfoLabel.Text = Constants.WarningMessages.UsernameTaken;
                 }
                 else
                 {
@@ -76,12 +76,12 @@ namespace SoftCinema.Client.Forms
             if (!UserService.Validations.isEmailValid(this.EmailTextBox.Text))
             {
                 this.EmailInfoLabel.Show();
-                this.EmailInfoLabel.Text = "Email is invalid";
+                this.EmailInfoLabel.Text = Constants.WarningMessages.InvalidEmail;
             }
             else if(UserService.Validations.IsEmailTaken(this.EmailTextBox.Text) && this.EmailTextBox.Text!=user.Email)
             { 
                 this.EmailInfoLabel.Show();
-                this.EmailInfoLabel.Text = "Email is already taken";
+                this.EmailInfoLabel.Text = Constants.WarningMessages.EmailTaken;
             }
             else
             {
@@ -94,7 +94,7 @@ namespace SoftCinema.Client.Forms
             if (!UserService.Validations.isPhoneValid(this.PhoneNumberTextBox.Text))
             {
                 this.PhoneNumberInfoLabel.Show();
-                this.PhoneNumberInfoLabel.Text = "Phone must be in 08[789]... format!";
+                this.PhoneNumberInfoLabel.Text = Constants.WarningMessages.PhoneFormat;
             }
             else
             {
@@ -130,7 +130,7 @@ namespace SoftCinema.Client.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("All your unsaved changes will be deleted.", "Go back?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges,Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 

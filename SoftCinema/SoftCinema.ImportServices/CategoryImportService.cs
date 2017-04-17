@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -32,12 +31,12 @@ namespace ImportServices
         public static void ImportCategory(CategoryDTО categoryDtо)
         {
             string categoryName = categoryDtо.Name;
-            DataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
+            InputDataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
             CategoryValidator.ValidateCategoryDoesNotExist(categoryName);
 
             CategoryService.AddCategory(categoryName);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.CategoryAddedSuccess, categoryName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CategoryAddedSuccess, categoryName));
         }
     }
 }

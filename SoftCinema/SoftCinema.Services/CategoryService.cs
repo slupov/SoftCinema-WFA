@@ -23,6 +23,24 @@ namespace SoftCinema.Services
             }
         }
 
+        public static void AddCategoryWithMovies(string categoryName, List<Tuple<string, int>> movies)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Category category = new Category()
+                {
+                    Name = categoryName
+                };
+                foreach (var movieTuple in movies)
+                {
+                    Movie movie =
+                        context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
+                    movie.Categories.Add(category);
+                }
+                context.SaveChanges();
+            }
+        }
+
         public static Category GetCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -30,17 +48,6 @@ namespace SoftCinema.Services
                 return context.Categories.FirstOrDefault(c => c.Name == categoryName);
             }
         }
-
-        public static bool IsCategoryExisting(string categoryName)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                {
-                    return (context.Categories.Any(c => c.Name == categoryName));
-                }
-            }
-        }
-
 
         public static string[] GetCategoriesNames()
         {
@@ -56,10 +63,10 @@ namespace SoftCinema.Services
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                
-                    return (context.Categories.FirstOrDefault(c => c.Name == categoryName)
-                        .Movies.Select(m => $"\"{m.Name},{m.ReleaseYear}\"").ToArray());
-                
+
+                return (context.Categories.FirstOrDefault(c => c.Name == categoryName)
+                    .Movies.Select(m => $"\"{m.Name},{m.ReleaseYear}\"").ToArray());
+
             }
         }
 
@@ -82,6 +89,15 @@ namespace SoftCinema.Services
             }
         }
 
+        public static bool IsCategoryExisting(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                {
+                    return (context.Categories.Any(c => c.Name == categoryName));
+                }
+            }
+        }
 
         public static void UpdateCategory(string oldCategoryName, string newCategoryName, List<Tuple<string, int>> addedMovies, List<Tuple<string, int>> notAddedMovies)
         {
@@ -98,24 +114,6 @@ namespace SoftCinema.Services
                 {
                     Movie movie = context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
                     movie.Categories.Remove(category);
-                }
-                context.SaveChanges();
-            }
-        }
-
-        public static void AddCategoryWithMovies(string categoryName, List<Tuple<string, int>> movies)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                Category category = new Category()
-                {
-                    Name = categoryName
-                };
-                foreach (var movieTuple in movies)
-                {
-                    Movie movie =
-                        context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
-                    movie.Categories.Add(category);
                 }
                 context.SaveChanges();
             }

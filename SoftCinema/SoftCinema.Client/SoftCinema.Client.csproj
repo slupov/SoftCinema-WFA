@@ -60,36 +60,37 @@
     <Compile Include="Forms\AdminForms\AdminMenuForm.Designer.cs">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\CategoriesForm.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CategoriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\CategoriesForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CategoriesForm.Designer.cs">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\CategoryEditForm.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CategoryEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\CategoryEditForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CategoryEditForm.Designer.cs">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\CinemasForm.cs">
+    <Compile Include="Forms\AdminForms\CinemaForms\CinemasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\CinemasForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\CinemaForms\CinemasForm.Designer.cs">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\CreateCategoryForm.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CreateCategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\CreateCategoryForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\CategoryForms\CreateCategoryForm.Designer.cs">
       <DependentUpon>CreateCategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\UsersForm.cs">
+    <Compile Include="Forms\AdminForms\UserForms\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\UsersForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\UserForms\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\Utilities\FormsBuilder.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,10 +145,10 @@
     <Compile Include="Forms\TopPanelForm.Designer.cs">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\UserDetailsForm.cs">
+    <Compile Include="Forms\AdminForms\UserForms\UserDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\UserDetailsForm.Designer.cs">
+    <Compile Include="Forms\AdminForms\UserForms\UserDetailsForm.Designer.cs">
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SoftCinemaForm.cs">
@@ -176,19 +177,19 @@
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\CategoriesForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\CategoryForms\CategoriesForm.resx">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\CategoryEditForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\CategoryForms\CategoryEditForm.resx">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\CinemasForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\CinemaForms\CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\CreateCategoryForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\CategoryForms\CreateCategoryForm.resx">
       <DependentUpon>CreateCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\UsersForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\UserForms\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
@@ -218,7 +219,7 @@
     <EmbeddedResource Include="Forms\TopPanelForm.resx">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\UserDetailsForm.resx">
+    <EmbeddedResource Include="Forms\AdminForms\UserForms\UserDetailsForm.resx">
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftCinemaForm.resx">

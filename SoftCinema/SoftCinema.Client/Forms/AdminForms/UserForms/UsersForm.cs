@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -18,7 +19,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         {
             InitializeComponent();
             SearchTextBox.ForeColor = SystemColors.GrayText;
-            SearchTextBox.Text = "Search";
+            SearchTextBox.Text = Constants.SearchPlaceholder;
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
 
@@ -28,14 +29,14 @@ namespace SoftCinema.Client.Forms.AdminForms
         {
             if (SearchTextBox.Text.Length == 0)
             {
-                SearchTextBox.Text = "Search";
+                SearchTextBox.Text = Constants.SearchPlaceholder;
                 SearchTextBox.ForeColor = SystemColors.GrayText;
             }
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
         {
-            if (SearchTextBox.Text == "Search")
+            if (SearchTextBox.Text == Constants.SearchPlaceholder)
             {
                 SearchTextBox.Text = "";
                 SearchTextBox.ForeColor = SystemColors.WindowText;
@@ -44,7 +45,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void UserList_Search(object sender, System.EventArgs e)
         {
-            if ((SearchTextBox.Text != null || SearchTextBox.Text != "") && (SearchTextBox.Text!="Search" && SearchTextBox.ForeColor != SystemColors.GrayText))
+            if ((SearchTextBox.Text != null || SearchTextBox.Text != "") && (SearchTextBox.Text!= Constants.SearchPlaceholder && SearchTextBox.ForeColor != SystemColors.GrayText))
             {
                 string[] usernames = UserService.GetUsernames().Where(s => s.ToLower().Contains(SearchTextBox.Text.ToLower())).ToArray();
                 UserList.Items.Clear();

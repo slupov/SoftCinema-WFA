@@ -11,14 +11,20 @@ namespace SoftCinema.Services.Utilities
     {
         public const int MaxCategoryNameLength = 50;
         public const int MaxTownNameLength = 50;
-        public const int MinRatingValue = 0;
-        public const int MaxRatingValue = 10;
+        public const float MinRatingValue = 0;
+        public const float MaxRatingValue = 10;
         public const int MaxCinemaNameLength = 50;
         public const int MaxActorNameLength = 50;
         public const int MaxMovieNameLength = 50;
+        public const int MinUsernameLength = 3;
+        public const int MaxUsernameLength = 25;
 
         public const string GreetingsMessage = "Hello, {0}!";
         public const string DeleteUserMessage = "Are you sure you wand to delete this user?";
+        public const string DeleteCategoryMessage = "Are you sure you want to delete this category?";
+        public const string SearchPlaceholder = "Search";
+        public const string GoBackPrompt = "Go back?";
+        public const string CategoryDeletePrompt = "Delete category?";
 
         public static class SuccessMessages
         {
@@ -31,7 +37,17 @@ namespace SoftCinema.Services.Utilities
             public const string CategoryDeletesSuccessfully = "Category deleted successfully!";
         }
 
-        
+        public static class WarningMessages
+        {
+            public const string UnsavedChanges = "All your unsaved changes will be deleted.";
+            public const string CategoryExists = "Category already exists!";
+            public const string NoRoles = "(no roles)";
+            public const string UsernameFormat ="Username must be in range 3-25 characters!";
+            public const string UsernameTaken = "Username already taken!";
+            public const string InvalidEmail = "Email is invalid!";
+            public const string EmailTaken = "Email is already taken!";
+            public const string PhoneFormat = "Phone must be in 08[789]... format!";
+        }
 
         public static class ErrorMessages
         {
@@ -60,6 +76,27 @@ namespace SoftCinema.Services.Utilities
             public const string CategoriesDeleteMessage = "Category delete failed!";
         }
 
-        
+        public static class ImportSuccessMessages
+        {
+            public const string ActorAddedSuccess = "Actor {0} successfully added to the database!";
+
+            public const string TownAddedSuccess = "Town {0} successfully added to the database!";
+
+            public const string CategoryAddedSuccess = "Category {0} successfully added to the database!";
+
+            public const string CinemaAddedSuccess = "Cinema {0} successfully added to the database!";
+
+            public const string MoviesAddedSuccess = "Movie {0} successfully added to the database!";
+
+            public const string AuditoriumAddedSuccess = "Auditorium {0} successfully added to cinema {1} - {2}!";
+
+            public const string ScreeningAddedSuccess = "Screening successfully added to auditorium {0} in cinema {1}!";
+
+            public const string SeatAddedSuccess =
+                "Seat number {0} successfuly added to auditorium number {1} in cinema {2} - {3}!";
+        }
+
+
+       
     }
 }

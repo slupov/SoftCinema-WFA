@@ -55,7 +55,7 @@
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(558, 55);
             this.CategoryLabel.TabIndex = 4;
-            this.CategoryLabel.Text = "Select a Category to Edit";
+            this.CategoryLabel.Text = "Select a Category to Edit:";
             // 
             // BackButton
             // 

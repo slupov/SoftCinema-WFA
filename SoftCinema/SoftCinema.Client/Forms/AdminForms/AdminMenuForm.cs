@@ -25,6 +25,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             this.Hide();
             ((Button)sender).Parent.Parent.Controls.Add(usersForm);
             usersForm.Show();
+            
         }
 
         private void EditCategoriesButton_Click(object sender, EventArgs e)

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -39,10 +38,10 @@ namespace ImportServices
         {
    
             string townName = cinemaDto.TownName;
-            DataValidator.ValidateStringMaxLength(townName,Constants.MaxTownNameLength);
+            InputDataValidator.ValidateStringMaxLength(townName,Constants.MaxTownNameLength);
             
             string cinemaName = cinemaDto.Name;
-            DataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
+            InputDataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
 
             TownService.AddTownIfNotExisting(townName);
             int townId = TownService.GetTownId(townName);
@@ -50,7 +49,7 @@ namespace ImportServices
 
             CinemaService.AddCinema(cinemaName, townId);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
         }
     }
 }

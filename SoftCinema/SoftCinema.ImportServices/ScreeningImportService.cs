@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -54,7 +53,7 @@ namespace ImportServices
 
             ScreeningService.AddScreening(auditoriumId, movieId, date);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
 
         }
     }

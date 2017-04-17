@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using ImportServices.Utilities;
+
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -39,7 +39,7 @@ namespace ImportServices
         private static void ImportAuditorium(AuditoriumDTO auditoriumDto)
         {
             string cinemaName = auditoriumDto.CinemaName;
-            DataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
+            InputDataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
 
             string townName = auditoriumDto.CinemaTownName;
             TownValidator.CheckTownExisting(townName);
@@ -55,7 +55,7 @@ namespace ImportServices
 
             AuditoriumService.AddAuditorium(number,cinemaId);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
 
 
 

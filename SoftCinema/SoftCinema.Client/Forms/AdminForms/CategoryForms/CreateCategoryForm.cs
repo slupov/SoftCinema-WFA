@@ -21,7 +21,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("All your unsaved changes will be deleted.", "Go back?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
 
@@ -38,8 +38,6 @@ namespace SoftCinema.Client.Forms.AdminForms
         {
             this.CategoryExistsLabel.Hide();
             string[] movies = MovieService.GetMoviesNameAndYear();
-         
-          
             this.MoviesCheckedListBox.Items.AddRange(movies);
             
         }
@@ -86,7 +84,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             if (CategoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) )
             {
                 this.CategoryExistsLabel.Show();
-                this.CategoryExistsLabel.Text = "Category already exists!";
+                this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;
             }
 
 

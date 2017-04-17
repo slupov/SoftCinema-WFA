@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using ImportServices.Utilities;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
 using SoftCinema.Services;
@@ -43,10 +42,10 @@ namespace ImportServices
         public static void ImportMovie(MovieDTO movieDto)
         {
             string movieName = movieDto.Name;
-            DataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
+            InputDataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
 
             float? rating = movieDto.Rating;
-            DataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
+            InputDataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             int releaseYear = movieDto.ReleaseYear;
             MovieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
@@ -66,7 +65,7 @@ namespace ImportServices
                 releaseCountry,image);
             MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
 
-            Console.WriteLine(string.Format(ImportSuccessMessages.MoviesAddedSuccess,movieName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.MoviesAddedSuccess,movieName));
 
 
         }

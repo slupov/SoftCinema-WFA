@@ -45,13 +45,6 @@ namespace SoftCinema.Services
                 return context.Cinemas.Where(c => c.Town.Name == townName).Select(c => c.Name).ToArray();
             }
         }
-        public static bool IsCinemaExisting(string cinemaName, int townId)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Cinemas.Any(c => c.Name == cinemaName && c.TownId == townId);
-            }
-        }
 
         public static string[] GetCinemasByMovieAndTown(string movieName, string townName)
         {
@@ -71,5 +64,15 @@ namespace SoftCinema.Services
                 return result;
             }
         }
+
+        public static bool IsCinemaExisting(string cinemaName, int townId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Any(c => c.Name == cinemaName && c.TownId == townId);
+            }
+        }
+
+        
     }
 }
