@@ -12,16 +12,18 @@ namespace SoftCinema.Client.Utilities.CustomTools
     class AuditoriumSeatsSchema : GroupBox
     {
         private Auditorium _Auditorium { get; set; }
-        private int _seatCount { get; set; }
+        private static int _seatCountLimit { get; set; }
+        private static List<SeatButton> _seats { get; set; }
 
-        public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords,int width, int seatCount)
+        public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords, int width, int seatCount)
         {
             this._Auditorium = auditorium;
-            this._seatCount = seatCount;
+            _seats = new List<SeatButton>();
+            _seatCountLimit = seatCount;
             this.Location = startingCoords;
-            this.Size = new Size(width,300);
+            this.Size = new Size(width, 300);
             this.BackColor = Color.LightSkyBlue;
-            
+
 
             VisualizeSeats();
         }
@@ -44,7 +46,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 }
 
                 Label rowLabel = new Label();
-                rowLabel.Size = new Size(20,20);
+                rowLabel.Size = new Size(20, 20);
                 rowLabel.Text = row.ToString();
                 rowLabel.Location = rowLabelCoordinates;
                 this.Controls.Add(rowLabel);
@@ -62,6 +64,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                     seatButton.Text = col.ToString();
 
                     this.Controls.Add(seatButton);
+                    _seats.Add(seatButton);
                 }
 
                 //find max middle and split seats into two groups by leaving a space (Location.x)
@@ -72,6 +75,42 @@ namespace SoftCinema.Client.Utilities.CustomTools
         }
 
         //if seatCount of clicked buttons is reached -> make all buttons unclickable
+        public static void LimitSeatsSelection()
+        {
+            var selectedSeats = _seats.Where(s => s.isSelected()).ToList();
 
+            if (selectedSeats.Count() == _seatCountLimit)
+            {
+                DisableUnselectedSeats();
+            }
+            else
+            {
+                //too many calls?
+                EnableAllSeats();
+            }
+        }
+
+        private static void DisableUnselectedSeats()
+        {
+            foreach (var seatButton in _seats)
+            {
+                if (seatButton.isSelected())
+                {
+                    continue;
+                }
+                else
+                {
+                    seatButton.Enabled = false;
+                }
+            }
+        }
+
+        private static void EnableAllSeats()
+        {
+            foreach (var seatButton in _seats)
+            {
+                seatButton.Enabled = true;
+            }
+        }
     }
 }
