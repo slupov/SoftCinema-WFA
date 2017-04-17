@@ -52,7 +52,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.usernameLabel.Location = new System.Drawing.Point(199, 127);
+            this.usernameLabel.Location = new System.Drawing.Point(199, 122);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(113, 24);
             this.usernameLabel.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.passwordLabel.Location = new System.Drawing.Point(199, 170);
+            this.passwordLabel.Location = new System.Drawing.Point(199, 167);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(104, 24);
             this.passwordLabel.TabIndex = 1;
@@ -74,7 +74,7 @@
             this.repeatPasswordLabel.AutoSize = true;
             this.repeatPasswordLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.repeatPasswordLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.repeatPasswordLabel.Location = new System.Drawing.Point(199, 213);
+            this.repeatPasswordLabel.Location = new System.Drawing.Point(199, 212);
             this.repeatPasswordLabel.Name = "repeatPasswordLabel";
             this.repeatPasswordLabel.Size = new System.Drawing.Size(188, 24);
             this.repeatPasswordLabel.TabIndex = 2;
@@ -85,7 +85,7 @@
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.emailLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.emailLabel.Location = new System.Drawing.Point(199, 258);
+            this.emailLabel.Location = new System.Drawing.Point(199, 257);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(64, 24);
             this.emailLabel.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.phoneNumberLabel.AutoSize = true;
             this.phoneNumberLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.phoneNumberLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(199, 300);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(199, 302);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(163, 24);
             this.phoneNumberLabel.TabIndex = 4;
@@ -105,7 +105,7 @@
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usernameTextBox.Location = new System.Drawing.Point(415, 125);
+            this.usernameTextBox.Location = new System.Drawing.Point(415, 120);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(173, 26);
             this.usernameTextBox.TabIndex = 5;
@@ -114,7 +114,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordTextBox.Location = new System.Drawing.Point(415, 168);
+            this.passwordTextBox.Location = new System.Drawing.Point(415, 165);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(173, 26);
             this.passwordTextBox.TabIndex = 6;
@@ -123,7 +123,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.emailTextBox.Location = new System.Drawing.Point(415, 256);
+            this.emailTextBox.Location = new System.Drawing.Point(415, 255);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(173, 26);
             this.emailTextBox.TabIndex = 8;
@@ -132,7 +132,7 @@
             // repeatPasswordTextBox
             // 
             this.repeatPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.repeatPasswordTextBox.Location = new System.Drawing.Point(415, 211);
+            this.repeatPasswordTextBox.Location = new System.Drawing.Point(415, 210);
             this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
             this.repeatPasswordTextBox.Size = new System.Drawing.Size(173, 26);
             this.repeatPasswordTextBox.TabIndex = 7;
@@ -141,7 +141,7 @@
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(415, 298);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(415, 300);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(173, 26);
             this.phoneNumberTextBox.TabIndex = 9;
@@ -162,7 +162,7 @@
             // 
             this.usernameInfoLabel.AutoSize = true;
             this.usernameInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.usernameInfoLabel.Location = new System.Drawing.Point(412, 109);
+            this.usernameInfoLabel.Location = new System.Drawing.Point(412, 104);
             this.usernameInfoLabel.Name = "usernameInfoLabel";
             this.usernameInfoLabel.Size = new System.Drawing.Size(35, 13);
             this.usernameInfoLabel.TabIndex = 11;
@@ -173,7 +173,7 @@
             // 
             this.passwordInfoLabel.AutoSize = true;
             this.passwordInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.passwordInfoLabel.Location = new System.Drawing.Point(412, 152);
+            this.passwordInfoLabel.Location = new System.Drawing.Point(412, 147);
             this.passwordInfoLabel.Name = "passwordInfoLabel";
             this.passwordInfoLabel.Size = new System.Drawing.Size(35, 13);
             this.passwordInfoLabel.TabIndex = 12;
@@ -184,7 +184,7 @@
             // 
             this.rptpasswordInfoLabel.AutoSize = true;
             this.rptpasswordInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.rptpasswordInfoLabel.Location = new System.Drawing.Point(412, 197);
+            this.rptpasswordInfoLabel.Location = new System.Drawing.Point(412, 190);
             this.rptpasswordInfoLabel.Name = "rptpasswordInfoLabel";
             this.rptpasswordInfoLabel.Size = new System.Drawing.Size(35, 13);
             this.rptpasswordInfoLabel.TabIndex = 13;
@@ -195,7 +195,7 @@
             // 
             this.emailInfoLabel.AutoSize = true;
             this.emailInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.emailInfoLabel.Location = new System.Drawing.Point(412, 240);
+            this.emailInfoLabel.Location = new System.Drawing.Point(412, 235);
             this.emailInfoLabel.Name = "emailInfoLabel";
             this.emailInfoLabel.Size = new System.Drawing.Size(35, 13);
             this.emailInfoLabel.TabIndex = 14;
@@ -206,7 +206,7 @@
             // 
             this.phoneInfoLabel.AutoSize = true;
             this.phoneInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.phoneInfoLabel.Location = new System.Drawing.Point(412, 282);
+            this.phoneInfoLabel.Location = new System.Drawing.Point(412, 280);
             this.phoneInfoLabel.Name = "phoneInfoLabel";
             this.phoneInfoLabel.Size = new System.Drawing.Size(35, 13);
             this.phoneInfoLabel.TabIndex = 15;

@@ -44,6 +44,7 @@
             this.registerMovieButton = new System.Windows.Forms.Button();
             this.ageRestrictionComboBox = new System.Windows.Forms.ComboBox();
             this.ageRestrictionLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ratingUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
@@ -52,17 +53,20 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(60, 63);
+            this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.nameLabel.Location = new System.Drawing.Point(91, 106);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
+            this.nameLabel.Size = new System.Drawing.Size(75, 24);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(132, 60);
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameTextBox.Location = new System.Drawing.Point(293, 106);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(120, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(120, 24);
             this.nameTextBox.TabIndex = 2;
             // 
             // openFileDialog1
@@ -71,66 +75,79 @@
             // 
             // ratingUpDown
             // 
-            this.ratingUpDown.Location = new System.Drawing.Point(359, 56);
+            this.ratingUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ratingUpDown.Location = new System.Drawing.Point(293, 234);
             this.ratingUpDown.Name = "ratingUpDown";
-            this.ratingUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ratingUpDown.Size = new System.Drawing.Size(120, 24);
             this.ratingUpDown.TabIndex = 3;
             // 
             // ratingLabel
             // 
             this.ratingLabel.AutoSize = true;
-            this.ratingLabel.Location = new System.Drawing.Point(284, 63);
+            this.ratingLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ratingLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.ratingLabel.Location = new System.Drawing.Point(91, 234);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(38, 13);
+            this.ratingLabel.Size = new System.Drawing.Size(74, 24);
             this.ratingLabel.TabIndex = 4;
             this.ratingLabel.Text = "Rating";
             // 
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
-            this.yearLabel.Location = new System.Drawing.Point(284, 107);
+            this.yearLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.yearLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.yearLabel.Location = new System.Drawing.Point(91, 276);
             this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(29, 13);
+            this.yearLabel.Size = new System.Drawing.Size(57, 24);
             this.yearLabel.TabIndex = 6;
             this.yearLabel.Text = "Year";
             // 
             // yearUpDown
             // 
-            this.yearUpDown.Location = new System.Drawing.Point(359, 100);
+            this.yearUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.yearUpDown.Location = new System.Drawing.Point(292, 276);
             this.yearUpDown.Name = "yearUpDown";
-            this.yearUpDown.Size = new System.Drawing.Size(120, 20);
+            this.yearUpDown.Size = new System.Drawing.Size(120, 24);
             this.yearUpDown.TabIndex = 5;
             // 
             // directorNameTextBox
             // 
-            this.directorNameTextBox.Location = new System.Drawing.Point(132, 100);
+            this.directorNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.directorNameTextBox.Location = new System.Drawing.Point(293, 148);
             this.directorNameTextBox.Name = "directorNameTextBox";
-            this.directorNameTextBox.Size = new System.Drawing.Size(120, 20);
+            this.directorNameTextBox.Size = new System.Drawing.Size(120, 24);
             this.directorNameTextBox.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 107);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(91, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(161, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "Director Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 269);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
+            this.label2.Location = new System.Drawing.Point(566, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(79, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Picture";
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(317, 264);
+            this.browseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.browseButton.ForeColor = System.Drawing.Color.Black;
+            this.browseButton.Location = new System.Drawing.Point(493, 353);
             this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(75, 38);
+            this.browseButton.Size = new System.Drawing.Size(71, 33);
             this.browseButton.TabIndex = 10;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
@@ -138,9 +155,11 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(409, 264);
+            this.addButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addButton.ForeColor = System.Drawing.Color.Black;
+            this.addButton.Location = new System.Drawing.Point(602, 354);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(82, 38);
+            this.addButton.Size = new System.Drawing.Size(126, 33);
             this.addButton.TabIndex = 11;
             this.addButton.Text = "Add Image only";
             this.addButton.UseVisualStyleBackColor = true;
@@ -148,18 +167,21 @@
             // 
             // pictureBoxPhoto
             // 
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(509, 60);
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(502, 77);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 261);
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 258);
             this.pictureBoxPhoto.TabIndex = 12;
             this.pictureBoxPhoto.TabStop = false;
             this.pictureBoxPhoto.Click += new System.EventHandler(this.pictureBoxPhoto_Click);
             // 
             // registerMovieButton
             // 
-            this.registerMovieButton.Location = new System.Drawing.Point(317, 348);
+            this.registerMovieButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registerMovieButton.ForeColor = System.Drawing.Color.Black;
+            this.registerMovieButton.Location = new System.Drawing.Point(174, 353);
             this.registerMovieButton.Name = "registerMovieButton";
-            this.registerMovieButton.Size = new System.Drawing.Size(174, 23);
+            this.registerMovieButton.Size = new System.Drawing.Size(177, 33);
             this.registerMovieButton.TabIndex = 13;
             this.registerMovieButton.Text = "Register Movie";
             this.registerMovieButton.UseVisualStyleBackColor = true;
@@ -167,27 +189,42 @@
             // 
             // ageRestrictionComboBox
             // 
+            this.ageRestrictionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ageRestrictionComboBox.FormattingEnabled = true;
-            this.ageRestrictionComboBox.Location = new System.Drawing.Point(132, 151);
+            this.ageRestrictionComboBox.Location = new System.Drawing.Point(293, 190);
             this.ageRestrictionComboBox.Name = "ageRestrictionComboBox";
-            this.ageRestrictionComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ageRestrictionComboBox.Size = new System.Drawing.Size(121, 26);
             this.ageRestrictionComboBox.TabIndex = 14;
             this.ageRestrictionComboBox.SelectedIndexChanged += new System.EventHandler(this.ageRestrictionComboBox_SelectedIndexChanged);
             // 
             // ageRestrictionLabel
             // 
             this.ageRestrictionLabel.AutoSize = true;
-            this.ageRestrictionLabel.Location = new System.Drawing.Point(20, 154);
+            this.ageRestrictionLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ageRestrictionLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.ageRestrictionLabel.Location = new System.Drawing.Point(91, 192);
             this.ageRestrictionLabel.Name = "ageRestrictionLabel";
-            this.ageRestrictionLabel.Size = new System.Drawing.Size(79, 13);
+            this.ageRestrictionLabel.Size = new System.Drawing.Size(161, 24);
             this.ageRestrictionLabel.TabIndex = 15;
             this.ageRestrictionLabel.Text = "Age Restriction";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(34, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(365, 57);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Register Movie";
             // 
             // RegisterMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ageRestrictionLabel);
             this.Controls.Add(this.ageRestrictionComboBox);
             this.Controls.Add(this.registerMovieButton);
@@ -203,6 +240,7 @@
             this.Controls.Add(this.ratingUpDown);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterMovieForm";
             this.Text = "RegisterMovieForm";
@@ -232,5 +270,6 @@
         private System.Windows.Forms.Button registerMovieButton;
         private System.Windows.Forms.ComboBox ageRestrictionComboBox;
         private System.Windows.Forms.Label ageRestrictionLabel;
+        private System.Windows.Forms.Label label3;
     }
 }
