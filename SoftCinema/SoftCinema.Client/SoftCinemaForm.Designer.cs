@@ -102,6 +102,7 @@ namespace SoftCinema.Client
             this.teamButton5.TabIndex = 5;
             this.teamButton5.Text = "teamButton5";
             this.teamButton5.UseVisualStyleBackColor = false;
+            this.teamButton5.Click += new System.EventHandler(this.teamButton5_Click);
             // 
             // registerMovie
             // 

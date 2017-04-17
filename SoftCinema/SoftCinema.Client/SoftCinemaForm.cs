@@ -90,5 +90,10 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Add(moviesForm);
             moviesForm.Show();
         }
+
+        private void teamButton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
