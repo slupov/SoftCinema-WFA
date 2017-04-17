@@ -62,9 +62,17 @@ namespace SoftCinema.Client.Forms
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
             this.Hide();
-
-            ((Button) sender).Parent.Parent.Controls.Add(ticketTypeForm);
-            ticketTypeForm.Show();
+            var formsCount = ((Button) sender).Parent.Parent.Controls.Count;
+            if (formsCount <=1)
+            {
+                ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
+                ticketTypeForm.Show();
+            }
+            else
+            {
+                ((Button)sender).Parent.Parent.Controls[1].Show();
+            }
+            
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +109,7 @@ namespace SoftCinema.Client.Forms
             var dateTime = ScreeningService.GetDateTimeFromDateAndTime(_date, _time);
             TicketForm.Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName,
                 dateTime);
-
+            this.selectTicketTypeButton.Enabled = true;
         }
 
         private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
