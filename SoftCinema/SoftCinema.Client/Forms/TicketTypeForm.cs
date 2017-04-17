@@ -33,5 +33,13 @@ namespace SoftCinema.Client.Forms
 
             return regular + children + seniors + students;
         }
+
+        private void TicketTypeForm_Load(object sender, EventArgs e)
+        {
+            this.regularQuantityComboBox.SelectedIndex = 0;
+            this.childrenQuantityComboBox.SelectedIndex = 0;
+            this.seniorsQuantityComboBox.SelectedIndex = 0;
+            this.studentsQuantityComboBox.SelectedIndex = 0;
+        }
     }
 }

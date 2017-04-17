@@ -82,8 +82,8 @@
             string selectedDate = this.dateBox.SelectedItem.ToString();
             string selectedTime = this.hourBox.SelectedItem.ToString();
 
-        //    DateTime screeningDate = ScreeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
-            var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
+            DateTime screeningDate = ScreeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
+            //var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
             Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
 
             TicketTypeForm ticketTypeForm = new TicketTypeForm();

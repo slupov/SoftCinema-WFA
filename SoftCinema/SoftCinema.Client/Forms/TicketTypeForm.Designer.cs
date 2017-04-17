@@ -192,6 +192,7 @@
             this.Controls.Add(this.regularLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketTypeForm";
+            this.Load += new System.EventHandler(this.TicketTypeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
