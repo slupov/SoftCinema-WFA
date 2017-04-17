@@ -44,55 +44,56 @@
             this.CinemaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.CinemaLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinemaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.CinemaLabel.Location = new System.Drawing.Point(256, 24);
+            this.CinemaLabel.Location = new System.Drawing.Point(34, 9);
+            this.CinemaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CinemaLabel.Name = "CinemaLabel";
-            this.CinemaLabel.Size = new System.Drawing.Size(924, 70);
+            this.CinemaLabel.Size = new System.Drawing.Size(335, 57);
             this.CinemaLabel.TabIndex = 6;
-            this.CinemaLabel.Text = "Edit Cinema:";
+            this.CinemaLabel.Text = "Edit Cinema";
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.usernameLabel.Location = new System.Drawing.Point(234, 139);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernameLabel.Location = new System.Drawing.Point(142, 158);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(91, 33);
+            this.usernameLabel.Size = new System.Drawing.Size(75, 30);
             this.usernameLabel.TabIndex = 8;
-            this.usernameLabel.Text = "Town:";
+            this.usernameLabel.Text = "Town";
             // 
             // CinameLabel
             // 
             this.CinameLabel.AutoSize = true;
-            this.CinameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CinameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.CinameLabel.Location = new System.Drawing.Point(108, 199);
-            this.CinameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CinameLabel.Location = new System.Drawing.Point(142, 233);
             this.CinameLabel.Name = "CinameLabel";
-            this.CinameLabel.Size = new System.Drawing.Size(217, 33);
+            this.CinameLabel.Size = new System.Drawing.Size(191, 30);
             this.CinameLabel.TabIndex = 10;
-            this.CinameLabel.Text = "Cinema Name:";
+            this.CinameLabel.Text = "Cinema Name";
             // 
             // TownName
             // 
             this.TownName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TownName.Location = new System.Drawing.Point(332, 137);
+            this.TownName.Location = new System.Drawing.Point(365, 159);
+            this.TownName.Margin = new System.Windows.Forms.Padding(2);
             this.TownName.Multiline = true;
             this.TownName.Name = "TownName";
             this.TownName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.TownName.Size = new System.Drawing.Size(352, 41);
+            this.TownName.Size = new System.Drawing.Size(265, 34);
             this.TownName.TabIndex = 12;
             this.TownName.TextChanged += new System.EventHandler(this.TownCinemaName_TextChanged);
             // 
             // CinemaName
             // 
             this.CinemaName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CinemaName.Location = new System.Drawing.Point(332, 199);
+            this.CinemaName.Location = new System.Drawing.Point(365, 234);
+            this.CinemaName.Margin = new System.Windows.Forms.Padding(2);
             this.CinemaName.Multiline = true;
             this.CinemaName.Name = "CinemaName";
             this.CinemaName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.CinemaName.Size = new System.Drawing.Size(352, 41);
+            this.CinemaName.Size = new System.Drawing.Size(265, 34);
             this.CinemaName.TabIndex = 13;
             this.CinemaName.TextChanged += new System.EventHandler(this.TownCinemaName_TextChanged);
             // 
@@ -101,18 +102,20 @@
             this.CinemaExistsLabel.AutoSize = true;
             this.CinemaExistsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinemaExistsLabel.ForeColor = System.Drawing.Color.Red;
-            this.CinemaExistsLabel.Location = new System.Drawing.Point(392, 257);
+            this.CinemaExistsLabel.Location = new System.Drawing.Point(361, 212);
+            this.CinemaExistsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CinemaExistsLabel.Name = "CinemaExistsLabel";
-            this.CinemaExistsLabel.Size = new System.Drawing.Size(210, 25);
+            this.CinemaExistsLabel.Size = new System.Drawing.Size(166, 20);
             this.CinemaExistsLabel.TabIndex = 30;
             this.CinemaExistsLabel.Text = "Cinema already exists!";
             // 
             // BackButton
             // 
             this.BackButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.BackButton.Location = new System.Drawing.Point(311, 398);
+            this.BackButton.Location = new System.Drawing.Point(223, 345);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(98, 45);
+            this.BackButton.Size = new System.Drawing.Size(74, 37);
             this.BackButton.TabIndex = 31;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -120,9 +123,10 @@
             // 
             // EditCinemaButton
             // 
-            this.EditCinemaButton.Location = new System.Drawing.Point(430, 398);
+            this.EditCinemaButton.Location = new System.Drawing.Point(334, 345);
+            this.EditCinemaButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditCinemaButton.Name = "EditCinemaButton";
-            this.EditCinemaButton.Size = new System.Drawing.Size(152, 45);
+            this.EditCinemaButton.Size = new System.Drawing.Size(114, 37);
             this.EditCinemaButton.TabIndex = 32;
             this.EditCinemaButton.Text = "SaveChanges";
             this.EditCinemaButton.UseVisualStyleBackColor = true;
@@ -130,9 +134,10 @@
             // 
             // DeleteCinemaButton
             // 
-            this.DeleteCinemaButton.Location = new System.Drawing.Point(602, 398);
+            this.DeleteCinemaButton.Location = new System.Drawing.Point(488, 345);
+            this.DeleteCinemaButton.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteCinemaButton.Name = "DeleteCinemaButton";
-            this.DeleteCinemaButton.Size = new System.Drawing.Size(91, 45);
+            this.DeleteCinemaButton.Size = new System.Drawing.Size(68, 37);
             this.DeleteCinemaButton.TabIndex = 33;
             this.DeleteCinemaButton.Text = "Delete Cinema";
             this.DeleteCinemaButton.UseVisualStyleBackColor = true;
@@ -140,10 +145,10 @@
             // 
             // CinemaEditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1101, 549);
+            this.ClientSize = new System.Drawing.Size(826, 446);
             this.Controls.Add(this.DeleteCinemaButton);
             this.Controls.Add(this.EditCinemaButton);
             this.Controls.Add(this.BackButton);
@@ -154,6 +159,7 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.CinemaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CinemaEditForm";
             this.Text = "CinemaEditForm";
             this.Load += new System.EventHandler(this.CinemaEditForm_Load);

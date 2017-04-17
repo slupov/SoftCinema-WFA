@@ -45,40 +45,45 @@
             // 
             // CategoryLabel
             // 
-            this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoryLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CategoryLabel.Location = new System.Drawing.Point(358, 57);
+            this.CategoryLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CategoryLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.CategoryLabel.Location = new System.Drawing.Point(34, 9);
+            this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(337, 55);
+            this.CategoryLabel.Size = new System.Drawing.Size(368, 74);
             this.CategoryLabel.TabIndex = 5;
-            this.CategoryLabel.Text = "Edit Category:";
+            this.CategoryLabel.Text = "Edit Category";
             // 
             // CategoryNameTextBox
             // 
             this.CategoryNameTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryNameTextBox.Location = new System.Drawing.Point(343, 130);
+            this.CategoryNameTextBox.Location = new System.Drawing.Point(347, 105);
+            this.CategoryNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CategoryNameTextBox.Multiline = true;
             this.CategoryNameTextBox.Name = "CategoryNameTextBox";
             this.CategoryNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.CategoryNameTextBox.Size = new System.Drawing.Size(352, 41);
+            this.CategoryNameTextBox.Size = new System.Drawing.Size(265, 34);
             this.CategoryNameTextBox.TabIndex = 8;
             this.CategoryNameTextBox.TextChanged += new System.EventHandler(this.CategoryTextBox_TextChanged);
             // 
             // UsernameLabel
             // 
-            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.UsernameLabel.Location = new System.Drawing.Point(49, 128);
+            this.UsernameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UsernameLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.UsernameLabel.Location = new System.Drawing.Point(156, 104);
+            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(491, 55);
+            this.UsernameLabel.Size = new System.Drawing.Size(143, 36);
             this.UsernameLabel.TabIndex = 9;
             this.UsernameLabel.Text = "Category Name:";
             // 
             // EditCategoryButton
             // 
-            this.EditCategoryButton.Location = new System.Drawing.Point(456, 462);
+            this.EditCategoryButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditCategoryButton.Location = new System.Drawing.Point(315, 375);
+            this.EditCategoryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EditCategoryButton.Name = "EditCategoryButton";
-            this.EditCategoryButton.Size = new System.Drawing.Size(118, 45);
+            this.EditCategoryButton.Size = new System.Drawing.Size(115, 37);
             this.EditCategoryButton.TabIndex = 18;
             this.EditCategoryButton.Text = "Save Changes";
             this.EditCategoryButton.UseVisualStyleBackColor = true;
@@ -86,9 +91,11 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(329, 462);
+            this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackButton.Location = new System.Drawing.Point(225, 375);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(98, 45);
+            this.BackButton.Size = new System.Drawing.Size(74, 37);
             this.BackButton.TabIndex = 23;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -96,21 +103,23 @@
             // 
             // RemoveMoviesLabel
             // 
-            this.RemoveMoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveMoviesLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RemoveMoviesLabel.Location = new System.Drawing.Point(49, 240);
+            this.RemoveMoviesLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveMoviesLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.RemoveMoviesLabel.Location = new System.Drawing.Point(147, 178);
+            this.RemoveMoviesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RemoveMoviesLabel.Name = "RemoveMoviesLabel";
-            this.RemoveMoviesLabel.Size = new System.Drawing.Size(245, 278);
+            this.RemoveMoviesLabel.Size = new System.Drawing.Size(174, 23);
             this.RemoveMoviesLabel.TabIndex = 24;
             this.RemoveMoviesLabel.Text = "Movies in category:";
             // 
             // AddMoviesLabel
             // 
-            this.AddMoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddMoviesLabel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.AddMoviesLabel.Location = new System.Drawing.Point(767, 240);
+            this.AddMoviesLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddMoviesLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.AddMoviesLabel.Location = new System.Drawing.Point(447, 178);
+            this.AddMoviesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AddMoviesLabel.Name = "AddMoviesLabel";
-            this.AddMoviesLabel.Size = new System.Drawing.Size(256, 183);
+            this.AddMoviesLabel.Size = new System.Drawing.Size(201, 26);
             this.AddMoviesLabel.TabIndex = 25;
             this.AddMoviesLabel.Text = "Movies not in category:";
             // 
@@ -118,19 +127,21 @@
             // 
             this.CategoryNotAddedMovies.FormattingEnabled = true;
             this.CategoryNotAddedMovies.HorizontalScrollbar = true;
-            this.CategoryNotAddedMovies.ItemHeight = 16;
-            this.CategoryNotAddedMovies.Location = new System.Drawing.Point(575, 227);
+            this.CategoryNotAddedMovies.Location = new System.Drawing.Point(451, 206);
+            this.CategoryNotAddedMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CategoryNotAddedMovies.Name = "CategoryNotAddedMovies";
             this.CategoryNotAddedMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.CategoryNotAddedMovies.Size = new System.Drawing.Size(186, 196);
+            this.CategoryNotAddedMovies.Size = new System.Drawing.Size(173, 147);
             this.CategoryNotAddedMovies.TabIndex = 11;
             this.CategoryNotAddedMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CategoryNotAddedMovies_DoubleClick);
             // 
             // RemoveMoviesButton
             // 
-            this.RemoveMoviesButton.Location = new System.Drawing.Point(475, 337);
+            this.RemoveMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveMoviesButton.Location = new System.Drawing.Point(356, 292);
+            this.RemoveMoviesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RemoveMoviesButton.Name = "RemoveMoviesButton";
-            this.RemoveMoviesButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveMoviesButton.Size = new System.Drawing.Size(56, 25);
             this.RemoveMoviesButton.TabIndex = 27;
             this.RemoveMoviesButton.Text = ">>";
             this.RemoveMoviesButton.UseVisualStyleBackColor = true;
@@ -138,9 +149,11 @@
             // 
             // AddMoviesButton
             // 
-            this.AddMoviesButton.Location = new System.Drawing.Point(475, 267);
+            this.AddMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddMoviesButton.Location = new System.Drawing.Point(356, 248);
+            this.AddMoviesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddMoviesButton.Name = "AddMoviesButton";
-            this.AddMoviesButton.Size = new System.Drawing.Size(75, 23);
+            this.AddMoviesButton.Size = new System.Drawing.Size(56, 25);
             this.AddMoviesButton.TabIndex = 26;
             this.AddMoviesButton.Text = "<<";
             this.AddMoviesButton.UseVisualStyleBackColor = true;
@@ -150,28 +163,32 @@
             // 
             this.CategoryAddedMovies.FormattingEnabled = true;
             this.CategoryAddedMovies.HorizontalScrollbar = true;
-            this.CategoryAddedMovies.ItemHeight = 16;
-            this.CategoryAddedMovies.Location = new System.Drawing.Point(257, 227);
+            this.CategoryAddedMovies.Location = new System.Drawing.Point(148, 206);
+            this.CategoryAddedMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CategoryAddedMovies.Name = "CategoryAddedMovies";
             this.CategoryAddedMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.CategoryAddedMovies.Size = new System.Drawing.Size(186, 196);
+            this.CategoryAddedMovies.Size = new System.Drawing.Size(173, 147);
             this.CategoryAddedMovies.TabIndex = 10;
             this.CategoryAddedMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CategoryAddedMovies_DoubleClick);
             // 
             // CategoryExistsLabel
             // 
             this.CategoryExistsLabel.AutoSize = true;
-            this.CategoryExistsLabel.Location = new System.Drawing.Point(725, 146);
+            this.CategoryExistsLabel.ForeColor = System.Drawing.Color.Red;
+            this.CategoryExistsLabel.Location = new System.Drawing.Point(344, 90);
+            this.CategoryExistsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryExistsLabel.Name = "CategoryExistsLabel";
-            this.CategoryExistsLabel.Size = new System.Drawing.Size(158, 17);
+            this.CategoryExistsLabel.Size = new System.Drawing.Size(118, 13);
             this.CategoryExistsLabel.TabIndex = 28;
             this.CategoryExistsLabel.Text = "Category already exists!";
             // 
             // DeleteCategoryButton
             // 
-            this.DeleteCategoryButton.Location = new System.Drawing.Point(594, 462);
+            this.DeleteCategoryButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteCategoryButton.Location = new System.Drawing.Point(437, 375);
+            this.DeleteCategoryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteCategoryButton.Name = "DeleteCategoryButton";
-            this.DeleteCategoryButton.Size = new System.Drawing.Size(91, 45);
+            this.DeleteCategoryButton.Size = new System.Drawing.Size(134, 37);
             this.DeleteCategoryButton.TabIndex = 29;
             this.DeleteCategoryButton.Text = "Delete Category";
             this.DeleteCategoryButton.UseVisualStyleBackColor = true;
@@ -179,10 +196,10 @@
             // 
             // CategoryEditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1049, 530);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
+            this.ClientSize = new System.Drawing.Size(787, 431);
             this.Controls.Add(this.DeleteCategoryButton);
             this.Controls.Add(this.CategoryExistsLabel);
             this.Controls.Add(this.RemoveMoviesButton);
@@ -197,6 +214,7 @@
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.CategoryLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CategoryEditForm";
             this.Text = "CategoryEditForm";
             this.Load += new System.EventHandler(this.CategoryEditForm_Load);

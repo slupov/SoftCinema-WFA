@@ -38,32 +38,39 @@
             this.seniorsQuantityComboBox = new System.Windows.Forms.ComboBox();
             this.childrenQuantityComboBox = new System.Windows.Forms.ComboBox();
             this.purchase = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // regularLabel
             // 
             this.regularLabel.AutoSize = true;
-            this.regularLabel.Location = new System.Drawing.Point(298, 110);
+            this.regularLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regularLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.regularLabel.Location = new System.Drawing.Point(210, 121);
             this.regularLabel.Name = "regularLabel";
-            this.regularLabel.Size = new System.Drawing.Size(44, 13);
+            this.regularLabel.Size = new System.Drawing.Size(104, 30);
             this.regularLabel.TabIndex = 0;
             this.regularLabel.Text = "Regular";
             // 
             // childrenLabel
             // 
             this.childrenLabel.AutoSize = true;
-            this.childrenLabel.Location = new System.Drawing.Point(298, 157);
+            this.childrenLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.childrenLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.childrenLabel.Location = new System.Drawing.Point(210, 171);
             this.childrenLabel.Name = "childrenLabel";
-            this.childrenLabel.Size = new System.Drawing.Size(45, 13);
+            this.childrenLabel.Size = new System.Drawing.Size(114, 30);
             this.childrenLabel.TabIndex = 1;
             this.childrenLabel.Text = "Children";
             // 
             // seniorsLabel
             // 
             this.seniorsLabel.AutoSize = true;
-            this.seniorsLabel.Location = new System.Drawing.Point(298, 201);
+            this.seniorsLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.seniorsLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.seniorsLabel.Location = new System.Drawing.Point(210, 221);
             this.seniorsLabel.Name = "seniorsLabel";
-            this.seniorsLabel.Size = new System.Drawing.Size(42, 13);
+            this.seniorsLabel.Size = new System.Drawing.Size(95, 30);
             this.seniorsLabel.TabIndex = 2;
             this.seniorsLabel.Text = "Seniors";
             // 
@@ -82,26 +89,30 @@
             "8",
             "9",
             "10"});
-            this.regularQuantityComboBox.Location = new System.Drawing.Point(408, 110);
+            this.regularQuantityComboBox.Location = new System.Drawing.Point(403, 130);
             this.regularQuantityComboBox.Name = "regularQuantityComboBox";
-            this.regularQuantityComboBox.Size = new System.Drawing.Size(42, 21);
+            this.regularQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.regularQuantityComboBox.TabIndex = 3;
             // 
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(404, 77);
+            this.quantityLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.quantityLabel.Location = new System.Drawing.Point(387, 82);
             this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(46, 13);
+            this.quantityLabel.Size = new System.Drawing.Size(115, 30);
             this.quantityLabel.TabIndex = 6;
             this.quantityLabel.Text = "Quantity";
             // 
             // studentsLabel
             // 
             this.studentsLabel.AutoSize = true;
-            this.studentsLabel.Location = new System.Drawing.Point(298, 247);
+            this.studentsLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.studentsLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.studentsLabel.Location = new System.Drawing.Point(210, 271);
             this.studentsLabel.Name = "studentsLabel";
-            this.studentsLabel.Size = new System.Drawing.Size(49, 13);
+            this.studentsLabel.Size = new System.Drawing.Size(113, 30);
             this.studentsLabel.TabIndex = 7;
             this.studentsLabel.Text = "Students";
             // 
@@ -120,9 +131,9 @@
             "8",
             "9",
             "10"});
-            this.studentsQuantityComboBox.Location = new System.Drawing.Point(407, 247);
+            this.studentsQuantityComboBox.Location = new System.Drawing.Point(403, 280);
             this.studentsQuantityComboBox.Name = "studentsQuantityComboBox";
-            this.studentsQuantityComboBox.Size = new System.Drawing.Size(42, 21);
+            this.studentsQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.studentsQuantityComboBox.TabIndex = 8;
             // 
             // seniorsQuantityComboBox
@@ -140,9 +151,9 @@
             "8",
             "9",
             "10"});
-            this.seniorsQuantityComboBox.Location = new System.Drawing.Point(407, 201);
+            this.seniorsQuantityComboBox.Location = new System.Drawing.Point(403, 230);
             this.seniorsQuantityComboBox.Name = "seniorsQuantityComboBox";
-            this.seniorsQuantityComboBox.Size = new System.Drawing.Size(42, 21);
+            this.seniorsQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.seniorsQuantityComboBox.TabIndex = 9;
             // 
             // childrenQuantityComboBox
@@ -160,14 +171,15 @@
             "8",
             "9",
             "10"});
-            this.childrenQuantityComboBox.Location = new System.Drawing.Point(408, 157);
+            this.childrenQuantityComboBox.Location = new System.Drawing.Point(403, 180);
             this.childrenQuantityComboBox.Name = "childrenQuantityComboBox";
-            this.childrenQuantityComboBox.Size = new System.Drawing.Size(42, 21);
+            this.childrenQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.childrenQuantityComboBox.TabIndex = 10;
             // 
             // purchase
             // 
-            this.purchase.Location = new System.Drawing.Point(301, 300);
+            this.purchase.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.purchase.Location = new System.Drawing.Point(301, 348);
             this.purchase.Name = "purchase";
             this.purchase.Size = new System.Drawing.Size(125, 42);
             this.purchase.TabIndex = 11;
@@ -175,11 +187,24 @@
             this.purchase.UseVisualStyleBackColor = true;
             this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.label1.Location = new System.Drawing.Point(18, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(458, 57);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Select Tickets Type";
+            // 
             // TicketTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.purchase);
             this.Controls.Add(this.childrenQuantityComboBox);
             this.Controls.Add(this.seniorsQuantityComboBox);
@@ -210,5 +235,6 @@
         private System.Windows.Forms.ComboBox seniorsQuantityComboBox;
         private System.Windows.Forms.ComboBox childrenQuantityComboBox;
         private System.Windows.Forms.Button purchase;
+        private System.Windows.Forms.Label label1;
     }
 }
