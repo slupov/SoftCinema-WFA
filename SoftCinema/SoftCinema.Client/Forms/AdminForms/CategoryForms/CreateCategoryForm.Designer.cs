@@ -58,7 +58,7 @@
             this.CategoryNameLabel.Name = "CategoryNameLabel";
             this.CategoryNameLabel.Size = new System.Drawing.Size(232, 34);
             this.CategoryNameLabel.TabIndex = 10;
-            this.CategoryNameLabel.Text = "Category Name:";
+            this.CategoryNameLabel.Text = "Category Name";
             // 
             // CategoryNameTextBox
             // 
@@ -81,12 +81,12 @@
             this.MoviesLabel.Name = "MoviesLabel";
             this.MoviesLabel.Size = new System.Drawing.Size(296, 85);
             this.MoviesLabel.TabIndex = 25;
-            this.MoviesLabel.Text = "Movies in category:";
+            this.MoviesLabel.Text = "Movies in category";
             // 
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackButton.Location = new System.Drawing.Point(216, 359);
+            this.BackButton.Location = new System.Drawing.Point(229, 359);
             this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(74, 37);
@@ -98,7 +98,7 @@
             // CreateCategoryButton
             // 
             this.CreateCategoryButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateCategoryButton.Location = new System.Drawing.Point(448, 359);
+            this.CreateCategoryButton.Location = new System.Drawing.Point(451, 359);
             this.CreateCategoryButton.Margin = new System.Windows.Forms.Padding(2);
             this.CreateCategoryButton.Name = "CreateCategoryButton";
             this.CreateCategoryButton.Size = new System.Drawing.Size(127, 37);
