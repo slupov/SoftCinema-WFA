@@ -79,6 +79,20 @@
         private void ticketsButton_Click(object sender, EventArgs e)
         {
 
+            string selectedDate = this.dateBox.SelectedItem.ToString();
+            string selectedTime = this.hourBox.SelectedItem.ToString();
+
+        //    DateTime screeningDate = ScreeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
+            var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
+            Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
+
+            TicketTypeForm ticketTypeForm = new TicketTypeForm();
+            ticketTypeForm.TopLevel = false;
+            ticketTypeForm.AutoScroll = true;
+            this.Hide();
+
+            ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
+            ticketTypeForm.Show();
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)

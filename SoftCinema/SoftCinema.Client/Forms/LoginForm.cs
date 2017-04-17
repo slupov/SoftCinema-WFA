@@ -65,5 +65,10 @@ namespace SoftCinema.Client.Forms
                 this.usernameInfoLabel.Hide();
             }
         }
+
+        private void passwordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

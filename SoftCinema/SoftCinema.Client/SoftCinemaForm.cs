@@ -37,11 +37,12 @@ namespace SoftCinema.Client
             RegisterForm registerForm = new RegisterForm();
             registerForm.TopLevel = false;
             registerForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(registerForm);
+            this.ContentHolder.Controls.Clear();            
+            this.ContentHolder.Controls.Add(registerForm);            
             registerForm.Show();
         }
-
+        
+        
         private void loginTeamButton_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -92,6 +93,11 @@ namespace SoftCinema.Client
             moviesForm.Show();
         }
 
+<<<<<<< HEAD
+        private void teamButton5_Click(object sender, EventArgs e)
+        {
+
+=======
         private void testSeatsButton_Click(object sender, EventArgs e)
         {
             var hardcoded = ScreeningService.GetScreening("Plovdiv", "SoftCinema", "Logan",
@@ -99,6 +105,7 @@ namespace SoftCinema.Client
 
             SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded);
             selectSeatsForm.Show();
+>>>>>>> origin/master
         }
     }
 }

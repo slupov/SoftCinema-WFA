@@ -353,9 +353,6 @@
         private System.Windows.Forms.TextBox castBox;
         private System.Windows.Forms.TextBox synopsisBox;
         private System.Windows.Forms.Label ageRestrictionLabel;
-        private void InitializeComponents()
-        {
-            this.townBox.Text = "Select town";
-        }
+        
     }
 }
