@@ -1,4 +1,5 @@
 ﻿using System;
+using SoftCinema.Client.Forms;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -77,13 +78,14 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 this._selected = true;
                 this.BackColor = System.Drawing.Color.FromArgb(255, 245, 132, 36);
             }
+
+            AuditoriumSeatsSchema.LimitSeatsSelection();
             base.OnClick(e);
         }
 
         protected override void OnMouseEnter(System.EventArgs e)
         {
             base.OnMouseEnter(e);
-            
         }
 
         protected override void OnMouseLeave(System.EventArgs e)
