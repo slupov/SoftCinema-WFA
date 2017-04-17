@@ -175,21 +175,27 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void DeleteCategoryButton_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this category?", "Category delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                CategoryService.RemoveCategory(category.Name);
-                MessageBox.Show(Constants.SuccessMessages.CategoryDeletesSuccessfully);
-                CategoriesForm categoriesForm = new CategoriesForm();
-                categoriesForm.TopLevel = false;
-                categoriesForm.AutoScroll = true;
-                this.Hide();
-                ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
-                categoriesForm.Show();
+                try
+                {
+                    CategoryService.RemoveCategory(category.Name);
+                    MessageBox.Show(Constants.SuccessMessages.CategoryDeletesSuccessfully);
+                    CategoriesForm categoriesForm = new CategoriesForm();
+                    categoriesForm.TopLevel = false;
+                    categoriesForm.AutoScroll = true;
+                    this.Hide();
+                    ((Button) sender).Parent.Parent.Controls.Add(categoriesForm);
+                    categoriesForm.Show();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(Constants.ErrorMessages.CategoriesDeleteMessage);
+                }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show(Constants.ErrorMessages.CategoriesUpdateErrorMessage);
-            }
+
+            
         }
     }
 }

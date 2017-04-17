@@ -57,6 +57,7 @@ namespace SoftCinema.Services.Utilities
             public const string UserIsInactive = "Deleted or inactive user!";
             public const string CategoriesUpdateErrorMessage = "Category update failed!";
             public const string CategoryCreateErrorMessage = "Category create failed!";
+            public const string CategoriesDeleteMessage = "Category delete failed!";
         }
 
         
