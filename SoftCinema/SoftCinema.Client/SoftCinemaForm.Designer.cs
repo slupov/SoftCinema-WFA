@@ -171,7 +171,6 @@ namespace SoftCinema.Client
             this.teamButton5.TabIndex = 5;
             this.teamButton5.Text = "teamButton5";
             this.teamButton5.UseVisualStyleBackColor = false;
-            this.teamButton5.Click += new System.EventHandler(this.teamButton5_Click);
             // 
             // registerMovie
             // 
@@ -249,8 +248,6 @@ namespace SoftCinema.Client
             this.registerTeamButton.UseVisualStyleBackColor = false;
             this.registerTeamButton.Click += new System.EventHandler(this.registerTeamButton_Click);
             // 
-<<<<<<< HEAD
-=======
             // NamePanel
             // 
             this.NamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(155)))), ((int)(((byte)(2)))));
@@ -318,7 +315,6 @@ namespace SoftCinema.Client
             this.ContentHolder.Size = new System.Drawing.Size(769, 418);
             this.ContentHolder.TabIndex = 2;
             // 
->>>>>>> origin/master
             // BtnDashboard
             // 
             this.BtnDashboard.BackColor = System.Drawing.Color.Black;
