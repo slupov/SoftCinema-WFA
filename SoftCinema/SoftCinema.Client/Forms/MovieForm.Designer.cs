@@ -146,6 +146,7 @@
             this.cinemaComboBox.Name = "cinemaComboBox";
             this.cinemaComboBox.Size = new System.Drawing.Size(121, 21);
             this.cinemaComboBox.TabIndex = 11;
+            this.cinemaComboBox.SelectedIndexChanged += new System.EventHandler(this.cinemaComboBox_SelectedIndexChanged);
             // 
             // dateBox
             // 
@@ -154,6 +155,7 @@
             this.dateBox.Name = "dateBox";
             this.dateBox.Size = new System.Drawing.Size(121, 21);
             this.dateBox.TabIndex = 12;
+            this.dateBox.SelectedIndexChanged += new System.EventHandler(this.dateBox_SelectedIndexChanged);
             // 
             // hourBox
             // 
@@ -170,7 +172,7 @@
             this.townBox.Name = "townBox";
             this.townBox.Size = new System.Drawing.Size(121, 21);
             this.townBox.TabIndex = 14;
-            this.townBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.townBox.SelectedIndexChanged += new System.EventHandler(this.townBox_SelectedIndexChanged);
             // 
             // ticketsButton
             // 
@@ -178,8 +180,9 @@
             this.ticketsButton.Name = "ticketsButton";
             this.ticketsButton.Size = new System.Drawing.Size(125, 32);
             this.ticketsButton.TabIndex = 15;
-            this.ticketsButton.Text = "Choose Tickets";
+            this.ticketsButton.Text = "Select Tickets";
             this.ticketsButton.UseVisualStyleBackColor = true;
+            this.ticketsButton.Click += new System.EventHandler(this.ticketsButton_Click);
             // 
             // seatsButton
             // 
@@ -187,7 +190,7 @@
             this.seatsButton.Name = "seatsButton";
             this.seatsButton.Size = new System.Drawing.Size(121, 32);
             this.seatsButton.TabIndex = 16;
-            this.seatsButton.Text = "Choose Seats";
+            this.seatsButton.Text = "Select Seats";
             this.seatsButton.UseVisualStyleBackColor = true;
             // 
             // orderButton
@@ -350,5 +353,6 @@
         private System.Windows.Forms.TextBox castBox;
         private System.Windows.Forms.TextBox synopsisBox;
         private System.Windows.Forms.Label ageRestrictionLabel;
+        
     }
 }

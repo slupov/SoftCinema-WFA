@@ -41,6 +41,7 @@
             // freeSeatsLegendLabel
             // 
             this.freeSeatsLegendLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(172)))), ((int)(((byte)(73)))));
+            this.freeSeatsLegendLabel.Enabled = false;
             this.freeSeatsLegendLabel.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.freeSeatsLegendLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.freeSeatsLegendLabel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,6 +87,7 @@
             // takenSeatsLegendButton
             // 
             this.takenSeatsLegendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(116)))));
+            this.takenSeatsLegendButton.Enabled = false;
             this.takenSeatsLegendButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.takenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.takenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +114,7 @@
             // chosenSeatsLegendButton
             // 
             this.chosenSeatsLegendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(132)))), ((int)(((byte)(36)))));
+            this.chosenSeatsLegendButton.Enabled = false;
             this.chosenSeatsLegendButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.chosenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chosenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -45,57 +45,63 @@
             // cinemaComboBox
             // 
             this.cinemaComboBox.DisplayMember = "Name";
+            this.cinemaComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cinemaComboBox.FormattingEnabled = true;
-            this.cinemaComboBox.Location = new System.Drawing.Point(352, 139);
+            this.cinemaComboBox.Location = new System.Drawing.Point(352, 158);
             this.cinemaComboBox.Name = "cinemaComboBox";
-            this.cinemaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.cinemaComboBox.Size = new System.Drawing.Size(121, 26);
             this.cinemaComboBox.TabIndex = 0;
             this.cinemaComboBox.SelectedIndexChanged += new System.EventHandler(this.cinemaComboBox_SelectedIndexChanged);
             // 
             // cinemaLabel
             // 
             this.cinemaLabel.AutoSize = true;
-            this.cinemaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.cinemaLabel.Location = new System.Drawing.Point(241, 139);
+            this.cinemaLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cinemaLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.cinemaLabel.Location = new System.Drawing.Point(206, 160);
             this.cinemaLabel.Name = "cinemaLabel";
-            this.cinemaLabel.Size = new System.Drawing.Size(63, 18);
+            this.cinemaLabel.Size = new System.Drawing.Size(97, 24);
             this.cinemaLabel.TabIndex = 1;
             this.cinemaLabel.Text = "Cinema:";
             // 
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.timeLabel.Location = new System.Drawing.Point(241, 251);
+            this.timeLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timeLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.timeLabel.Location = new System.Drawing.Point(206, 283);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(45, 18);
+            this.timeLabel.Size = new System.Drawing.Size(61, 24);
             this.timeLabel.TabIndex = 2;
             this.timeLabel.Text = "Time:";
             // 
             // timeComboBox
             // 
+            this.timeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeComboBox.FormattingEnabled = true;
-            this.timeComboBox.Location = new System.Drawing.Point(352, 251);
+            this.timeComboBox.Location = new System.Drawing.Point(352, 281);
             this.timeComboBox.Name = "timeComboBox";
-            this.timeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.timeComboBox.Size = new System.Drawing.Size(121, 26);
             this.timeComboBox.TabIndex = 3;
             this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
             // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.dateLabel.Location = new System.Drawing.Point(241, 215);
+            this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.dateLabel.Location = new System.Drawing.Point(206, 242);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(43, 18);
+            this.dateLabel.Size = new System.Drawing.Size(66, 24);
             this.dateLabel.TabIndex = 4;
             this.dateLabel.Text = "Date:";
             // 
             // selectTicketTypeButton
             // 
-            this.selectTicketTypeButton.Location = new System.Drawing.Point(306, 313);
+            this.selectTicketTypeButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectTicketTypeButton.Location = new System.Drawing.Point(357, 338);
             this.selectTicketTypeButton.Name = "selectTicketTypeButton";
-            this.selectTicketTypeButton.Size = new System.Drawing.Size(125, 42);
+            this.selectTicketTypeButton.Size = new System.Drawing.Size(108, 40);
             this.selectTicketTypeButton.TabIndex = 8;
             this.selectTicketTypeButton.Text = "Select tickets";
             this.selectTicketTypeButton.UseVisualStyleBackColor = true;
@@ -104,59 +110,65 @@
             // townLabel
             // 
             this.townLabel.AutoSize = true;
-            this.townLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.townLabel.Location = new System.Drawing.Point(241, 101);
+            this.townLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.townLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.townLabel.Location = new System.Drawing.Point(206, 119);
             this.townLabel.Name = "townLabel";
-            this.townLabel.Size = new System.Drawing.Size(49, 18);
+            this.townLabel.Size = new System.Drawing.Size(68, 24);
             this.townLabel.TabIndex = 6;
             this.townLabel.Text = "Town:";
             // 
             // townComboBox
             // 
+            this.townComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.townComboBox.FormattingEnabled = true;
-            this.townComboBox.Location = new System.Drawing.Point(352, 102);
+            this.townComboBox.Location = new System.Drawing.Point(352, 117);
             this.townComboBox.Name = "townComboBox";
-            this.townComboBox.Size = new System.Drawing.Size(121, 21);
+            this.townComboBox.Size = new System.Drawing.Size(121, 26);
             this.townComboBox.TabIndex = 13;
             this.townComboBox.Text = "Select town";
             this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
             // 
             // dateComboBox
             // 
+            this.dateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateComboBox.FormattingEnabled = true;
-            this.dateComboBox.Location = new System.Drawing.Point(352, 215);
+            this.dateComboBox.Location = new System.Drawing.Point(352, 240);
             this.dateComboBox.Name = "dateComboBox";
-            this.dateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.dateComboBox.Size = new System.Drawing.Size(121, 26);
             this.dateComboBox.TabIndex = 5;
             this.dateComboBox.SelectedIndexChanged += new System.EventHandler(this.dateComboBox_SelectedIndexChanged);
             // 
             // movieLabel
             // 
             this.movieLabel.AutoSize = true;
-            this.movieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.movieLabel.Location = new System.Drawing.Point(241, 177);
+            this.movieLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.movieLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.movieLabel.Location = new System.Drawing.Point(206, 201);
             this.movieLabel.Name = "movieLabel";
-            this.movieLabel.Size = new System.Drawing.Size(52, 18);
+            this.movieLabel.Size = new System.Drawing.Size(78, 24);
             this.movieLabel.TabIndex = 15;
             this.movieLabel.Text = "Movie:";
             // 
             // movieComboBox
             // 
             this.movieComboBox.DisplayMember = "Name";
+            this.movieComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.movieComboBox.FormattingEnabled = true;
-            this.movieComboBox.Location = new System.Drawing.Point(352, 178);
+            this.movieComboBox.Location = new System.Drawing.Point(352, 199);
             this.movieComboBox.Name = "movieComboBox";
-            this.movieComboBox.Size = new System.Drawing.Size(121, 21);
+            this.movieComboBox.Size = new System.Drawing.Size(121, 26);
             this.movieComboBox.TabIndex = 14;
             this.movieComboBox.SelectedIndexChanged += new System.EventHandler(this.movieComboBox_SelectedIndexChanged);
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(55, 21);
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.titleLabel.Location = new System.Drawing.Point(34, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(229, 31);
+            this.titleLabel.Size = new System.Drawing.Size(428, 57);
             this.titleLabel.TabIndex = 16;
             this.titleLabel.Text = "Select screenings";
             // 
@@ -164,6 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(61)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.movieLabel);

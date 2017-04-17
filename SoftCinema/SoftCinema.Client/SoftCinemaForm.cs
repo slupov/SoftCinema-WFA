@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.AdminForms;
+using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
@@ -36,11 +37,12 @@ namespace SoftCinema.Client
             RegisterForm registerForm = new RegisterForm();
             registerForm.TopLevel = false;
             registerForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(registerForm);
+            this.ContentHolder.Controls.Clear();            
+            this.ContentHolder.Controls.Add(registerForm);            
             registerForm.Show();
         }
-
+        
+        
         private void loginTeamButton_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -89,6 +91,21 @@ namespace SoftCinema.Client
             this.ContentHolder.Controls.Clear();
             this.ContentHolder.Controls.Add(moviesForm);
             moviesForm.Show();
+        }
+
+<<<<<<< HEAD
+        private void teamButton5_Click(object sender, EventArgs e)
+        {
+
+=======
+        private void testSeatsButton_Click(object sender, EventArgs e)
+        {
+            var hardcoded = ScreeningService.GetScreening("Plovdiv", "SoftCinema", "Logan",
+                new DateTime(2017, 4, 21, 16, 0, 0));
+
+            SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded);
+            selectSeatsForm.Show();
+>>>>>>> origin/master
         }
     }
 }
