@@ -16,6 +16,13 @@ namespace SoftCinema.Client
             InitializeComponent();
         }
 
+        public static void SetContentHolderForm(Form a)
+        {
+            a.TopLevel = false;
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(a);
+        }
+
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
             loadTopPanelForm();
@@ -37,8 +44,8 @@ namespace SoftCinema.Client
             RegisterForm registerForm = new RegisterForm();
             registerForm.TopLevel = false;
             registerForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();            
-            this.ContentHolder.Controls.Add(registerForm);            
+            ContentHolder.Controls.Clear();            
+            ContentHolder.Controls.Add(registerForm);            
             registerForm.Show();
         }
         
@@ -48,8 +55,8 @@ namespace SoftCinema.Client
             LoginForm loginForm = new LoginForm();
             loginForm.TopLevel = false;
             loginForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(loginForm);
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(loginForm);
             loginForm.Show();
         }
 
@@ -58,8 +65,8 @@ namespace SoftCinema.Client
             RegisterMovieForm registerMovieForm = new RegisterMovieForm();
             registerMovieForm.TopLevel = false;
             registerMovieForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(registerMovieForm);
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(registerMovieForm);
             registerMovieForm.Show();
         }
 
@@ -68,8 +75,8 @@ namespace SoftCinema.Client
             TicketForm ticketForm = new TicketForm();
             ticketForm.TopLevel = false;
             ticketForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(ticketForm);
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(ticketForm);
             ticketForm.Show();
         }
 
@@ -78,8 +85,8 @@ namespace SoftCinema.Client
             AdminMenuForm adminMenuForm = new AdminMenuForm();
             adminMenuForm.TopLevel = false;
             adminMenuForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(adminMenuForm);
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(adminMenuForm);
             adminMenuForm.Show();
         }
 
@@ -88,8 +95,8 @@ namespace SoftCinema.Client
             MoviesForm moviesForm = new MoviesForm();
             moviesForm.TopLevel = false;
             moviesForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(moviesForm);
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(moviesForm);
             moviesForm.Show();
         }
 

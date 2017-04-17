@@ -165,19 +165,52 @@
     </Compile>
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CustomSidebars\AdminSideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomSidebars\EmployeeSideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomSidebars\LoggedOutSidebar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomSidebars\SideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomSidebars\UserSideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\AuditoriumSeatsSchema.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\SeatButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\TeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\AdminMenuTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\BuyTicketsTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\LoginTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\MoviesTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\RegisterMovieTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\RegisterTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">

@@ -45,7 +45,7 @@ namespace SoftCinema.Client
             this.Title = new System.Windows.Forms.Label();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.ContentHolder = new System.Windows.Forms.Panel();
+            ContentHolder = new System.Windows.Forms.Panel();
             this.BtnDashboard = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.SidePanel.SuspendLayout();
             this.NamePanel.SuspendLayout();
@@ -244,12 +244,12 @@ namespace SoftCinema.Client
             // 
             // ContentHolder
             // 
-            this.ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentHolder.Location = new System.Drawing.Point(195, 73);
-            this.ContentHolder.Name = "ContentHolder";
-            this.ContentHolder.Size = new System.Drawing.Size(769, 418);
-            this.ContentHolder.TabIndex = 2;
+            ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            ContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            ContentHolder.Location = new System.Drawing.Point(195, 73);
+            ContentHolder.Name = "ContentHolder";
+            ContentHolder.Size = new System.Drawing.Size(769, 418);
+            ContentHolder.TabIndex = 2;
             // 
             // BtnDashboard
             // 
@@ -271,7 +271,7 @@ namespace SoftCinema.Client
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 491);
-            this.Controls.Add(this.ContentHolder);
+            this.Controls.Add(ContentHolder);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.SidePanel);
             this.Name = "SoftCinemaForm";
@@ -290,7 +290,7 @@ namespace SoftCinema.Client
         private System.Windows.Forms.Panel SidePanel;
         private System.Windows.Forms.Panel TopPanel;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        public System.Windows.Forms.Panel ContentHolder;
+        public static System.Windows.Forms.Panel ContentHolder;
         private System.Windows.Forms.Panel NamePanel;
         private System.Windows.Forms.Label Title;
 
