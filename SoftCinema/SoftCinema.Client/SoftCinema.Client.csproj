@@ -72,6 +72,12 @@
     <Compile Include="Forms\AdminForms\CategoryForms\CategoryEditForm.Designer.cs">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\CinemaForms\CinemaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\CinemaForms\CinemaEditForm.Designer.cs">
+      <DependentUpon>CinemaEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\CinemaForms\CinemasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\CategoryForms\CategoryEditForm.resx">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\CinemaForms\CinemaEditForm.resx">
+      <DependentUpon>CinemaEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\CinemaForms\CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>

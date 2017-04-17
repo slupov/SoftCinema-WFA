@@ -175,7 +175,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void DeleteCategoryButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show(Constants.DeleteCategoryMessage, Constants.CategoryDeletePrompt, MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.DeleteCategoryMessage, Constants.CinemaDeletePrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try
