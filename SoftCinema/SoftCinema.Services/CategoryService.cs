@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
 
@@ -45,6 +47,36 @@ namespace SoftCinema.Services
             {
                 {
                     return (context.Categories.Select(c => c.Name).ToArray());
+                }
+            }
+        }
+
+        public static string[] GetMoviesNameAndYear(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                
+                    return (context.Categories.FirstOrDefault(c => c.Name == categoryName)
+                        .Movies.Select(m => $"\"{m.Name},{m.ReleaseYear}\"").ToArray());
+                
+            }
+        }
+
+        public static string[] GetMoviesNotInCategory(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                {
+                    List<string> result = new List<string>();
+                    foreach (var m in context.Movies)
+                    {
+                        if (m.Categories.All(c => c.Name != categoryName))
+                        {
+                            result.Add($"\"{m.Name},{m.ReleaseYear}\"");
+                        }
+                    }
+                    return result.ToArray();
+
                 }
             }
         }
