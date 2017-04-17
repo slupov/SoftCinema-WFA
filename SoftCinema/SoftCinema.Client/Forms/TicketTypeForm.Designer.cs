@@ -171,7 +171,7 @@
             this.purchase.Name = "purchase";
             this.purchase.Size = new System.Drawing.Size(125, 42);
             this.purchase.TabIndex = 11;
-            this.purchase.Text = "Purchase";
+            this.purchase.Text = "Select Seats";
             this.purchase.UseVisualStyleBackColor = true;
             this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 

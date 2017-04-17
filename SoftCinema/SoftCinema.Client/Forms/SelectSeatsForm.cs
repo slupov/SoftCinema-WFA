@@ -15,11 +15,13 @@ namespace SoftCinema.Client.Forms
     public partial class SelectSeatsForm : Form
     {
         private Screening _screening { get; set; }
+        private int _seatCount { get; set; }
         private AuditoriumSeatsSchema _seatsSchema { get; set; }
 
-        public SelectSeatsForm(Screening screening)
+        public SelectSeatsForm(Screening screening, int seatCount)
         {
             this._screening = screening;
+            this._seatCount = seatCount;
             InitializeComponent();
         }
 
@@ -35,7 +37,7 @@ namespace SoftCinema.Client.Forms
                 this.freeSeatsLegendLabel.Location.Y + 30);
             int width = this.purchaseButton.Location.X + this.purchaseButton.Size.Width - startingPoint.X;
 
-            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint, width);
+            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint, width, this._seatCount);
         }
 
         private void purchaseButton_Click(object sender, EventArgs e)

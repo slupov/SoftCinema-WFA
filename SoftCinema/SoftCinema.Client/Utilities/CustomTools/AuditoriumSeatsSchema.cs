@@ -12,14 +12,16 @@ namespace SoftCinema.Client.Utilities.CustomTools
     class AuditoriumSeatsSchema : GroupBox
     {
         private Auditorium _Auditorium { get; set; }
+        private int _seatCount { get; set; }
 
-        public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords,int width)
+        public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords,int width, int seatCount)
         {
             this._Auditorium = auditorium;
+            this._seatCount = seatCount;
             this.Location = startingCoords;
             this.Size = new Size(width,300);
             this.BackColor = Color.LightSkyBlue;
-
+            
 
             VisualizeSeats();
         }
@@ -68,5 +70,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 seatCoordinates.Y += 30;
             }
         }
+
+        //if seatCount of clicked buttons is reached -> make all buttons unclickable
+
     }
 }

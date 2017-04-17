@@ -89,9 +89,9 @@
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
-            this.Hide();
 
-            ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
+            this.Controls.Clear();
+            this.Controls.Add(ticketTypeForm);
             ticketTypeForm.Show();
         }
 
