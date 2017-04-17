@@ -42,8 +42,6 @@
             this.hourBox = new System.Windows.Forms.ComboBox();
             this.townBox = new System.Windows.Forms.ComboBox();
             this.ticketsButton = new System.Windows.Forms.Button();
-            this.seatsButton = new System.Windows.Forms.Button();
-            this.orderButton = new System.Windows.Forms.Button();
             this.titleBox = new System.Windows.Forms.TextBox();
             this.genreBox = new System.Windows.Forms.TextBox();
             this.lengthBox = new System.Windows.Forms.TextBox();
@@ -176,31 +174,13 @@
             // 
             // ticketsButton
             // 
-            this.ticketsButton.Location = new System.Drawing.Point(12, 383);
+            this.ticketsButton.Location = new System.Drawing.Point(587, 339);
             this.ticketsButton.Name = "ticketsButton";
-            this.ticketsButton.Size = new System.Drawing.Size(125, 32);
+            this.ticketsButton.Size = new System.Drawing.Size(155, 58);
             this.ticketsButton.TabIndex = 15;
             this.ticketsButton.Text = "Select Tickets";
             this.ticketsButton.UseVisualStyleBackColor = true;
             this.ticketsButton.Click += new System.EventHandler(this.ticketsButton_Click);
-            // 
-            // seatsButton
-            // 
-            this.seatsButton.Location = new System.Drawing.Point(156, 383);
-            this.seatsButton.Name = "seatsButton";
-            this.seatsButton.Size = new System.Drawing.Size(121, 32);
-            this.seatsButton.TabIndex = 16;
-            this.seatsButton.Text = "Select Seats";
-            this.seatsButton.UseVisualStyleBackColor = true;
-            // 
-            // orderButton
-            // 
-            this.orderButton.Location = new System.Drawing.Point(611, 348);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(135, 58);
-            this.orderButton.TabIndex = 17;
-            this.orderButton.Text = "Order";
-            this.orderButton.UseVisualStyleBackColor = true;
             // 
             // titleBox
             // 
@@ -298,8 +278,6 @@
             this.Controls.Add(this.lengthBox);
             this.Controls.Add(this.genreBox);
             this.Controls.Add(this.titleBox);
-            this.Controls.Add(this.orderButton);
-            this.Controls.Add(this.seatsButton);
             this.Controls.Add(this.ticketsButton);
             this.Controls.Add(this.townBox);
             this.Controls.Add(this.hourBox);
@@ -341,8 +319,6 @@
         private System.Windows.Forms.ComboBox hourBox;
         private System.Windows.Forms.ComboBox townBox;
         private System.Windows.Forms.Button ticketsButton;
-        private System.Windows.Forms.Button seatsButton;
-        private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.TextBox genreBox;
         private System.Windows.Forms.TextBox lengthBox;
