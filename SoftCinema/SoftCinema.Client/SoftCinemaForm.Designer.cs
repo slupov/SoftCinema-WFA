@@ -171,6 +171,7 @@ namespace SoftCinema.Client
             this.teamButton5.TabIndex = 5;
             this.teamButton5.Text = "teamButton5";
             this.teamButton5.UseVisualStyleBackColor = false;
+            this.teamButton5.Click += new System.EventHandler(this.teamButton5_Click);
             // 
             // registerMovie
             // 
@@ -248,6 +249,76 @@ namespace SoftCinema.Client
             this.registerTeamButton.UseVisualStyleBackColor = false;
             this.registerTeamButton.Click += new System.EventHandler(this.registerTeamButton_Click);
             // 
+<<<<<<< HEAD
+=======
+            // NamePanel
+            // 
+            this.NamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(155)))), ((int)(((byte)(2)))));
+            this.NamePanel.Controls.Add(this.testSeatsButton);
+            this.NamePanel.Controls.Add(this.testMoviesButton);
+            this.NamePanel.Controls.Add(this.Title);
+            this.NamePanel.Location = new System.Drawing.Point(0, 0);
+            this.NamePanel.Name = "NamePanel";
+            this.NamePanel.Size = new System.Drawing.Size(195, 73);
+            this.NamePanel.TabIndex = 0;
+            // 
+            // testSeatsButton
+            // 
+            this.testSeatsButton.Location = new System.Drawing.Point(114, 47);
+            this.testSeatsButton.Name = "testSeatsButton";
+            this.testSeatsButton.Size = new System.Drawing.Size(75, 23);
+            this.testSeatsButton.TabIndex = 1;
+            this.testSeatsButton.Text = "Test Seats";
+            this.testSeatsButton.UseVisualStyleBackColor = true;
+            this.testSeatsButton.Click += new System.EventHandler(this.testSeatsButton_Click);
+            // 
+            // testMoviesButton
+            // 
+            this.testMoviesButton.Location = new System.Drawing.Point(114, 3);
+            this.testMoviesButton.Name = "testMoviesButton";
+            this.testMoviesButton.Size = new System.Drawing.Size(75, 23);
+            this.testMoviesButton.TabIndex = 0;
+            this.testMoviesButton.Text = "TestMovies";
+            this.testMoviesButton.UseVisualStyleBackColor = true;
+            this.testMoviesButton.Click += new System.EventHandler(this.testMoviesButton_Click);
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(20, 20);
+            this.Title.Name = "Title";
+            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Title.Size = new System.Drawing.Size(151, 33);
+            this.Title.TabIndex = 0;
+            this.Title.Text = "SoftCinema";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TopPanel
+            // 
+            this.TopPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.TopPanel.BackColor = System.Drawing.Color.White;
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Location = new System.Drawing.Point(195, 0);
+            this.TopPanel.Name = "TopPanel";
+            this.TopPanel.Size = new System.Drawing.Size(769, 73);
+            this.TopPanel.TabIndex = 1;
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // ContentHolder
+            // 
+            this.ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentHolder.Location = new System.Drawing.Point(195, 73);
+            this.ContentHolder.Name = "ContentHolder";
+            this.ContentHolder.Size = new System.Drawing.Size(769, 418);
+            this.ContentHolder.TabIndex = 2;
+            // 
+>>>>>>> origin/master
             // BtnDashboard
             // 
             this.BtnDashboard.BackColor = System.Drawing.Color.Black;
