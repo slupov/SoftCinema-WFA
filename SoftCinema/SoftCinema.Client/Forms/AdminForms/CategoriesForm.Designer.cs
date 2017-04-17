@@ -31,7 +31,7 @@
             this.CategoriesList = new System.Windows.Forms.ComboBox();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddCategoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CategoriesList
@@ -67,14 +67,15 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // button1
+            // AddCategoryButton
             // 
-            this.button1.Location = new System.Drawing.Point(306, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 56);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add a New Category";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddCategoryButton.Location = new System.Drawing.Point(306, 236);
+            this.AddCategoryButton.Name = "AddCategoryButton";
+            this.AddCategoryButton.Size = new System.Drawing.Size(302, 56);
+            this.AddCategoryButton.TabIndex = 7;
+            this.AddCategoryButton.Text = "Add a New Category";
+            this.AddCategoryButton.UseVisualStyleBackColor = true;
+            this.AddCategoryButton.Click += new System.EventHandler(this.AddCategoryButton_Click);
             // 
             // CategoriesForm
             // 
@@ -82,7 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1038, 521);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddCategoryButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.CategoriesList);
@@ -99,6 +100,6 @@
         private System.Windows.Forms.ComboBox CategoriesList;
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddCategoryButton;
     }
 }

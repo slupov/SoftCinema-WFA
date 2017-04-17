@@ -47,5 +47,15 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((ComboBox)sender).Parent.Parent.Controls.Add(categoryEditForm);
             categoryEditForm.Show();
         }
+
+        private void AddCategoryButton_Click(object sender, EventArgs e)
+        {
+            CreateCategoryForm createCategoryForm = new CreateCategoryForm();
+            createCategoryForm.TopLevel = false;
+            createCategoryForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(createCategoryForm);
+            createCategoryForm.Show();
+        }
     }
 }

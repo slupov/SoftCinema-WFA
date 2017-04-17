@@ -26,6 +26,9 @@ namespace SoftCinema.Services.Utilities
             public const string SuccessfulLogin = "Successfully logged in!";
             public const string UserUpdatedSuccessfully = "User updated successfully!";
             public const string DeleteUserSuccess = "User successfully deleted!";
+            public const string CategoryUpdatedSuccessfully = "Category updated successfully!";
+            public const string CategoryCreatedSuccessfully = "Category created successfully!";
+            public const string CategoryDeletesSuccessfully = "Category deleted successfully!";
         }
 
         
@@ -52,6 +55,8 @@ namespace SoftCinema.Services.Utilities
             public const string UserUpdateErrorMesage = "User update failed!";
             public const string UserDeleteFail = "User deletion failed!";
             public const string UserIsInactive = "Deleted or inactive user!";
+            public const string CategoriesUpdateErrorMessage = "Category update failed!";
+            public const string CategoryCreateErrorMessage = "Category create failed!";
         }
 
         

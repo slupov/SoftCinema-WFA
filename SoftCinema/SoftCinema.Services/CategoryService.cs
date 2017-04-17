@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using SoftCinema.Data;
@@ -51,7 +52,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetMoviesNameAndYear(string categoryName)
+        public static string[] GetMoviesNameAndYearInCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -78,6 +79,55 @@ namespace SoftCinema.Services
                     return result.ToArray();
 
                 }
+            }
+        }
+
+
+        public static void UpdateCategory(string oldCategoryName, string newCategoryName, List<Tuple<string, int>> addedMovies, List<Tuple<string, int>> notAddedMovies)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Category category = context.Categories.FirstOrDefault(c => c.Name == oldCategoryName);
+                category.Name = newCategoryName;
+                foreach (var movieTuple in addedMovies)
+                {
+                    Movie movie = context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
+                    movie.Categories.Add(category);
+                }
+                foreach (var movieTuple in notAddedMovies)
+                {
+                    Movie movie = context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
+                    movie.Categories.Remove(category);
+                }
+                context.SaveChanges();
+            }
+        }
+
+        public static void AddCategoryWithMovies(string categoryName, List<Tuple<string, int>> movies)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Category category = new Category()
+                {
+                    Name = categoryName
+                };
+                foreach (var movieTuple in movies)
+                {
+                    Movie movie =
+                        context.Movies.First(m => m.Name == movieTuple.Item1 && m.ReleaseYear == movieTuple.Item2);
+                    movie.Categories.Add(category);
+                }
+                context.SaveChanges();
+            }
+        }
+
+        public static void RemoveCategory(string categoryName)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Category category = context.Categories.FirstOrDefault(c => c.Name == categoryName);
+                context.Categories.Remove(category);
+                context.SaveChanges();
             }
         }
     }

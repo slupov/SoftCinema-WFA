@@ -99,5 +99,22 @@ namespace SoftCinema.Services
                     .FirstOrDefault(m => m.Name == movieName);
             }
         }
+
+        public static string[] GetMoviesNameAndYear()
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+
+                List<string> result = new List<string>();
+                foreach (var m in context.Movies)
+                {
+                    
+                        result.Add($"\"{m.Name},{m.ReleaseYear}\"");
+                    
+                }
+                return result.ToArray();
+
+            }
+        }
     }
 }
