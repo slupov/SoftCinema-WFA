@@ -31,8 +31,11 @@ namespace SoftCinema.Client.Forms
 
         private void InitializeSeatsSchema()
         {
-            var startingPoint = new Point(this.freeSeatsLabel.Location.X, this.freeSeatsLabel.Location.Y + 100);
-            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint);
+            var startingPoint = new Point(this.freeSeatsLegendLabel.Location.X,
+                this.freeSeatsLegendLabel.Location.Y + 30);
+            int width = this.purchaseButton.Location.X + this.purchaseButton.Size.Width - startingPoint.X;
+
+            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint, width);
         }
 
         private void purchaseButton_Click(object sender, EventArgs e)

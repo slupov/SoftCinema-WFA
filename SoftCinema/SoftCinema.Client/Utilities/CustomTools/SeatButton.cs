@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Client.Utilities.CustomTools
+﻿using System;
+
+namespace SoftCinema.Client.Utilities.CustomTools
 {
     using System.Drawing;
     using System.Windows.Forms;
@@ -8,23 +10,25 @@
         private static Font _normalFont = new Font("Arial", 10F, System.Drawing.FontStyle.Bold,
             System.Drawing.GraphicsUnit.Point, ((byte) (0)));
 
-        private static Color _back = System.Drawing.Color.Gray;
+        private static Color _back = System.Drawing.Color.FromArgb(255, 53, 172, 73);
         private static Color _border = System.Drawing.Color.Black;
-        private static Color _activeBorder = System.Drawing.Color.Red;
+        private static Color _activeBorder = System.Drawing.Color.FromArgb(255, 245, 132, 36);
         private static Color _fore = System.Drawing.Color.White;
 
         private static Padding _margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
         private static Padding _padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
 
         private static Size _minSize = new System.Drawing.Size(10, 10);
-        public static int number { get; set; }
-
         private bool _active;
+        private bool _selected;
 
-        public SeatButton() : base()
+        public int Row { get; set; }
+        public int Number { get; set; }
+
+        public SeatButton(int number, int row) : base()
         {
             base.Font = _normalFont;
-            base.BackColor = _border;
+            base.BackColor = _back;
             base.ForeColor = _fore;
             base.FlatAppearance.BorderColor = _back;
             base.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -33,6 +37,26 @@
             base.MinimumSize = _minSize;
             base.Text = number.ToString();
             base.Size = new Size(20, 20);
+
+            this.Row = row;
+            this.Number = number;
+
+            this._selected = false;
+        }
+
+        public SeatButton() : base()
+        {
+            base.Font = _normalFont;
+            base.BackColor = _back;
+            base.ForeColor = _fore;
+            base.FlatAppearance.BorderColor = _back;
+            base.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            base.Margin = _margin;
+            base.Padding = _padding;
+            base.MinimumSize = _minSize;
+            base.Size = new Size(20, 20);
+
+            this._selected = false;
         }
 
         protected override void OnControlAdded(ControlEventArgs e)
@@ -41,30 +65,45 @@
             UseVisualStyleBackColor = false;
         }
 
+        protected override void OnClick(EventArgs e)
+        {
+            if (this._selected)
+            {
+                this._selected = false;
+                this.BackColor = System.Drawing.Color.FromArgb(255, 53, 172, 73);
+            }
+            else
+            {
+                this._selected = true;
+                this.BackColor = System.Drawing.Color.FromArgb(255, 245, 132, 36);
+            }
+            base.OnClick(e);
+        }
+
         protected override void OnMouseEnter(System.EventArgs e)
         {
             base.OnMouseEnter(e);
-            if (!_active)
-                base.FlatAppearance.BorderColor = _activeBorder;
+            
         }
 
         protected override void OnMouseLeave(System.EventArgs e)
         {
             base.OnMouseLeave(e);
-            if (!_active)
-                base.FlatAppearance.BorderColor = _border;
         }
 
         public void SetStateActive()
         {
             _active = true;
-            base.FlatAppearance.BorderColor = _activeBorder;
         }
 
         public void SetStateNormal()
         {
             _active = false;
-            base.FlatAppearance.BorderColor = _border;
+        }
+
+        public bool isSelected()
+        {
+            return this._selected;
         }
     }
 }
