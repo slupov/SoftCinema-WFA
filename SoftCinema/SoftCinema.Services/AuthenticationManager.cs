@@ -47,10 +47,7 @@
 
         public static User GetCurrentUser()
         {
-            if (currentUser == null)
-            {
-                throw new InvalidOperationException("You should log in first!");
-            }
+            Authorize();
 
             return currentUser;
         }
