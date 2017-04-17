@@ -20,10 +20,6 @@ namespace SoftCinema.Client.Forms
         public SelectSeatsForm(Screening screening)
         {
             this._screening = screening;
-
-            var maxRowNumber = screening.Auditorium.Seats.Max(s => s.Row);
-            var maxColNumber = screening.Auditorium.Seats.Max(s => s.Number);
-
             InitializeComponent();
         }
 

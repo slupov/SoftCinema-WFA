@@ -195,6 +195,7 @@ namespace SoftCinema.Client
             this.testSeatsButton.TabIndex = 1;
             this.testSeatsButton.Text = "Test Seats";
             this.testSeatsButton.UseVisualStyleBackColor = true;
+            this.testSeatsButton.Click += new System.EventHandler(this.testSeatsButton_Click);
             // 
             // testMoviesButton
             // 

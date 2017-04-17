@@ -12,17 +12,11 @@ namespace SoftCinema.Client.Utilities.CustomTools
     class AuditoriumSeatsSchema : GroupBox
     {
         private Auditorium _Auditorium { get; set; }
-        private Point _startingPoint { get; set; }
-
-        private ICollection<Label> RowLabels { get; set; }
-        private ICollection<SeatButton> SeatButtons { get; set; }
 
         public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords)
         {
             this._Auditorium = auditorium;
-            this._startingPoint = startingCoords;
-            this.RowLabels = new List<Label>();
-            this.SeatButtons = new List<SeatButton>();
+            this.Location = startingCoords;
 
             VisualizeSeats();
         }
@@ -32,8 +26,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
             var maxRow = this._Auditorium.Seats.Max(s => s.Row);
             var maxCol = this._Auditorium.Seats.Max(s => s.Number);
 
-            var rowLabelCoordinates = this._startingPoint;
-            var seatCoordinates = this._startingPoint;
+            var rowLabelCoordinates = this.Location;
+            var seatCoordinates = this.Location;
 
             for (int row = 1; row <= maxRow; row++)
             {
