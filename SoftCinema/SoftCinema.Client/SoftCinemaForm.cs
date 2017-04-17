@@ -99,7 +99,8 @@ namespace SoftCinema.Client
             var hardcoded = ScreeningService.GetScreening("Plovdiv", "SoftCinema", "Logan",
                 new DateTime(2017, 4, 21, 16, 0, 0));
 
-            SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded);
+            //mega hardcode
+            SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded,3);
             selectSeatsForm.Show();
         }
     }
