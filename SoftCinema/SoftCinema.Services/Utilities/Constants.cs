@@ -55,7 +55,7 @@ namespace SoftCinema.Services.Utilities
             public const string UnsavedChanges = "All your unsaved changes will be deleted.";
             public const string CategoryExists = "Category already exists!";
             public const string NoRoles = "(no roles)";
-            public const string UsernameFormat = "Username must be in range 3-25 characters!";
+            public const string UsernameFormat = "Username must be 3-25 characters!";
             public const string UsernameTaken = "Username already taken!";
             public const string InvalidEmail = "Email is invalid!";
             public const string EmailTaken = "Email is already taken!";

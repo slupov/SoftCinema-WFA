@@ -66,7 +66,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         private List<Tuple<string, int>> GetAddedMovies()
         {
             List<Tuple<string, int>> movies = new List<Tuple<string, int>>();
-            foreach (var m in MoviesCheckedListBox.SelectedItems)
+            foreach (var m in MoviesCheckedListBox.CheckedItems)
             {
                 int yearIndex = m.ToString().LastIndexOf(",");
                 string movieYearString = m.ToString().Substring(yearIndex + 1).Split(new char[] { '\"' }).First();

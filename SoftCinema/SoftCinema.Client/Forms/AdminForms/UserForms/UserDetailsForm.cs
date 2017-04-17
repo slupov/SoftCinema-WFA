@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.AdminForms;
+using SoftCinema.Client.Forms.AdminForms.UserForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -142,6 +143,18 @@ namespace SoftCinema.Client.Forms
                 usersForm.Show();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditUserTicketsForm ticketsForm = new EditUserTicketsForm();
+            ticketsForm.TopLevel = false;
+            ticketsForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
+            ticketsForm.Show();
+        }
+
+
 
         //private void UserDeleteButton_Click(object sender, EventArgs e)
         //{

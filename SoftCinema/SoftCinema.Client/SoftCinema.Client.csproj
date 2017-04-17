@@ -90,6 +90,12 @@
     <Compile Include="Forms\AdminForms\CategoryForms\CreateCategoryForm.Designer.cs">
       <DependentUpon>CreateCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\UserForms\EditUserTicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\UserForms\EditUserTicketsForm.Designer.cs">
+      <DependentUpon>EditUserTicketsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\UserForms\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\CategoryForms\CreateCategoryForm.resx">
       <DependentUpon>CreateCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\UserForms\EditUserTicketsForm.resx">
+      <DependentUpon>EditUserTicketsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\UserForms\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
