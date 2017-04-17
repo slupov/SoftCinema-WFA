@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace SoftCinema.Client.Forms
 //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
         public static Screening Screening;
+        private string _date;
+        private string _time;
 
         public TicketForm()
         {
@@ -54,9 +57,7 @@ namespace SoftCinema.Client.Forms
 
         private void selectTicketTypeButton_Click(object sender, EventArgs e)
         {
-            var screeningDate = new DateTime(2017,4,21,16,0,0); //hardcode
-            Screening = ScreeningService.GetScreening(this._townName,this._cinemaName,this._movieName, screeningDate);
-
+            
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
@@ -96,16 +97,21 @@ namespace SoftCinema.Client.Forms
 
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this._time = timeComboBox.SelectedItem.ToString();
+            var dateTime = ScreeningService.GetDateTimeFromDateAndTime(_date, _time);
+            TicketForm.Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName,
+                dateTime);
+
         }
 
         private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.timeComboBox.Text = "Select time";
             this.timeComboBox.Items.Clear();
-            var date = this.dateComboBox.SelectedItem.ToString();
+            this._date = this.dateComboBox.SelectedItem.ToString();
 
             var hours = Services.ScreeningService.GetHoursForMoviesByDate(this._townName,
-                this._cinemaName, this._movieName, date);
+                this._cinemaName, this._movieName, _date);
             ;
             this.timeComboBox.Items.AddRange(hours);
         }

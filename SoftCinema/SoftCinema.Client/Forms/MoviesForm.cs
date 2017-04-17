@@ -25,7 +25,7 @@ namespace SoftCinema.Client.Forms
             InitializeComponent();
             Movies = new List<Movie>();
             Movies = MovieService.GetAllMovies();
-            this._moviePostersSlider = new MoviePostersSlider() { Size = new Size(this.Movies.Count*220 - 20, 350)};
+            this._moviePostersSlider = new MoviePostersSlider() { Size = new Size(this.Movies.Count*220 - 10, 310)};
             this.MoviePosterLinks = new List<MoviePosterLink>();
             
         }
@@ -48,7 +48,7 @@ namespace SoftCinema.Client.Forms
         //populates Slider GroupBox
         private void VisualizePosters()
         {
-            int positionX = 0;
+            int positionX = 5;
             int positionY = 20;
             foreach (var item in MoviePosterLinks)
             {
