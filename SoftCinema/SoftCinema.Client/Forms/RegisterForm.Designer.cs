@@ -116,6 +116,7 @@
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordTextBox.Location = new System.Drawing.Point(415, 165);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(173, 26);
             this.passwordTextBox.TabIndex = 6;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
@@ -134,6 +135,7 @@
             this.repeatPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.repeatPasswordTextBox.Location = new System.Drawing.Point(415, 210);
             this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
+            this.repeatPasswordTextBox.PasswordChar = '*';
             this.repeatPasswordTextBox.Size = new System.Drawing.Size(173, 26);
             this.repeatPasswordTextBox.TabIndex = 7;
             this.repeatPasswordTextBox.TextChanged += new System.EventHandler(this.repeatPasswordTextBox_TextChanged);

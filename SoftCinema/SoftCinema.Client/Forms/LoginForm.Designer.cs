@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.loginInfoLabel = new System.Windows.Forms.Label();
             this.usernameInfoLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usernameLabel
@@ -77,6 +75,7 @@
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordTextBox.Location = new System.Drawing.Point(391, 217);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(173, 26);
             this.passwordTextBox.TabIndex = 3;
             // 
@@ -113,16 +112,16 @@
             this.usernameInfoLabel.Text = "label1";
             this.usernameInfoLabel.Visible = false;
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(34, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 57);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Login";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.titleLabel.Location = new System.Drawing.Point(34, 9);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(150, 57);
+            this.titleLabel.TabIndex = 14;
+            this.titleLabel.Text = "Login";
             // 
             // LoginForm
             // 
@@ -130,7 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.usernameInfoLabel);
             this.Controls.Add(this.loginInfoLabel);
             this.Controls.Add(this.loginButton);
@@ -153,9 +152,8 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label loginInfoLabel;
         private System.Windows.Forms.Label usernameInfoLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
     }
 }
