@@ -58,7 +58,7 @@ namespace SoftCinema.Client.Forms
         private void selectTicketTypeButton_Click(object sender, EventArgs e)
         {
             
-            TicketTypeForm ticketTypeForm = new TicketTypeForm();
+                        TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
             this.Hide();

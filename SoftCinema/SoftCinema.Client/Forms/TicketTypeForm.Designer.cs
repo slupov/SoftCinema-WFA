@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Client.Forms
+﻿using SoftCinema.Services.Utilities;
+
+namespace SoftCinema.Client.Forms
 {
     partial class TicketTypeForm
     {
@@ -39,6 +41,10 @@
             this.childrenQuantityComboBox = new System.Windows.Forms.ComboBox();
             this.purchase = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ticketLimit = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // regularLabel
@@ -93,6 +99,7 @@
             this.regularQuantityComboBox.Name = "regularQuantityComboBox";
             this.regularQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.regularQuantityComboBox.TabIndex = 3;
+            this.regularQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.regularQuantityComboBox_SelectedIndexChanged);
             // 
             // quantityLabel
             // 
@@ -179,7 +186,7 @@
             // purchase
             // 
             this.purchase.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.purchase.Location = new System.Drawing.Point(301, 348);
+            this.purchase.Location = new System.Drawing.Point(392, 338);
             this.purchase.Name = "purchase";
             this.purchase.Size = new System.Drawing.Size(125, 42);
             this.purchase.TabIndex = 11;
@@ -198,12 +205,57 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Select Tickets Type";
             // 
+            // ticketLimit
+            // 
+            this.ticketLimit.AutoSize = true;
+            this.ticketLimit.ForeColor = System.Drawing.Color.Red;
+            this.ticketLimit.Location = new System.Drawing.Point(400, 322);
+            this.ticketLimit.Name = "ticketLimit";
+            this.ticketLimit.Size = new System.Drawing.Size(174, 13);
+            this.ticketLimit.TabIndex = 13;
+            this.ticketLimit.Text = "You can\'t buy more than 10 tickets!";
+            // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back.Location = new System.Drawing.Point(215, 338);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(125, 42);
+            this.back.TabIndex = 14;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = true;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.priceLabel.Location = new System.Drawing.Point(563, 82);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(72, 30);
+            this.priceLabel.TabIndex = 15;
+            this.priceLabel.Text = "Price";
+            // 
+            // price
+            // 
+            this.price.AutoSize = true;
+            this.price.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.price.ForeColor = System.Drawing.Color.LightGray;
+            this.price.Location = new System.Drawing.Point(563, 121);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(0, 30);
+            this.price.TabIndex = 16;
+            // 
             // TicketTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.priceLabel);
+            this.Controls.Add(this.back);
+            this.Controls.Add(this.ticketLimit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.purchase);
             this.Controls.Add(this.childrenQuantityComboBox);
@@ -236,5 +288,9 @@
         private System.Windows.Forms.ComboBox childrenQuantityComboBox;
         private System.Windows.Forms.Button purchase;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ticketLimit;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Label price;
     }
 }

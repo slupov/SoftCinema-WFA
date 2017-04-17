@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SoftCinema.Models;
 
 namespace SoftCinema.Services.Utilities
 {
@@ -18,6 +19,7 @@ namespace SoftCinema.Services.Utilities
         public const int MaxMovieNameLength = 50;
         public const int MinUsernameLength = 3;
         public const int MaxUsernameLength = 25;
+        
 
         public const string GreetingsMessage = "Hello, {0}!";
         public const string DeleteUserMessage = "Are you sure you wand to delete this user?";
@@ -28,6 +30,13 @@ namespace SoftCinema.Services.Utilities
         public const string CategoryDeletePrompt = "Delete category?";
         public const string CinemaDeletePrompt = "Delete cinema?";
 
+        public const int MaxTicketCount = 10;
+        public const double RegularTicketPrice = 9.00;
+        public const double ChildrenTicketPrice = 5.00;
+        public const double StudentsTicketPrice = 7.00;
+        public const double SeniorsrTicketPrice = 6.00;
+
+      
         public static class SuccessMessages
         {
             public const string SuccessfulLogout = "Successfully logged out!";
@@ -52,6 +61,9 @@ namespace SoftCinema.Services.Utilities
             public const string EmailTaken = "Email is already taken!";
             public const string PhoneFormat = "Phone must be in 08[789]... format!";
             public const string CinemaExists = "Cinema already exists!";
+            public const string MoreThanMaxTicketCountPurchased = "You can't buy more than 10 tickets!";
+            public const string noTicketsSelected = "You haven't selected any tickets!";
+
         }
 
         public static class ErrorMessages
