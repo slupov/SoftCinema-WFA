@@ -36,5 +36,15 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
             categoriesForm.Show();
         }
+
+        private void EditCinemasButton_Click(object sender, EventArgs e)
+        {
+            CinemasForm cinemasForm = new CinemasForm();
+            cinemasForm.TopLevel = false;
+            cinemasForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
+            cinemasForm.Show();
+        }
     }
 }

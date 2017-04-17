@@ -32,6 +32,7 @@
             this.AdminMenuLabel = new System.Windows.Forms.Label();
             this.UserEditButton = new System.Windows.Forms.Button();
             this.EditCategoriesButton = new System.Windows.Forms.Button();
+            this.EditCinemasButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Menu
@@ -78,12 +79,25 @@
             this.EditCategoriesButton.UseVisualStyleBackColor = false;
             this.EditCategoriesButton.Click += new System.EventHandler(this.EditCategoriesButton_Click);
             // 
+            // EditCinemasButton
+            // 
+            this.EditCinemasButton.BackColor = System.Drawing.SystemColors.Menu;
+            this.EditCinemasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditCinemasButton.Location = new System.Drawing.Point(348, 290);
+            this.EditCinemasButton.Name = "EditCinemasButton";
+            this.EditCinemasButton.Size = new System.Drawing.Size(214, 58);
+            this.EditCinemasButton.TabIndex = 5;
+            this.EditCinemasButton.Text = "Edit Cinemas";
+            this.EditCinemasButton.UseVisualStyleBackColor = false;
+            this.EditCinemasButton.Click += new System.EventHandler(this.EditCinemasButton_Click);
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1041, 512);
+            this.Controls.Add(this.EditCinemasButton);
             this.Controls.Add(this.EditCategoriesButton);
             this.Controls.Add(this.UserEditButton);
             this.Controls.Add(this.AdminMenuLabel);
@@ -101,5 +115,6 @@
         private System.Windows.Forms.Label AdminMenuLabel;
         private System.Windows.Forms.Button UserEditButton;
         private System.Windows.Forms.Button EditCategoriesButton;
+        private System.Windows.Forms.Button EditCinemasButton;
     }
 }
