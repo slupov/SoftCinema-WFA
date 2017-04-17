@@ -97,55 +97,12 @@ namespace SoftCinema.Services
         public static DateTime GetDateTimeFromDateAndTime(string date, string time)
         {
             int day = int.Parse(date.Split()[0]);
-            int month = 0;
+            int month = int.Parse(DateTime.ParseExact(date.Split()[1], "MMM", CultureInfo.CurrentCulture).Month.ToString());
             int year = 2017;
-            int hour = DateTime.Parse(time).Hour;
-            string monthString= date.Split()[1];
-            string dayString = date.Split()[2];
-            switch (monthString)
-            {
-                case "Jan":
-                    month = 1;
-                    break;
-                case "Feb":
-                    month = 2;
-                    break;
-                case "Mar":
-                    month = 3;
-                    break;
-                case "Apr":
-                    month = 4;
-                    break;
-                case "May":
-                    month = 5;
-                    break;
-                case "Jun":
-                    month = 6;
-                    break;
-                case "Jul":
-                    month = 7;
-                    break;
-                case "Aug":
-                    month = 8;
-                    break;
-                case "Sep":
-                    month = 9;
-                    break;
-                case "Oct":
-                    month = 10;
-                    break;
-                case "Nov":
-                    month = 11;
-                    break;
-                case "Dec":
-                    month = 12;
-                    break;
-                default:
-                    break;
-            }
-            
-            return new DateTime(year,month,day,hour,0,0);
-        }
+            int hour = DateTime.ParseExact(time,"hh:mm tt", CultureInfo.CurrentCulture).Hour;
+            int minutes= DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture).Minute;
+            return new DateTime(year,month,day,hour,minutes,0);
+           }
 
         public static Screening GetScreening(string townName, string cinemaName, string movieName, DateTime date)
         {
