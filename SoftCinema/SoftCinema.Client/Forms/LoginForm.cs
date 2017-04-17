@@ -43,6 +43,12 @@ namespace SoftCinema.Client.Forms
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
+
+            //Refresh main form's sidebar
+            var mainForm = (SoftCinemaForm)((Button) sender).Parent.Parent.Parent;
+            mainForm.RenderSideBar();
+
+
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)

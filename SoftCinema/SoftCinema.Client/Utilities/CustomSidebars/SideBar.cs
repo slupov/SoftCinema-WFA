@@ -9,15 +9,16 @@ using SoftCinema.Client.Utilities.CustomTools;
 
 namespace SoftCinema.Client.Utilities.CustomSidebars
 {
-    public class SideBar : GroupBox
+    public class SideBar : Panel
     {
         protected List<TeamButton> Buttons { get; set; }
 
         public SideBar() : base()
         {
             base.Size = new Size(195, 418);
+            base.Dock = DockStyle.Left;
             base.BackColor = Color.FromArgb(255, 26, 32, 40);
-            base.Location = new Point(0, 0);
+            base.Location = new Point(0, 73);
             this.Buttons = new List<TeamButton>();
         }
 

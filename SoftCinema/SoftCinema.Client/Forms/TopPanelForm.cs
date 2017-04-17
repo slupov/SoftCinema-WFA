@@ -19,6 +19,10 @@ namespace SoftCinema.Client.Forms
             HideGreetings();
 
             MessageBox.Show(Constants.SuccessMessages.SuccessfulLogout);
+
+            var mainForm = (SoftCinemaForm) ((Button) sender).Parent.Parent.Parent;
+
+            mainForm.RenderSideBar();
         }
 
         //Utilities

@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.AdminForms;
+using SoftCinema.Client.Utilities.CustomSidebars;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -11,6 +12,8 @@ namespace SoftCinema.Client
 {
     public partial class SoftCinemaForm : Form
     {
+        private SideBar SideBar { get; set; }
+
         public SoftCinemaForm()
         {
             InitializeComponent();
@@ -21,14 +24,48 @@ namespace SoftCinema.Client
             a.TopLevel = false;
             ContentHolder.Controls.Clear();
             ContentHolder.Controls.Add(a);
+            a.Show();
         }
 
         private void SoftCinemaForm_Load(object sender, EventArgs e)
         {
-            loadTopPanelForm();
+            RenderTopPanelForm();
+            RenderSideBar();
         }
 
-        private void loadTopPanelForm()
+        /// <summary>
+        /// Renders a side bar view for users based on their user type
+        /// </summary>
+        public void RenderSideBar()
+        {
+            if (!AuthenticationManager.IsAuthenticated())
+            {
+                this.SideBar = new LoggedOutSidebar();
+                this.Controls.Add(this.SideBar);
+                return;
+            }
+
+            var userRole = AuthenticationManager.GetCurrentUser().Role;
+            switch (userRole)
+            {
+                case Role.User:
+                    this.SideBar = new UserSideBar();
+                    break;
+                case Role.Admin:
+                    this.SideBar = new AdminSideBar();
+                    break;
+                case Role.Employee:
+                    this.SideBar = new EmployeeSideBar();
+                    break;
+                default:
+                    this.SideBar = new LoggedOutSidebar();
+                    break;
+            }
+
+            this.Controls.Add(this.SideBar);
+        }
+
+        private void RenderTopPanelForm()
         {
             TopPanelForm topPanel = new TopPanelForm();
             topPanel.TopLevel = false;
@@ -44,12 +81,12 @@ namespace SoftCinema.Client
             RegisterForm registerForm = new RegisterForm();
             registerForm.TopLevel = false;
             registerForm.AutoScroll = true;
-            ContentHolder.Controls.Clear();            
-            ContentHolder.Controls.Add(registerForm);            
+            ContentHolder.Controls.Clear();
+            ContentHolder.Controls.Add(registerForm);
             registerForm.Show();
         }
-        
-        
+
+
         private void loginTeamButton_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -107,7 +144,7 @@ namespace SoftCinema.Client
                 new DateTime(2017, 4, 21, 16, 0, 0));
 
             //mega hardcode
-            SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded,3);
+            SelectSeatsForm selectSeatsForm = new SelectSeatsForm(hardcoded, 3);
             selectSeatsForm.Show();
         }
     }
