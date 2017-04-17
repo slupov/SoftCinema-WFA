@@ -36,11 +36,12 @@ namespace SoftCinema.Client
             RegisterForm registerForm = new RegisterForm();
             registerForm.TopLevel = false;
             registerForm.AutoScroll = true;
-            this.ContentHolder.Controls.Clear();
-            this.ContentHolder.Controls.Add(registerForm);
+            this.ContentHolder.Controls.Clear();            
+            this.ContentHolder.Controls.Add(registerForm);            
             registerForm.Show();
         }
-
+        
+        
         private void loginTeamButton_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
