@@ -15,6 +15,9 @@ namespace SoftCinema.Client.Forms
         public RegisterMovieForm()
         {
             InitializeComponent();
+            //TODO: Add AgeRestriction Service Method //this.ageRestrictionComboBox.Items.AddRange("X", "A", "B", "C", "D");
+            this.yearUpDown.Maximum = 2017;
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -62,6 +65,16 @@ namespace SoftCinema.Client.Forms
         }
 
         private void pictureBoxPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ratingUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisterMovieForm_Load(object sender, EventArgs e)
         {
 
         }

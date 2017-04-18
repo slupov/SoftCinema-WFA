@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms
 {
@@ -46,6 +47,7 @@ namespace SoftCinema.Client.Forms
             if (isDataValid)
             {
                 UserService.AddUser(username, password, email, phone);
+                MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
             }
         }
 

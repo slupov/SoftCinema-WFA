@@ -37,6 +37,7 @@ namespace SoftCinema.Services.Utilities
         {
             public const string SuccessfulLogout = "Successfully logged out!";
             public const string SuccessfulLogin = "Successfully logged in!";
+            public const string SuccessfulRegister = "Successfully registered!";
             public const string UserUpdatedSuccessfully = "User updated successfully!";
             public const string DeleteUserSuccess = "User successfully deleted!";
             public const string CategoryUpdatedSuccessfully = "Category updated successfully!";

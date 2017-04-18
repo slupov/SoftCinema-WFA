@@ -80,6 +80,7 @@
             this.ratingUpDown.Name = "ratingUpDown";
             this.ratingUpDown.Size = new System.Drawing.Size(120, 24);
             this.ratingUpDown.TabIndex = 3;
+            this.ratingUpDown.ValueChanged += new System.EventHandler(this.ratingUpDown_ValueChanged);
             // 
             // ratingLabel
             // 
@@ -244,6 +245,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.Name = "RegisterMovieForm";
             this.Text = "RegisterMovieForm";
+            this.Load += new System.EventHandler(this.RegisterMovieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ratingUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
