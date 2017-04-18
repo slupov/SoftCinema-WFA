@@ -15,6 +15,7 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
             this.Buttons.AddRange(new List<TeamButton>()
             {
                 new HomeTeamButton(),
+                new ShowScreeningsTeamButton(),
                 new RegisterMovieTeamButton(),
                 new MoviesTeamButton()
             });

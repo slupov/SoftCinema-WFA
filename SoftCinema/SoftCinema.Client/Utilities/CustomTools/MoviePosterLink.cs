@@ -92,7 +92,15 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private void _showDetailsButton_Click(object sender, System.EventArgs e)
         {
             MovieForm movieForm = new MovieForm(this._movie);
+            movieForm.TopLevel = false;
+            movieForm.AutoScroll = true;
+            var _thisForm = ((Button)sender).Parent.Parent.Parent;
+            var contentHolder = ((Button)sender).Parent.Parent.Parent.Parent;
+            contentHolder.Controls.Clear();
+            contentHolder.Controls.Add(_thisForm);
+            contentHolder.Controls.Add(movieForm);
             movieForm.Show();
+            _thisForm.Hide();
         }
     }
 }

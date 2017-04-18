@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.registerMovieButton = new System.Windows.Forms.Button();
             this.ageRestrictionComboBox = new System.Windows.Forms.ComboBox();
@@ -147,25 +146,13 @@
             // 
             this.browseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.browseButton.ForeColor = System.Drawing.Color.Black;
-            this.browseButton.Location = new System.Drawing.Point(493, 353);
+            this.browseButton.Location = new System.Drawing.Point(502, 353);
             this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(71, 33);
+            this.browseButton.Size = new System.Drawing.Size(90, 33);
             this.browseButton.TabIndex = 10;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
             this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.ForeColor = System.Drawing.Color.Black;
-            this.addButton.Location = new System.Drawing.Point(602, 354);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(126, 33);
-            this.addButton.TabIndex = 11;
-            this.addButton.Text = "Add Image only";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // pictureBoxPhoto
             // 
@@ -232,7 +219,6 @@
             this.Controls.Add(this.ageRestrictionComboBox);
             this.Controls.Add(this.registerMovieButton);
             this.Controls.Add(this.pictureBoxPhoto);
-            this.Controls.Add(this.addButton);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.directorNameTextBox);
@@ -268,7 +254,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button browseButton;
-        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button registerMovieButton;
         private System.Windows.Forms.ComboBox ageRestrictionComboBox;

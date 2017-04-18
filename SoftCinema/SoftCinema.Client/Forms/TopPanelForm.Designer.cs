@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Client.Forms
+﻿using System.Drawing;
+
+namespace SoftCinema.Client.Forms
 {
     partial class TopPanelForm
     {
@@ -34,13 +36,13 @@
             // 
             // LogoutButton
             // 
-            LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            LogoutButton.BackColor = System.Drawing.Color.Silver;
             LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             LogoutButton.FlatAppearance.BorderSize = 0;
             LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            LogoutButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            LogoutButton.ForeColor = System.Drawing.SystemColors.Control;
-            LogoutButton.Location = new System.Drawing.Point(667, 27);
+            LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LogoutButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            LogoutButton.Location = new System.Drawing.Point(660, 19);
             LogoutButton.Margin = new System.Windows.Forms.Padding(0);
             LogoutButton.Name = "LogoutButton";
             LogoutButton.Size = new System.Drawing.Size(90, 34);
@@ -52,22 +54,24 @@
             // 
             // GreetingLabel
             // 
-            GreetingLabel.AutoSize = true;
-            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            GreetingLabel.Location = new System.Drawing.Point(494, 41);
+            GreetingLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            
+            GreetingLabel.Location = new System.Drawing.Point(272, 23);
             GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             GreetingLabel.Name = "GreetingLabel";
-            GreetingLabel.Size = new System.Drawing.Size(57, 20);
+            GreetingLabel.Size = new System.Drawing.Size(340, 25);
             GreetingLabel.TabIndex = 5;
             GreetingLabel.Text = "label1";
             GreetingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             GreetingLabel.Visible = false;
+            
             // 
             // TopPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(769, 73);
             this.Controls.Add(LogoutButton);
             this.Controls.Add(GreetingLabel);
@@ -76,7 +80,6 @@
             this.Text = "TopPanelForm";
             this.Load += new System.EventHandler(this.TopPanelForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

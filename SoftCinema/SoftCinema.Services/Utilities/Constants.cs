@@ -36,6 +36,7 @@ namespace SoftCinema.Services.Utilities
         /// Cinema {CinemaName} {CinemaTown}: {MovieName} {ScreeningDateTime}
         /// </summary>
         public const string ScreeningTitleLabel = "Cinema {0} {1}: {2} {3}";
+        public const char TickMark = '✓';
 
         public const int MaxTicketCount = 10;
 
@@ -53,6 +54,7 @@ namespace SoftCinema.Services.Utilities
             public const string CinemaUpdatedSuccessfully = "Cinema updated successfully!";
             public const string CinemaDeletedSuccessfully = "Cinema deleted successfully!";
             public const string TicketUpdatedSuccessfully = "Ticket updated successfully!";
+            public const string MovieRegisteredSuccessfully = "Movie registered successfully!";
             public const string TicketDeletedSuccessfully = "Ticket deleted successfully!";
         }
 

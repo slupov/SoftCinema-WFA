@@ -61,6 +61,7 @@
     <Compile Include="TicketService.cs" />
     <Compile Include="TownService.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="Utilities\AgeRestrictionsProcessor.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\InputDataChecker.cs" />
     <Compile Include="Utilities\RoleProcessor.cs" />

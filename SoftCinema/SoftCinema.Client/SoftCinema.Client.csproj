@@ -175,6 +175,12 @@
     <Compile Include="Forms\ContentHolders\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForms\ShowScreeningsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForms\ShowScreeningsForm.Designer.cs">
+      <DependentUpon>ShowScreeningsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TopPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,13 +246,25 @@
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\RegisterTeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\ShowScreeningsTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ChoiceButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningRow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningsHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\CustomTools\ScreeningReservationGroup.cs">
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningReservationGroup.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">
@@ -309,6 +327,9 @@
     <EmbeddedResource Include="Forms\ContentHolders\TicketTypeForm.resx">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForms\ShowScreeningsForm.resx">
+      <DependentUpon>ShowScreeningsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopPanelForm.resx">
       <DependentUpon>TopPanelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,5 +375,6 @@
       <Name>SoftCinema.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

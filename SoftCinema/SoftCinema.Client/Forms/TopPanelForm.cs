@@ -33,7 +33,7 @@ namespace SoftCinema.Client.Forms
         public static void ShowGreetings()
         {
             GreetingLabel.Show();
-            GreetingLabel.ForeColor = Color.Black;
+            GreetingLabel.ForeColor = Color.White;
             GreetingLabel.Text = string.Format(Constants.GreetingsMessage,
                 AuthenticationManager.GetCurrentUser().Username);
 

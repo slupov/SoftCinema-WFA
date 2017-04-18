@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 
@@ -13,7 +14,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private string _movieName { get; set; }
         //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
-        public static Screening Screening;
+       
        
 
         public Movie _movie { get; set; }
@@ -35,7 +36,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.synopsisBox.Text = _movie.Synopsis;
             this.townBox.Text = "Select town";
             this.townBox.Items.AddRange(TownService.GetTownsNames());
-            
+            this.FormBorderStyle = FormBorderStyle.None;
+
         }
 
         private void actorsLabel_Click(object sender, EventArgs e)
@@ -87,15 +89,15 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
             DateTime screeningDate = ScreeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
             //var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
-            Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
+            
+            TicketForm.Screening= ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
 
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
-          
-            
-            
+            this.Parent.Controls.Add(ticketTypeForm);
             ticketTypeForm.Show();
+            this.Hide();
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,10 +122,17 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.hourBox.Items.AddRange(hours);
         }
 
-        private void hourBox_SelectedIndexChanged(object sender, EventArgs e)
+     
+        private void hourBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-          
             this.ticketsButton.Enabled = true;
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            var i = ((Button)sender).Parent.Parent.Controls.IndexOf(this);
+            var prev = ((Button)sender).Parent.Parent.Controls[i - 1];
+            prev.Show();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
@@ -19,15 +21,29 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
             return false;
         }
-
+          private bool goodForChildren()
+          {
+              var restr = TicketForm.Screening.Movie.AgeRestriction;
+              if (restr != AgeRestriction.D && restr != AgeRestriction.X)
+                  return true;
+              return false;
+          }
         public TicketTypeForm()
         {
             InitializeComponent();
+            this.notGood.Hide();
+            if (!this.goodForChildren())
+            {
+                this.childrenQuantityComboBox.Enabled = false;
+                this.notGood.Text = "This movie is not appropriate for children!";
+                this.notGood.ForeColor=Color.Red;
+                this.notGood.Show();
+            }
         }
 
         private void purchase_Click(object sender, EventArgs e)
         {
-            var formsCount = ((Button) sender).Parent.Parent.Controls.Count;
+           
 
             var ticketsQuantity = calculate_Quantity();
             if (areTicketsMoreThanMaxCount(ticketsQuantity) == false)
@@ -40,22 +56,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 else
                 {
                     SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity);
-                    selectSeatsForm.TopLevel = false;
-                    selectSeatsForm.AutoScroll = true;
-                    if (formsCount == 2)
-                    {
-                        ((Button) sender).Parent.Parent.Controls.Add(selectSeatsForm);
-                        selectSeatsForm.Show();
-                        this.Hide();
+                   
+                    selectSeatsForm.ShowDialog(this);
                     }
-                    else
-                    {
-                        ((Button) sender).Parent.Parent.Controls.RemoveAt(2);
-                        ((Button) sender).Parent.Parent.Controls.Add(selectSeatsForm);
-                        selectSeatsForm.Show();
-                        this.Hide();
-                    }
-                }
             }
             else
             {
@@ -97,9 +100,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void back_Click(object sender, EventArgs e)
         {
-            var first = ((Button) sender).Parent.Parent.Controls[0];
-            first.Show();
-            this.Hide();
+            var i = ((Button)sender).Parent.Parent.Controls.IndexOf(this);
+            var prev = ((Button)sender).Parent.Parent.Controls[i - 1];
+            prev.Show();
         }
 
         private void childrenQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)

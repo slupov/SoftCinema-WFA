@@ -38,12 +38,5 @@ namespace SoftCinema.Client.Forms.ContentHolders
         {
         }
 
-     
-        private void back_Click(object sender, EventArgs e)
-        {
-            var second = ((Button)sender).Parent.Parent.Controls[1];
-            second.Show();
-            this.Hide();
-        }
     }
 }

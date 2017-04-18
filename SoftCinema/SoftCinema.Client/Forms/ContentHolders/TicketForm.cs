@@ -51,22 +51,20 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void selectTicketTypeButton_Click(object sender, EventArgs e)
         {
-            
-                        TicketTypeForm ticketTypeForm = new TicketTypeForm();
+            TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
             this.Hide();
             var formsCount = ((Button) sender).Parent.Parent.Controls.Count;
-            if (formsCount <=1)
+            if (formsCount <= 1)
             {
-                ((Button)sender).Parent.Parent.Controls.Add(ticketTypeForm);
+                ((Button) sender).Parent.Parent.Controls.Add(ticketTypeForm);
                 ticketTypeForm.Show();
             }
             else
             {
-                ((Button)sender).Parent.Parent.Controls[1].Show();
+                ((Button) sender).Parent.Parent.Controls[1].Show();
             }
-            
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)

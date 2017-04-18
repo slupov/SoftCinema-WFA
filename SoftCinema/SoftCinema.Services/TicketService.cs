@@ -73,6 +73,15 @@ namespace SoftCinema.Services
             }
         }
 
+
+        public static List<Ticket> GetTickets(Screening screening)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Tickets.Where(t => t.ScreeningId == screening.Id).ToList();
+			}
+		}
+		
         public static Ticket GetTicket(int holderId, int seatId, int screeningId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
