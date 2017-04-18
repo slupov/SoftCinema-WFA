@@ -111,6 +111,7 @@
             this.yearUpDown.Name = "yearUpDown";
             this.yearUpDown.Size = new System.Drawing.Size(120, 24);
             this.yearUpDown.TabIndex = 5;
+            this.yearUpDown.ValueChanged += new System.EventHandler(this.yearUpDown_ValueChanged);
             // 
             // directorNameTextBox
             // 
