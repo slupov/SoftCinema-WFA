@@ -7,7 +7,7 @@ using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class RegisterMovieForm : Form
+    public partial class RegisterMovieForm : ContentHolderForm
     {
         private byte[] movieImageBytes { get; set; }
         private AgeRestriction ageRestriction { get; set; }

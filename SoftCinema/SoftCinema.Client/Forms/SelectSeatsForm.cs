@@ -12,7 +12,7 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class SelectSeatsForm : Form
+    public partial class SelectSeatsForm : ContentHolderForm
     {
         private Screening _screening { get; set; }
         private int _seatCount { get; set; }

@@ -103,6 +103,18 @@
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\Utilities\FormsBuilder.cs" />
+    <Compile Include="Forms\ContentHolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContentHolderForm.Designer.cs">
+      <DependentUpon>ContentHolderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,9 @@
     <Compile Include="Utilities\CustomTools\AuditoriumSeatsSchema.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\HomeTeamButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\SeatButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -242,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\UserForms\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContentHolderForm.resx">
+      <DependentUpon>ContentHolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -299,7 +320,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Utilities\Images\popcorn.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoftCinema.Models\SoftCinema.Models.csproj">
       <Project>{5db49b1a-e9f7-46b5-b7a8-08b01a567286}</Project>

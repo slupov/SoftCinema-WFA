@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class MoviesForm : Form
+    public partial class MoviesForm : ContentHolderForm
     {
         private ICollection<Movie> Movies { get; set; }
         private ICollection<MoviePosterLink> MoviePosterLinks { get; set; }

@@ -5,7 +5,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : ContentHolderForm
     {
         public LoginForm()
         {
@@ -47,6 +47,9 @@ namespace SoftCinema.Client.Forms
             //Refresh main form's sidebar
             var mainForm = (SoftCinemaForm)((Button) sender).Parent.Parent.Parent;
             mainForm.RenderSideBar();
+            //Redirect to home page view
+            SoftCinemaForm.SetContentHolderForm(new HomeForm());
+
 
 
         }

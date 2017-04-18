@@ -13,7 +13,7 @@ using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class TicketForm : Form
+    public partial class TicketForm : ContentHolderForm
     {
         private string _townName { get; set; }
         private string _cinemaName { get; set; }

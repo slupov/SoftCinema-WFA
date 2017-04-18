@@ -4,7 +4,7 @@ using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : ContentHolderForm
     {
         private static RegisterForm instance;
 
