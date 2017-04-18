@@ -43,5 +43,13 @@ namespace SoftCinema.Client.Forms
         private void purchaseButton_Click(object sender, EventArgs e)
         {
         }
+
+     
+        private void back_Click(object sender, EventArgs e)
+        {
+            var second = ((Button)sender).Parent.Parent.Controls[1];
+            second.Show();
+            this.Hide();
+        }
     }
 }

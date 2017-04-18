@@ -142,6 +142,7 @@ namespace SoftCinema.Client.Forms
             this.studentsQuantityComboBox.Name = "studentsQuantityComboBox";
             this.studentsQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.studentsQuantityComboBox.TabIndex = 8;
+            this.studentsQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.studentsQuantityComboBox_SelectedIndexChanged);
             // 
             // seniorsQuantityComboBox
             // 
@@ -162,6 +163,7 @@ namespace SoftCinema.Client.Forms
             this.seniorsQuantityComboBox.Name = "seniorsQuantityComboBox";
             this.seniorsQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.seniorsQuantityComboBox.TabIndex = 9;
+            this.seniorsQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.seniorsQuantityComboBox_SelectedIndexChanged);
             // 
             // childrenQuantityComboBox
             // 
@@ -182,6 +184,7 @@ namespace SoftCinema.Client.Forms
             this.childrenQuantityComboBox.Name = "childrenQuantityComboBox";
             this.childrenQuantityComboBox.Size = new System.Drawing.Size(73, 21);
             this.childrenQuantityComboBox.TabIndex = 10;
+            this.childrenQuantityComboBox.SelectedIndexChanged += new System.EventHandler(this.childrenQuantityComboBox_SelectedIndexChanged);
             // 
             // purchase
             // 

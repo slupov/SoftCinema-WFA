@@ -10,7 +10,7 @@ namespace SoftCinema.Services
     public static class TicketService
     {
         //TODO: Additional checks and applying discount to ticket price
-        public static void AddTicket(Screening screening, decimal price, TicketType type, Seat seat)
+        public static void AddTicket(Screening screening, TicketType type, Seat seat)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -21,14 +21,8 @@ namespace SoftCinema.Services
 
                 User holder = AuthenticationManager.GetCurrentUser();
 
-                Ticket ticket = new Ticket()
-                {
-                    HolderId = holder.Id,
-                    Price = price,
-                    ScreeningId = screening.Id,
-                    SeatId = seat.Id,
-                    Type = type
-                };
+                Ticket ticket = new Ticket(holder.Id, screening.Id, seat.Id, type);
+               
 
                 context.Tickets.Add(ticket);
                 context.SaveChanges();

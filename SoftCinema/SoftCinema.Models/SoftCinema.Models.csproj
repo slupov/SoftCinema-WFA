@@ -53,6 +53,7 @@
     <Compile Include="AgeRestriction.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Cinema.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

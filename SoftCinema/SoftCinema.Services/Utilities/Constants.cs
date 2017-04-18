@@ -31,12 +31,8 @@ namespace SoftCinema.Services.Utilities
         public const string CinemaDeletePrompt = "Delete cinema?";
 
         public const int MaxTicketCount = 10;
-        public const double RegularTicketPrice = 9.00;
-        public const double ChildrenTicketPrice = 5.00;
-        public const double StudentsTicketPrice = 7.00;
-        public const double SeniorsrTicketPrice = 6.00;
 
-      
+
         public static class SuccessMessages
         {
             public const string SuccessfulLogout = "Successfully logged out!";

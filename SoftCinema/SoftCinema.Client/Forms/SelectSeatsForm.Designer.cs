@@ -28,33 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.freeSeatsLegendLabel = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.titleLabel = new System.Windows.Forms.Label();
             this.freeSeatsLabel = new System.Windows.Forms.Label();
             this.takenSeatsLabel = new System.Windows.Forms.Label();
-            this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.chosenSeatsLabel = new System.Windows.Forms.Label();
-            this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
+            this.back = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.purchaseButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
+            this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
+            this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
+            this.freeSeatsLegendLabel = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.SuspendLayout();
-            // 
-            // freeSeatsLegendLabel
-            // 
-            this.freeSeatsLegendLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(172)))), ((int)(((byte)(73)))));
-            this.freeSeatsLegendLabel.Enabled = false;
-            this.freeSeatsLegendLabel.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.freeSeatsLegendLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.freeSeatsLegendLabel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.freeSeatsLegendLabel.ForeColor = System.Drawing.Color.White;
-            this.freeSeatsLegendLabel.Location = new System.Drawing.Point(61, 64);
-            this.freeSeatsLegendLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.freeSeatsLegendLabel.MinimumSize = new System.Drawing.Size(15, 15);
-            this.freeSeatsLegendLabel.Name = "freeSeatsLegendLabel";
-            this.freeSeatsLegendLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.freeSeatsLegendLabel.Size = new System.Drawing.Size(20, 20);
-            this.freeSeatsLegendLabel.TabIndex = 0;
-            this.freeSeatsLegendLabel.Text = "seatButton1";
-            this.freeSeatsLegendLabel.UseVisualStyleBackColor = false;
             // 
             // titleLabel
             // 
@@ -84,24 +67,6 @@
             this.takenSeatsLabel.TabIndex = 8;
             this.takenSeatsLabel.Text = "Taken seats";
             // 
-            // takenSeatsLegendButton
-            // 
-            this.takenSeatsLegendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(116)))));
-            this.takenSeatsLegendButton.Enabled = false;
-            this.takenSeatsLegendButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.takenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.takenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.takenSeatsLegendButton.ForeColor = System.Drawing.Color.White;
-            this.takenSeatsLegendButton.Location = new System.Drawing.Point(171, 64);
-            this.takenSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.takenSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
-            this.takenSeatsLegendButton.Name = "takenSeatsLegendButton";
-            this.takenSeatsLegendButton.Padding = new System.Windows.Forms.Padding(3);
-            this.takenSeatsLegendButton.Size = new System.Drawing.Size(20, 20);
-            this.takenSeatsLegendButton.TabIndex = 7;
-            this.takenSeatsLegendButton.Text = "0";
-            this.takenSeatsLegendButton.UseVisualStyleBackColor = false;
-            // 
             // chosenSeatsLabel
             // 
             this.chosenSeatsLabel.AutoSize = true;
@@ -110,6 +75,42 @@
             this.chosenSeatsLabel.Size = new System.Drawing.Size(71, 13);
             this.chosenSeatsLabel.TabIndex = 10;
             this.chosenSeatsLabel.Text = "Chosen seats";
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.DimGray;
+            this.back.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.ForeColor = System.Drawing.Color.Black;
+            this.back.Location = new System.Drawing.Point(426, 56);
+            this.back.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.back.MinimumSize = new System.Drawing.Size(100, 30);
+            this.back.Name = "back";
+            this.back.Padding = new System.Windows.Forms.Padding(3);
+            this.back.Size = new System.Drawing.Size(154, 36);
+            this.back.TabIndex = 13;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // purchaseButton
+            // 
+            this.purchaseButton.BackColor = System.Drawing.Color.DimGray;
+            this.purchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.purchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.purchaseButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseButton.ForeColor = System.Drawing.Color.Black;
+            this.purchaseButton.Location = new System.Drawing.Point(601, 56);
+            this.purchaseButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.purchaseButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Padding = new System.Windows.Forms.Padding(3);
+            this.purchaseButton.Size = new System.Drawing.Size(154, 36);
+            this.purchaseButton.TabIndex = 12;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = false;
+            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click);
             // 
             // chosenSeatsLegendButton
             // 
@@ -123,35 +124,60 @@
             this.chosenSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.chosenSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
             this.chosenSeatsLegendButton.Name = "chosenSeatsLegendButton";
+            this.chosenSeatsLegendButton.Number = 0;
             this.chosenSeatsLegendButton.Padding = new System.Windows.Forms.Padding(3);
+            this.chosenSeatsLegendButton.Row = 0;
             this.chosenSeatsLegendButton.Size = new System.Drawing.Size(20, 20);
             this.chosenSeatsLegendButton.TabIndex = 9;
             this.chosenSeatsLegendButton.Text = "seatButton4";
             this.chosenSeatsLegendButton.UseVisualStyleBackColor = false;
             // 
-            // purchaseButton
+            // takenSeatsLegendButton
             // 
-            this.purchaseButton.BackColor = System.Drawing.Color.DimGray;
-            this.purchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.purchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.purchaseButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchaseButton.ForeColor = System.Drawing.Color.Black;
-            this.purchaseButton.Location = new System.Drawing.Point(539, 56);
-            this.purchaseButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.purchaseButton.MinimumSize = new System.Drawing.Size(100, 30);
-            this.purchaseButton.Name = "purchaseButton";
-            this.purchaseButton.Padding = new System.Windows.Forms.Padding(3);
-            this.purchaseButton.Size = new System.Drawing.Size(154, 36);
-            this.purchaseButton.TabIndex = 12;
-            this.purchaseButton.Text = "Purchase";
-            this.purchaseButton.UseVisualStyleBackColor = false;
-            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click);
+            this.takenSeatsLegendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(116)))));
+            this.takenSeatsLegendButton.Enabled = false;
+            this.takenSeatsLegendButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.takenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.takenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.takenSeatsLegendButton.ForeColor = System.Drawing.Color.White;
+            this.takenSeatsLegendButton.Location = new System.Drawing.Point(171, 64);
+            this.takenSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.takenSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
+            this.takenSeatsLegendButton.Name = "takenSeatsLegendButton";
+            this.takenSeatsLegendButton.Number = 0;
+            this.takenSeatsLegendButton.Padding = new System.Windows.Forms.Padding(3);
+            this.takenSeatsLegendButton.Row = 0;
+            this.takenSeatsLegendButton.Size = new System.Drawing.Size(20, 20);
+            this.takenSeatsLegendButton.TabIndex = 7;
+            this.takenSeatsLegendButton.Text = "0";
+            this.takenSeatsLegendButton.UseVisualStyleBackColor = false;
+            // 
+            // freeSeatsLegendLabel
+            // 
+            this.freeSeatsLegendLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(172)))), ((int)(((byte)(73)))));
+            this.freeSeatsLegendLabel.Enabled = false;
+            this.freeSeatsLegendLabel.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.freeSeatsLegendLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.freeSeatsLegendLabel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.freeSeatsLegendLabel.ForeColor = System.Drawing.Color.White;
+            this.freeSeatsLegendLabel.Location = new System.Drawing.Point(61, 64);
+            this.freeSeatsLegendLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.freeSeatsLegendLabel.MinimumSize = new System.Drawing.Size(15, 15);
+            this.freeSeatsLegendLabel.Name = "freeSeatsLegendLabel";
+            this.freeSeatsLegendLabel.Number = 0;
+            this.freeSeatsLegendLabel.Padding = new System.Windows.Forms.Padding(3);
+            this.freeSeatsLegendLabel.Row = 0;
+            this.freeSeatsLegendLabel.Size = new System.Drawing.Size(20, 20);
+            this.freeSeatsLegendLabel.TabIndex = 0;
+            this.freeSeatsLegendLabel.Text = "seatButton1";
+            this.freeSeatsLegendLabel.UseVisualStyleBackColor = false;
             // 
             // SelectSeatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.chosenSeatsLabel);
             this.Controls.Add(this.chosenSeatsLegendButton);
@@ -160,7 +186,7 @@
             this.Controls.Add(this.freeSeatsLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.freeSeatsLegendLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectSeatsForm";
             this.Text = "SelectSeatsForm";
             this.Load += new System.EventHandler(this.SelectSeatsForm_Load);
@@ -179,5 +205,6 @@
         private System.Windows.Forms.Label chosenSeatsLabel;
         private Utilities.CustomTools.SeatButton chosenSeatsLegendButton;
         private Utilities.CustomTools.TeamButton purchaseButton;
+        private Utilities.CustomTools.TeamButton back;
     }
 }
