@@ -16,8 +16,9 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
             {
                 new HomeTeamButton(),
                 new MoviesTeamButton(),
-                new AdminMenuTeamButton(),
-                new RegisterMovieTeamButton()
+                new RegisterMovieTeamButton(),
+                new AdminMenuTeamButton()
+                
             });
 
             this.VisualizeButtons();
