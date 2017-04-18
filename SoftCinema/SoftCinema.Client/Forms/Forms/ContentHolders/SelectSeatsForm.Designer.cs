@@ -32,6 +32,7 @@
             this.freeSeatsLabel = new System.Windows.Forms.Label();
             this.takenSeatsLabel = new System.Windows.Forms.Label();
             this.chosenSeatsLabel = new System.Windows.Forms.Label();
+            this.back = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.purchaseButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
@@ -74,6 +75,24 @@
             this.chosenSeatsLabel.Size = new System.Drawing.Size(71, 13);
             this.chosenSeatsLabel.TabIndex = 10;
             this.chosenSeatsLabel.Text = "Chosen seats";
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.DimGray;
+            this.back.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.ForeColor = System.Drawing.Color.Black;
+            this.back.Location = new System.Drawing.Point(426, 56);
+            this.back.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.back.MinimumSize = new System.Drawing.Size(100, 30);
+            this.back.Name = "back";
+            this.back.Padding = new System.Windows.Forms.Padding(3);
+            this.back.Size = new System.Drawing.Size(154, 36);
+            this.back.TabIndex = 13;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // purchaseButton
             // 
@@ -158,6 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.chosenSeatsLabel);
             this.Controls.Add(this.chosenSeatsLegendButton);
@@ -166,7 +186,7 @@
             this.Controls.Add(this.freeSeatsLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.freeSeatsLegendLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectSeatsForm";
             this.Text = "SelectSeatsForm";
             this.Load += new System.EventHandler(this.SelectSeatsForm_Load);
@@ -185,5 +205,6 @@
         private System.Windows.Forms.Label chosenSeatsLabel;
         private Utilities.CustomTools.SeatButton chosenSeatsLegendButton;
         private Utilities.CustomTools.TeamButton purchaseButton;
+        private Utilities.CustomTools.TeamButton back;
     }
 }

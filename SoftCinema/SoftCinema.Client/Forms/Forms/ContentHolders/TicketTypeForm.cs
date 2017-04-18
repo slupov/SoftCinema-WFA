@@ -27,7 +27,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void purchase_Click(object sender, EventArgs e)
         {
-           
+            var formsCount = ((Button) sender).Parent.Parent.Controls.Count;
 
             var ticketsQuantity = calculate_Quantity();
             if (areTicketsMoreThanMaxCount(ticketsQuantity) == false)
@@ -40,9 +40,22 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 else
                 {
                     SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity);
-                   
-                    selectSeatsForm.ShowDialog(this);
+                    selectSeatsForm.TopLevel = false;
+                    selectSeatsForm.AutoScroll = true;
+                    if (formsCount == 2)
+                    {
+                        ((Button) sender).Parent.Parent.Controls.Add(selectSeatsForm);
+                        selectSeatsForm.Show();
+                        this.Hide();
                     }
+                    else
+                    {
+                        ((Button) sender).Parent.Parent.Controls.RemoveAt(2);
+                        ((Button) sender).Parent.Parent.Controls.Add(selectSeatsForm);
+                        selectSeatsForm.Show();
+                        this.Hide();
+                    }
+                }
             }
             else
             {
@@ -84,9 +97,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void back_Click(object sender, EventArgs e)
         {
-            var i = ((Button)sender).Parent.Parent.Controls.IndexOf(this);
-            var prev = ((Button)sender).Parent.Parent.Controls[i - 1];
-            prev.Show();
+            var first = ((Button) sender).Parent.Parent.Controls[0];
+            first.Show();
+            this.Hide();
         }
 
         private void childrenQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)

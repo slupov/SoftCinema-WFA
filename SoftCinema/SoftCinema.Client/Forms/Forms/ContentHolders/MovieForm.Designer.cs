@@ -52,7 +52,6 @@
             this.castBox = new System.Windows.Forms.TextBox();
             this.synopsisBox = new System.Windows.Forms.TextBox();
             this.ageRestrictionLabel = new System.Windows.Forms.Label();
-            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +181,6 @@
             this.hourBox.Name = "hourBox";
             this.hourBox.Size = new System.Drawing.Size(121, 24);
             this.hourBox.TabIndex = 13;
-            this.hourBox.SelectedIndexChanged += new System.EventHandler(this.hourBox_SelectedIndexChanged_1);
             // 
             // townBox
             // 
@@ -298,24 +296,12 @@
             this.ageRestrictionLabel.Text = "Age Restriction:";
             this.ageRestrictionLabel.Click += new System.EventHandler(this.categoriesLabel_Click);
             // 
-            // back
-            // 
-            this.back.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.back.Location = new System.Drawing.Point(593, 26);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(150, 56);
-            this.back.TabIndex = 27;
-            this.back.Text = "Back";
-            this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.back);
             this.Controls.Add(this.synopsisBox);
             this.Controls.Add(this.castBox);
             this.Controls.Add(this.ageRestrictionBox);
@@ -376,6 +362,6 @@
         private System.Windows.Forms.TextBox castBox;
         private System.Windows.Forms.TextBox synopsisBox;
         private System.Windows.Forms.Label ageRestrictionLabel;
-        private System.Windows.Forms.Button back;
+        
     }
 }
