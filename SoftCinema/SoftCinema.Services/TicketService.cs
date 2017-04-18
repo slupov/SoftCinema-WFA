@@ -89,5 +89,27 @@ namespace SoftCinema.Services
                         t => t.HolderId == holderId && t.SeatId == seatId && t.ScreeningId == screeningId);
             }
         }
+
+        public static void UpdateTicket(int ticketId, int screeningId, int seatId,TicketType type)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Ticket ticket = context.Tickets.Find(ticketId);
+                ticket.ScreeningId = screeningId;
+                ticket.SeatId = seatId;
+                ticket.Type = type;
+                context.SaveChanges();
+            }
+        }
+
+        public static void RemoveTicket(int ticketId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Ticket ticket = context.Tickets.Find(ticketId);
+                context.Tickets.Remove(ticket);
+                context.SaveChanges();
+            }
+        }
     }
 }

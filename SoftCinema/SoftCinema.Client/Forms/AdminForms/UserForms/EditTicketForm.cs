@@ -141,9 +141,79 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
             
             this.seatComboBox.Items.Clear();
-            this.typeComboBox.Items.AddRange(TicketTypeProcessor.GetTicketTypes().ToArray());
+            this.seatComboBox.Items.Add(ticket.Seat.Number.ToString());
+            this.seatComboBox.Items.AddRange(SeatService.GetFreeSeats(ticket.ScreeningId,ticket.Screening.AuditoriumId).Select(n => n.ToString()).ToArray());
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
+                ticketsForm.TopLevel = false;
+                ticketsForm.AutoScroll = true;
+                this.Hide();
+                ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
+                ticketsForm.Show();
+            }
+          
+        }
+
+        private void EditTicketButton_Click(object sender, EventArgs e)
+        {
+
+            
+            try
+            {
+                int ticketId = ticket.Id;
+                Screening screening = ScreeningService.GetScreening(townComboBox.Text, cinemaComboBox.Text,
+                    movieComboBox.Text,
+                    ScreeningService.GetDateTimeFromDateAndTime(dateComboBox.Text, timeComboBox.Text));
+                int screeningId = ScreeningService.GetScreening(townComboBox.Text, cinemaComboBox.Text, movieComboBox.Text,
+                    ScreeningService.GetDateTimeFromDateAndTime(dateComboBox.Text, timeComboBox.Text)).Id;
+                int auditoriumId = screening.AuditoriumId;
+                int seatId = SeatService.GetSeat(auditoriumId, byte.Parse(seatComboBox.Text)).Id;
+                TicketType ticketType = (TicketType)Enum.Parse(typeof(TicketType), typeComboBox.Text);
+                TicketService.UpdateTicket(ticketId,screeningId,seatId,ticketType);
+                MessageBox.Show(Constants.SuccessMessages.TicketUpdatedSuccessfully);
+                EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
+                ticketsForm.TopLevel = false;
+                ticketsForm.AutoScroll = true;
+                this.Hide();
+                ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
+                ticketsForm.Show();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(Constants.ErrorMessages.TicketUpdateErrorMessage);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(Constants.DeleteTicketMessage, Constants.TicketDeletePrompt, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    TicketService.RemoveTicket(ticket.Id);
+                    MessageBox.Show(Constants.SuccessMessages.TicketDeletedSuccessfully);
+                    EditUserTicketsForm userTickets = new EditUserTicketsForm(user);
+                    userTickets.TopLevel = false;
+                    userTickets.AutoScroll = true;
+                    this.Hide();
+                    ((Button)sender).Parent.Parent.Controls.Add(userTickets);
+                    userTickets.Show();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(Constants.ErrorMessages.TicketDeleteMessage);
+                }
+            }
+            
+        }
     }
 }

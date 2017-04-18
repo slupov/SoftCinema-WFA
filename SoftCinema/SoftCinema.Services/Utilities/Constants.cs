@@ -29,6 +29,8 @@ namespace SoftCinema.Services.Utilities
         public const string GoBackPrompt = "Go back?";
         public const string CategoryDeletePrompt = "Delete category?";
         public const string CinemaDeletePrompt = "Delete cinema?";
+        public const string DeleteTicketMessage= "Are you sure you want to delete this ticket?";
+        public const string TicketDeletePrompt = "Delete ticket?";
 
         /// <summary>
         /// Cinema {CinemaName} {CinemaTown}: {MovieName} {ScreeningDateTime}
@@ -50,6 +52,8 @@ namespace SoftCinema.Services.Utilities
             public const string CategoryDeletesSuccessfully = "Category deleted successfully!";
             public const string CinemaUpdatedSuccessfully = "Cinema updated successfully!";
             public const string CinemaDeletedSuccessfully = "Cinema deleted successfully!";
+            public const string TicketUpdatedSuccessfully = "Ticket updated successfully!";
+            public const string TicketDeletedSuccessfully = "Ticket deleted successfully!";
         }
 
         public static class WarningMessages
@@ -95,6 +99,8 @@ namespace SoftCinema.Services.Utilities
             public const string CinemaUpdateErrorMessage = "Cinema update failed!";
             public const string CinemaDeleteMessage = "Cinema delete failed!";
             public const string LoginFirst = "You should log in first!";
+            public const string TicketUpdateErrorMessage = "Ticket update failed!";
+            public const string TicketDeleteMessage = "Ticket delete failed!";
         }
 
         public static class ImportSuccessMessages
@@ -117,5 +123,8 @@ namespace SoftCinema.Services.Utilities
             public const string SeatAddedSuccess =
                 "Seat number {0} successfuly added to auditorium number {1} in cinema {2} - {3}!";
         }
+
+
+        
     }
 }

@@ -26,7 +26,7 @@ namespace SoftCinema.Services
                     Synopsis = synopsis,
                     Image = new Image() {Content = image}
                 };
-                context.Movies.AddOrUpdate(m => m.Name, movie);
+                context.Movies.Add( movie);
                 context.SaveChanges();
             }
         }

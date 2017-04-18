@@ -109,15 +109,15 @@
             // 
             // EditTicketButton
             // 
-            this.EditTicketButton.Enabled = false;
             this.EditTicketButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditTicketButton.Location = new System.Drawing.Point(402, 410);
+            this.EditTicketButton.Location = new System.Drawing.Point(402, 429);
             this.EditTicketButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditTicketButton.Name = "EditTicketButton";
             this.EditTicketButton.Size = new System.Drawing.Size(171, 68);
             this.EditTicketButton.TabIndex = 23;
             this.EditTicketButton.Text = "Save Changes";
             this.EditTicketButton.UseVisualStyleBackColor = true;
+            this.EditTicketButton.Click += new System.EventHandler(this.EditTicketButton_Click);
             // 
             // dateComboBox
             // 
@@ -153,6 +153,7 @@
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(160, 32);
             this.timeComboBox.TabIndex = 19;
+            this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
             // 
             // timeLabel
             // 
@@ -193,27 +194,27 @@
             // 
             // button1
             // 
-            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(222, 416);
+            this.button1.Location = new System.Drawing.Point(202, 432);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 56);
             this.button1.TabIndex = 27;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(600, 416);
+            this.button2.Location = new System.Drawing.Point(618, 436);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 49);
             this.button2.TabIndex = 28;
             this.button2.Text = "Delete Ticket";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SeatLabel
             // 
@@ -260,6 +261,7 @@
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(160, 32);
             this.typeComboBox.TabIndex = 32;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
             // 
             // EditTicketForm
             // 
@@ -267,17 +269,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1067, 510);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.EditTicketButton);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.seatComboBox);
             this.Controls.Add(this.SeatLabel);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.movieLabel);
             this.Controls.Add(this.movieComboBox);
             this.Controls.Add(this.townComboBox);
             this.Controls.Add(this.townLabel);
-            this.Controls.Add(this.EditTicketButton);
             this.Controls.Add(this.dateComboBox);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.timeComboBox);

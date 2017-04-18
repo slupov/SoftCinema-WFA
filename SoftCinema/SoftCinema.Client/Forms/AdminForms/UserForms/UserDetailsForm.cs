@@ -105,14 +105,15 @@ namespace SoftCinema.Client.Forms
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
-            string oldUsername = user.Username;
-            string newUsername = UsernameTextBox.Text;
-            string email = EmailTextBox.Text;
-            string phoneNumber = PhoneNumberTextBox.Text;
-            Role role =(Role)Enum.Parse(typeof(Role), RoleComboBox.Text);
-            bool isDeleted = NoRadioButton.Checked;
+            
             try
             {
+                string oldUsername = user.Username;
+                string newUsername = UsernameTextBox.Text;
+                string email = EmailTextBox.Text;
+                string phoneNumber = PhoneNumberTextBox.Text;
+                Role role = (Role)Enum.Parse(typeof(Role), RoleComboBox.Text);
+                bool isDeleted = NoRadioButton.Checked;
                 UserService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role,isDeleted);
                 MessageBox.Show(Constants.SuccessMessages.UserUpdatedSuccessfully);
                 UsersForm usersForm = new UsersForm();
