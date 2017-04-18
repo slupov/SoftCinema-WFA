@@ -22,7 +22,6 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         public ShowScreeningReservationsForm(Screening screening)
         {
             this._screening = screening;
-
             RenderReservationGroupHolder();
 
             InitializeComponent();
@@ -71,7 +70,10 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         private void searchByUsernameTextBox_TextChanged(object sender, EventArgs e)
         {
             var username = this.searchByUsernameTextBox.Text;
-            var tickets = TicketService.GetTickets(this._screening).Where(t => t.Holder.Username == username).ToList();
+            var tickets =
+                TicketService.GetTickets(this._screening)
+                    .Where(t => t.Holder.Username == username && t.isPaid == false)
+                    .ToList();
 
             PopulateReservationGroupHolder(tickets);
         }
