@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -56,16 +57,36 @@ namespace SoftCinema.Client.Forms.ContentHolders
             float? rating = (float?) this.ratingUpDown.Value;
             var year = (int) this.yearUpDown.Value;
             var image = this.movieImageBytes;
+            
 
             //TODO: CHECK IF IMAGE ALREADY EXISTS
             //TODO: IF NOT -> UPLOAD IT FIRST (code)
-            MovieService.AddMovie(name, rating, 150, directorName, year, AgeRestriction.A, null, null, image);
+            MovieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
         }
 
         private void ageRestrictionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-//            this.ageRestrictionComboBox.Items.AddRange(MovieService.GetAgeRestrictions());
+            switch (this.ageRestrictionComboBox.SelectedItem)
+            {
+                case"A":
+                    this.ageRestriction = AgeRestriction.A;
+                    break;
+                case "B":
+                    this.ageRestriction = AgeRestriction.B;
+                    break;
+                case "C":
+                    this.ageRestriction = AgeRestriction.C;
+                    break;
+                case "D":
+                    this.ageRestriction = AgeRestriction.D;
+                    break;
+                case "X":
+                    this.ageRestriction = AgeRestriction.X;
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         private void pictureBoxPhoto_Click(object sender, EventArgs e)
@@ -80,7 +101,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void RegisterMovieForm_Load(object sender, EventArgs e)
         {
-
+            this.ageRestrictionComboBox.Items.AddRange(AgeRestrictionsProcessor.GetAgeRestrictions());
         }
 
         private void yearUpDown_ValueChanged(object sender, EventArgs e)
