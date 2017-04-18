@@ -71,7 +71,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void ageRestrictionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (this.ageRestrictionComboBox.SelectedItem)
+            switch (this.ageRestrictionComboBox.SelectedItem.ToString())
             {
                 case"A":
                     this.ageRestriction = AgeRestriction.A;
