@@ -51,6 +51,7 @@ namespace SoftCinema.Services.Utilities
             public const string CategoryDeletesSuccessfully = "Category deleted successfully!";
             public const string CinemaUpdatedSuccessfully = "Cinema updated successfully!";
             public const string CinemaDeletedSuccessfully = "Cinema deleted successfully!";
+            public const string MovieRegisteredSuccessfully = "Movie registered successfully!";
         }
 
         public static class WarningMessages

@@ -62,6 +62,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
             //TODO: CHECK IF IMAGE ALREADY EXISTS
             //TODO: IF NOT -> UPLOAD IT FIRST (code)
             MovieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
+            MessageBox.Show(Constants.SuccessMessages.MovieRegisteredSuccessfully);
+            var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
+            mainForm.RenderSideBar();
+            //Redirect to home page view
+            SoftCinemaForm.SetContentHolderForm(new HomeForm());
         }
 
         private void ageRestrictionComboBox_SelectedIndexChanged(object sender, EventArgs e)

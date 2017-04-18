@@ -92,10 +92,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static AgeRestriction[] GetAgeRestrictions()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         public static Movie GetMovie(string movieName)
         {
