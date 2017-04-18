@@ -5,6 +5,35 @@
 
     public class Ticket
     {
+        public Ticket()
+        {
+            
+        }
+        public Ticket(int holderId, int screeningId, int seatId, TicketType type)
+        {
+            HolderId = holderId;
+            ScreeningId = screeningId;
+            SeatId = seatId;
+            Type = type;
+            switch (type)
+            {
+                case TicketType.Children:
+                    Price = Constants.Constants.ChildrenTicketPrice;
+                    break;
+                case TicketType.Students:
+                    Price = Constants.Constants.StudentsTicketPrice;
+                    break;
+                case TicketType.Regular:
+                    Price = Constants.Constants.RegularTicketPrice;
+                    break;
+                case TicketType.Seniors:
+                    Price = Constants.Constants.SeniorsrTicketPrice;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private decimal price;
 
         [Key]
@@ -26,33 +55,8 @@
         public virtual Seat Seat { get; set; }
 
         [Required]
-        public decimal Price
-        {
-            get
-            {
-                return this.price;
-            }
-            set
-            {
-                switch (this.Type)
-                {
-                    case TicketType.Children:
-                        this.price = 5.00M;
-                        break;
-                    case TicketType.Students:
-                        this.price = 6.00M;
-                        break;
-                    case TicketType.Regular:
-                        this.price = 9.00M;
-                        break;
-                    case TicketType.Seniors:
-                        this.price = 7.00M;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
+        public decimal Price { get; set; }
+    
         [Required]
         public TicketType Type { get; set; }
     }
