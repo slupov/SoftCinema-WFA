@@ -31,7 +31,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             foreach (var screening in _screenings)
             {
                 
-                var row = new ScreeningRow(screening,id++);
+                var row = new ScreeningRow(screening,++id);
                 row.Location = rowCoordinates;
                 this.Controls.Add(row);
 
