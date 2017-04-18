@@ -70,7 +70,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
         private void TicketsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-           Ticket ticket = TicketService.GetTicket();
+           
         }
     }
 }
