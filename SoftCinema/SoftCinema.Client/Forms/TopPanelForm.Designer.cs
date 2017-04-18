@@ -34,24 +34,33 @@
             // 
             // LogoutButton
             // 
-            LogoutButton.Location = new System.Drawing.Point(628, 40);
+            LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            LogoutButton.FlatAppearance.BorderSize = 0;
+            LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LogoutButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LogoutButton.ForeColor = System.Drawing.SystemColors.Control;
+            LogoutButton.Location = new System.Drawing.Point(667, 27);
+            LogoutButton.Margin = new System.Windows.Forms.Padding(0);
             LogoutButton.Name = "LogoutButton";
-            LogoutButton.Size = new System.Drawing.Size(75, 23);
+            LogoutButton.Size = new System.Drawing.Size(90, 34);
             LogoutButton.TabIndex = 6;
             LogoutButton.Text = "Logout";
-            LogoutButton.UseVisualStyleBackColor = true;
+            LogoutButton.UseVisualStyleBackColor = false;
             LogoutButton.Visible = false;
             LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // GreetingLabel
             // 
             GreetingLabel.AutoSize = true;
-            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            GreetingLabel.Location = new System.Drawing.Point(639, 22);
+            GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            GreetingLabel.Location = new System.Drawing.Point(494, 41);
+            GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             GreetingLabel.Name = "GreetingLabel";
-            GreetingLabel.Size = new System.Drawing.Size(51, 16);
+            GreetingLabel.Size = new System.Drawing.Size(57, 20);
             GreetingLabel.TabIndex = 5;
             GreetingLabel.Text = "label1";
+            GreetingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             GreetingLabel.Visible = false;
             // 
             // TopPanelForm
