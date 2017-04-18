@@ -26,6 +26,8 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 return;
             }
 
+            this.Controls.Clear();
+
             var rowCoordinates = this.Location;
             int id = 0;
             foreach (var screening in _screenings)

@@ -87,12 +87,9 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             {
                 return;
             }
-
             this._screeningsHolder =
                 new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60),
                     this._screenings);
-
-            
 
             this.Controls.Add(this._screeningsHolder);
         }
