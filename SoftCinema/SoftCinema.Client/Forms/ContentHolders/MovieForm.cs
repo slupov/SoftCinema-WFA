@@ -14,7 +14,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private string _movieName { get; set; }
         //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
-        public static Screening Screening;
+       
        
 
         public Movie _movie { get; set; }

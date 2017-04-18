@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
@@ -19,10 +21,24 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
             return false;
         }
-
+          private bool goodForChildren()
+          {
+              var restr = TicketForm.Screening.Movie.AgeRestriction;
+              if (restr != AgeRestriction.D && restr != AgeRestriction.X)
+                  return true;
+              return false;
+          }
         public TicketTypeForm()
         {
             InitializeComponent();
+            this.notGood.Hide();
+            if (!this.goodForChildren())
+            {
+                this.childrenQuantityComboBox.Enabled = false;
+                this.notGood.Text = "This movie is not appropriate for children!";
+                this.notGood.ForeColor=Color.Red;
+                this.notGood.Show();
+            }
         }
 
         private void purchase_Click(object sender, EventArgs e)

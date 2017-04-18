@@ -43,6 +43,7 @@
             this.back = new System.Windows.Forms.Button();
             this.priceLabel = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.Label();
+            this.notGood = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // regularLabel
@@ -248,12 +249,22 @@
             this.price.Size = new System.Drawing.Size(0, 30);
             this.price.TabIndex = 16;
             // 
+            // notGood
+            // 
+            this.notGood.AutoSize = true;
+            this.notGood.Location = new System.Drawing.Point(565, 183);
+            this.notGood.Name = "notGood";
+            this.notGood.Size = new System.Drawing.Size(35, 13);
+            this.notGood.TabIndex = 17;
+            this.notGood.Text = "label2";
+            // 
             // TicketTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.notGood);
             this.Controls.Add(this.price);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.back);
@@ -269,7 +280,6 @@
             this.Controls.Add(this.seniorsLabel);
             this.Controls.Add(this.childrenLabel);
             this.Controls.Add(this.regularLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketTypeForm";
             this.Load += new System.EventHandler(this.TicketTypeForm_Load);
             this.ResumeLayout(false);
@@ -294,5 +304,6 @@
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label price;
+        private System.Windows.Forms.Label notGood;
     }
 }
