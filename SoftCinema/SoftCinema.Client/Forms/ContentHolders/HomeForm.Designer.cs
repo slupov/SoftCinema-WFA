@@ -36,19 +36,20 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(55, 27);
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
+            this.titleLabel.Location = new System.Drawing.Point(34, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(86, 31);
+            this.titleLabel.Size = new System.Drawing.Size(165, 58);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Home";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(61, 94);
+            this.pictureBox1.ImageLocation = "../../Utilities/Images/popcorn.jpg";
+            this.pictureBox1.Location = new System.Drawing.Point(92, 70);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(507, 247);
-            this.pictureBox1.ImageLocation = @"../../Utilities/Images/popcorn.jpg"; 
+            this.pictureBox1.Size = new System.Drawing.Size(605, 318);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
