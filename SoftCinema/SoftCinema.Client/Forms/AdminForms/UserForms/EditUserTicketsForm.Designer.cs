@@ -38,6 +38,8 @@
             this.Auditorium = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Screening = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScreeningId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TicketsList)).BeginInit();
             this.SuspendLayout();
@@ -71,14 +73,16 @@
             this.Cinema,
             this.Auditorium,
             this.Screening,
-            this.Seat});
+            this.Seat,
+            this.SeatId,
+            this.ScreeningId});
             this.TicketsList.Location = new System.Drawing.Point(11, 109);
             this.TicketsList.Name = "TicketsList";
             this.TicketsList.RowTemplate.Height = 24;
             this.TicketsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TicketsList.Size = new System.Drawing.Size(939, 320);
             this.TicketsList.TabIndex = 7;
-            
+            this.TicketsList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TicketsList_CellContentClick);
             // 
             // Image
             // 
@@ -126,6 +130,20 @@
             this.Seat.ReadOnly = true;
             this.Seat.Width = 66;
             // 
+            // SeatId
+            // 
+            this.SeatId.HeaderText = "SeatId";
+            this.SeatId.Name = "SeatId";
+            this.SeatId.ReadOnly = true;
+            this.SeatId.Visible = false;
+            // 
+            // ScreeningId
+            // 
+            this.ScreeningId.HeaderText = "ScreeningId";
+            this.ScreeningId.Name = "ScreeningId";
+            this.ScreeningId.ReadOnly = true;
+            this.ScreeningId.Visible = false;
+            // 
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -161,12 +179,14 @@
         private System.Windows.Forms.Label EditUserTicketsLabel;
         private System.Windows.Forms.ImageList MovieImages;
         private System.Windows.Forms.DataGridView TicketsList;
+        private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.DataGridViewTextBoxColumn Movie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cinema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Auditorium;
         private System.Windows.Forms.DataGridViewTextBoxColumn Screening;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seat;
-        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScreeningId;
     }
 }

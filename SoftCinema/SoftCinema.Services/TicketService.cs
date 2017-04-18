@@ -10,6 +10,17 @@ namespace SoftCinema.Services
 {
     public static class TicketService
     {
+        public static void AddTicketToCurrentUser(Screening screening,TicketType type, Seat seat)
+        {
+            if (AuthenticationManager.IsAuthenticated())
+            {
+                throw new InvalidOperationException(Services.Utilities.Constants.ErrorMessages.LoginFirst);
+            }
+            int screeningId = screening.Id;
+            int seatId = seat.Id;
+            int userId = AuthenticationManager.GetCurrentUser().Id;
+            AddTicket(screeningId,type,seatId,userId);
+        }
       
         public static void AddTicket(int screeningId, TicketType type, int seatId,int holderId)
         {
@@ -62,11 +73,29 @@ namespace SoftCinema.Services
             }
         }
 
+
         public static List<Ticket> GetTickets(Screening screening)
         {
             using (var db = new SoftCinemaContext())
             {
                 return db.Tickets.Where(t => t.ScreeningId == screening.Id).ToList();
+			}
+		}
+		
+        public static Ticket GetTicket(int holderId, int seatId, int screeningId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return
+                    context.Tickets
+                    .Include(t => t.Screening.Auditorium)
+                    .Include(t => t.Screening.Auditorium.Cinema)
+                    .Include(t => t.Screening.Auditorium.Cinema.Town)
+                    .Include(t => t.Seat)
+                    .Include(t => t.Screening.Movie.Image)
+                    .Include(t => t.Screening.Movie)
+                    .FirstOrDefault(
+                        t => t.HolderId == holderId && t.SeatId == seatId && t.ScreeningId == screeningId);
             }
         }
     }
