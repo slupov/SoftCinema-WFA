@@ -13,7 +13,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms
 {
-    public partial class TicketTypeForm : Form
+    public partial class TicketTypeForm : ContentHolderForm
     {
         private decimal _regularPrice = 0M;
         private decimal _childrenPrice = 0M;

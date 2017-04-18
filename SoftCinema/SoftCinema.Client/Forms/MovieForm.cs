@@ -6,7 +6,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Forms;
-    public partial class MovieForm : Form
+    public partial class MovieForm : ContentHolderForm
     {
         private string _townName { get; set; }
         private string _cinemaName { get; set; }

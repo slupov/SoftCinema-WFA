@@ -20,9 +20,12 @@ namespace SoftCinema.Client.Forms
 
             MessageBox.Show(Constants.SuccessMessages.SuccessfulLogout);
 
+            //Update sidebar
             var mainForm = (SoftCinemaForm) ((Button) sender).Parent.Parent.Parent;
-
             mainForm.RenderSideBar();
+
+            //Redirect to home page view
+            SoftCinemaForm.SetContentHolderForm(new HomeForm());
         }
 
         //Utilities
