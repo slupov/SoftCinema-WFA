@@ -28,13 +28,14 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
         private void EditUserTicketsForm_Load(object sender, EventArgs e)
         {
             var tickets = TicketService.GetTicketsInfo(user.Username);
-            var imageList = new ImageList();
-            int curr = 1;
+            TicketsList.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            
             foreach (var ticket in tickets)
             {
 
 
-                imageList.Images.Add(curr.ToString(),ImageProcessor.byteArrayToImage(ticket.Screening.Movie.Image.Content));
+                System.Drawing.Image image = ImageProcessor.byteArrayToImage(ticket.Screening.Movie.Image.Content);
+                System.Drawing.Image resizedImage = (System.Drawing.Image) (new Bitmap(image, new Size(100,120)));
                 string cinema = ticket.Screening.Auditorium.Cinema.Name + " " +
                                 ticket.Screening.Auditorium.Cinema.Town.Name;
                 string auditorium = ticket.Screening.Auditorium.Number.ToString();
@@ -43,9 +44,8 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 string seat = ticket.Seat.Number.ToString();
                 string[] items = { movie,cinema,auditorium,start,seat};
                 ListViewItem item = new ListViewItem(items);
-                item.ImageKey = curr.ToString();
-                curr++;
-                this.TicketsList.Items.Add(item);
+                
+                this.TicketsList.Rows.Add(resizedImage,movie,cinema,auditorium,start,seat);
 
 
 
@@ -53,8 +53,24 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
             }
             
-            TicketsList.LargeImageList = imageList;
+           
          
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            UserDetailsForm userForm = new UserDetailsForm(user);
+            userForm.TopLevel = false;
+            userForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(userForm);
+            userForm.Show();
+        }
+
+        private void TicketsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+           Ticket ticket = TicketService.GetTicket();
         }
     }
 }
