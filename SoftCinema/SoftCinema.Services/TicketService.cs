@@ -4,26 +4,43 @@ using System.Data.Entity;
 using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
+using SoftCinema.Models.Constants;
 
 namespace SoftCinema.Services
 {
     public static class TicketService
     {
-        //TODO: Additional checks and applying discount to ticket price
-        public static void AddTicket(Screening screening, TicketType type, Seat seat)
+      
+        public static void AddTicket(int screeningId, TicketType type, int seatId,int holderId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                if (!AuthenticationManager.IsAuthenticated())
+                decimal price = 0;
+                switch (type)
                 {
-                    throw new InvalidOperationException("You must log in first!");
+                    case TicketType.Children:
+                        price = Constants.ChildrenTicketPrice;
+                        break;
+                    case TicketType.Students:
+                        price = Constants.StudentsTicketPrice;
+                        break;
+                    case TicketType.Regular:
+                        price = Constants.RegularTicketPrice;
+                        break;
+                    case TicketType.Seniors:
+                        price = Constants.SeniorsrTicketPrice;
+                        break;
+                    default:
+                        break;
                 }
-
-                User holder = AuthenticationManager.GetCurrentUser();
-
-                Ticket ticket = new Ticket(holder.Id, screening.Id, seat.Id, type);
-               
-
+                Ticket ticket = new Ticket()
+                {
+                    HolderId = holderId,
+                    ScreeningId = screeningId,
+                    SeatId = seatId,
+                    Type = type,
+                    Price = price
+                };
                 context.Tickets.Add(ticket);
                 context.SaveChanges();
             }

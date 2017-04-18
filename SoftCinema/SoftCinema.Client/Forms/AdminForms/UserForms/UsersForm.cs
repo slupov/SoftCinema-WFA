@@ -61,6 +61,8 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         }
 
+        
+
         private void UserList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (UserList.SelectedItem == null)
