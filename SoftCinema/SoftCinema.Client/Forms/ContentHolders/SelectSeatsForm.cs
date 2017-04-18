@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Models;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class SelectSeatsForm : ContentHolderForm
     {

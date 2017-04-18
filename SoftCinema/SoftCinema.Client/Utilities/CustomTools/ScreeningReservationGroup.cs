@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace SoftCinema.Models
+namespace SoftCinema.Client.Utilities.CustomTools
 {
-    public enum TicketType
+    class ScreeningReservationGroup : Panel
     {
-        Children,
-        Students,
-        Regular,
-        Seniors
+
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Client.Forms.ContentHolders;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -48,7 +49,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this._pictureBox.Image = ImageService.byteArrayToImage(currentMovie.Image.Content);
             this._pictureBox.Image = ImageService.ScaleImage(this._pictureBox.Image, 200,310);
 
-            this._pictureBox.Size = new Size(200, 270);
+            this._pictureBox.Size = new Size(this._pictureBox.Image.Size.Width, this._pictureBox.Image.Size.Height);
             this._showDetailsButton.Location = new Point(this._pictureBox.Location.X, this._pictureBox.Location.Y + 10);
             setDetailsButtonClickEvent();
 

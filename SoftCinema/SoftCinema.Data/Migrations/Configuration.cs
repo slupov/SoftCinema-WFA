@@ -19,6 +19,7 @@ namespace SoftCinema.Data.Migrations
         protected override void Seed(SoftCinema.Data.SoftCinemaContext context)
         {
             SeedAdmin(context);
+            SeedEmployees(context);
         }
 
         private void SeedAdmin(SoftCinemaContext context)
@@ -31,8 +32,38 @@ namespace SoftCinema.Data.Migrations
                 Role = Role.Admin,
                 PhoneNumber = "0878000000"
             };
-            
-            context.Users.AddOrUpdate(u => u.Username,admin);
+
+            context.Users.AddOrUpdate(u => u.Username, admin);
+            context.SaveChanges();
+        }
+
+        private void SeedEmployees(SoftCinemaContext context)
+        {
+            User employee1 = new User()
+            {
+                Username = "employee1",
+                PasswordHash = PasswordHasher.ComputeHash("123", PasswordHasher.Supported_HA.SHA512, null),
+                Email = "peshka@softcinema.bg",
+                Role = Role.Employee
+            };
+
+            User employee2 = new User()
+            {
+                Username = "employee2",
+                PasswordHash = PasswordHasher.ComputeHash("123", PasswordHasher.Supported_HA.SHA512, null),
+                Email = "pesho@softcinema.bg",
+                Role = Role.Employee
+            };
+
+            User employee3 = new User()
+            {
+                Username = "employee3",
+                PasswordHash = PasswordHasher.ComputeHash("123", PasswordHasher.Supported_HA.SHA512, null),
+                Email = "vasilka@softcinema.bg",
+                Role = Role.Employee
+            };
+
+            context.Users.AddOrUpdate(u => u.Username, employee1, employee2, employee3);
             context.SaveChanges();
         }
     }

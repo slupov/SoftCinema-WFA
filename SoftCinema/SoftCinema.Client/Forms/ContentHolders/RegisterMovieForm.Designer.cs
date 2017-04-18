@@ -1,4 +1,4 @@
-﻿namespace SoftCinema.Client.Forms
+﻿namespace SoftCinema.Client.Forms.ContentHolders
 {
     partial class RegisterMovieForm
     {
@@ -80,6 +80,7 @@
             this.ratingUpDown.Name = "ratingUpDown";
             this.ratingUpDown.Size = new System.Drawing.Size(120, 24);
             this.ratingUpDown.TabIndex = 3;
+            this.ratingUpDown.ValueChanged += new System.EventHandler(this.ratingUpDown_ValueChanged);
             // 
             // ratingLabel
             // 
@@ -110,6 +111,7 @@
             this.yearUpDown.Name = "yearUpDown";
             this.yearUpDown.Size = new System.Drawing.Size(120, 24);
             this.yearUpDown.TabIndex = 5;
+            this.yearUpDown.ValueChanged += new System.EventHandler(this.yearUpDown_ValueChanged);
             // 
             // directorNameTextBox
             // 
@@ -167,7 +169,8 @@
             // 
             // pictureBoxPhoto
             // 
-            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPhoto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(502, 77);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 258);
@@ -241,9 +244,9 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterMovieForm";
             this.Text = "RegisterMovieForm";
+            this.Load += new System.EventHandler(this.RegisterMovieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ratingUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();

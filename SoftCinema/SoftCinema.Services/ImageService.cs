@@ -54,10 +54,7 @@ namespace SoftCinema.Services
             var newHeight = (int)(image.Height * ratio);
 
             var newImage = new System.Drawing.Bitmap(newWidth, newHeight);
-
-            using (var graphics = System.Drawing.Graphics.FromImage(newImage))
-                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
-
+            System.Drawing.Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
             return newImage;
         }
     }

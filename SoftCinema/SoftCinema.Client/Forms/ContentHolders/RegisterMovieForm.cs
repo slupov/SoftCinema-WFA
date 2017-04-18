@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Web;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class RegisterMovieForm : ContentHolderForm
     {
@@ -15,11 +14,19 @@ namespace SoftCinema.Client.Forms
         public RegisterMovieForm()
         {
             InitializeComponent();
+            //TODO: Add AgeRestriction Service Method //this.ageRestrictionComboBox.Items.AddRange("X", "A", "B", "C", "D");
+            this.ratingUpDown.Minimum = 0.0m;
+            this.ratingUpDown.Maximum = 10.0m;
+            this.ratingUpDown.DecimalPlaces = 1;
+            this.ratingUpDown.Increment = 0.1m;
+            this.yearUpDown.Minimum = 1890;
+            this.yearUpDown.Maximum = DateTime.Now.Year;
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ImageService.AddImage(movieImageBytes);
+            ImageService.AddImage(this.movieImageBytes);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -31,11 +38,14 @@ namespace SoftCinema.Client.Forms
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                var path = ofd.FileName;
-                this.pictureBoxPhoto.ImageLocation = path;
-
+                 var image = System.Drawing.Image.FromFile(ofd.FileName);
+                 var scaledImage = ImageService.ScaleImage(image, 215, 258);
+                 this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
                 
-                this.movieImageBytes = System.IO.File.ReadAllBytes(path);
+                 var path = ofd.FileName;
+                 this.pictureBoxPhoto.Image = scaledImage;  
+                
+                 this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
             }
         }
 
@@ -59,6 +69,21 @@ namespace SoftCinema.Client.Forms
         }
 
         private void pictureBoxPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ratingUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            this.ratingUpDown.Text = this.ratingUpDown.Value.ToString().Replace(".0", string.Empty);
+        }
+
+        private void RegisterMovieForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yearUpDown_ValueChanged(object sender, EventArgs e)
         {
 
         }

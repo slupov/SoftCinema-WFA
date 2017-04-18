@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class LoginForm : ContentHolderForm
     {
@@ -76,6 +76,11 @@ namespace SoftCinema.Client.Forms
         }
 
         private void passwordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }

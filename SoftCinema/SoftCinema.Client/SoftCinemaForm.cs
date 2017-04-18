@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.AdminForms;
+using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Client.Utilities.CustomSidebars;
 using SoftCinema.Models;
 using SoftCinema.Services;

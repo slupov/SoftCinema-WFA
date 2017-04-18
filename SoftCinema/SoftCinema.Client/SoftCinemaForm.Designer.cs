@@ -58,11 +58,11 @@ namespace SoftCinema.Client
             // 
             // ContentHolder
             // 
-            ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            ContentHolder.Location = new System.Drawing.Point(195, 73);
-            ContentHolder.Name = "ContentHolder";
-            ContentHolder.Size = new System.Drawing.Size(769, 418);
-            ContentHolder.TabIndex = 2;
+          ContentHolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+          ContentHolder.Location = new System.Drawing.Point(195, 73);
+          ContentHolder.Name = "ContentHolder";
+          ContentHolder.Size = new System.Drawing.Size(769, 418);
+          ContentHolder.TabIndex = 2;
             // 
             // BtnDashboard
             // 
@@ -109,6 +109,7 @@ namespace SoftCinema.Client
             this.Controls.Add(this.panel1);
             this.Controls.Add(ContentHolder);
             this.Controls.Add(this.TopPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SoftCinemaForm";
             this.Text = "SoftCinemaForm";
             this.Load += new System.EventHandler(this.SoftCinemaForm_Load);
@@ -116,7 +117,7 @@ namespace SoftCinema.Client
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
+            this.MaximizeBox = false;
         }
 
         #endregion

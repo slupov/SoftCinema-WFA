@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
