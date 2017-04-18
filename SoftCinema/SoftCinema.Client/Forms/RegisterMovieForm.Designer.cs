@@ -167,7 +167,8 @@
             // 
             // pictureBoxPhoto
             // 
-            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPhoto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(502, 77);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 258);
@@ -241,7 +242,6 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterMovieForm";
             this.Text = "RegisterMovieForm";
             ((System.ComponentModel.ISupportInitialize)(this.ratingUpDown)).EndInit();

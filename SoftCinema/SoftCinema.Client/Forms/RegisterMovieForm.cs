@@ -19,7 +19,7 @@ namespace SoftCinema.Client.Forms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ImageService.AddImage(movieImageBytes);
+            ImageService.AddImage(this.movieImageBytes);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -31,11 +31,14 @@ namespace SoftCinema.Client.Forms
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                var path = ofd.FileName;
-                this.pictureBoxPhoto.ImageLocation = path;
-
+                 var image = System.Drawing.Image.FromFile(ofd.FileName);
+                 var scaledImage = ImageService.ScaleImage(image, 215, 258);
+                 this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
                 
-                this.movieImageBytes = System.IO.File.ReadAllBytes(path);
+                 var path = ofd.FileName;
+                 this.pictureBoxPhoto.Image = scaledImage;  
+                
+                 this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
             }
         }
 
