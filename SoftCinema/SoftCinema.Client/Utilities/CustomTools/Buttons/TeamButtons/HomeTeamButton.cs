@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoftCinema.Client.Forms;
+using SoftCinema.Client.Forms.ContentHolders;
 
 namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {

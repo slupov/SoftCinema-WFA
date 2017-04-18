@@ -1,17 +1,11 @@
-﻿using SoftCinema.Client.Utilities.CustomTools;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Models;
 using SoftCinema.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class MoviesForm : ContentHolderForm
     {

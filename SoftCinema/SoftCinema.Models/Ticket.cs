@@ -59,5 +59,9 @@
     
         [Required]
         public TicketType Type { get; set; }
+
+        [Required]
+        //If set to false -> the ticket is RESERVED but not bought
+        public bool isPaid { get; set; }
     }
 }

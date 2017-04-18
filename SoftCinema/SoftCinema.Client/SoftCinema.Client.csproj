@@ -115,58 +115,64 @@
     <Compile Include="Forms\ContentHolderForm.Designer.cs">
       <DependentUpon>ContentHolderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HomeForm.cs">
+    <Compile Include="Forms\EmployeeForms\ShowScreeningReservationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HomeForm.Designer.cs">
+    <Compile Include="Forms\EmployeeForms\ShowScreeningReservationsForm.Designer.cs">
+      <DependentUpon>ShowScreeningReservationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContentHolders\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContentHolders\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\ContentHolders\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MovieForm.cs">
+    <Compile Include="Forms\ContentHolders\MovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MovieForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\MovieForm.Designer.cs">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MoviesForm.cs">
+    <Compile Include="Forms\ContentHolders\MoviesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MoviesForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\MoviesForm.Designer.cs">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterForm.cs">
+    <Compile Include="Forms\ContentHolders\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterMovieForm.cs">
+    <Compile Include="Forms\ContentHolders\RegisterMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterMovieForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\RegisterMovieForm.Designer.cs">
       <DependentUpon>RegisterMovieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SelectSeatsForm.cs">
+    <Compile Include="Forms\ContentHolders\SelectSeatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SelectSeatsForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\SelectSeatsForm.Designer.cs">
       <DependentUpon>SelectSeatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TicketForm.cs">
+    <Compile Include="Forms\ContentHolders\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TicketForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\TicketForm.Designer.cs">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TicketTypeForm.cs">
+    <Compile Include="Forms\ContentHolders\TicketTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TicketTypeForm.Designer.cs">
+    <Compile Include="Forms\ContentHolders\TicketTypeForm.Designer.cs">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TopPanelForm.cs">
@@ -210,10 +216,10 @@
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\HomeTeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\CustomTools\SeatButton.cs">
+    <Compile Include="Utilities\CustomTools\Buttons\SeatButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\CustomTools\TeamButton.cs">
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\AdminMenuTeamButton.cs">
@@ -238,6 +244,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomTools\ScreeningReservationGroup.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">
@@ -270,31 +279,34 @@
     <EmbeddedResource Include="Forms\ContentHolderForm.resx">
       <DependentUpon>ContentHolderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomeForm.resx">
+    <EmbeddedResource Include="Forms\EmployeeForms\ShowScreeningReservationsForm.resx">
+      <DependentUpon>ShowScreeningReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContentHolders\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MovieForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MoviesForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\MoviesForm.resx">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterMovieForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\RegisterMovieForm.resx">
       <DependentUpon>RegisterMovieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SelectSeatsForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\SelectSeatsForm.resx">
       <DependentUpon>SelectSeatsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TicketForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TicketTypeForm.resx">
+    <EmbeddedResource Include="Forms\ContentHolders\TicketTypeForm.resx">
       <DependentUpon>TicketTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopPanelForm.resx">

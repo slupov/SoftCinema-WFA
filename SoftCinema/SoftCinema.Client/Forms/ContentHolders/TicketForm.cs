@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class TicketForm : ContentHolderForm
     {

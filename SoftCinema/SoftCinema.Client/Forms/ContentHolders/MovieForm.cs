@@ -1,11 +1,11 @@
-﻿namespace SoftCinema.Client.Forms
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using SoftCinema.Models;
+using SoftCinema.Services;
+
+namespace SoftCinema.Client.Forms.ContentHolders
 {
-    using SoftCinema.Models;
-    using SoftCinema.Services;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Windows.Forms;
     public partial class MovieForm : ContentHolderForm
     {
         private string _townName { get; set; }

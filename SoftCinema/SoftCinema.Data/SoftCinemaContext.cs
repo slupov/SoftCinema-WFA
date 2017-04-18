@@ -13,7 +13,7 @@ namespace SoftCinema.Data
         public SoftCinemaContext()
             : base("SoftCinemaContext")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SoftCinemaContext,Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SoftCinemaContext, Configuration>());
         }
 
         public virtual DbSet<User> Users { get; set; }

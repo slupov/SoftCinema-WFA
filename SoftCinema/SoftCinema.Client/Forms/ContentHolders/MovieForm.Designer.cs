@@ -1,4 +1,4 @@
-﻿namespace SoftCinema.Client.Forms
+﻿namespace SoftCinema.Client.Forms.ContentHolders
 {
     partial class MovieForm
     {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Web;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 
-namespace SoftCinema.Client.Forms
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class RegisterMovieForm : ContentHolderForm
     {

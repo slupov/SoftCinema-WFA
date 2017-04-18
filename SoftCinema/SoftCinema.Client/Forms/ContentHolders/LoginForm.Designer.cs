@@ -1,4 +1,4 @@
-﻿namespace SoftCinema.Client.Forms
+﻿namespace SoftCinema.Client.Forms.ContentHolders
 {
     partial class LoginForm
     {
@@ -137,9 +137,9 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
