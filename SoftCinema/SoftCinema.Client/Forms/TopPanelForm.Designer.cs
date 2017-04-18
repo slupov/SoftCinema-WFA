@@ -54,10 +54,10 @@ namespace SoftCinema.Client.Forms
             // 
             // GreetingLabel
             // 
-            GreetingLabel.AutoSize = false;
             GreetingLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            GreetingLabel.Location = new System.Drawing.Point(300, 25);
+            
+            
+            GreetingLabel.Location = new System.Drawing.Point(272, 23);
             GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             GreetingLabel.Name = "GreetingLabel";
             GreetingLabel.Size = new System.Drawing.Size(340, 25);
@@ -65,12 +65,13 @@ namespace SoftCinema.Client.Forms
             GreetingLabel.Text = "label1";
             GreetingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             GreetingLabel.Visible = false;
+            
             // 
             // TopPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#1A2028");
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(769, 73);
             this.Controls.Add(LogoutButton);
             this.Controls.Add(GreetingLabel);
@@ -79,7 +80,6 @@ namespace SoftCinema.Client.Forms
             this.Text = "TopPanelForm";
             this.Load += new System.EventHandler(this.TopPanelForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
