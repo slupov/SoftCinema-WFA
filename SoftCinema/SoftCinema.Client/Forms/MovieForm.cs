@@ -14,6 +14,8 @@
         //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
         public static Screening Screening;
+       
+
         public Movie _movie { get; set; }
 
         public MovieForm(Movie movie)
@@ -73,6 +75,7 @@
 
         private void MovieForm_Load(object sender, EventArgs e)
         {
+            this.ticketsButton.Enabled = false;
 
         }
 
@@ -89,9 +92,9 @@
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
-
-            this.Controls.Clear();
-            this.Controls.Add(ticketTypeForm);
+          
+            
+            
             ticketTypeForm.Show();
         }
 
@@ -115,6 +118,12 @@
                 this._cinemaName, this._movieName, date);
             ;
             this.hourBox.Items.AddRange(hours);
+        }
+
+        private void hourBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            this.ticketsButton.Enabled = true;
         }
     }
 }
