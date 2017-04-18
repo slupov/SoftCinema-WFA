@@ -61,5 +61,13 @@ namespace SoftCinema.Services
                     .ToList();
             }
         }
+
+        public static List<Ticket> GetTickets(Screening screening)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Tickets.Where(t => t.ScreeningId == screening.Id).ToList();
+            }
+        }
     }
 }

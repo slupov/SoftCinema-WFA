@@ -240,13 +240,16 @@
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\RegisterTeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ChoiceButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\MoviePosterLink.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\CustomTools\ScreeningReservationGroup.cs">
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningReservationGroup.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">

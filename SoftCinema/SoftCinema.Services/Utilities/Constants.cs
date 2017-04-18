@@ -34,6 +34,7 @@ namespace SoftCinema.Services.Utilities
         /// Cinema {CinemaName} {CinemaTown}: {MovieName} {ScreeningDateTime}
         /// </summary>
         public const string ScreeningTitleLabel = "Cinema {0} {1}: {2} {3}";
+        public const char TickMark = '✓';
 
         public const int MaxTicketCount = 10;
 
