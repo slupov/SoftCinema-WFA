@@ -35,6 +35,8 @@
             this.Auditorium = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Screening = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Seat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // EditUserTicketsLabel
@@ -55,11 +57,48 @@
             this.Auditorium,
             this.Screening,
             this.Seat});
-            this.TicketsList.Location = new System.Drawing.Point(49, 110);
+            this.TicketsList.FullRowSelect = true;
+            this.TicketsList.Location = new System.Drawing.Point(115, 140);
+            this.TicketsList.MultiSelect = false;
             this.TicketsList.Name = "TicketsList";
-            this.TicketsList.Size = new System.Drawing.Size(852, 320);
+            this.TicketsList.RightToLeftLayout = true;
+            this.TicketsList.Size = new System.Drawing.Size(908, 320);
             this.TicketsList.TabIndex = 6;
             this.TicketsList.UseCompatibleStateImageBehavior = false;
+            this.TicketsList.View = System.Windows.Forms.View.Details;
+            // 
+            // Movie
+            // 
+            this.Movie.Text = "Movie";
+            this.Movie.Width = 206;
+            // 
+            // Cinema
+            // 
+            this.Cinema.Text = "Cinema";
+            this.Cinema.Width = 202;
+            // 
+            // Auditorium
+            // 
+            this.Auditorium.Text = "Auditorium";
+            this.Auditorium.Width = 93;
+            // 
+            // Screening
+            // 
+            this.Screening.Text = "Screening";
+            this.Screening.Width = 148;
+            // 
+            // Seat
+            // 
+            this.Seat.Text = "Seat";
+            this.Seat.Width = 242;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(9, 140);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 212);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // EditUserTicketsForm
             // 
@@ -67,11 +106,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1060, 513);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TicketsList);
             this.Controls.Add(this.EditUserTicketsLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditUserTicketsForm";
             this.Text = "EditUserTicketsForm";
+            this.Load += new System.EventHandler(this.EditUserTicketsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +127,6 @@
         private System.Windows.Forms.ColumnHeader Auditorium;
         private System.Windows.Forms.ColumnHeader Screening;
         private System.Windows.Forms.ColumnHeader Seat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
 
@@ -29,6 +32,22 @@ namespace SoftCinema.Services
 
                 context.Tickets.Add(ticket);
                 context.SaveChanges();
+            }
+        }
+
+        public static List<Ticket> GetTicketsInfo(string username)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Tickets
+                    .Where(t => t.Holder.Username == username)
+                    .Include(t => t.Screening.Auditorium)
+                    .Include(t => t.Screening.Auditorium.Cinema)
+                    .Include(t => t.Screening.Auditorium.Cinema.Town)
+                    .Include(t => t.Seat)
+                    .Include(t => t.Screening.Movie.Image)
+                    .Include(t => t.Screening.Movie)
+                    .ToList();
             }
         }
     }

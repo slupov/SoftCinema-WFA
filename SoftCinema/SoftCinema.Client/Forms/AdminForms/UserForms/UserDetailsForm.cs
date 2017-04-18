@@ -146,7 +146,7 @@ namespace SoftCinema.Client.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditUserTicketsForm ticketsForm = new EditUserTicketsForm();
+            EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
             ticketsForm.TopLevel = false;
             ticketsForm.AutoScroll = true;
             this.Hide();
