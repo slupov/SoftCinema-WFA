@@ -5,36 +5,7 @@
 
     public class Ticket
     {
-        public Ticket()
-        {
-            
-        }
-        public Ticket(int holderId, int screeningId, int seatId, TicketType type)
-        {
-            HolderId = holderId;
-            ScreeningId = screeningId;
-            SeatId = seatId;
-            Type = type;
-            switch (type)
-            {
-                case TicketType.Children:
-                    Price = Constants.Constants.ChildrenTicketPrice;
-                    break;
-                case TicketType.Students:
-                    Price = Constants.Constants.StudentsTicketPrice;
-                    break;
-                case TicketType.Regular:
-                    Price = Constants.Constants.RegularTicketPrice;
-                    break;
-                case TicketType.Seniors:
-                    Price = Constants.Constants.SeniorsrTicketPrice;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private decimal price;
+      
 
         [Key]
         public int Id { get; set; }

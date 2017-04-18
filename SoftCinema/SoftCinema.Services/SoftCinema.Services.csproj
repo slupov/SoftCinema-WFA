@@ -64,6 +64,7 @@
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\InputDataChecker.cs" />
     <Compile Include="Utilities\RoleProcessor.cs" />
+    <Compile Include="Utilities\TicketTypeProcessor.cs" />
     <Compile Include="Utilities\Validators\ActorValidator.cs" />
     <Compile Include="Utilities\Validators\AuditoriumValidator.cs" />
     <Compile Include="Utilities\Validators\CategoryValidator.cs" />

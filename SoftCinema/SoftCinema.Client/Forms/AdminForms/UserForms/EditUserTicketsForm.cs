@@ -42,10 +42,10 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 string movie = ticket.Screening.Movie.Name + " - " + ticket.Screening.Movie.ReleaseYear;
                 string start = ticket.Screening.Start.ToString();
                 string seat = ticket.Seat.Number.ToString();
-                string[] items = { movie,cinema,auditorium,start,seat};
-                ListViewItem item = new ListViewItem(items);
+                int seatId = ticket.SeatId;
+                int screeningId = ticket.ScreeningId;
                 
-                this.TicketsList.Rows.Add(resizedImage,movie,cinema,auditorium,start,seat);
+                this.TicketsList.Rows.Add(resizedImage,movie,cinema,auditorium,start,seat,seatId,screeningId);
 
 
 
@@ -69,8 +69,17 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
         private void TicketsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-           Ticket ticket = TicketService.GetTicket();
+            int selectedRow = TicketsList.SelectedCells[0].RowIndex;
+            int holderId = user.Id;
+            int seatId =int.Parse( TicketsList.Rows[selectedRow].Cells["SeatId"].Value.ToString());
+            int screeningId = int.Parse(TicketsList.Rows[selectedRow].Cells["ScreeningId"].Value.ToString());
+            Ticket ticket = TicketService.GetTicket(holderId,seatId,screeningId);
+            EditTicketForm ticketForm = new EditTicketForm(user,ticket);
+            ticketForm.TopLevel = false;
+            ticketForm.AutoScroll = true;
+            this.Hide();
+            ((DataGridView)sender).Parent.Parent.Controls.Add(ticketForm);
+            ticketForm.Show();
         }
     }
 }

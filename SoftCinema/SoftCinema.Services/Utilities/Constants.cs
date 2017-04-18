@@ -89,7 +89,8 @@ namespace SoftCinema.Services.Utilities
                 public const string CategoriesDeleteMessage = "Category delete failed!";
                 public const string CinemaUpdateErrorMessage = "Cinema update failed!";
                 public const string CinemaDeleteMessage = "Cinema delete failed!";
-        }
+                public const string LoginFirst = "You must log in first!";
+            }
 
             public static class ImportSuccessMessages
             {
