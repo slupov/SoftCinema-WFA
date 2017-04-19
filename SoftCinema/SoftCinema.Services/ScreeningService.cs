@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SoftCinema.Data;
 using SoftCinema.Models;
+using System.Data.Entity;
 
 namespace SoftCinema.Services
 {
@@ -192,12 +193,39 @@ namespace SoftCinema.Services
         }
 
 
-        
+        public static void UpdateScreening(int screeningId, DateTime startTime)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Screening screening = context.Screenings.Find(screeningId);
+                screening.Start = startTime;
+                context.SaveChanges();
+            }
+        }
 
-        
+        public static bool IsScreeningAvailable(int screeningId,DateTime screeningStart)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Screening screening = context.Screenings.Find(screeningId);
+                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == screening.AuditoriumId &&
+                (s.Start.Year == screening.Start.Year && s.Start.Month == screening.Start.Month && s.Start.Day == screening.Start.Day) && s.Id!=screeningId))
+                {
+                    var screenStart = screeningStart.TimeOfDay;
+                    var screenEnd = screeningStart.AddMinutes(screening.Movie.Length).TimeOfDay;
+                    var otherScreenStart = scr.Start.TimeOfDay;
+                    var otherScreenEnd = scr.Start.AddMinutes(scr.Movie.Length).TimeOfDay;
 
-        
-
-      
+                    if ((otherScreenStart < screenEnd &&
+                        otherScreenEnd > screenStart)
+                        || (screenStart < otherScreenEnd &&
+                        screenEnd > otherScreenStart))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
     }
 }

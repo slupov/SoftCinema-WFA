@@ -11,5 +11,14 @@ namespace SoftCinema.Services.Utilities.Validators
                 throw new InvalidOperationException(Constants.ErrorMessages.ScreeningAlreadyExists);
             }
         }
+
+
+        public static void ValidateScreeningAvailable(int screeningId, DateTime startTime)
+        {
+            if (!ScreeningService.IsScreeningAvailable(screeningId, startTime))
+            {
+                throw new InvalidOperationException();
+            }
+        }
     }
 }

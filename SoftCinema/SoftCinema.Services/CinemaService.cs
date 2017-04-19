@@ -72,6 +72,14 @@ namespace SoftCinema.Services
             }
         }
 
+        public static Cinema GetCinemaById(int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Find(cinemaId);
+            }
+        }
+
         public static Cinema GetCinemaWithScreenings(int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -145,8 +153,7 @@ namespace SoftCinema.Services
             }
         }
 
-        
 
-      
+        
     }
 }
