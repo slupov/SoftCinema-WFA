@@ -52,6 +52,24 @@ namespace SoftCinema.Services
             }
         }
 
+        public static Screening GetScreeningUsingMovieYear(string townName, string cinemaName, string movieName, DateTime date, int movieYear)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                return
+                    db.Screenings
+                    .Include("Auditorium")
+                    .Include("Auditorium.Seats")
+                    .Include("Movie")
+                    .Include("Tickets")
+                    .FirstOrDefault(
+                        s => s.Movie.Name == movieName &&
+                             s.Start == date &&
+                             s.Auditorium.Cinema.Town.Name == townName &&
+                             s.Auditorium.Cinema.Name == cinemaName && s.Movie.ReleaseYear == movieYear);
+            }
+        }
+
         public static string[] GetAllDatesForMovieInCinema(string town, string cinema, string movie)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -119,6 +137,32 @@ namespace SoftCinema.Services
             }
         }
 
+        public static string[] GetHoursForMoviesByDateMovieNameAndYear(string town, string cinema, string movie, int movieYear, string date)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                var d = date.Split().ToArray();
+                var day = d[0];
+                var month = DateTime.ParseExact(d[1], "MMM", CultureInfo.CurrentCulture).Month.ToString();
+                var list = new List<string>();
+                var dates =
+                    context.Screenings.Where(
+                        s =>
+                            s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town &&
+                            s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString() == day &&
+                            s.Start.Month.ToString() == month && s.Movie.ReleaseYear == movieYear).Select(s => s.Start).OrderBy(s => s.Hour).ToArray();
+
+                foreach (var dateTime in dates)
+                {
+                    var hour = dateTime.ToString("hh");
+                    var minutes = dateTime.ToString("mm");
+                    var part = dateTime.ToString("tt", CultureInfo.InvariantCulture);
+                    list.Add($"{hour}:{minutes} {part}");
+                }
+                return list.Distinct().ToArray();
+            }
+        }
+
         public static DateTime GetDateTimeFromDateAndTime(string date, string time)
         {
             int day = int.Parse(date.Split()[0]);
@@ -148,95 +192,12 @@ namespace SoftCinema.Services
         }
 
 
-        public static object[] GetHoursForMoviesByDateMovieNameAndYear(string town, string cinema, string movie, int movieYear, string date)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                var d = date.Split().ToArray();
-                var day = d[0];
-                var month = DateTime.ParseExact(d[1], "MMM", CultureInfo.CurrentCulture).Month.ToString();
-                var list = new List<string>();
-                var dates =
-                    context.Screenings.Where(
-                        s =>
-                            s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town &&
-                            s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString() == day &&
-                            s.Start.Month.ToString() == month && s.Movie.ReleaseYear == movieYear).Select(s => s.Start).OrderBy(s => s.Hour).ToArray();
+        
 
-                foreach (var dateTime in dates)
-                {
-                    var hour = dateTime.ToString("hh");
-                    var minutes = dateTime.ToString("mm");
-                    var part = dateTime.ToString("tt", CultureInfo.InvariantCulture);
-                    list.Add($"{hour}:{minutes} {part}");
-                }
-                return list.Distinct().ToArray();
-            }
-        }
+        
 
-        public static string[] GetHoursForMoviesByDateMovieNameYearAndAuditorium(string town, string cinema, string movie, int movieYear, string date,byte auditorium)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                var d = date.Split().ToArray();
-                var day = d[0];
-                var month = DateTime.ParseExact(d[1], "MMM", CultureInfo.CurrentCulture).Month.ToString();
-                var list = new List<string>();
-                var dates =
-                    context.Screenings.Where(
-                        s =>
-                            s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town &&
-                            s.Auditorium.Cinema.Name == cinema && s.Start.Day.ToString() == day &&
-                            s.Start.Month.ToString() == month && s.Movie.ReleaseYear == movieYear && s.Auditorium.Number == auditorium).Select(s => s.Start).OrderBy(s => s.Hour).ToArray();
+        
 
-                foreach (var dateTime in dates)
-                {
-                    var hour = dateTime.ToString("hh");
-                    var minutes = dateTime.ToString("mm");
-                    var part = dateTime.ToString("tt", CultureInfo.InvariantCulture);
-                    list.Add($"{hour}:{minutes} {part}");
-                }
-                return list.Distinct().ToArray();
-            }
-        }
-
-        public static Screening GetScreeningUsingMovieYear(string townName, string cinemaName, string movieName, DateTime date, int movieYear)
-        {
-            using (var db = new SoftCinemaContext())
-            {
-                return
-                    db.Screenings
-                    .Include("Auditorium")
-                    .Include("Auditorium.Seats")
-                    .Include("Movie")
-                    .Include("Tickets")
-                    .FirstOrDefault(
-                        s => s.Movie.Name == movieName &&
-                             s.Start == date &&
-                             s.Auditorium.Cinema.Town.Name == townName &&
-                             s.Auditorium.Cinema.Name == cinemaName && s.Movie.ReleaseYear == movieYear);
-            }
-        }
-
-        public static string[] GetAllDatesForMovieInCinemaByNameYearAndAuditorium(string town, string cinema, string movie, int year, byte auditorium)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                var list = new List<string>();
-                var dates =
-                    context.Screenings.Where(
-                        s =>
-                            s.Movie.Name == movie && s.Auditorium.Cinema.Town.Name == town &&
-                            s.Auditorium.Cinema.Name == cinema && s.Movie.ReleaseYear == year && s.Auditorium.Number == auditorium).Select(s => s.Start).ToArray();
-                foreach (var dateTime in dates)
-                {
-                    var day = dateTime.Day.ToString();
-                    var month = dateTime.ToString("MMM");
-                    var weekDay = dateTime.DayOfWeek.ToString();
-                    list.Add($"{day} {month} {weekDay}");
-                }
-                return list.Distinct().ToArray();
-            }
-        }
+      
     }
 }

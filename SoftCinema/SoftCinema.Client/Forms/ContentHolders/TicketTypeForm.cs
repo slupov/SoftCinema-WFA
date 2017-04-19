@@ -12,10 +12,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private decimal _childrenPrice = 0M;
         private decimal _seniorPrice = 0M;
         private decimal _studentPrice = 0M;
-        public int ChildrenTicketsCount { get; set; }
-        public int RegularTicketsCount { get; set; }
-        public int SeniorsTicketsCount { get; set; }
-        public int StudentsTicketsCount { get; set; }
+        private int ChildrenTicketsCount { get; set; }
+        private int RegularTicketsCount { get; set; }
+        private int SeniorsTicketsCount { get; set; }
+        private int StudentsTicketsCount { get; set; }
         private bool areTicketsMoreThanMaxCount(int ticketsQuantity)
         {
             if (ticketsQuantity > Constants.MaxTicketCount)
@@ -58,8 +58,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 }
                 else
                 {
-                    SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity);
-                    selectSeatsForm.Owner = this;
+                    SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity,RegularTicketsCount,ChildrenTicketsCount,SeniorsTicketsCount,StudentsTicketsCount);
+                    
                     selectSeatsForm.ShowDialog(this);
                     }
             }

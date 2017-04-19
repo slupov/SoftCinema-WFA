@@ -23,7 +23,7 @@ namespace SoftCinema.Data.Migrations
         {
             SeedAdmin(context);
             SeedEmployees(context);
-            SeedDefaultProfilePic(context);
+            
         }
 
         private void SeedAdmin(SoftCinemaContext context)
@@ -70,9 +70,6 @@ namespace SoftCinema.Data.Migrations
             context.Users.AddOrUpdate(u => u.Username, employee1, employee2, employee3);
             context.SaveChanges();
         }
-        private void SeedDefaultProfilePic(SoftCinemaContext context)
-        {
-            
-        }
+   
     }
 }
