@@ -85,8 +85,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.seniorsQuantityComboBox.SelectedIndex = 0;
             this.studentsQuantityComboBox.SelectedIndex = 0;
             this.ticketLimit.Hide();
+        
         }
-
+   
         private decimal GetAllPrices()
         {
             return this._regularPrice + this._childrenPrice + this._studentPrice + this._seniorPrice;

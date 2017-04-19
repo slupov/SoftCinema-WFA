@@ -87,6 +87,7 @@ namespace SoftCinema.Services.Utilities
             public const string noTicketsSelected = "You haven't selected any tickets!";
             public const string WantToSellTicketWarning = "Are you sure you want to sell this ticket?";
             public const string WantToRejectTicketWarning = "Are you sure you want to reject this ticket?";
+            public const string WantToSellAllTicketsWarning = "Are you sure you want to sell all selected tickets?";
         }
 
         public static class ErrorMessages

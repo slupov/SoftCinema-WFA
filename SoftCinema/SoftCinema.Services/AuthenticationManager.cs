@@ -16,7 +16,7 @@
         {
             if (currentUser != null)
             {
-                return currentUser.Role == Role.Admin && currentUser.Role == Role.Employee;
+                return currentUser.Role == Role.Admin || currentUser.Role == Role.Employee;
             }
             return false;
         }

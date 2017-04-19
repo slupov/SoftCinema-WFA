@@ -135,15 +135,7 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
-        public static void RemoveUnpaidTickets(Screening screening)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                var tickets = context.Tickets.Where(t => t.isPaid == false&& t.Screening==screening);
-                context.Tickets.RemoveRange(tickets);
-                context.SaveChanges();
-            }
-        }
+    
         public static string GetTicketDate(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())

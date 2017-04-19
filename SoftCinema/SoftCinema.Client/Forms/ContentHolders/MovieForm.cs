@@ -23,7 +23,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         {
             InitializeComponent();
 
-            if (AuthenticationManager.IsAuthenticated())
+            if (AuthenticationManager.IsAuthenticated() && !AuthenticationManager.HasSuperRights())
             {
                 this.Controls.Add(this.ticketsButton);
                 this.Controls.Add(this.townBox);
