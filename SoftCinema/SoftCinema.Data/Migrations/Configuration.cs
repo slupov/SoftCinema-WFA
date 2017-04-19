@@ -1,9 +1,12 @@
+using System.IO;
+using System.Runtime.Remoting.Channels;
 using SoftCinema.Data.Utilities;
 using SoftCinema.Models;
 
 namespace SoftCinema.Data.Migrations
 {
     using System;
+    using System.Drawing;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -20,6 +23,7 @@ namespace SoftCinema.Data.Migrations
         {
             SeedAdmin(context);
             SeedEmployees(context);
+            SeedDefaultProfilePic(context);
         }
 
         private void SeedAdmin(SoftCinemaContext context)
@@ -65,6 +69,19 @@ namespace SoftCinema.Data.Migrations
 
             context.Users.AddOrUpdate(u => u.Username, employee1, employee2, employee3);
             context.SaveChanges();
+        }
+        private void SeedDefaultProfilePic(SoftCinemaContext context)
+        {
+            //string fileLocation = @"SoftCinema.Data\Utilities\Images\defaultProfilePic.jpg";
+            //var profilePic = System.Drawing.Image.FromFile(fileLocation);
+
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    profilePic.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            //    var picBytes = new Models.Image() { Content = ms.ToArray() };
+            //    context.Images.AddOrUpdate(u => u.Content, picBytes);
+            //    context.SaveChanges();
+            //}
         }
     }
 }

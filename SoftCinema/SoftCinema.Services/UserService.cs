@@ -171,7 +171,7 @@ namespace SoftCinema.Services
         {
             using (var db = new SoftCinemaContext())
             {
-                return db.Users.FirstOrDefault(u => u.Username == username);
+                return db.Users.Include(u => u.ProfilePicture).FirstOrDefault(u => u.Username == username);
             }
         }
 

@@ -59,5 +59,15 @@ namespace SoftCinema.Client.Utilities.CustomTools
             _clicked = false;
             this.BackColor = System.Drawing.Color.FromArgb(255, 26, 32, 40);
         }
+
+        public static void ToggleButton(Button button)
+        {
+            if (button.Enabled)
+            {
+                button.Enabled = false;
+                return;
+            }
+            button.Enabled = true;
+        }
     }
 }
