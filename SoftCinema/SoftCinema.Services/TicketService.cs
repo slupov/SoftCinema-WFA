@@ -135,7 +135,15 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
-
+        public static void RemoveUnpaidTickets(Screening screening)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                var tickets = context.Tickets.Where(t => t.isPaid == false&& t.Screening==screening);
+                context.Tickets.RemoveRange(tickets);
+                context.SaveChanges();
+            }
+        }
         public static string GetTicketDate(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -153,6 +161,44 @@ namespace SoftCinema.Services
                 Ticket ticket = context.Tickets.Find(ticketId);
                 return ticket.Screening.Start.ToString("hh") + ":" + ticket.Screening.Start.ToString("mm") + " " +
                        ticket.Screening.Start.ToString("tt", CultureInfo.InvariantCulture);
+            }
+        }
+
+        public static void SellTickets(List<Ticket> tickets)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                foreach (var ticket in tickets)
+                {
+                    db.Tickets.Attach(ticket);
+                    ticket.isPaid = true;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void SellTicket(Ticket ticket)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                db.Tickets.Attach(ticket);
+                ticket.isPaid = true;
+
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteTicket(Ticket ticket)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                db.Tickets.Attach(ticket);
+                ticket.Screening = null;
+                ticket.Holder = null;
+                ticket.Seat = null;
+                db.Tickets.Remove(ticket);
+
+                db.SaveChanges();
             }
         }
     }

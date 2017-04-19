@@ -34,8 +34,26 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this.BackColor = Color.Bisque;
 
             VisualizeSeats();
+            if (ShouldCancelReservtions(TicketForm.Screening,new TimeSpan(0,20,0)))
+            {
+                CancelReservtions(TicketForm.Screening);
+                DisableAllSeats();
+            }
+           
         }
-
+        private bool ShouldCancelReservtions(Screening screening, TimeSpan t)
+        {
+            var diffInSeconds = (DateTime.Now - screening.Start).TotalMinutes;
+            if (diffInSeconds < t.TotalMinutes)
+            {
+                return true;
+            }
+            return false;
+        }
+        private void CancelReservtions(Screening screening)
+        {
+           Services.TicketService.RemoveUnpaidTickets(screening);
+        }
         public void UpdateReserveButton()
         {
             var count = GetSelectedSeats().Count;
@@ -150,6 +168,13 @@ namespace SoftCinema.Client.Utilities.CustomTools
             foreach (var seatButton in _seats.Where(s => s.BackColor == Constants.Colors.FreeSeatColor))
             {
                 seatButton.Enabled = true;
+            }
+        }
+        private static void DisableAllSeats()
+        {
+            foreach (var seatButton in _seats)
+            {
+                seatButton.Enabled = false;
             }
         }
 

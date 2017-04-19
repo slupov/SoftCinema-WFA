@@ -1,6 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Models;
+using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
@@ -39,11 +42,40 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
         private void RenderButtons()
         {
+            this._approveButton.Click += new System.EventHandler(this._approveButton_Click);
+            this._rejectButton.Click += new System.EventHandler(this._rejectButton_Click);
+
             this._approveButton.Location = new Point(this._text.Location.X + this._text.Width + 5, this._text.Location.Y);
-            this._rejectButton.Location = new Point(_approveButton.Location.X + _approveButton.Width + 10, _approveButton.Location.Y);
+            this._rejectButton.Location = new Point(_approveButton.Location.X + _approveButton.Width + 10,
+                _approveButton.Location.Y);
 
             this.Controls.Add(this._approveButton);
             this.Controls.Add(this._rejectButton);
+        }
+
+        private void _approveButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.WantToSellTicketWarning,
+                "Careful!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                TicketService.SellTicket(this.Ticket);
+                MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
+            }
+            else
+            {
+                //do nothing
+            }
+        }
+
+        private void _rejectButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.WantToRejectTicketWarning,
+                "Careful!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                TicketService.DeleteTicket(this.Ticket);
+            }
         }
     }
 }

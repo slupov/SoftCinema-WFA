@@ -133,6 +133,18 @@
     <Compile Include="Forms\ContentHolderForm.Designer.cs">
       <DependentUpon>ContentHolderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ContentHolders\EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContentHolders\EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContentHolders\MyAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContentHolders\MyAccountForm.Designer.cs">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForms\ShowScreeningReservationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +270,9 @@
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\MoviesTeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\MyAccountButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\Buttons\TeamButtons\RegisterMovieTeamButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -326,6 +341,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ContentHolderForm.resx">
       <DependentUpon>ContentHolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContentHolders\EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContentHolders\MyAccountForm.resx">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForms\ShowScreeningReservationsForm.resx">
       <DependentUpon>ShowScreeningReservationsForm.cs</DependentUpon>

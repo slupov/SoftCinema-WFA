@@ -88,5 +88,30 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         {
             this._reservationsHolder.Controls.Clear();
         }
+
+        private void sellAllButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to sell all selected tickets?",
+                "Careful!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                TicketService.SellTickets(this._reservedTickets);
+                var ticketHolders = this._reservedTickets.Select(t => t.Holder.Username).ToList();
+                var ticketHoldersString = string.Join(",", ticketHolders.Distinct());
+
+                if (this._reservedTickets.Count == 0)
+                {
+                    MessageBox.Show(Constants.ErrorMessages.NoTicketsToSellMessage);
+                    return;
+                }
+                MessageBox.Show(string.Format(Constants.SuccessMessages.TicketsSoldSuccessfully,
+                    this._reservedTickets.Count,
+                    ticketHoldersString));
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
     }
 }
