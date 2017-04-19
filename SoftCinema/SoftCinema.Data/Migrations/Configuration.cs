@@ -72,16 +72,7 @@ namespace SoftCinema.Data.Migrations
         }
         private void SeedDefaultProfilePic(SoftCinemaContext context)
         {
-            //string fileLocation = @"SoftCinema.Data\Utilities\Images\defaultProfilePic.jpg";
-            //var profilePic = System.Drawing.Image.FromFile(fileLocation);
-
-            //using (MemoryStream ms = new MemoryStream())
-            //{
-            //    profilePic.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            //    var picBytes = new Models.Image() { Content = ms.ToArray() };
-            //    context.Images.AddOrUpdate(u => u.Content, picBytes);
-            //    context.SaveChanges();
-            //}
+            
         }
     }
 }
