@@ -21,6 +21,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
         public ScreeningReservationsHolder(Point startingPoint, Size size, List<Ticket> reservations)
         {
             this._reservedTickets = reservations;
+            this.AutoSize = true;
             this.Location = startingPoint;
             this.Size = size;
             RenderReservationRows();
