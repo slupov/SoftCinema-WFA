@@ -26,7 +26,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             InitializeComponent();
         }
 
-        private void RenderReservationsHolder()
+        public void RenderReservationsHolder()
         {
             if (this._reservedTickets.Count == 0)
             {
@@ -80,7 +80,6 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                     .ToList();
             }
 
-
             RenderReservationsHolder();
         }
 
@@ -91,7 +90,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void sellAllButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to sell all selected tickets?",
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.WantToSellAllTicketsWarning,
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -107,6 +106,9 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 MessageBox.Show(string.Format(Constants.SuccessMessages.TicketsSoldSuccessfully,
                     this._reservedTickets.Count,
                     ticketHoldersString));
+
+                //update the holder
+                RenderReservationsHolder();
             }
             else if (dialogResult == DialogResult.No)
             {

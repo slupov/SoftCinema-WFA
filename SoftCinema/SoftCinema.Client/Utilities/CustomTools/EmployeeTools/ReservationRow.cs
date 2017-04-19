@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SoftCinema.Client.Forms.EmployeeForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -61,6 +62,11 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             {
                 TicketService.SellTicket(this.Ticket);
                 MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
+
+                //update holder
+                var screeningsReservationForm = (ShowScreeningReservationsForm) this.Parent.Parent;
+                screeningsReservationForm.RenderReservationsHolder();
+
             }
             else
             {
