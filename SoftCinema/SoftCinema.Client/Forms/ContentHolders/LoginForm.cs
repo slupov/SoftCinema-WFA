@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -38,6 +39,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
                 TopPanelForm.ShowGreetings();
+                
             }
             else
             {
@@ -82,7 +84,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

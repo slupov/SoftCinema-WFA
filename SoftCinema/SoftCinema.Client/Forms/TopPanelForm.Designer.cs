@@ -34,19 +34,19 @@ namespace SoftCinema.Client.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            LogoutButton = new System.Windows.Forms.Button();
-            GreetingLabel = new System.Windows.Forms.Label();
-            profilePicPictureBox = new System.Windows.Forms.PictureBox();
+           LogoutButton = new System.Windows.Forms.Button();
+           GreetingLabel = new System.Windows.Forms.Label();
+           profilePicPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(profilePicPictureBox)).BeginInit();
             SuspendLayout();
             // 
             // LogoutButton
             // 
-            LogoutButton.BackColor = System.Drawing.Color.Silver;
-            LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            LogoutButton.FlatAppearance.BorderSize = 0;
-            LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+           LogoutButton.BackColor = System.Drawing.Color.Silver;
+           LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+           LogoutButton.FlatAppearance.BorderSize = 0;
+           LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+           LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             LogoutButton.ForeColor = System.Drawing.SystemColors.Desktop;
             LogoutButton.Location = new System.Drawing.Point(660, 19);
             LogoutButton.Margin = new System.Windows.Forms.Padding(0);
@@ -61,8 +61,8 @@ namespace SoftCinema.Client.Forms
             // GreetingLabel
             // 
             GreetingLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            GreetingLabel.Location = new System.Drawing.Point(272, 23);
-            GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
+            GreetingLabel.Location = new System.Drawing.Point(242, 23);
+            GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 5, 5, 0);
             GreetingLabel.Name = "GreetingLabel";
             GreetingLabel.Size = new System.Drawing.Size(340, 25);
             GreetingLabel.TabIndex = 5;
@@ -74,6 +74,7 @@ namespace SoftCinema.Client.Forms
             // 
             profilePicPictureBox.Location = new System.Drawing.Point(410, 12);
             profilePicPictureBox.Name = "profilePicPictureBox";
+            profilePicPictureBox.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             profilePicPictureBox.Size = new System.Drawing.Size(55, 54);
             profilePicPictureBox.TabIndex = 7;
             profilePicPictureBox.TabStop = false;

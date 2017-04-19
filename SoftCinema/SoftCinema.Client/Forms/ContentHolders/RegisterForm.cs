@@ -47,6 +47,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var scaledImage = ImageService.ScaleImage(image, 55, 54);
             this.profilePictureBox.Width = scaledImage.Width;
             this.profilePictureBox.Height = scaledImage.Height;
+
             var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
 
             bool isDataValid = UserService.Validations.isUserValid(username, password, repeatPassword, email, phone);
