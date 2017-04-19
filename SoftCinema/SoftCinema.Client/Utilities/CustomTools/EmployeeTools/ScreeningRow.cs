@@ -20,16 +20,18 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
         {
             this._back = Color.FromArgb(255, 240, 240, 240);
             this.ForeColor = Color.Black;
-            this.Size = new Size(width, 40);
+            this.Size = new Size(width, 80);
             this._screening = screening;
             this._id = id;
 
             Label rowText = new Label();
             rowText.Text = $"{id}." +
-                           new string('\t',5) +
+                           new string(' ', 5) +
                            $"Auditorium: {_screening.Auditorium.Number}" +
-                           new string('\t', 5) + $"DateTime: {this._screening.Start.ToString("f")}";
+                           new string(' ', 5) + $"DateTime: {this._screening.Start.ToString("f")}";
 
+            rowText.Location = new Point(this.Location.X + 5, this.Height / 2);
+            rowText.Size = new Size(width - 50, this.Size.Height / 3);
             this.Controls.Add(rowText);
         }
 

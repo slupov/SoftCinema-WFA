@@ -75,7 +75,8 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         {
             this._movieName = this.movieComboBox.SelectedItem.ToString();
 
-            var screenings = ScreeningService.GetScreeningsByTownCinemaAndMovie(this._townName, this._cinemaName, this._movieName);
+            var screenings = ScreeningService.GetScreeningsByTownCinemaAndMovie(this._townName, this._cinemaName,
+                this._movieName);
             this._screenings = screenings.ToList();
 
             RenderScreeningsHolder();
@@ -85,20 +86,23 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         {
             if (this._screenings.Count == 0)
             {
+                ClearScreeningsHolder();
                 return;
             }
-            
-                                                                                //calculate the right offset
+            //calculate the right offset
             var width = this.Parent.Size.Width - this.townComboBox.Location.X - TopPanelForm.LogoutButton.Size.Width;
-
             var size = new Size(width, 400);
 
             this._screeningsHolder =
                 new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60), size,
-                    this._screenings)
-                ;
+                    this._screenings);
 
             this.Controls.Add(this._screeningsHolder);
+        }
+
+        private void ClearScreeningsHolder()
+        {
+            this._screeningsHolder.Controls.Clear();
         }
     }
 }
