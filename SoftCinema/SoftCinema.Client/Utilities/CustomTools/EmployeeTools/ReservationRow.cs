@@ -26,15 +26,20 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
         private void RenderLabel()
         {
             this._text.Font = new Font(new FontFamily("Comic Sans MS"), 14);
-
             this._text.Text = string.Format("Reserved: Row {0} Seat {1} | {2}, Price: {3}", this.Ticket.Seat.Row,
                 this.Ticket.Seat.Number, this.Ticket.Type, this.Ticket.Price);
+            
+            this.Controls.Add(this._text);
         }
 
         private void RenderButtons()
         {
             this._approveButton.Location = new Point(this.Location.X + this._text.Width + 10, this.Location.Y);
             this._rejectButton.Location = new Point(_approveButton.Location.X + 5, this.Location.Y);
+
+            this.Controls.Add(this._approveButton);
+            this.Controls.Add(this._rejectButton);
+
         }
     }
 }

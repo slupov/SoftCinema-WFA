@@ -9,7 +9,7 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningReservationsHolder : Panel
+    class ScreeningReservationsHolder : GroupBox
     {
         private List<Ticket> _reservedTickets { get; set; }
 

@@ -54,7 +54,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             var cinemaName = this._screening.Auditorium.Cinema.Name;
             var townName = this._screening.Auditorium.Cinema.Town.Name;
             var movieName = this._screening.Movie.Name;
-            var startDate = this._screening.Start.ToString("f0");
+            var startDate = this._screening.Start.ToString("f");
 
             this.titleLabel.Text = string.Format(Constants.ScreeningTitleLabel, cinemaName, townName, movieName,
                 startDate);
@@ -78,5 +78,6 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         {
             this._reservationsHolder.Controls.Clear();
         }
+
     }
 }
