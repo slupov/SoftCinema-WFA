@@ -37,10 +37,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 this._seatCount);
         }
 
-        public  void ToggleReserveButton()
-        {
-        }
-        private void reserveButton_Click(object sender, EventArgs e)
+       private void reserveButton_Click(object sender, EventArgs e)
         {
             
         }
