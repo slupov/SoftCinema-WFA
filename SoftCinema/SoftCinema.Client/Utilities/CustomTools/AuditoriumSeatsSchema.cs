@@ -123,11 +123,9 @@ namespace SoftCinema.Client.Utilities.CustomTools
             if (selectedSeats.Count() == _seatCountLimit)
             {
                 DisableUnselectedSeats();
-                //maraw
             }
             else
             {
-                //too many calls?
                 EnableAllSeats();
             }
         }
@@ -149,7 +147,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
         private static void EnableAllSeats()
         {
-            foreach (var seatButton in _seats)
+            foreach (var seatButton in _seats.Where(s => s.BackColor == Constants.Colors.FreeSeatColor))
             {
                 seatButton.Enabled = true;
             }
