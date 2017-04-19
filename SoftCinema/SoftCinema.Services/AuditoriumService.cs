@@ -49,5 +49,13 @@ namespace SoftCinema.Services
                     .Select(s => s.Auditorium.Number).Distinct().ToList();
             }
         }
+
+        public static List<Auditorium> GetAudtitoriums(int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Find(cinemaId).Auditoriums.ToList();
+            }
+        }
     }
 }

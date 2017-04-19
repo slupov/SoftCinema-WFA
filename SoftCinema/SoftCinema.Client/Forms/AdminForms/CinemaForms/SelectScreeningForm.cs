@@ -96,5 +96,15 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             ((Button)sender).Parent.Parent.Controls.Add(cinemaeditForm);
             cinemaeditForm.Show();
         }
+
+        private void AddScreeningButton_Click(object sender, EventArgs e)
+        {
+            AddScreeningForm addScreeningForm = new AddScreeningForm(cinema);
+            addScreeningForm.TopLevel = false;
+            addScreeningForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(addScreeningForm);
+            addScreeningForm.Show();
+        }
     }
 }

@@ -28,38 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Menu = new System.Windows.Forms.ListBox();
-            this.AdminMenuLabel = new System.Windows.Forms.Label();
             this.UserEditButton = new System.Windows.Forms.Button();
             this.EditCategoriesButton = new System.Windows.Forms.Button();
             this.EditCinemasButton = new System.Windows.Forms.Button();
+            this.MenuLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // Menu
-            // 
-            this.Menu.FormattingEnabled = true;
-            this.Menu.ItemHeight = 16;
-            this.Menu.Location = new System.Drawing.Point(283, 53);
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(355, 372);
-            this.Menu.TabIndex = 0;
-            // 
-            // AdminMenuLabel
-            // 
-            this.AdminMenuLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.AdminMenuLabel.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminMenuLabel.Location = new System.Drawing.Point(368, 74);
-            this.AdminMenuLabel.Name = "AdminMenuLabel";
-            this.AdminMenuLabel.Size = new System.Drawing.Size(165, 59);
-            this.AdminMenuLabel.TabIndex = 1;
-            this.AdminMenuLabel.Text = "Menu";
-            this.AdminMenuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserEditButton
             // 
             this.UserEditButton.BackColor = System.Drawing.SystemColors.Menu;
             this.UserEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserEditButton.Location = new System.Drawing.Point(348, 162);
+            this.UserEditButton.Location = new System.Drawing.Point(377, 164);
             this.UserEditButton.Name = "UserEditButton";
             this.UserEditButton.Size = new System.Drawing.Size(214, 58);
             this.UserEditButton.TabIndex = 2;
@@ -71,7 +50,7 @@
             // 
             this.EditCategoriesButton.BackColor = System.Drawing.SystemColors.Menu;
             this.EditCategoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditCategoriesButton.Location = new System.Drawing.Point(348, 226);
+            this.EditCategoriesButton.Location = new System.Drawing.Point(377, 244);
             this.EditCategoriesButton.Name = "EditCategoriesButton";
             this.EditCategoriesButton.Size = new System.Drawing.Size(214, 58);
             this.EditCategoriesButton.TabIndex = 4;
@@ -83,7 +62,7 @@
             // 
             this.EditCinemasButton.BackColor = System.Drawing.SystemColors.Menu;
             this.EditCinemasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditCinemasButton.Location = new System.Drawing.Point(348, 290);
+            this.EditCinemasButton.Location = new System.Drawing.Point(377, 330);
             this.EditCinemasButton.Name = "EditCinemasButton";
             this.EditCinemasButton.Size = new System.Drawing.Size(214, 58);
             this.EditCinemasButton.TabIndex = 5;
@@ -91,17 +70,28 @@
             this.EditCinemasButton.UseVisualStyleBackColor = false;
             this.EditCinemasButton.Click += new System.EventHandler(this.EditCinemasButton_Click);
             // 
+            // MenuLabel
+            // 
+            this.MenuLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
+            this.MenuLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MenuLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.MenuLabel.Location = new System.Drawing.Point(41, 38);
+            this.MenuLabel.Name = "MenuLabel";
+            this.MenuLabel.Size = new System.Drawing.Size(856, 70);
+            this.MenuLabel.TabIndex = 9;
+            this.MenuLabel.Text = "Admin Menu";
+            this.MenuLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1041, 512);
+            this.Controls.Add(this.MenuLabel);
             this.Controls.Add(this.EditCinemasButton);
             this.Controls.Add(this.EditCategoriesButton);
             this.Controls.Add(this.UserEditButton);
-            this.Controls.Add(this.AdminMenuLabel);
-            this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenuForm";
             this.Text = "AdminMenuForm";
@@ -110,11 +100,9 @@
         }
 
         #endregion
-
-        private new System.Windows.Forms.ListBox Menu;
-        private System.Windows.Forms.Label AdminMenuLabel;
         private System.Windows.Forms.Button UserEditButton;
         private System.Windows.Forms.Button EditCategoriesButton;
         private System.Windows.Forms.Button EditCinemasButton;
+        private System.Windows.Forms.Label MenuLabel;
     }
 }

@@ -36,6 +36,7 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
+            this.AddScreeningButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CinemaLabel
@@ -125,7 +126,7 @@
             // BackButton
             // 
             this.BackButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.BackButton.Location = new System.Drawing.Point(476, 397);
+            this.BackButton.Location = new System.Drawing.Point(423, 397);
             this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(99, 46);
@@ -134,12 +135,25 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // AddScreeningButton
+            // 
+            this.AddScreeningButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.AddScreeningButton.Location = new System.Drawing.Point(540, 397);
+            this.AddScreeningButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddScreeningButton.Name = "AddScreeningButton";
+            this.AddScreeningButton.Size = new System.Drawing.Size(139, 46);
+            this.AddScreeningButton.TabIndex = 37;
+            this.AddScreeningButton.Text = "Add Screening";
+            this.AddScreeningButton.UseVisualStyleBackColor = true;
+            this.AddScreeningButton.Click += new System.EventHandler(this.AddScreeningButton_Click);
+            // 
             // SelectScreeningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1083, 524);
+            this.Controls.Add(this.AddScreeningButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.movieLabel);
             this.Controls.Add(this.dateLabel);
@@ -167,5 +181,6 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button AddScreeningButton;
     }
 }

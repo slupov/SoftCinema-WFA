@@ -20,5 +20,13 @@ namespace SoftCinema.Services.Utilities.Validators
                 throw new InvalidOperationException();
             }
         }
+
+        public static void ValidateScreeningTimeAvailable(DateTime startTime, int auditoriumId,string movieName,int movieYear)
+        {
+            if (!ScreeningService.IsScreeningAvailableInAuditorium(auditoriumId, startTime,movieName,movieYear))
+            {
+                throw new InvalidOperationException();
+            }
+        }
     }
 }

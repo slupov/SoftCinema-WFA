@@ -208,13 +208,42 @@ namespace SoftCinema.Services
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 Screening screening = context.Screenings.Find(screeningId);
-                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == screening.AuditoriumId &&
-                (s.Start.Year == screening.Start.Year && s.Start.Month == screening.Start.Month && s.Start.Day == screening.Start.Day) && s.Id!=screeningId))
+                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == screening.AuditoriumId  && s.Id!=screeningId))
                 {
-                    var screenStart = screeningStart.TimeOfDay;
-                    var screenEnd = screeningStart.AddMinutes(screening.Movie.Length).TimeOfDay;
-                    var otherScreenStart = scr.Start.TimeOfDay;
-                    var otherScreenEnd = scr.Start.AddMinutes(scr.Movie.Length).TimeOfDay;
+                   
+
+                    var screenStart = screeningStart;
+                    var screenEnd = screeningStart.AddMinutes(screening.Movie.Length);
+                    
+                    var otherScreenStart = scr.Start;
+                    var otherScreenEnd = scr.Start.AddMinutes(scr.Movie.Length);
+                    
+                    if ((otherScreenStart < screenEnd &&
+                        otherScreenEnd > screenStart)
+                        || (screenStart < otherScreenEnd &&
+                        screenEnd > otherScreenStart))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        public static bool IsScreeningAvailableInAuditorium(int auditoriumId, DateTime screeningStart,string movieName,int movieYear)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Movie movie = context.Movies.FirstOrDefault(m => m.ReleaseYear == movieYear && m.Name == movieName);
+                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == auditoriumId))
+                {
+
+
+                    var screenStart = screeningStart;
+                    var screenEnd = screeningStart.AddMinutes(movie.Length);
+
+                    var otherScreenStart = scr.Start;
+                    var otherScreenEnd = scr.Start.AddMinutes(scr.Movie.Length);
 
                     if ((otherScreenStart < screenEnd &&
                         otherScreenEnd > screenStart)
