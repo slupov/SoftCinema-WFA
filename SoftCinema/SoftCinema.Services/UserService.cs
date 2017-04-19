@@ -130,7 +130,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddUser(string username, string password, string email, string phone)
+        public static void AddUser(string username, string password, string email, string phone, byte[] image)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -140,7 +140,8 @@ namespace SoftCinema.Services
                     PasswordHash = PasswordHasher.ComputeHash(password, PasswordHasher.Supported_HA.SHA512, null),
                     Email = email,
                     PhoneNumber = phone,
-                    Role = Role.User
+                    Role = Role.User,
+                    ProfilePicture = new Image() { Content = image }
                 };
 
                 db.Users.Add(user);
