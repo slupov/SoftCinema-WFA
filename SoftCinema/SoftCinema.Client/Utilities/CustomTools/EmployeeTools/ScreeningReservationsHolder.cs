@@ -37,11 +37,11 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
             this.Controls.Clear();
 
-            var rowCoordinates = new Point(0, 0);
-
+            var rowCoordinates = new Point(10, 10);
+            var rowSize = new Size(this.Width - 50,90);
             foreach (var reservedTicket in _reservedTickets)
             {
-                var row = new ReservationRow(rowCoordinates, reservedTicket);
+                var row = new ReservationRow(rowCoordinates, rowSize, reservedTicket);
                 row.Location = rowCoordinates;
                 this.Controls.Add(row);
 

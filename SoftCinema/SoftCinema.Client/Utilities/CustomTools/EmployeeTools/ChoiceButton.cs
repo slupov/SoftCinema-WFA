@@ -4,7 +4,7 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ChoiceButton : SeatButton
+    class ChoiceButton : Button
     {
         private static Font _normalFont = new Font("Arial", 10F, System.Drawing.FontStyle.Bold,
             System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -28,7 +28,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             base.Margin = _margin;
             base.Padding = _padding;
             base.MinimumSize = _minSize;
-            base.Size = new Size(20, 20);
+            base.Size = new Size(50,20);
 
             this._selected = false;
 
