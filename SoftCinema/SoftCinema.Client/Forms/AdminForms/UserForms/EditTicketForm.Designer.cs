@@ -40,8 +40,8 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.cinemaLabel = new System.Windows.Forms.Label();
             this.cinemaComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.DeletButton = new System.Windows.Forms.Button();
             this.SeatLabel = new System.Windows.Forms.Label();
             this.seatComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -192,29 +192,29 @@
             this.cinemaComboBox.TabIndex = 16;
             this.cinemaComboBox.SelectedIndexChanged += new System.EventHandler(this.cinemaComboBox_SelectedIndexChanged);
             // 
-            // button1
+            // BackButton
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(202, 432);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 56);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackButton.Location = new System.Drawing.Point(202, 432);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(144, 56);
+            this.BackButton.TabIndex = 27;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // button2
+            // DeletButton
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(618, 436);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 49);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Delete Ticket";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.DeletButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeletButton.Location = new System.Drawing.Point(618, 436);
+            this.DeletButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DeletButton.Name = "DeletButton";
+            this.DeletButton.Size = new System.Drawing.Size(144, 49);
+            this.DeletButton.TabIndex = 28;
+            this.DeletButton.Text = "Delete Ticket";
+            this.DeletButton.UseVisualStyleBackColor = true;
+            this.DeletButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // SeatLabel
             // 
@@ -269,8 +269,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1067, 510);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BackButton);
+            this.Controls.Add(this.DeletButton);
             this.Controls.Add(this.EditTicketButton);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.label1);
@@ -310,8 +310,8 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label cinemaLabel;
         private System.Windows.Forms.ComboBox cinemaComboBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button DeletButton;
         private System.Windows.Forms.Label SeatLabel;
         private System.Windows.Forms.ComboBox seatComboBox;
         private System.Windows.Forms.Label label1;

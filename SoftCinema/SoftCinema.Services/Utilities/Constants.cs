@@ -19,7 +19,10 @@ namespace SoftCinema.Services.Utilities
         public const int MaxMovieNameLength = 50;
         public const int MinUsernameLength = 3;
         public const int MaxUsernameLength = 25;
-
+        public const decimal RegularTicketPrice = 9.00M;
+        public const decimal ChildrenTicketPrice = 5.00M;
+        public const decimal StudentsTicketPrice = 7.00M;
+        public const decimal SeniorsrTicketPrice = 6.00M;
 
         public const string GreetingsMessage = "Hello, {0}!";
         public const string DeleteUserMessage = "Are you sure you wand to delete this user?";

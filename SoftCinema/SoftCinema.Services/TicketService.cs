@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.Models;
-using SoftCinema.Models.Constants;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
@@ -118,6 +119,26 @@ namespace SoftCinema.Services
                 Ticket ticket = context.Tickets.Find(ticketId);
                 context.Tickets.Remove(ticket);
                 context.SaveChanges();
+            }
+        }
+
+        public static string GetTicketDate(int ticketId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Ticket ticket = context.Tickets.Find(ticketId);
+                return ticket.Screening.Start.Day + " " + ticket.Screening.Start.Date.ToString("MMM") + " " +
+                                ticket.Screening.Start.DayOfWeek;
+            }
+        }
+
+        public static string GetTicketTime(int ticketId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                Ticket ticket = context.Tickets.Find(ticketId);
+                return ticket.Screening.Start.ToString("hh") + ":" + ticket.Screening.Start.ToString("mm") + " " +
+                       ticket.Screening.Start.ToString("tt", CultureInfo.InvariantCulture);
             }
         }
     }

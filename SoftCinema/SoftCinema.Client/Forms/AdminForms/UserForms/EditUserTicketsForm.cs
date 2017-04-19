@@ -29,32 +29,37 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
         {
             var tickets = TicketService.GetTicketsInfo(user.Username);
             TicketsList.DefaultCellStyle.Font = new Font("Tahoma", 12);
-            
-            foreach (var ticket in tickets)
+
+
+            if (tickets.Count == 0)
             {
+                TicketsList.RowHeadersVisible = false;
+                for (int i = 0; i < TicketsList.ColumnCount; i++)
+                {
 
-
-                System.Drawing.Image image = ImageProcessor.byteArrayToImage(ticket.Screening.Movie.Image.Content);
-                System.Drawing.Image resizedImage = (System.Drawing.Image) (new Bitmap(image, new Size(100,120)));
-                string cinema = ticket.Screening.Auditorium.Cinema.Name + " " +
-                                ticket.Screening.Auditorium.Cinema.Town.Name;
-                string auditorium = ticket.Screening.Auditorium.Number.ToString();
-                string movie = ticket.Screening.Movie.Name + " - " + ticket.Screening.Movie.ReleaseYear;
-                string start = ticket.Screening.Start.ToString();
-                string seat = ticket.Seat.Number.ToString();
-                int seatId = ticket.SeatId;
-                int screeningId = ticket.ScreeningId;
-                
-                this.TicketsList.Rows.Add(resizedImage,movie,cinema,auditorium,start,seat,seatId,screeningId);
-
-
-
-
-
+                    TicketsList.Columns[i].Visible = false;
+                }
             }
-            
-           
-         
+
+            else
+            {
+                foreach (var ticket in tickets)
+                {
+                    System.Drawing.Image image = ImageProcessor.byteArrayToImage(ticket.Screening.Movie.Image.Content);
+                    System.Drawing.Image resizedImage = (System.Drawing.Image) (new Bitmap(image, new Size(100, 120)));
+                    string cinema = ticket.Screening.Auditorium.Cinema.Name + " " +
+                                    ticket.Screening.Auditorium.Cinema.Town.Name;
+                    string auditorium = ticket.Screening.Auditorium.Number.ToString();
+                    string movie = ticket.Screening.Movie.Name + " - " + ticket.Screening.Movie.ReleaseYear;
+                    string start = ticket.Screening.Start.ToString();
+                    string seat = ticket.Seat.Number.ToString();
+                    int seatId = ticket.SeatId;
+                    int screeningId = ticket.ScreeningId;
+                    this.TicketsList.Rows.Add(resizedImage, movie, cinema, auditorium, start, seat, seatId, screeningId);
+
+                }
+            }
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -69,6 +74,10 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
         private void TicketsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (TicketsList.SelectedCells[0].RowIndex < 0)
+            {
+                return;
+            }
             int selectedRow = TicketsList.SelectedCells[0].RowIndex;
             int holderId = user.Id;
             int seatId =int.Parse( TicketsList.Rows[selectedRow].Cells["SeatId"].Value.ToString());

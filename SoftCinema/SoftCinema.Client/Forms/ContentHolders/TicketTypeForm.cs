@@ -94,7 +94,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void regularQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var regularCount = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
-            this._regularPrice = regularCount*Models.Constants.Constants.RegularTicketPrice;
+            this._regularPrice = regularCount*Services.Utilities.Constants.RegularTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
 
@@ -108,21 +108,21 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void childrenQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var childrenCount = int.Parse(this.childrenQuantityComboBox.SelectedItem.ToString());
-            this._childrenPrice = childrenCount*Models.Constants.Constants.ChildrenTicketPrice;
+            this._childrenPrice = childrenCount*Constants.ChildrenTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
 
         private void seniorsQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var seniorsCount = int.Parse(this.seniorsQuantityComboBox.SelectedItem.ToString());
-            this._seniorPrice = seniorsCount*Models.Constants.Constants.SeniorsrTicketPrice;
+            this._seniorPrice = seniorsCount*Constants.SeniorsrTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
 
         private void studentsQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var studentsCount = int.Parse(this.studentsQuantityComboBox.SelectedItem.ToString());
-            this._studentPrice = studentsCount*Models.Constants.Constants.StudentsTicketPrice;
+            this._studentPrice = studentsCount*Constants.StudentsTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
     }
