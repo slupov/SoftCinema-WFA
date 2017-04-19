@@ -14,7 +14,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this._screenings = new List<Screening>();
         }
 
-        public ScreeningsHolder(Point startingPoint,Size size, List<Screening> screenings)
+        public ScreeningsHolder(Point startingPoint, Size size, List<Screening> screenings)
         {
             this.Location = startingPoint;
             this._screenings = screenings;
@@ -33,11 +33,11 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
             this.Controls.Clear();
 
-            var rowCoordinates = new Point(0,0);
+            var rowCoordinates = new Point(0, 0);
             int id = 0;
             foreach (var screening in _screenings)
             {
-                var row = new ScreeningRow(screening,this.Size.Width,++id);
+                var row = new ScreeningRow(screening, this.Size.Width, ++id);
                 row.Location = rowCoordinates;
                 this.Controls.Add(row);
 

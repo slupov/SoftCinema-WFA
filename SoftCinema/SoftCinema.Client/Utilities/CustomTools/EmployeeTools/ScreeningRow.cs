@@ -39,8 +39,8 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
         protected override void OnClick(EventArgs e)
         {
-            var details = new ShowScreeningReservationsForm(_screening);
-            details.Show();
+            var reservationsForm = new ShowScreeningReservationsForm(_screening);
+            reservationsForm.Show();
 
             base.OnClick(e);
         }

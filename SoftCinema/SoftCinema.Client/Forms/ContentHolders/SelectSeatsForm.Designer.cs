@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Client.Forms.ContentHolders
+﻿using System.Windows.Forms;
+
+namespace SoftCinema.Client.Forms.ContentHolders
 {
     partial class SelectSeatsForm
     {
@@ -32,10 +34,10 @@
             this.freeSeatsLabel = new System.Windows.Forms.Label();
             this.takenSeatsLabel = new System.Windows.Forms.Label();
             this.chosenSeatsLabel = new System.Windows.Forms.Label();
-            this.purchaseButton = new SoftCinema.Client.Utilities.CustomTools.TeamButton();
             this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.freeSeatsLegendLabel = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
+            this.reserveButton = new Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -74,24 +76,6 @@
             this.chosenSeatsLabel.Size = new System.Drawing.Size(71, 13);
             this.chosenSeatsLabel.TabIndex = 10;
             this.chosenSeatsLabel.Text = "Chosen seats";
-            // 
-            // purchaseButton
-            // 
-            this.purchaseButton.BackColor = System.Drawing.Color.DimGray;
-            this.purchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.purchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.purchaseButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchaseButton.ForeColor = System.Drawing.Color.Black;
-            this.purchaseButton.Location = new System.Drawing.Point(601, 56);
-            this.purchaseButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.purchaseButton.MinimumSize = new System.Drawing.Size(100, 30);
-            this.purchaseButton.Name = "purchaseButton";
-            this.purchaseButton.Padding = new System.Windows.Forms.Padding(3);
-            this.purchaseButton.Size = new System.Drawing.Size(154, 36);
-            this.purchaseButton.TabIndex = 12;
-            this.purchaseButton.Text = "Purchase";
-            this.purchaseButton.UseVisualStyleBackColor = false;
-            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click);
             // 
             // chosenSeatsLegendButton
             // 
@@ -153,12 +137,33 @@
             this.freeSeatsLegendLabel.Text = "seatButton1";
             this.freeSeatsLegendLabel.UseVisualStyleBackColor = false;
             // 
+            // reserveButton
+            // 
+            this.reserveButton.BackColor = System.Drawing.Color.Silver;
+            this.reserveButton.Enabled = false;
+            this.reserveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.reserveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reserveButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
+            this.reserveButton.Location = new System.Drawing.Point(567, 32);
+            this.reserveButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.reserveButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.reserveButton.Name = "reserveButton";
+            this.reserveButton.Padding = new System.Windows.Forms.Padding(3);
+            this.reserveButton.Size = new System.Drawing.Size(149, 52);
+            this.reserveButton.TabIndex = 11;
+            this.reserveButton.Text = "Reserve";
+            this.reserveButton.UseVisualStyleBackColor = false;
+            this.reserveButton.Click += new System.EventHandler(this.reserveButton_Click);
+            this.reserveButton.MouseEnter+=new System.EventHandler(this.reserveButton_Enter);
+            this.reserveButton.MouseLeave += new System.EventHandler(this.reserveButton_MouseLeave);
+            // 
             // SelectSeatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.purchaseButton);
+            this.Controls.Add(this.reserveButton);
             this.Controls.Add(this.chosenSeatsLabel);
             this.Controls.Add(this.chosenSeatsLegendButton);
             this.Controls.Add(this.takenSeatsLabel);
@@ -184,6 +189,6 @@
         private Utilities.CustomTools.SeatButton takenSeatsLegendButton;
         private System.Windows.Forms.Label chosenSeatsLabel;
         private Utilities.CustomTools.SeatButton chosenSeatsLegendButton;
-        private Utilities.CustomTools.TeamButton purchaseButton;
+        public Button reserveButton;
     }
 }

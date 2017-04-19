@@ -258,6 +258,9 @@
     <Compile Include="Utilities\CustomTools\EmployeeTools\ChoiceButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningReservationsHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningRow.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -270,7 +273,7 @@
     <Compile Include="Utilities\CustomTools\MoviePostersSlider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\CustomTools\EmployeeTools\ScreeningReservationGroup.cs">
+    <Compile Include="Utilities\CustomTools\EmployeeTools\ReservationRow.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForms\AdminMenuForm.resx">

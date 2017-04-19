@@ -13,44 +13,40 @@ namespace SoftCinema.Client.Forms.EmployeeForms
     public partial class ShowScreeningReservationsForm : ContentHolderForm
     {
         private Screening _screening { get; set; }
-        private Panel _reservationGroupsHolder { get; set; }
+        private List<Ticket> _reservedTickets { get; set; }
+        private ScreeningReservationsHolder _reservationsHolder { get; set; }
 
         public ShowScreeningReservationsForm(Screening screening)
         {
             this._screening = screening;
-            RenderReservationGroupHolder();
+            this._reservedTickets = TicketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
+            this._reservationsHolder = new ScreeningReservationsHolder();
+            RenderReservationsHolder();
 
             InitializeComponent();
         }
 
-
-        private void RenderReservationGroupHolder()
+        private void RenderReservationsHolder()
         {
-            this._reservationGroupsHolder = new Panel();
-            //searchByUsernameTextBox returns null 
-            this._reservationGroupsHolder.Location = new Point(this.searchByUsernameTextBox.Location.X,
-                this.searchByUsernameTextBox.Location.Y + 20);
-
-            this.Controls.Add(this._reservationGroupsHolder);
-        }
-
-        private void PopulateReservationGroupHolder(List<Ticket> tickets)
-        {
-            if (tickets.Count == 0)
+            if (this._reservedTickets.Count == 0)
             {
-                this._reservationGroupsHolder.Controls.Clear();
+                ClearReservationHolder();
                 return;
             }
+            var location = new Point(this.searchByUsernameLabel.Location.X, this.searchByUsernameTextBox.Location.Y + 60);
+            var width = this.Size.Width - this.titleLabel.Location.X;
+            var size = new Size(width, 400);
 
-            var groupLocation = this._reservationGroupsHolder.Location;
-
-            foreach (var ticket in tickets)
+            if (this.Controls.Contains(this._reservationsHolder))
             {
-                var reservationGroup = new ScreeningReservationGroup(groupLocation, ticket);
-                this._reservationGroupsHolder.Controls.Add(reservationGroup);
-
-                groupLocation.Y += 5;
+                var reservationsHolderIndex = this.Controls.IndexOf(this._reservationsHolder);
+                this.Controls.RemoveAt(reservationsHolderIndex);
             }
+
+            this._reservationsHolder = new ScreeningReservationsHolder(location, size, _reservedTickets);
+
+            this.Controls.Add(this._reservationsHolder);
+            this.Refresh();
         }
 
         private void ShowScreeningReservationsForm_Load(object sender, EventArgs e)
@@ -58,7 +54,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             var cinemaName = this._screening.Auditorium.Cinema.Name;
             var townName = this._screening.Auditorium.Cinema.Town.Name;
             var movieName = this._screening.Movie.Name;
-            var startDate = this._screening.Start.ToString("f0");
+            var startDate = this._screening.Start.ToString("f");
 
             this.titleLabel.Text = string.Format(Constants.ScreeningTitleLabel, cinemaName, townName, movieName,
                 startDate);
@@ -66,13 +62,22 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void searchByUsernameTextBox_TextChanged(object sender, EventArgs e)
         {
+            ClearReservationHolder();
+
             var username = this.searchByUsernameTextBox.Text;
             var tickets =
                 TicketService.GetTickets(this._screening)
                     .Where(t => t.Holder.Username == username && t.isPaid == false)
                     .ToList();
+            this._reservedTickets = tickets;
 
-            PopulateReservationGroupHolder(tickets);
+            RenderReservationsHolder();
         }
+
+        private void ClearReservationHolder()
+        {
+            this._reservationsHolder.Controls.Clear();
+        }
+
     }
 }

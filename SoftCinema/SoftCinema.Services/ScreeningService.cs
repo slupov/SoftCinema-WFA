@@ -42,6 +42,9 @@ namespace SoftCinema.Services
                 return db
                     .Screenings
                     .Include("Auditorium")
+                    .Include("Auditorium.Cinema")
+                    .Include("Auditorium.Cinema.Town")
+                    .Include("Movie")
                     .Where(s => s.Auditorium.Cinema.Name == cinemaName &&
                                 s.Auditorium.Cinema.Town.Name == townName &&
                                 s.Movie.Name == movieName)
