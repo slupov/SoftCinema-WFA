@@ -12,7 +12,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private decimal _childrenPrice = 0M;
         private decimal _seniorPrice = 0M;
         private decimal _studentPrice = 0M;
-
+        public int ChildrenTicketsCount { get; set; }
+        public int RegularTicketsCount { get; set; }
+        public int SeniorsTicketsCount { get; set; }
+        public int StudentsTicketsCount { get; set; }
         private bool areTicketsMoreThanMaxCount(int ticketsQuantity)
         {
             if (ticketsQuantity > Constants.MaxTicketCount)
@@ -56,7 +59,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 else
                 {
                     SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity);
-                   
+                    selectSeatsForm.Owner = this;
                     selectSeatsForm.ShowDialog(this);
                     }
             }
@@ -69,12 +72,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private int calculate_Quantity()
         {
-            var children = int.Parse(this.childrenQuantityComboBox.SelectedItem.ToString());
-            var regular = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
-            var seniors = int.Parse(this.seniorsQuantityComboBox.SelectedItem.ToString());
-            var students = int.Parse(this.studentsQuantityComboBox.SelectedItem.ToString());
-
-            return regular + children + seniors + students;
+            return this.ChildrenTicketsCount + this.SeniorsTicketsCount + this.StudentsTicketsCount + this.RegularTicketsCount;
         }
 
         private void TicketTypeForm_Load(object sender, EventArgs e)
@@ -93,9 +91,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void regularQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var regularCount = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
-            this._regularPrice = regularCount*Services.Utilities.Constants.RegularTicketPrice;
+            this.RegularTicketsCount = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
+            this._regularPrice = RegularTicketsCount * Services.Utilities.Constants.RegularTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
+
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -107,22 +106,22 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void childrenQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var childrenCount = int.Parse(this.childrenQuantityComboBox.SelectedItem.ToString());
-            this._childrenPrice = childrenCount*Constants.ChildrenTicketPrice;
+            this.ChildrenTicketsCount = int.Parse(this.childrenQuantityComboBox.SelectedItem.ToString());
+            this._childrenPrice = this.ChildrenTicketsCount * Constants.ChildrenTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
 
         private void seniorsQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var seniorsCount = int.Parse(this.seniorsQuantityComboBox.SelectedItem.ToString());
-            this._seniorPrice = seniorsCount*Constants.SeniorsrTicketPrice;
+            this.SeniorsTicketsCount = int.Parse(this.seniorsQuantityComboBox.SelectedItem.ToString());
+            this._seniorPrice = this.SeniorsTicketsCount * Constants.SeniorsrTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
 
         private void studentsQuantityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var studentsCount = int.Parse(this.studentsQuantityComboBox.SelectedItem.ToString());
-            this._studentPrice = studentsCount*Constants.StudentsTicketPrice;
+            this.StudentsTicketsCount = int.Parse(this.studentsQuantityComboBox.SelectedItem.ToString());
+            this._studentPrice = StudentsTicketsCount * Constants.StudentsTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
         }
     }
