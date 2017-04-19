@@ -167,8 +167,5 @@
       <DependentUpon>201704191347486_AddedUserProfilePicture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Utilities\Images\default.jpg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

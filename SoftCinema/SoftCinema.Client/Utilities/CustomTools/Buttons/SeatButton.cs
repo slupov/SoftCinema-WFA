@@ -15,7 +15,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static Color _back = System.Drawing.Color.FromArgb(255, 53, 172, 73);
         private static Color _border = System.Drawing.Color.Black;
         private static Color _activeBorder = System.Drawing.Color.FromArgb(255, 245, 132, 36);
-        private static Color _fore = System.Drawing.Color.White;
+        private static Color _fore = System.Drawing.Color.Black;
 
         private static Padding _margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
         private static Padding _padding = new System.Windows.Forms.Padding(3, 3, 3, 3);

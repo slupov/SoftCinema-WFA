@@ -18,6 +18,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         public ShowScreeningReservationsForm(Screening screening)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this._screening = screening;
             this._reservedTickets = TicketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
             this._reservationsHolder = new ScreeningReservationsHolder();
@@ -33,8 +34,8 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 return;
             }
             var location = new Point(this.searchByUsernameLabel.Location.X, this.searchByUsernameTextBox.Location.Y + 60);
-            var width = this.Size.Width - this.titleLabel.Location.X;
-            var size = new Size(width, 400);
+            var width = this.Size.Width - 100;
+            var size = new Size(width, 200);
 
             if (this.Controls.Contains(this._reservationsHolder))
             {
@@ -66,11 +67,19 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             ClearReservationHolder();
 
             var username = this.searchByUsernameTextBox.Text;
-            var tickets =
-                TicketService.GetTickets(this._screening)
+            if (username == "" || username == string.Empty)
+            {
+                this._reservedTickets = TicketService.GetTickets(this._screening)
+                    .Where(t => t.isPaid == false)
+                    .ToList();
+            }
+            else
+            {
+                this._reservedTickets = TicketService.GetTickets(this._screening)
                     .Where(t => t.Holder.Username == username && t.isPaid == false)
                     .ToList();
-            this._reservedTickets = tickets;
+            }
+
 
             RenderReservationsHolder();
         }

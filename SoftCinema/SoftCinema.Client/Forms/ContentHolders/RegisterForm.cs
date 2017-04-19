@@ -43,7 +43,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var repeatPassword = this.repeatPasswordTextBox.Text;
             var email = this.emailTextBox.Text;
             var phone = this.phoneNumberTextBox.Text;
-            var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image);
+            var image = Image.FromFile(@"../../Utilities/Images/default.jpg");
+            var scaledImage = ImageService.ScaleImage(image, 55, 54);
+            this.profilePictureBox.Width = scaledImage.Width;
+            this.profilePictureBox.Height = scaledImage.Height;
+            var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
 
             bool isDataValid = UserService.Validations.isUserValid(username, password, repeatPassword, email, phone);
 

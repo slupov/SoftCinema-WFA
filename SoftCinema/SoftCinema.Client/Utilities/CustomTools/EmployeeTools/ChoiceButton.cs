@@ -28,7 +28,9 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             base.Margin = _margin;
             base.Padding = _padding;
             base.MinimumSize = _minSize;
-            base.Size = new Size(50,20);
+            base.Size = new Size(50,30);
+            this.Font = new Font("Times New Roman Bold",10);
+            this.TextAlign = ContentAlignment.TopCenter;
 
             this._selected = false;
 

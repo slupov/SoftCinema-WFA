@@ -54,6 +54,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
             var seatCoordinates = this.Location;
 
             var maxSeatsPerRow = 0;
+            var seatNumber = 0;
 
             for (int row = 1; row <= maxRow; row++)
             {
@@ -71,16 +72,18 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
                 for (int col = 1; col <= seatsPerRow; col++)
                 {
+                    ++seatNumber;
+
                     if (col == 1)
                     {
                         seatCoordinates.X = rowLabelCoordinates.X;
                     }
                     seatCoordinates.X += 30;
 
-                    SeatButton seatButton = new SeatButton();
+                    SeatButton seatButton = new SeatButton(seatNumber,row);
                     seatButton.Location = seatCoordinates;
-                    seatButton.Text = col.ToString();
-
+                    seatButton.Text = seatNumber.ToString();
+                    seatButton.ForeColor=Color.Black;
                     this.Controls.Add(seatButton);
                     _seats.Add(seatButton);
                 }

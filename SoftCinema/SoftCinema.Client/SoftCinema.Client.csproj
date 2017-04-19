@@ -384,6 +384,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Utilities\Images\default.jpg" />
     <Content Include="Utilities\Images\popcorn.jpg" />
   </ItemGroup>
   <ItemGroup>
