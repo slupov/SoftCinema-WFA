@@ -56,13 +56,11 @@ namespace SoftCinema.Services
                     .Where(s => s.Movie.Name == movieName)
                     .Where(s => s.Auditorium.Cinema.Town.Name == townName)
                     .Select(s => s.Auditorium.Cinema.Name)
+                    .Distinct()
                     .ToArray();
 
-                HashSet<string> set = new HashSet<string>(arr);
-                string[] result = new string[set.Count];
-                set.CopyTo(result);
-
-                return result;
+             
+                return arr;
             }
         }
 

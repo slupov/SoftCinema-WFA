@@ -83,14 +83,13 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void RenderScreeningsHolder()
         {
-            this._screeningsHolder =
-                new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60),
-                    this._screenings);
-
             if (this._screenings.Count == 0)
             {
                 return;
             }
+            this._screeningsHolder =
+                new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60),
+                    this._screenings);
 
             this.Controls.Add(this._screeningsHolder);
         }

@@ -48,6 +48,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 UserService.AddUser(username, password, email, phone);
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
+                var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
+                mainForm.RenderSideBar();
+                //Redirect to home page view
+                SoftCinemaForm.SetContentHolderForm(new LoginForm());
             }
         }
 

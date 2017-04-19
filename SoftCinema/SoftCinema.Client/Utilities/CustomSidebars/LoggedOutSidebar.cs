@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Client.Utilities.CustomTools;
-using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
-
+﻿
 namespace SoftCinema.Client.Utilities.CustomSidebars
 {
+    using System.Collections.Generic;
+    using SoftCinema.Client.Utilities.CustomTools;
+    using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
     class LoggedOutSidebar : SideBar
     {
         public LoggedOutSidebar() : base()
@@ -15,9 +11,9 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
             this.Buttons.AddRange(new List<TeamButton>()
             {
                 new HomeTeamButton(),
+                new MoviesTeamButton(),
                 new RegisterTeamButton(),
-                new LoginTeamButton(),
-                new MoviesTeamButton()
+                new LoginTeamButton()              
             });
 
             this.VisualizeButtons();

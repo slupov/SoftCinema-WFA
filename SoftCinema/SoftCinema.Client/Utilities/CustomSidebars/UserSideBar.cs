@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿namespace SoftCinema.Client.Utilities.CustomSidebars
+{
+using System.Collections.Generic;
 using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
-
-namespace SoftCinema.Client.Utilities.CustomSidebars
-{
     class UserSideBar : SideBar
     {
         public UserSideBar() : base()
@@ -11,8 +10,8 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
             this.Buttons.AddRange(new List<TeamButton>()
             {
                 new HomeTeamButton(),
-                new BuyTicketsTeamButton(),
                 new MoviesTeamButton(),
+                new BuyTicketsTeamButton()        
             });
 
             this.VisualizeButtons();
