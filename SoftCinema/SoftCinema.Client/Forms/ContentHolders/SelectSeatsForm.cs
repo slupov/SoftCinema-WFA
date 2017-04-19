@@ -41,7 +41,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 this.freeSeatsLegendLabel.Location.Y + 30);
             int width = this.reserveButton.Location.X + this.reserveButton.Size.Width - startingPoint.X;
 
-            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, startingPoint, width,
+            this._seatsSchema = new AuditoriumSeatsSchema(this._screening.Auditorium, this._screening, startingPoint,
+                width,
                 this._seatCount);
         }
 

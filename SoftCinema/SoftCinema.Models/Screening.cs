@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SoftCinema.Models
 {
@@ -31,5 +30,18 @@ namespace SoftCinema.Models
         public virtual Movie Movie { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
+
+        public bool Contains(int seatNumber)
+        {
+            foreach (var ticket in this.Tickets)
+            {
+                if (ticket.Seat.Number == seatNumber)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using SoftCinema.Client.Forms;
 using SoftCinema.Models;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -9,27 +10,28 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
     public class SeatButton : Button
     {
-        private static Font _normalFont = new Font("Arial", 10F, System.Drawing.FontStyle.Bold,
+        private static Font _normalFont = new Font("Arial", 8F, System.Drawing.FontStyle.Bold,
             System.Drawing.GraphicsUnit.Point, ((byte) (0)));
 
-        private static Color _back = System.Drawing.Color.FromArgb(255, 53, 172, 73);
+        private static Color _back = Constants.Colors.FreeSeatColor;
         private static Color _border = System.Drawing.Color.Black;
-        private static Color _activeBorder = System.Drawing.Color.FromArgb(255, 245, 132, 36);
+        private static Color _activeBorder = Constants.Colors.SelectedSeatColor;
         private static Color _fore = System.Drawing.Color.Black;
 
-        private static Padding _margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-        private static Padding _padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+        private static Padding _margin = new System.Windows.Forms.Padding(0);
+        private static Padding _padding = new System.Windows.Forms.Padding(0);
 
         private static Size _minSize = new System.Drawing.Size(10, 10);
         private bool _active;
         private bool _selected;
-      
+
         public int Row { get; set; }
         public int Number { get; set; }
 
         public SeatButton(int number, int row) : base()
         {
-            base.Font = _normalFont;
+            this.Font = _normalFont;
+            this.TextAlign = ContentAlignment.MiddleCenter;
             base.BackColor = _back;
             base.ForeColor = _fore;
             base.FlatAppearance.BorderColor = _back;
@@ -37,8 +39,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
             base.Margin = _margin;
             base.Padding = _padding;
             base.MinimumSize = _minSize;
-            base.Text = number.ToString();
-            base.Size = new Size(20, 20);
+            this.Text = number.ToString();
+            base.Size = new Size(30, 30);
 
             this.Row = row;
             this.Number = number;
@@ -72,14 +74,14 @@ namespace SoftCinema.Client.Utilities.CustomTools
             if (this._selected)
             {
                 this._selected = false;
-                this.BackColor = System.Drawing.Color.FromArgb(255, 53, 172, 73);
+                this.BackColor = Constants.Colors.FreeSeatColor;
             }
             else
             {
                 this._selected = true;
-                this.BackColor = System.Drawing.Color.FromArgb(255, 245, 132, 36);
+                this.BackColor = Constants.Colors.SelectedSeatColor;
             }
-           
+
             AuditoriumSeatsSchema.LimitSeatsSelection();
             var form = (AuditoriumSeatsSchema) this.Parent;
             form.UpdateReserveButton();

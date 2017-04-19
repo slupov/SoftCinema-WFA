@@ -11,7 +11,7 @@ namespace SoftCinema.Services
 {
     public static class TicketService
     {
-        public static void AddTicketToCurrentUser(Screening screening,TicketType type, Seat seat)
+        public static void AddTicketToCurrentUser(Screening screening, TicketType type, Seat seat)
         {
             if (AuthenticationManager.IsAuthenticated())
             {
@@ -20,10 +20,10 @@ namespace SoftCinema.Services
             int screeningId = screening.Id;
             int seatId = seat.Id;
             int userId = AuthenticationManager.GetCurrentUser().Id;
-            AddTicket(screeningId,type,seatId,userId);
+            AddTicket(screeningId, type, seatId, userId);
         }
-      
-        public static void AddTicket(int screeningId, TicketType type, int seatId,int holderId)
+
+        public static void AddTicket(int screeningId, TicketType type, int seatId, int holderId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -83,27 +83,38 @@ namespace SoftCinema.Services
                     .Include("Seat")
                     .Include("Holder")
                     .Where(t => t.ScreeningId == screening.Id).ToList();
-			}
-		}
-		
+            }
+        }
+
         public static Ticket GetTicket(int holderId, int seatId, int screeningId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return
                     context.Tickets
-                    .Include(t => t.Screening.Auditorium)
-                    .Include(t => t.Screening.Auditorium.Cinema)
-                    .Include(t => t.Screening.Auditorium.Cinema.Town)
-                    .Include(t => t.Seat)
-                    .Include(t => t.Screening.Movie.Image)
-                    .Include(t => t.Screening.Movie)
-                    .FirstOrDefault(
-                        t => t.HolderId == holderId && t.SeatId == seatId && t.ScreeningId == screeningId);
+                        .Include(t => t.Screening.Auditorium)
+                        .Include(t => t.Screening.Auditorium.Cinema)
+                        .Include(t => t.Screening.Auditorium.Cinema.Town)
+                        .Include(t => t.Seat)
+                        .Include(t => t.Screening.Movie.Image)
+                        .Include(t => t.Screening.Movie)
+                        .FirstOrDefault(
+                            t => t.HolderId == holderId && t.SeatId == seatId && t.ScreeningId == screeningId);
             }
         }
 
-        public static void UpdateTicket(int ticketId, int screeningId, int seatId,TicketType type)
+        public static Ticket GetTicket(int number, Screening screening)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Tickets
+                    .Include("Seat")
+                    .Include("Screening")
+                    .FirstOrDefault(t => t.Seat.Number == number && t.ScreeningId == screening.Id);
+            }
+        }
+
+        public static void UpdateTicket(int ticketId, int screeningId, int seatId, TicketType type)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -131,7 +142,7 @@ namespace SoftCinema.Services
             {
                 Ticket ticket = context.Tickets.Find(ticketId);
                 return ticket.Screening.Start.Day + " " + ticket.Screening.Start.Date.ToString("MMM") + " " +
-                                ticket.Screening.Start.DayOfWeek;
+                       ticket.Screening.Start.DayOfWeek;
             }
         }
 

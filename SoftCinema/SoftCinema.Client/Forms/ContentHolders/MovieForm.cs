@@ -22,6 +22,16 @@ namespace SoftCinema.Client.Forms.ContentHolders
         public MovieForm(Movie movie)
         {
             InitializeComponent();
+
+            if (AuthenticationManager.IsAuthenticated())
+            {
+                this.Controls.Add(this.ticketsButton);
+                this.Controls.Add(this.townBox);
+                this.Controls.Add(this.hourBox);
+                this.Controls.Add(this.dateBox);
+                this.Controls.Add(this.cinemaComboBox);
+            }
+
             System.Drawing.Image image = ImageService.byteArrayToImage(movie.Image.Content);
             this._movie = movie;
             this.pictureBox.Image = ImageService.ScaleImage(image,142,224);

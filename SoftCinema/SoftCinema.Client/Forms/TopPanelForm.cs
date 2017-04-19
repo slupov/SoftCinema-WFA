@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using Image = System.Drawing.Image;
 
 namespace SoftCinema.Client.Forms
 {
@@ -47,14 +49,24 @@ namespace SoftCinema.Client.Forms
             {
                 System.Drawing.Image image = ImageService.byteArrayToImage(imageBytes);
                 profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
-                profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width, profilePicPictureBox.Image.Height);
-                profilePicPictureBox.Show();
+                profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width,
+                    profilePicPictureBox.Image.Height);
             }
-
+            else
+            {
+                
+                    Image image = Image.FromFile(@"../../Utilities/Images/default.jpg");
+                    byte[] imageToBytes = ImageService.imageToByteArray(image);
+                    Models.Image newImage = new Models.Image() { Content = imageToBytes };
+                    currentUser.ProfilePicture = newImage;
+                    profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+            }
+            profilePicPictureBox.Location = new Point(590, profilePicPictureBox.Location.Y + 4);
+            profilePicPictureBox.Show();
             LogoutButton.Show();
         }
 
-        public static void HideGreetings()
+        public  void HideGreetings()
         {
             GreetingLabel.Hide();
             GreetingLabel.Text = string.Empty;

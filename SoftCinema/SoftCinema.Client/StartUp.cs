@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Services;
 
 namespace SoftCinema.Client
 {
@@ -14,6 +15,7 @@ namespace SoftCinema.Client
         [STAThread]
         static void Main()
         {
+            AuthenticationManager.Login(UserService.GetUser("employee1"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SoftCinemaForm());
