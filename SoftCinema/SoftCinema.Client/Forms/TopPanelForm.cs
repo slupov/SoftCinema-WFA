@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.ContentHolders;
+using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 
@@ -27,6 +28,7 @@ namespace SoftCinema.Client.Forms
 
             //Redirect to home page view
             SoftCinemaForm.SetContentHolderForm(new HomeForm());
+            
         }
 
         //Utilities
@@ -37,6 +39,15 @@ namespace SoftCinema.Client.Forms
             GreetingLabel.Text = string.Format(Constants.GreetingsMessage,
                 AuthenticationManager.GetCurrentUser().Username);
 
+            //Show Image
+            User currentUser = AuthenticationManager.GetCurrentUser();
+
+            byte[] imageBytes = UserService.GetUser(currentUser.Username).ProfilePicture.Content;
+            System.Drawing.Image image = ImageService.byteArrayToImage(imageBytes);
+            profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+            profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width, profilePicPictureBox.Image.Height);
+            profilePicPictureBox.Show();
+
             LogoutButton.Show();
         }
 
@@ -44,7 +55,7 @@ namespace SoftCinema.Client.Forms
         {
             GreetingLabel.Hide();
             GreetingLabel.Text = string.Empty;
-
+            profilePicPictureBox.Hide();
             LogoutButton.Hide();
         }
 
