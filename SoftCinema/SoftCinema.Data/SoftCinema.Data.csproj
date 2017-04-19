@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201704181625280_AddedIsPaidPropertyToTicket.Designer.cs">
       <DependentUpon>201704181625280_AddedIsPaidPropertyToTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704191347486_AddedUserProfilePicture.cs" />
+    <Compile Include="Migrations\201704191347486_AddedUserProfilePicture.Designer.cs">
+      <DependentUpon>201704191347486_AddedUserProfilePicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoftCinemaContext.cs" />
@@ -157,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704181625280_AddedIsPaidPropertyToTicket.resx">
       <DependentUpon>201704181625280_AddedIsPaidPropertyToTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704191347486_AddedUserProfilePicture.resx">
+      <DependentUpon>201704191347486_AddedUserProfilePicture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
