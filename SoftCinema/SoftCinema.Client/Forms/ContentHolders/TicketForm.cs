@@ -60,7 +60,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.Hide();
             var contentHolder = ((Button) sender).Parent.Parent;
             var formsCount = contentHolder.Controls.Count;
-            if (formsCount <= contentHolder.Controls.IndexOf(this))
+            if (formsCount-1 <= contentHolder.Controls.IndexOf(this))
             {
                contentHolder.Controls.Add(ticketTypeForm);
                 ticketTypeForm.Show();

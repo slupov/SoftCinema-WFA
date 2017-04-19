@@ -139,8 +139,12 @@ namespace SoftCinema.Services
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                var tickets = context.Tickets.Where(t => t.isPaid == false&& t.Screening==screening);
-                context.Tickets.RemoveRange(tickets);
+                var tickets = context.Tickets.Where(t => t.isPaid == false&& t.Screening.Id==screening.Id).ToList();
+                foreach (var ticket in tickets)
+                {
+                    context.Tickets.Attach(ticket);
+                    context.Tickets.Remove(ticket);
+                }
                 context.SaveChanges();
             }
         }

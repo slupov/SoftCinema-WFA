@@ -33,24 +33,25 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this.AutoSize = true;
             this.BackColor = Color.Bisque;
 
-            VisualizeSeats();
-            if (ShouldCancelReservtions(TicketForm.Screening,new TimeSpan(0,20,0)))
+           
+            if (ShouldCancelReservations(TicketForm.Screening,new TimeSpan(78,20,0)))
             {
-                CancelReservtions(TicketForm.Screening);
+                CancelReservations(TicketForm.Screening);
+                VisualizeSeats();
                 DisableAllSeats();
             }
-           
+            VisualizeSeats();
         }
-        private bool ShouldCancelReservtions(Screening screening, TimeSpan t)
+        private bool ShouldCancelReservations(Screening screening, TimeSpan t)
         {
-            var diffInSeconds = (DateTime.Now - screening.Start).TotalMinutes;
-            if (diffInSeconds < t.TotalMinutes)
+            var diffInMinutes = (screening.Start- DateTime.Now).TotalMinutes;
+            if (diffInMinutes < t.TotalMinutes)
             {
                 return true;
             }
             return false;
         }
-        private void CancelReservtions(Screening screening)
+        private void CancelReservations(Screening screening)
         {
            Services.TicketService.RemoveUnpaidTickets(screening);
         }
