@@ -80,7 +80,7 @@
             this.TicketsList.Name = "TicketsList";
             this.TicketsList.RowTemplate.Height = 24;
             this.TicketsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TicketsList.Size = new System.Drawing.Size(939, 320);
+            this.TicketsList.Size = new System.Drawing.Size(1004, 320);
             this.TicketsList.TabIndex = 7;
             this.TicketsList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TicketsList_CellContentClick);
             // 

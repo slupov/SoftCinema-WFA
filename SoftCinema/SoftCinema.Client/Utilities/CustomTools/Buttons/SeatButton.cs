@@ -1,5 +1,6 @@
 ﻿using System;
 using SoftCinema.Client.Forms;
+using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -22,7 +23,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static Size _minSize = new System.Drawing.Size(10, 10);
         private bool _active;
         private bool _selected;
-
+      
         public int Row { get; set; }
         public int Number { get; set; }
 

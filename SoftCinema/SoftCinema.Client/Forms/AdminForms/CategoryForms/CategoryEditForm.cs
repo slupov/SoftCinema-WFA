@@ -134,7 +134,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                 int yearIndex = m.ToString().LastIndexOf(",");
                 string movieYearString = m.ToString().Substring(yearIndex + 1).Split(new char[] { '\"' }).First();
                 int movieYear = int.Parse(movieYearString);
-                string movieName = m.ToString().Substring(1, m.ToString().Length - movieYearString.Length - 3);
+                string movieName = m.ToString().Substring(0, m.ToString().Length - movieYearString.Length - 1);
                 Tuple<string, int> movie = new Tuple<string, int>(movieName, movieYear);
                 movies.Add(movie);
             }
@@ -149,7 +149,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                 int yearIndex = m.ToString().LastIndexOf(",");
                 string movieYearString = m.ToString().Substring(yearIndex+1).Split(new char[] {'\"'}).First();
                 int movieYear = int.Parse(movieYearString);
-                string movieName = m.ToString().Substring(1, m.ToString().Length - movieYearString.Length - 3);
+                string movieName = m.ToString().Substring(0, m.ToString().Length - movieYearString.Length - 1);
                 Tuple<string, int> movie = new Tuple<string, int>(movieName,movieYear);
                 movies.Add(movie);
             }
