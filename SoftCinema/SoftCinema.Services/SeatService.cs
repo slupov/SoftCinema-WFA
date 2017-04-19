@@ -25,6 +25,14 @@ namespace SoftCinema.Services
             }
         }
 
+        public static Seat GetSeat(int auditoriumId, byte number)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Seats.FirstOrDefault(s => s.AuditoriumId == auditoriumId && s.Number == number);
+            }
+        }
+
 
         public static int[] GetFreeSeatsForScreening(int ticketScreeningId,int auditoriumId)
         {
@@ -57,12 +65,6 @@ namespace SoftCinema.Services
         }
 
 
-        public static Seat GetSeat(int auditoriumId, byte number)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Seats.FirstOrDefault(s => s.AuditoriumId == auditoriumId && s.Number == number);
-            }
-        }
+       
     }
 }

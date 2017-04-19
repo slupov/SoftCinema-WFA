@@ -32,11 +32,10 @@
             this.movieComboBox = new System.Windows.Forms.ComboBox();
             this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.timeComboBox = new System.Windows.Forms.ComboBox();
-            this.AuditoriumComboBox = new System.Windows.Forms.ComboBox();
             this.movieLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
-            this.AuditoriumLabel = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CinemaLabel
@@ -68,7 +67,7 @@
             this.dateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateComboBox.FormattingEnabled = true;
-            this.dateComboBox.Location = new System.Drawing.Point(396, 255);
+            this.dateComboBox.Location = new System.Drawing.Point(396, 233);
             this.dateComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.dateComboBox.Name = "dateComboBox";
             this.dateComboBox.Size = new System.Drawing.Size(304, 32);
@@ -80,25 +79,12 @@
             this.timeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.timeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeComboBox.FormattingEnabled = true;
-            this.timeComboBox.Location = new System.Drawing.Point(396, 307);
+            this.timeComboBox.Location = new System.Drawing.Point(396, 294);
             this.timeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(304, 32);
             this.timeComboBox.TabIndex = 27;
             this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
-            // 
-            // AuditoriumComboBox
-            // 
-            this.AuditoriumComboBox.DisplayMember = "Name";
-            this.AuditoriumComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AuditoriumComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuditoriumComboBox.FormattingEnabled = true;
-            this.AuditoriumComboBox.Location = new System.Drawing.Point(396, 208);
-            this.AuditoriumComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AuditoriumComboBox.Name = "AuditoriumComboBox";
-            this.AuditoriumComboBox.Size = new System.Drawing.Size(304, 32);
-            this.AuditoriumComboBox.TabIndex = 26;
-            this.AuditoriumComboBox.SelectedIndexChanged += new System.EventHandler(this.AuditoriumComboBox_SelectedIndexChanged);
             // 
             // movieLabel
             // 
@@ -117,7 +103,7 @@
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.dateLabel.Location = new System.Drawing.Point(261, 255);
+            this.dateLabel.Location = new System.Drawing.Point(261, 228);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(88, 33);
@@ -129,42 +115,41 @@
             this.timeLabel.AutoSize = true;
             this.timeLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.timeLabel.Location = new System.Drawing.Point(266, 306);
+            this.timeLabel.Location = new System.Drawing.Point(266, 289);
             this.timeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(83, 33);
             this.timeLabel.TabIndex = 32;
             this.timeLabel.Text = "Time:";
             // 
-            // AuditoriumLabel
+            // BackButton
             // 
-            this.AuditoriumLabel.AutoSize = true;
-            this.AuditoriumLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuditoriumLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.AuditoriumLabel.Location = new System.Drawing.Point(183, 208);
-            this.AuditoriumLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AuditoriumLabel.Name = "AuditoriumLabel";
-            this.AuditoriumLabel.Size = new System.Drawing.Size(166, 33);
-            this.AuditoriumLabel.TabIndex = 31;
-            this.AuditoriumLabel.Text = "Auditorium:";
+            this.BackButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BackButton.Location = new System.Drawing.Point(476, 397);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(99, 46);
+            this.BackButton.TabIndex = 36;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // EditScreeningForm
+            // SelectScreeningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1083, 524);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.movieLabel);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.AuditoriumLabel);
             this.Controls.Add(this.movieComboBox);
             this.Controls.Add(this.dateComboBox);
             this.Controls.Add(this.timeComboBox);
-            this.Controls.Add(this.AuditoriumComboBox);
             this.Controls.Add(this.CinemaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditScreeningForm";
+            this.Name = "SelectScreeningForm";
             this.Text = "EditScreeningForm";
             this.Load += new System.EventHandler(this.EditScreeningForm_Load);
             this.ResumeLayout(false);
@@ -178,10 +163,9 @@
         private System.Windows.Forms.ComboBox movieComboBox;
         internal System.Windows.Forms.ComboBox dateComboBox;
         private System.Windows.Forms.ComboBox timeComboBox;
-        private System.Windows.Forms.ComboBox AuditoriumComboBox;
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label AuditoriumLabel;
+        private System.Windows.Forms.Button BackButton;
     }
 }
