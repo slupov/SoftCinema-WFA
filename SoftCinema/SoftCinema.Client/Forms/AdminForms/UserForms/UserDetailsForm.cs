@@ -48,6 +48,10 @@ namespace SoftCinema.Client.Forms
             PhoneNumberTextBox.Text = user.PhoneNumber;
             RoleComboBox.Text = user.Role.ToString();
 
+            this.PhoneNumberInfoLabel.Visible = false;
+            this.EmailInfoLabel.Visible = false;
+            this.UsernameInfoLabel.Visible = false;
+
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
@@ -145,7 +149,7 @@ namespace SoftCinema.Client.Forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EditTickets_Click(object sender, EventArgs e)
         {
             EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
             ticketsForm.TopLevel = false;

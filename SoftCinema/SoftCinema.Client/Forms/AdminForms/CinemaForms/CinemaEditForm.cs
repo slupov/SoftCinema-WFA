@@ -89,8 +89,8 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             DialogResult dialogResult = MessageBox.Show(Constants.DeleteCinemaMessage, Constants.CategoryDeletePrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //try
-                //{
+                try
+                {
                     CinemaService.RemoveCinema(cinema.Name,cinema.Town.Name);
                     MessageBox.Show(Constants.SuccessMessages.CinemaDeletedSuccessfully);
                     CinemasForm cinemasForm = new CinemasForm();
@@ -99,11 +99,11 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                     this.Hide();
                     ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
                     cinemasForm.Show();
-                //}
-                //catch (Exception exception)
-                //{
+                }
+                catch (Exception exception)
+                {
                     MessageBox.Show(Constants.ErrorMessages.CinemaDeleteMessage);
-                //}
+                }
             }
         }
     }

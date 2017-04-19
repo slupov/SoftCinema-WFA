@@ -80,6 +80,8 @@ namespace SoftCinema.Client.Forms.AdminForms
             userForm.Show();
         }
 
+       
+
         private void BackButton_Click(object sender, EventArgs e)
         {
             AdminMenuForm adminMenuForm = new AdminMenuForm();
