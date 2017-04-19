@@ -29,11 +29,12 @@ namespace SoftCinema.Models
         [Required, EmailAddress,MaxLength(30),Index(IsUnique = true)]
         public string Email { get; set; }
 
+        public int? ProfilePictureId { get; set; }
         [Required]
         public Role Role { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
-
+        public virtual Image ProfilePicture { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
