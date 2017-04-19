@@ -39,21 +39,16 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
                 TopPanelForm.ShowGreetings();
-                
+                //Refresh main form's sidebar
+                var mainForm = (SoftCinemaForm)((Button) sender).Parent.Parent.Parent;
+                mainForm.RenderSideBar();
+                //Redirect to home page view
+                SoftCinemaForm.SetContentHolderForm(new HomeForm());
             }
             else
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
-
-            //Refresh main form's sidebar
-            var mainForm = (SoftCinemaForm)((Button) sender).Parent.Parent.Parent;
-            mainForm.RenderSideBar();
-            //Redirect to home page view
-            SoftCinemaForm.SetContentHolderForm(new HomeForm());
-
-
-
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
