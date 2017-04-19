@@ -25,7 +25,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         public ShowScreeningsForm()
         {
             this._screenings = new List<Screening>();
-
+            this._screeningsHolder = new ScreeningsHolder();
             InitializeComponent();
         }
 
@@ -87,9 +87,16 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             {
                 return;
             }
+            
+                                                                                //calculate the right offset
+            var width = this.Parent.Size.Width - this.townComboBox.Location.X - TopPanelForm.LogoutButton.Size.Width;
+
+            var size = new Size(width, 400);
+
             this._screeningsHolder =
-                new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60),
-                    this._screenings);
+                new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60), size,
+                    this._screenings)
+                ;
 
             this.Controls.Add(this._screeningsHolder);
         }

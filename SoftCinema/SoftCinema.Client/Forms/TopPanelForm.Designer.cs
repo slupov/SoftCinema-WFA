@@ -85,7 +85,7 @@ namespace SoftCinema.Client.Forms
 
         #endregion
 
-        private static System.Windows.Forms.Button LogoutButton;
+        public static System.Windows.Forms.Button LogoutButton;
         private static System.Windows.Forms.Label GreetingLabel;
     }
 }

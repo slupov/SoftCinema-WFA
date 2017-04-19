@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Client.Utilities.CustomTools.EmployeeTools;
 using SoftCinema.Models;
@@ -31,6 +27,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         private void RenderReservationGroupHolder()
         {
             this._reservationGroupsHolder = new Panel();
+            //searchByUsernameTextBox returns null 
             this._reservationGroupsHolder.Location = new Point(this.searchByUsernameTextBox.Location.X,
                 this.searchByUsernameTextBox.Location.Y + 20);
 
