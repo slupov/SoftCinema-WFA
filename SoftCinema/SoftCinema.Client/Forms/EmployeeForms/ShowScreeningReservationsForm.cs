@@ -21,7 +21,6 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             this._screening = screening;
             this._reservedTickets = TicketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
             this._reservationsHolder = new ScreeningReservationsHolder();
-            RenderReservationsHolder();
 
             InitializeComponent();
         }
@@ -58,6 +57,8 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
             this.titleLabel.Text = string.Format(Constants.ScreeningTitleLabel, cinemaName, townName, movieName,
                 startDate);
+
+            RenderReservationsHolder();
         }
 
         private void searchByUsernameTextBox_TextChanged(object sender, EventArgs e)
@@ -78,6 +79,5 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         {
             this._reservationsHolder.Controls.Clear();
         }
-
     }
 }

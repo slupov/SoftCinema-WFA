@@ -4,20 +4,24 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ReservationRow : Panel
+    class ReservationRow : GroupBox
     {
         private Label _text { get; set; }
         public Ticket Ticket { get; set; }
         private ChoiceButton _approveButton { get; set; }
         private ChoiceButton _rejectButton { get; set; }
 
-        public ReservationRow(Point location, Ticket ticket)
+        public ReservationRow(Point location, Size size, Ticket ticket)
         {
-            this.Location = location;
-            this.Ticket = ticket;
-            this._text.Location = location;
             _approveButton = new ChoiceButton(true);
             _rejectButton = new ChoiceButton(false);
+
+            this.Location = location;
+            this.Ticket = ticket;
+            this.Size = size;
+            this._text = new Label();
+            this._text.Size = new Size(500, this.Size.Height);
+            this._text.Location = new Point(location.X + 5, location.Y + 5);
 
             RenderLabel();
             RenderButtons();
@@ -25,21 +29,21 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
         private void RenderLabel()
         {
-            this._text.Font = new Font(new FontFamily("Comic Sans MS"), 14);
-            this._text.Text = string.Format("Reserved: Row {0} Seat {1} | {2}, Price: {3}", this.Ticket.Seat.Row,
-                this.Ticket.Seat.Number, this.Ticket.Type, this.Ticket.Price);
-            
             this.Controls.Add(this._text);
+            this._text.Font = new Font(new FontFamily("Comic Sans MS"), 10);
+
+            this._text.Text = string.Format("{0} (Reserved): Row {1} Seat {2} | {3}, Price: {4}",
+                this.Ticket.Holder.Username, this.Ticket.Seat.Row,
+                this.Ticket.Seat.Number, this.Ticket.Type, this.Ticket.Price);
         }
 
         private void RenderButtons()
         {
-            this._approveButton.Location = new Point(this.Location.X + this._text.Width + 10, this.Location.Y);
-            this._rejectButton.Location = new Point(_approveButton.Location.X + 5, this.Location.Y);
+            this._approveButton.Location = new Point(this._text.Location.X + this._text.Width + 5, this._text.Location.Y);
+            this._rejectButton.Location = new Point(_approveButton.Location.X + _approveButton.Width + 10, _approveButton.Location.Y);
 
             this.Controls.Add(this._approveButton);
             this.Controls.Add(this._rejectButton);
-
         }
     }
 }

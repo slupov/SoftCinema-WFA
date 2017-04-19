@@ -79,7 +79,10 @@ namespace SoftCinema.Services
         {
             using (var db = new SoftCinemaContext())
             {
-                return db.Tickets.Where(t => t.ScreeningId == screening.Id).ToList();
+                return db.Tickets
+                    .Include("Seat")
+                    .Include("Holder")
+                    .Where(t => t.ScreeningId == screening.Id).ToList();
 			}
 		}
 		
