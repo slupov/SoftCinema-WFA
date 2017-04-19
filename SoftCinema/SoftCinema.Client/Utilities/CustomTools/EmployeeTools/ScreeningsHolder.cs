@@ -33,7 +33,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
             this.Controls.Clear();
 
-            var rowCoordinates = this.Location;
+            var rowCoordinates = new Point(0,0);
             int id = 0;
             foreach (var screening in _screenings)
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -8,6 +9,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
     public partial class RegisterForm : ContentHolderForm
     {
         private static RegisterForm instance;
+        private byte[] movieImageBytes { get; set; }
 
         public static RegisterForm Instance
         {
@@ -41,12 +43,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var repeatPassword = this.repeatPasswordTextBox.Text;
             var email = this.emailTextBox.Text;
             var phone = this.phoneNumberTextBox.Text;
+            var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image);
 
             bool isDataValid = UserService.Validations.isUserValid(username, password, repeatPassword, email, phone);
 
             if (isDataValid)
             {
-                UserService.AddUser(username, password, email, phone);
+                UserService.AddUser(username, password, email, phone, profilePic);
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
                 var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
                 mainForm.RenderSideBar();
@@ -125,6 +128,26 @@ namespace SoftCinema.Client.Forms.ContentHolders
             else
             {
                 this.phoneInfoLabel.Hide();
+            }
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Please select a photo";
+            ofd.Filter = "PNG|*.png|JPG|*.jpg|GIF|*gif";
+            ofd.Multiselect = false;
+
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var image = System.Drawing.Image.FromFile(ofd.FileName);
+                var scaledImage = ImageService.ScaleImage(image, 138, 161);
+                this.profilePictureBox.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
+
+                var path = ofd.FileName;
+                this.profilePictureBox.Image = scaledImage;
+
+                this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
             }
         }
     }
