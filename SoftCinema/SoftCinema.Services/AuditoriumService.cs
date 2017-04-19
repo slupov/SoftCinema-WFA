@@ -41,6 +41,13 @@ namespace SoftCinema.Services
         }
 
 
-       
+        public static List<byte> GetAuditoriumsForScreening(string movieName, int movieYear,int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Screenings.Where(s => s.Movie.Name == movieName && s.Movie.ReleaseYear==movieYear && s.Auditorium.CinemaId == cinemaId)
+                    .Select(s => s.Auditorium.Number).Distinct().ToList();
+            }
+        }
     }
 }

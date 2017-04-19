@@ -65,7 +65,7 @@ namespace SoftCinema.Services
             {
 
                 return (context.Categories.FirstOrDefault(c => c.Name == categoryName)
-                    .Movies.Select(m => $"\"{m.Name},{m.ReleaseYear}\"").ToArray());
+                    .Movies.Select(m => $"{m.Name},{m.ReleaseYear}").ToArray());
 
             }
         }
@@ -80,7 +80,7 @@ namespace SoftCinema.Services
                     {
                         if (m.Categories.All(c => c.Name != categoryName))
                         {
-                            result.Add($"\"{m.Name},{m.ReleaseYear}\"");
+                            result.Add($"{m.Name},{m.ReleaseYear}");
                         }
                     }
                     return result.ToArray();

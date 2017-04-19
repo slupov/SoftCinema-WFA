@@ -132,5 +132,19 @@ namespace SoftCinema.Services
 
             }
         }
+
+        public static Cinema GetCinemaWithScreenings(int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Cinemas.Include(c => c.Auditoriums)
+                    .Include(c => c.Auditoriums.Select(a => a.Screenings))
+                    .Include(c => c.Auditoriums.Select(a => a.Screenings.Select(s => s.Movie)))
+                    .Include(c => c.Town)
+                    .FirstOrDefault(c => c.Id == cinemaId);
+            }
+        }
+
+      
     }
 }

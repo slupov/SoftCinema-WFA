@@ -84,7 +84,7 @@ namespace SoftCinema.Services
                 foreach (var m in context.Movies)
                 {
 
-                    result.Add($"\"{m.Name},{m.ReleaseYear}\"");
+                    result.Add($"{m.Name},{m.ReleaseYear}");
 
                 }
                 return result.ToArray();
@@ -115,5 +115,6 @@ namespace SoftCinema.Services
         }
 
 
+        
     }
 }

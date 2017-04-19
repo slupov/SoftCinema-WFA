@@ -106,5 +106,16 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 }
             }
         }
+
+        private void EditScreeningsButton_Click(object sender, EventArgs e)
+        {
+            Cinema cinemaWithScreenings = CinemaService.GetCinemaWithScreenings(cinema.Id);
+            EditScreeningForm screeningsForm = new EditScreeningForm(cinemaWithScreenings);
+            screeningsForm.TopLevel = false;
+            screeningsForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(screeningsForm);
+            screeningsForm.Show();
+        }
     }
 }

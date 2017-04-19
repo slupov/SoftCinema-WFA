@@ -153,6 +153,7 @@
             this.EditScreeningsButton.TabIndex = 34;
             this.EditScreeningsButton.Text = "Edit Screenings";
             this.EditScreeningsButton.UseVisualStyleBackColor = true;
+            this.EditScreeningsButton.Click += new System.EventHandler(this.EditScreeningsButton_Click);
             // 
             // CinemaEditForm
             // 

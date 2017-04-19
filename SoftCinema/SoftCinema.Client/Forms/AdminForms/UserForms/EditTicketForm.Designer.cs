@@ -79,7 +79,7 @@
             this.movieComboBox.Location = new System.Drawing.Point(413, 179);
             this.movieComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.movieComboBox.Name = "movieComboBox";
-            this.movieComboBox.Size = new System.Drawing.Size(160, 32);
+            this.movieComboBox.Size = new System.Drawing.Size(311, 32);
             this.movieComboBox.TabIndex = 25;
             this.movieComboBox.SelectedIndexChanged += new System.EventHandler(this.movieComboBox_SelectedIndexChanged);
             // 
@@ -91,7 +91,7 @@
             this.townComboBox.Location = new System.Drawing.Point(413, 100);
             this.townComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.townComboBox.Name = "townComboBox";
-            this.townComboBox.Size = new System.Drawing.Size(160, 32);
+            this.townComboBox.Size = new System.Drawing.Size(311, 32);
             this.townComboBox.TabIndex = 24;
             this.townComboBox.SelectedIndexChanged += new System.EventHandler(this.townComboBox_SelectedIndexChanged);
             // 
@@ -110,7 +110,7 @@
             // EditTicketButton
             // 
             this.EditTicketButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditTicketButton.Location = new System.Drawing.Point(402, 429);
+            this.EditTicketButton.Location = new System.Drawing.Point(490, 419);
             this.EditTicketButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditTicketButton.Name = "EditTicketButton";
             this.EditTicketButton.Size = new System.Drawing.Size(171, 68);
@@ -127,7 +127,7 @@
             this.dateComboBox.Location = new System.Drawing.Point(413, 223);
             this.dateComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.dateComboBox.Name = "dateComboBox";
-            this.dateComboBox.Size = new System.Drawing.Size(160, 32);
+            this.dateComboBox.Size = new System.Drawing.Size(311, 32);
             this.dateComboBox.TabIndex = 21;
             this.dateComboBox.SelectedIndexChanged += new System.EventHandler(this.dateComboBox_SelectedIndexChanged);
             // 
@@ -151,7 +151,7 @@
             this.timeComboBox.Location = new System.Drawing.Point(413, 268);
             this.timeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.timeComboBox.Name = "timeComboBox";
-            this.timeComboBox.Size = new System.Drawing.Size(160, 32);
+            this.timeComboBox.Size = new System.Drawing.Size(311, 32);
             this.timeComboBox.TabIndex = 19;
             this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
             // 
@@ -188,14 +188,14 @@
             this.cinemaComboBox.Location = new System.Drawing.Point(413, 139);
             this.cinemaComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cinemaComboBox.Name = "cinemaComboBox";
-            this.cinemaComboBox.Size = new System.Drawing.Size(160, 32);
+            this.cinemaComboBox.Size = new System.Drawing.Size(311, 32);
             this.cinemaComboBox.TabIndex = 16;
             this.cinemaComboBox.SelectedIndexChanged += new System.EventHandler(this.cinemaComboBox_SelectedIndexChanged);
             // 
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackButton.Location = new System.Drawing.Point(202, 432);
+            this.BackButton.Location = new System.Drawing.Point(260, 425);
             this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(144, 56);
@@ -207,7 +207,7 @@
             // DeletButton
             // 
             this.DeletButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeletButton.Location = new System.Drawing.Point(618, 436);
+            this.DeletButton.Location = new System.Drawing.Point(739, 429);
             this.DeletButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeletButton.Name = "DeletButton";
             this.DeletButton.Size = new System.Drawing.Size(144, 49);
@@ -236,7 +236,7 @@
             this.seatComboBox.Location = new System.Drawing.Point(413, 358);
             this.seatComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.seatComboBox.Name = "seatComboBox";
-            this.seatComboBox.Size = new System.Drawing.Size(160, 32);
+            this.seatComboBox.Size = new System.Drawing.Size(311, 32);
             this.seatComboBox.TabIndex = 30;
             // 
             // label1
@@ -259,7 +259,7 @@
             this.typeComboBox.Location = new System.Drawing.Point(413, 311);
             this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(160, 32);
+            this.typeComboBox.Size = new System.Drawing.Size(311, 32);
             this.typeComboBox.TabIndex = 32;
             this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
             // 
