@@ -46,7 +46,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 row.Location = rowCoordinates;
                 this.Controls.Add(row);
 
-                rowCoordinates.Y += row.Height;
+                rowCoordinates.Y += row.Height + 10;
             }
         }
     }

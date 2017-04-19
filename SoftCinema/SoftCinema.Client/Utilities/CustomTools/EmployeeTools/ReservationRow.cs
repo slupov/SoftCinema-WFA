@@ -59,7 +59,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                TicketService.SellTicket((Ticket) sender);
+                TicketService.SellTicket(this.Ticket);
                 MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
             }
             else
@@ -74,7 +74,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                TicketService.DeleteTicket((Ticket) sender);
+                TicketService.DeleteTicket(this.Ticket);
             }
         }
     }

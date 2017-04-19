@@ -97,7 +97,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             {
                 TicketService.SellTickets(this._reservedTickets);
                 var ticketHolders = this._reservedTickets.Select(t => t.Holder.Username).ToList();
-                var ticketHoldersString = string.Join(",", ticketHolders);
+                var ticketHoldersString = string.Join(",", ticketHolders.Distinct());
 
                 if (this._reservedTickets.Count == 0)
                 {
