@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -37,7 +38,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.chosenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.takenSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.freeSeatsLegendLabel = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
-            this.reserveButton = new Button();
+            this.reserveButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.reservedSeatsLegendButton = new SoftCinema.Client.Utilities.CustomTools.SeatButton();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -62,7 +65,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             // takenSeatsLabel
             // 
             this.takenSeatsLabel.AutoSize = true;
-            this.takenSeatsLabel.Location = new System.Drawing.Point(199, 71);
+            this.takenSeatsLabel.Location = new System.Drawing.Point(326, 71);
             this.takenSeatsLabel.Name = "takenSeatsLabel";
             this.takenSeatsLabel.Size = new System.Drawing.Size(66, 13);
             this.takenSeatsLabel.TabIndex = 8;
@@ -71,7 +74,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             // chosenSeatsLabel
             // 
             this.chosenSeatsLabel.AutoSize = true;
-            this.chosenSeatsLabel.Location = new System.Drawing.Point(321, 71);
+            this.chosenSeatsLabel.Location = new System.Drawing.Point(448, 71);
             this.chosenSeatsLabel.Name = "chosenSeatsLabel";
             this.chosenSeatsLabel.Size = new System.Drawing.Size(71, 13);
             this.chosenSeatsLabel.TabIndex = 10;
@@ -85,7 +88,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.chosenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chosenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chosenSeatsLegendButton.ForeColor = System.Drawing.Color.White;
-            this.chosenSeatsLegendButton.Location = new System.Drawing.Point(293, 64);
+            this.chosenSeatsLegendButton.Location = new System.Drawing.Point(420, 64);
             this.chosenSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.chosenSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
             this.chosenSeatsLegendButton.Name = "chosenSeatsLegendButton";
@@ -105,7 +108,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.takenSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.takenSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.takenSeatsLegendButton.ForeColor = System.Drawing.Color.White;
-            this.takenSeatsLegendButton.Location = new System.Drawing.Point(171, 64);
+            this.takenSeatsLegendButton.Location = new System.Drawing.Point(298, 64);
             this.takenSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.takenSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
             this.takenSeatsLegendButton.Name = "takenSeatsLegendButton";
@@ -155,14 +158,45 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.reserveButton.Text = "Reserve";
             this.reserveButton.UseVisualStyleBackColor = false;
             this.reserveButton.Click += new System.EventHandler(this.reserveButton_Click);
-            this.reserveButton.MouseEnter+=new System.EventHandler(this.reserveButton_Enter);
+            this.reserveButton.MouseEnter += new System.EventHandler(this.reserveButton_Enter);
             this.reserveButton.MouseLeave += new System.EventHandler(this.reserveButton_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Reserved seats";
+            // 
+            // reservedSeatsLegendButton
+            // 
+            this.reservedSeatsLegendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
+            this.reservedSeatsLegendButton.Enabled = false;
+            this.reservedSeatsLegendButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.reservedSeatsLegendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reservedSeatsLegendButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedSeatsLegendButton.ForeColor = System.Drawing.Color.White;
+            this.reservedSeatsLegendButton.Location = new System.Drawing.Point(168, 64);
+            this.reservedSeatsLegendButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.reservedSeatsLegendButton.MinimumSize = new System.Drawing.Size(15, 15);
+            this.reservedSeatsLegendButton.Name = "reservedSeatsLegendButton";
+            this.reservedSeatsLegendButton.Number = 0;
+            this.reservedSeatsLegendButton.Padding = new System.Windows.Forms.Padding(3);
+            this.reservedSeatsLegendButton.Row = 0;
+            this.reservedSeatsLegendButton.Size = new System.Drawing.Size(20, 20);
+            this.reservedSeatsLegendButton.TabIndex = 12;
+            this.reservedSeatsLegendButton.Text = "0";
+            this.reservedSeatsLegendButton.UseVisualStyleBackColor = false;
             // 
             // SelectSeatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 418);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.reservedSeatsLegendButton);
             this.Controls.Add(this.reserveButton);
             this.Controls.Add(this.chosenSeatsLabel);
             this.Controls.Add(this.chosenSeatsLegendButton);
@@ -190,5 +224,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private System.Windows.Forms.Label chosenSeatsLabel;
         private Utilities.CustomTools.SeatButton chosenSeatsLegendButton;
         public Button reserveButton;
+        private Label label1;
+        private Utilities.CustomTools.SeatButton reservedSeatsLegendButton;
     }
 }
