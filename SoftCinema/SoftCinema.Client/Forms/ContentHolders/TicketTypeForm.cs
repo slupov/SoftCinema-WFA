@@ -85,8 +85,24 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.seniorsQuantityComboBox.SelectedIndex = 0;
             this.studentsQuantityComboBox.SelectedIndex = 0;
             this.ticketLimit.Hide();
+            if (ShouldCancelReservations(TicketForm.Screening, new TimeSpan(40, 20, 0)))
+            {
+                CancelReservations(TicketForm.Screening);
+            }
         }
-
+        public static bool ShouldCancelReservations(Screening screening, TimeSpan t)
+        {
+            var diffInMinutes = (screening.Start - DateTime.Now).TotalMinutes;
+            if (diffInMinutes < t.TotalMinutes)
+            {
+                return true;
+            }
+            return false;
+        }
+        private void CancelReservations(Screening screening)
+        {
+            Services.TicketService.RemoveUnpaidTickets(screening);
+        }
         private decimal GetAllPrices()
         {
             return this._regularPrice + this._childrenPrice + this._studentPrice + this._seniorPrice;
