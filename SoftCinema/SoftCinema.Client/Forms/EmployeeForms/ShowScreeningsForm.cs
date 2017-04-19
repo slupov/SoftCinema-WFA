@@ -94,7 +94,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 return;
             }
             //calculate the right offset
-            var width = this.Parent.Size.Width - this.townComboBox.Location.X - TopPanelForm.LogoutButton.Size.Width;
+            var width = this.Size.Width - this.townComboBox.Location.X - TopPanelForm.LogoutButton.Size.Width;
             var size = new Size(width, 400);
 
             if (this.Controls.Contains(this._screeningsHolder))
