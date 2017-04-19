@@ -42,11 +42,14 @@ namespace SoftCinema.Client.Forms
             //Show Image
             User currentUser = AuthenticationManager.GetCurrentUser();
 
-            byte[] imageBytes = UserService.GetUser(currentUser.Username).ProfilePicture.Content;
-            System.Drawing.Image image = ImageService.byteArrayToImage(imageBytes);
-            profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
-            profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width, profilePicPictureBox.Image.Height);
-            profilePicPictureBox.Show();
+            byte[] imageBytes = ImageService.GetProfilePicture(currentUser.Username);
+            if (imageBytes != null)
+            {
+                System.Drawing.Image image = ImageService.byteArrayToImage(imageBytes);
+                profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+                profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width, profilePicPictureBox.Image.Height);
+                profilePicPictureBox.Show();
+            }
 
             LogoutButton.Show();
         }

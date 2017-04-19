@@ -1,6 +1,6 @@
 ﻿namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
-    partial class EditScreeningForm
+    partial class SelectScreeningForm
     {
         /// <summary>
         /// Required designer variable.
@@ -85,6 +85,7 @@
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(304, 32);
             this.timeComboBox.TabIndex = 27;
+            this.timeComboBox.SelectedIndexChanged += new System.EventHandler(this.timeComboBox_SelectedIndexChanged);
             // 
             // AuditoriumComboBox
             // 

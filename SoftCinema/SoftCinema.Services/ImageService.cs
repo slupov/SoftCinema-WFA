@@ -5,6 +5,7 @@ using SoftCinema.Data;
 using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
 using System;
+using System.Data.Entity;
 
 
 namespace SoftCinema.Services
@@ -56,6 +57,20 @@ namespace SoftCinema.Services
             var newImage = new System.Drawing.Bitmap(newWidth, newHeight);
             System.Drawing.Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
             return newImage;
+        }
+
+        public static byte[] GetProfilePicture(string username)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                User user = context.Users.Include(u => u.ProfilePicture).FirstOrDefault(u => u.Username == username);
+                if (user.ProfilePicture != null)
+                {
+                    return user.ProfilePicture.Content;
+                }
+                return null;
+               
+            }
         }
     }
 }
