@@ -108,6 +108,18 @@
     <Compile Include="Forms\AdminForms\CinemaForms\SelectScreeningForm.Designer.cs">
       <DependentUpon>SelectScreeningForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\MovieForms\MovieListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\MovieForms\MovieListForm.Designer.cs">
+      <DependentUpon>MovieListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\MovieForms\RegisterMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\MovieForms\RegisterMovieForm.designer.cs">
+      <DependentUpon>RegisterMovieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\UserForms\EditTicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +341,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\CinemaForms\SelectScreeningForm.resx">
       <DependentUpon>SelectScreeningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\MovieForms\MovieListForm.resx">
+      <DependentUpon>MovieListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\MovieForms\RegisterMovieForm.resx">
+      <DependentUpon>RegisterMovieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\UserForms\EditTicketForm.resx">
       <DependentUpon>EditTicketForm.cs</DependentUpon>

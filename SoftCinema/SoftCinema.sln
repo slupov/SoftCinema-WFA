@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportServices", "SoftCinema.ImportServices\SoftCinema.ImportServices.csproj", "{584B4019-5AFF-4869-A1A6-89957657F74E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Test", "SoftCinema.Test\SoftCinema.Test.csproj", "{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportData", "SoftCinema.Test\SoftCinema.ImportData.csproj", "{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

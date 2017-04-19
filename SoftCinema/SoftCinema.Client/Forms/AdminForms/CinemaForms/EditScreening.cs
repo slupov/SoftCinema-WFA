@@ -27,9 +27,8 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void EditScreening_Load(object sender, EventArgs e)
         {
+            DateCalendar.MinDate = DateTime.Now;
             TimePicker.Value = screening.Start;
-            DateCalendar.SelectionStart =DateTime.Today;
-            DateCalendar.SelectionEnd = new DateTime(DateTime.Today.Year+1,DateTime.Today.Month,DateTime.Today.Day);
             DateCalendar.TodayDate = screening.Start;
             DateCalendar.SetDate(screening.Start);
             DateCalendar.ShowToday = false;
@@ -85,24 +84,16 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void DateCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DateTime getDate = DateCalendar.SelectionRange.Start;
-            string date = getDate.Day.ToString() + " " + getDate.ToString("MMM") + " " + getDate.DayOfWeek.ToString();
-            DateTime getTime = TimePicker.Value;
-            string time = getTime.ToString("hh") + ":" + getTime.ToString("mm") + " " + getTime.ToString("tt", CultureInfo.InvariantCulture);
-            DateTime startTime = ScreeningService.GetDateTimeFromDateAndTime(date, time);
-            if (!ScreeningService.IsScreeningAvailable(screening.Id,startTime))
-            {
-                ScreeningTaken.Visible = true;
-                ScreeningTaken.Text = "Screening is already taken!";
-            }
-            else
-            {
-                ScreeningTaken.Visible = false;
-            }
+            CheckScreening();
 
         }
 
         private void TimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            CheckScreening();
+        }
+
+        private void CheckScreening()
         {
             DateTime getDate = DateCalendar.SelectionRange.Start;
             string date = getDate.Day.ToString() + " " + getDate.ToString("MMM") + " " + getDate.DayOfWeek.ToString();

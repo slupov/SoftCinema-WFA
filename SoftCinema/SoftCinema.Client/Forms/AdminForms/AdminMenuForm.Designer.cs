@@ -32,13 +32,14 @@
             this.EditCategoriesButton = new System.Windows.Forms.Button();
             this.EditCinemasButton = new System.Windows.Forms.Button();
             this.MenuLabel = new System.Windows.Forms.Label();
+            this.EditMoviesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserEditButton
             // 
             this.UserEditButton.BackColor = System.Drawing.SystemColors.Menu;
             this.UserEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserEditButton.Location = new System.Drawing.Point(377, 164);
+            this.UserEditButton.Location = new System.Drawing.Point(377, 146);
             this.UserEditButton.Name = "UserEditButton";
             this.UserEditButton.Size = new System.Drawing.Size(214, 58);
             this.UserEditButton.TabIndex = 2;
@@ -50,7 +51,7 @@
             // 
             this.EditCategoriesButton.BackColor = System.Drawing.SystemColors.Menu;
             this.EditCategoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditCategoriesButton.Location = new System.Drawing.Point(377, 244);
+            this.EditCategoriesButton.Location = new System.Drawing.Point(377, 300);
             this.EditCategoriesButton.Name = "EditCategoriesButton";
             this.EditCategoriesButton.Size = new System.Drawing.Size(214, 58);
             this.EditCategoriesButton.TabIndex = 4;
@@ -62,7 +63,7 @@
             // 
             this.EditCinemasButton.BackColor = System.Drawing.SystemColors.Menu;
             this.EditCinemasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditCinemasButton.Location = new System.Drawing.Point(377, 330);
+            this.EditCinemasButton.Location = new System.Drawing.Point(377, 223);
             this.EditCinemasButton.Name = "EditCinemasButton";
             this.EditCinemasButton.Size = new System.Drawing.Size(214, 58);
             this.EditCinemasButton.TabIndex = 5;
@@ -82,12 +83,25 @@
             this.MenuLabel.Text = "Admin Menu";
             this.MenuLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // EditMoviesButton
+            // 
+            this.EditMoviesButton.BackColor = System.Drawing.SystemColors.Menu;
+            this.EditMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditMoviesButton.Location = new System.Drawing.Point(377, 386);
+            this.EditMoviesButton.Name = "EditMoviesButton";
+            this.EditMoviesButton.Size = new System.Drawing.Size(214, 58);
+            this.EditMoviesButton.TabIndex = 10;
+            this.EditMoviesButton.Text = "Add Movie";
+            this.EditMoviesButton.UseVisualStyleBackColor = false;
+            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1041, 512);
+            this.Controls.Add(this.EditMoviesButton);
             this.Controls.Add(this.MenuLabel);
             this.Controls.Add(this.EditCinemasButton);
             this.Controls.Add(this.EditCategoriesButton);
@@ -104,5 +118,6 @@
         private System.Windows.Forms.Button EditCategoriesButton;
         private System.Windows.Forms.Button EditCinemasButton;
         private System.Windows.Forms.Label MenuLabel;
+        private System.Windows.Forms.Button EditMoviesButton;
     }
 }

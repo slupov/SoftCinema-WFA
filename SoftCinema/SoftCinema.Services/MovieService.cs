@@ -92,7 +92,18 @@ namespace SoftCinema.Services
             }
         }
 
-        
+        public static Movie GetMovieByYearAndName(int movieYear, string movieName)
+        {
+
+            using (var db = new SoftCinemaContext())
+            {
+                return db.Movies
+                    .Include("Image")
+                    .Include("Categories")
+                    .Include("Cast")
+                    .FirstOrDefault(m => m.Name == movieName && m.ReleaseYear == movieYear);
+            }
+        }
 
         public static Movie GetMovie(string movieName)
         {

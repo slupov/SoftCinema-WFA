@@ -32,20 +32,11 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsAuditoriumExisting(byte number, int cinemaId)
+        public static List<byte> GetAuditoriumsForScreening(string movieName, int movieYear, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                return context.Auditoriums.Any(a => a.CinemaId == cinemaId && a.Number == number);
-            }
-        }
-
-
-        public static List<byte> GetAuditoriumsForScreening(string movieName, int movieYear,int cinemaId)
-        {
-            using (SoftCinemaContext context = new SoftCinemaContext())
-            {
-                return context.Screenings.Where(s => s.Movie.Name == movieName && s.Movie.ReleaseYear==movieYear && s.Auditorium.CinemaId == cinemaId)
+                return context.Screenings.Where(s => s.Movie.Name == movieName && s.Movie.ReleaseYear == movieYear && s.Auditorium.CinemaId == cinemaId)
                     .Select(s => s.Auditorium.Number).Distinct().ToList();
             }
         }
@@ -57,5 +48,16 @@ namespace SoftCinema.Services
                 return context.Cinemas.Find(cinemaId).Auditoriums.ToList();
             }
         }
+
+        public static bool IsAuditoriumExisting(byte number, int cinemaId)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                return context.Auditoriums.Any(a => a.CinemaId == cinemaId && a.Number == number);
+            }
+        }
+
+
+        
     }
 }

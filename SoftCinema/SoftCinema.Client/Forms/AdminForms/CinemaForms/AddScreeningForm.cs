@@ -25,6 +25,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void AddScreeningForm_Load(object sender, EventArgs e)
         {
+            DateCalendar.MinDate = DateTime.Now;
             this.ScreeningTaken.Visible = false;
             movieComboBox.Items.AddRange(MovieService.GetAllMovies().Select(m =>m.Name+","+m.ReleaseYear).ToArray());
             auditoriumComboBox.Items.AddRange(AuditoriumService.GetAudtitoriums(cinema.Id).Select(a => a.Number.ToString()).ToArray());
@@ -52,13 +53,11 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 string date = getDate.Day.ToString() + " " + getDate.ToString("MMM") + " " + getDate.DayOfWeek.ToString();
                 DateTime getTime = TimePicker.Value;
                 string time = getTime.ToString("hh") + ":" + getTime.ToString("mm") + " " + getTime.ToString("tt", CultureInfo.InvariantCulture);
-                byte auditoriumNumber = byte.Parse(auditoriumComboBox.Text);
-
-                int auditoriumId = AuditoriumService.GetAuditoriumId(auditoriumNumber, this.cinema.Id);
                 DateTime startTime = ScreeningService.GetDateTimeFromDateAndTime(date, time);
+                byte auditoriumNumber = byte.Parse(auditoriumComboBox.Text);
+                int auditoriumId = AuditoriumService.GetAuditoriumId(auditoriumNumber, this.cinema.Id); 
                 int movieId = MovieService.GetMovieId(movieName, year);
                 ScreeningValidator.ValidateScreeningTimeAvailable(startTime,auditoriumId,movieName,year);
-               
                 ScreeningService.AddScreening(auditoriumId,movieId,startTime);
                 MessageBox.Show("Screening added successfully!");
                 Cinema cinema = CinemaService.GetCinemaWithScreenings(this.cinema.Id);

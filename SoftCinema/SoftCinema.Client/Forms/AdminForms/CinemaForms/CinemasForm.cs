@@ -55,5 +55,10 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((Button)sender).Parent.Parent.Controls.Add(adminMenuForm);
             adminMenuForm.Show();
         }
+
+        private void AddCinemaButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

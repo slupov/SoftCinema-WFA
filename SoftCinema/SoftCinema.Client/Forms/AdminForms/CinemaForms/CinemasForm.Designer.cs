@@ -42,10 +42,9 @@
             this.CinemaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.CinemaLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinemaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.CinemaLabel.Location = new System.Drawing.Point(34, 9);
-            this.CinemaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CinemaLabel.Location = new System.Drawing.Point(45, 11);
             this.CinemaLabel.Name = "CinemaLabel";
-            this.CinemaLabel.Size = new System.Drawing.Size(693, 57);
+            this.CinemaLabel.Size = new System.Drawing.Size(924, 70);
             this.CinemaLabel.TabIndex = 5;
             this.CinemaLabel.Text = "Select a Cinema to Edit";
             // 
@@ -56,10 +55,10 @@
             this.TownsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TownsList.FormattingEnabled = true;
             this.TownsList.IntegralHeight = false;
-            this.TownsList.Location = new System.Drawing.Point(285, 132);
-            this.TownsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TownsList.Location = new System.Drawing.Point(380, 162);
+            this.TownsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TownsList.Name = "TownsList";
-            this.TownsList.Size = new System.Drawing.Size(296, 34);
+            this.TownsList.Size = new System.Drawing.Size(393, 39);
             this.TownsList.TabIndex = 6;
             this.TownsList.SelectedIndexChanged += new System.EventHandler(this.TownsList_SelectedIndexChanged);
             // 
@@ -68,9 +67,10 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.usernameLabel.Location = new System.Drawing.Point(118, 136);
+            this.usernameLabel.Location = new System.Drawing.Point(157, 167);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(75, 30);
+            this.usernameLabel.Size = new System.Drawing.Size(92, 37);
             this.usernameLabel.TabIndex = 7;
             this.usernameLabel.Text = "Town";
             // 
@@ -81,10 +81,10 @@
             this.CinemasList.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinemasList.FormattingEnabled = true;
             this.CinemasList.IntegralHeight = false;
-            this.CinemasList.Location = new System.Drawing.Point(285, 193);
-            this.CinemasList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CinemasList.Location = new System.Drawing.Point(380, 238);
+            this.CinemasList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CinemasList.Name = "CinemasList";
-            this.CinemasList.Size = new System.Drawing.Size(296, 34);
+            this.CinemasList.Size = new System.Drawing.Size(393, 39);
             this.CinemasList.TabIndex = 8;
             this.CinemasList.SelectedIndexChanged += new System.EventHandler(this.CinemasList_SelectedIndexChanged);
             // 
@@ -93,9 +93,10 @@
             this.CinameLabel.AutoSize = true;
             this.CinameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CinameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.CinameLabel.Location = new System.Drawing.Point(118, 197);
+            this.CinameLabel.Location = new System.Drawing.Point(157, 242);
+            this.CinameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CinameLabel.Name = "CinameLabel";
-            this.CinameLabel.Size = new System.Drawing.Size(110, 30);
+            this.CinameLabel.Size = new System.Drawing.Size(133, 37);
             this.CinameLabel.TabIndex = 9;
             this.CinameLabel.Text = "Cinema";
             // 
@@ -103,10 +104,10 @@
             // 
             this.BackButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BackButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackButton.Location = new System.Drawing.Point(337, 345);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackButton.Location = new System.Drawing.Point(449, 425);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(190, 31);
+            this.BackButton.Size = new System.Drawing.Size(253, 38);
             this.BackButton.TabIndex = 10;
             this.BackButton.Text = "Back to Admin Menu";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -116,20 +117,21 @@
             // 
             this.AddCinemaButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddCinemaButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.AddCinemaButton.Location = new System.Drawing.Point(323, 282);
-            this.AddCinemaButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddCinemaButton.Location = new System.Drawing.Point(431, 347);
+            this.AddCinemaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddCinemaButton.Name = "AddCinemaButton";
-            this.AddCinemaButton.Size = new System.Drawing.Size(221, 46);
+            this.AddCinemaButton.Size = new System.Drawing.Size(295, 57);
             this.AddCinemaButton.TabIndex = 11;
             this.AddCinemaButton.Text = "Add a New Cinema";
             this.AddCinemaButton.UseVisualStyleBackColor = true;
+            this.AddCinemaButton.Click += new System.EventHandler(this.AddCinemaButton_Click);
             // 
             // CinemasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(766, 437);
+            this.ClientSize = new System.Drawing.Size(1021, 538);
             this.Controls.Add(this.AddCinemaButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CinameLabel);
@@ -139,7 +141,7 @@
             this.Controls.Add(this.CinemaLabel);
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CinemasForm";
             this.Text = "CinemasForm";
             this.Load += new System.EventHandler(this.CinemasForm_Load);

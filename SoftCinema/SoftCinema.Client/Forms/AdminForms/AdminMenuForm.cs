@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftCinema.Client.AdminForms.MovieForms;
+using SoftCinema.Client.Forms.AdminForms.MovieForms;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -46,6 +48,16 @@ namespace SoftCinema.Client.Forms.AdminForms
             this.Hide();
             ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
             cinemasForm.Show();
+        }
+
+        private void EditMoviesButton_Click(object sender, EventArgs e)
+        {
+            RegisterMovieForm movieForm = new RegisterMovieForm();
+            movieForm.TopLevel = false;
+            movieForm.AutoScroll = true;
+            this.Hide();
+            ((Button)sender).Parent.Parent.Controls.Add(movieForm);
+            movieForm.Show();
         }
     }
 }
