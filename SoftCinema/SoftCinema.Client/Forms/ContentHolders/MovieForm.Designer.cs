@@ -327,14 +327,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.Controls.Add(this.lengthBox);
             this.Controls.Add(this.genreBox);
             this.Controls.Add(this.titleBox);
-            if (AuthenticationManager.IsAuthenticated())
-            {
-                this.Controls.Add(this.ticketsButton);
-                this.Controls.Add(this.townBox);
-                this.Controls.Add(this.hourBox);
-                this.Controls.Add(this.dateBox);
-                this.Controls.Add(this.cinemaComboBox);
-            }
+            
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.synopsisLabel);
             this.Controls.Add(this.ageRestrictionLabel);
