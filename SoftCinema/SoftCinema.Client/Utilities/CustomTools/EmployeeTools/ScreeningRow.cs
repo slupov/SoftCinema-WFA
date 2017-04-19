@@ -10,25 +10,25 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningRow : Panel
+    class ScreeningRow : GroupBox
     {
         private Screening _screening { get; set; }
         private int _id { get; set; }
         private Color _back { get; set; }
 
-        public ScreeningRow(Screening screening, int id)
+        public ScreeningRow(Screening screening, int width, int id)
         {
             this._back = Color.FromArgb(255, 240, 240, 240);
             this.ForeColor = Color.Black;
-
+            this.Size = new Size(width, 40);
             this._screening = screening;
             this._id = id;
 
             Label rowText = new Label();
             rowText.Text = $"{id}." +
-                           string.Join(" ", 5) +
+                           new string('\t',5) +
                            $"Auditorium: {_screening.Auditorium.Number}" +
-                           string.Join(" ", 5) + $"DateTime: {this._screening.Start.ToString("f")}";
+                           new string('\t', 5) + $"DateTime: {this._screening.Start.ToString("f")}";
 
             this.Controls.Add(rowText);
         }
