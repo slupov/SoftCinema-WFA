@@ -16,7 +16,6 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private Auditorium _Auditorium { get; set; }
         private static int _seatCountLimit { get; set; }
 
-        //TODO:make not static, + getters
         private static List<SeatButton> _seats { get; set; }
 
        
@@ -27,7 +26,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
             _seatCountLimit = seatCount;
             this.Location = startingCoords;
             this.Size = new Size(width, 300);
-            this.BackColor = Color.LightSkyBlue;
+            this.AutoSize = true;
+            this.BackColor = Color.Bisque;
             
             VisualizeSeats();
         }
@@ -50,8 +50,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
         {
             var maxRow = this._Auditorium.Seats.Max(s => s.Row);
 
-            var rowLabelCoordinates = this.Location;
-            var seatCoordinates = this.Location;
+            var rowLabelCoordinates = new Point(10,10);
+            var seatCoordinates = rowLabelCoordinates;
 
             var maxSeatsPerRow = 0;
             var seatNumber = 0;
@@ -78,7 +78,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                     {
                         seatCoordinates.X = rowLabelCoordinates.X;
                     }
-                    seatCoordinates.X += 30;
+                    seatCoordinates.X += 40;
 
                     SeatButton seatButton = new SeatButton(seatNumber,row);
                     seatButton.Location = seatCoordinates;
@@ -90,8 +90,8 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
                 //find max middle and split seats into two groups by leaving a space (Location.x)
 
-                rowLabelCoordinates.Y += 30;
-                seatCoordinates.Y += 30;
+                rowLabelCoordinates.Y += 40;
+                seatCoordinates.Y += 40;
             }
         }
 
