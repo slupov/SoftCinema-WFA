@@ -15,6 +15,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         public int StudentsTicketsCount { get; set; }
         private Screening _screening { get; set; }
         private int _seatCount { get; set; }
+      
         private AuditoriumSeatsSchema _seatsSchema { get; set; }
 
         public SelectSeatsForm(Screening screening, int seatCount, int regularTckets, int childrenTickets,
@@ -26,7 +27,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.SeniorsTicketsCount = seniorTickets;
             this._screening = screening;
             this._seatCount = seatCount;
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void SelectSeatsForm_Load(object sender, EventArgs e)
@@ -48,40 +49,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void reserveButton_Click(object sender, EventArgs e)
         {
-            var selectedSeats = this._seatsSchema.GetSelectedSeats();
-            var holderId = Services.AuthenticationManager.GetCurrentUser().Id;
-            for (int i = 0; i < selectedSeats.Count;)
-            {
-                while (RegularTicketsCount > 0)
-                {
-                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
-                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Regular, seat.Id, holderId);
-                    RegularTicketsCount--;
-                    i++;
-                }
-                while (ChildrenTicketsCount > 0)
-                {
-                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
-                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Children, seat.Id, holderId);
-                    ChildrenTicketsCount--;
-                    i++;
-                }
-                while (SeniorsTicketsCount > 0)
-                {
-                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
-                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Seniors, seat.Id, holderId);
-                    SeniorsTicketsCount--;
-                    i++;
-                }
-                while (StudentsTicketsCount > 0)
-                {
-                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
-                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Students, seat.Id, holderId);
-                    StudentsTicketsCount--;
-                    i++;
-                }
-            }
-
+           
+            ReserveTickets();
             this.Close();
             SoftCinemaForm.SetContentHolderForm(new HomeForm());
         }
@@ -92,6 +61,42 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.reserveButton.ForeColor = Color.White;
         }
 
+        private void ReserveTickets()
+        {
+            var selectedSeats = this._seatsSchema.GetSelectedSeats();
+            var holderId = Services.AuthenticationManager.GetCurrentUser().Id;
+            for (int i = 0; i < selectedSeats.Count;)
+            {
+                while (RegularTicketsCount > 0)
+                {
+                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
+                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Regular, seat.Id, holderId);
+                    RegularTicketsCount--;
+                    i++;
+                }
+                while (ChildrenTicketsCount > 0)
+                {
+                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
+                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Children, seat.Id, holderId);
+                    ChildrenTicketsCount--;
+                    i++;
+                }
+                while (SeniorsTicketsCount > 0)
+                {
+                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
+                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Seniors, seat.Id, holderId);
+                    SeniorsTicketsCount--;
+                    i++;
+                }
+                while (StudentsTicketsCount > 0)
+                {
+                    var seat = Services.SeatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
+                    Services.TicketService.AddTicket(this._screening.Id, TicketType.Students, seat.Id, holderId);
+                    StudentsTicketsCount--;
+                    i++;
+                }
+            }
+        }
         private void reserveButton_MouseLeave(object sender, EventArgs e)
         {
             this.reserveButton.BackColor = Color.Silver;

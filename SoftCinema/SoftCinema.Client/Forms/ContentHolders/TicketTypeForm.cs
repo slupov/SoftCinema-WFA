@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 using SoftCinema.Models;
 using SoftCinema.Services.Utilities;
@@ -26,9 +28,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
         }
           private bool goodForChildren()
           {
-              var restr = TicketForm.Screening.Movie.AgeRestriction;
-              if (restr != AgeRestriction.D && restr != AgeRestriction.X)
-                  return true;
+              var restr = TicketForm.Screening.Movie.AgeRestriction.ToString();
+              if (restr != "D" && restr != "X")
+            { return true; }
+                  
               return false;
           }
         public TicketTypeForm()
@@ -47,7 +50,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void purchase_Click(object sender, EventArgs e)
         {
            
-
             var ticketsQuantity = calculate_Quantity();
             if (areTicketsMoreThanMaxCount(ticketsQuantity) == false)
             {
@@ -70,6 +72,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
         }
 
+        
         private int calculate_Quantity()
         {
             return this.ChildrenTicketsCount + this.SeniorsTicketsCount + this.StudentsTicketsCount + this.RegularTicketsCount;
