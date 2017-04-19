@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,17 +33,25 @@ namespace SoftCinema.Services.Utilities
         public const string GoBackPrompt = "Go back?";
         public const string CategoryDeletePrompt = "Delete category?";
         public const string CinemaDeletePrompt = "Delete cinema?";
-        public const string DeleteTicketMessage= "Are you sure you want to delete this ticket?";
+        public const string DeleteTicketMessage = "Are you sure you want to delete this ticket?";
         public const string TicketDeletePrompt = "Delete ticket?";
 
         /// <summary>
         /// Cinema {CinemaName} {CinemaTown}: {MovieName} {ScreeningDateTime}
         /// </summary>
         public const string ScreeningTitleLabel = "Cinema {0} {1}: {2} {3}";
+
         public const char TickMark = '✓';
 
         public const int MaxTicketCount = 10;
 
+        public static class Colors
+        {
+            public static Color FreeSeatColor = Color.FromArgb(255, 53, 172, 73);
+            public static Color SelectedSeatColor = Color.FromArgb(255, 245, 132, 36);
+            public static Color TakenSeatColor = Color.FromArgb(255, 115, 115, 116);
+            public static Color ReservedSeatColor = Color.FromArgb(255, 50, 100, 200);
+        }
 
         public static class SuccessMessages
         {
@@ -128,8 +137,5 @@ namespace SoftCinema.Services.Utilities
             public const string SeatAddedSuccess =
                 "Seat number {0} successfuly added to auditorium number {1} in cinema {2} - {3}!";
         }
-
-
-        
     }
 }

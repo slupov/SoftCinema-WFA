@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
+using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -15,28 +17,30 @@ namespace SoftCinema.Client.Utilities.CustomTools
     {
         private Auditorium _Auditorium { get; set; }
         private static int _seatCountLimit { get; set; }
-
         private static List<SeatButton> _seats { get; set; }
+        private Screening _screening { get; set; }
 
-       
-        public AuditoriumSeatsSchema(Auditorium auditorium, Point startingCoords, int width, int seatCount)
+
+        public AuditoriumSeatsSchema(Auditorium auditorium, Screening screening, Point startingCoords, int width,
+            int seatCount)
         {
             this._Auditorium = auditorium;
+            this._screening = screening;
             _seats = new List<SeatButton>();
             _seatCountLimit = seatCount;
             this.Location = startingCoords;
             this.Size = new Size(width, 300);
             this.AutoSize = true;
             this.BackColor = Color.Bisque;
-            
+
             VisualizeSeats();
         }
 
-        public  void UpdateReserveButton()
+        public void UpdateReserveButton()
         {
             var count = GetSelectedSeats().Count;
-            var form = (SelectSeatsForm)this.Parent;
-            if (count==_seatCountLimit)
+            var form = (SelectSeatsForm) this.Parent;
+            if (count == _seatCountLimit)
             {
                 form.reserveButton.Enabled = true;
             }
@@ -50,7 +54,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         {
             var maxRow = this._Auditorium.Seats.Max(s => s.Row);
 
-            var rowLabelCoordinates = new Point(10,10);
+            var rowLabelCoordinates = new Point(10, 10);
             var seatCoordinates = rowLabelCoordinates;
 
             var maxSeatsPerRow = 0;
@@ -80,10 +84,25 @@ namespace SoftCinema.Client.Utilities.CustomTools
                     }
                     seatCoordinates.X += 40;
 
-                    SeatButton seatButton = new SeatButton(seatNumber,row);
+                    SeatButton seatButton = new SeatButton(seatNumber, row);
                     seatButton.Location = seatCoordinates;
                     seatButton.Text = seatNumber.ToString();
-                    seatButton.ForeColor=Color.Black;
+                    seatButton.ForeColor = Color.Black;
+
+                    var ticket = TicketService.GetTicket(seatNumber, _screening);
+
+                    if (this._screening.Contains(seatNumber))
+                    {
+                        seatButton.Enabled = false;
+                        if (ticket.isPaid)
+                        {
+                            seatButton.BackColor = Constants.Colors.TakenSeatColor;
+                        }
+                        else
+                        {
+                            seatButton.BackColor = Constants.Colors.ReservedSeatColor;
+                        }
+                    }
                     this.Controls.Add(seatButton);
                     _seats.Add(seatButton);
                 }
@@ -95,7 +114,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
             }
         }
 
-       
+
         //if seatCount of clicked buttons is reached -> make all buttons unclickable
         public static void LimitSeatsSelection()
         {
@@ -112,6 +131,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 EnableAllSeats();
             }
         }
+
         private static void DisableUnselectedSeats()
         {
             foreach (var seatButton in _seats)
@@ -126,6 +146,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 }
             }
         }
+
         private static void EnableAllSeats()
         {
             foreach (var seatButton in _seats)

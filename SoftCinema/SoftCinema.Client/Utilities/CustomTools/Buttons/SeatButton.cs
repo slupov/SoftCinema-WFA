@@ -1,6 +1,7 @@
 ﻿using System;
 using SoftCinema.Client.Forms;
 using SoftCinema.Models;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -12,9 +13,9 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static Font _normalFont = new Font("Arial", 8F, System.Drawing.FontStyle.Bold,
             System.Drawing.GraphicsUnit.Point, ((byte) (0)));
 
-        private static Color _back = System.Drawing.Color.FromArgb(255, 53, 172, 73);
+        private static Color _back = Constants.Colors.FreeSeatColor;
         private static Color _border = System.Drawing.Color.Black;
-        private static Color _activeBorder = System.Drawing.Color.FromArgb(255, 245, 132, 36);
+        private static Color _activeBorder = Constants.Colors.SelectedSeatColor;
         private static Color _fore = System.Drawing.Color.Black;
 
         private static Padding _margin = new System.Windows.Forms.Padding(0);
@@ -23,7 +24,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static Size _minSize = new System.Drawing.Size(10, 10);
         private bool _active;
         private bool _selected;
-      
+
         public int Row { get; set; }
         public int Number { get; set; }
 
@@ -73,14 +74,14 @@ namespace SoftCinema.Client.Utilities.CustomTools
             if (this._selected)
             {
                 this._selected = false;
-                this.BackColor = System.Drawing.Color.FromArgb(255, 53, 172, 73);
+                this.BackColor = Constants.Colors.FreeSeatColor;
             }
             else
             {
                 this._selected = true;
-                this.BackColor = System.Drawing.Color.FromArgb(255, 245, 132, 36);
+                this.BackColor = Constants.Colors.SelectedSeatColor;
             }
-           
+
             AuditoriumSeatsSchema.LimitSeatsSelection();
             var form = (AuditoriumSeatsSchema) this.Parent;
             form.UpdateReserveButton();

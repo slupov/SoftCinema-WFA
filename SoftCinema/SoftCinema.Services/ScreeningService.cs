@@ -190,14 +190,6 @@ namespace SoftCinema.Services
                              s.Auditorium.Cinema.Name == cinemaName);
             }
         }
-
-
-        
-
-        
-
-        
-
       
     }
 }

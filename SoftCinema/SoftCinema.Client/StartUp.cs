@@ -15,7 +15,7 @@ namespace SoftCinema.Client
         [STAThread]
         static void Main()
         {
-            AuthenticationManager.Login(UserService.GetUser("mara"));
+            AuthenticationManager.Login(UserService.GetUser("Slupov"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SoftCinemaForm());
