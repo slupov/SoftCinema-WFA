@@ -1,9 +1,13 @@
 ﻿using System.Drawing;
+using SoftCinema.Models;
+using SoftCinema.Services;
+using Image = System.Drawing.Image;
 
 namespace SoftCinema.Client.Forms
 {
     partial class TopPanelForm
     {
+        
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -32,7 +36,9 @@ namespace SoftCinema.Client.Forms
         {
             LogoutButton = new System.Windows.Forms.Button();
             GreetingLabel = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            profilePicPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(profilePicPictureBox)).BeginInit();
+            SuspendLayout();
             // 
             // LogoutButton
             // 
@@ -55,8 +61,6 @@ namespace SoftCinema.Client.Forms
             // GreetingLabel
             // 
             GreetingLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            
             GreetingLabel.Location = new System.Drawing.Point(272, 23);
             GreetingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             GreetingLabel.Name = "GreetingLabel";
@@ -65,7 +69,14 @@ namespace SoftCinema.Client.Forms
             GreetingLabel.Text = "label1";
             GreetingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             GreetingLabel.Visible = false;
-            
+            // 
+            // profilePicPictureBox
+            // 
+            profilePicPictureBox.Location = new System.Drawing.Point(410, 12);
+            profilePicPictureBox.Name = "profilePicPictureBox";
+            profilePicPictureBox.Size = new System.Drawing.Size(55, 54);
+            profilePicPictureBox.TabIndex = 7;
+            profilePicPictureBox.TabStop = false;
             // 
             // TopPanelForm
             // 
@@ -73,18 +84,21 @@ namespace SoftCinema.Client.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(769, 73);
+            this.Controls.Add(profilePicPictureBox);
             this.Controls.Add(LogoutButton);
             this.Controls.Add(GreetingLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TopPanelForm";
             this.Text = "TopPanelForm";
             this.Load += new System.EventHandler(this.TopPanelForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(profilePicPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private static System.Windows.Forms.PictureBox profilePicPictureBox;
         public static System.Windows.Forms.Button LogoutButton;
         private static System.Windows.Forms.Label GreetingLabel;
     }

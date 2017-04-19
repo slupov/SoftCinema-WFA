@@ -36,6 +36,8 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ClearScreeningsHolder();
+
             this.cinemaComboBox.Text = "Select cinema: ";
             this.cinemaComboBox.Items.Clear();
             this.movieComboBox.Text = "";
@@ -56,6 +58,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ClearScreeningsHolder();
             this.movieComboBox.Text = "Select movie";
             this.movieComboBox.Items.Clear();
 
@@ -73,6 +76,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ClearScreeningsHolder();
             this._movieName = this.movieComboBox.SelectedItem.ToString();
 
             var screenings = ScreeningService.GetScreeningsByTownCinemaAndMovie(this._townName, this._cinemaName,
@@ -93,11 +97,18 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             var width = this.Parent.Size.Width - this.townComboBox.Location.X - TopPanelForm.LogoutButton.Size.Width;
             var size = new Size(width, 400);
 
+            if (this.Controls.Contains(this._screeningsHolder))
+            {
+                var screeningsHolderIndex = this.Controls.IndexOf(this._screeningsHolder);
+                this.Controls.RemoveAt(screeningsHolderIndex);
+            }
+
             this._screeningsHolder =
                 new ScreeningsHolder(new Point(this.townComboBox.Location.X, this.townComboBox.Location.Y + 60), size,
                     this._screenings);
 
             this.Controls.Add(this._screeningsHolder);
+            this.Refresh();
         }
 
         private void ClearScreeningsHolder()
