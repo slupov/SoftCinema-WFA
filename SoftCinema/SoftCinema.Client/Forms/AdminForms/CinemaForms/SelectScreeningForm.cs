@@ -12,11 +12,11 @@ using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
-    public partial class EditScreeningForm : Form
+    public partial class SelectScreeningForm : Form
     {
         private Cinema cinema;
 
-        public EditScreeningForm(Cinema cinema)
+        public SelectScreeningForm(Cinema cinema)
         {
             this.cinema = cinema;
             InitializeComponent();
@@ -80,6 +80,9 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
 
-        
+        private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
