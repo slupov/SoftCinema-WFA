@@ -31,6 +31,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.searchByUsernameLabel = new System.Windows.Forms.Label();
             this.searchByUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.sellAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -61,11 +62,24 @@
             this.searchByUsernameTextBox.TabIndex = 2;
             this.searchByUsernameTextBox.TextChanged += new System.EventHandler(this.searchByUsernameTextBox_TextChanged);
             // 
+            // sellAllButton
+            // 
+            this.sellAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sellAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.sellAllButton.Location = new System.Drawing.Point(373, 63);
+            this.sellAllButton.Name = "sellAllButton";
+            this.sellAllButton.Size = new System.Drawing.Size(75, 27);
+            this.sellAllButton.TabIndex = 3;
+            this.sellAllButton.Text = "Sell all";
+            this.sellAllButton.UseVisualStyleBackColor = true;
+            this.sellAllButton.Click += new System.EventHandler(this.sellAllButton_Click);
+            // 
             // ShowScreeningReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 418);
+            this.Controls.Add(this.sellAllButton);
             this.Controls.Add(this.searchByUsernameTextBox);
             this.Controls.Add(this.searchByUsernameLabel);
             this.Controls.Add(this.titleLabel);
@@ -82,5 +96,6 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label searchByUsernameLabel;
         private System.Windows.Forms.TextBox searchByUsernameTextBox;
+        private System.Windows.Forms.Button sellAllButton;
     }
 }

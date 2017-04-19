@@ -155,5 +155,43 @@ namespace SoftCinema.Services
                        ticket.Screening.Start.ToString("tt", CultureInfo.InvariantCulture);
             }
         }
+
+        public static void SellTickets(List<Ticket> tickets)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                foreach (var ticket in tickets)
+                {
+                    db.Tickets.Attach(ticket);
+                    ticket.isPaid = true;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void SellTicket(Ticket ticket)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                db.Tickets.Attach(ticket);
+                ticket.isPaid = true;
+
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteTicket(Ticket ticket)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                db.Tickets.Attach(ticket);
+                ticket.Screening = null;
+                ticket.Holder = null;
+                ticket.Seat = null;
+                db.Tickets.Remove(ticket);
+
+                db.SaveChanges();
+            }
+        }
     }
 }

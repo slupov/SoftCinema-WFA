@@ -68,6 +68,7 @@ namespace SoftCinema.Services.Utilities
             public const string TicketUpdatedSuccessfully = "Ticket updated successfully!";
             public const string MovieRegisteredSuccessfully = "Movie registered successfully!";
             public const string TicketDeletedSuccessfully = "Ticket deleted successfully!";
+            public const string TicketsSoldSuccessfully = "Successfully sold {0} tickets to {1}";
         }
 
         public static class WarningMessages
@@ -83,6 +84,8 @@ namespace SoftCinema.Services.Utilities
             public const string CinemaExists = "Cinema already exists!";
             public const string MoreThanMaxTicketCountPurchased = "You can't buy more than 10 tickets!";
             public const string noTicketsSelected = "You haven't selected any tickets!";
+            public const string WantToSellTicketWarning = "Are you sure you want to sell this ticket?";
+            public const string WantToRejectTicketWarning = "Are you sure you want to reject this ticket?";
         }
 
         public static class ErrorMessages
@@ -115,6 +118,7 @@ namespace SoftCinema.Services.Utilities
             public const string LoginFirst = "You should log in first!";
             public const string TicketUpdateErrorMessage = "Ticket update failed!";
             public const string TicketDeleteMessage = "Ticket delete failed!";
+            public const string NoTicketsToSellMessage = "There is no tickets to sell!";
         }
 
         public static class ImportSuccessMessages
