@@ -60,7 +60,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             if (dialogResult == DialogResult.Yes)
             {
                 TicketService.SellTicket((Ticket) sender);
-                MessageBox.Show("Ticket successfully sold!");
+                MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
             }
             else
             {
