@@ -11,7 +11,8 @@ using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
             {
                 new HomeTeamButton(),
                 new MoviesTeamButton(),
-                new BuyTicketsTeamButton()        
+                new BuyTicketsTeamButton(),
+                new MyAccountButton()   
             });
 
             this.VisualizeButtons();

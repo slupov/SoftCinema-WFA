@@ -68,8 +68,7 @@ namespace SoftCinema.Services
                 {
                     return user.ProfilePicture.Content;
                 }
-                return null;
-               
+                return null;               
             }
         }
     }
