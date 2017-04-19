@@ -37,7 +37,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         private void CreateCategoryForm_Load(object sender, EventArgs e)
         {
             this.CategoryExistsLabel.Hide();
-            string[] movies = MovieService.GetMoviesNameAndYear();
+            string[] movies = MovieService.GetMoviesNameAndYearAsString();
             this.MoviesCheckedListBox.Items.AddRange(movies);
             
         }

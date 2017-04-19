@@ -35,7 +35,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static ICollection<Screening> GetScreenings(string townName, string cinemaName, string movieName)
+        public static ICollection<Screening> GetScreeningsByTownCinemaAndMovie(string townName, string cinemaName, string movieName)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -49,7 +49,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetAllDates(string town, string cinema, string movie)
+        public static string[] GetAllDatesForMovieInCinema(string town, string cinema, string movie)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

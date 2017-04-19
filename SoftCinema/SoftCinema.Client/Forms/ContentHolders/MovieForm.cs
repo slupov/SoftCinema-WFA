@@ -105,7 +105,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.dateBox.Text = "Select date";
             this.dateBox.Items.Clear();
             this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
-            var dates = Services.ScreeningService.GetAllDates(this._townName,
+            var dates = Services.ScreeningService.GetAllDatesForMovieInCinema(this._townName,
                 this._cinemaName, this._movieName);
             this.dateBox.Items.AddRange(dates);
         }

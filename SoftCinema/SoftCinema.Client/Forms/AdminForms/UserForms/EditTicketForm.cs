@@ -72,7 +72,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.seatComboBox.Items.Clear();
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
-            this.movieComboBox.Items.AddRange(Services.MovieService.GetMovies(cinemaName, townName).Select(m => m.Name).ToArray());
+            this.movieComboBox.Items.AddRange(Services.MovieService.GetMoviesByCinemaAndTown(cinemaName, townName).Select(m => m.Name).ToArray());
 
         }
 
@@ -86,7 +86,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             string movieName = this.movieComboBox.SelectedItem.ToString();
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
-            var dates = Services.ScreeningService.GetAllDates(townName,cinemaName,movieName);
+            var dates = Services.ScreeningService.GetAllDatesForMovieInCinema(townName,cinemaName,movieName);
             this.dateComboBox.Items.AddRange(dates);
         }
 
@@ -120,7 +120,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.seatComboBox.Items.Clear();
             this.seatComboBox.Items.Add(ticket.Seat.Number.ToString());
             string[] freeSeats =
-                SeatService.GetFreeSeats(ticket.ScreeningId, ticket.Screening.AuditoriumId)
+                SeatService.GetFreeSeatsForScreening(ticket.ScreeningId, ticket.Screening.AuditoriumId)
                     .Select(n => n.ToString())
                     .ToArray();
             this.seatComboBox.Items.AddRange(freeSeats);

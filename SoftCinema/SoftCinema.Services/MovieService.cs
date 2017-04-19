@@ -61,7 +61,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static ICollection<Movie> GetMovies(string cinemaName, string townName)
+        public static ICollection<Movie> GetMoviesByCinemaAndTown(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -75,7 +75,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetMoviesNameAndYear()
+        public static string[] GetMoviesNameAndYearAsString()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

@@ -73,7 +73,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.movieComboBox.Items.Clear();
 
             this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
-            this._movies = Services.MovieService.GetMovies(this._cinemaName, this._townName);
+            this._movies = Services.MovieService.GetMoviesByCinemaAndTown(this._cinemaName, this._townName);
 
             this.movieComboBox.Items.AddRange(this._movies.Select(m => m.Name).ToArray());
 
@@ -90,7 +90,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.dateComboBox.Items.Clear();
             this._movieName = this.movieComboBox.SelectedItem.ToString();
 
-            var dates = Services.ScreeningService.GetAllDates(this._townName,
+            var dates = Services.ScreeningService.GetAllDatesForMovieInCinema(this._townName,
                 this._cinemaName, this._movieName);
             this.dateComboBox.Items.AddRange(dates);
         }

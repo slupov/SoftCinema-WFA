@@ -26,7 +26,7 @@ namespace SoftCinema.Services
         }
 
 
-        public static int[] GetFreeSeats(int ticketScreeningId,int auditoriumId)
+        public static int[] GetFreeSeatsForScreening(int ticketScreeningId,int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
