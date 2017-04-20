@@ -11,6 +11,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {
     class MyAccountButton : TeamButton
     {
+        
         public MyAccountButton() : base()
         {
             this.Text = "My Account";

@@ -35,12 +35,12 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.emailLabel = new System.Windows.Forms.Label();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
-            this.browseButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.usernameInfoLabel = new System.Windows.Forms.Label();
             this.emailInfoLabel = new System.Windows.Forms.Label();
             this.phoneNumberInfoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
+            
             this.SuspendLayout();
             // 
             // usernameLabel
@@ -53,6 +53,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.usernameLabel.Size = new System.Drawing.Size(118, 24);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Username:";
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.Location = new System.Drawing.Point(0, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(100, 23);
+            this.passwordLabel.TabIndex = 0;
             // 
             // emailLabel
             // 
@@ -86,26 +93,12 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.pictureBoxPhoto.TabIndex = 12;
             this.pictureBoxPhoto.TabStop = false;
             this.pictureBoxPhoto.Click += new System.EventHandler(this.pictureBoxPhoto_Click);
-            //this.pictureBoxPhoto.Image = System.Drawing.Image.FromFile($@"..\..\Utilities\Images\images.jpg");
-            
-            // 
-            // browseButton
-            // 
-            this.browseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.browseButton.ForeColor = System.Drawing.Color.Black;
-            this.browseButton.Location = new System.Drawing.Point(99, 346);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(90, 33);
-            this.browseButton.TabIndex = 10;
-            this.browseButton.Text = "Browse";
-            this.browseButton.UseVisualStyleBackColor = true;
-            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editButton.ForeColor = System.Drawing.Color.Black;
-            this.editButton.Location = new System.Drawing.Point(469, 346);
+            this.editButton.Location = new System.Drawing.Point(610, 349);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(90, 33);
             this.editButton.TabIndex = 10;
@@ -117,23 +110,19 @@ namespace SoftCinema.Client.Forms.ContentHolders
             // 
             this.usernameInfoLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.usernameInfoLabel.Location = new System.Drawing.Point(500, 70);
+            this.usernameInfoLabel.Location = new System.Drawing.Point(441, 70);
             this.usernameInfoLabel.Name = "usernameInfoLabel";
-            this.usernameInfoLabel.Size = new System.Drawing.Size(200, 24);
+            this.usernameInfoLabel.Size = new System.Drawing.Size(259, 24);
             this.usernameInfoLabel.TabIndex = 2;
-            this.usernameInfoLabel.Text = AuthenticationManager.GetCurrentUser().Username;
-            _currentUser = this.usernameInfoLabel.Text;
             // 
             // emailInfoLabel
             // 
             this.emailInfoLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.emailInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.emailInfoLabel.Location = new System.Drawing.Point(500, 120);
+            this.emailInfoLabel.Location = new System.Drawing.Point(388, 120);
             this.emailInfoLabel.Name = "emailInfoLabel";
-            this.emailInfoLabel.Size = new System.Drawing.Size(200, 24);
+            this.emailInfoLabel.Size = new System.Drawing.Size(312, 24);
             this.emailInfoLabel.TabIndex = 14;
-           // this.emailInfoLabel.Text = AuthenticationManager.GetCurrentUser().Email;
-
             // 
             // phoneNumberInfoLabel
             // 
@@ -143,8 +132,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.phoneNumberInfoLabel.Name = "phoneNumberInfoLabel";
             this.phoneNumberInfoLabel.Size = new System.Drawing.Size(200, 24);
             this.phoneNumberInfoLabel.TabIndex = 15;
-           // this.phoneNumberInfoLabel.Text = AuthenticationManager.GetCurrentUser().PhoneNumber;
-
             // 
             // MyAccountForm
             // 
@@ -156,16 +143,17 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.pictureBoxPhoto);
-            this.Controls.Add(this.browseButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.usernameInfoLabel);
             this.Controls.Add(this.phoneNumberInfoLabel);
             this.Controls.Add(this.emailInfoLabel);
             this.Name = "MyAccountForm";
             this.Text = "MyAccountForm";
+            this.Load += new System.EventHandler(this.MyAccountForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -173,7 +161,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label phoneNumberLabel;
-        private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Label usernameInfoLabel;

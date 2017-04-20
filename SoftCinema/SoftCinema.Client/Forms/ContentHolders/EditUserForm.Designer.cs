@@ -31,36 +31,25 @@ namespace SoftCinema.Client.Forms.ContentHolders
         /// </summary>
         private void InitializeComponent()
         {
-            this.usernameLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.saveChanges = new System.Windows.Forms.Button();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.usernameLabel.Location = new System.Drawing.Point(313, 70);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(118, 24);
-            this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "Username:";
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.emailLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.emailLabel.Location = new System.Drawing.Point(313, 120);
+            this.emailLabel.Location = new System.Drawing.Point(311, 71);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(69, 24);
             this.emailLabel.TabIndex = 3;
@@ -71,7 +60,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.phoneNumberLabel.AutoSize = true;
             this.phoneNumberLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.phoneNumberLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(313, 170);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(311, 201);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(168, 24);
             this.phoneNumberLabel.TabIndex = 4;
@@ -112,33 +101,25 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.saveChanges.UseVisualStyleBackColor = true;
             this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
             // 
-            // usernameTextBox
-            // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usernameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.usernameTextBox.Location = new System.Drawing.Point(500, 70);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(200, 33);
-            this.usernameTextBox.TabIndex = 2;
-            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
-            // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.emailTextBox.Location = new System.Drawing.Point(500, 120);
+            this.emailTextBox.Location = new System.Drawing.Point(498, 71);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(200, 33);
             this.emailTextBox.TabIndex = 14;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged_1);
             // 
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.phoneNumberTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(500, 170);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(498, 201);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(200, 33);
             this.phoneNumberTextBox.TabIndex = 15;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged);
             // 
             // backButton
             // 
@@ -152,19 +133,41 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.LightGray;
+            this.passwordLabel.Location = new System.Drawing.Point(311, 137);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(109, 24);
+            this.passwordLabel.TabIndex = 16;
+            this.passwordLabel.Text = "Password:";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.passwordTextBox.Location = new System.Drawing.Point(498, 137);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(200, 33);
+            this.passwordTextBox.TabIndex = 17;
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(769, 418);
-            this.Controls.Add(this.usernameLabel);
+            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.pictureBoxPhoto);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.saveChanges);
-            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.backButton);
@@ -177,8 +180,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         }
         #endregion
-
-        private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label phoneNumberLabel;
 
@@ -187,8 +188,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private System.Windows.Forms.Button backButton;
 
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
-        private System.Windows.Forms.TextBox usernameTextBox;        
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.TextBox passwordTextBox;
     }
 }

@@ -44,9 +44,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var email = this.emailTextBox.Text;
             var phone = this.phoneNumberTextBox.Text;
             var image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-            var scaledImage = ImageService.ScaleImage(image, 55, 54);
+            var scaledImage = ImageService.ScaleImage(image, 55, 52);
             this.profilePictureBox.Width = scaledImage.Width;
             this.profilePictureBox.Height = scaledImage.Height;
+            
 
             var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
 
@@ -58,6 +59,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
                 var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
                 mainForm.RenderSideBar();
+                
                 //Redirect to home page view
                 SoftCinemaForm.SetContentHolderForm(new LoginForm());
             }
