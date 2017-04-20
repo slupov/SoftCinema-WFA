@@ -72,6 +72,8 @@ namespace SoftCinema.Client.Forms
             LogoutButton.Hide();
         }
 
+        
+        
         private void TopPanelForm_Load(object sender, EventArgs e)
         {
             if (AuthenticationManager.IsAuthenticated())

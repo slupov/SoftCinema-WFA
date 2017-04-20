@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
@@ -149,7 +150,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddOrUpdateUser(string username, string password, string email, string phone,Role role)
+        public static void AddOrUpdateUser(string username, string password, string email, string phone,Role role, Image profilePicture)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -159,7 +160,8 @@ namespace SoftCinema.Services
                     PasswordHash = PasswordHasher.ComputeHash(password, PasswordHasher.Supported_HA.SHA512, null),
                     Email = email,
                     PhoneNumber = phone,
-                    Role = role
+                    Role = role,
+                    ProfilePicture = profilePicture
                 };
 
                 db.Users.AddOrUpdate(u=>u.Username, user);
@@ -210,6 +212,7 @@ namespace SoftCinema.Services
                 db.SaveChanges();
             }
         }
+        
 
         public static void DeleteUser(string userUsername)
         {
@@ -218,6 +221,19 @@ namespace SoftCinema.Services
                 User user = db.Users.FirstOrDefault(u => u.Username == userUsername);
                 user.IsDeleted = true;
                 db.SaveChanges();
+            }
+        }
+
+        public static void AddImageToUser(User user, Image image)
+        {
+            using (SoftCinemaContext context = new SoftCinemaContext())
+            {
+                
+                    user = context.Users.FirstOrDefault(u => u.Username == user.Username);
+                user.ProfilePicture = image;
+                user.ProfilePictureId = image.Id;
+                    context.SaveChanges();
+                
             }
         }
     }
