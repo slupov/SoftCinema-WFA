@@ -1,4 +1,6 @@
-﻿namespace SoftCinema.Services
+﻿using SoftCinema.Services.Utilities;
+
+namespace SoftCinema.Services
 {
     using System;
     using SoftCinema.Models;
@@ -25,16 +27,15 @@
         {
             if (currentUser == null)
             {
-                throw new InvalidOperationException("You should log in first!");
+                throw new InvalidOperationException(Constants.ErrorMessages.LoginFirst);
             }
         }
-
 
         public static void Logout()
         {
             if (currentUser == null)
             {
-                throw new InvalidOperationException("You should login first");
+                throw new InvalidOperationException(Constants.ErrorMessages.LoginFirst);
             }
 
             currentUser = null;
