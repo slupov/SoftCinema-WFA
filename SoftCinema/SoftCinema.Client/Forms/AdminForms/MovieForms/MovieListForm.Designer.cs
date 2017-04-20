@@ -40,11 +40,11 @@
             this.EditMovieLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.EditMovieLabel.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditMovieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.EditMovieLabel.Location = new System.Drawing.Point(94, 36);
+            this.EditMovieLabel.Location = new System.Drawing.Point(39, 33);
             this.EditMovieLabel.Name = "EditMovieLabel";
-            this.EditMovieLabel.Size = new System.Drawing.Size(856, 70);
+            this.EditMovieLabel.Size = new System.Drawing.Size(1021, 140);
             this.EditMovieLabel.TabIndex = 9;
-            this.EditMovieLabel.Text = "Select a Movie to Edit";
+            this.EditMovieLabel.Text = "Select a Movie to View Details";
             this.EditMovieLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // movieLabel

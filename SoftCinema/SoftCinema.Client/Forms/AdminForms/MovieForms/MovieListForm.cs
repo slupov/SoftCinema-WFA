@@ -51,12 +51,12 @@ namespace SoftCinema.Client.Forms.AdminForms.MovieForms
             string movieName = GetMovieName(movieComboBox.Text);
             int movieYear = GetMovieYear(movieComboBox.Text);
             Movie movie = MovieService.GetMovieByYearAndName(movieYear, movieName);
-            //Client.AdminForms.MovieForms.MovieForm movieForm = new Client.AdminForms.MovieForms.MovieForm(movie);
-            //movieForm.TopLevel = false;
-            //movieForm.AutoScroll = true;
-            //this.Hide();
-            //((ComboBox)sender).Parent.Parent.Controls.Add(movieForm);
-            //movieForm.Show();
+            Client.AdminForms.MovieForms.MovieForm movieForm = new Client.AdminForms.MovieForms.MovieForm(movie);
+            movieForm.TopLevel = false;
+            movieForm.AutoScroll = true;
+            this.Hide();
+            ((ComboBox)sender).Parent.Parent.Controls.Add(movieForm);
+            movieForm.Show();
         }
 
         private int GetMovieYear(string movieNameAndYear)
