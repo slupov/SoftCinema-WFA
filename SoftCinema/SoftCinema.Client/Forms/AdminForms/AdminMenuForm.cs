@@ -52,7 +52,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void EditMoviesButton_Click(object sender, EventArgs e)
         {
-            RegisterMovieForm movieForm = new RegisterMovieForm();
+            MovieListForm movieForm = new MovieListForm();
             movieForm.TopLevel = false;
             movieForm.AutoScroll = true;
             this.Hide();

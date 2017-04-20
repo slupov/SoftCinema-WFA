@@ -91,7 +91,7 @@
             this.EditMoviesButton.Name = "EditMoviesButton";
             this.EditMoviesButton.Size = new System.Drawing.Size(214, 58);
             this.EditMoviesButton.TabIndex = 10;
-            this.EditMoviesButton.Text = "Add Movie";
+            this.EditMoviesButton.Text = "Edit Movies";
             this.EditMoviesButton.UseVisualStyleBackColor = false;
             this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
             // 
