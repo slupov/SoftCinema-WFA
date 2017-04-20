@@ -24,21 +24,23 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this.Ticket = ticket;
             this.Size = size;
             this._text = new Label();
-            this._text.Size = new Size(500, this.Size.Height);
-            this._text.Location = new Point(location.X + 5, location.Y + 5);
+            this._text.Location = new Point(5,20);
+            this._text.Size = new Size(500, 20);
 
             RenderLabel();
             RenderButtons();
+
         }
 
         private void RenderLabel()
         {
-            this.Controls.Add(this._text);
             this._text.Font = new Font(new FontFamily("Comic Sans MS"), 10);
-
             this._text.Text = string.Format("{0} (Reserved): Row {1} Seat {2} | {3}, Price: {4}",
                 this.Ticket.Holder.Username, this.Ticket.Seat.Row,
                 this.Ticket.Seat.Number, this.Ticket.Type, this.Ticket.Price);
+
+            this.Controls.Add(this._text);
+
         }
 
         private void RenderButtons()
@@ -46,7 +48,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this._approveButton.Click += new System.EventHandler(this._approveButton_Click);
             this._rejectButton.Click += new System.EventHandler(this._rejectButton_Click);
 
-            this._approveButton.Location = new Point(this._text.Location.X + this._text.Width + 5, this._text.Location.Y);
+            this._approveButton.Location = new Point(this._text.Location.X + this._text.Width + 10, this._text.Location.Y - 5);
             this._rejectButton.Location = new Point(_approveButton.Location.X + _approveButton.Width + 10,
                 _approveButton.Location.Y);
 
@@ -64,9 +66,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
 
                 //update holder
-                var screeningsReservationForm = (ShowScreeningReservationsForm) this.Parent.Parent;
-                screeningsReservationForm.RenderReservationsHolder();
-
+                UpdateReservationsHolder();
             }
             else
             {
@@ -80,8 +80,16 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                UpdateReservationsHolder();
                 TicketService.DeleteTicket(this.Ticket);
             }
+        }
+
+        private void UpdateReservationsHolder()
+        {
+            var screeningsReservationForm = (ShowScreeningReservationsForm)this.Parent.Parent;
+            screeningsReservationForm._reservedTickets.Remove(this.Ticket);
+            screeningsReservationForm.RenderReservationsHolder();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
     public partial class ShowScreeningReservationsForm : ContentHolderForm
     {
         private Screening _screening { get; set; }
-        private List<Ticket> _reservedTickets { get; set; }
+        public List<Ticket> _reservedTickets { get; set; }
         private ScreeningReservationsHolder _reservationsHolder { get; set; }
 
         public ShowScreeningReservationsForm(Screening screening)
@@ -33,7 +33,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 ClearReservationHolder();
                 return;
             }
-            var location = new Point(this.searchByUsernameLabel.Location.X, this.searchByUsernameTextBox.Location.Y + 60);
+            var location = new Point(this.searchByUsernameLabel.Location.X, this.searchByUsernameTextBox.Location.Y + 40);
             var width = this.Size.Width - 100;
             var size = new Size(width, 200);
 
@@ -95,6 +95,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             if (dialogResult == DialogResult.Yes)
             {
                 TicketService.SellTickets(this._reservedTickets);
+
                 var ticketHolders = this._reservedTickets.Select(t => t.Holder.Username).ToList();
                 var ticketHoldersString = string.Join(",", ticketHolders.Distinct());
 
@@ -108,6 +109,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                     ticketHoldersString));
 
                 //update the holder
+                this._reservedTickets = new List<Ticket>();
                 RenderReservationsHolder();
             }
             else if (dialogResult == DialogResult.No)
@@ -115,5 +117,6 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 //do nothing
             }
         }
+        
     }
 }

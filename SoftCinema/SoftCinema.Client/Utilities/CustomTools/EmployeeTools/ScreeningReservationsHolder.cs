@@ -9,7 +9,7 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningReservationsHolder : GroupBox
+    class ScreeningReservationsHolder : Panel
     {
         private List<Ticket> _reservedTickets { get; set; }
 
@@ -39,15 +39,15 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this.Controls.Clear();
 
             var rowCoordinates = new Point(10, 10);
-            var rowSize = new Size(this.Width - 50,90);
+            var rowSize = new Size(this.Width - 20,60);
+
             foreach (var reservedTicket in _reservedTickets)
             {
                 var row = new ReservationRow(rowCoordinates, rowSize, reservedTicket);
-                row.Location = rowCoordinates;
                 this.Controls.Add(row);
 
-                rowCoordinates.Y += row.Height + 10;
+                rowCoordinates.Y += row.Height;
             }
-        }
+;        }
     }
 }
