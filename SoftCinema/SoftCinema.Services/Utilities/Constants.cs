@@ -70,6 +70,7 @@ namespace SoftCinema.Services.Utilities
             public const string TicketSoldSuccessfully = "Ticket successfully sold!";
             public const string TicketDeletedSuccessfully = "Ticket deleted successfully!";
             public const string TicketsSoldSuccessfully = "Successfully sold {0} tickets to {1}";
+            public const string TicketsReservedSuccessfully = "Tickets successfully reserved!";
         }
 
         public static class WarningMessages

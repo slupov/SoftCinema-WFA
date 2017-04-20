@@ -33,22 +33,30 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var username = this.usernameTextBox.Text;
             var password = this.passwordTextBox.Text;
 
-            if (UserService.Validations.isUsernamePasswordMatching(username, password) && !UserService.Validations.IsUserDeleted(username))
+            try
             {
-                AuthenticationManager.Login(UserService.GetUser(username));
-                MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
+                if (UserService.Validations.isUsernamePasswordMatching(username, password) && !UserService.Validations.IsUserDeleted(username))
+                {
+                    AuthenticationManager.Login(UserService.GetUser(username));
+                    MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
-                TopPanelForm.ShowGreetings();
-                //Refresh main form's sidebar
-                var mainForm = (SoftCinemaForm)((Button) sender).Parent.Parent.Parent;
-                mainForm.RenderSideBar();
-                //Redirect to home page view
-                SoftCinemaForm.SetContentHolderForm(new HomeForm());
+                    TopPanelForm.ShowGreetings();
+                    //Refresh main form's sidebar
+                    var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
+                    mainForm.RenderSideBar();
+                    //Redirect to home page view
+                    SoftCinemaForm.SetContentHolderForm(new HomeForm());
+                }
+                else
+                {
+                    MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
+                }
             }
-            else
+            catch (Exception exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
+            
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)

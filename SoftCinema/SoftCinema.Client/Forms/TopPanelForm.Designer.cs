@@ -34,19 +34,19 @@ namespace SoftCinema.Client.Forms
         /// </summary>
         private void InitializeComponent()
         {
-           LogoutButton = new System.Windows.Forms.Button();
-           GreetingLabel = new System.Windows.Forms.Label();
-           profilePicPictureBox = new System.Windows.Forms.PictureBox();
+            LogoutButton = new System.Windows.Forms.Button();
+            GreetingLabel = new System.Windows.Forms.Label();
+            profilePicPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(profilePicPictureBox)).BeginInit();
-            SuspendLayout();
+            this.SuspendLayout();
             // 
             // LogoutButton
             // 
-           LogoutButton.BackColor = System.Drawing.Color.Silver;
-           LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-           LogoutButton.FlatAppearance.BorderSize = 0;
-           LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-           LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LogoutButton.BackColor = System.Drawing.Color.Silver;
+            LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            LogoutButton.FlatAppearance.BorderSize = 0;
+            LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             LogoutButton.ForeColor = System.Drawing.SystemColors.Desktop;
             LogoutButton.Location = new System.Drawing.Point(660, 19);
             LogoutButton.Margin = new System.Windows.Forms.Padding(0);
@@ -81,8 +81,7 @@ namespace SoftCinema.Client.Forms
             // 
             // TopPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(769, 73);
             this.Controls.Add(profilePicPictureBox);

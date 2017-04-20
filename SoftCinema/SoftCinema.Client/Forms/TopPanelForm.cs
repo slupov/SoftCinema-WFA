@@ -30,7 +30,6 @@ namespace SoftCinema.Client.Forms
 
             //Redirect to home page view
             SoftCinemaForm.SetContentHolderForm(new HomeForm());
-            
         }
 
         //Utilities
@@ -54,19 +53,18 @@ namespace SoftCinema.Client.Forms
             }
             else
             {
-                
-                    Image image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-                    byte[] imageToBytes = ImageService.imageToByteArray(image);
-                    Models.Image newImage = new Models.Image() { Content = imageToBytes };
-                    currentUser.ProfilePicture = newImage;
-                    profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+                Image image = Image.FromFile(@"../../Utilities/Images/default.jpg");
+                byte[] imageToBytes = ImageService.imageToByteArray(image);
+                Models.Image newImage = new Models.Image() {Content = imageToBytes};
+                currentUser.ProfilePicture = newImage;
+                profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
             }
-            profilePicPictureBox.Location = new Point(590, profilePicPictureBox.Location.Y + 4);
+            profilePicPictureBox.Location = new Point(590, profilePicPictureBox.Location.Y);
             profilePicPictureBox.Show();
             LogoutButton.Show();
         }
 
-        public  void HideGreetings()
+        public void HideGreetings()
         {
             GreetingLabel.Hide();
             GreetingLabel.Text = string.Empty;
