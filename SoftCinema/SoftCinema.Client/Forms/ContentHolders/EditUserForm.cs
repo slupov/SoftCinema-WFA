@@ -26,7 +26,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
             public EditUserForm()
             {
                 user = MyAccountForm._currentUser;
-            InitializeComponent();
+             
+                InitializeComponent();
         }
 
         
@@ -74,15 +75,20 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 string email = this.emailTextBox.Text;
                 string phoneNumber = this.phoneNumberTextBox.Text;
-                string password = this.passwordTextBox.Text;
-                Models.Image profilePic = new Models.Image() {Content = imageBytes};
-                ImageService.AddImage(profilePic.Content);
+                string password = string.Empty;
+                if (UserService.Validations.isPasswordValid(this.passwordTextBox.Text))
+                {
+                    password = this.passwordTextBox.Text;
+                }
+                Models.Image profilePic = null;
+                if (_image != null)
+                {
+                    profilePic = new Models.Image() {Content = imageBytes};
+        
+                }
                 bool isDeleted = false;
-                UserService.AddOrUpdateUser(user.Username,password,email,phoneNumber,(Role)user.Role, profilePic);
-                user.ProfilePicture = profilePic;
-                UserService.AddImageToUser(user,profilePic);
-
-                UserService.AddImageToUser(MyAccountForm._currentUser, profilePic);
+                UserService.EditUser(user.Username,email,phoneNumber,password,profilePic);
+                
                 MyAccountForm._currentUser = user;
 
                 TopPanelForm.ShowGreetings();

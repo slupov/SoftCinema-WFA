@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,7 +52,7 @@ namespace SoftCinema.Services
 
             public static bool isPasswordValid(string password)
             {
-                if (password.Length < 3 && password.Length > 25)
+                if (password.Length < 3 || password.Length > 25)
                 {
                     return false;
                 }
@@ -128,6 +129,26 @@ namespace SoftCinema.Services
                    return db.Users.FirstOrDefault(u => u.Username == username).IsDeleted;
                     
                 }
+            }
+        }
+
+        public static void EditUser(string username,string email, string phoneNumber, string password, Image profilePic)
+        {
+            using (var db = new SoftCinemaContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.Username == username);
+                user.Email = email;
+                user.PhoneNumber = phoneNumber;
+                if (password != string.Empty)
+                {
+                    user.PasswordHash = PasswordHasher.ComputeHash(password, PasswordHasher.Supported_HA.SHA512, null);
+                }
+                if (profilePic != null)
+                {
+                    user.ProfilePicture = profilePic;
+                }
+                db.SaveChanges();
+
             }
         }
 
