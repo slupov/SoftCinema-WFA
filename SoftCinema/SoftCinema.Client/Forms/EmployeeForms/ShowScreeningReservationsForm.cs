@@ -19,6 +19,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         public ShowScreeningReservationsForm(Screening screening)
         {
+            this.ticketService = new TicketService();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this._screening = screening;
             this._reservedTickets = ticketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
