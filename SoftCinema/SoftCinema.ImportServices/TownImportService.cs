@@ -7,9 +7,9 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class TownImportService
+    public  class TownImportService
     {
-        public static void ImportTowns(IEnumerable<TownDTO> towns)
+        public  void ImportTowns(IEnumerable<TownDto> towns)
         {
             foreach (var townDto in towns)
             {
@@ -24,7 +24,7 @@ namespace ImportServices
             }
         }
 
-        public static void ImportTown(TownDTO townDto)
+        public  void ImportTown(TownDto townDto)
         {
             string townName = townDto.Name;
             InputDataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -11,16 +10,16 @@ namespace ImportServices
 {
     public class AuditoriumImportService
     {
-        public static AuditoriumDTOCollection DeserializeAuditoriums(string path)
+        public  AuditoriumDtoCollection DeserializeAuditoriums(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDTOCollection));
+            XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (AuditoriumDTOCollection)serializer.Deserialize(reader);
+                return (AuditoriumDtoCollection)serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportAuditoriumCollection(AuditoriumDTOCollection auditoriumDtos)
+        public  void ImportAuditoriumCollection(AuditoriumDtoCollection auditoriumDtos)
         {
             foreach (var auditoriumDto in auditoriumDtos.AudtioriumDtos)
             {
@@ -36,7 +35,7 @@ namespace ImportServices
             }
         }
 
-        private static void ImportAuditorium(AuditoriumDTO auditoriumDto)
+        private  void ImportAuditorium(AuditoriumDto auditoriumDto)
         {
             string cinemaName = auditoriumDto.CinemaName;
             InputDataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);

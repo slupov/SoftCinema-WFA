@@ -13,16 +13,16 @@ namespace ImportServices
 {
     public class MovieImportService
     {
-        public static MovieDTOCollection DeserializeMovies(string path)
+        public  MovieDtoCollection DeserializeMovies(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(MovieDTOCollection));
+            XmlSerializer serializer = new XmlSerializer(typeof(MovieDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (MovieDTOCollection)serializer.Deserialize(reader);
+                return (MovieDtoCollection)serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportMoviesCollection(MovieDTOCollection movieDtos)
+        public  void ImportMoviesCollection(MovieDtoCollection movieDtos)
         {
             foreach (var movieDto in movieDtos.MovieDTOs)
             {
@@ -39,7 +39,7 @@ namespace ImportServices
         }
 
         
-        public static void ImportMovie(MovieDTO movieDto)
+        public  void ImportMovie(MovieDto movieDto)
         {
             string movieName = movieDto.Name;
             InputDataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
@@ -63,14 +63,14 @@ namespace ImportServices
             
             MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
                 releaseCountry,image);
-            MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
+            this.AddCategoriesToMovie(movieName,releaseYear,categories);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.MoviesAddedSuccess,movieName));
 
 
         }
 
-        public static void AddCategoriesToMovie(string movieName, int releaseYear, List<string> categories)
+        public  void AddCategoriesToMovie(string movieName, int releaseYear, List<string> categories)
         {
             foreach (var categoryName in categories)
             {

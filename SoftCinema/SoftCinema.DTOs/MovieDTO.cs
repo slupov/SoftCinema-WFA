@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace SoftCinema.DTOs
 {
     [Serializable()]
-    public class MovieDTO
+    public class MovieDto
     {
-        public MovieDTO()
+        public MovieDto()
         {
-            this.Categories = new List<CategoryDTО>();
+            this.Categories = new List<CategoryDto>();
         }
 
         [XmlElement("Name")]
@@ -44,6 +41,6 @@ namespace SoftCinema.DTOs
 
         [XmlArray("Categories")]
         [XmlArrayItem("Category")]
-        public List<CategoryDTО> Categories { get; set; }
+        public List<CategoryDto> Categories { get; set; }
     }
 }

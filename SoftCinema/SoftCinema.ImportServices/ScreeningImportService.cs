@@ -7,9 +7,9 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class ScreeningImportService
+    public  class ScreeningImportService
     {
-        public static void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
+        public  void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
         {
             foreach (var screeningDto in screeningDtos)
             {
@@ -26,7 +26,7 @@ namespace ImportServices
         }
 
 
-        public static void ImportScreening(ScreeeningDto screeningDto)
+        public  void ImportScreening(ScreeeningDto screeningDto)
         {
 
             byte auditoriumNumber = screeningDto.AuditoriumNumber;

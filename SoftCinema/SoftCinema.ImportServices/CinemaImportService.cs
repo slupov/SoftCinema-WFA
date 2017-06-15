@@ -8,18 +8,18 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class CinemaImportService
+    public  class CinemaImportService
     {
-        public static CinemaDTOCollection DeserializeCinemas(string path)
+        public  CinemaDtoCollection DeserializeCinemas(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(CinemaDTOCollection));
+            XmlSerializer serializer = new XmlSerializer(typeof(CinemaDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (CinemaDTOCollection) serializer.Deserialize(reader);
+                return (CinemaDtoCollection) serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportCinemasCollection(CinemaDTOCollection cinemaDtos)
+        public  void ImportCinemasCollection(CinemaDtoCollection cinemaDtos)
         {
             foreach (var cinemaDto in cinemaDtos.CinemaDtos)
             {
@@ -34,7 +34,7 @@ namespace ImportServices
             }
         }
 
-        private static void ImportCinema(CinemaDTO cinemaDto)
+        private  void ImportCinema(CinemaDto cinemaDto)
         {
    
             string townName = cinemaDto.TownName;

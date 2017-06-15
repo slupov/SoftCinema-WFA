@@ -7,9 +7,9 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class SeatImportService
+    public  class SeatImportService
     {
-        public static void ImportSeats(IEnumerable<SeatDto> seatsDtos)
+        public  void ImportSeats(IEnumerable<SeatDto> seatsDtos)
         {
             foreach (var seatDto in seatsDtos)
             {
@@ -25,7 +25,7 @@ namespace ImportServices
             }
         }
 
-        private static void ImportSeat(SeatDto seatDto)
+        private  void ImportSeat(SeatDto seatDto)
         {
             string cinemaTown = seatDto.CinemaTown;
             TownValidator.CheckTownExisting(cinemaTown);

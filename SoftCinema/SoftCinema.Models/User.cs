@@ -17,7 +17,7 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Required,MaxLength(25),Index(IsUnique = true)]
+        [Required,MinLength(3),MaxLength(25),Index(IsUnique = true)]
         public string Username { get; set; }
         
         [Required]

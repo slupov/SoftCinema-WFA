@@ -1,17 +1,17 @@
 ﻿using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Collections.Generic;
+using SoftCinema.DTOs;
+using SoftCinema.Services.Utilities;
+using SoftCinema.Services;
 
 namespace ImportServices
 {
-    using System;
-    using System.Collections.Generic;
     
-    using SoftCinema.DTOs;
-    using SoftCinema.Services.Utilities;
-    using SoftCinema.Services;
 
-    public static class ActorImportService
+    public  class ActorImportService
     {
-        public static void ImportActors(IEnumerable<ActorDTO> actors)
+        public  void ImportActors(IEnumerable<ActorDto> actors)
         {
             foreach (var actorDto in actors)
             {
@@ -26,7 +26,7 @@ namespace ImportServices
             }
         }
 
-        public static void ImportActor(ActorDTO actorDto)
+        public  void ImportActor(ActorDto actorDto)
         {
             string actorName = actorDto.Name;
             InputDataValidator.ValidateStringMaxLength(actorName, Constants.MaxActorNameLength);
@@ -39,12 +39,12 @@ namespace ImportServices
             MovieValidator.CheckMoviesExist(movies);
 
             ActorService.AddActor(actorName, actorRating);
-            ActorImportService.AddMoviesToActor(actorName, movies);
+            this.AddMoviesToActor(actorName, movies);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ActorAddedSuccess, actorName));
         }
 
-        public static void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)
+        public  void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)
         {
             foreach (var movieDto in movies)
             {

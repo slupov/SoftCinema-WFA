@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Models", "SoftCinema.Models\SoftCinema.Models.csproj", "{5DB49B1A-E9F7-46B5-B7A8-08B01A567286}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.Import", "SoftCi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportServices", "SoftCinema.ImportServices\SoftCinema.ImportServices.csproj", "{584B4019-5AFF-4869-A1A6-89957657F74E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportData", "SoftCinema.Test\SoftCinema.ImportData.csproj", "{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCinema.ImportData", "SoftCinema.ImportData\SoftCinema.ImportData.csproj", "{D944A41F-CCAB-40A1-9356-17D01A6BC6F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

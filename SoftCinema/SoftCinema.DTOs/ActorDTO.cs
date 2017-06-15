@@ -2,9 +2,9 @@
 
 namespace SoftCinema.DTOs
 {
-    public class ActorDTO
+    public class ActorDto
     {
-        public ActorDTO()
+        public ActorDto()
         {
             this.Movies = new List<ActorMovieDto>();
         }
