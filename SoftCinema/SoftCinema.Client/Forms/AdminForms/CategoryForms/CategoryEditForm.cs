@@ -17,7 +17,7 @@ namespace SoftCinema.Client.Forms.AdminForms
     public partial class CategoryEditForm : Form
     {
         private readonly Category category;
-        private CategoryService categoryService;
+        private readonly CategoryService categoryService;
 
         public CategoryEditForm(Category category)
         {
@@ -94,7 +94,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                 ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
                 categoriesForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.CategoriesUpdateErrorMessage);
             }
@@ -191,7 +191,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                     ((Button) sender).Parent.Parent.Controls.Add(categoriesForm);
                     categoriesForm.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.CategoriesDeleteMessage);
                 }

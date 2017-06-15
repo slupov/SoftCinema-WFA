@@ -62,7 +62,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                 ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
                 categoriesForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.CategoryCreateErrorMessage);
             }

@@ -38,7 +38,6 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "ContentHolderForm";
             this.Text = "ContentHolderForm";
-            this.Load += new System.EventHandler(this.ContentHolderForm_Load);
             this.ResumeLayout(false);
 
         }

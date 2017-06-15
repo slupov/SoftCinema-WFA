@@ -190,7 +190,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
                 ticketsForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.TicketUpdateErrorMessage);
             }
@@ -212,7 +212,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                     ((Button)sender).Parent.Parent.Controls.Add(userTickets);
                     userTickets.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.TicketDeleteMessage);
                 }
@@ -228,7 +228,6 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
         private string GetMovieName(string movieNameAndYear)
         {
-            int yearIndex = movieNameAndYear.LastIndexOf(",");
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
     }

@@ -35,10 +35,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-        }
-
 
         private void registerButton_Click(object sender, EventArgs e)
         {
@@ -155,7 +151,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 var scaledImage = imageService.ScaleImage(image, 138, 161);
                 this.profilePictureBox.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
 
-                var path = ofd.FileName;
                 this.profilePictureBox.Image = scaledImage;
 
                 this.movieImageBytes = imageService.imageToByteArray(scaledImage);

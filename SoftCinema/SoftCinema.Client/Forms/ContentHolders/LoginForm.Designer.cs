@@ -59,7 +59,6 @@
             this.passwordLabel.Size = new System.Drawing.Size(104, 24);
             this.passwordLabel.TabIndex = 1;
             this.passwordLabel.Text = "Password";
-            this.passwordLabel.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // usernameTextBox
             // 
@@ -139,7 +138,6 @@
             this.Controls.Add(this.usernameLabel);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

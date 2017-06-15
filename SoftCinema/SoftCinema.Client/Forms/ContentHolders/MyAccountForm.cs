@@ -13,7 +13,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
     public partial class MyAccountForm : ContentHolderForm
     {
         public static User _currentUser;
-        private byte[] movieImageBytes { get; set; }
         private readonly ImageService imageService;
         private readonly UserService userService;
 
@@ -24,14 +23,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             InitializeComponent();
             _currentUser = userService.GetUser(AuthenticationManager.GetCurrentUser().Username);
             
-        }
-
-       
-
-        
-        private void pictureBoxPhoto_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void editButton_Click(object sender, EventArgs e)

@@ -18,14 +18,7 @@ namespace SoftCinema.Client.Forms
         {
             this.imageService = new ImageService();
             InitializeComponent();
-            if (AuthenticationManager.IsAuthenticated())
-            {
-                ShowGreetings();
-            }
-            else
-            {
-                HideGreetings();
-            }
+            ShowLogInMessage();
 
         }
 
@@ -84,9 +77,8 @@ namespace SoftCinema.Client.Forms
             LogoutButton.Hide();
         }
 
-        
-        
-        private void TopPanelForm_Load(object sender, EventArgs e)
+
+        private void ShowLogInMessage()
         {
             if (AuthenticationManager.IsAuthenticated())
             {

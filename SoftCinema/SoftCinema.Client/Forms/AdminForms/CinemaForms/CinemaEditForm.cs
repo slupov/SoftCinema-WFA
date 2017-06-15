@@ -15,7 +15,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
     public partial class CinemaEditForm : Form
     {
-        private Cinema cinema;
+        private readonly Cinema cinema;
         private readonly CinemaService cinemaService;
 
         public CinemaEditForm(Cinema cinema)
@@ -80,7 +80,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
                 cinemasForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.CinemaUpdateErrorMessage);
             }
@@ -102,7 +102,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                     ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
                     cinemasForm.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.CinemaDeleteMessage);
                 }

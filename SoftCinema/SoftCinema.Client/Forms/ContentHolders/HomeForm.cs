@@ -8,11 +8,5 @@ namespace SoftCinema.Client.Forms.ContentHolders
         {
             InitializeComponent();
         }
-
-        private void HomeForm_Load(object sender, EventArgs e)
-        {
-
-        }
-       
     }
 }

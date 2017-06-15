@@ -43,14 +43,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
                     AuthenticationManager.Login(userService.GetUser(username));
                     MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
-                    
-
-                    //TopPanelForm.ShowGreetings();
-                    //Refresh main form's sidebar
                     var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
                     mainForm.RenderTopPanelForm();
                     mainForm.RenderSideBar();
-                    //Redirect to home page view
                     SoftCinemaForm.SetContentHolderForm(new HomeForm());
                 }
                 else
@@ -58,7 +53,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                     MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
                 }
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
@@ -84,16 +79,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 this.usernameInfoLabel.Hide();
             }
-        }
-
-        private void passwordLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -18,11 +18,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
     public partial class EditUserForm : ContentHolderForm
     {
         private User user;
-        private static string password { get; set; }  
-        private  byte[] imageBytes { get; set; }
-        private static string email {get;set;}
-        private static string phoneNumber { get; set; }  
-        private static Image _image { get; set; }
+        private string password { get; set; }  
+        private byte[] imageBytes { get; set; }
+        private string email {get;set;}
+        private string phoneNumber { get; set; }  
+        private Image _image { get; set; }
         private readonly ImageService imageService;
         private readonly UserService userService;
 
@@ -53,20 +53,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 _image = System.Drawing.Image.FromFile(ofd.FileName);
-               
                 var scaledImage = imageService.ScaleImage(_image, 215, 258);
                 this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
-
-                var path = ofd.FileName;
                 this.pictureBoxPhoto.Image = scaledImage;
-
                 imageBytes = imageService.imageToByteArray(scaledImage);
             }
-        }
-
-        private void pictureBoxPhoto_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void saveChanges_Click(object sender, EventArgs e)
@@ -98,7 +89,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 mainForm.RenderTopPanelForm();
 
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.UserUpdateErrorMesage);
             }

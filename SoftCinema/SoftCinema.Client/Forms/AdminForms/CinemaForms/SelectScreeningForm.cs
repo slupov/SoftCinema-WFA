@@ -14,7 +14,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
     public partial class SelectScreeningForm : Form
     {
-        private Cinema cinema;
+        private readonly Cinema cinema;
         private readonly ScreeningService screeningService;
         private readonly MovieService movieService;
 
@@ -28,8 +28,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void EditScreeningForm_Load(object sender, EventArgs e)
         {
-            string cinemaName = cinema.Name;
-            string townName = cinema.Town.Name;
             string[] movies =
                 movieService.GetMoviesByCinemaAndTown(cinema.Name, cinema.Town.Name).Select(m => m.Name +","+m.ReleaseYear).ToArray();
             this.movieComboBox.Items.AddRange(movies);
@@ -71,7 +69,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private string GetMovieName(string movieNameAndYear)
         {
-            int yearIndex = movieNameAndYear.LastIndexOf(",");
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
 

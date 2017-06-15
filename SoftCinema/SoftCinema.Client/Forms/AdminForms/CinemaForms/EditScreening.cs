@@ -17,7 +17,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
     public partial class EditScreening : Form
     {
-        private Screening screening;
+        private readonly Screening screening;
         private readonly CinemaService cinemaService;
         private readonly ScreeningService screeningService;
         private readonly ScreeningValidator screeningValidator;
@@ -82,7 +82,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 ((Button)sender).Parent.Parent.Controls.Add(screeningsForm);
                 screeningsForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show("Screening updated failed!");
             }

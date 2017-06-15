@@ -90,7 +90,6 @@ namespace SoftCinema.Client.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TopPanelForm";
             this.Text = "TopPanelForm";
-            this.Load += new System.EventHandler(this.TopPanelForm_Load);
             ((System.ComponentModel.ISupportInitialize)(profilePicPictureBox)).EndInit();
             this.ResumeLayout(false);
 

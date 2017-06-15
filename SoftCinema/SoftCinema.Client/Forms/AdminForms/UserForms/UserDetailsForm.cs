@@ -128,7 +128,7 @@ namespace SoftCinema.Client.Forms
                 ((Button)sender).Parent.Parent.Controls.Add(usersForm);
                 usersForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                 MessageBox.Show(Constants.ErrorMessages.UserUpdateErrorMesage);
             }
@@ -159,35 +159,6 @@ namespace SoftCinema.Client.Forms
             ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
             ticketsForm.Show();
         }
-
-
-
-        //private void UserDeleteButton_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        DialogResult dialogResult = MessageBox.Show("Are you sure you wand to delete this user?", "User deletion", MessageBoxButtons.YesNo);
-        //        if (dialogResult == DialogResult.Yes)
-        //        {
-        //            UserService.DeleteUser(user.Username);x
-        //            MessageBox.Show(Constants.SuccessMessages.DeleteUserSuccess);
-        //            UsersForm usersForm = new UsersForm();
-        //            usersForm.TopLevel = false;
-        //            usersForm.AutoScroll = true;
-        //            this.Hide();
-        //            ((Button)sender).Parent.Parent.Controls.Add(usersForm);
-        //            usersForm.Show();
-        //        }
-
-
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        MessageBox.Show(Constants.ErrorMessages.UserDeleteFail);
-        //    }
-
-
-        //}
 
 
     }

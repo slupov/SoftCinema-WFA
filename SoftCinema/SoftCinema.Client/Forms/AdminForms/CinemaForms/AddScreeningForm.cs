@@ -16,7 +16,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
     public partial class AddScreeningForm : Form
     {
-        private Cinema cinema;
+        private readonly Cinema cinema;
         private readonly MovieService movieService;
         private readonly AuditoriumService auditoriumService;
         private readonly CinemaService cinemaService;
@@ -79,7 +79,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 ((Button)sender).Parent.Parent.Controls.Add(screeningsForm);
                 screeningsForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show("Add screening failed!");
             }
@@ -93,7 +93,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private string GetMovieName(string movieNameAndYear)
         {
-            int yearIndex = movieNameAndYear.LastIndexOf(",");
+           
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
 

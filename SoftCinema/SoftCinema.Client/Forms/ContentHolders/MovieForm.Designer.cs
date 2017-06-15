@@ -134,7 +134,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.castLabel.Size = new System.Drawing.Size(61, 24);
             this.castLabel.TabIndex = 7;
             this.castLabel.Text = "Cast:";
-            this.castLabel.Click += new System.EventHandler(this.actorsLabel_Click);
             // 
             // synopsisLabel
             // 
@@ -154,7 +153,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.pictureBox.Size = new System.Drawing.Size(176, 248);
             this.pictureBox.TabIndex = 10;
             this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // cinemaComboBox
             // 
@@ -298,7 +296,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.ageRestrictionLabel.Size = new System.Drawing.Size(166, 24);
             this.ageRestrictionLabel.TabIndex = 8;
             this.ageRestrictionLabel.Text = "Age Restriction:";
-            this.ageRestrictionLabel.Click += new System.EventHandler(this.categoriesLabel_Click);
             // 
             // back
             // 

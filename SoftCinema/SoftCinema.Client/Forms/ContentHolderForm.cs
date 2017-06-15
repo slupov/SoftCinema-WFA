@@ -18,9 +18,6 @@ namespace SoftCinema.Client.Forms
             InitializeComponent();
         }
 
-        private void ContentHolderForm_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

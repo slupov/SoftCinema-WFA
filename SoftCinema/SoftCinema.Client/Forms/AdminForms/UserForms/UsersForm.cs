@@ -95,9 +95,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             adminMenuForm.Show();
         }
 
-        private void UsersForm_Load(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

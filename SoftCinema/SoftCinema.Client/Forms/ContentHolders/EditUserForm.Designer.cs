@@ -75,7 +75,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 258);
             this.pictureBoxPhoto.TabIndex = 12;
             this.pictureBoxPhoto.TabStop = false;
-            this.pictureBoxPhoto.Click += new System.EventHandler(this.pictureBoxPhoto_Click);
             // 
             // browseButton
             // 

@@ -15,7 +15,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
         private string _townName { get; set; }
         private string _cinemaName { get; set; }
         private string _movieName { get; set; }
-        //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
 
         private readonly ImageService imageService;
@@ -53,15 +52,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
 
         }
 
-        private void actorsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void categoriesLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void townBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -83,10 +74,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             }
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void MovieForm_Load(object sender, EventArgs e)
         {
@@ -101,7 +89,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             string selectedTime = this.hourBox.SelectedItem.ToString();
 
             DateTime screeningDate = screeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
-            //var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
             
             TicketForm.Screening= screeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
 
