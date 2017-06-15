@@ -50,3 +50,6 @@ bin
 obj
 SoftCinema/.vs/SoftCinema/v14/.suo
 SoftCinema/.vs/SoftCinema/v14/.suo
+
+# Excluded files
+!*/EntityFramework.SqlServer.dll
