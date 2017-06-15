@@ -1,12 +1,11 @@
 using SoftCinema.Data.Configurations;
 using SoftCinema.Data.Migrations;
 using SoftCinema.Models;
+using System.Data.Entity;
 
 namespace SoftCinema.Data
 {
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
+    
 
     public class SoftCinemaContext : DbContext
     {

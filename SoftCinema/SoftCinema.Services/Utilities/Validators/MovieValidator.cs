@@ -4,29 +4,36 @@ using SoftCinema.DTOs;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class MovieValidator
+    public class MovieValidator
     {
-        public static void ValidateMovieDoesNotExist(string movieName, int releaseYear)
+        private readonly MovieService movieService;
+
+        public MovieValidator(MovieService movieService)
         {
-            if (MovieService.IsMovieExisting(movieName, releaseYear))
+            this.movieService = movieService;
+        }
+
+        public void ValidateMovieDoesNotExist(string movieName, int releaseYear)
+        {
+            if (movieService.IsMovieExisting(movieName, releaseYear))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieAlreadyExists,movieName));
             }
         }
 
-        public static void CheckMoviesExist(List<ActorMovieDto> movies)
+        public void CheckMoviesExist(List<ActorMovieDto> movies)
         {
             foreach (var movieDto in movies)
             {
                 string movieName = movieDto.Name;
                 int releaseYear = movieDto.ReleaseYear;
-                MovieValidator.CheckMovieExists(movieName, releaseYear);
+                this.CheckMovieExists(movieName, releaseYear);
             }
         }
 
-        public static void CheckMovieExists(string movieName, int releaseYear)
+        public void CheckMovieExists(string movieName, int releaseYear)
         {
-            if (!MovieService.IsMovieExisting(movieName, releaseYear))
+            if (!movieService.IsMovieExisting(movieName, releaseYear))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieDoesntExist, movieName));
             }

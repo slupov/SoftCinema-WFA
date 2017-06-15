@@ -110,7 +110,6 @@
             this.yearUpDown.Name = "yearUpDown";
             this.yearUpDown.Size = new System.Drawing.Size(120, 24);
             this.yearUpDown.TabIndex = 5;
-            this.yearUpDown.ValueChanged += new System.EventHandler(this.yearUpDown_ValueChanged);
             // 
             // directorNameTextBox
             // 
@@ -163,7 +162,6 @@
             this.pictureBoxPhoto.Size = new System.Drawing.Size(215, 258);
             this.pictureBoxPhoto.TabIndex = 12;
             this.pictureBoxPhoto.TabStop = false;
-            this.pictureBoxPhoto.Click += new System.EventHandler(this.pictureBoxPhoto_Click);
             // 
             // registerMovieButton
             // 

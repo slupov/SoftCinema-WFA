@@ -96,7 +96,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UsersForm";
             this.Text = "UsersForm";
-            this.Load += new System.EventHandler(this.UsersForm_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

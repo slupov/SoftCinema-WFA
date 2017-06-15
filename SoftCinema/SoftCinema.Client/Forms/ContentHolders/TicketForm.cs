@@ -17,9 +17,17 @@ namespace SoftCinema.Client.Forms.ContentHolders
         public static Screening Screening;
         private string _date;
         private string _time;
+        private readonly CinemaService cinemaService;
+        private readonly ScreeningService screeningService;
+        private readonly MovieService movieService;
+        private readonly TownService townService;
 
         public TicketForm()
         {
+            this.cinemaService = new CinemaService();
+            this.screeningService = new ScreeningService();
+            this.movieService = new MovieService();
+            this.townService = new TownService();
             this._movies = new List<Movie>();
 
             InitializeComponent();
@@ -37,7 +45,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.timeComboBox.Items.Clear();
 
             this._townName = this.townComboBox.SelectedItem.ToString();
-            var cinemaNames = Services.CinemaService.GetCinemasNamesBySelectedTown(this._townName);
+            var cinemaNames = cinemaService.GetCinemasNamesBySelectedTown(this._townName);
 
             //adds options to the Cinema select box
             this.cinemaComboBox.Items.AddRange(cinemaNames);
@@ -51,8 +59,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void selectTicketTypeButton_Click(object sender, EventArgs e)
         {
-            var dateTime = ScreeningService.GetDateTimeFromDateAndTime(_date, _time);
-            TicketForm.Screening = ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName,
+            var dateTime = screeningService.GetDateTimeFromDateAndTime(_date, _time);
+            TicketForm.Screening = screeningService.GetScreening(this._townName, this._cinemaName, this._movieName,
                 dateTime);
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
@@ -77,7 +85,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.movieComboBox.Items.Clear();
 
             this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
-            this._movies = Services.MovieService.GetMoviesByCinemaAndTown(this._cinemaName, this._townName);
+            this._movies = movieService.GetMoviesByCinemaAndTown(this._cinemaName, this._townName);
 
             this.movieComboBox.Items.AddRange(this._movies.Select(m => m.Name).ToArray());
 
@@ -94,7 +102,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.dateComboBox.Items.Clear();
             this._movieName = this.movieComboBox.SelectedItem.ToString();
 
-            var dates = Services.ScreeningService.GetAllDatesForMovieInCinema(this._townName,
+            var dates = screeningService.GetAllDatesForMovieInCinema(this._townName,
                 this._cinemaName, this._movieName);
             this.dateComboBox.Items.AddRange(dates);
         }
@@ -112,7 +120,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.timeComboBox.Items.Clear();
             this._date = this.dateComboBox.SelectedItem.ToString();
 
-            var hours = Services.ScreeningService.GetHoursForMoviesByDate(this._townName,
+            var hours = screeningService.GetHoursForMoviesByDate(this._townName,
                 this._cinemaName, this._movieName, _date);
             ;
             this.timeComboBox.Items.AddRange(hours);
@@ -120,7 +128,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void TicketForm_Load(object sender, EventArgs e)
         {
-            this.townComboBox.Items.AddRange(Services.TownService.GetTownsNames());
+            this.townComboBox.Items.AddRange(townService.GetTownsNames());
         }
     }
 }

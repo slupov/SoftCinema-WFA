@@ -13,16 +13,29 @@ namespace ImportServices
 {
     public class MovieImportService
     {
-        public static MovieDTOCollection DeserializeMovies(string path)
+        private readonly CategoryService categoryService;
+        private readonly CategoryValidator categoryValidator;
+        private readonly MovieService movieService;
+        private readonly MovieValidator movieValidator;
+
+        public MovieImportService()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(MovieDTOCollection));
+            this.categoryService = new CategoryService();
+            this.categoryValidator = new CategoryValidator(categoryService);
+            this.movieService = new MovieService();
+            this.movieValidator = new MovieValidator(movieService);
+        }
+
+        public  MovieDtoCollection DeserializeMovies(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(MovieDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (MovieDTOCollection)serializer.Deserialize(reader);
+                return (MovieDtoCollection)serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportMoviesCollection(MovieDTOCollection movieDtos)
+        public  void ImportMoviesCollection(MovieDtoCollection movieDtos)
         {
             foreach (var movieDto in movieDtos.MovieDTOs)
             {
@@ -39,7 +52,7 @@ namespace ImportServices
         }
 
         
-        public static void ImportMovie(MovieDTO movieDto)
+        public  void ImportMovie(MovieDto movieDto)
         {
             string movieName = movieDto.Name;
             InputDataValidator.ValidateStringMaxLength(movieName, Constants.MaxMovieNameLength);
@@ -48,10 +61,10 @@ namespace ImportServices
             InputDataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             int releaseYear = movieDto.ReleaseYear;
-            MovieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
+            movieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
 
             List<string> categories = movieDto.Categories.Select(c => c.Name).ToList();
-            CategoryValidator.CheckCategoriesExist(categories);
+            categoryValidator.CheckCategoriesExist(categories);
 
             string directorName = movieDto.DirectorName;
             int length = movieDto.Length;
@@ -61,20 +74,20 @@ namespace ImportServices
             byte[] image = movieDto.Image;
             
             
-            MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
+            movieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
                 releaseCountry,image);
-            MovieImportService.AddCategoriesToMovie(movieName,releaseYear,categories);
+            this.AddCategoriesToMovie(movieName,releaseYear,categories);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.MoviesAddedSuccess,movieName));
 
 
         }
 
-        public static void AddCategoriesToMovie(string movieName, int releaseYear, List<string> categories)
+        public  void AddCategoriesToMovie(string movieName, int releaseYear, List<string> categories)
         {
             foreach (var categoryName in categories)
             {
-                MovieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
+                movieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
             }
         }
     }

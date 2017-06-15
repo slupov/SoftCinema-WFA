@@ -14,12 +14,13 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
         public Ticket Ticket { get; set; }
         private ChoiceButton _approveButton { get; set; }
         private ChoiceButton _rejectButton { get; set; }
+        private readonly TicketService ticketService;
 
         public ReservationRow(Point location, Size size, Ticket ticket)
         {
             _approveButton = new ChoiceButton(true);
             _rejectButton = new ChoiceButton(false);
-
+            this.ticketService = new TicketService();
             this.Location = location;
             this.Ticket = ticket;
             this.Size = size;
@@ -62,7 +63,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                TicketService.SellTicket(this.Ticket);
+                ticketService.SellTicket(this.Ticket);
                 MessageBox.Show(Constants.SuccessMessages.TicketSoldSuccessfully);
 
                 //update holder
@@ -81,7 +82,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             if (dialogResult == DialogResult.Yes)
             {
                 UpdateReservationsHolder();
-                TicketService.DeleteTicket(this.Ticket);
+                ticketService.DeleteTicket(this.Ticket);
             }
         }
 

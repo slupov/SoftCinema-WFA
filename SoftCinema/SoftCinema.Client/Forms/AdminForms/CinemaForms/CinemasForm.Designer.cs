@@ -124,7 +124,7 @@
             this.AddCinemaButton.TabIndex = 11;
             this.AddCinemaButton.Text = "Add a New Cinema";
             this.AddCinemaButton.UseVisualStyleBackColor = true;
-            this.AddCinemaButton.Click += new System.EventHandler(this.AddCinemaButton_Click);
+            
             // 
             // CinemasForm
             // 

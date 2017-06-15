@@ -5,9 +5,9 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Services
 {
-    public static class TownService
+    public  class TownService
     {
-        public static void AddTown(string townName)
+        public  void AddTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -20,7 +20,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddTownIfNotExisting(string townName)
+        public  void AddTownIfNotExisting(string townName)
         {
 
             if (!IsTownExisting(townName))
@@ -30,14 +30,14 @@ namespace SoftCinema.Services
 
         }
 
-        public static Town GetTown(string townName)
+        public  Town GetTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
-        public static string[] GetTownsNames()
+        public  string[] GetTownsNames()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -45,7 +45,7 @@ namespace SoftCinema.Services
                 return result;
             }
         }
-        public static int GetTownId(string townName)
+        public  int GetTownId(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -53,7 +53,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsTownExisting(string townName)
+        public  bool IsTownExisting(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

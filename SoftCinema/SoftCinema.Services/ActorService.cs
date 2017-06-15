@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SoftCinema.Data;
 using SoftCinema.DTOs;
 using SoftCinema.Models;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
-    public static class ActorService
+    public class ActorService
     {
         
-        public static void AddActor(string name, float? rating)
+        public void AddActor(string name, float? rating)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -23,7 +25,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddMovieToActor(string actorName, string movieName, int releaseYear)
+        public void AddMovieToActor(string actorName, string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -33,19 +35,21 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
-        public static List<Actor> GetAllActors ()
+        public List<Actor> GetAllActors ()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Actors.ToList();
             }
         }
-        public static bool IsActorExisting(string actorName)
+
+        public bool IsActorExisting(string actorName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Actors.Any(a => a.Name == actorName);
             }
         }
+
     }
 }

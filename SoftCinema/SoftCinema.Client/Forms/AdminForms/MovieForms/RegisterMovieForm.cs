@@ -15,11 +15,14 @@ namespace SoftCinema.Client.AdminForms.MovieForms
     {
         private byte[] movieImageBytes { get; set; }
         private AgeRestriction ageRestriction { get; set; }
+        private readonly ImageService imageService;
+        private readonly MovieService movieService;
 
         public RegisterMovieForm()
         {
+            this.movieService = new MovieService();
+            this.imageService = new ImageService();
             InitializeComponent();
-            //TODO: Add AgeRestriction Service Method //this.ageRestrictionComboBox.Items.AddRange("X", "A", "B", "C", "D");
             this.ratingUpDown.Minimum = 0.0m;
             this.ratingUpDown.Maximum = 10.0m;
             this.ratingUpDown.DecimalPlaces = 1;
@@ -28,11 +31,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.yearUpDown.Maximum = DateTime.Now.Year+1;
             this.yearUpDown.Value = 2017;
 
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            ImageService.AddImage(this.movieImageBytes);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -45,13 +43,12 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                  var image = System.Drawing.Image.FromFile(ofd.FileName);
-                 var scaledImage = ImageService.ScaleImage(image, 215, 258);
+                 var scaledImage = imageService.ScaleImage(image, 215, 258);
                  this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
                 
-                 var path = ofd.FileName;
                  this.pictureBoxPhoto.Image = scaledImage;  
                 
-                 this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
+                 this.movieImageBytes = imageService.imageToByteArray(scaledImage);
             }
         }
 
@@ -65,10 +62,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
                 var year = (int)this.yearUpDown.Value;
                 var image = this.movieImageBytes;
 
-
-                //TODO: CHECK IF IMAGE ALREADY EXISTS
-                //TODO: IF NOT -> UPLOAD IT FIRST (code)
-                MovieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
+                movieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
                 MessageBox.Show(Constants.SuccessMessages.MovieRegisteredSuccessfully);
                 AdminMenuForm adminMenuForm = new AdminMenuForm();
                 adminMenuForm.TopLevel = false;
@@ -79,7 +73,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
 
 
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show("Movie Register failed!");
             }
@@ -105,16 +99,12 @@ namespace SoftCinema.Client.AdminForms.MovieForms
                 case "X":
                     this.ageRestriction = AgeRestriction.X;
                     break;
-                default:
-                    break;
+
             }
 
         }
 
-        private void pictureBoxPhoto_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void ratingUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -126,10 +116,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.ageRestrictionComboBox.Items.AddRange(AgeRestrictionsProcessor.GetAgeRestrictions());
         }
 
-        private void yearUpDown_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void BackButton_Click(object sender, EventArgs e)
         {

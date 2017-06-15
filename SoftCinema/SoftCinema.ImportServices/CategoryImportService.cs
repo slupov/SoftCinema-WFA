@@ -7,9 +7,18 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class CategoryImportService
+    public  class CategoryImportService
     {
-        public static void ImportCategories(IEnumerable<CategoryDTО> categories)
+        private readonly CategoryService categoryService;
+        private readonly CategoryValidator categoryValidator;
+
+        public CategoryImportService()
+        {
+            this.categoryService = new CategoryService();
+            this.categoryValidator = new CategoryValidator(categoryService);
+        }
+
+        public  void ImportCategories(IEnumerable<CategoryDto> categories)
         {
             
                 foreach (var categoryDto in categories)
@@ -28,13 +37,13 @@ namespace ImportServices
             
         }
 
-        public static void ImportCategory(CategoryDTО categoryDtо)
+        public  void ImportCategory(CategoryDto categoryDto)
         {
-            string categoryName = categoryDtо.Name;
+            string categoryName = categoryDto.Name;
             InputDataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
-            CategoryValidator.ValidateCategoryDoesNotExist(categoryName);
+            categoryValidator.ValidateCategoryDoesNotExist(categoryName);
 
-            CategoryService.AddCategory(categoryName);
+            categoryService.AddCategory(categoryName);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CategoryAddedSuccess, categoryName));
         }

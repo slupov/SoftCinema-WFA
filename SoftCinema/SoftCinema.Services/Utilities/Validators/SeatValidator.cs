@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Drawing.Printing;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class SeatValidator
+    public class SeatValidator
     {
-        public static void ValidateSeatDoesntExist(int seatNumber, int auditoriumId, int auditoriumNumber)
+        private readonly SeatService seatService;
+
+        public SeatValidator(SeatService seatService)
         {
-            if (SeatService.IsSeatExisting(seatNumber, auditoriumId))
+            this.seatService = seatService;
+        }
+
+        public void ValidateSeatDoesntExist(int seatNumber, int auditoriumId, int auditoriumNumber)
+        {
+            if (seatService.IsSeatExisting(seatNumber, auditoriumId))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.SeatAlreadyExists,seatNumber,auditoriumNumber));
             }

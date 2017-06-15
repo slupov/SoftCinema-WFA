@@ -16,19 +16,21 @@ namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class CategoryEditForm : Form
     {
-        private Category category;
+        private readonly Category category;
+        private readonly CategoryService categoryService;
 
         public CategoryEditForm(Category category)
         {
             this.category = category;
+            this.categoryService = new CategoryService();
             InitializeComponent();
         }
 
         private void CategoryEditForm_Load(object sender, EventArgs e)
         {
             this.CategoryExistsLabel.Hide();
-            string[] addedMovies = CategoryService.GetMoviesNameAndYearInCategory(category.Name);
-            string[] notAddedMovies = CategoryService.GetMoviesNotInCategory(category.Name);
+            string[] addedMovies = categoryService.GetMoviesNameAndYearInCategory(category.Name);
+            string[] notAddedMovies = categoryService.GetMoviesNotInCategory(category.Name);
             this.CategoryAddedMovies.Items.AddRange(addedMovies);
             this.CategoryNotAddedMovies.Items.AddRange(notAddedMovies);
             this.CategoryNameTextBox.Text = category.Name;
@@ -83,7 +85,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             List<Tuple<string, int>> notAddedMovies = GetNotAddedMovies();
             try
             {
-                CategoryService.UpdateCategory(oldCategoryName, newCategoryName,addedMovies,notAddedMovies);
+                categoryService.UpdateCategory(oldCategoryName, newCategoryName,addedMovies,notAddedMovies);
                 MessageBox.Show(Constants.SuccessMessages.CategoryUpdatedSuccessfully);
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
@@ -92,7 +94,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                 ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
                 categoriesForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.CategoriesUpdateErrorMessage);
             }
@@ -159,7 +161,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         private void CategoryTextBox_TextChanged(object sender, EventArgs e)
         {
 
-            if (CategoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) && this.CategoryNameTextBox.Text != category.Name)
+            if (categoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) && this.CategoryNameTextBox.Text != category.Name)
             {
                 this.CategoryExistsLabel.Show();
                 this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;
@@ -180,7 +182,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             {
                 try
                 {
-                    CategoryService.RemoveCategory(category.Name);
+                    categoryService.RemoveCategory(category.Name);
                     MessageBox.Show(Constants.SuccessMessages.CategoryDeletesSuccessfully);
                     CategoriesForm categoriesForm = new CategoriesForm();
                     categoriesForm.TopLevel = false;
@@ -189,7 +191,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                     ((Button) sender).Parent.Parent.Controls.Add(categoriesForm);
                     categoriesForm.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.CategoriesDeleteMessage);
                 }

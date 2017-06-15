@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using SoftCinema.Data;
 using SoftCinema.Models;
+using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
-    public static class AuditoriumService
+    public  class AuditoriumService
     {
-        public static void AddAuditorium(byte number, int cinemaId)
+        public  void AddAuditorium(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -24,7 +25,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static int GetAuditoriumId(byte auditoriumNumber, int cinemaId)
+        public  int GetAuditoriumId(byte auditoriumNumber, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -32,7 +33,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static List<byte> GetAuditoriumsForScreening(string movieName, int movieYear, int cinemaId)
+        public  List<byte> GetAuditoriumsForScreening(string movieName, int movieYear, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -41,7 +42,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static List<Auditorium> GetAudtitoriums(int cinemaId)
+        public  List<Auditorium> GetAudtitoriums(int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -49,7 +50,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsAuditoriumExisting(byte number, int cinemaId)
+        public  bool IsAuditoriumExisting(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -58,6 +59,6 @@ namespace SoftCinema.Services
         }
 
 
-        
+
     }
 }

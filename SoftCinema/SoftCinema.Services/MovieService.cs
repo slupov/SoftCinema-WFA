@@ -7,9 +7,9 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Services
 {
-    public static class MovieService
+    public  class MovieService
     {
-        public static void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear,
+        public  void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear,
             AgeRestriction ageRestriction, string synopsis, string releaseCountry, byte[] image)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -31,7 +31,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddCategoryToMovie(string categoryName, string movieName, int releaseYear)
+        public  void AddCategoryToMovie(string categoryName, string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -42,7 +42,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static int GetMovieId(string movieName, int releaseYear)
+        public  int GetMovieId(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -50,7 +50,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static List<Movie> GetAllMovies()
+        public  List<Movie> GetAllMovies()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -61,7 +61,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static ICollection<Movie> GetMoviesByCinemaAndTown(string cinemaName, string townName)
+        public  ICollection<Movie> GetMoviesByCinemaAndTown(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -75,7 +75,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetMoviesNameAndYearAsString()
+        public  string[] GetMoviesNameAndYearAsString()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -92,7 +92,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Movie GetMovieByYearAndName(int movieYear, string movieName)
+        public  Movie GetMovieByYearAndName(int movieYear, string movieName)
         {
 
             using (var db = new SoftCinemaContext())
@@ -105,7 +105,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Movie GetMovie(string movieName)
+        public  Movie GetMovie(string movieName)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -117,7 +117,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsMovieExisting(string movieName, int releaseYear)
+        public  bool IsMovieExisting(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

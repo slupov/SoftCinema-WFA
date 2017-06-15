@@ -1,17 +1,30 @@
 ﻿using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Collections.Generic;
+using SoftCinema.DTOs;
+using SoftCinema.Services.Utilities;
+using SoftCinema.Services;
 
 namespace ImportServices
 {
-    using System;
-    using System.Collections.Generic;
     
-    using SoftCinema.DTOs;
-    using SoftCinema.Services.Utilities;
-    using SoftCinema.Services;
 
-    public static class ActorImportService
+    public  class ActorImportService
     {
-        public static void ImportActors(IEnumerable<ActorDTO> actors)
+        private readonly ActorService actorService;
+        private readonly ActorValidator actorValidator;
+        private readonly MovieService movieService;
+        private readonly MovieValidator movieValidator;
+
+        public ActorImportService()
+        {
+            this.actorService = new ActorService();
+            this.actorValidator = new ActorValidator(actorService);
+            this.movieService = new MovieService();
+            this.movieValidator = new MovieValidator(movieService);
+        }
+
+        public  void ImportActors(IEnumerable<ActorDto> actors)
         {
             foreach (var actorDto in actors)
             {
@@ -26,31 +39,31 @@ namespace ImportServices
             }
         }
 
-        public static void ImportActor(ActorDTO actorDto)
+        public  void ImportActor(ActorDto actorDto)
         {
             string actorName = actorDto.Name;
             InputDataValidator.ValidateStringMaxLength(actorName, Constants.MaxActorNameLength);
-            ActorValidator.ValidateActorDoesntExist(actorName);
+            actorValidator.ValidateActorDoesntExist(actorName);
 
             float? actorRating = actorDto.Rating;
             InputDataValidator.ValidateFloatInRange(actorRating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             List<ActorMovieDto> movies = actorDto.Movies;
-            MovieValidator.CheckMoviesExist(movies);
+            movieValidator.CheckMoviesExist(movies);
 
-            ActorService.AddActor(actorName, actorRating);
-            ActorImportService.AddMoviesToActor(actorName, movies);
+            actorService.AddActor(actorName, actorRating);
+            this.AddMoviesToActor(actorName, movies);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ActorAddedSuccess, actorName));
         }
 
-        public static void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)
+        public  void AddMoviesToActor(string actorName, List<ActorMovieDto> movies)
         {
             foreach (var movieDto in movies)
             {
                 string movieName = movieDto.Name;
                 int releaseYear = movieDto.ReleaseYear;
-                ActorService.AddMovieToActor(actorName, movieName, releaseYear);
+                actorService.AddMovieToActor(actorName, movieName, releaseYear);
             }
         }
     }

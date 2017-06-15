@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace SoftCinema.Services.Utilities
 {
-    public class ImageProcessor
+    public static class ImageProcessor
     {
         public static byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
@@ -15,7 +15,7 @@ namespace SoftCinema.Services.Utilities
         public static Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = System.Drawing.Image.FromStream(ms);
+            Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
     }

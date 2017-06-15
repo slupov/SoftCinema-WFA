@@ -12,13 +12,14 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private ICollection<Movie> Movies { get; set; }
         private ICollection<MoviePosterLink> MoviePosterLinks { get; set; }
         private MoviePostersSlider _moviePostersSlider { get; set; }
+        private MovieService movieService;
 
         public MoviesForm()
         {
-
+            this.movieService = new MovieService();
             InitializeComponent();
             Movies = new List<Movie>();
-            Movies = MovieService.GetAllMovies();
+            Movies = movieService.GetAllMovies();
             this._moviePostersSlider = new MoviePostersSlider() { Size = new Size(this.Movies.Count*220 - 10, 310)};
             this.MoviePosterLinks = new List<MoviePosterLink>();
             

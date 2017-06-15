@@ -7,9 +7,35 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class ScreeningImportService
+    public  class ScreeningImportService
     {
-        public static void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
+        private readonly AuditoriumService auditoriumService;
+        private readonly AuditoriumValidator auditoriumValidator;
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+        private readonly TownValidator townValidator;
+        private readonly MovieService movieService;
+        private readonly MovieValidator movieValidator;
+        private readonly ScreeningService screeningService;
+        private readonly ScreeningValidator screeningValidator;
+
+
+        public ScreeningImportService()
+        {
+            this.auditoriumService = new AuditoriumService();
+            this.cinemaService = new CinemaService();
+            this.auditoriumValidator = new AuditoriumValidator(auditoriumService);
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.movieService = new MovieService();
+            this.movieValidator = new MovieValidator(movieService);
+            this.townService = new TownService();
+            this.townValidator = new TownValidator(townService);
+            this.screeningService = new ScreeningService();
+            this.screeningValidator = new ScreeningValidator(screeningService);
+        }
+
+        public  void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
         {
             foreach (var screeningDto in screeningDtos)
             {
@@ -26,32 +52,32 @@ namespace ImportServices
         }
 
 
-        public static void ImportScreening(ScreeeningDto screeningDto)
+        public  void ImportScreening(ScreeeningDto screeningDto)
         {
 
             byte auditoriumNumber = screeningDto.AuditoriumNumber;
 
             string cinemaTown = screeningDto.CinemaTown;
-            TownValidator.CheckTownExisting(cinemaTown);
+            townValidator.CheckTownExisting(cinemaTown);
 
-            int townId = TownService.GetTownId(cinemaTown);
+            int townId = townService.GetTownId(cinemaTown);
             string cinemaName = screeningDto.CinemaName;
-            CinemaValidator.CheckCinemaExisting(cinemaName,townId);
+            cinemaValidator.CheckCinemaExisting(cinemaName,townId);
 
-            int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
-            AuditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
+            int cinemaId = cinemaService.GetCinemaId(cinemaName, townId);
+            auditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
 
             string movieName = screeningDto.MovieName;
             int movieReleaseYear = screeningDto.MovieReleaseYear;
-            MovieValidator.CheckMovieExists(movieName,movieReleaseYear);
+            movieValidator.CheckMovieExists(movieName,movieReleaseYear);
 
-            int auditoriumId = AuditoriumService.GetAuditoriumId(auditoriumNumber,cinemaId);
+            int auditoriumId = auditoriumService.GetAuditoriumId(auditoriumNumber,cinemaId);
             DateTime date = screeningDto.Date;
-            ScreeningValidator.ValidateScreeningDoesntExist(auditoriumId, date);
+            screeningValidator.ValidateScreeningDoesntExist(auditoriumId, date);
 
-            int movieId = MovieService.GetMovieId(movieName, movieReleaseYear);
+            int movieId = movieService.GetMovieId(movieName, movieReleaseYear);
 
-            ScreeningService.AddScreening(auditoriumId, movieId, date);
+            screeningService.AddScreening(auditoriumId, movieId, date);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
 

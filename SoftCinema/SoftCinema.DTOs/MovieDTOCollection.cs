@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace SoftCinema.DTOs
 {
     [XmlRoot("MoviesCollection")]
-    public class MovieDTOCollection
+    public class MovieDtoCollection
     {
-        public MovieDTOCollection()
+        public MovieDtoCollection()
         {
-            this.MovieDTOs = new List<MovieDTO>();
+            this.MovieDTOs = new List<MovieDto>();
         }
 
         [XmlArray("movies")]
-        [XmlArrayItem("movie",typeof(MovieDTO))]
-        public List<MovieDTO> MovieDTOs { get; set; }
+        [XmlArrayItem("movie",typeof(MovieDto))]
+        public List<MovieDto> MovieDTOs { get; set; }
     }
 }

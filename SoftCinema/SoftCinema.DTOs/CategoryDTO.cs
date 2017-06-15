@@ -1,10 +1,8 @@
-﻿using System;
-using System.Xml;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace SoftCinema.DTOs
 {
-    public class CategoryDTО
+    public class CategoryDto
     {
         [XmlElement("Name")]
         public string Name { get; set; }

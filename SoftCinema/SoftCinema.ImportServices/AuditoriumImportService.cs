@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-
 using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
@@ -11,16 +10,34 @@ namespace ImportServices
 {
     public class AuditoriumImportService
     {
-        public static AuditoriumDTOCollection DeserializeAuditoriums(string path)
+        private readonly AuditoriumService auditoriumService;
+        private readonly AuditoriumValidator auditoriumValidator;
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+        private readonly TownValidator townValidator;
+
+
+        public AuditoriumImportService()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDTOCollection));
+            this.auditoriumService = new AuditoriumService();
+            this.auditoriumValidator = new AuditoriumValidator(auditoriumService);
+            this.cinemaService = new CinemaService();
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.townService = new TownService();
+            this.townValidator = new TownValidator(townService);
+        }
+
+        public  AuditoriumDtoCollection DeserializeAuditoriums(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (AuditoriumDTOCollection)serializer.Deserialize(reader);
+                return (AuditoriumDtoCollection)serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportAuditoriumCollection(AuditoriumDTOCollection auditoriumDtos)
+        public  void ImportAuditoriumCollection(AuditoriumDtoCollection auditoriumDtos)
         {
             foreach (var auditoriumDto in auditoriumDtos.AudtioriumDtos)
             {
@@ -36,24 +53,24 @@ namespace ImportServices
             }
         }
 
-        private static void ImportAuditorium(AuditoriumDTO auditoriumDto)
+        private  void ImportAuditorium(AuditoriumDto auditoriumDto)
         {
             string cinemaName = auditoriumDto.CinemaName;
             InputDataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
 
             string townName = auditoriumDto.CinemaTownName;
-            TownValidator.CheckTownExisting(townName);
+            townValidator.CheckTownExisting(townName);
 
-            int townId = TownService.GetTownId(townName);
-            int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
-            CinemaValidator.CheckCinemaExisting(cinemaName, townId);
+            int townId = townService.GetTownId(townName);
+            int cinemaId = cinemaService.GetCinemaId(cinemaName, townId);
+            cinemaValidator.CheckCinemaExisting(cinemaName, townId);
 
             byte number = auditoriumDto.Number;
-            AuditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
+            auditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
 
    
 
-            AuditoriumService.AddAuditorium(number,cinemaId);
+            auditoriumService.AddAuditorium(number,cinemaId);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
 

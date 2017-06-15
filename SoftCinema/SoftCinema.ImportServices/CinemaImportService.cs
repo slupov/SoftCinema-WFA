@@ -8,18 +8,29 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class CinemaImportService
+    public  class CinemaImportService
     {
-        public static CinemaDTOCollection DeserializeCinemas(string path)
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+
+        public CinemaImportService()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(CinemaDTOCollection));
+            this.cinemaService = new CinemaService();
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.townService = new TownService();
+        }
+
+        public  CinemaDtoCollection DeserializeCinemas(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(CinemaDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (CinemaDTOCollection) serializer.Deserialize(reader);
+                return (CinemaDtoCollection) serializer.Deserialize(reader);
             }
         }
 
-        public static void ImportCinemasCollection(CinemaDTOCollection cinemaDtos)
+        public  void ImportCinemasCollection(CinemaDtoCollection cinemaDtos)
         {
             foreach (var cinemaDto in cinemaDtos.CinemaDtos)
             {
@@ -34,7 +45,7 @@ namespace ImportServices
             }
         }
 
-        private static void ImportCinema(CinemaDTO cinemaDto)
+        private  void ImportCinema(CinemaDto cinemaDto)
         {
    
             string townName = cinemaDto.TownName;
@@ -43,11 +54,11 @@ namespace ImportServices
             string cinemaName = cinemaDto.Name;
             InputDataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
 
-            TownService.AddTownIfNotExisting(townName);
-            int townId = TownService.GetTownId(townName);
-            CinemaValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
+            townService.AddTownIfNotExisting(townName);
+            int townId = townService.GetTownId(townName);
+            cinemaValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
 
-            CinemaService.AddCinema(cinemaName, townId);
+            cinemaService.AddCinema(cinemaName, townId);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
         }

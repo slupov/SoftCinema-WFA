@@ -16,14 +16,17 @@ namespace SoftCinema.Client.Forms.AdminForms.MovieForms
 {
     public partial class MovieListForm : Form
     {
+        private readonly MovieService movieService;
+
         public MovieListForm()
         {
+            this.movieService = new MovieService();
             InitializeComponent();
         }
 
         private void MovieListForm_Load(object sender, EventArgs e)
         {
-            movieComboBox.Items.AddRange(MovieService.GetAllMovies().Select(m => m.Name + "," + m.ReleaseYear).ToArray());
+            movieComboBox.Items.AddRange(movieService.GetAllMovies().Select(m => m.Name + "," + m.ReleaseYear).ToArray());
         }
 
         private void AddMovieButton_Click(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace SoftCinema.Client.Forms.AdminForms.MovieForms
         {
             string movieName = GetMovieName(movieComboBox.Text);
             int movieYear = GetMovieYear(movieComboBox.Text);
-            Movie movie = MovieService.GetMovieByYearAndName(movieYear, movieName);
+            Movie movie = movieService.GetMovieByYearAndName(movieYear, movieName);
             Client.AdminForms.MovieForms.MovieForm movieForm = new Client.AdminForms.MovieForms.MovieForm(movie);
             movieForm.TopLevel = false;
             movieForm.AutoScroll = true;
@@ -67,7 +70,7 @@ namespace SoftCinema.Client.Forms.AdminForms.MovieForms
 
         private string GetMovieName(string movieNameAndYear)
         {
-            int yearIndex = movieNameAndYear.LastIndexOf(",");
+         
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
     }

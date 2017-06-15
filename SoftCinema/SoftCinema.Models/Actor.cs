@@ -18,10 +18,12 @@ namespace SoftCinema.Models
         [Required,Index(IsUnique = true),MaxLength(50)]
         public string Name { get; set; }
 
+        [Range(0, 10)]
+        public float? Rating { get; set; }
+
         public virtual ICollection<Movie> Movies { get; set; }
 
-        [Range(0,10)]
-        public float? Rating { get; set; }
+        
 
        
     }

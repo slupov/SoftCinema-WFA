@@ -12,7 +12,7 @@ namespace SoftCinema.Services
 {
     public class ImageService
     {
-        public static void AddImage(byte[] imageIn)
+        public  void AddImage(byte[] imageIn)
         {
             var img = new Image()
             {
@@ -27,25 +27,25 @@ namespace SoftCinema.Services
             }
         }
 
-        public static System.Drawing.Image CreateImage(string path)
+        public  System.Drawing.Image CreateImage(string path)
         {
             return System.Drawing.Image.FromFile(path);
         }
 
-        public static byte[] imageToByteArray(System.Drawing.Image imageIn)
+        public  byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             return ms.ToArray();
         }
 
-        public static System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
+        public  System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
             System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
             return returnImage;
         }
-        public static System.Drawing.Image ScaleImage(System.Drawing.Image image, int maxWidth, int maxHeight)
+        public  System.Drawing.Image ScaleImage(System.Drawing.Image image, int maxWidth, int maxHeight)
         {
             var ratioX = (double)maxWidth / image.Width;
             var ratioY = (double)maxHeight / image.Height;
@@ -59,7 +59,7 @@ namespace SoftCinema.Services
             return newImage;
         }
 
-        public static byte[] GetProfilePicture(string username)
+        public  byte[] GetProfilePicture(string username)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

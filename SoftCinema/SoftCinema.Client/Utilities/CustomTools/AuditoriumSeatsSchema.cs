@@ -19,11 +19,13 @@ namespace SoftCinema.Client.Utilities.CustomTools
         private static int _seatCountLimit { get; set; }
         private static List<SeatButton> _seats { get; set; }
         private Screening _screening { get; set; }
+        private readonly TicketService ticketService;
 
 
         public AuditoriumSeatsSchema(Auditorium auditorium, Screening screening, Point startingCoords, int width,
             int seatCount)
         {
+            this.ticketService = new TicketService();
             this._Auditorium = auditorium;
             this._screening = screening;
             _seats = new List<SeatButton>();
@@ -93,7 +95,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                     seatButton.Text = seatNumber.ToString();
                     seatButton.ForeColor = Color.Black;
 
-                    var ticket = TicketService.GetTicket(seatNumber, _screening);
+                    var ticket = ticketService.GetTicket(seatNumber, _screening);
 
                     if (this._screening.Contains(seatNumber))
                     {

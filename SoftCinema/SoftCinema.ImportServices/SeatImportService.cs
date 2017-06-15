@@ -7,9 +7,31 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class SeatImportService
+    public  class SeatImportService
     {
-        public static void ImportSeats(IEnumerable<SeatDto> seatsDtos)
+        private readonly AuditoriumService auditoriumService;
+        private readonly AuditoriumValidator auditoriumValidator;
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+        private readonly TownValidator townValidator;
+        private readonly SeatService seatService;
+        private readonly SeatValidator seatValidator;
+
+
+        public SeatImportService()
+        {
+            this.auditoriumService = new AuditoriumService();
+            this.cinemaService = new CinemaService();
+            this.auditoriumValidator = new AuditoriumValidator(auditoriumService);
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.townService = new TownService();
+            this.townValidator = new TownValidator(townService);
+            this.seatService = new SeatService();
+            this.seatValidator = new SeatValidator(seatService);
+        }
+
+        public  void ImportSeats(IEnumerable<SeatDto> seatsDtos)
         {
             foreach (var seatDto in seatsDtos)
             {
@@ -25,25 +47,25 @@ namespace ImportServices
             }
         }
 
-        private static void ImportSeat(SeatDto seatDto)
+        private  void ImportSeat(SeatDto seatDto)
         {
             string cinemaTown = seatDto.CinemaTown;
-            TownValidator.CheckTownExisting(cinemaTown);
+            townValidator.CheckTownExisting(cinemaTown);
 
-            int townId = TownService.GetTownId(cinemaTown);
+            int townId = townService.GetTownId(cinemaTown);
             string cinemaName = seatDto.CinemaName;
-            CinemaValidator.CheckCinemaExisting(cinemaName,townId);
+            cinemaValidator.CheckCinemaExisting(cinemaName,townId);
 
-            int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
+            int cinemaId = cinemaService.GetCinemaId(cinemaName, townId);
             byte auditoriumNumber = seatDto.AuditoriumNumber;
-            AuditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
+            auditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
 
-            int auditoriumId = AuditoriumService.GetAuditoriumId(auditoriumNumber, cinemaId);
+            int auditoriumId = auditoriumService.GetAuditoriumId(auditoriumNumber, cinemaId);
             int row = seatDto.Row;
             int number = seatDto.Number;
-            SeatValidator.ValidateSeatDoesntExist(number,auditoriumId,auditoriumNumber);
+            seatValidator.ValidateSeatDoesntExist(number,auditoriumId,auditoriumNumber);
 
-            SeatService.AddSeat(number, row, auditoriumId);
+            seatService.AddSeat(number, row, auditoriumId);
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.SeatAddedSuccess,number,auditoriumNumber,cinemaName,cinemaTown));
         }
     }

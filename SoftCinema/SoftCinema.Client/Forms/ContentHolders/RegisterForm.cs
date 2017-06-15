@@ -10,6 +10,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
     {
         private static RegisterForm instance;
         private byte[] movieImageBytes { get; set; }
+        private readonly ImageService imageService;
+        private readonly UserService userService;
 
         public static RegisterForm Instance
         {
@@ -25,14 +27,12 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         public RegisterForm()
         {
+            this.imageService = new ImageService();
+            this.userService = new UserService();
             if (instance == null)
             {
                 InitializeComponent();
             }
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
         }
 
 
@@ -44,18 +44,18 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var email = this.emailTextBox.Text;
             var phone = this.phoneNumberTextBox.Text;
             var image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-            var scaledImage = ImageService.ScaleImage(image, 55, 52);
+            var scaledImage = imageService.ScaleImage(image, 55, 52);
             this.profilePictureBox.Width = scaledImage.Width;
             this.profilePictureBox.Height = scaledImage.Height;
             
 
-            var profilePic = ImageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
+            var profilePic = imageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
 
-            bool isDataValid = UserService.Validations.isUserValid(username, password, repeatPassword, email, phone);
+            bool isDataValid = userService.isUserValid(username, password, repeatPassword, email, phone);
 
             if (isDataValid)
             {
-                UserService.AddUser(username, password, email, phone, profilePic);
+                userService.AddUser(username, password, email, phone, profilePic);
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
                 var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
                 mainForm.RenderSideBar();
@@ -74,7 +74,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
             else
             {
-                if (UserService.Validations.isUsernameExisting(this.usernameTextBox.Text))
+                if (userService.isUsernameExisting(this.usernameTextBox.Text))
                 {
                     this.usernameInfoLabel.Show();
                     this.usernameInfoLabel.Text = "Username already taken";
@@ -88,7 +88,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.Validations.isPasswordValid(this.passwordTextBox.Text))
+            if (!userService.isPasswordValid(this.passwordTextBox.Text))
             {
                 this.passwordInfoLabel.Show();
                 this.passwordInfoLabel.Text = "Password length must be in range 3-25 characters!";
@@ -114,7 +114,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.Validations.isEmailValid(this.emailTextBox.Text))
+            if (!userService.isEmailValid(this.emailTextBox.Text))
             {
                 this.emailInfoLabel.Show();
                 this.emailInfoLabel.Text = "Email is invalid";
@@ -127,7 +127,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.Validations.isPhoneValid(this.phoneNumberTextBox.Text))
+            if (!userService.isPhoneValid(this.phoneNumberTextBox.Text))
             {
                 this.phoneInfoLabel.Show();
                 this.phoneInfoLabel.Text = "Phone must be in 08[789]... format!";
@@ -148,13 +148,12 @@ namespace SoftCinema.Client.Forms.ContentHolders
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var image = System.Drawing.Image.FromFile(ofd.FileName);
-                var scaledImage = ImageService.ScaleImage(image, 138, 161);
+                var scaledImage = imageService.ScaleImage(image, 138, 161);
                 this.profilePictureBox.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
 
-                var path = ofd.FileName;
                 this.profilePictureBox.Image = scaledImage;
 
-                this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
+                this.movieImageBytes = imageService.imageToByteArray(scaledImage);
             }
         }
     }

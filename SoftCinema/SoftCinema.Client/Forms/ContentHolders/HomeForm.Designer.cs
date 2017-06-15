@@ -62,7 +62,6 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
-            this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

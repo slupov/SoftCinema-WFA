@@ -9,9 +9,9 @@ using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
-    public static class TicketService
+    public  class TicketService
     {
-        public static void AddTicketToCurrentUser(Screening screening, TicketType type, Seat seat)
+        public  void AddTicketToCurrentUser(Screening screening, TicketType type, Seat seat)
         {
             if (AuthenticationManager.IsAuthenticated())
             {
@@ -23,7 +23,7 @@ namespace SoftCinema.Services
             AddTicket(screeningId, type, seatId, userId);
         }
 
-        public static void AddTicket(int screeningId, TicketType type, int seatId, int holderId)
+        public  void AddTicket(int screeningId, TicketType type, int seatId, int holderId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -58,7 +58,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static List<Ticket> GetTicketsInfo(string username)
+        public  List<Ticket> GetTicketsInfo(string username)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -75,7 +75,7 @@ namespace SoftCinema.Services
         }
 
 
-        public static List<Ticket> GetTickets(Screening screening)
+        public  List<Ticket> GetTickets(Screening screening)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -86,7 +86,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Ticket GetTicket(int holderId, int seatId, int screeningId)
+        public  Ticket GetTicket(int holderId, int seatId, int screeningId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -103,7 +103,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Ticket GetTicket(int number, Screening screening)
+        public  Ticket GetTicket(int number, Screening screening)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -114,7 +114,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void UpdateTicket(int ticketId, int screeningId, int seatId, TicketType type)
+        public  void UpdateTicket(int ticketId, int screeningId, int seatId, TicketType type)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -126,7 +126,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void RemoveTicket(int ticketId)
+        public  void RemoveTicket(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -136,7 +136,7 @@ namespace SoftCinema.Services
             }
         }
     
-        public static string GetTicketDate(int ticketId)
+        public  string GetTicketDate(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -146,7 +146,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string GetTicketTime(int ticketId)
+        public  string GetTicketTime(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -156,7 +156,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void SellTickets(List<Ticket> tickets)
+        public  void SellTickets(List<Ticket> tickets)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -169,7 +169,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void SellTicket(Ticket ticket)
+        public  void SellTicket(Ticket ticket)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -180,7 +180,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void DeleteTicket(Ticket ticket)
+        public  void DeleteTicket(Ticket ticket)
         {
             using (var db = new SoftCinemaContext())
             {

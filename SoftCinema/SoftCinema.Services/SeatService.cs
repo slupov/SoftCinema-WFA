@@ -8,9 +8,9 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Services
 {
-    public static class SeatService
+    public  class SeatService
     {
-        public static void AddSeat(int number, int row, int auditoriumId)
+        public  void AddSeat(int number, int row, int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -25,7 +25,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Seat GetSeat(int auditoriumId, byte number)
+        public  Seat GetSeat(int auditoriumId, byte number)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -34,7 +34,7 @@ namespace SoftCinema.Services
         }
 
 
-        public static int[] GetFreeSeatsForScreening(int ticketScreeningId,int auditoriumId)
+        public  int[] GetFreeSeatsForScreening(int ticketScreeningId,int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -56,7 +56,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsSeatExisting(int number, int auditoriumId)
+        public  bool IsSeatExisting(int number, int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

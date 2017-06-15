@@ -7,41 +7,56 @@
     using ImportServices;
 
 
-    public static class JSONImport
+    public  class JSONImport
     {
-        public static void ImportTowns()
+        private readonly TownImportService townImportService;
+        private readonly ActorImportService actorImportService;
+        private readonly CategoryImportService categoryImportService;
+        private readonly ScreeningImportService screeningImportService;
+        private readonly SeatImportService seatImportService;
+
+        public JSONImport()
+        {
+            this.screeningImportService = new ScreeningImportService();
+            this.actorImportService = new ActorImportService();
+            this.categoryImportService = new CategoryImportService();
+            this.seatImportService = new SeatImportService();
+            this.townImportService = new TownImportService();
+        }
+
+        public  void ImportTowns()
         {
             var townsJson = File.ReadAllText(DataPaths.TownsJson);
-            var townDtos = JsonConvert.DeserializeObject<IEnumerable<TownDTO>>(townsJson);
-            TownImportService.ImportTowns(townDtos);
+            var townDtos = JsonConvert.DeserializeObject<IEnumerable<TownDto>>(townsJson);
+            townImportService.ImportTowns(townDtos);
         }
 
-        public static void ImportActors()
+        public  void ImportActors()
         {
             var actorsJson = File.ReadAllText(DataPaths.ActorsJson);
-            var actorsDtos = JsonConvert.DeserializeObject<IEnumerable<ActorDTO>>(actorsJson);
-            ActorImportService.ImportActors(actorsDtos);
+            var actorsDtos = JsonConvert.DeserializeObject<IEnumerable<ActorDto>>(actorsJson);
+            actorImportService.ImportActors(actorsDtos);
         }
 
-        public static void ImportCategories()
+        public  void ImportCategories()
         {
             var categoriesJson = File.ReadAllText(DataPaths.CategoriesJson);
-            var categorysDtos = JsonConvert.DeserializeObject<IEnumerable<CategoryDTО>>(categoriesJson);
-            CategoryImportService.ImportCategories(categorysDtos);
+            var categorysDtos = JsonConvert.DeserializeObject<IEnumerable<CategoryDto>>(categoriesJson);
+            categoryImportService.ImportCategories(categorysDtos);
         }
 
-        public static void ImportScreenings()
+        public  void ImportScreenings()
         {
             var screeningsJson = File.ReadAllText(DataPaths.ScreeningsJson);
             var screeningDtos = JsonConvert.DeserializeObject<IEnumerable<ScreeeningDto>>(screeningsJson);
-            ScreeningImportService.ImportScreenings(screeningDtos);
+            screeningImportService.ImportScreenings(screeningDtos);
         }
 
-        public static void ImportSeats()
+        public  void ImportSeats()
         {
             var seatsJson = File.ReadAllText(DataPaths.SeatsJson);
             var seatsDtos = JsonConvert.DeserializeObject<IEnumerable<SeatDto>>(seatsJson);
-            SeatImportService.ImportSeats(seatsDtos);
+            seatImportService.ImportSeats(seatsDtos);
         }
     }
 }

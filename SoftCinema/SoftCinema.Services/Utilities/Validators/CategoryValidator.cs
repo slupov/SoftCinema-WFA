@@ -7,17 +7,24 @@ using System.Threading.Tasks;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class CategoryValidator
+    public class CategoryValidator
     {
-        public static void ValidateCategoryDoesNotExist(string categoryName)
+        private CategoryService categoryService;
+
+        public CategoryValidator(CategoryService categoryService)
         {
-            if (CategoryService.IsCategoryExisting(categoryName))
+            this.categoryService = categoryService;
+        }
+
+        public  void ValidateCategoryDoesNotExist(string categoryName)
+        {
+            if (categoryService.IsCategoryExisting(categoryName))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CategoryAlreadyExists, categoryName));
             }
         }
 
-        public static void CheckCategoriesExist(List<string> categories)
+        public  void CheckCategoriesExist(List<string> categories)
         {
             foreach (var category in categories)
             {
@@ -25,9 +32,9 @@ namespace SoftCinema.Services.Utilities.Validators
             }
         }
 
-        private static void CheckCategoryExists(string categoryName)
+        private  void CheckCategoryExists(string categoryName)
         {
-            if (!CategoryService.IsCategoryExisting(categoryName))
+            if (!categoryService.IsCategoryExisting(categoryName))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CategoryDoesntExist, categoryName));
             }

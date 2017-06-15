@@ -8,8 +8,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class LoginForm : ContentHolderForm
     {
+        private readonly UserService userService;
+
         public LoginForm()
         {
+            this.userService = new UserService();
             if (instance == null)
                 InitializeComponent();
         }
@@ -35,16 +38,14 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
             try
             {
-                if (UserService.Validations.isUsernamePasswordMatching(username, password) && !UserService.Validations.IsUserDeleted(username))
+                if (userService.isUsernamePasswordMatching(username, password) && !userService.IsUserDeleted(username))
                 {
-                    AuthenticationManager.Login(UserService.GetUser(username));
+                    AuthenticationManager.Login(userService.GetUser(username));
                     MessageBox.Show(Constants.SuccessMessages.SuccessfulLogin);
 
-                    TopPanelForm.ShowGreetings();
-                    //Refresh main form's sidebar
                     var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
+                    mainForm.RenderTopPanelForm();
                     mainForm.RenderSideBar();
-                    //Redirect to home page view
                     SoftCinemaForm.SetContentHolderForm(new HomeForm());
                 }
                 else
@@ -52,7 +53,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                     MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
                 }
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
@@ -62,13 +63,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
             
-            if (!UserService.Validations.isUsernameExisting(this.usernameTextBox.Text))
+            if (!userService.isUsernameExisting(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = Constants.ErrorMessages.NoSuchUserExisting;
             }
 
-            else if (UserService.Validations.isUsernameExisting(this.usernameTextBox.Text) && UserService.Validations.IsUserDeleted(this.usernameTextBox.Text))
+            else if (userService.isUsernameExisting(this.usernameTextBox.Text) && userService.IsUserDeleted(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = Constants.ErrorMessages.UserIsInactive;
@@ -78,16 +79,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 this.usernameInfoLabel.Hide();
             }
-        }
-
-        private void passwordLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

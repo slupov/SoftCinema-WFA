@@ -33,8 +33,13 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
         private bool _active;
 
+        private readonly MovieService movieService;
+        private readonly ImageService imageService;
+
         public MoviePosterLink(string movieName) : base()
         {
+            this.movieService = new MovieService();
+            this.imageService = new ImageService();
             base.Font = _normalFont;
             base.BackColor = _back;
             base.ForeColor = _fore;
@@ -43,11 +48,11 @@ namespace SoftCinema.Client.Utilities.CustomTools
             base.Padding = _padding;
             base.MinimumSize = _minSize;
 
-            var currentMovie = MovieService.GetMovie(movieName);
+            var currentMovie = movieService.GetMovie(movieName);
             this._movie = currentMovie;
 
-            this._pictureBox.Image = ImageService.byteArrayToImage(currentMovie.Image.Content);
-            this._pictureBox.Image = ImageService.ScaleImage(this._pictureBox.Image, 200,310);
+            this._pictureBox.Image = imageService.byteArrayToImage(currentMovie.Image.Content);
+            this._pictureBox.Image = imageService.ScaleImage(this._pictureBox.Image, 200,310);
 
             this._pictureBox.Size = new Size(this._pictureBox.Image.Size.Width, this._pictureBox.Image.Size.Height);
             this._showDetailsButton.Location = new Point(this._pictureBox.Location.X, this._pictureBox.Location.Y + 10);

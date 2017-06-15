@@ -7,9 +7,19 @@ using SoftCinema.Services.Utilities.Validators;
 
 namespace ImportServices
 {
-    public static class TownImportService
+    
+    public  class TownImportService
     {
-        public static void ImportTowns(IEnumerable<TownDTO> towns)
+        private readonly TownService townService;
+        private readonly TownValidator townValidator;
+
+        public TownImportService()
+        {
+            this.townService = new TownService();
+            this.townValidator = new TownValidator(townService);
+        }
+
+        public  void ImportTowns(IEnumerable<TownDto> towns)
         {
             foreach (var townDto in towns)
             {
@@ -24,13 +34,13 @@ namespace ImportServices
             }
         }
 
-        public static void ImportTown(TownDTO townDto)
+        public  void ImportTown(TownDto townDto)
         {
             string townName = townDto.Name;
             InputDataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
-            TownValidator.ValidateTownDoesNotExist(townName);
+            townValidator.ValidateTownDoesNotExist(townName);
 
-            TownService.AddTown(townName);
+            townService.AddTown(townName);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.TownAddedSuccess, townName));
         }

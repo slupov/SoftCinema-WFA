@@ -15,10 +15,12 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
     public partial class CinemaEditForm : Form
     {
-        private Cinema cinema;
+        private readonly Cinema cinema;
+        private readonly CinemaService cinemaService;
 
         public CinemaEditForm(Cinema cinema)
         {
+            this.cinemaService = new CinemaService();
             this.cinema = cinema;
             InitializeComponent();
         }
@@ -32,7 +34,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void TownCinemaName_TextChanged(object sender, EventArgs e)
         {
-            if (CinemaService.IsCinemaExistingByTownName(this.CinemaName.Text, this.TownName.Text) && (this.CinemaName.Text != cinema.Name || this.TownName.Text != cinema.Town.Name))
+            if (cinemaService.IsCinemaExistingByTownName(this.CinemaName.Text, this.TownName.Text) && (this.CinemaName.Text != cinema.Name || this.TownName.Text != cinema.Town.Name))
             {
                 this.CinemaExistsLabel.Show();
                 this.CinemaExistsLabel.Text = Constants.WarningMessages.CinemaExists;
@@ -69,7 +71,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             string newTownName = this.TownName.Text;
             try
             {
-                CinemaService.UpdateCinema(oldCinemaName,oldTownName,newCinemaName,newTownName);
+                cinemaService.UpdateCinema(oldCinemaName,oldTownName,newCinemaName,newTownName);
                 MessageBox.Show(Constants.SuccessMessages.CinemaUpdatedSuccessfully);
                 CinemasForm cinemasForm = new CinemasForm();
                 cinemasForm.TopLevel = false;
@@ -78,7 +80,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
                 cinemasForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.CinemaUpdateErrorMessage);
             }
@@ -91,7 +93,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             {
                 try
                 {
-                    CinemaService.RemoveCinema(cinema.Name,cinema.Town.Name);
+                    cinemaService.RemoveCinema(cinema.Name,cinema.Town.Name);
                     MessageBox.Show(Constants.SuccessMessages.CinemaDeletedSuccessfully);
                     CinemasForm cinemasForm = new CinemasForm();
                     cinemasForm.TopLevel = false;
@@ -100,7 +102,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                     ((Button)sender).Parent.Parent.Controls.Add(cinemasForm);
                     cinemasForm.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.CinemaDeleteMessage);
                 }
@@ -109,7 +111,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 
         private void EditScreeningsButton_Click(object sender, EventArgs e)
         {
-            Cinema cinemaWithScreenings = CinemaService.GetCinemaWithScreenings(cinema.Id);
+            Cinema cinemaWithScreenings = cinemaService.GetCinemaWithScreenings(cinema.Id);
             SelectScreeningForm screeningsForm = new SelectScreeningForm(cinemaWithScreenings);
             screeningsForm.TopLevel = false;
             screeningsForm.AutoScroll = true;

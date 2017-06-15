@@ -18,17 +18,29 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
     {
         private User user;
         private Ticket ticket;
+        private readonly TownService townService;
+        private readonly CinemaService cinemaService;
+        private readonly TicketService ticketService;
+        private readonly MovieService movieService;
+        private readonly ScreeningService screeningService;
+        private readonly SeatService seatService;
 
         public EditTicketForm(User user, Ticket ticket)
         {
             this.user = user;
             this.ticket = ticket;
+            this.townService = new TownService();
+            this.cinemaService = new CinemaService();
+            this.ticketService = new TicketService();
+            this.movieService = new MovieService();
+            this.screeningService = new ScreeningService();
+            this.seatService = new SeatService();
             InitializeComponent();
         }
 
         private void EditTicketForm_Load(object sender, EventArgs e)
         {
-            string[] towns = TownService.GetTownsNames();
+            string[] towns = townService.GetTownsNames();
             this.townComboBox.Items.AddRange(towns);
             string townCinema = ticket.Screening.Auditorium.Cinema.Town.Name;
             this.townComboBox.Text = townCinema;
@@ -36,9 +48,9 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.cinemaComboBox.Text = cinemaName;
             string movieName = ticket.Screening.Movie.Name + "," + ticket.Screening.Movie.ReleaseYear;
             this.movieComboBox.Text = movieName;
-            string ticketDate = TicketService.GetTicketDate(ticket.Id);
+            string ticketDate = ticketService.GetTicketDate(ticket.Id);
             this.dateComboBox.Text = ticketDate ;
-            string ticketTime = TicketService.GetTicketTime(ticket.Id);
+            string ticketTime = ticketService.GetTicketTime(ticket.Id);
             this.timeComboBox.Text =ticketTime;
             string ticketType = ticket.Type.ToString();
             this.typeComboBox.Text = ticketType;
@@ -57,7 +69,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.timeComboBox.Items.Clear();
             this.typeComboBox.Items.Clear();
             this.seatComboBox.Items.Clear();
-            var cinemaNames = Services.CinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString());
+            var cinemaNames = cinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString());
             this.cinemaComboBox.Items.AddRange(cinemaNames);
            
         }
@@ -72,7 +84,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.seatComboBox.Items.Clear();
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
-            this.movieComboBox.Items.AddRange(Services.MovieService.GetMoviesByCinemaAndTown(cinemaName, townName).Select(
+            this.movieComboBox.Items.AddRange(movieService.GetMoviesByCinemaAndTown(cinemaName, townName).Select(
                 m =>m.Name+","+m.ReleaseYear).ToArray());
 
         }
@@ -89,7 +101,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             int movieYear = GetMovieYear(movieNameAndYear);
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
-            var dates = Services.ScreeningService.GetAllDatesForMovieInCinemaByNameAndYear(townName,cinemaName,movieName,movieYear);
+            var dates = screeningService.GetAllDatesForMovieInCinemaByNameAndYear(townName,cinemaName,movieName,movieYear);
             this.dateComboBox.Items.AddRange(dates);
         }
 
@@ -105,7 +117,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string movieName = GetMovieName(this.movieComboBox.Text);
             int movieYear = GetMovieYear(this.movieComboBox.Text);
-            var hours = Services.ScreeningService.GetHoursForMoviesByDateMovieNameAndYear(townName,
+            var hours = screeningService.GetHoursForMoviesByDateMovieNameAndYear(townName,
                 cinemaName,movieName,movieYear, date);
             this.timeComboBox.Items.AddRange(hours);
         }
@@ -125,7 +137,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.seatComboBox.Items.Clear();
             this.seatComboBox.Items.Add(ticket.Seat.Number.ToString());
             string[] freeSeats =
-                SeatService.GetFreeSeatsForScreening(ticket.ScreeningId, ticket.Screening.AuditoriumId)
+                seatService.GetFreeSeatsForScreening(ticket.ScreeningId, ticket.Screening.AuditoriumId)
                     .Select(n => n.ToString())
                     .ToArray();
             this.seatComboBox.Items.AddRange(freeSeats);
@@ -157,19 +169,19 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 int ticketId = ticket.Id;
                 string date = dateComboBox.Text;
                 string time = timeComboBox.Text;
-                DateTime screeningDateTime = ScreeningService.GetDateTimeFromDateAndTime(date,time);
+                DateTime screeningDateTime = screeningService.GetDateTimeFromDateAndTime(date,time);
                 string townName = townComboBox.Text;
                 string cinemaName = cinemaComboBox.Text;
                 string movieName = GetMovieName(movieComboBox.Text);
                 int movieYear = GetMovieYear(movieComboBox.Text);
-                Screening screening = ScreeningService.GetScreeningUsingMovieYear(townName, cinemaName,movieName,screeningDateTime,movieYear);
+                Screening screening = screeningService.GetScreeningUsingMovieYear(townName, cinemaName,movieName,screeningDateTime,movieYear);
                 int screeningId = screening.Id;
                 int auditoriumId = screening.AuditoriumId;
-                Seat seat = SeatService.GetSeat(auditoriumId, byte.Parse(seatComboBox.Text));
+                Seat seat = seatService.GetSeat(auditoriumId, byte.Parse(seatComboBox.Text));
                 int seatId = seat.Id;
                 string type = typeComboBox.Text;
                 TicketType ticketType = (TicketType)Enum.Parse(typeof(TicketType), type);
-                TicketService.UpdateTicket(ticketId,screeningId,seatId,ticketType);
+                ticketService.UpdateTicket(ticketId,screeningId,seatId,ticketType);
                 MessageBox.Show(Constants.SuccessMessages.TicketUpdatedSuccessfully);
                 EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
                 ticketsForm.TopLevel = false;
@@ -178,7 +190,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
                 ticketsForm.Show();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.TicketUpdateErrorMessage);
             }
@@ -191,7 +203,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             {
                 try
                 {
-                    TicketService.RemoveTicket(ticket.Id);
+                    ticketService.RemoveTicket(ticket.Id);
                     MessageBox.Show(Constants.SuccessMessages.TicketDeletedSuccessfully);
                     EditUserTicketsForm userTickets = new EditUserTicketsForm(user);
                     userTickets.TopLevel = false;
@@ -200,7 +212,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                     ((Button)sender).Parent.Parent.Controls.Add(userTickets);
                     userTickets.Show();
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show(Constants.ErrorMessages.TicketDeleteMessage);
                 }
@@ -216,7 +228,6 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
 
         private string GetMovieName(string movieNameAndYear)
         {
-            int yearIndex = movieNameAndYear.LastIndexOf(",");
             return movieNameAndYear.Substring(0, movieNameAndYear.Length - GetMovieYear(movieNameAndYear).ToString().Length - 1);
         }
     }
