@@ -2,19 +2,26 @@ using System;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class CinemaValidator
+    public class CinemaValidator
     {
-        public static void ValidateCinemaDoesNotExist(string cinemaName, int townId)
+        private CinemaService cinemaService;
+
+        public CinemaValidator(CinemaService cinemaService)
         {
-            if (CinemaService.IsCinemaExisting(cinemaName, townId))
+            this.cinemaService = cinemaService;
+        }
+
+        public  void ValidateCinemaDoesNotExist(string cinemaName, int townId)
+        {
+            if (cinemaService.IsCinemaExisting(cinemaName, townId))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaAlreadyExists,cinemaName));
             }
         }
 
-        public static void CheckCinemaExisting(string cinemaName, int townId)
+        public  void CheckCinemaExisting(string cinemaName, int townId)
         {
-            if (!CinemaService.IsCinemaExisting(cinemaName, townId))
+            if (!cinemaService.IsCinemaExisting(cinemaName, townId))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaDoesntExist, cinemaName));
             }

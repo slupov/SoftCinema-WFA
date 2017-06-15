@@ -13,6 +13,19 @@ namespace ImportServices
 {
     public class MovieImportService
     {
+        private readonly CategoryService categoryService;
+        private readonly CategoryValidator categoryValidator;
+        private readonly MovieService movieService;
+        private readonly MovieValidator movieValidator;
+
+        public MovieImportService()
+        {
+            this.categoryService = new CategoryService();
+            this.categoryValidator = new CategoryValidator(categoryService);
+            this.movieService = new MovieService();
+            this.movieValidator = new MovieValidator(movieService);
+        }
+
         public  MovieDtoCollection DeserializeMovies(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(MovieDtoCollection));
@@ -48,10 +61,10 @@ namespace ImportServices
             InputDataValidator.ValidateFloatInRange(rating, Constants.MinRatingValue, Constants.MaxRatingValue);
 
             int releaseYear = movieDto.ReleaseYear;
-            MovieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
+            movieValidator.ValidateMovieDoesNotExist(movieName,releaseYear);
 
             List<string> categories = movieDto.Categories.Select(c => c.Name).ToList();
-            CategoryValidator.CheckCategoriesExist(categories);
+            categoryValidator.CheckCategoriesExist(categories);
 
             string directorName = movieDto.DirectorName;
             int length = movieDto.Length;
@@ -61,7 +74,7 @@ namespace ImportServices
             byte[] image = movieDto.Image;
             
             
-            MovieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
+            movieService.AddMovie(movieName, rating, length, directorName, releaseYear, ageRestriction, synopsis,
                 releaseCountry,image);
             this.AddCategoriesToMovie(movieName,releaseYear,categories);
 
@@ -74,7 +87,7 @@ namespace ImportServices
         {
             foreach (var categoryName in categories)
             {
-                MovieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
+                movieService.AddCategoryToMovie(categoryName, movieName, releaseYear);
             }
         }
     }

@@ -2,28 +2,35 @@ using System;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class ScreeningValidator
+    public  class ScreeningValidator
     {
-        public static void ValidateScreeningDoesntExist( int auditoriumId, DateTime date)
+        private readonly ScreeningService screeningService;
+
+        public ScreeningValidator(ScreeningService screeningService)
         {
-            if (ScreeningService.IsScreeningExisting(auditoriumId, date))
+            this.screeningService = screeningService;
+        }
+
+        public  void ValidateScreeningDoesntExist( int auditoriumId, DateTime date)
+        {
+            if (screeningService.IsScreeningExisting(auditoriumId, date))
             {
                 throw new InvalidOperationException(Constants.ErrorMessages.ScreeningAlreadyExists);
             }
         }
 
 
-        public static void ValidateScreeningAvailable(int screeningId, DateTime startTime)
+        public  void ValidateScreeningAvailable(int screeningId, DateTime startTime)
         {
-            if (!ScreeningService.IsScreeningAvailable(screeningId, startTime))
+            if (!screeningService.IsScreeningAvailable(screeningId, startTime))
             {
                 throw new InvalidOperationException();
             }
         }
 
-        public static void ValidateScreeningTimeAvailable(DateTime startTime, int auditoriumId,string movieName,int movieYear)
+        public  void ValidateScreeningTimeAvailable(DateTime startTime, int auditoriumId,string movieName,int movieYear)
         {
-            if (!ScreeningService.IsScreeningAvailableInAuditorium(auditoriumId, startTime,movieName,movieYear))
+            if (!screeningService.IsScreeningAvailableInAuditorium(auditoriumId, startTime,movieName,movieYear))
             {
                 throw new InvalidOperationException();
             }

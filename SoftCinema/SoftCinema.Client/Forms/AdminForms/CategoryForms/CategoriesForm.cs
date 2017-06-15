@@ -14,15 +14,18 @@ namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class CategoriesForm : Form
     {
+        private readonly CategoryService categoryService;
+
         public CategoriesForm()
         {
+            this.categoryService = new CategoryService();
             InitializeComponent();
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
 
-            string[] categories = CategoryService.GetCategoriesNames();
+            string[] categories = categoryService.GetCategoriesNames();
             this.CategoriesList.Items.AddRange(categories);
             
         }
@@ -39,7 +42,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void CategoriesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Category category = CategoryService.GetCategory(this.CategoriesList.Text.ToString());
+            Category category = categoryService.GetCategory(this.CategoriesList.Text.ToString());
             CategoryEditForm categoryEditForm = new CategoryEditForm(category);
             categoryEditForm.TopLevel = false;
             categoryEditForm.AutoScroll = true;

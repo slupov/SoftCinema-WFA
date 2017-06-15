@@ -18,9 +18,15 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
     public partial class EditScreening : Form
     {
         private Screening screening;
+        private readonly CinemaService cinemaService;
+        private readonly ScreeningService screeningService;
+        private readonly ScreeningValidator screeningValidator;
 
         public EditScreening(Screening screening)
         {
+            this.screeningService = new ScreeningService();
+            this.screeningValidator = new ScreeningValidator(screeningService);
+            this.cinemaService = new CinemaService();
             this.screening = screening;
             InitializeComponent();
         }
@@ -42,7 +48,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Cinema cinema = CinemaService.GetCinemaWithScreenings(screening.Auditorium.CinemaId);
+                Cinema cinema = cinemaService.GetCinemaWithScreenings(screening.Auditorium.CinemaId);
                 SelectScreeningForm screeningsForm = new SelectScreeningForm(cinema);
                 screeningsForm.TopLevel = false;
                 screeningsForm.AutoScroll = true;
@@ -64,11 +70,11 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 DateTime getTime = TimePicker.Value;
                 string time = getTime.ToString("hh") + ":" + getTime.ToString("mm") + " " + getTime.ToString("tt", CultureInfo.InvariantCulture);
 
-                DateTime startTime = ScreeningService.GetDateTimeFromDateAndTime(date, time);
-                ScreeningValidator.ValidateScreeningAvailable(screening.Id,startTime);
-                ScreeningService.UpdateScreening(screening.Id, startTime);
+                DateTime startTime = screeningService.GetDateTimeFromDateAndTime(date, time);
+                screeningValidator.ValidateScreeningAvailable(screening.Id,startTime);
+                screeningService.UpdateScreening(screening.Id, startTime);
                 MessageBox.Show("Screening updated successfully!");
-                Cinema cinema = CinemaService.GetCinemaWithScreenings(screening.Auditorium.CinemaId);
+                Cinema cinema = cinemaService.GetCinemaWithScreenings(screening.Auditorium.CinemaId);
                 SelectScreeningForm screeningsForm = new SelectScreeningForm(cinema);
                 screeningsForm.TopLevel = false;
                 screeningsForm.AutoScroll = true;
@@ -99,8 +105,8 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             string date = getDate.Day.ToString() + " " + getDate.ToString("MMM") + " " + getDate.DayOfWeek.ToString();
             DateTime getTime = TimePicker.Value;
             string time = getTime.ToString("hh") + ":" + getTime.ToString("mm") + " " + getTime.ToString("tt", CultureInfo.InvariantCulture);
-            DateTime startTime = ScreeningService.GetDateTimeFromDateAndTime(date, time);
-            if (!ScreeningService.IsScreeningAvailable(screening.Id, startTime))
+            DateTime startTime = screeningService.GetDateTimeFromDateAndTime(date, time);
+            if (!screeningService.IsScreeningAvailable(screening.Id, startTime))
             {
                 ScreeningTaken.Visible = true;
                 ScreeningTaken.Text = "Screening is already taken!";

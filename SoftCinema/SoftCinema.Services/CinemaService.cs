@@ -9,9 +9,9 @@ using SoftCinema.Models;
 
 namespace SoftCinema.Services
 {
-    public static class CinemaService
+    public  class CinemaService
     {
-        public static void AddCinema(string cinemaName, int townId)
+        public  void AddCinema(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -25,21 +25,21 @@ namespace SoftCinema.Services
             }
         }
 
-        public static int GetCinemaId(string cinemaName, int townId)
+        public  int GetCinemaId(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Cinemas.First(c => c.Name == cinemaName && c.TownId == townId).Id;
             }
         }
-        public static List<Cinema> GetAllCinemas()
+        public  List<Cinema> GetAllCinemas()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Cinemas.ToList();
             }
         }
-        public static string[] GetCinemasNamesBySelectedTown(string townName)
+        public  string[] GetCinemasNamesBySelectedTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -47,7 +47,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static string[] GetCinemasByMovieAndTown(string movieName, string townName)
+        public  string[] GetCinemasByMovieAndTown(string movieName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -64,7 +64,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Cinema GetCinema(string cinemaName, string townName)
+        public  Cinema GetCinema(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -72,7 +72,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Cinema GetCinemaById(int cinemaId)
+        public  Cinema GetCinemaById(int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -80,7 +80,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static Cinema GetCinemaWithScreenings(int cinemaId)
+        public  Cinema GetCinemaWithScreenings(int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -92,7 +92,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsCinemaExisting(string cinemaName, int townId)
+        public  bool IsCinemaExisting(string cinemaName, int townId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -100,7 +100,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static bool IsCinemaExistingByTownName(string cinemaName, string townName)
+        public  bool IsCinemaExistingByTownName(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -108,20 +108,27 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void UpdateCinema(string oldCinemaName, string oldTownName, string newCinemaName, string newTownName)
+        public  void UpdateCinema(string oldCinemaName, string oldTownName, string newCinemaName, string newTownName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 Cinema cinema =
                     context.Cinemas.FirstOrDefault(c => c.Name == oldCinemaName && c.Town.Name == oldTownName);
-                TownService.AddTownIfNotExisting(newTownName);
+                if (!context.Towns.Any(t => t.Name == newTownName))
+                {
+                    context.Towns.Add(new Town()
+                    {
+                        Name = newTownName
+                    });
+                    context.SaveChanges();
+                }
                 cinema.Name = newCinemaName;
-                cinema.TownId = TownService.GetTownId(newTownName);
+                cinema.TownId = context.Towns.FirstOrDefault(t => t.Name == newTownName).Id;
                 context.SaveChanges();
             }
         }
 
-        public static void RemoveCinema(string cinemaName,string townName)
+        public  void RemoveCinema(string cinemaName,string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

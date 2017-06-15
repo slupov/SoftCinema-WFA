@@ -14,12 +14,15 @@ namespace SoftCinema.Client.Forms.ContentHolders
     {
         public static User _currentUser;
         private byte[] movieImageBytes { get; set; }
+        private readonly ImageService imageService;
+        private readonly UserService userService;
 
         public MyAccountForm()
         {
-            
+            this.userService = new UserService();
+            this.imageService = new ImageService();
             InitializeComponent();
-            _currentUser = UserService.GetUser(AuthenticationManager.GetCurrentUser().Username);
+            _currentUser = userService.GetUser(AuthenticationManager.GetCurrentUser().Username);
             
         }
 
@@ -41,16 +44,16 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void MyAccountForm_Load(object sender, EventArgs e)
         {
            
-            if (ImageService.GetProfilePicture(_currentUser.Username) != null)
+            if (imageService.GetProfilePicture(_currentUser.Username) != null)
             {
-                var _image = ImageService.byteArrayToImage(_currentUser.ProfilePicture.Content);
-                this.pictureBoxPhoto.Image = ImageService.ScaleImage(_image, 215, 258);
+                var _image = imageService.byteArrayToImage(_currentUser.ProfilePicture.Content);
+                this.pictureBoxPhoto.Image = imageService.ScaleImage(_image, 215, 258);
                 
             }
             else
             {
                 var _image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-                this.pictureBoxPhoto.Image = ImageService.ScaleImage(_image, 215, 258);
+                this.pictureBoxPhoto.Image = imageService.ScaleImage(_image, 215, 258);
             }
             this.pictureBoxPhoto.Size = new Size(this.pictureBoxPhoto.Image.Width, this.pictureBoxPhoto.Image.Height);
             this.emailInfoLabel.Text = _currentUser.Email;

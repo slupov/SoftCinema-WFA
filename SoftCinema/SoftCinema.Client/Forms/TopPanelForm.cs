@@ -12,9 +12,21 @@ namespace SoftCinema.Client.Forms
 {
     public partial class TopPanelForm : Form
     {
+        private readonly ImageService imageService;
+
         public TopPanelForm()
         {
+            this.imageService = new ImageService();
             InitializeComponent();
+            if (AuthenticationManager.IsAuthenticated())
+            {
+                ShowGreetings();
+            }
+            else
+            {
+                HideGreetings();
+            }
+
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -33,7 +45,7 @@ namespace SoftCinema.Client.Forms
         }
 
         //Utilities
-        public static void ShowGreetings()
+        public void ShowGreetings()
         {
             GreetingLabel.Show();
             GreetingLabel.ForeColor = Color.White;
@@ -43,21 +55,21 @@ namespace SoftCinema.Client.Forms
             //Show Image
             User currentUser = AuthenticationManager.GetCurrentUser();
 
-            byte[] imageBytes = ImageService.GetProfilePicture(currentUser.Username);
+            byte[] imageBytes = imageService.GetProfilePicture(currentUser.Username);
             if (imageBytes != null)
             {
-                System.Drawing.Image image = ImageService.byteArrayToImage(imageBytes);
-                profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+                System.Drawing.Image image = imageService.byteArrayToImage(imageBytes);
+                profilePicPictureBox.Image = imageService.ScaleImage(image, 55, 54);
                 profilePicPictureBox.Size = new Size(profilePicPictureBox.Image.Width,
                     profilePicPictureBox.Image.Height);
             }
             else
             {
                 Image image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-                byte[] imageToBytes = ImageService.imageToByteArray(image);
+                byte[] imageToBytes = imageService.imageToByteArray(image);
                 Models.Image newImage = new Models.Image() {Content = imageToBytes};
                 currentUser.ProfilePicture = newImage;
-                profilePicPictureBox.Image = ImageService.ScaleImage(image, 55, 54);
+                profilePicPictureBox.Image = imageService.ScaleImage(image, 55, 54);
             }
             profilePicPictureBox.Location = new Point(590, profilePicPictureBox.Location.Y);
             profilePicPictureBox.Show();
@@ -85,5 +97,7 @@ namespace SoftCinema.Client.Forms
                 HideGreetings();
             }
         }
+
+       
     }
 }

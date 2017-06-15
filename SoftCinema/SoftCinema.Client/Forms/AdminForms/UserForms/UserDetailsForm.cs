@@ -17,11 +17,12 @@ namespace SoftCinema.Client.Forms
 {
     public partial class UserDetailsForm : Form
     {
-        private  User user;
+        private readonly User user;
+        private readonly UserService userService;
 
         public UserDetailsForm(User user)
         {
-
+            this.userService = new UserService();
             this.user = user;
             InitializeComponent();
             
@@ -63,7 +64,7 @@ namespace SoftCinema.Client.Forms
             }
             else
             {
-                if (UserService.Validations.isUsernameExisting(this.UsernameTextBox.Text) && this.UsernameTextBox.Text != user.Username)
+                if (userService.isUsernameExisting(this.UsernameTextBox.Text) && this.UsernameTextBox.Text != user.Username)
                 {
                     this.UsernameInfoLabel.Show();
                     this.UsernameInfoLabel.Text = Constants.WarningMessages.UsernameTaken;
@@ -74,16 +75,16 @@ namespace SoftCinema.Client.Forms
                 }
             }
         }
-
+        
         
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.Validations.isEmailValid(this.EmailTextBox.Text))
+            if (!userService.isEmailValid(this.EmailTextBox.Text))
             {
                 this.EmailInfoLabel.Show();
                 this.EmailInfoLabel.Text = Constants.WarningMessages.InvalidEmail;
             }
-            else if(UserService.Validations.IsEmailTaken(this.EmailTextBox.Text) && this.EmailTextBox.Text!=user.Email)
+            else if(userService.IsEmailTaken(this.EmailTextBox.Text) && this.EmailTextBox.Text!=user.Email)
             { 
                 this.EmailInfoLabel.Show();
                 this.EmailInfoLabel.Text = Constants.WarningMessages.EmailTaken;
@@ -96,7 +97,7 @@ namespace SoftCinema.Client.Forms
 
         private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!UserService.Validations.isPhoneValid(this.PhoneNumberTextBox.Text))
+            if (!userService.isPhoneValid(this.PhoneNumberTextBox.Text))
             {
                 this.PhoneNumberInfoLabel.Show();
                 this.PhoneNumberInfoLabel.Text = Constants.WarningMessages.PhoneFormat;
@@ -118,7 +119,7 @@ namespace SoftCinema.Client.Forms
                 string phoneNumber = PhoneNumberTextBox.Text;
                 Role role = (Role)Enum.Parse(typeof(Role), RoleComboBox.Text);
                 bool isDeleted = NoRadioButton.Checked;
-                UserService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role,isDeleted);
+                userService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role,isDeleted);
                 MessageBox.Show(Constants.SuccessMessages.UserUpdatedSuccessfully);
                 UsersForm usersForm = new UsersForm();
                 usersForm.TopLevel = false;

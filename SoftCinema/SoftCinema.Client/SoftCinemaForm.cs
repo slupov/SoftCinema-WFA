@@ -67,7 +67,7 @@ namespace SoftCinema.Client
             this.Controls.Add(this.SideBar);
         }
 
-        private void RenderTopPanelForm()
+        public void RenderTopPanelForm()
         {
             TopPanelForm topPanel = new TopPanelForm();
             topPanel.TopLevel = false;

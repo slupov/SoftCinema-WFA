@@ -10,6 +10,24 @@ namespace ImportServices
 {
     public class AuditoriumImportService
     {
+        private readonly AuditoriumService auditoriumService;
+        private readonly AuditoriumValidator auditoriumValidator;
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+        private readonly TownValidator townValidator;
+
+
+        public AuditoriumImportService()
+        {
+            this.auditoriumService = new AuditoriumService();
+            this.auditoriumValidator = new AuditoriumValidator(auditoriumService);
+            this.cinemaService = new CinemaService();
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.townService = new TownService();
+            this.townValidator = new TownValidator(townService);
+        }
+
         public  AuditoriumDtoCollection DeserializeAuditoriums(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDtoCollection));
@@ -41,18 +59,18 @@ namespace ImportServices
             InputDataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
 
             string townName = auditoriumDto.CinemaTownName;
-            TownValidator.CheckTownExisting(townName);
+            townValidator.CheckTownExisting(townName);
 
-            int townId = TownService.GetTownId(townName);
-            int cinemaId = CinemaService.GetCinemaId(cinemaName, townId);
-            CinemaValidator.CheckCinemaExisting(cinemaName, townId);
+            int townId = townService.GetTownId(townName);
+            int cinemaId = cinemaService.GetCinemaId(cinemaName, townId);
+            cinemaValidator.CheckCinemaExisting(cinemaName, townId);
 
             byte number = auditoriumDto.Number;
-            AuditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
+            auditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
 
    
 
-            AuditoriumService.AddAuditorium(number,cinemaId);
+            auditoriumService.AddAuditorium(number,cinemaId);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
 

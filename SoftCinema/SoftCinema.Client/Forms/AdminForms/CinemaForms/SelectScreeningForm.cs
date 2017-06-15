@@ -15,9 +15,13 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
     public partial class SelectScreeningForm : Form
     {
         private Cinema cinema;
+        private readonly ScreeningService screeningService;
+        private readonly MovieService movieService;
 
         public SelectScreeningForm(Cinema cinema)
         {
+            this.screeningService = new ScreeningService();
+            this.movieService = new MovieService();
             this.cinema = cinema;
             InitializeComponent();
         }
@@ -27,7 +31,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             string cinemaName = cinema.Name;
             string townName = cinema.Town.Name;
             string[] movies =
-                MovieService.GetMoviesByCinemaAndTown(cinema.Name, cinema.Town.Name).Select(m => m.Name +","+m.ReleaseYear).ToArray();
+                movieService.GetMoviesByCinemaAndTown(cinema.Name, cinema.Town.Name).Select(m => m.Name +","+m.ReleaseYear).ToArray();
             this.movieComboBox.Items.AddRange(movies);
         }
 
@@ -38,7 +42,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             this.timeComboBox.Items.Clear();
             string movieName = GetMovieName(movieComboBox.Text);
             int movieYear = GetMovieYear(movieComboBox.Text);
-            string[] dates = ScreeningService.GetAllDatesForMovieInCinemaByNameAndYear(cinema.Town.Name, cinema.Name, movieName,
+            string[] dates = screeningService.GetAllDatesForMovieInCinemaByNameAndYear(cinema.Town.Name, cinema.Name, movieName,
                 movieYear);
             dateComboBox.Items.AddRange(dates);
 
@@ -54,7 +58,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             int movieYear = GetMovieYear(movieComboBox.Text);
             
             string date = dateComboBox.Text;
-            string[] hours = ScreeningService.GetHoursForMoviesByDateMovieNameAndYear(cinema.Town.Name, cinema.Name, movieName,
+            string[] hours = screeningService.GetHoursForMoviesByDateMovieNameAndYear(cinema.Town.Name, cinema.Name, movieName,
                 movieYear, date);
             timeComboBox.Items.AddRange(hours);
         }
@@ -77,8 +81,8 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             int movieYear = GetMovieYear(movieComboBox.Text);
             string cinemaName = cinema.Name;
             string townName = cinema.Town.Name;
-            DateTime date = ScreeningService.GetDateTimeFromDateAndTime(dateComboBox.Text, timeComboBox.Text);
-            Screening screening = ScreeningService.GetScreeningUsingMovieYear(townName, cinemaName, movie, date, movieYear);
+            DateTime date = screeningService.GetDateTimeFromDateAndTime(dateComboBox.Text, timeComboBox.Text);
+            Screening screening = screeningService.GetScreeningUsingMovieYear(townName, cinemaName, movie, date, movieYear);
             EditScreening editScreeningForm = new EditScreening(screening);
             editScreeningForm.TopLevel = false;
             editScreeningForm.AutoScroll = true;

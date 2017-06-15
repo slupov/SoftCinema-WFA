@@ -21,9 +21,17 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         private string _movieName { get; set; }
         private List<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
+        private readonly TownService townService;
+        private readonly CinemaService cinemaService;
+        private readonly MovieService movieService;
+        private readonly ScreeningService screeningService;
 
         public ShowScreeningsForm()
         {
+            this.cinemaService = new CinemaService();
+            this.townService = new TownService();
+            this.movieService = new MovieService();
+            this.screeningService = new ScreeningService();
             this._screenings = new List<Screening>();
             this._screeningsHolder = new ScreeningsHolder();
             InitializeComponent();
@@ -31,7 +39,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
 
         private void ShowScreeningsForm_Load(object sender, EventArgs e)
         {
-            this.townComboBox.Items.AddRange(TownService.GetTownsNames());
+            this.townComboBox.Items.AddRange(townService.GetTownsNames());
         }
 
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,7 +52,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             this.movieComboBox.Items.Clear();
 
             this._townName = this.townComboBox.SelectedItem.ToString();
-            var cinemaNames = Services.CinemaService.GetCinemasNamesBySelectedTown(this._townName);
+            var cinemaNames = cinemaService.GetCinemasNamesBySelectedTown(this._townName);
 
             //adds options to the Cinema select box
             this.cinemaComboBox.Items.AddRange(cinemaNames);
@@ -63,7 +71,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             this.movieComboBox.Items.Clear();
 
             this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
-            this._movies = Services.MovieService.GetMoviesByCinemaAndTown(this._cinemaName, this._townName);
+            this._movies = movieService.GetMoviesByCinemaAndTown(this._cinemaName, this._townName);
 
             this.movieComboBox.Items.AddRange(this._movies.Select(m => m.Name).ToArray());
 
@@ -79,7 +87,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             ClearScreeningsHolder();
             this._movieName = this.movieComboBox.SelectedItem.ToString();
 
-            var screenings = ScreeningService.GetScreeningsByTownCinemaAndMovie(this._townName, this._cinemaName,
+            var screenings = screeningService.GetScreeningsByTownCinemaAndMovie(this._townName, this._cinemaName,
                 this._movieName);
             this._screenings = screenings.ToList();
 

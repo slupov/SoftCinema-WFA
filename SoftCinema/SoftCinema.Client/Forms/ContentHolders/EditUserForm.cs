@@ -23,10 +23,14 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private static string email {get;set;}
         private static string phoneNumber { get; set; }  
         private static Image _image { get; set; }
-            public EditUserForm()
-            {
+        private readonly ImageService imageService;
+        private readonly UserService userService;
+
+        public EditUserForm()
+        {
                 user = MyAccountForm._currentUser;
-             
+                this.imageService = new ImageService();
+                this.userService = new UserService();
                 InitializeComponent();
         }
 
@@ -50,13 +54,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 _image = System.Drawing.Image.FromFile(ofd.FileName);
                
-                var scaledImage = ImageService.ScaleImage(_image, 215, 258);
+                var scaledImage = imageService.ScaleImage(_image, 215, 258);
                 this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
 
                 var path = ofd.FileName;
                 this.pictureBoxPhoto.Image = scaledImage;
 
-                imageBytes = ImageService.imageToByteArray(scaledImage);
+                imageBytes = imageService.imageToByteArray(scaledImage);
             }
         }
 
@@ -76,7 +80,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 string email = this.emailTextBox.Text;
                 string phoneNumber = this.phoneNumberTextBox.Text;
                 string password = string.Empty;
-                if (UserService.Validations.isPasswordValid(this.passwordTextBox.Text))
+                if (userService.isPasswordValid(this.passwordTextBox.Text))
                 {
                     password = this.passwordTextBox.Text;
                 }
@@ -87,11 +91,11 @@ namespace SoftCinema.Client.Forms.ContentHolders
         
                 }
                 bool isDeleted = false;
-                UserService.EditUser(user.Username,email,phoneNumber,password,profilePic);
+                userService.EditUser(user.Username,email,phoneNumber,password,profilePic);
                 
                 MyAccountForm._currentUser = user;
 
-                TopPanelForm.ShowGreetings();
+                mainForm.RenderTopPanelForm();
 
             }
             catch (Exception exception)
@@ -112,13 +116,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
             
             if (user.ProfilePicture != null)
             {
-                var _image = ImageService.byteArrayToImage(user.ProfilePicture.Content);
-                this.pictureBoxPhoto.Image = ImageService.ScaleImage(_image, 215, 258);
+                var _image = imageService.byteArrayToImage(user.ProfilePicture.Content);
+                this.pictureBoxPhoto.Image = imageService.ScaleImage(_image, 215, 258);
             }
             else
             {
                 var _image = Image.FromFile(@"../../Utilities/Images/default.jpg");
-                this.pictureBoxPhoto.Image = ImageService.ScaleImage(_image, 215, 258);
+                this.pictureBoxPhoto.Image = imageService.ScaleImage(_image, 215, 258);
             }
             this.pictureBoxPhoto.Size = new Size(this.pictureBoxPhoto.Image.Width, this.pictureBoxPhoto.Image.Height);
         }

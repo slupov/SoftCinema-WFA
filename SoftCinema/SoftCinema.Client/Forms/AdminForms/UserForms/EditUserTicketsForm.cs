@@ -17,9 +17,12 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
     public partial class EditUserTicketsForm : Form
     {
         private User user;
+        private readonly TicketService ticketService;
+
 
         public EditUserTicketsForm(User user)
         {
+            this.ticketService = new TicketService();
             this.user = user;
             InitializeComponent();
         }
@@ -27,7 +30,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
         
         private void EditUserTicketsForm_Load(object sender, EventArgs e)
         {
-            var tickets = TicketService.GetTicketsInfo(user.Username);
+            var tickets = ticketService.GetTicketsInfo(user.Username);
             TicketsList.DefaultCellStyle.Font = new Font("Tahoma", 12);
 
 
@@ -82,7 +85,7 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             int holderId = user.Id;
             int seatId =int.Parse( TicketsList.Rows[selectedRow].Cells["SeatId"].Value.ToString());
             int screeningId = int.Parse(TicketsList.Rows[selectedRow].Cells["ScreeningId"].Value.ToString());
-            Ticket ticket = TicketService.GetTicket(holderId,seatId,screeningId);
+            Ticket ticket = ticketService.GetTicket(holderId,seatId,screeningId);
             EditTicketForm ticketForm = new EditTicketForm(user,ticket);
             ticketForm.TopLevel = false;
             ticketForm.AutoScroll = true;

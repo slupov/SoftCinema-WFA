@@ -1,14 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class ActorValidator
+    public class ActorValidator
     {
-        public static void ValidateActorDoesntExist(string actorName)
+        private readonly ActorService actorService;
+
+        public ActorValidator(ActorService actorService)
         {
-            if (ActorService.IsActorExisting(actorName))
+            this.actorService = actorService;
+        }
+
+        public void ValidateActorDoesntExist(string actorName)
+        {
+            if (actorService.IsActorExisting(actorName))
             {
-                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.ActorAlreadyExists,actorName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.ActorAlreadyExists, actorName));
             }
         }
     }

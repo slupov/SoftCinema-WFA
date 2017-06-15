@@ -2,19 +2,26 @@ using System;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public static class TownValidator
+    public class TownValidator
     {
-        public static void ValidateTownDoesNotExist(string townName)
+        private readonly TownService townService;
+
+        public TownValidator(TownService townService)
         {
-            if (TownService.IsTownExisting(townName))
+            this.townService = townService;
+        }
+
+        public void ValidateTownDoesNotExist(string townName)
+        {
+            if (townService.IsTownExisting(townName))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownAlreadyExists,townName));
             }
         }
 
-        public static void CheckTownExisting(string townName)
+        public void CheckTownExisting(string townName)
         {
-            if (!TownService.IsTownExisting(townName))
+            if (!townService.IsTownExisting(townName))
             {
                 throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownDoesntExist, townName));
             }

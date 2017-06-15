@@ -15,28 +15,31 @@ namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class CinemasForm : Form
     {
-        
+
+        private readonly CinemaService cinemaService;
+        private readonly TownService townService;
 
         public CinemasForm()
         {
-            
+            this.townService = new TownService();
+            this.cinemaService = new CinemaService();
             InitializeComponent();
         }
 
         private void CinemasForm_Load(object sender, EventArgs e)
         {
-            this.TownsList.Items.AddRange(TownService.GetTownsNames());
+            this.TownsList.Items.AddRange(townService.GetTownsNames());
         }
 
         private void TownsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.CinemasList.Items.Clear();
-            this.CinemasList.Items.AddRange(CinemaService.GetCinemasNamesBySelectedTown(TownsList.SelectedItem.ToString()));
+            this.CinemasList.Items.AddRange(cinemaService.GetCinemasNamesBySelectedTown(TownsList.SelectedItem.ToString()));
         }
 
         private void CinemasList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cinema cinema = CinemaService.GetCinema(this.CinemasList.SelectedItem.ToString(),
+            Cinema cinema = cinemaService.GetCinema(this.CinemasList.SelectedItem.ToString(),
                 this.TownsList.SelectedItem.ToString());
             CinemaEditForm cinemaeditForm = new CinemaEditForm(cinema);
             cinemaeditForm.TopLevel = false;

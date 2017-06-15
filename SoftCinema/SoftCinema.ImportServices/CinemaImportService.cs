@@ -10,6 +10,17 @@ namespace ImportServices
 {
     public  class CinemaImportService
     {
+        private readonly CinemaService cinemaService;
+        private readonly CinemaValidator cinemaValidator;
+        private readonly TownService townService;
+
+        public CinemaImportService()
+        {
+            this.cinemaService = new CinemaService();
+            this.cinemaValidator = new CinemaValidator(cinemaService);
+            this.townService = new TownService();
+        }
+
         public  CinemaDtoCollection DeserializeCinemas(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(CinemaDtoCollection));
@@ -43,11 +54,11 @@ namespace ImportServices
             string cinemaName = cinemaDto.Name;
             InputDataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
 
-            TownService.AddTownIfNotExisting(townName);
-            int townId = TownService.GetTownId(townName);
-            CinemaValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
+            townService.AddTownIfNotExisting(townName);
+            int townId = townService.GetTownId(townName);
+            cinemaValidator.ValidateCinemaDoesNotExist(cinemaName, townId);
 
-            CinemaService.AddCinema(cinemaName, townId);
+            cinemaService.AddCinema(cinemaName, townId);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
         }

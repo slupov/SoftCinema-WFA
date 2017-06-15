@@ -14,8 +14,13 @@ namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class CreateCategoryForm : Form
     {
+        private readonly MovieService movieService;
+        private readonly CategoryService categoryService;
+
         public CreateCategoryForm()
         {
+            this.movieService = new MovieService();
+            this.categoryService = new CategoryService();
             InitializeComponent();
         }
 
@@ -37,7 +42,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         private void CreateCategoryForm_Load(object sender, EventArgs e)
         {
             this.CategoryExistsLabel.Hide();
-            string[] movies = MovieService.GetMoviesNameAndYearAsString();
+            string[] movies = movieService.GetMoviesNameAndYearAsString();
             this.MoviesCheckedListBox.Items.AddRange(movies);
             
         }
@@ -48,7 +53,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             List<Tuple<string, int>> movies = GetAddedMovies();
             try
             {
-                CategoryService.AddCategoryWithMovies(categoryName,movies);
+                categoryService.AddCategoryWithMovies(categoryName,movies);
                 MessageBox.Show(Constants.SuccessMessages.CategoryCreatedSuccessfully);
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
@@ -81,7 +86,7 @@ namespace SoftCinema.Client.Forms.AdminForms
         private void CategoryTextBox_TextChanged(object sender, EventArgs e)
         {
 
-            if (CategoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) )
+            if (categoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) )
             {
                 this.CategoryExistsLabel.Show();
                 this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;

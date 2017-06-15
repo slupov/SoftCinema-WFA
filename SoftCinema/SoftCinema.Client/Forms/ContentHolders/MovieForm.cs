@@ -14,13 +14,23 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private string _movieName { get; set; }
         //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
-       
-       
+
+        private readonly ImageService imageService;
+        private readonly TownService townService;
+        private readonly CinemaService cinemaService;
+        private readonly ScreeningService screeningService;
+
+
 
         public Movie _movie { get; set; }
 
         public MovieForm(Movie movie)
         {
+            this.imageService = new ImageService();
+            this.townService = new TownService();
+            this.cinemaService = new CinemaService();
+            this.screeningService = new ScreeningService();
+
             InitializeComponent();
 
             if (AuthenticationManager.IsAuthenticated() && !AuthenticationManager.HasSuperRights())
@@ -32,9 +42,9 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 this.Controls.Add(this.cinemaComboBox);
             }
 
-            System.Drawing.Image image = ImageService.byteArrayToImage(movie.Image.Content);
+            System.Drawing.Image image = imageService.byteArrayToImage(movie.Image.Content);
             this._movie = movie;
-            this.pictureBox.Image = ImageService.ScaleImage(image,142,224);
+            this.pictureBox.Image = imageService.ScaleImage(image,142,224);
             this.titleBox.Text = _movie.Name;
             this.genreBox.Text = string.Join(", ", this._movie.Categories.Select(c => c.Name));
             this.lengthBox.Text = _movie.Length.ToString() + " minutes";
@@ -45,7 +55,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.castBox.Text = string.Join(",", this._movie.Cast.Select(c => c.Name));
             this.synopsisBox.Text = _movie.Synopsis;
             this.townBox.Text = "Select town";
-            this.townBox.Items.AddRange(TownService.GetTownsNames());
+            this.townBox.Items.AddRange(townService.GetTownsNames());
             this.FormBorderStyle = FormBorderStyle.None;
 
         }
@@ -70,7 +80,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.hourBox.Items.Clear();
             this._townName = this.townBox.SelectedItem.ToString();
             this._movieName = this._movie.Name;
-            var cinemaNames = Services.CinemaService.GetCinemasByMovieAndTown(this._movieName,this._townName);
+            var cinemaNames = cinemaService.GetCinemasByMovieAndTown(this._movieName,this._townName);
 
             this.cinemaComboBox.Items.AddRange(cinemaNames);
 
@@ -97,10 +107,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
             string selectedDate = this.dateBox.SelectedItem.ToString();
             string selectedTime = this.hourBox.SelectedItem.ToString();
 
-            DateTime screeningDate = ScreeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
+            DateTime screeningDate = screeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
             //var screeningDate = new DateTime(2017, 4, 21, 16, 0, 0); //hardcode
             
-            TicketForm.Screening= ScreeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
+            TicketForm.Screening= screeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
 
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
@@ -115,7 +125,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.dateBox.Text = "Select date";
             this.dateBox.Items.Clear();
             this._cinemaName = this.cinemaComboBox.SelectedItem.ToString();
-            var dates = Services.ScreeningService.GetAllDatesForMovieInCinema(this._townName,
+            var dates = screeningService.GetAllDatesForMovieInCinema(this._townName,
                 this._cinemaName, this._movieName);
             this.dateBox.Items.AddRange(dates);
         }
@@ -126,7 +136,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.hourBox.Items.Clear();
             var date = this.dateBox.SelectedItem.ToString();
 
-            var hours = Services.ScreeningService.GetHoursForMoviesByDate(this._townName,
+            var hours = screeningService.GetHoursForMoviesByDate(this._townName,
                 this._cinemaName, this._movieName, date);
             ;
             this.hourBox.Items.AddRange(hours);

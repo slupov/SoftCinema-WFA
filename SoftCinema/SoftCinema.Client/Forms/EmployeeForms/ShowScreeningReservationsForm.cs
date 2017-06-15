@@ -15,12 +15,13 @@ namespace SoftCinema.Client.Forms.EmployeeForms
         private Screening _screening { get; set; }
         public List<Ticket> _reservedTickets { get; set; }
         private ScreeningReservationsHolder _reservationsHolder { get; set; }
+        private readonly TicketService ticketService;
 
         public ShowScreeningReservationsForm(Screening screening)
         {
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this._screening = screening;
-            this._reservedTickets = TicketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
+            this._reservedTickets = ticketService.GetTickets(screening).Where(t => !t.isPaid).ToList();
             this._reservationsHolder = new ScreeningReservationsHolder();
 
             InitializeComponent();
@@ -69,13 +70,13 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             var username = this.searchByUsernameTextBox.Text;
             if (username == "" || username == string.Empty)
             {
-                this._reservedTickets = TicketService.GetTickets(this._screening)
+                this._reservedTickets = ticketService.GetTickets(this._screening)
                     .Where(t => t.isPaid == false)
                     .ToList();
             }
             else
             {
-                this._reservedTickets = TicketService.GetTickets(this._screening)
+                this._reservedTickets = ticketService.GetTickets(this._screening)
                     .Where(t => t.Holder.Username == username && t.isPaid == false)
                     .ToList();
             }
@@ -94,7 +95,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 "Careful!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                TicketService.SellTickets(this._reservedTickets);
+                ticketService.SellTickets(this._reservedTickets);
 
                 var ticketHolders = this._reservedTickets.Select(t => t.Holder.Username).ToList();
                 var ticketHoldersString = string.Join(",", ticketHolders.Distinct());

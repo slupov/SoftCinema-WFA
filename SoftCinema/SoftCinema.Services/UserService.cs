@@ -21,9 +21,8 @@ namespace SoftCinema.Services
     {
         
 
-        public class Validations
-        {
-            public static bool isUserValid(string username, string password, string repeatpassword, string email,
+       
+            public  bool isUserValid(string username, string password, string repeatpassword, string email,
                 string phone)
             {
                 return !isUsernameExisting(username) && isUsernameValid(username)
@@ -31,7 +30,7 @@ namespace SoftCinema.Services
                        && isEmailValid(email) && isPhoneValid(phone);
             }
 
-            public static bool isUsernameValid(string username)
+            public  bool isUsernameValid(string username)
             {
                 //TODO: Check for SqlInjection 
                 if (username.Length > 25)
@@ -42,7 +41,7 @@ namespace SoftCinema.Services
                 return true;
             }
 
-            public static bool isUsernameExisting(string username)
+            public  bool isUsernameExisting(string username)
             {
                 using (var db = new SoftCinemaContext())
                 {
@@ -50,7 +49,7 @@ namespace SoftCinema.Services
                 }
             }
 
-            public static bool isPasswordValid(string password)
+            public  bool isPasswordValid(string password)
             {
                 if (password.Length < 3 || password.Length > 25)
                 {
@@ -59,7 +58,7 @@ namespace SoftCinema.Services
                 return true;
             }
 
-            public static bool isRepeatPasswordValid(string password, string repeatpassword)
+            public  bool isRepeatPasswordValid(string password, string repeatpassword)
             {
                 if (repeatpassword == password)
                 {
@@ -69,7 +68,7 @@ namespace SoftCinema.Services
                 return false;
             }
 
-            public static bool isEmailValid(string email)
+            public  bool isEmailValid(string email)
             {
                 var emailRegex =
                     @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
@@ -82,7 +81,7 @@ namespace SoftCinema.Services
                 return true;
             }
 
-            public static bool isPhoneValid(string phone)
+            public  bool isPhoneValid(string phone)
             {
                 if (phone == "" || phone == string.Empty)
                 {
@@ -99,7 +98,7 @@ namespace SoftCinema.Services
                 return true;
             }
 
-            public static bool isUsernamePasswordMatching(string username, string password)
+            public  bool isUsernamePasswordMatching(string username, string password)
             {
                 using (var db = new SoftCinemaContext())
                 {
@@ -108,7 +107,7 @@ namespace SoftCinema.Services
                 }
             }
 
-            public static bool IsEmailTaken(string email)
+            public  bool IsEmailTaken(string email)
             {
                 using (var db = new SoftCinemaContext())
                 {
@@ -117,12 +116,12 @@ namespace SoftCinema.Services
 
             }
 
-            public static bool IsRoleValid(string role)
+            public  bool IsRoleValid(string role)
             {
                 return RoleProcessor.GetRoles().Contains(role);
             }
 
-            public static bool IsUserDeleted(string username)
+            public  bool IsUserDeleted(string username)
             {
                 using (var db = new SoftCinemaContext())
                 {
@@ -130,9 +129,9 @@ namespace SoftCinema.Services
                     
                 }
             }
-        }
+        
 
-        public static void EditUser(string username,string email, string phoneNumber, string password, Image profilePic)
+        public  void EditUser(string username,string email, string phoneNumber, string password, Image profilePic)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -152,7 +151,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddUser(string username, string password, string email, string phone, byte[] image)
+        public  void AddUser(string username, string password, string email, string phone, byte[] image)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -171,7 +170,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddOrUpdateUser(string username, string password, string email, string phone,Role role, Image profilePicture)
+        public  void AddOrUpdateUser(string username, string password, string email, string phone,Role role, Image profilePicture)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -190,7 +189,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static User GetUser(string username)
+        public  User GetUser(string username)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -198,7 +197,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static List<User> GetUsers()
+        public  List<User> GetUsers()
         {
             using (var db = new SoftCinemaContext())
             {
@@ -207,12 +206,12 @@ namespace SoftCinema.Services
         }
 
 
-        public static string[] GetUsernames()
+        public  string[] GetUsernames()
         {
             return GetUsers().Select(u => u.Username).ToArray();
         }
 
-        public static string GetPassword(string username)
+        public  string GetPassword(string username)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -220,7 +219,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void UpdateUser(string oldUsername, string newUsername, string email, string phoneNumber, Role role,bool isDeleted)
+        public  void UpdateUser(string oldUsername, string newUsername, string email, string phoneNumber, Role role,bool isDeleted)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -235,7 +234,7 @@ namespace SoftCinema.Services
         }
         
 
-        public static void DeleteUser(string userUsername)
+        public  void DeleteUser(string userUsername)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -245,7 +244,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public static void AddImageToUser(User user, Image image)
+        public  void AddImageToUser(User user, Image image)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

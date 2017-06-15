@@ -15,9 +15,13 @@ namespace SoftCinema.Client.AdminForms.MovieForms
     {
         private byte[] movieImageBytes { get; set; }
         private AgeRestriction ageRestriction { get; set; }
+        private readonly ImageService imageService;
+        private readonly MovieService movieService;
 
         public RegisterMovieForm()
         {
+            this.movieService = new MovieService();
+            this.imageService = new ImageService();
             InitializeComponent();
             //TODO: Add AgeRestriction Service Method //this.ageRestrictionComboBox.Items.AddRange("X", "A", "B", "C", "D");
             this.ratingUpDown.Minimum = 0.0m;
@@ -32,7 +36,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ImageService.AddImage(this.movieImageBytes);
+            imageService.AddImage(this.movieImageBytes);
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -45,13 +49,13 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                  var image = System.Drawing.Image.FromFile(ofd.FileName);
-                 var scaledImage = ImageService.ScaleImage(image, 215, 258);
+                 var scaledImage = imageService.ScaleImage(image, 215, 258);
                  this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
                 
                  var path = ofd.FileName;
                  this.pictureBoxPhoto.Image = scaledImage;  
                 
-                 this.movieImageBytes = ImageService.imageToByteArray(scaledImage);
+                 this.movieImageBytes = imageService.imageToByteArray(scaledImage);
             }
         }
 
@@ -68,7 +72,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
 
                 //TODO: CHECK IF IMAGE ALREADY EXISTS
                 //TODO: IF NOT -> UPLOAD IT FIRST (code)
-                MovieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
+                movieService.AddMovie(name, rating, 150, directorName, year, this.ageRestriction, null, null, image);
                 MessageBox.Show(Constants.SuccessMessages.MovieRegisteredSuccessfully);
                 AdminMenuForm adminMenuForm = new AdminMenuForm();
                 adminMenuForm.TopLevel = false;

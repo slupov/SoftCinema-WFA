@@ -9,6 +9,15 @@ namespace ImportServices
 {
     public  class CategoryImportService
     {
+        private readonly CategoryService categoryService;
+        private readonly CategoryValidator categoryValidator;
+
+        public CategoryImportService()
+        {
+            this.categoryService = new CategoryService();
+            this.categoryValidator = new CategoryValidator(categoryService);
+        }
+
         public  void ImportCategories(IEnumerable<CategoryDto> categories)
         {
             
@@ -32,9 +41,9 @@ namespace ImportServices
         {
             string categoryName = categoryDto.Name;
             InputDataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);
-            CategoryValidator.ValidateCategoryDoesNotExist(categoryName);
+            categoryValidator.ValidateCategoryDoesNotExist(categoryName);
 
-            CategoryService.AddCategory(categoryName);
+            categoryService.AddCategory(categoryName);
 
             Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CategoryAddedSuccess, categoryName));
         }

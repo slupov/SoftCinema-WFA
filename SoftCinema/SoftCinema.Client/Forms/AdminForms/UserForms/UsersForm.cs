@@ -15,8 +15,11 @@ namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class UsersForm : Form
     {
+        private readonly UserService userService;
+
         public UsersForm()
         {
+            this.userService = new UserService();
             InitializeComponent();
             SearchTextBox.ForeColor = SystemColors.GrayText;
             SearchTextBox.Text = Constants.SearchPlaceholder;
@@ -47,14 +50,14 @@ namespace SoftCinema.Client.Forms.AdminForms
         {
             if ((SearchTextBox.Text != null || SearchTextBox.Text != "") && (SearchTextBox.Text!= Constants.SearchPlaceholder && SearchTextBox.ForeColor != SystemColors.GrayText))
             {
-                string[] usernames = UserService.GetUsernames().Where(s => s.ToLower().Contains(SearchTextBox.Text.ToLower())).ToArray();
+                string[] usernames = userService.GetUsernames().Where(s => s.ToLower().Contains(SearchTextBox.Text.ToLower())).ToArray();
                 UserList.Items.Clear();
                 UserList.Items.AddRange(usernames);
             }
             else
             {
 
-                string[] usernames = UserService.GetUsernames();
+                string[] usernames = userService.GetUsernames();
                 UserList.Items.Clear();
                 UserList.Items.AddRange(usernames);
             }
@@ -71,7 +74,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             }
             ListBox lb = (ListBox) sender;
             string username = lb.SelectedItem.ToString();
-            User user = UserService.GetUser(username);
+            User user = userService.GetUser(username);
             UserDetailsForm userForm = new UserDetailsForm(user);
             userForm.TopLevel = false;
             userForm.AutoScroll = true;
