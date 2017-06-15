@@ -22,6 +22,4 @@ To access cinema employee functionality log in as one of the following accounts 
   Username: employee3  
   Password: 123  
   
-TO DO://
-  - services overhaul - convert from static to instances, going to be arduous as this requires an overhaul of the entire project
-  - improve readability wherever necessary
+
