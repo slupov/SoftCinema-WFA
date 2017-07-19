@@ -1,10 +1,9 @@
-﻿using System;
-using SoftCinema.Client.Forms;
-using SoftCinema.Client.Forms.ContentHolders;
+﻿using SoftCinema.Client.Forms.ContentHolders;
+using System;
 
 namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {
-    class RegisterTeamButton : TeamButton
+    internal class RegisterTeamButton : TeamButton
     {
         public RegisterTeamButton() : base()
         {

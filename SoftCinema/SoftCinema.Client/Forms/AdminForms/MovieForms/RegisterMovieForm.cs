@@ -1,13 +1,12 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms;
+﻿using SoftCinema.Client.Forms;
 using SoftCinema.Client.Forms.AdminForms;
 using SoftCinema.Client.Forms.AdminForms.MovieForms;
-using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.AdminForms.MovieForms
 {
@@ -28,9 +27,8 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.ratingUpDown.DecimalPlaces = 1;
             this.ratingUpDown.Increment = 0.1m;
             this.yearUpDown.Minimum = 1890;
-            this.yearUpDown.Maximum = DateTime.Now.Year+1;
+            this.yearUpDown.Maximum = DateTime.Now.Year + 1;
             this.yearUpDown.Value = 2017;
-
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -42,13 +40,13 @@ namespace SoftCinema.Client.AdminForms.MovieForms
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                 var image = System.Drawing.Image.FromFile(ofd.FileName);
-                 var scaledImage = imageService.ScaleImage(image, 215, 258);
-                 this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
-                
-                 this.pictureBoxPhoto.Image = scaledImage;  
-                
-                 this.movieImageBytes = imageService.imageToByteArray(scaledImage);
+                var image = System.Drawing.Image.FromFile(ofd.FileName);
+                var scaledImage = imageService.ScaleImage(image, 215, 258);
+                this.pictureBoxPhoto.Size = new Size(scaledImage.Size.Width, scaledImage.Size.Height);
+
+                this.pictureBoxPhoto.Image = scaledImage;
+
+                this.movieImageBytes = imageService.imageToByteArray(scaledImage);
             }
         }
 
@@ -70,41 +68,38 @@ namespace SoftCinema.Client.AdminForms.MovieForms
                 this.Hide();
                 ((Button)sender).Parent.Parent.Controls.Add(adminMenuForm);
                 adminMenuForm.Show();
-
-
             }
             catch (Exception)
             {
                 MessageBox.Show("Movie Register failed!");
             }
-           
         }
 
         private void ageRestrictionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (this.ageRestrictionComboBox.SelectedItem.ToString())
             {
-                case"A":
+                case "A":
                     this.ageRestriction = AgeRestriction.A;
                     break;
+
                 case "B":
                     this.ageRestriction = AgeRestriction.B;
                     break;
+
                 case "C":
                     this.ageRestriction = AgeRestriction.C;
                     break;
+
                 case "D":
                     this.ageRestriction = AgeRestriction.D;
                     break;
+
                 case "X":
                     this.ageRestriction = AgeRestriction.X;
                     break;
-
             }
-
         }
-
-      
 
         private void ratingUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -115,8 +110,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
         {
             this.ageRestrictionComboBox.Items.AddRange(AgeRestrictionsProcessor.GetAgeRestrictions());
         }
-
-      
 
         private void BackButton_Click(object sender, EventArgs e)
         {

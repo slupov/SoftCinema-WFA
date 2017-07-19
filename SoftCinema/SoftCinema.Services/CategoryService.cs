@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using SoftCinema.Data;
+﻿using SoftCinema.Data;
 using SoftCinema.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SoftCinema.Services
 {
-    public  class CategoryService
+    public class CategoryService
     {
-      
-        public  void AddCategory(string categoryName)
+        public void AddCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -23,7 +21,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void AddCategoryWithMovies(string categoryName, List<Tuple<string, int>> movies)
+        public void AddCategoryWithMovies(string categoryName, List<Tuple<string, int>> movies)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -41,7 +39,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Category GetCategory(string categoryName)
+        public Category GetCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -49,7 +47,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string[] GetCategoriesNames()
+        public string[] GetCategoriesNames()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -59,18 +57,16 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string[] GetMoviesNameAndYearInCategory(string categoryName)
+        public string[] GetMoviesNameAndYearInCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-
                 return (context.Categories.FirstOrDefault(c => c.Name == categoryName)
                     .Movies.Select(m => $"{m.Name},{m.ReleaseYear}").ToArray());
-
             }
         }
 
-        public  string[] GetMoviesNotInCategory(string categoryName)
+        public string[] GetMoviesNotInCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -84,12 +80,11 @@ namespace SoftCinema.Services
                         }
                     }
                     return result.ToArray();
-
                 }
             }
         }
 
-        public  bool IsCategoryExisting(string categoryName)
+        public bool IsCategoryExisting(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -99,7 +94,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void UpdateCategory(string oldCategoryName, string newCategoryName, List<Tuple<string, int>> addedMovies, List<Tuple<string, int>> notAddedMovies)
+        public void UpdateCategory(string oldCategoryName, string newCategoryName, List<Tuple<string, int>> addedMovies, List<Tuple<string, int>> notAddedMovies)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -119,7 +114,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void RemoveCategory(string categoryName)
+        public void RemoveCategory(string categoryName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

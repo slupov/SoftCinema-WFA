@@ -2,8 +2,8 @@
 
 namespace SoftCinema.Services
 {
-    using System;
     using SoftCinema.Models;
+    using System;
 
     public class AuthenticationManager
     {

@@ -54,6 +54,7 @@ namespace SoftCinema.Data.Utilities
                     HashValue = sha256.ComputeHash(plainDataAndSalt);
                     sha256.Dispose();
                     break;
+
                 case Supported_HA.SHA512:
                     SHA512Managed sha512 = new SHA512Managed();
                     HashValue = sha512.ComputeHash(plainDataAndSalt);
@@ -86,6 +87,7 @@ namespace SoftCinema.Data.Utilities
                 case Supported_HA.SHA256:
                     hashSize = 32;
                     break;
+
                 case Supported_HA.SHA512:
                     hashSize = 64;
                     break;

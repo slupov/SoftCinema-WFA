@@ -1,10 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Xml.Serialization;
-using SoftCinema.DTOs;
+﻿using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace ImportServices
 {
@@ -17,7 +17,6 @@ namespace ImportServices
         private readonly TownService townService;
         private readonly TownValidator townValidator;
 
-
         public AuditoriumImportService()
         {
             this.auditoriumService = new AuditoriumService();
@@ -28,7 +27,7 @@ namespace ImportServices
             this.townValidator = new TownValidator(townService);
         }
 
-        public  AuditoriumDtoCollection DeserializeAuditoriums(string path)
+        public AuditoriumDtoCollection DeserializeAuditoriums(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(AuditoriumDtoCollection));
             using (StreamReader reader = new StreamReader(path))
@@ -37,7 +36,7 @@ namespace ImportServices
             }
         }
 
-        public  void ImportAuditoriumCollection(AuditoriumDtoCollection auditoriumDtos)
+        public void ImportAuditoriumCollection(AuditoriumDtoCollection auditoriumDtos)
         {
             foreach (var auditoriumDto in auditoriumDtos.AudtioriumDtos)
             {
@@ -48,15 +47,14 @@ namespace ImportServices
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-                    
                 }
             }
         }
 
-        private  void ImportAuditorium(AuditoriumDto auditoriumDto)
+        private void ImportAuditorium(AuditoriumDto auditoriumDto)
         {
             string cinemaName = auditoriumDto.CinemaName;
-            InputDataValidator.ValidateStringMaxLength(cinemaName,Constants.MaxCinemaNameLength);
+            InputDataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
 
             string townName = auditoriumDto.CinemaTownName;
             townValidator.CheckTownExisting(townName);
@@ -68,16 +66,9 @@ namespace ImportServices
             byte number = auditoriumDto.Number;
             auditoriumValidator.ValidateAuditoriumDoesNotExist(number, cinemaId, cinemaName);
 
-   
+            auditoriumService.AddAuditorium(number, cinemaId);
 
-            auditoriumService.AddAuditorium(number,cinemaId);
-
-            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName,townName));
-
-
-
-
-
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.AuditoriumAddedSuccess, number, cinemaName, townName));
         }
     }
 }

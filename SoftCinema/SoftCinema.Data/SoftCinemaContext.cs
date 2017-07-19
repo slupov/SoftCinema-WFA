@@ -5,8 +5,6 @@ using System.Data.Entity;
 
 namespace SoftCinema.Data
 {
-    
-
     public class SoftCinemaContext : DbContext
     {
         public SoftCinemaContext()

@@ -1,17 +1,10 @@
 ﻿using SoftCinema.Client.Forms.ContentHolders;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {
-    class MyAccountButton : TeamButton
+    internal class MyAccountButton : TeamButton
     {
-        
         public MyAccountButton() : base()
         {
             this.Text = "My Account";

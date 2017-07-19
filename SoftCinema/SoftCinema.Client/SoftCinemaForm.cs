@@ -1,13 +1,10 @@
 ﻿using SoftCinema.Client.Forms;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.AdminForms;
 using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Client.Utilities.CustomSidebars;
 using SoftCinema.Models;
 using SoftCinema.Services;
-using SoftCinema.Services.Utilities;
+using System;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client
 {
@@ -53,12 +50,15 @@ namespace SoftCinema.Client
                 case Role.User:
                     this.SideBar = new UserSideBar();
                     break;
+
                 case Role.Admin:
                     this.SideBar = new AdminSideBar();
                     break;
+
                 case Role.Employee:
                     this.SideBar = new EmployeeSideBar();
                     break;
+
                 default:
                     this.SideBar = new LoggedOutSidebar();
                     break;
@@ -76,6 +76,5 @@ namespace SoftCinema.Client
             this.TopPanel.Controls.Add(topPanel);
             topPanel.Show();
         }
-        
     }
 }

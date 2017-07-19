@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SoftCinema.Client.Forms.ContentHolders
+﻿namespace SoftCinema.Client.Forms.ContentHolders
 {
     public partial class HomeForm : ContentHolderForm
     {

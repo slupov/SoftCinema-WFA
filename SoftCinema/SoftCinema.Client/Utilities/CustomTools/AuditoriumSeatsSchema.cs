@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.ContentHolders;
+﻿using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
-    class AuditoriumSeatsSchema : Panel
+    internal class AuditoriumSeatsSchema : Panel
     {
         private Auditorium _Auditorium { get; set; }
         private static int _seatCountLimit { get; set; }
         private static List<SeatButton> _seats { get; set; }
         private Screening _screening { get; set; }
         private readonly TicketService ticketService;
-
 
         public AuditoriumSeatsSchema(Auditorium auditorium, Screening screening, Point startingCoords, int width,
             int seatCount)
@@ -35,17 +30,13 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this.AutoSize = true;
             this.BackColor = Color.Bisque;
 
-
-           
             VisualizeSeats();
-           
-
         }
-      
+
         public void UpdateReserveButton()
         {
             var count = GetSelectedSeats().Count;
-            var form = (SelectSeatsForm) this.Parent;
+            var form = (SelectSeatsForm)this.Parent;
             if (count == _seatCountLimit)
             {
                 form.reserveButton.Enabled = true;
@@ -120,7 +111,6 @@ namespace SoftCinema.Client.Utilities.CustomTools
             }
         }
 
-
         //if seatCount of clicked buttons is reached -> make all buttons unclickable
         public static void LimitSeatsSelection()
         {
@@ -158,6 +148,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
                 seatButton.Enabled = true;
             }
         }
+
         private static void DisableAllSeats()
         {
             foreach (var seatButton in _seats)

@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
@@ -39,8 +32,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             DateCalendar.SetDate(screening.Start);
             DateCalendar.ShowToday = false;
             ScreeningTaken.Visible = false;
-
-
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -53,16 +44,13 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 screeningsForm.TopLevel = false;
                 screeningsForm.AutoScroll = true;
                 this.Hide();
-                ((Button) sender).Parent.Parent.Controls.Add(screeningsForm);
+                ((Button)sender).Parent.Parent.Controls.Add(screeningsForm);
                 screeningsForm.Show();
             }
         }
 
         private void EditScreeningButton_Click(object sender, EventArgs e)
         {
-            
-           
-
             try
             {
                 DateTime getDate = DateCalendar.SelectionRange.Start;
@@ -71,7 +59,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 string time = getTime.ToString("hh") + ":" + getTime.ToString("mm") + " " + getTime.ToString("tt", CultureInfo.InvariantCulture);
 
                 DateTime startTime = screeningService.GetDateTimeFromDateAndTime(date, time);
-                screeningValidator.ValidateScreeningAvailable(screening.Id,startTime);
+                screeningValidator.ValidateScreeningAvailable(screening.Id, startTime);
                 screeningService.UpdateScreening(screening.Id, startTime);
                 MessageBox.Show("Screening updated successfully!");
                 Cinema cinema = cinemaService.GetCinemaWithScreenings(screening.Auditorium.CinemaId);
@@ -91,7 +79,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
         private void DateCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
             CheckScreening();
-
         }
 
         private void TimePicker_ValueChanged(object sender, EventArgs e)

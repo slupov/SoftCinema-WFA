@@ -1,5 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SoftCinema.Data.Configurations
 {
@@ -7,15 +7,15 @@ namespace SoftCinema.Data.Configurations
     {
         public MovieConfiguration()
         {
-           this
-                .HasMany(m => m.Cast)
-                .WithMany(a => a.Movies)
-                .Map(ma =>
-                {
-                    ma.MapLeftKey("MovieId");
-                    ma.MapRightKey("ActorId");
-                    ma.ToTable("ActorMovies");
-                });
+            this
+                 .HasMany(m => m.Cast)
+                 .WithMany(a => a.Movies)
+                 .Map(ma =>
+                 {
+                     ma.MapLeftKey("MovieId");
+                     ma.MapRightKey("ActorId");
+                     ma.ToTable("ActorMovies");
+                 });
 
             this
                 .HasMany(m => m.Categories)

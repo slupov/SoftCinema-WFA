@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms
@@ -13,11 +12,9 @@ namespace SoftCinema.Client.Forms
             this.Width = 769;
             this.Height = 418;
             this.Location = new Point(0, 0);
-            this.Margin = new Padding(3,3,3,3);
+            this.Margin = new Padding(3, 3, 3, 3);
 
             InitializeComponent();
         }
-
-
     }
 }

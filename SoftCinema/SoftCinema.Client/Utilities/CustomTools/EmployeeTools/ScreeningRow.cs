@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.EmployeeForms;
+﻿using SoftCinema.Client.Forms.EmployeeForms;
 using SoftCinema.Models;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningRow : GroupBox
+    internal class ScreeningRow : GroupBox
     {
         private Screening _screening { get; set; }
         private int _id { get; set; }
@@ -25,7 +21,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this._id = id;
 
             Label rowText = new Label();
-            rowText.Font = new Font("Comic Sans MS",14);
+            rowText.Font = new Font("Comic Sans MS", 14);
             rowText.Text = $"{id}." +
                            new string(' ', 5) +
                            $"Auditorium: {_screening.Auditorium.Number}" +

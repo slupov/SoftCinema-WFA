@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SoftCinema.Models;
+using SoftCinema.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using SoftCinema.Models;
-using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -12,8 +12,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private string _townName { get; set; }
         private string _cinemaName { get; set; }
         private string _movieName { get; set; }
-//        private ICollection<Screening> _screenings { get; set; }
+
+        //        private ICollection<Screening> _screenings { get; set; }
         private ICollection<Movie> _movies { get; set; }
+
         public static Screening Screening;
         private string _date;
         private string _time;
@@ -50,7 +52,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
             //adds options to the Cinema select box
             this.cinemaComboBox.Items.AddRange(cinemaNames);
 
-            //default 
+            //default
             if (this.cinemaComboBox.Items.Count == 0)
             {
                 this.cinemaComboBox.Text = "(no cinemas)";
@@ -66,16 +68,16 @@ namespace SoftCinema.Client.Forms.ContentHolders
             ticketTypeForm.TopLevel = false;
             ticketTypeForm.AutoScroll = true;
             this.Hide();
-            var contentHolder = ((Button) sender).Parent.Parent;
+            var contentHolder = ((Button)sender).Parent.Parent;
             var formsCount = contentHolder.Controls.Count;
-            if (formsCount-1 <= contentHolder.Controls.IndexOf(this))
+            if (formsCount - 1 <= contentHolder.Controls.IndexOf(this))
             {
-               contentHolder.Controls.Add(ticketTypeForm);
+                contentHolder.Controls.Add(ticketTypeForm);
                 ticketTypeForm.Show();
             }
             else
             {
-                contentHolder.Controls[contentHolder.Controls.IndexOf(this)+1].Show();
+                contentHolder.Controls[contentHolder.Controls.IndexOf(this) + 1].Show();
             }
         }
 
@@ -110,7 +112,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this._time = timeComboBox.SelectedItem.ToString();
-           
+
             this.selectTicketTypeButton.Enabled = true;
         }
 

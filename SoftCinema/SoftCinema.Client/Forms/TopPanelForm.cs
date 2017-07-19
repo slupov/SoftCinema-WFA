@@ -1,11 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.ContentHolders;
+﻿using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 using Image = System.Drawing.Image;
 
 namespace SoftCinema.Client.Forms
@@ -19,7 +18,6 @@ namespace SoftCinema.Client.Forms
             this.imageService = new ImageService();
             InitializeComponent();
             ShowLogInMessage();
-
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -30,7 +28,7 @@ namespace SoftCinema.Client.Forms
             MessageBox.Show(Constants.SuccessMessages.SuccessfulLogout);
 
             //Update sidebar
-            var mainForm = (SoftCinemaForm) ((Button) sender).Parent.Parent.Parent;
+            var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
             mainForm.RenderSideBar();
 
             //Redirect to home page view
@@ -60,7 +58,7 @@ namespace SoftCinema.Client.Forms
             {
                 Image image = Image.FromFile(@"../../Utilities/Images/default.jpg");
                 byte[] imageToBytes = imageService.imageToByteArray(image);
-                Models.Image newImage = new Models.Image() {Content = imageToBytes};
+                Models.Image newImage = new Models.Image() { Content = imageToBytes };
                 currentUser.ProfilePicture = newImage;
                 profilePicPictureBox.Image = imageService.ScaleImage(image, 55, 54);
             }
@@ -77,7 +75,6 @@ namespace SoftCinema.Client.Forms
             LogoutButton.Hide();
         }
 
-
         private void ShowLogInMessage()
         {
             if (AuthenticationManager.IsAuthenticated())
@@ -89,7 +86,5 @@ namespace SoftCinema.Client.Forms
                 HideGreetings();
             }
         }
-
-       
     }
 }

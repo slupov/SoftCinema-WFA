@@ -1,8 +1,7 @@
 namespace SoftCinema.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class ImagesAdded : DbMigration
     {
         public override void Up()
@@ -10,18 +9,16 @@ namespace SoftCinema.Data.Migrations
             CreateTable(
                 "dbo.Images",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Size = c.Int(nullable: false),
-                        Content = c.Binary(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Size = c.Int(nullable: false),
+                    Content = c.Binary(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
         }
-        
+
         public override void Down()
         {
-            
             DropTable("dbo.Images");
         }
     }

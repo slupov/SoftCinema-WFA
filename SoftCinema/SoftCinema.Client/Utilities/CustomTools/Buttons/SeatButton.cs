@@ -1,7 +1,5 @@
-﻿using System;
-using SoftCinema.Client.Forms;
-using SoftCinema.Models;
-using SoftCinema.Services.Utilities;
+﻿using SoftCinema.Services.Utilities;
+using System;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -11,7 +9,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
     public class SeatButton : Button
     {
         private static Font _normalFont = new Font("Arial", 8F, System.Drawing.FontStyle.Bold,
-            System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         private static Color _back = Constants.Colors.FreeSeatColor;
         private static Color _border = System.Drawing.Color.Black;
@@ -83,7 +81,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
             }
 
             AuditoriumSeatsSchema.LimitSeatsSelection();
-            var form = (AuditoriumSeatsSchema) this.Parent;
+            var form = (AuditoriumSeatsSchema)this.Parent;
             form.UpdateReserveButton();
         }
 

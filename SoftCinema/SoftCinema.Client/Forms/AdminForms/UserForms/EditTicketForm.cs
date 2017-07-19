@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms.UserForms
 {
@@ -49,20 +43,17 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             string movieName = ticket.Screening.Movie.Name + "," + ticket.Screening.Movie.ReleaseYear;
             this.movieComboBox.Text = movieName;
             string ticketDate = ticketService.GetTicketDate(ticket.Id);
-            this.dateComboBox.Text = ticketDate ;
+            this.dateComboBox.Text = ticketDate;
             string ticketTime = ticketService.GetTicketTime(ticket.Id);
-            this.timeComboBox.Text =ticketTime;
+            this.timeComboBox.Text = ticketTime;
             string ticketType = ticket.Type.ToString();
             this.typeComboBox.Text = ticketType;
             string seatNumber = ticket.Seat.Number.ToString();
             this.seatComboBox.Text = seatNumber;
-
-
         }
 
         private void townComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             this.cinemaComboBox.Items.Clear();
             this.movieComboBox.Items.Clear();
             this.dateComboBox.Items.Clear();
@@ -71,12 +62,10 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             this.seatComboBox.Items.Clear();
             var cinemaNames = cinemaService.GetCinemasNamesBySelectedTown(this.townComboBox.SelectedItem.ToString());
             this.cinemaComboBox.Items.AddRange(cinemaNames);
-           
         }
 
         private void cinemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             this.movieComboBox.Items.Clear();
             this.dateComboBox.Items.Clear();
             this.timeComboBox.Items.Clear();
@@ -85,13 +74,11 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
             this.movieComboBox.Items.AddRange(movieService.GetMoviesByCinemaAndTown(cinemaName, townName).Select(
-                m =>m.Name+","+m.ReleaseYear).ToArray());
-
+                m => m.Name + "," + m.ReleaseYear).ToArray());
         }
 
         private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             this.dateComboBox.Items.Clear();
             this.timeComboBox.Items.Clear();
             this.typeComboBox.Items.Clear();
@@ -101,14 +88,12 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             int movieYear = GetMovieYear(movieNameAndYear);
             string cinemaName = this.cinemaComboBox.SelectedItem.ToString();
             string townName = this.townComboBox.SelectedItem.ToString();
-            var dates = screeningService.GetAllDatesForMovieInCinemaByNameAndYear(townName,cinemaName,movieName,movieYear);
+            var dates = screeningService.GetAllDatesForMovieInCinemaByNameAndYear(townName, cinemaName, movieName, movieYear);
             this.dateComboBox.Items.AddRange(dates);
         }
 
-
         private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             this.timeComboBox.Items.Clear();
             this.typeComboBox.Items.Clear();
             this.seatComboBox.Items.Clear();
@@ -118,18 +103,16 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             string movieName = GetMovieName(this.movieComboBox.Text);
             int movieYear = GetMovieYear(this.movieComboBox.Text);
             var hours = screeningService.GetHoursForMoviesByDateMovieNameAndYear(townName,
-                cinemaName,movieName,movieYear, date);
+                cinemaName, movieName, movieYear, date);
             this.timeComboBox.Items.AddRange(hours);
         }
 
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             this.typeComboBox.Items.Clear();
             this.seatComboBox.Items.Clear();
             string[] ticketTypes = TicketTypeProcessor.GetTicketTypes().ToArray();
             this.typeComboBox.Items.AddRange(ticketTypes);
-            
         }
 
         private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,7 +124,6 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                     .Select(n => n.ToString())
                     .ToArray();
             this.seatComboBox.Items.AddRange(freeSeats);
-
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -149,7 +131,6 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
             DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
                 EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
                 ticketsForm.TopLevel = false;
                 ticketsForm.AutoScroll = true;
@@ -157,31 +138,28 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                 ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
                 ticketsForm.Show();
             }
-          
         }
 
         private void EditTicketButton_Click(object sender, EventArgs e)
         {
-
-            
             try
             {
                 int ticketId = ticket.Id;
                 string date = dateComboBox.Text;
                 string time = timeComboBox.Text;
-                DateTime screeningDateTime = screeningService.GetDateTimeFromDateAndTime(date,time);
+                DateTime screeningDateTime = screeningService.GetDateTimeFromDateAndTime(date, time);
                 string townName = townComboBox.Text;
                 string cinemaName = cinemaComboBox.Text;
                 string movieName = GetMovieName(movieComboBox.Text);
                 int movieYear = GetMovieYear(movieComboBox.Text);
-                Screening screening = screeningService.GetScreeningUsingMovieYear(townName, cinemaName,movieName,screeningDateTime,movieYear);
+                Screening screening = screeningService.GetScreeningUsingMovieYear(townName, cinemaName, movieName, screeningDateTime, movieYear);
                 int screeningId = screening.Id;
                 int auditoriumId = screening.AuditoriumId;
                 Seat seat = seatService.GetSeat(auditoriumId, byte.Parse(seatComboBox.Text));
                 int seatId = seat.Id;
                 string type = typeComboBox.Text;
                 TicketType ticketType = (TicketType)Enum.Parse(typeof(TicketType), type);
-                ticketService.UpdateTicket(ticketId,screeningId,seatId,ticketType);
+                ticketService.UpdateTicket(ticketId, screeningId, seatId, ticketType);
                 MessageBox.Show(Constants.SuccessMessages.TicketUpdatedSuccessfully);
                 EditUserTicketsForm ticketsForm = new EditUserTicketsForm(user);
                 ticketsForm.TopLevel = false;
@@ -217,7 +195,6 @@ namespace SoftCinema.Client.Forms.AdminForms.UserForms
                     MessageBox.Show(Constants.ErrorMessages.TicketDeleteMessage);
                 }
             }
-            
         }
 
         private int GetMovieYear(string movieNameAndYear)

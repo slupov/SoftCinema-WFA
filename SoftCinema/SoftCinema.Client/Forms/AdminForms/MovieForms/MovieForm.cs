@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms;
+﻿using SoftCinema.Client.Forms;
 using SoftCinema.Client.Forms.AdminForms.MovieForms;
 using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.AdminForms.MovieForms
 {
@@ -21,7 +21,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
         private readonly TownService townService;
         private readonly CinemaService cinemaService;
         private readonly ScreeningService screeningService;
-       
 
         public Movie _movie { get; set; }
 
@@ -33,10 +32,9 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.screeningService = new ScreeningService();
             InitializeComponent();
 
-            
             System.Drawing.Image image = imageService.byteArrayToImage(movie.Image.Content);
             this._movie = movie;
-            this.pictureBox.Image = imageService.ScaleImage(image,142,224);
+            this.pictureBox.Image = imageService.ScaleImage(image, 142, 224);
             this.titleBox.Text = _movie.Name;
             this.genreBox.Text = string.Join(", ", this._movie.Categories.Select(c => c.Name));
             this.lengthBox.Text = _movie.Length.ToString() + " minutes";
@@ -49,10 +47,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.townBox.Text = "Select town";
             this.townBox.Items.AddRange(townService.GetTownsNames());
             this.FormBorderStyle = FormBorderStyle.None;
-
         }
-
-        
 
         private void townBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -64,7 +59,7 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.hourBox.Items.Clear();
             this._townName = this.townBox.SelectedItem.ToString();
             this._movieName = this._movie.Name;
-            var cinemaNames = cinemaService.GetCinemasByMovieAndTown(this._movieName,this._townName);
+            var cinemaNames = cinemaService.GetCinemasByMovieAndTown(this._movieName, this._townName);
 
             this.cinemaComboBox.Items.AddRange(cinemaNames);
 
@@ -74,23 +69,19 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             }
         }
 
-        
-
         private void MovieForm_Load(object sender, EventArgs e)
         {
             this.ticketsButton.Enabled = false;
-
         }
 
         private void ticketsButton_Click(object sender, EventArgs e)
         {
-
             string selectedDate = this.dateBox.SelectedItem.ToString();
             string selectedTime = this.hourBox.SelectedItem.ToString();
 
             DateTime screeningDate = screeningService.GetDateTimeFromDateAndTime(selectedDate, selectedTime);
-            
-            TicketForm.Screening= screeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
+
+            TicketForm.Screening = screeningService.GetScreening(this._townName, this._cinemaName, this._movieName, screeningDate);
 
             TicketTypeForm ticketTypeForm = new TicketTypeForm();
             ticketTypeForm.TopLevel = false;
@@ -122,7 +113,6 @@ namespace SoftCinema.Client.AdminForms.MovieForms
             this.hourBox.Items.AddRange(hours);
         }
 
-     
         private void hourBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             this.ticketsButton.Enabled = true;

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using SoftCinema.DTOs;
+﻿using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Collections.Generic;
 
 namespace ImportServices
 {
-    
-    public  class TownImportService
+    public class TownImportService
     {
         private readonly TownService townService;
         private readonly TownValidator townValidator;
@@ -19,7 +18,7 @@ namespace ImportServices
             this.townValidator = new TownValidator(townService);
         }
 
-        public  void ImportTowns(IEnumerable<TownDto> towns)
+        public void ImportTowns(IEnumerable<TownDto> towns)
         {
             foreach (var townDto in towns)
             {
@@ -34,7 +33,7 @@ namespace ImportServices
             }
         }
 
-        public  void ImportTown(TownDto townDto)
+        public void ImportTown(TownDto townDto)
         {
             string townName = townDto.Name;
             InputDataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);

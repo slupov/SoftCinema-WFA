@@ -1,12 +1,11 @@
-﻿using SoftCinema.Import;
-using SoftCinema.Test.Contracts;
+﻿using SoftCinema.Test.Contracts;
 
 namespace SoftCinema.Test
 {
-    class StartUp
+    internal class StartUp
     {
-        static void Main(string[] args)
-        { 
+        private static void Main(string[] args)
+        {
             IImportEngine engine = new ImportEngine();
             engine.ImportData();
         }

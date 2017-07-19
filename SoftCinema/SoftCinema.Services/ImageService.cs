@@ -1,23 +1,19 @@
-﻿using System.Data.Entity.Migrations;
-using System.IO;
-using System.Linq;
-using SoftCinema.Data;
+﻿using SoftCinema.Data;
 using SoftCinema.Models;
-using SoftCinema.Services.Utilities;
 using System;
 using System.Data.Entity;
-
+using System.IO;
+using System.Linq;
 
 namespace SoftCinema.Services
 {
     public class ImageService
     {
-        public  void AddImage(byte[] imageIn)
+        public void AddImage(byte[] imageIn)
         {
             var img = new Image()
             {
                 Content = imageIn,
-               
             };
 
             using (var db = new SoftCinemaContext())
@@ -27,25 +23,26 @@ namespace SoftCinema.Services
             }
         }
 
-        public  System.Drawing.Image CreateImage(string path)
+        public System.Drawing.Image CreateImage(string path)
         {
             return System.Drawing.Image.FromFile(path);
         }
 
-        public  byte[] imageToByteArray(System.Drawing.Image imageIn)
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             return ms.ToArray();
         }
 
-        public  System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
+        public System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
             System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
             return returnImage;
         }
-        public  System.Drawing.Image ScaleImage(System.Drawing.Image image, int maxWidth, int maxHeight)
+
+        public System.Drawing.Image ScaleImage(System.Drawing.Image image, int maxWidth, int maxHeight)
         {
             var ratioX = (double)maxWidth / image.Width;
             var ratioY = (double)maxHeight / image.Height;
@@ -59,7 +56,7 @@ namespace SoftCinema.Services
             return newImage;
         }
 
-        public  byte[] GetProfilePicture(string username)
+        public byte[] GetProfilePicture(string username)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -68,7 +65,7 @@ namespace SoftCinema.Services
                 {
                     return user.ProfilePicture.Content;
                 }
-                return null;               
+                return null;
             }
         }
     }

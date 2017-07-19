@@ -1,15 +1,11 @@
-﻿using System;
+﻿using SoftCinema.Client.Utilities.CustomTools.EmployeeTools;
+using SoftCinema.Models;
+using SoftCinema.Services;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Client.Utilities.CustomTools.EmployeeTools;
-using SoftCinema.Models;
-using SoftCinema.Services;
 
 namespace SoftCinema.Client.Forms.EmployeeForms
 {
@@ -57,7 +53,7 @@ namespace SoftCinema.Client.Forms.EmployeeForms
             //adds options to the Cinema select box
             this.cinemaComboBox.Items.AddRange(cinemaNames);
 
-            //default 
+            //default
             if (this.cinemaComboBox.Items.Count == 0)
             {
                 this.cinemaComboBox.Text = "(no cinemas)";

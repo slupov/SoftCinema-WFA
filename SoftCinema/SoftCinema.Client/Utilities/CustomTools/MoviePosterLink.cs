@@ -1,14 +1,9 @@
-﻿using SoftCinema.Client.Forms;
+﻿using SoftCinema.Client.Forms.ContentHolders;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Client.Forms.ContentHolders;
 
 namespace SoftCinema.Client.Utilities.CustomTools
 {
@@ -27,7 +22,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
         private static Size _minSize = new System.Drawing.Size(200, 270);
         private PictureBox _pictureBox = new PictureBox();
-        private Button _showDetailsButton = new Button() { Text = "Details"};
+        private Button _showDetailsButton = new Button() { Text = "Details" };
 
         private Movie _movie { get; set; }
 
@@ -52,7 +47,7 @@ namespace SoftCinema.Client.Utilities.CustomTools
             this._movie = currentMovie;
 
             this._pictureBox.Image = imageService.byteArrayToImage(currentMovie.Image.Content);
-            this._pictureBox.Image = imageService.ScaleImage(this._pictureBox.Image, 200,310);
+            this._pictureBox.Image = imageService.ScaleImage(this._pictureBox.Image, 200, 310);
 
             this._pictureBox.Size = new Size(this._pictureBox.Image.Size.Width, this._pictureBox.Image.Size.Height);
             this._showDetailsButton.Location = new Point(this._pictureBox.Location.X, this._pictureBox.Location.Y + 10);
@@ -60,8 +55,6 @@ namespace SoftCinema.Client.Utilities.CustomTools
 
             this.Controls.Add(this._showDetailsButton);
             this.Controls.Add(this._pictureBox);
-
-
         }
 
         protected override void OnControlAdded(ControlEventArgs e)

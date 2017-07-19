@@ -1,16 +1,13 @@
-﻿using System;
+﻿using SoftCinema.Data;
+using SoftCinema.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Data;
-using SoftCinema.Models;
 
 namespace SoftCinema.Services
 {
-    public  class SeatService
+    public class SeatService
     {
-        public  void AddSeat(int number, int row, int auditoriumId)
+        public void AddSeat(int number, int row, int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -25,7 +22,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Seat GetSeat(int auditoriumId, byte number)
+        public Seat GetSeat(int auditoriumId, byte number)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -33,8 +30,7 @@ namespace SoftCinema.Services
             }
         }
 
-
-        public  int[] GetFreeSeatsForScreening(int ticketScreeningId,int auditoriumId)
+        public int[] GetFreeSeatsForScreening(int ticketScreeningId, int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -56,15 +52,12 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsSeatExisting(int number, int auditoriumId)
+        public bool IsSeatExisting(int number, int auditoriumId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Seats.Any(s => s.Number == number && s.AuditoriumId == auditoriumId);
             }
         }
-
-
-       
     }
 }

@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.AdminForms;
+﻿using SoftCinema.Client.Forms.AdminForms;
 using SoftCinema.Client.Forms.AdminForms.UserForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms
 {
@@ -25,7 +18,6 @@ namespace SoftCinema.Client.Forms
             this.userService = new UserService();
             this.user = user;
             InitializeComponent();
-            
         }
 
         private void UserList_Load(object sender, System.EventArgs e)
@@ -34,7 +26,6 @@ namespace SoftCinema.Client.Forms
             if (this.RoleComboBox.Items.Count == 0)
             {
                 this.RoleComboBox.Text = Constants.WarningMessages.NoRoles;
-
             }
             if (user.IsDeleted)
             {
@@ -52,12 +43,11 @@ namespace SoftCinema.Client.Forms
             this.PhoneNumberInfoLabel.Visible = false;
             this.EmailInfoLabel.Visible = false;
             this.UsernameInfoLabel.Visible = false;
-
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!InputDataChecker.CheckStringMinMaxLength(this.UsernameTextBox.Text,Constants.MinUsernameLength,Constants.MaxUsernameLength))
+            if (!InputDataChecker.CheckStringMinMaxLength(this.UsernameTextBox.Text, Constants.MinUsernameLength, Constants.MaxUsernameLength))
             {
                 this.UsernameInfoLabel.Show();
                 this.UsernameInfoLabel.Text = Constants.WarningMessages.UsernameFormat;
@@ -75,8 +65,7 @@ namespace SoftCinema.Client.Forms
                 }
             }
         }
-        
-        
+
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
             if (!userService.isEmailValid(this.EmailTextBox.Text))
@@ -84,8 +73,8 @@ namespace SoftCinema.Client.Forms
                 this.EmailInfoLabel.Show();
                 this.EmailInfoLabel.Text = Constants.WarningMessages.InvalidEmail;
             }
-            else if(userService.IsEmailTaken(this.EmailTextBox.Text) && this.EmailTextBox.Text!=user.Email)
-            { 
+            else if (userService.IsEmailTaken(this.EmailTextBox.Text) && this.EmailTextBox.Text != user.Email)
+            {
                 this.EmailInfoLabel.Show();
                 this.EmailInfoLabel.Text = Constants.WarningMessages.EmailTaken;
             }
@@ -110,7 +99,6 @@ namespace SoftCinema.Client.Forms
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 string oldUsername = user.Username;
@@ -119,7 +107,7 @@ namespace SoftCinema.Client.Forms
                 string phoneNumber = PhoneNumberTextBox.Text;
                 Role role = (Role)Enum.Parse(typeof(Role), RoleComboBox.Text);
                 bool isDeleted = NoRadioButton.Checked;
-                userService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role,isDeleted);
+                userService.UpdateUser(oldUsername, newUsername, email, phoneNumber, role, isDeleted);
                 MessageBox.Show(Constants.SuccessMessages.UserUpdatedSuccessfully);
                 UsersForm usersForm = new UsersForm();
                 usersForm.TopLevel = false;
@@ -128,24 +116,22 @@ namespace SoftCinema.Client.Forms
                 ((Button)sender).Parent.Parent.Controls.Add(usersForm);
                 usersForm.Show();
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.UserUpdateErrorMesage);
             }
-           
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges,Constants.GoBackPrompt, MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                
                 UsersForm usersForm = new UsersForm();
                 usersForm.TopLevel = false;
                 usersForm.AutoScroll = true;
                 this.Hide();
-                ((Button) sender).Parent.Parent.Controls.Add(usersForm);
+                ((Button)sender).Parent.Parent.Controls.Add(usersForm);
                 usersForm.Show();
             }
         }
@@ -159,7 +145,5 @@ namespace SoftCinema.Client.Forms
             ((Button)sender).Parent.Parent.Controls.Add(ticketsForm);
             ticketsForm.Show();
         }
-
-
     }
 }

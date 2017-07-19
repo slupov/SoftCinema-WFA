@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Client.Utilities.CustomTools;
+﻿using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
+using System.Collections.Generic;
 
 namespace SoftCinema.Client.Utilities.CustomSidebars
 {
-    class EmployeeSideBar : SideBar
+    internal class EmployeeSideBar : SideBar
     {
         public EmployeeSideBar() : base()
         {
@@ -22,7 +18,6 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
             });
 
             this.VisualizeButtons();
-
         }
     }
 }

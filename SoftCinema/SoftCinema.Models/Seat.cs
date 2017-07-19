@@ -11,13 +11,12 @@
         [Required]
         public int Row { get; set; }
 
-        [Required,Index("IX_SeatNumberAuditorium", 1, IsUnique = true)]
+        [Required, Index("IX_SeatNumberAuditorium", 1, IsUnique = true)]
         public int Number { get; set; }
 
         [Required, Index("IX_SeatNumberAuditorium", 2, IsUnique = true)]
         public int AuditoriumId { get; set; }
 
         public virtual Auditorium Auditorium { get; set; }
-
     }
 }

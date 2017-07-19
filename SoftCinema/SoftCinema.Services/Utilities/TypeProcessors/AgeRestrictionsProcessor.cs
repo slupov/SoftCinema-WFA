@@ -3,6 +3,7 @@
     using SoftCinema.Models;
     using System;
     using System.Collections.Generic;
+
     public class AgeRestrictionsProcessor
     {
         public static string[] GetAgeRestrictions()

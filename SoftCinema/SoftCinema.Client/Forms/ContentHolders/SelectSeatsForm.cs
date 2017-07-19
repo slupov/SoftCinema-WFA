@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using SoftCinema.Client.Utilities.CustomTools;
+﻿using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -75,28 +74,28 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 while (RegularTicketsCount > 0)
                 {
-                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
+                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
                     ticketService.AddTicket(this._screening.Id, TicketType.Regular, seat.Id, holderId);
                     RegularTicketsCount--;
                     i++;
                 }
                 while (ChildrenTicketsCount > 0)
                 {
-                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
+                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
                     ticketService.AddTicket(this._screening.Id, TicketType.Children, seat.Id, holderId);
                     ChildrenTicketsCount--;
                     i++;
                 }
                 while (SeniorsTicketsCount > 0)
                 {
-                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
+                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
                     ticketService.AddTicket(this._screening.Id, TicketType.Seniors, seat.Id, holderId);
                     SeniorsTicketsCount--;
                     i++;
                 }
                 while (StudentsTicketsCount > 0)
                 {
-                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte) selectedSeats[i].Number);
+                    var seat = seatService.GetSeat(_screening.AuditoriumId, (byte)selectedSeats[i].Number);
                     ticketService.AddTicket(this._screening.Id, TicketType.Students, seat.Id, holderId);
                     StudentsTicketsCount--;
                     i++;

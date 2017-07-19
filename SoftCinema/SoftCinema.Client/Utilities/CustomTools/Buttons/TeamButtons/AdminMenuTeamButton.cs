@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Client.Forms.AdminForms;
+﻿using SoftCinema.Client.Forms.AdminForms;
+using System;
 
 namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {
-    class AdminMenuTeamButton : TeamButton
+    internal class AdminMenuTeamButton : TeamButton
     {
         public AdminMenuTeamButton() : base()
         {

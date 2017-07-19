@@ -1,17 +1,13 @@
-﻿using System;
+﻿using SoftCinema.Data;
+using SoftCinema.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Data;
-using SoftCinema.Models;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
-    public  class AuditoriumService
+    public class AuditoriumService
     {
-        public  void AddAuditorium(byte number, int cinemaId)
+        public void AddAuditorium(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -25,7 +21,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  int GetAuditoriumId(byte auditoriumNumber, int cinemaId)
+        public int GetAuditoriumId(byte auditoriumNumber, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -33,7 +29,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  List<byte> GetAuditoriumsForScreening(string movieName, int movieYear, int cinemaId)
+        public List<byte> GetAuditoriumsForScreening(string movieName, int movieYear, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -42,7 +38,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  List<Auditorium> GetAudtitoriums(int cinemaId)
+        public List<Auditorium> GetAudtitoriums(int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -50,15 +46,12 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsAuditoriumExisting(byte number, int cinemaId)
+        public bool IsAuditoriumExisting(byte number, int cinemaId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Auditoriums.Any(a => a.CinemaId == cinemaId && a.Number == number);
             }
         }
-
-
-
     }
 }

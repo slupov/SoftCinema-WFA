@@ -1,8 +1,7 @@
 namespace SoftCinema.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class RemovedTownFromActorModelRemovedNameFromImageModel : DbMigration
     {
         public override void Up()
@@ -13,7 +12,7 @@ namespace SoftCinema.Data.Migrations
             DropColumn("dbo.Actors", "BornTownId");
             DropColumn("dbo.Images", "Name");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.Images", "Name", c => c.String(nullable: false, maxLength: 50));

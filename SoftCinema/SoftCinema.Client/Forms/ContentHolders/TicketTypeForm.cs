@@ -1,10 +1,7 @@
-﻿using System;
+﻿using SoftCinema.Services.Utilities;
+using System;
 using System.Drawing;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
-using SoftCinema.Models;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -18,6 +15,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
         private int RegularTicketsCount { get; set; }
         private int SeniorsTicketsCount { get; set; }
         private int StudentsTicketsCount { get; set; }
+
         private bool areTicketsMoreThanMaxCount(int ticketsQuantity)
         {
             if (ticketsQuantity > Constants.MaxTicketCount)
@@ -26,14 +24,16 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
             return false;
         }
-          private bool goodForChildren()
-          {
-              var restr = TicketForm.Screening.Movie.AgeRestriction.ToString();
-              if (restr != "D" && restr != "X")
+
+        private bool goodForChildren()
+        {
+            var restr = TicketForm.Screening.Movie.AgeRestriction.ToString();
+            if (restr != "D" && restr != "X")
             { return true; }
-                  
-              return false;
-          }
+
+            return false;
+        }
+
         public TicketTypeForm()
         {
             InitializeComponent();
@@ -42,14 +42,13 @@ namespace SoftCinema.Client.Forms.ContentHolders
             {
                 this.childrenQuantityComboBox.Enabled = false;
                 this.notGood.Text = "This movie is not appropriate for children!";
-                this.notGood.ForeColor=Color.Red;
+                this.notGood.ForeColor = Color.Red;
                 this.notGood.Show();
             }
         }
 
         private void purchase_Click(object sender, EventArgs e)
         {
-           
             var ticketsQuantity = calculate_Quantity();
             if (areTicketsMoreThanMaxCount(ticketsQuantity) == false)
             {
@@ -60,10 +59,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 }
                 else
                 {
-                    SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity,RegularTicketsCount,ChildrenTicketsCount,SeniorsTicketsCount,StudentsTicketsCount);
-                    
+                    SelectSeatsForm selectSeatsForm = new SelectSeatsForm(TicketForm.Screening, ticketsQuantity, RegularTicketsCount, ChildrenTicketsCount, SeniorsTicketsCount, StudentsTicketsCount);
+
                     selectSeatsForm.ShowDialog(this);
-                    }
+                }
             }
             else
             {
@@ -72,7 +71,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
         }
 
-        
         private int calculate_Quantity()
         {
             return this.ChildrenTicketsCount + this.SeniorsTicketsCount + this.StudentsTicketsCount + this.RegularTicketsCount;
@@ -85,9 +83,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.seniorsQuantityComboBox.SelectedIndex = 0;
             this.studentsQuantityComboBox.SelectedIndex = 0;
             this.ticketLimit.Hide();
-        
         }
-   
+
         private decimal GetAllPrices()
         {
             return this._regularPrice + this._childrenPrice + this._studentPrice + this._seniorPrice;
@@ -98,7 +95,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.RegularTicketsCount = int.Parse(this.regularQuantityComboBox.SelectedItem.ToString());
             this._regularPrice = RegularTicketsCount * Services.Utilities.Constants.RegularTicketPrice;
             this.price.Text = this.GetAllPrices().ToString();
-
         }
 
         private void back_Click(object sender, EventArgs e)

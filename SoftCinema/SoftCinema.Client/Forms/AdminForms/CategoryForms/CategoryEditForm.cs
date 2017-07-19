@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Win32.SafeHandles;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -41,7 +35,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
                 categoriesForm.AutoScroll = true;
@@ -49,21 +42,17 @@ namespace SoftCinema.Client.Forms.AdminForms
                 ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
                 categoriesForm.Show();
             }
-            
         }
 
         private void AddMoviesButton_Click(object sender, EventArgs e)
         {
             var movies = CategoryNotAddedMovies.SelectedItems.OfType<string>().ToList();
-            
+
             foreach (string movie in movies)
             {
                 CategoryAddedMovies.Items.Add(movie);
                 CategoryNotAddedMovies.Items.Remove(movie);
             }
-
-
-
         }
 
         private void RemoveMoviesButton_Click(object sender, EventArgs e)
@@ -85,7 +74,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             List<Tuple<string, int>> notAddedMovies = GetNotAddedMovies();
             try
             {
-                categoryService.UpdateCategory(oldCategoryName, newCategoryName,addedMovies,notAddedMovies);
+                categoryService.UpdateCategory(oldCategoryName, newCategoryName, addedMovies, notAddedMovies);
                 MessageBox.Show(Constants.SuccessMessages.CategoryUpdatedSuccessfully);
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
@@ -145,14 +134,14 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private List<Tuple<string, int>> GetAddedMovies()
         {
-            List<Tuple<string,int>> movies = new List<Tuple<string, int>>();
+            List<Tuple<string, int>> movies = new List<Tuple<string, int>>();
             foreach (var m in CategoryAddedMovies.Items)
             {
                 int yearIndex = m.ToString().LastIndexOf(",");
-                string movieYearString = m.ToString().Substring(yearIndex+1).Split(new char[] {'\"'}).First();
+                string movieYearString = m.ToString().Substring(yearIndex + 1).Split(new char[] { '\"' }).First();
                 int movieYear = int.Parse(movieYearString);
                 string movieName = m.ToString().Substring(0, m.ToString().Length - movieYearString.Length - 1);
-                Tuple<string, int> movie = new Tuple<string, int>(movieName,movieYear);
+                Tuple<string, int> movie = new Tuple<string, int>(movieName, movieYear);
                 movies.Add(movie);
             }
             return movies;
@@ -160,15 +149,11 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void CategoryTextBox_TextChanged(object sender, EventArgs e)
         {
-
             if (categoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) && this.CategoryNameTextBox.Text != category.Name)
             {
                 this.CategoryExistsLabel.Show();
                 this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;
             }
-
-            
-
             else
             {
                 this.CategoryExistsLabel.Hide();
@@ -188,7 +173,7 @@ namespace SoftCinema.Client.Forms.AdminForms
                     categoriesForm.TopLevel = false;
                     categoriesForm.AutoScroll = true;
                     this.Hide();
-                    ((Button) sender).Parent.Parent.Controls.Add(categoriesForm);
+                    ((Button)sender).Parent.Parent.Controls.Add(categoriesForm);
                     categoriesForm.Show();
                 }
                 catch (Exception)
@@ -196,8 +181,6 @@ namespace SoftCinema.Client.Forms.AdminForms
                     MessageBox.Show(Constants.ErrorMessages.CategoriesDeleteMessage);
                 }
             }
-
-            
         }
     }
 }

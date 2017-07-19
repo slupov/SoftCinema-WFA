@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
@@ -39,9 +32,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
                 this.CinemaExistsLabel.Show();
                 this.CinemaExistsLabel.Text = Constants.WarningMessages.CinemaExists;
             }
-
-
-
             else
             {
                 this.CinemaExistsLabel.Hide();
@@ -53,7 +43,6 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
                 CinemasForm cinemasForm = new CinemasForm();
                 cinemasForm.TopLevel = false;
                 cinemasForm.AutoScroll = true;
@@ -71,7 +60,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             string newTownName = this.TownName.Text;
             try
             {
-                cinemaService.UpdateCinema(oldCinemaName,oldTownName,newCinemaName,newTownName);
+                cinemaService.UpdateCinema(oldCinemaName, oldTownName, newCinemaName, newTownName);
                 MessageBox.Show(Constants.SuccessMessages.CinemaUpdatedSuccessfully);
                 CinemasForm cinemasForm = new CinemasForm();
                 cinemasForm.TopLevel = false;
@@ -93,7 +82,7 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             {
                 try
                 {
-                    cinemaService.RemoveCinema(cinema.Name,cinema.Town.Name);
+                    cinemaService.RemoveCinema(cinema.Name, cinema.Town.Name);
                     MessageBox.Show(Constants.SuccessMessages.CinemaDeletedSuccessfully);
                     CinemasForm cinemasForm = new CinemasForm();
                     cinemasForm.TopLevel = false;

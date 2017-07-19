@@ -2,7 +2,7 @@ using System;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
-    public  class ScreeningValidator
+    public class ScreeningValidator
     {
         private readonly ScreeningService screeningService;
 
@@ -11,7 +11,7 @@ namespace SoftCinema.Services.Utilities.Validators
             this.screeningService = screeningService;
         }
 
-        public  void ValidateScreeningDoesntExist( int auditoriumId, DateTime date)
+        public void ValidateScreeningDoesntExist(int auditoriumId, DateTime date)
         {
             if (screeningService.IsScreeningExisting(auditoriumId, date))
             {
@@ -19,8 +19,7 @@ namespace SoftCinema.Services.Utilities.Validators
             }
         }
 
-
-        public  void ValidateScreeningAvailable(int screeningId, DateTime startTime)
+        public void ValidateScreeningAvailable(int screeningId, DateTime startTime)
         {
             if (!screeningService.IsScreeningAvailable(screeningId, startTime))
             {
@@ -28,9 +27,9 @@ namespace SoftCinema.Services.Utilities.Validators
             }
         }
 
-        public  void ValidateScreeningTimeAvailable(DateTime startTime, int auditoriumId,string movieName,int movieYear)
+        public void ValidateScreeningTimeAvailable(DateTime startTime, int auditoriumId, string movieName, int movieYear)
         {
-            if (!screeningService.IsScreeningAvailableInAuditorium(auditoriumId, startTime,movieName,movieYear))
+            if (!screeningService.IsScreeningAvailableInAuditorium(auditoriumId, startTime, movieName, movieYear))
             {
                 throw new InvalidOperationException();
             }

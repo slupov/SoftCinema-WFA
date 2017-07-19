@@ -14,7 +14,7 @@
         [Key]
         public int Id { get; set; }
 
-        [Required, MaxLength(50),Index(IsUnique = true)]
+        [Required, MaxLength(50), Index(IsUnique = true)]
         public string Name { get; set; }
 
         public virtual ICollection<Movie> Movies { get; set; }

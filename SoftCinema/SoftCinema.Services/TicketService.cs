@@ -1,17 +1,17 @@
-﻿using System;
+﻿using SoftCinema.Data;
+using SoftCinema.Models;
+using SoftCinema.Services.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
-using SoftCinema.Data;
-using SoftCinema.Models;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Services
 {
-    public  class TicketService
+    public class TicketService
     {
-        public  void AddTicketToCurrentUser(Screening screening, TicketType type, Seat seat)
+        public void AddTicketToCurrentUser(Screening screening, TicketType type, Seat seat)
         {
             if (AuthenticationManager.IsAuthenticated())
             {
@@ -23,7 +23,7 @@ namespace SoftCinema.Services
             AddTicket(screeningId, type, seatId, userId);
         }
 
-        public  void AddTicket(int screeningId, TicketType type, int seatId, int holderId)
+        public void AddTicket(int screeningId, TicketType type, int seatId, int holderId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -33,15 +33,19 @@ namespace SoftCinema.Services
                     case TicketType.Children:
                         price = Constants.ChildrenTicketPrice;
                         break;
+
                     case TicketType.Students:
                         price = Constants.StudentsTicketPrice;
                         break;
+
                     case TicketType.Regular:
                         price = Constants.RegularTicketPrice;
                         break;
+
                     case TicketType.Seniors:
                         price = Constants.SeniorsrTicketPrice;
                         break;
+
                     default:
                         break;
                 }
@@ -58,7 +62,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  List<Ticket> GetTicketsInfo(string username)
+        public List<Ticket> GetTicketsInfo(string username)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -74,8 +78,7 @@ namespace SoftCinema.Services
             }
         }
 
-
-        public  List<Ticket> GetTickets(Screening screening)
+        public List<Ticket> GetTickets(Screening screening)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -86,7 +89,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Ticket GetTicket(int holderId, int seatId, int screeningId)
+        public Ticket GetTicket(int holderId, int seatId, int screeningId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -103,7 +106,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Ticket GetTicket(int number, Screening screening)
+        public Ticket GetTicket(int number, Screening screening)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -114,7 +117,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void UpdateTicket(int ticketId, int screeningId, int seatId, TicketType type)
+        public void UpdateTicket(int ticketId, int screeningId, int seatId, TicketType type)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -126,7 +129,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void RemoveTicket(int ticketId)
+        public void RemoveTicket(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -135,8 +138,8 @@ namespace SoftCinema.Services
                 context.SaveChanges();
             }
         }
-    
-        public  string GetTicketDate(int ticketId)
+
+        public string GetTicketDate(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -146,7 +149,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string GetTicketTime(int ticketId)
+        public string GetTicketTime(int ticketId)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -156,7 +159,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void SellTickets(List<Ticket> tickets)
+        public void SellTickets(List<Ticket> tickets)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -169,7 +172,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void SellTicket(Ticket ticket)
+        public void SellTicket(Ticket ticket)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -180,7 +183,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void DeleteTicket(Ticket ticket)
+        public void DeleteTicket(Ticket ticket)
         {
             using (var db = new SoftCinemaContext())
             {

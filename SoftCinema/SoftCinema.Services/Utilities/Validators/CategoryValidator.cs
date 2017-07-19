@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace SoftCinema.Services.Utilities.Validators
 {
@@ -16,7 +12,7 @@ namespace SoftCinema.Services.Utilities.Validators
             this.categoryService = categoryService;
         }
 
-        public  void ValidateCategoryDoesNotExist(string categoryName)
+        public void ValidateCategoryDoesNotExist(string categoryName)
         {
             if (categoryService.IsCategoryExisting(categoryName))
             {
@@ -24,7 +20,7 @@ namespace SoftCinema.Services.Utilities.Validators
             }
         }
 
-        public  void CheckCategoriesExist(List<string> categories)
+        public void CheckCategoriesExist(List<string> categories)
         {
             foreach (var category in categories)
             {
@@ -32,7 +28,7 @@ namespace SoftCinema.Services.Utilities.Validators
             }
         }
 
-        private  void CheckCategoryExists(string categoryName)
+        private void CheckCategoryExists(string categoryName)
         {
             if (!categoryService.IsCategoryExisting(categoryName))
             {

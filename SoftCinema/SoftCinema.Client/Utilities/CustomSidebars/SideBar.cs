@@ -1,11 +1,7 @@
-﻿using System;
+﻿using SoftCinema.Client.Utilities.CustomTools;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Client.Utilities.CustomTools;
 
 namespace SoftCinema.Client.Utilities.CustomSidebars
 {

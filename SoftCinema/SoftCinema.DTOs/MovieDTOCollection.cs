@@ -12,7 +12,7 @@ namespace SoftCinema.DTOs
         }
 
         [XmlArray("movies")]
-        [XmlArrayItem("movie",typeof(MovieDto))]
+        [XmlArrayItem("movie", typeof(MovieDto))]
         public List<MovieDto> MovieDTOs { get; set; }
     }
 }

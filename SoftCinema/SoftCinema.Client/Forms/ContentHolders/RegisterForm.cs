@@ -1,8 +1,8 @@
-﻿using System;
+﻿using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using SoftCinema.Services;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -35,7 +35,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             }
         }
 
-
         private void registerButton_Click(object sender, EventArgs e)
         {
             var username = this.usernameTextBox.Text;
@@ -47,9 +46,8 @@ namespace SoftCinema.Client.Forms.ContentHolders
             var scaledImage = imageService.ScaleImage(image, 55, 52);
             this.profilePictureBox.Width = scaledImage.Width;
             this.profilePictureBox.Height = scaledImage.Height;
-            
 
-            var profilePic = imageService.imageToByteArray(this.profilePictureBox.Image??scaledImage);
+            var profilePic = imageService.imageToByteArray(this.profilePictureBox.Image ?? scaledImage);
 
             bool isDataValid = userService.isUserValid(username, password, repeatPassword, email, phone);
 
@@ -59,7 +57,7 @@ namespace SoftCinema.Client.Forms.ContentHolders
                 MessageBox.Show(Constants.SuccessMessages.SuccessfulRegister);
                 var mainForm = (SoftCinemaForm)((Button)sender).Parent.Parent.Parent;
                 mainForm.RenderSideBar();
-                
+
                 //Redirect to home page view
                 SoftCinemaForm.SetContentHolderForm(new LoginForm());
             }

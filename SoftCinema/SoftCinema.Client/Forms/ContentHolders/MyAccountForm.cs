@@ -1,11 +1,8 @@
-﻿using SoftCinema.Services;
+﻿using SoftCinema.Models;
+using SoftCinema.Services;
 using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Models;
 using Image = System.Drawing.Image;
 
 namespace SoftCinema.Client.Forms.ContentHolders
@@ -22,7 +19,6 @@ namespace SoftCinema.Client.Forms.ContentHolders
             this.imageService = new ImageService();
             InitializeComponent();
             _currentUser = userService.GetUser(AuthenticationManager.GetCurrentUser().Username);
-            
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -34,12 +30,10 @@ namespace SoftCinema.Client.Forms.ContentHolders
 
         private void MyAccountForm_Load(object sender, EventArgs e)
         {
-           
             if (imageService.GetProfilePicture(_currentUser.Username) != null)
             {
                 var _image = imageService.byteArrayToImage(_currentUser.ProfilePicture.Content);
                 this.pictureBoxPhoto.Image = imageService.ScaleImage(_image, 215, 258);
-                
             }
             else
             {

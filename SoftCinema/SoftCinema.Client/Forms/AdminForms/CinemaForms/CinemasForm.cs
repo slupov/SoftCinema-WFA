@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.AdminForms.CinemaForms;
+﻿using SoftCinema.Client.Forms.AdminForms.CinemaForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
+using System;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
     public partial class CinemasForm : Form
     {
-
         private readonly CinemaService cinemaService;
         private readonly TownService townService;
 
@@ -58,7 +50,5 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((Button)sender).Parent.Parent.Controls.Add(adminMenuForm);
             adminMenuForm.Show();
         }
-
-      
     }
 }

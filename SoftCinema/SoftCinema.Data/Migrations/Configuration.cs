@@ -1,15 +1,9 @@
-using System.IO;
-using System.Runtime.Remoting.Channels;
 using SoftCinema.Data.Utilities;
 using SoftCinema.Models;
 
 namespace SoftCinema.Data.Migrations
 {
-    using System;
-    using System.Drawing;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SoftCinema.Data.SoftCinemaContext>
     {
@@ -23,7 +17,6 @@ namespace SoftCinema.Data.Migrations
         {
             SeedAdmin(context);
             SeedEmployees(context);
-            
         }
 
         private void SeedAdmin(SoftCinemaContext context)
@@ -70,6 +63,5 @@ namespace SoftCinema.Data.Migrations
             context.Users.AddOrUpdate(u => u.Username, employee1, employee2, employee3);
             context.SaveChanges();
         }
-   
     }
 }

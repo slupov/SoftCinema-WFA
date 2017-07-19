@@ -1,8 +1,7 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using SoftCinema.Services;
+﻿using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.ContentHolders
 {
@@ -53,28 +52,24 @@ namespace SoftCinema.Client.Forms.ContentHolders
                     MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show(Constants.ErrorMessages.InvalidLogin);
             }
-            
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            
             if (!userService.isUsernameExisting(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = Constants.ErrorMessages.NoSuchUserExisting;
             }
-
             else if (userService.isUsernameExisting(this.usernameTextBox.Text) && userService.IsUserDeleted(this.usernameTextBox.Text))
             {
                 this.usernameInfoLabel.Show();
                 this.usernameInfoLabel.Text = Constants.ErrorMessages.UserIsInactive;
             }
-
             else
             {
                 this.usernameInfoLabel.Hide();

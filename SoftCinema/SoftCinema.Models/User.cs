@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace SoftCinema.Models
+﻿namespace SoftCinema.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -17,19 +15,20 @@ namespace SoftCinema.Models
         [Key]
         public int Id { get; set; }
 
-        [Required,MinLength(3),MaxLength(25),Index(IsUnique = true)]
+        [Required, MinLength(3), MaxLength(25), Index(IsUnique = true)]
         public string Username { get; set; }
-        
+
         [Required]
         public string PasswordHash { get; set; }
 
         [RegularExpression("0([0-9]{9})", ErrorMessage = "Invalid phone number.")]
         public string PhoneNumber { get; set; }
 
-        [Required, EmailAddress,MaxLength(30),Index(IsUnique = true)]
+        [Required, EmailAddress, MaxLength(30), Index(IsUnique = true)]
         public string Email { get; set; }
 
         public int? ProfilePictureId { get; set; }
+
         [Required]
         public Role Role { get; set; }
 

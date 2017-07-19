@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using SoftCinema.Data;
+﻿using SoftCinema.Data;
 using SoftCinema.Models;
+using System.Linq;
 
 namespace SoftCinema.Services
 {
-    public  class TownService
+    public class TownService
     {
-        public  void AddTown(string townName)
+        public void AddTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -20,32 +19,32 @@ namespace SoftCinema.Services
             }
         }
 
-        public  void AddTownIfNotExisting(string townName)
+        public void AddTownIfNotExisting(string townName)
         {
-
             if (!IsTownExisting(townName))
             {
                 AddTown(townName);
             }
-
         }
 
-        public  Town GetTown(string townName)
+        public Town GetTown(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Towns.FirstOrDefault(t => t.Name == townName);
             }
         }
-        public  string[] GetTownsNames()
+
+        public string[] GetTownsNames()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-                var result= context.Towns.Select(t => t.Name).ToArray();
+                var result = context.Towns.Select(t => t.Name).ToArray();
                 return result;
             }
         }
-        public  int GetTownId(string townName)
+
+        public int GetTownId(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -53,7 +52,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsTownExisting(string townName)
+        public bool IsTownExisting(string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {

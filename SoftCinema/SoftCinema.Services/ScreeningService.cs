@@ -1,19 +1,15 @@
-﻿using System;
+﻿using SoftCinema.Data;
+using SoftCinema.Models;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Data;
-using SoftCinema.Models;
-using System.Data.Entity;
 
 namespace SoftCinema.Services
 {
-    public  class ScreeningService
+    public class ScreeningService
     {
-        public  void AddScreening(int auditoriumId, int movieId, DateTime date)
+        public void AddScreening(int auditoriumId, int movieId, DateTime date)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -28,7 +24,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsScreeningExisting(int auditoriumId, DateTime date)
+        public bool IsScreeningExisting(int auditoriumId, DateTime date)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -36,7 +32,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  ICollection<Screening> GetScreeningsByTownCinemaAndMovie(string townName, string cinemaName, string movieName)
+        public ICollection<Screening> GetScreeningsByTownCinemaAndMovie(string townName, string cinemaName, string movieName)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -53,7 +49,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Screening GetScreeningUsingMovieYear(string townName, string cinemaName, string movieName, DateTime date, int movieYear)
+        public Screening GetScreeningUsingMovieYear(string townName, string cinemaName, string movieName, DateTime date, int movieYear)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -71,7 +67,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string[] GetAllDatesForMovieInCinema(string town, string cinema, string movie)
+        public string[] GetAllDatesForMovieInCinema(string town, string cinema, string movie)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -92,7 +88,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string[] GetAllDatesForMovieInCinemaByNameAndYear(string town, string cinema, string movie,int year)
+        public string[] GetAllDatesForMovieInCinemaByNameAndYear(string town, string cinema, string movie, int year)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -112,7 +108,8 @@ namespace SoftCinema.Services
                 return list.Distinct().ToArray();
             }
         }
-        public  string[] GetHoursForMoviesByDate(string town, string cinema, string movie, string date)
+
+        public string[] GetHoursForMoviesByDate(string town, string cinema, string movie, string date)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -138,7 +135,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  string[] GetHoursForMoviesByDateMovieNameAndYear(string town, string cinema, string movie, int movieYear, string date)
+        public string[] GetHoursForMoviesByDateMovieNameAndYear(string town, string cinema, string movie, int movieYear, string date)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -164,17 +161,17 @@ namespace SoftCinema.Services
             }
         }
 
-        public  DateTime GetDateTimeFromDateAndTime(string date, string time)
+        public DateTime GetDateTimeFromDateAndTime(string date, string time)
         {
             int day = int.Parse(date.Split()[0]);
             int month = int.Parse(DateTime.ParseExact(date.Split()[1], "MMM", CultureInfo.CurrentCulture).Month.ToString());
             int year = 2017;
-            int hour = DateTime.ParseExact(time,"hh:mm tt", CultureInfo.CurrentCulture).Hour;
-            int minutes= DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture).Minute;
-            return new DateTime(year,month,day,hour,minutes,0);
-           }
+            int hour = DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture).Hour;
+            int minutes = DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture).Minute;
+            return new DateTime(year, month, day, hour, minutes, 0);
+        }
 
-        public  Screening GetScreening(string townName, string cinemaName, string movieName, DateTime date)
+        public Screening GetScreening(string townName, string cinemaName, string movieName, DateTime date)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -192,8 +189,7 @@ namespace SoftCinema.Services
             }
         }
 
-
-        public  void UpdateScreening(int screeningId, DateTime startTime)
+        public void UpdateScreening(int screeningId, DateTime startTime)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -203,21 +199,19 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsScreeningAvailable(int screeningId,DateTime screeningStart)
+        public bool IsScreeningAvailable(int screeningId, DateTime screeningStart)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 Screening screening = context.Screenings.Find(screeningId);
-                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == screening.AuditoriumId  && s.Id!=screeningId))
+                foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == screening.AuditoriumId && s.Id != screeningId))
                 {
-                   
-
                     var screenStart = screeningStart;
                     var screenEnd = screeningStart.AddMinutes(screening.Movie.Length);
-                    
+
                     var otherScreenStart = scr.Start;
                     var otherScreenEnd = scr.Start.AddMinutes(scr.Movie.Length);
-                    
+
                     if ((otherScreenStart < screenEnd &&
                         otherScreenEnd > screenStart)
                         || (screenStart < otherScreenEnd &&
@@ -230,15 +224,13 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsScreeningAvailableInAuditorium(int auditoriumId, DateTime screeningStart,string movieName,int movieYear)
+        public bool IsScreeningAvailableInAuditorium(int auditoriumId, DateTime screeningStart, string movieName, int movieYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 Movie movie = context.Movies.FirstOrDefault(m => m.ReleaseYear == movieYear && m.Name == movieName);
                 foreach (var scr in context.Screenings.Where(s => s.AuditoriumId == auditoriumId))
                 {
-
-
                     var screenStart = screeningStart;
                     var screenEnd = screeningStart.AddMinutes(movie.Length);
 
