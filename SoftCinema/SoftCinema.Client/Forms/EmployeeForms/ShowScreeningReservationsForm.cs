@@ -1,12 +1,12 @@
-﻿using System;
+﻿using SoftCinema.Client.Utilities.CustomTools.EmployeeTools;
+using SoftCinema.Models;
+using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using SoftCinema.Client.Utilities.CustomTools.EmployeeTools;
-using SoftCinema.Models;
-using SoftCinema.Services;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.EmployeeForms
 {
@@ -119,6 +119,5 @@ namespace SoftCinema.Client.Forms.EmployeeForms
                 //do nothing
             }
         }
-        
     }
 }

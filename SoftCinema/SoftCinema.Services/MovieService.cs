@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using SoftCinema.Data;
+﻿using SoftCinema.Data;
 using SoftCinema.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SoftCinema.Services
 {
-    public  class MovieService
+    public class MovieService
     {
-        public  void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear,
+        public void AddMovie(string movieName, float? rating, int length, string directorName, int releaseYear,
             AgeRestriction ageRestriction, string synopsis, string releaseCountry, byte[] image)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
@@ -24,14 +22,14 @@ namespace SoftCinema.Services
                     ReleaseCountry = releaseCountry,
                     AgeRestriction = ageRestriction,
                     Synopsis = synopsis,
-                    Image = new Image() {Content = image}
+                    Image = new Image() { Content = image }
                 };
-                context.Movies.Add( movie);
+                context.Movies.Add(movie);
                 context.SaveChanges();
             }
         }
 
-        public  void AddCategoryToMovie(string categoryName, string movieName, int releaseYear)
+        public void AddCategoryToMovie(string categoryName, string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -42,7 +40,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  int GetMovieId(string movieName, int releaseYear)
+        public int GetMovieId(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -50,7 +48,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  List<Movie> GetAllMovies()
+        public List<Movie> GetAllMovies()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
@@ -61,40 +59,35 @@ namespace SoftCinema.Services
             }
         }
 
-        public  ICollection<Movie> GetMoviesByCinemaAndTown(string cinemaName, string townName)
+        public ICollection<Movie> GetMoviesByCinemaAndTown(string cinemaName, string townName)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context
                     .Screenings
                     .Where(s => s.Auditorium.Cinema.Name == cinemaName && s.Auditorium.Cinema.Town.Name == townName)
-//                    .Include("Movie")
+                    //                    .Include("Movie")
                     .Select(s => s.Movie)
                     .Distinct()
                     .ToList();
             }
         }
 
-        public  string[] GetMoviesNameAndYearAsString()
+        public string[] GetMoviesNameAndYearAsString()
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
-
                 List<string> result = new List<string>();
                 foreach (var m in context.Movies)
                 {
-
                     result.Add($"{m.Name},{m.ReleaseYear}");
-
                 }
                 return result.ToArray();
-
             }
         }
 
-        public  Movie GetMovieByYearAndName(int movieYear, string movieName)
+        public Movie GetMovieByYearAndName(int movieYear, string movieName)
         {
-
             using (var db = new SoftCinemaContext())
             {
                 return db.Movies
@@ -105,7 +98,7 @@ namespace SoftCinema.Services
             }
         }
 
-        public  Movie GetMovie(string movieName)
+        public Movie GetMovie(string movieName)
         {
             using (var db = new SoftCinemaContext())
             {
@@ -117,15 +110,12 @@ namespace SoftCinema.Services
             }
         }
 
-        public  bool IsMovieExisting(string movieName, int releaseYear)
+        public bool IsMovieExisting(string movieName, int releaseYear)
         {
             using (SoftCinemaContext context = new SoftCinemaContext())
             {
                 return context.Movies.Any(m => m.Name == movieName && m.ReleaseYear == releaseYear);
             }
         }
-
-
-        
     }
 }

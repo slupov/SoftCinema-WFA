@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using SoftCinema.DTOs;
+﻿using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Collections.Generic;
 
 namespace ImportServices
 {
-    public  class ScreeningImportService
+    public class ScreeningImportService
     {
         private readonly AuditoriumService auditoriumService;
         private readonly AuditoriumValidator auditoriumValidator;
@@ -19,7 +19,6 @@ namespace ImportServices
         private readonly MovieValidator movieValidator;
         private readonly ScreeningService screeningService;
         private readonly ScreeningValidator screeningValidator;
-
 
         public ScreeningImportService()
         {
@@ -35,7 +34,7 @@ namespace ImportServices
             this.screeningValidator = new ScreeningValidator(screeningService);
         }
 
-        public  void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
+        public void ImportScreenings(IEnumerable<ScreeeningDto> screeningDtos)
         {
             foreach (var screeningDto in screeningDtos)
             {
@@ -46,15 +45,12 @@ namespace ImportServices
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-                  
                 }
             }
         }
 
-
-        public  void ImportScreening(ScreeeningDto screeningDto)
+        public void ImportScreening(ScreeeningDto screeningDto)
         {
-
             byte auditoriumNumber = screeningDto.AuditoriumNumber;
 
             string cinemaTown = screeningDto.CinemaTown;
@@ -62,16 +58,16 @@ namespace ImportServices
 
             int townId = townService.GetTownId(cinemaTown);
             string cinemaName = screeningDto.CinemaName;
-            cinemaValidator.CheckCinemaExisting(cinemaName,townId);
+            cinemaValidator.CheckCinemaExisting(cinemaName, townId);
 
             int cinemaId = cinemaService.GetCinemaId(cinemaName, townId);
-            auditoriumValidator.CheckAuditoriumExists(auditoriumNumber,cinemaId,cinemaName);
+            auditoriumValidator.CheckAuditoriumExists(auditoriumNumber, cinemaId, cinemaName);
 
             string movieName = screeningDto.MovieName;
             int movieReleaseYear = screeningDto.MovieReleaseYear;
-            movieValidator.CheckMovieExists(movieName,movieReleaseYear);
+            movieValidator.CheckMovieExists(movieName, movieReleaseYear);
 
-            int auditoriumId = auditoriumService.GetAuditoriumId(auditoriumNumber,cinemaId);
+            int auditoriumId = auditoriumService.GetAuditoriumId(auditoriumNumber, cinemaId);
             DateTime date = screeningDto.Date;
             screeningValidator.ValidateScreeningDoesntExist(auditoriumId, date);
 
@@ -79,8 +75,7 @@ namespace ImportServices
 
             screeningService.AddScreening(auditoriumId, movieId, date);
 
-            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ScreeningAddedSuccess,auditoriumNumber,cinemaName));
-
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.ScreeningAddedSuccess, auditoriumNumber, cinemaName));
         }
     }
 }

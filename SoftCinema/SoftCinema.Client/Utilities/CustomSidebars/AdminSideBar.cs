@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Client.Utilities.CustomTools;
+﻿using SoftCinema.Client.Utilities.CustomTools;
 using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
+using System.Collections.Generic;
 
 namespace SoftCinema.Client.Utilities.CustomSidebars
 {
-    class AdminSideBar : SideBar
+    internal class AdminSideBar : SideBar
     {
         public AdminSideBar() : base()
         {
@@ -19,11 +15,9 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
                 new RegisterMovieTeamButton(),
                 new AdminMenuTeamButton(),
                 new MyAccountButton()
-                
             });
 
             this.VisualizeButtons();
-
         }
     }
 }

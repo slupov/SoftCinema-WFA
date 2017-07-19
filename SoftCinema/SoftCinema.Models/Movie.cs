@@ -12,16 +12,17 @@ namespace SoftCinema.Models
             this.Cast = new HashSet<Actor>();
             this.Categories = new HashSet<Category>();
         }
+
         [Key]
         public int Id { get; set; }
 
-        [Required, Index("IX_NameYear", 1, IsUnique = true),MaxLength(50)]
+        [Required, Index("IX_NameYear", 1, IsUnique = true), MaxLength(50)]
         public string Name { get; set; }
 
         [Required]
         public int Length { get; set; }
 
-        [Range(0,10)]
+        [Range(0, 10)]
         public float? Rating { get; set; }
 
         public string Synopsis { get; set; }

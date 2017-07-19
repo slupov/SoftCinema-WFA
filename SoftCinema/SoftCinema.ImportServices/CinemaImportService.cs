@@ -1,14 +1,14 @@
-﻿using System;
-using System.IO;
-using System.Xml.Serialization;
-using SoftCinema.DTOs;
+﻿using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace ImportServices
 {
-    public  class CinemaImportService
+    public class CinemaImportService
     {
         private readonly CinemaService cinemaService;
         private readonly CinemaValidator cinemaValidator;
@@ -21,16 +21,16 @@ namespace ImportServices
             this.townService = new TownService();
         }
 
-        public  CinemaDtoCollection DeserializeCinemas(string path)
+        public CinemaDtoCollection DeserializeCinemas(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(CinemaDtoCollection));
             using (StreamReader reader = new StreamReader(path))
             {
-                return (CinemaDtoCollection) serializer.Deserialize(reader);
+                return (CinemaDtoCollection)serializer.Deserialize(reader);
             }
         }
 
-        public  void ImportCinemasCollection(CinemaDtoCollection cinemaDtos)
+        public void ImportCinemasCollection(CinemaDtoCollection cinemaDtos)
         {
             foreach (var cinemaDto in cinemaDtos.CinemaDtos)
             {
@@ -45,12 +45,11 @@ namespace ImportServices
             }
         }
 
-        private  void ImportCinema(CinemaDto cinemaDto)
+        private void ImportCinema(CinemaDto cinemaDto)
         {
-   
             string townName = cinemaDto.TownName;
-            InputDataValidator.ValidateStringMaxLength(townName,Constants.MaxTownNameLength);
-            
+            InputDataValidator.ValidateStringMaxLength(townName, Constants.MaxTownNameLength);
+
             string cinemaName = cinemaDto.Name;
             InputDataValidator.ValidateStringMaxLength(cinemaName, Constants.MaxCinemaNameLength);
 
@@ -60,7 +59,7 @@ namespace ImportServices
 
             cinemaService.AddCinema(cinemaName, townId);
 
-            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CinemaAddedSuccess,cinemaName));
+            Console.WriteLine(string.Format(Constants.ImportSuccessMessages.CinemaAddedSuccess, cinemaName));
         }
     }
 }

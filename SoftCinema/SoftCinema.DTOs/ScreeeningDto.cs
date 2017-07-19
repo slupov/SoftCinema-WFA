@@ -2,7 +2,6 @@
 
 namespace SoftCinema.DTOs
 {
-    
     public class ScreeeningDto
     {
         public byte AuditoriumNumber { get; set; }

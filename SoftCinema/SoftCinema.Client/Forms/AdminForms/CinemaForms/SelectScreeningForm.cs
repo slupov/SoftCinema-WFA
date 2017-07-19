@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
 using SoftCinema.Services;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
 {
@@ -29,13 +24,12 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
         private void EditScreeningForm_Load(object sender, EventArgs e)
         {
             string[] movies =
-                movieService.GetMoviesByCinemaAndTown(cinema.Name, cinema.Town.Name).Select(m => m.Name +","+m.ReleaseYear).ToArray();
+                movieService.GetMoviesByCinemaAndTown(cinema.Name, cinema.Town.Name).Select(m => m.Name + "," + m.ReleaseYear).ToArray();
             this.movieComboBox.Items.AddRange(movies);
         }
 
         private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
             this.dateComboBox.Items.Clear();
             this.timeComboBox.Items.Clear();
             string movieName = GetMovieName(movieComboBox.Text);
@@ -43,18 +37,14 @@ namespace SoftCinema.Client.Forms.AdminForms.CinemaForms
             string[] dates = screeningService.GetAllDatesForMovieInCinemaByNameAndYear(cinema.Town.Name, cinema.Name, movieName,
                 movieYear);
             dateComboBox.Items.AddRange(dates);
-
         }
-
-
-        
 
         private void dateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.timeComboBox.Items.Clear();
             string movieName = GetMovieName(movieComboBox.Text);
             int movieYear = GetMovieYear(movieComboBox.Text);
-            
+
             string date = dateComboBox.Text;
             string[] hours = screeningService.GetHoursForMoviesByDateMovieNameAndYear(cinema.Town.Name, cinema.Name, movieName,
                 movieYear, date);

@@ -1,5 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using SoftCinema.Models;
+﻿using SoftCinema.Models;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SoftCinema.Data.Configurations
 {

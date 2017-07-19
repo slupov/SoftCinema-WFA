@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SoftCinema.Client.Forms.AdminForms.MovieForms;
+using System;
 using System.Windows.Forms;
-using SoftCinema.Client.AdminForms.MovieForms;
-using SoftCinema.Client.Forms.AdminForms.MovieForms;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -27,7 +19,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             this.Hide();
             ((Button)sender).Parent.Parent.Controls.Add(usersForm);
             usersForm.Show();
-            
         }
 
         private void EditCategoriesButton_Click(object sender, EventArgs e)

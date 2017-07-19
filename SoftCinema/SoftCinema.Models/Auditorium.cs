@@ -26,6 +26,5 @@
         public virtual ICollection<Screening> Screenings { get; set; }
 
         public virtual ICollection<Seat> Seats { get; set; }
-
     }
 }

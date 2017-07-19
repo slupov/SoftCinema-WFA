@@ -1,13 +1,13 @@
-﻿using System.Drawing;
+﻿using SoftCinema.Services.Utilities;
+using System.Drawing;
 using System.Windows.Forms;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ChoiceButton : Button
+    internal class ChoiceButton : Button
     {
         private static Font _normalFont = new Font("Arial", 10F, System.Drawing.FontStyle.Bold,
-            System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         private static Color _approveColor = System.Drawing.Color.FromArgb(200, 53, 172, 73);
         private static Color _rejectColor = System.Drawing.Color.FromArgb(200, 255, 0, 0);
@@ -28,8 +28,8 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             base.Margin = _margin;
             base.Padding = _padding;
             base.MinimumSize = _minSize;
-            base.Size = new Size(50,30);
-            this.Font = new Font("Times New Roman Bold",10);
+            base.Size = new Size(50, 30);
+            this.Font = new Font("Times New Roman Bold", 10);
             this.TextAlign = ContentAlignment.TopCenter;
 
             this._selected = false;

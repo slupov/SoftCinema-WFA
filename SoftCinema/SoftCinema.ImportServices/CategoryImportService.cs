@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using SoftCinema.DTOs;
+﻿using SoftCinema.DTOs;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
 using SoftCinema.Services.Utilities.Validators;
+using System;
+using System.Collections.Generic;
 
 namespace ImportServices
 {
-    public  class CategoryImportService
+    public class CategoryImportService
     {
         private readonly CategoryService categoryService;
         private readonly CategoryValidator categoryValidator;
@@ -18,26 +18,22 @@ namespace ImportServices
             this.categoryValidator = new CategoryValidator(categoryService);
         }
 
-        public  void ImportCategories(IEnumerable<CategoryDto> categories)
+        public void ImportCategories(IEnumerable<CategoryDto> categories)
         {
-            
-                foreach (var categoryDto in categories)
+            foreach (var categoryDto in categories)
+            {
+                try
                 {
-                    try
-                    {
-                        ImportCategory(categoryDto);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-
+                    ImportCategory(categoryDto);
                 }
-
-            
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
-        public  void ImportCategory(CategoryDto categoryDto)
+        public void ImportCategory(CategoryDto categoryDto)
         {
             string categoryName = categoryDto.Name;
             InputDataValidator.ValidateStringMaxLength(categoryName, Constants.MaxCategoryNameLength);

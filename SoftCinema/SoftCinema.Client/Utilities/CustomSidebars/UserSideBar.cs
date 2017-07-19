@@ -1,9 +1,10 @@
 ﻿namespace SoftCinema.Client.Utilities.CustomSidebars
 {
-using System.Collections.Generic;
-using SoftCinema.Client.Utilities.CustomTools;
-using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
-    class UserSideBar : SideBar
+    using SoftCinema.Client.Utilities.CustomTools;
+    using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
+    using System.Collections.Generic;
+
+    internal class UserSideBar : SideBar
     {
         public UserSideBar() : base()
         {
@@ -12,7 +13,7 @@ using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
                 new HomeTeamButton(),
                 new MoviesTeamButton(),
                 new BuyTicketsTeamButton(),
-                new MyAccountButton()   
+                new MyAccountButton()
             });
 
             this.VisualizeButtons();

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using SoftCinema.Client.Forms.EmployeeForms;
+﻿using SoftCinema.Client.Forms.EmployeeForms;
 using SoftCinema.Models;
 using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ReservationRow : GroupBox
+    internal class ReservationRow : GroupBox
     {
         private Label _text { get; set; }
         public Ticket Ticket { get; set; }
@@ -25,12 +25,11 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this.Ticket = ticket;
             this.Size = size;
             this._text = new Label();
-            this._text.Location = new Point(5,20);
+            this._text.Location = new Point(5, 20);
             this._text.Size = new Size(500, 20);
 
             RenderLabel();
             RenderButtons();
-
         }
 
         private void RenderLabel()
@@ -41,7 +40,6 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
                 this.Ticket.Seat.Number, this.Ticket.Type, this.Ticket.Price);
 
             this.Controls.Add(this._text);
-
         }
 
         private void RenderButtons()

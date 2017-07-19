@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using SoftCinema.Models;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningsHolder : Panel
+    internal class ScreeningsHolder : Panel
     {
         private List<Screening> _screenings { get; set; }
 

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SoftCinema.Models
+﻿namespace SoftCinema.Models
 {
     using System.ComponentModel.DataAnnotations;
 

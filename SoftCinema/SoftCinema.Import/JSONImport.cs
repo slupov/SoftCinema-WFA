@@ -1,13 +1,12 @@
 ﻿namespace SoftCinema.Import
 {
-    using Newtonsoft.Json;
-    using System.IO;
-    using System.Collections.Generic;
-    using SoftCinema.DTOs;
     using ImportServices;
+    using Newtonsoft.Json;
+    using SoftCinema.DTOs;
+    using System.Collections.Generic;
+    using System.IO;
 
-
-    public  class JSONImport
+    public class JSONImport
     {
         private readonly TownImportService townImportService;
         private readonly ActorImportService actorImportService;
@@ -24,35 +23,35 @@
             this.townImportService = new TownImportService();
         }
 
-        public  void ImportTowns()
+        public void ImportTowns()
         {
             var townsJson = File.ReadAllText(DataPaths.TownsJson);
             var townDtos = JsonConvert.DeserializeObject<IEnumerable<TownDto>>(townsJson);
             townImportService.ImportTowns(townDtos);
         }
 
-        public  void ImportActors()
+        public void ImportActors()
         {
             var actorsJson = File.ReadAllText(DataPaths.ActorsJson);
             var actorsDtos = JsonConvert.DeserializeObject<IEnumerable<ActorDto>>(actorsJson);
             actorImportService.ImportActors(actorsDtos);
         }
 
-        public  void ImportCategories()
+        public void ImportCategories()
         {
             var categoriesJson = File.ReadAllText(DataPaths.CategoriesJson);
             var categorysDtos = JsonConvert.DeserializeObject<IEnumerable<CategoryDto>>(categoriesJson);
             categoryImportService.ImportCategories(categorysDtos);
         }
 
-        public  void ImportScreenings()
+        public void ImportScreenings()
         {
             var screeningsJson = File.ReadAllText(DataPaths.ScreeningsJson);
             var screeningDtos = JsonConvert.DeserializeObject<IEnumerable<ScreeeningDto>>(screeningsJson);
             screeningImportService.ImportScreenings(screeningDtos);
         }
 
-        public  void ImportSeats()
+        public void ImportSeats()
         {
             var seatsJson = File.ReadAllText(DataPaths.SeatsJson);
             var seatsDtos = JsonConvert.DeserializeObject<IEnumerable<SeatDto>>(seatsJson);

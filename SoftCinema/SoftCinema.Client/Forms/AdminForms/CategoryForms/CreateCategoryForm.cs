@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SoftCinema.Services;
+﻿using SoftCinema.Services;
 using SoftCinema.Services.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -29,7 +24,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             DialogResult dialogResult = MessageBox.Show(Constants.WarningMessages.UnsavedChanges, Constants.GoBackPrompt, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
                 categoriesForm.AutoScroll = true;
@@ -44,7 +38,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             this.CategoryExistsLabel.Hide();
             string[] movies = movieService.GetMoviesNameAndYearAsString();
             this.MoviesCheckedListBox.Items.AddRange(movies);
-            
         }
 
         private void CreateCategoryButton_Click(object sender, EventArgs e)
@@ -53,7 +46,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             List<Tuple<string, int>> movies = GetAddedMovies();
             try
             {
-                categoryService.AddCategoryWithMovies(categoryName,movies);
+                categoryService.AddCategoryWithMovies(categoryName, movies);
                 MessageBox.Show(Constants.SuccessMessages.CategoryCreatedSuccessfully);
                 CategoriesForm categoriesForm = new CategoriesForm();
                 categoriesForm.TopLevel = false;
@@ -85,15 +78,11 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void CategoryTextBox_TextChanged(object sender, EventArgs e)
         {
-
-            if (categoryService.IsCategoryExisting(this.CategoryNameTextBox.Text) )
+            if (categoryService.IsCategoryExisting(this.CategoryNameTextBox.Text))
             {
                 this.CategoryExistsLabel.Show();
                 this.CategoryExistsLabel.Text = Constants.WarningMessages.CategoryExists;
             }
-
-
-
             else
             {
                 this.CategoryExistsLabel.Hide();

@@ -1,8 +1,7 @@
 namespace SoftCinema.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddedUserProfilePicture : DbMigration
     {
         public override void Up()
@@ -11,7 +10,7 @@ namespace SoftCinema.Data.Migrations
             CreateIndex("dbo.Users", "ProfilePictureId");
             AddForeignKey("dbo.Users", "ProfilePictureId", "dbo.Images", "Id");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Users", "ProfilePictureId", "dbo.Images");

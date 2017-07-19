@@ -1,8 +1,7 @@
 namespace SoftCinema.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class FixedMinorNamingIssue : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace SoftCinema.Data.Migrations
             RenameIndex(table: "dbo.ActorMovies", name: "IX_MovieId", newName: "IX_ActorId");
             RenameIndex(table: "dbo.ActorMovies", name: "__mig_tmp__0", newName: "IX_MovieId");
         }
-        
+
         public override void Down()
         {
             RenameIndex(table: "dbo.ActorMovies", name: "IX_MovieId", newName: "__mig_tmp__0");

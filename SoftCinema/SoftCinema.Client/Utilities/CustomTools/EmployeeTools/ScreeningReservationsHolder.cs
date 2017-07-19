@@ -1,21 +1,16 @@
-﻿using System;
+﻿using SoftCinema.Models;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Models;
 
 namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 {
-    class ScreeningReservationsHolder : Panel
+    internal class ScreeningReservationsHolder : Panel
     {
         private List<Ticket> _reservedTickets { get; set; }
 
         public ScreeningReservationsHolder()
         {
-            
         }
 
         public ScreeningReservationsHolder(Point startingPoint, Size size, List<Ticket> reservations)
@@ -39,7 +34,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
             this.Controls.Clear();
 
             var rowCoordinates = new Point(10, 10);
-            var rowSize = new Size(this.Width - 20,60);
+            var rowSize = new Size(this.Width - 20, 60);
 
             foreach (var reservedTicket in _reservedTickets)
             {
@@ -48,6 +43,7 @@ namespace SoftCinema.Client.Utilities.CustomTools.EmployeeTools
 
                 rowCoordinates.Y += row.Height;
             }
-;        }
+;
+        }
     }
 }

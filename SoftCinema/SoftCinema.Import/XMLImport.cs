@@ -20,14 +20,12 @@ namespace SoftCinema.Import
         {
             CinemaDtoCollection cinemaDtos = cinemaImportService.DeserializeCinemas(DataPaths.CinemasXml);
             cinemaImportService.ImportCinemasCollection(cinemaDtos);
-
         }
 
         public void ImportMovies()
         {
             MovieDtoCollection movieDtos = movieImportService.DeserializeMovies(DataPaths.MoviesXml);
             movieImportService.ImportMoviesCollection(movieDtos);
-
         }
 
         public void ImportAuditoriums()

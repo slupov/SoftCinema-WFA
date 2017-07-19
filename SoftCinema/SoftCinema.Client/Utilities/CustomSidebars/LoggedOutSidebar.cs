@@ -1,10 +1,10 @@
-﻿
-namespace SoftCinema.Client.Utilities.CustomSidebars
+﻿namespace SoftCinema.Client.Utilities.CustomSidebars
 {
-    using System.Collections.Generic;
     using SoftCinema.Client.Utilities.CustomTools;
     using SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons;
-    class LoggedOutSidebar : SideBar
+    using System.Collections.Generic;
+
+    internal class LoggedOutSidebar : SideBar
     {
         public LoggedOutSidebar() : base()
         {
@@ -13,11 +13,10 @@ namespace SoftCinema.Client.Utilities.CustomSidebars
                 new HomeTeamButton(),
                 new MoviesTeamButton(),
                 new RegisterTeamButton(),
-                new LoginTeamButton()              
+                new LoginTeamButton()
             });
 
             this.VisualizeButtons();
-
         }
     }
 }

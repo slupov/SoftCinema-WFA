@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SoftCinema.Models;
+using SoftCinema.Services;
+using SoftCinema.Services.Utilities;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SoftCinema.Models;
-using SoftCinema.Services;
-using SoftCinema.Services.Utilities;
 
 namespace SoftCinema.Client.Forms.AdminForms
 {
@@ -25,7 +21,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             SearchTextBox.Text = Constants.SearchPlaceholder;
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
-
         }
 
         private void SearchTextBox_Leave(object sender, EventArgs e)
@@ -48,7 +43,7 @@ namespace SoftCinema.Client.Forms.AdminForms
 
         private void UserList_Search(object sender, System.EventArgs e)
         {
-            if ((SearchTextBox.Text != null || SearchTextBox.Text != "") && (SearchTextBox.Text!= Constants.SearchPlaceholder && SearchTextBox.ForeColor != SystemColors.GrayText))
+            if ((SearchTextBox.Text != null || SearchTextBox.Text != "") && (SearchTextBox.Text != Constants.SearchPlaceholder && SearchTextBox.ForeColor != SystemColors.GrayText))
             {
                 string[] usernames = userService.GetUsernames().Where(s => s.ToLower().Contains(SearchTextBox.Text.ToLower())).ToArray();
                 UserList.Items.Clear();
@@ -56,15 +51,11 @@ namespace SoftCinema.Client.Forms.AdminForms
             }
             else
             {
-
                 string[] usernames = userService.GetUsernames();
                 UserList.Items.Clear();
                 UserList.Items.AddRange(usernames);
             }
-
         }
-
-        
 
         private void UserList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -72,7 +63,7 @@ namespace SoftCinema.Client.Forms.AdminForms
             {
                 return;
             }
-            ListBox lb = (ListBox) sender;
+            ListBox lb = (ListBox)sender;
             string username = lb.SelectedItem.ToString();
             User user = userService.GetUser(username);
             UserDetailsForm userForm = new UserDetailsForm(user);
@@ -83,8 +74,6 @@ namespace SoftCinema.Client.Forms.AdminForms
             userForm.Show();
         }
 
-       
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             AdminMenuForm adminMenuForm = new AdminMenuForm();
@@ -94,7 +83,5 @@ namespace SoftCinema.Client.Forms.AdminForms
             ((Button)sender).Parent.Parent.Controls.Add(adminMenuForm);
             adminMenuForm.Show();
         }
-
-     
     }
 }

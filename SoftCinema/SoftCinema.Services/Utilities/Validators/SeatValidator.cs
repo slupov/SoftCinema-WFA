@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Printing;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
@@ -16,7 +15,7 @@ namespace SoftCinema.Services.Utilities.Validators
         {
             if (seatService.IsSeatExisting(seatNumber, auditoriumId))
             {
-                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.SeatAlreadyExists,seatNumber,auditoriumNumber));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.SeatAlreadyExists, seatNumber, auditoriumNumber));
             }
         }
     }

@@ -15,7 +15,7 @@ namespace SoftCinema.Services.Utilities.Validators
         {
             if (townService.IsTownExisting(townName))
             {
-                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownAlreadyExists,townName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.TownAlreadyExists, townName));
             }
         }
 

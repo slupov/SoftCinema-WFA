@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SoftCinema.DTOs;
+using System;
 using System.Collections.Generic;
-using SoftCinema.DTOs;
 
 namespace SoftCinema.Services.Utilities.Validators
 {
@@ -17,7 +17,7 @@ namespace SoftCinema.Services.Utilities.Validators
         {
             if (movieService.IsMovieExisting(movieName, releaseYear))
             {
-                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieAlreadyExists,movieName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.MovieAlreadyExists, movieName));
             }
         }
 
@@ -40,4 +40,3 @@ namespace SoftCinema.Services.Utilities.Validators
         }
     }
 }
-

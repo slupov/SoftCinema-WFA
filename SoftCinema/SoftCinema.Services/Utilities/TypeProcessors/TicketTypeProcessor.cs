@@ -1,9 +1,6 @@
-﻿using System;
+﻿using SoftCinema.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Models;
 
 namespace SoftCinema.Services.Utilities
 {

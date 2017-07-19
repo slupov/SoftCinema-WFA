@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoftCinema.Client.Forms.ContentHolders;
-using SoftCinema.Client.Forms.EmployeeForms;
+﻿using SoftCinema.Client.Forms.EmployeeForms;
+using System;
 
 namespace SoftCinema.Client.Utilities.CustomTools.Buttons.TeamButtons
 {
-    class ShowScreeningsTeamButton : TeamButton
+    internal class ShowScreeningsTeamButton : TeamButton
     {
         public ShowScreeningsTeamButton() : base()
         {

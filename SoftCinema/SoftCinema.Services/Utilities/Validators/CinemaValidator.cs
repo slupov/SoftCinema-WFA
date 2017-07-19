@@ -11,15 +11,15 @@ namespace SoftCinema.Services.Utilities.Validators
             this.cinemaService = cinemaService;
         }
 
-        public  void ValidateCinemaDoesNotExist(string cinemaName, int townId)
+        public void ValidateCinemaDoesNotExist(string cinemaName, int townId)
         {
             if (cinemaService.IsCinemaExisting(cinemaName, townId))
             {
-                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaAlreadyExists,cinemaName));
+                throw new InvalidOperationException(string.Format(Constants.ErrorMessages.CinemaAlreadyExists, cinemaName));
             }
         }
 
-        public  void CheckCinemaExisting(string cinemaName, int townId)
+        public void CheckCinemaExisting(string cinemaName, int townId)
         {
             if (!cinemaService.IsCinemaExisting(cinemaName, townId))
             {

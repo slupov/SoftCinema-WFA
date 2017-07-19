@@ -1,8 +1,7 @@
 namespace SoftCinema.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AditionalUniqueIndecesAdded : DbMigration
     {
         public override void Up()
@@ -15,7 +14,7 @@ namespace SoftCinema.Data.Migrations
             CreateIndex("dbo.Screenings", new[] { "MovieId", "AuditoriumId", "Start" }, unique: true, name: "IX_MovieAuditoriumDate");
             CreateIndex("dbo.Movies", new[] { "Name", "ReleaseYear" }, unique: true, name: "IX_NameYear");
         }
-        
+
         public override void Down()
         {
             DropIndex("dbo.Movies", "IX_NameYear");
